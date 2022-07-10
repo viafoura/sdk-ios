@@ -11,7 +11,7 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "ViafouraSDK",
+            name: "ViafouraCore",
             path: "ViafouraSDK.xcframework"
         ),
         .target(
