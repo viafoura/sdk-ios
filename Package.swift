@@ -11,13 +11,13 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "ViafouraCore",
+            name: "ViafouraSDK",
             path: "ViafouraSDK.xcframework"
         ),
         .target(
             name: "SPMTarget",
             dependencies: [
-                .target(name: "ViafouraCore", condition: .when(platforms: .some([.iOS])))
+                .target(name: "ViafouraSDK", condition: .when(platforms: .some([.iOS])))
             ]
         )
     ]
