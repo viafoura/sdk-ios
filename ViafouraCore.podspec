@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
 
 # the Pre-Compiled Framework:
-  s.source          = { :git => 'https://github.com/viafoura/sdk-ios.git', :tag => s.version.to_s }
-  s.ios.vendored_frameworks = 'ViafouraCore.xcframework'
+  s.source          = { :git => 'https://github.com/viafoura/sdk-ios.git', :branch => "develop", :tag => s.version.to_s }
+  s.ios.vendored_frameworks = 'ViafouraSDK.xcframework'
 end
