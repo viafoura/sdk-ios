@@ -1,0 +1,427 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ViafouraSDK
+import AVFoundation
+import Foundation
+import KeychainAccess
+import Kingfisher
+import Network
+import SafariServices
+import Swift
+import UIKit
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEditorPicksView : UIKit.UIView {
+  @objc deinit
+}
+public struct VFColors {
+  public static let colorBackgroundDefault: UIKit.UIColor
+  public static let colorText1Default: UIKit.UIColor
+  public static let colorText2Default: UIKit.UIColor
+  public static let colorSeparatorDefault: UIKit.UIColor
+  public static let colorFollowingDefault: UIKit.UIColor
+  public static let colorPrimaryDefault: UIKit.UIColor
+  public static let colorPrimaryLightDefault: UIKit.UIColor
+  public static let colorBorder1Default: UIKit.UIColor
+  public init(colorPrimary: UIKit.UIColor = colorPrimaryDefault, colorPrimaryLight: UIKit.UIColor = colorPrimaryLightDefault)
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func getUserLoginStatus(completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginStatus, ViafouraSDK.VFLoginStatusError>) -> ()))
+}
+public enum VFLoginStatus {
+  case notLoggedIn
+  case loggedIn
+  public static func == (a: ViafouraSDK.VFLoginStatus, b: ViafouraSDK.VFLoginStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum VFLoginStatusError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFLoginStatusError, b: ViafouraSDK.VFLoginStatusError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFLoginStatusError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSortView : UIKit.UIView {
+  @objc deinit
+}
+public protocol VFAdDelegate {
+  func generateAd(adPosition: Swift.Int) -> UIKit.UIView
+  func getAdInterval() -> Swift.Int
+}
+public typealias VFActionsCallbacks = (ViafouraSDK.VFActionCallbackType) -> Swift.Void
+public enum VFActionCallbackType {
+  case seeMoreCommentsPressed
+  case writeNewCommentPressed(actionType: ViafouraSDK.VFNewCommentActionType)
+}
+public enum VFNewCommentActionType {
+  case create
+  case reply(content: Foundation.UUID)
+}
+@_hasMissingDesignatedInitializers public class AnalyticsService {
+  public func logEventEngage(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, time: Swift.Int64, hiddenTime: Swift.Int, focuses: Swift.Int)
+  public func logEvent(eventType: ViafouraSDK.EventType, eventSessionUUID: Foundation.UUID, eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
+  public func logTyping(contentContainerUUID: Foundation.UUID, threadUUID: Foundation.UUID, contentUUID: Foundation.UUID)
+  @objc deinit
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginData, ViafouraSDK.VFLoginError>) -> ()))
+}
+public struct VFLoginData {
+}
+public enum VFLoginError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFLoginError, b: ViafouraSDK.VFLoginError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFLoginError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func logout()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isEnabled: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @objc deinit
+}
+public enum EventAttemptedAction : Swift.String, Swift.Encodable {
+  case COMMENT_DISLIKED
+  case COMMENT_FLAG
+  case COMMENT_BOX_CLICKED
+  case COMMENT_LIKED
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
+  @objc deinit
+}
+public protocol VFLoginDelegate {
+  func startLogin()
+}
+public enum VFFilterType {
+  case allComments
+  case featured
+  public static func == (a: ViafouraSDK.VFFilterType, b: ViafouraSDK.VFFilterType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class VFAuthenticationService {
+  @objc deinit
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFSignUpData, ViafouraSDK.VFSignUpError>) -> ()))
+}
+public struct VFSignUpData {
+}
+public enum VFSignUpError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFSignUpError, b: ViafouraSDK.VFSignUpError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFSignUpError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func socialLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFSocialLoginData, ViafouraSDK.VFSocialLoginLoginError>) -> ()))
+}
+public struct VFSocialLoginData {
+}
+public enum VFSocialLoginLoginError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFSocialLoginLoginError, b: ViafouraSDK.VFSocialLoginLoginError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFSocialLoginLoginError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFOpenIdLoginData, ViafouraSDK.VFOpenIdLoginError>) -> ()))
+}
+public struct VFOpenIdLoginData {
+}
+public enum VFOpenIdLoginError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFOpenIdLoginError, b: ViafouraSDK.VFOpenIdLoginError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFOpenIdLoginError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct UserResponse : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol VFLayoutDelegate {
+  func containerHeightUpdated(height: CoreGraphics.CGFloat)
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+}
+public struct VFArticleMetadata {
+  public init(url: Foundation.URL, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Foundation.URL)
+}
+@_hasMissingDesignatedInitializers public class ViafouraSDK {
+  public static let authentication: ViafouraSDK.VFAuthenticationService
+  public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
+  public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
+  public static func isLoggingEnabled() -> Swift.Bool
+  public static func auth() -> ViafouraSDK.VFAuthenticationService
+  @objc deinit
+}
+public enum EventType : Swift.String, Swift.Encodable {
+  case AD_LOAD
+  case AD_VIEW
+  case ATTEMPTED_ACTION
+  case CHAT_PAGINATION
+  case COMMENT_THREAD_SORT
+  case CONTAINER_LOAD
+  case ENGAGE
+  case LOGIN_FAILURE
+  case LOGIN_SUCCESS
+  case LOGOUT
+  case PAGE_VIEW
+  case PASSWORD_RESET
+  case SIGNUP
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum VFSortType {
+  case newest
+  case oldest
+  case mostLiked
+  case mostReplies
+  public var rawValue: Swift.String {
+    get
+  }
+  public static func == (a: ViafouraSDK.VFSortType, b: ViafouraSDK.VFSortType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFCustomBadgeView : UIKit.UIView {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, preloadedComments: Swift.Int? = nil, loginDelegate: ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: ViafouraSDK.VFAdDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: ViafouraSDK.VFLayoutDelegate)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentsNotificationView : UIKit.UIView {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAllCommentsView : UIKit.UIView {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFContentRemovedView : UIKit.UIView {
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFLoadingView : UIKit.UIActivityIndicatorView {
+  @objc deinit
+}
+public enum VFCustomizableView {
+  case postButton(button: ViafouraSDK.VFButton)
+  case postTextView(textField: ViafouraSDK.VFTextView)
+  case postCloseImage(image: ViafouraSDK.VFImageView)
+  case postTitle(label: ViafouraSDK.VFLabel)
+  case postPlaceholderLabel(label: ViafouraSDK.VFLabel)
+  case postLoadingView(loadingView: ViafouraSDK.VFLoadingView)
+  case commentCellDateLabel(dateLabel: ViafouraSDK.VFLabel)
+  case commentCellNameLabel(userLabel: ViafouraSDK.VFLabel)
+  case commentCellContentLabel(contentLabel: ViafouraSDK.VFLabel)
+  case commentCellLikeImage(likeImage: ViafouraSDK.VFImageView)
+  case commentCellLikeLabel(likeLabel: ViafouraSDK.VFLabel)
+  case commentCellDislikeImage(dislikeImage: ViafouraSDK.VFImageView)
+  case commentCellDislikeLabel(dislikeLabel: ViafouraSDK.VFLabel)
+  case commentCellReplyLabel(replyLabel: ViafouraSDK.VFLabel)
+  case previewSeeMoreCommentsButton(button: ViafouraSDK.VFButton)
+  case previewTitleLabel(label: ViafouraSDK.VFLabel)
+  case previewCounterLabel(label: ViafouraSDK.VFLabel)
+  case previewLoadingView(loadingView: ViafouraSDK.VFLoadingView)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEmptyCommentsView : UIKit.UIView {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSeparatorView : UIKit.UIView {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CommentContent {
+  @objc deinit
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func cookieLogin(token: Swift.String, type: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFCookieLoginData, ViafouraSDK.VFCookieLoginError>) -> ()))
+}
+public struct VFCookieLoginData {
+}
+public enum VFCookieLoginError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFCookieLoginError, b: ViafouraSDK.VFCookieLoginError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFCookieLoginError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNewRepliesNotificationView : UIKit.UIView {
+  @objc deinit
+}
+public struct VFFonts {
+  public static let fontBlackDefault: UIKit.UIFont
+  public static let fontBoldDefault: UIKit.UIFont
+  public static let fontExtraBoldDefault: UIKit.UIFont
+  public static let fontExtraLightDefault: UIKit.UIFont
+  public static let fontLightDefault: UIKit.UIFont
+  public static let fontMediumDefault: UIKit.UIFont
+  public static let fontRegularDefault: UIKit.UIFont
+  public static let fontSemiboldDefault: UIKit.UIFont
+  public static let fontThinDefault: UIKit.UIFont
+  public var fontRegular: UIKit.UIFont
+  public var fontMedium: UIKit.UIFont
+  public var fontBold: UIKit.UIFont
+  public var fontLight: UIKit.UIFont
+  public var fontSemibold: UIKit.UIFont
+  public init(fontLight: UIKit.UIFont = fontLightDefault, fontRegular: UIKit.UIFont = fontRegularDefault, fontMedium: UIKit.UIFont = fontMediumDefault, fontSemibold: UIKit.UIFont = fontSemiboldDefault, fontBold: UIKit.UIFont = fontBoldDefault)
+}
+public protocol StoryboardCreateable : UIKit.UIViewController {
+  static var storyboardName: Swift.String { get }
+}
+extension ViafouraSDK.StoryboardCreateable {
+  public static func new() -> Self?
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFPinnedView : UIKit.UIView {
+  @objc deinit
+}
+public protocol VFCustomUIDelegate {
+  func customizeView(view: ViafouraSDK.VFCustomizableView)
+}
+public struct VFSettings {
+  public let fonts: ViafouraSDK.VFFonts
+  public let colors: ViafouraSDK.VFColors
+  public init(colors: ViafouraSDK.VFColors, fonts: ViafouraSDK.VFFonts = VFFonts())
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFNewCommentViewController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canResignFirstResponder: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ViafouraSDK.VFNewCommentViewController : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+}
+public enum WidgetType : Swift.String, Swift.Encodable {
+  case LIVE_BLOG
+  case CONTENT_RECIRCULATION
+  case STANDALONE_AD
+  case CONVERSATION_STARTER
+  case LIVECHAT
+  case LIVE_CONVERSATIONS
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFTextView : UIKit.UITextView {
+  @available(iOS 7.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ViafouraSDK.VFLoginStatus : Swift.Equatable {}
+extension ViafouraSDK.VFLoginStatus : Swift.Hashable {}
+extension ViafouraSDK.VFLoginStatusError : Swift.Equatable {}
+extension ViafouraSDK.VFLoginStatusError : Swift.Hashable {}
+extension ViafouraSDK.VFLoginError : Swift.Equatable {}
+extension ViafouraSDK.VFLoginError : Swift.Hashable {}
+extension ViafouraSDK.EventAttemptedAction : Swift.Equatable {}
+extension ViafouraSDK.EventAttemptedAction : Swift.Hashable {}
+extension ViafouraSDK.EventAttemptedAction : Swift.RawRepresentable {}
+extension ViafouraSDK.VFFilterType : Swift.Equatable {}
+extension ViafouraSDK.VFFilterType : Swift.Hashable {}
+extension ViafouraSDK.VFSignUpError : Swift.Equatable {}
+extension ViafouraSDK.VFSignUpError : Swift.Hashable {}
+extension ViafouraSDK.VFSocialLoginLoginError : Swift.Equatable {}
+extension ViafouraSDK.VFSocialLoginLoginError : Swift.Hashable {}
+extension ViafouraSDK.VFOpenIdLoginError : Swift.Equatable {}
+extension ViafouraSDK.VFOpenIdLoginError : Swift.Hashable {}
+extension ViafouraSDK.EventType : Swift.Equatable {}
+extension ViafouraSDK.EventType : Swift.Hashable {}
+extension ViafouraSDK.EventType : Swift.RawRepresentable {}
+extension ViafouraSDK.VFSortType : Swift.Equatable {}
+extension ViafouraSDK.VFSortType : Swift.Hashable {}
+extension ViafouraSDK.VFCookieLoginError : Swift.Equatable {}
+extension ViafouraSDK.VFCookieLoginError : Swift.Hashable {}
+extension ViafouraSDK.WidgetType : Swift.Equatable {}
+extension ViafouraSDK.WidgetType : Swift.Hashable {}
+extension ViafouraSDK.WidgetType : Swift.RawRepresentable {}
