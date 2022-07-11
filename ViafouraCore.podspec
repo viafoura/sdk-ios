@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'ViafouarCore'
+  s.name             = 'ViafouraCore'
   s.version          = '0.0.1'
   s.swift_versions = ['5.0']
   s.summary          = 'Viafoura SDK'
