@@ -21,4 +21,4 @@ dependencies: [
 
 ### See our documentation
 
-Please follow [the official Viafoura iOS SDK documentation](https://documentation.viafoura.com/).
+Please follow [the official Viafoura iOS SDK documentation](https://documentation.viafoura.com/docs/add-the-viafoura-ios-sdk-to-your-app).
