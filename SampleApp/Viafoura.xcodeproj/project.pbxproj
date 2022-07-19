@@ -26,8 +26,27 @@
 		47B0096E28179DF800EF93FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096C28179DF800EF93FD /* Main.storyboard */; };
 		47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096F28179DFB00EF93FD /* Assets.xcassets */; };
 		47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0097128179DFB00EF93FD /* LaunchScreen.storyboard */; };
+		47B0E2512886415E007725C3 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B0E24E28863FE1007725C3 /* ViafouraSDK.framework */; };
+		47B0E2522886415E007725C3 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47B0E24E28863FE1007725C3 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47B0E24D28863FE1007725C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47B0E24828863FE1007725C3 /* ViafouraSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47B009052817871500EF93FD;
+			remoteInfo = ViafouraSDK;
+		};
+		47B0E24F28863FE1007725C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47B0E24828863FE1007725C3 /* ViafouraSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47B0090F2817871500EF93FD;
+			remoteInfo = ViafouraSDKTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		47B0099F28179F0E00EF93FD /* Embed Frameworks */ = {
@@ -36,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				47B0E2522886415E007725C3 /* ViafouraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +84,7 @@
 		47B0096F28179DFB00EF93FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47B0097228179DFB00EF93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47B0097428179DFB00EF93FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47B0E24828863FE1007725C3 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		828EF67343F1A1E05E74D4B0 /* Pods-Viafoura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.release.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.release.xcconfig"; sourceTree = "<group>"; };
 		8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viafoura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47B0E2512886415E007725C3 /* ViafouraSDK.framework in Frameworks */,
 				4779042B2818ED230019B2F3 /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -177,6 +199,7 @@
 		47B0095A28179DF800EF93FD = {
 			isa = PBXGroup;
 			children = (
+				47B0E24828863FE1007725C3 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
 				47B0096428179DF800EF93FD /* Products */,
 				47B0099928179F0900EF93FD /* Frameworks */,
@@ -211,6 +234,15 @@
 				8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47B0E24928863FE1007725C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47B0E24E28863FE1007725C3 /* ViafouraSDK.framework */,
+				47B0E25028863FE1007725C3 /* ViafouraSDKTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		647EE21E98ADD6C38637E6BB /* Pods */ = {
@@ -276,12 +308,35 @@
 			);
 			productRefGroup = 47B0096428179DF800EF93FD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 47B0E24928863FE1007725C3 /* Products */;
+					ProjectRef = 47B0E24828863FE1007725C3 /* ViafouraSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				47B0096228179DF800EF93FD /* Viafoura */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		47B0E24E28863FE1007725C3 /* ViafouraSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ViafouraSDK.framework;
+			remoteRef = 47B0E24D28863FE1007725C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		47B0E25028863FE1007725C3 /* ViafouraSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ViafouraSDKTests.xctest;
+			remoteRef = 47B0E24F28863FE1007725C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		47B0096128179DF800EF93FD /* Resources */ = {
