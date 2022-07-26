@@ -33,6 +33,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.3'
   # Setting pod `BUILD_LIBRARY_FOR_DISTRIBUTION` to `YES`
   s.pod_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
+s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+
 
 # the Pre-Compiled Framework:
   s.source          = { :git => 'https://github.com/viafoura/sdk-ios.git', :tag => s.version.to_s }
