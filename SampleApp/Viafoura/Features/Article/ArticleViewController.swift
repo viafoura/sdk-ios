@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import WebKit
 import ViafouraSDK
+import GoogleMobileAds
 
 class ArticleViewController: UIViewController {
     var articleViewModel: ArticleViewModel!
@@ -181,11 +182,45 @@ extension ArticleViewController: VFLayoutDelegate {
 }
 
 extension ArticleViewController: VFAdDelegate {
-    func generateAd(adPosition: Int) -> UIView {
-        return UIView()
+    func generateAd(adPosition: Int) -> VFAdView {
+        let adView = VFAdView()
+        let bannerView = GAMBannerView(adSize: GADAdSizeBanner)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.adUnitID = "/6499/example/banner"
+        bannerView.load(GAMRequest())
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        adView.addSubview(bannerView)
+        return adView
     }
     
     func getAdInterval() -> Int {
         return 5
+    }
+}
+
+extension ArticleViewController: GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
     }
 }
