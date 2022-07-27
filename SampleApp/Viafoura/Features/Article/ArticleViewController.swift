@@ -183,14 +183,21 @@ extension ArticleViewController: VFLayoutDelegate {
 
 extension ArticleViewController: VFAdDelegate {
     func generateAd(adPosition: Int) -> VFAdView {
+        let size = GADAdSizeBanner
+        
         let adView = VFAdView()
-        let bannerView = GAMBannerView(adSize: GADAdSizeBanner)
+        adView.translatesAutoresizingMaskIntoConstraints = false
+        adView.heightAnchor.constraint(equalToConstant: size.size.height).isActive = true
+
+        let bannerView = GAMBannerView(adSize: size)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = "/6499/example/banner"
-        bannerView.load(GAMRequest())
         bannerView.rootViewController = self
         bannerView.delegate = self
         adView.addSubview(bannerView)
+        
+        bannerView.centerXAnchor.constraint(equalTo: adView.centerXAnchor).isActive = true
+        bannerView.load(GAMRequest())
         return adView
     }
     
