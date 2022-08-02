@@ -183,22 +183,102 @@ extension ArticleViewController: VFLayoutDelegate {
 
 extension ArticleViewController: VFAdDelegate {
     func generateAd(adPosition: Int) -> VFAdView {
-        let size = GADAdSizeBanner
-        
-        let adView = VFAdView()
-        adView.translatesAutoresizingMaskIntoConstraints = false
-        adView.heightAnchor.constraint(equalToConstant: size.size.height).isActive = true
+        if articleViewModel.story.title == "Recursos públicos" {
+            let adView = VFAdView()
+            adView.translatesAutoresizingMaskIntoConstraints = false
 
-        let bannerView = GAMBannerView(adSize: size)
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.adUnitID = "/6499/example/banner"
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        adView.addSubview(bannerView)
-        
-        bannerView.centerXAnchor.constraint(equalTo: adView.centerXAnchor).isActive = true
-        bannerView.load(GAMRequest())
-        return adView
+            let adSponsoredLabel = UILabel()
+            let adTitleLabel = UILabel()
+            let adDescLabel = UILabel()
+            let adImage = UIImageView()
+            let adIndicatorImage = UIImageView()
+            let adIndicatorLabel = UILabel()
+
+            adTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+            adTitleLabel.text = "Autos Nuevos | Enlaces Publicitarios"
+            adTitleLabel.textColor = .black
+            adTitleLabel.font = UIFont.boldSystemFont(ofSize: 13)
+            adTitleLabel.numberOfLines = 0
+            
+            adDescLabel.translatesAutoresizingMaskIntoConstraints = false
+            adDescLabel.text = "Ushuaia: Los autos sin vender de 2021 casi se regalan"
+            adDescLabel.font = UIFont.systemFont(ofSize: 11)
+            adDescLabel.textColor = .gray
+            adDescLabel.numberOfLines = 0
+            
+            adSponsoredLabel.translatesAutoresizingMaskIntoConstraints = false
+            adSponsoredLabel.text = "Sponsored"
+            adSponsoredLabel.font = UIFont.boldSystemFont(ofSize: 11)
+            adSponsoredLabel.textColor = UIColor(red: 0.33, green: 0.71, blue: 0.35, alpha: 1.00)
+            
+            adIndicatorLabel.translatesAutoresizingMaskIntoConstraints = false
+            adIndicatorLabel.text = "AD"
+            adIndicatorLabel.textColor = .white
+            adIndicatorLabel.font = UIFont.boldSystemFont(ofSize: 13)
+            
+            adImage.translatesAutoresizingMaskIntoConstraints = false
+            adImage.kf.setImage(with: URL(string: "https://images.outbrainimg.com/transform/v3/eyJpdSI6IjYwNjA2OWRiMjFiZTc0ODAyOWEzZDAwYTczM2E2YjkxNzM2ZWZmODczYWQ5NjcyMzQzN2YxOGU2YTJhYmQ3NGYiLCJ3IjozNzUsImgiOjEyNSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp"))
+            adImage.layer.cornerRadius = 4
+            adImage.clipsToBounds = true
+            
+            let adIndicatorImageSize = 40.0
+            adIndicatorImage.translatesAutoresizingMaskIntoConstraints = false
+            adIndicatorImage.backgroundColor = .lightGray
+            adIndicatorImage.heightAnchor.constraint(equalToConstant: adIndicatorImageSize).isActive = true
+            adIndicatorImage.widthAnchor.constraint(equalToConstant: adIndicatorImageSize).isActive = true
+            adIndicatorImage.layer.cornerRadius = adIndicatorImageSize / 2
+            adIndicatorImage.clipsToBounds = true
+            adIndicatorImage.layer.masksToBounds = true
+            
+            adView.addSubview(adIndicatorImage)
+            adView.addSubview(adTitleLabel)
+            adView.addSubview(adDescLabel)
+            adView.addSubview(adSponsoredLabel)
+            adView.addSubview(adImage)
+            adView.addSubview(adIndicatorLabel)
+
+            adIndicatorLabel.centerYAnchor.constraint(equalTo: adIndicatorImage.centerYAnchor).isActive = true
+            adIndicatorLabel.centerXAnchor.constraint(equalTo: adIndicatorImage.centerXAnchor).isActive = true
+            
+            adSponsoredLabel.topAnchor.constraint(equalTo: adView.topAnchor, constant: 5).isActive = true
+            adSponsoredLabel.leadingAnchor.constraint(equalTo: adIndicatorImage.trailingAnchor, constant: 20).isActive = true
+
+            adIndicatorImage.leadingAnchor.constraint(equalTo: adView.leadingAnchor, constant: 5).isActive = true
+            adIndicatorImage.topAnchor.constraint(equalTo: adView.topAnchor, constant: 5).isActive = true
+            
+            adTitleLabel.topAnchor.constraint(equalTo: adSponsoredLabel.bottomAnchor, constant: 5).isActive = true
+            adTitleLabel.leadingAnchor.constraint(equalTo: adIndicatorImage.trailingAnchor, constant: 20).isActive = true
+            adTitleLabel.trailingAnchor.constraint(equalTo: adView.trailingAnchor, constant: -20).isActive = true
+
+            adDescLabel.topAnchor.constraint(equalTo: adTitleLabel.bottomAnchor, constant: 5).isActive = true
+            adDescLabel.leadingAnchor.constraint(equalTo: adIndicatorImage.trailingAnchor, constant: 20).isActive = true
+            adDescLabel.trailingAnchor.constraint(equalTo: adView.trailingAnchor, constant: -20).isActive = true
+
+            adImage.topAnchor.constraint(equalTo: adDescLabel.bottomAnchor, constant: 10).isActive = true
+            adImage.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            adImage.bottomAnchor.constraint(equalTo: adView.bottomAnchor, constant: -10).isActive = true
+            adImage.leadingAnchor.constraint(equalTo: adIndicatorImage.trailingAnchor, constant: 20).isActive = true
+            adImage.trailingAnchor.constraint(equalTo: adView.trailingAnchor, constant: -20).isActive = true
+            
+            return adView
+        } else {
+            let size = GADAdSizeBanner
+            
+            let adView = VFAdView()
+            adView.translatesAutoresizingMaskIntoConstraints = false
+            adView.heightAnchor.constraint(equalToConstant: size.size.height).isActive = true
+
+            let bannerView = GAMBannerView(adSize: size)
+            bannerView.translatesAutoresizingMaskIntoConstraints = false
+            bannerView.adUnitID = "/6499/example/banner"
+            bannerView.rootViewController = self
+            bannerView.delegate = self
+            adView.addSubview(bannerView)
+            
+            bannerView.centerXAnchor.constraint(equalTo: adView.centerXAnchor).isActive = true
+            bannerView.load(GAMRequest())
+            return adView
+        }
     }
     
     func getAdInterval() -> Int {
