@@ -175,6 +175,13 @@
                                     <constraint firstItem="QNN-3A-Xm6" firstAttribute="centerX" secondItem="v6r-ZM-gOc" secondAttribute="centerX" id="w7U-59-Xwi"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tmG-2F-KgJ">
+                                <rect key="frame" x="20" y="66" width="30" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="v1g-Sa-5KH"/>
+                                    <constraint firstAttribute="height" constant="30" id="yr4-Nw-gBC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ivk-J8-hVr"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -186,6 +193,7 @@
                             <constraint firstItem="v6r-ZM-gOc" firstAttribute="top" secondItem="snq-J3-XV2" secondAttribute="bottom" constant="40" id="E4z-cI-5gq"/>
                             <constraint firstItem="ivk-J8-hVr" firstAttribute="trailing" secondItem="4Nf-9D-OKo" secondAttribute="trailing" constant="20" id="Gu6-IU-0gs"/>
                             <constraint firstItem="ivk-J8-hVr" firstAttribute="trailing" secondItem="6s1-J6-mGT" secondAttribute="trailing" constant="30" id="Ieu-eR-ynW"/>
+                            <constraint firstItem="tmG-2F-KgJ" firstAttribute="top" secondItem="ivk-J8-hVr" secondAttribute="top" constant="20" id="Imd-Yw-Gej"/>
                             <constraint firstItem="4Nf-9D-OKo" firstAttribute="top" secondItem="euI-Oy-Yw5" secondAttribute="bottom" constant="50" id="PJR-aO-uoc"/>
                             <constraint firstItem="euI-Oy-Yw5" firstAttribute="top" secondItem="6s1-J6-mGT" secondAttribute="bottom" constant="30" id="XkI-iQ-UgJ"/>
                             <constraint firstItem="ivk-J8-hVr" firstAttribute="trailing" secondItem="snq-J3-XV2" secondAttribute="trailing" constant="20" id="dkB-ms-5Sw"/>
@@ -194,6 +202,7 @@
                             <constraint firstItem="jlN-Ba-uoN" firstAttribute="centerX" secondItem="XIF-YB-2Qf" secondAttribute="centerX" id="gSN-y7-xkC"/>
                             <constraint firstItem="ivk-J8-hVr" firstAttribute="trailing" secondItem="v6r-ZM-gOc" secondAttribute="trailing" constant="20" id="hWG-WK-8V7"/>
                             <constraint firstItem="6s1-J6-mGT" firstAttribute="leading" secondItem="ivk-J8-hVr" secondAttribute="leading" constant="30" id="kV3-xj-8tV"/>
+                            <constraint firstItem="tmG-2F-KgJ" firstAttribute="leading" secondItem="ivk-J8-hVr" secondAttribute="leading" constant="20" id="kqB-56-zly"/>
                             <constraint firstItem="QoS-At-gJk" firstAttribute="top" secondItem="ivk-J8-hVr" secondAttribute="top" constant="30" id="oxz-FR-dXv"/>
                             <constraint firstItem="6s1-J6-mGT" firstAttribute="top" secondItem="QoS-At-gJk" secondAttribute="bottom" constant="60" id="vmb-w1-wFn"/>
                             <constraint firstItem="v6r-ZM-gOc" firstAttribute="leading" secondItem="ivk-J8-hVr" secondAttribute="leading" constant="20" id="xIQ-24-VeX"/>
@@ -201,6 +210,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeImage" destination="tmG-2F-KgJ" id="Ffe-vd-iI3"/>
                         <outlet property="emailTextField" destination="6s1-J6-mGT" id="kJv-Yt-vMT"/>
                         <outlet property="facebookView" destination="QNN-3A-Xm6" id="GW1-hO-swC"/>
                         <outlet property="loadingView" destination="jlN-Ba-uoN" id="AGl-1r-GBU"/>
@@ -403,6 +413,13 @@
                                 <rect key="frame" x="197" y="501" width="20" height="20"/>
                                 <color key="color" systemColor="tintColor"/>
                             </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-Nk-WBe">
+                                <rect key="frame" x="20" y="66" width="30" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Lk4-t0-yc5"/>
+                                    <constraint firstAttribute="height" constant="30" id="qUV-bA-02r"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YGM-cL-MPl"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -410,7 +427,9 @@
                             <constraint firstAttribute="trailing" secondItem="Osh-Iu-JS9" secondAttribute="trailing" constant="30" id="76P-cX-huy"/>
                             <constraint firstItem="mXz-kQ-xi7" firstAttribute="top" secondItem="o9o-Mb-Oee" secondAttribute="bottom" constant="30" id="7a8-fS-jl8"/>
                             <constraint firstItem="Osh-Iu-JS9" firstAttribute="top" secondItem="ZWC-WL-DVk" secondAttribute="bottom" constant="60" id="9gy-Gh-qat"/>
+                            <constraint firstItem="nUY-Nk-WBe" firstAttribute="leading" secondItem="YGM-cL-MPl" secondAttribute="leading" constant="20" id="CUA-Yo-qRH"/>
                             <constraint firstItem="ZWC-WL-DVk" firstAttribute="centerX" secondItem="r9G-m4-0Br" secondAttribute="centerX" id="Dvt-Aj-Slq"/>
+                            <constraint firstItem="nUY-Nk-WBe" firstAttribute="top" secondItem="YGM-cL-MPl" secondAttribute="top" constant="20" id="IN2-d7-pJj"/>
                             <constraint firstItem="QyH-Ou-JwP" firstAttribute="centerX" secondItem="r9G-m4-0Br" secondAttribute="centerX" id="IXZ-dS-QJB"/>
                             <constraint firstItem="rOG-et-CsZ" firstAttribute="top" secondItem="mXz-kQ-xi7" secondAttribute="bottom" constant="50" id="Ogd-qF-sgK"/>
                             <constraint firstItem="YGM-cL-MPl" firstAttribute="trailing" secondItem="mXz-kQ-xi7" secondAttribute="trailing" constant="30" id="VTL-KN-zuW"/>
@@ -426,6 +445,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeImage" destination="nUY-Nk-WBe" id="6UL-aO-dY3"/>
                         <outlet property="emailTextField" destination="o9o-Mb-Oee" id="Zbb-Po-xsJ"/>
                         <outlet property="loadingView" destination="QyH-Ou-JwP" id="euu-bc-lC0"/>
                         <outlet property="nameTextField" destination="Osh-Iu-JS9" id="nXl-aW-S0T"/>
@@ -444,6 +464,7 @@
         <image name="home" width="24" height="24"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="logo" width="2100" height="2100"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="ColorBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

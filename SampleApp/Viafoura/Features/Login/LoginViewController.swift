@@ -20,6 +20,8 @@ class LoginViewController: UIViewController{
     
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
+    @IBOutlet weak var closeImage: UIImageView!
+    
     var onDoneBlock: ((Bool) -> Void)?
 
     struct VCIdentifier {
@@ -39,6 +41,9 @@ class LoginViewController: UIViewController{
             emailTextField.overrideUserInterfaceStyle = .light
         }
         
+        closeImage.isUserInteractionEnabled = true
+        closeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeTapped)))
+        
         signupButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(signupTapped)))
         submitButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(submitTapped)))
         
@@ -46,6 +51,11 @@ class LoginViewController: UIViewController{
         facebookViewRecognizer.minimumPressDuration = 0
         facebookView.addGestureRecognizer(facebookViewRecognizer)
         facebookView.isHidden = true
+    }
+    
+    @objc
+    func closeTapped(){
+        self.dismiss(animated: true)
     }
     
     @objc

@@ -15,8 +15,9 @@ class SignUpViewController: UIViewController{
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
-    
     @IBOutlet weak var submitButton: UIButton!
+    
+    @IBOutlet weak var closeImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,16 @@ class SignUpViewController: UIViewController{
             passwordTextField.overrideUserInterfaceStyle = .light
             emailTextField.overrideUserInterfaceStyle = .light
         }
+        
+        closeImage.isUserInteractionEnabled = true
+        closeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeTapped)))
 
         submitButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(submitTapped)))
+    }
+    
+    @objc
+    func closeTapped(){
+        self.dismiss(animated: true)
     }
     
     @objc
