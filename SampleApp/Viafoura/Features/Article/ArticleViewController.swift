@@ -71,8 +71,8 @@ class ArticleViewController: UIViewController {
                 self.presentNewCommentViewController(actionType: actionType)
             case .seeMoreCommentsPressed:
                 break
-            case .openProfilePressed(let userUUID):
-                self.presentProfileViewController(userUUID: userUUID)
+            case .openProfilePressed(let userUUID, let presentationType):
+                self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
             default:
                 break
             }
@@ -96,7 +96,7 @@ class ArticleViewController: UIViewController {
         preCommentsViewController.didMove(toParent: self)
     }
     
-    func presentProfileViewController(userUUID: UUID){
+    func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
         guard let settings = settings else {
             return
         }
@@ -108,7 +108,7 @@ class ArticleViewController: UIViewController {
             }
         }
         
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, loginDelegate: self, settings: settings) else{
+        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
             return
         }
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
@@ -145,7 +145,7 @@ extension ArticleViewController: WKNavigationDelegate{
         webView.isHidden = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.webViewHeight.constant = webView.scrollView.contentSize.height - 6000
+            self.webViewHeight.constant = webView.scrollView.contentSize.height - 1000
         }
     }
 }
