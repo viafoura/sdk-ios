@@ -13,7 +13,9 @@ import GoogleMobileAds
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-82628f44cd3d", siteDomain: "www.clarin.com")
+        ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-d47205fca416", siteDomain: "demo.viafoura.com")
+        
+        //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-82628f44cd3d", siteDomain: "www.clarin.com")
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
         applyUIStyling()

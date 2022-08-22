@@ -56,7 +56,7 @@ class ArticleViewController: UIViewController {
         webView.load(URLRequest(url: URL(string: articleViewModel.story.link)!))
         
         let fonts = VFFonts()
-        let colors = VFColors(colorPrimary: UIColor(red: 1, green: 0, blue: 0, alpha: 1), colorPrimaryLight: UIColor(red: 1, green: 0.95, blue: 0.95, alpha: 1))
+        let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         settings = VFSettings(colors: colors, fonts: fonts)
     }
     
@@ -103,6 +103,8 @@ class ArticleViewController: UIViewController {
 
         let callbacks: VFActionsCallbacks = { type in
             switch type {
+            case .notificationPressed:
+                print("Notification pressed")
             default:
                 break
             }
@@ -111,6 +113,7 @@ class ArticleViewController: UIViewController {
         guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
             return
         }
+
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
         profileViewController.setActionCallbacks(callbacks: callbacks)
         self.present(profileViewController, animated: true)

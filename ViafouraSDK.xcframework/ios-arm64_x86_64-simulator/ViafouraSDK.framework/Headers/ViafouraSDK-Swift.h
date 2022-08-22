@@ -198,6 +198,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import Foundation;
 @import UIKit;
 #endif
 
@@ -222,6 +223,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @class NSCoder;
+
+SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
+@interface VFAdView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC11ViafouraSDK17VFAllCommentsView")
 @interface VFAllCommentsView : UIView
@@ -272,6 +280,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK14VFFeaturedView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11ViafouraSDK12VFFollowView")
+@interface VFFollowView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
 @class UIImage;
 
 SWIFT_CLASS("_TtC11ViafouraSDK11VFImageView")
@@ -293,8 +308,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK7VFLabel")
 SWIFT_CLASS("_TtC11ViafouraSDK13VFLoadingView")
 @interface VFLoadingView : UIActivityIndicatorView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
 @class NSString;
@@ -310,12 +325,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
 @class UITextView;
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text SWIFT_WARN_UNUSED_RESULT;
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
+
 
 
 SWIFT_CLASS("_TtC11ViafouraSDK29VFNewCommentsNotificationView")
@@ -342,6 +358,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK12VFPinnedView")
 SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController : UIViewController
 - (void)viewDidLoad;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -354,6 +371,29 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 
 
 
+
+SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
+@interface VFProfileViewController : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+
+
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK18VFSegmentedControl")
+@interface VFSegmentedControl : UISegmentedControl
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithItems:(NSArray * _Nullable)items SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK15VFSeparatorView")
 @interface VFSeparatorView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -361,8 +401,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK15VFSeparatorView")
 @end
 
 
-SWIFT_CLASS("_TtC11ViafouraSDK10VFSortView")
-@interface VFSortView : UIView
+SWIFT_CLASS("_TtC11ViafouraSDK9VFTabView")
+@interface VFTabView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -580,6 +620,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import Foundation;
 @import UIKit;
 #endif
 
@@ -604,6 +645,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @class NSCoder;
+
+SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
+@interface VFAdView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC11ViafouraSDK17VFAllCommentsView")
 @interface VFAllCommentsView : UIView
@@ -654,6 +702,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK14VFFeaturedView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC11ViafouraSDK12VFFollowView")
+@interface VFFollowView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
 @class UIImage;
 
 SWIFT_CLASS("_TtC11ViafouraSDK11VFImageView")
@@ -675,8 +730,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK7VFLabel")
 SWIFT_CLASS("_TtC11ViafouraSDK13VFLoadingView")
 @interface VFLoadingView : UIActivityIndicatorView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
 @class NSString;
@@ -692,12 +747,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
 @class UITextView;
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text SWIFT_WARN_UNUSED_RESULT;
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
+
 
 
 SWIFT_CLASS("_TtC11ViafouraSDK29VFNewCommentsNotificationView")
@@ -724,6 +780,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK12VFPinnedView")
 SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController : UIViewController
 - (void)viewDidLoad;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -736,6 +793,29 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 
 
 
+
+SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
+@interface VFProfileViewController : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+
+
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK18VFSegmentedControl")
+@interface VFSegmentedControl : UISegmentedControl
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithItems:(NSArray * _Nullable)items SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK15VFSeparatorView")
 @interface VFSeparatorView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -743,8 +823,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK15VFSeparatorView")
 @end
 
 
-SWIFT_CLASS("_TtC11ViafouraSDK10VFSortView")
-@interface VFSortView : UIView
+SWIFT_CLASS("_TtC11ViafouraSDK9VFTabView")
+@interface VFTabView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end

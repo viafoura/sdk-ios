@@ -26,7 +26,8 @@
 		47B0096E28179DF800EF93FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096C28179DF800EF93FD /* Main.storyboard */; };
 		47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096F28179DFB00EF93FD /* Assets.xcassets */; };
 		47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0097128179DFB00EF93FD /* LaunchScreen.storyboard */; };
-		47DA3E2D28906ECE00C7E3C7 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DA3E2528906CB000C7E3C7 /* ViafouraSDK.framework */; };
+		47B629B62899AFA1006F5F63 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DA3E2528906CB000C7E3C7 /* ViafouraSDK.framework */; };
+		47B629B72899AFA1006F5F63 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47DA3E2528906CB000C7E3C7 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,20 @@
 			remoteInfo = ViafouraSDKTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47B629B82899AFA1006F5F63 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				47B629B72899AFA1006F5F63 /* ViafouraSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.debug.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47DA3E2D28906ECE00C7E3C7 /* ViafouraSDK.framework in Frameworks */,
+				47B629B62899AFA1006F5F63 /* ViafouraSDK.framework in Frameworks */,
 				4779042B2818ED230019B2F3 /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -251,6 +266,7 @@
 				47B0096028179DF800EF93FD /* Frameworks */,
 				47B0096128179DF800EF93FD /* Resources */,
 				5AAEF5A1819B1F8289A16C03 /* [CP] Embed Pods Frameworks */,
+				47B629B82899AFA1006F5F63 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -544,7 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -558,7 +574,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -574,7 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -588,7 +604,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
