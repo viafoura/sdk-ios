@@ -26,6 +26,7 @@ class ArticleViewController: UIViewController {
         
     struct VCIdentifier {
         static let loginVC = "LoginViewController"
+        static let articleVC = "ArticleViewController"
     }
 
     var settings: VFSettings?
@@ -103,8 +104,15 @@ class ArticleViewController: UIViewController {
 
         let callbacks: VFActionsCallbacks = { type in
             switch type {
-            case .notificationPressed:
-                print("Notification pressed")
+            case .notificationPressed(let presentationType):
+                switch presentationType {
+                case .profile(let userUUID):
+                    self.presentProfileViewController(userUUID: userUUID, presentationType: .feed)
+                    break
+                case .content(let containerUUID, let contentUUID, let containerId):
+                    self.presentArticle(containerId: containerId, contentUUID: contentUUID)
+                    break
+                }
             default:
                 break
             }
@@ -119,6 +127,17 @@ class ArticleViewController: UIViewController {
         self.present(profileViewController, animated: true)
     }
     
+    func presentArticle(containerId: String, contentUUID: UUID){
+        guard let articleVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.articleVC) as? ArticleViewController else{
+            return
+        }
+        
+        if let story = defaultStories.filter{ $0.containerId == containerId }.first {
+            articleVC.articleViewModel = ArticleViewModel(story: story)
+            articleVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(articleVC, animated: true)
+        }
+    }
     
     func presentNewCommentViewController(actionType: VFNewCommentActionType){
         guard let settings = settings else {
