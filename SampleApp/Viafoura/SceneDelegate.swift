@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LoginRadiusSDK
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let urlContext = URLContexts.first {
+            LoginRadiusSDK.sharedInstance().application(UIApplication.shared, open: urlContext.url, sourceApplication: nil, annotation: nil)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

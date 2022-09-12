@@ -55,7 +55,7 @@ class ArticleViewController: UIViewController {
         webView.scrollView.isScrollEnabled = false
         webView.allowsLinkPreview = false
         webView.load(URLRequest(url: URL(string: articleViewModel.story.link)!))
-        
+
         let fonts = VFFonts()
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         settings = VFSettings(colors: colors, fonts: fonts)

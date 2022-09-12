@@ -116,13 +116,13 @@
                                 <rect key="frame" x="30" y="284" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euI-Oy-Yw5">
                                 <rect key="frame" x="30" y="348" width="354" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nf-9D-OKo">
                                 <rect key="frame" x="20" y="432" width="374" height="31"/>
@@ -146,14 +146,15 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="94c-hY-lkQ">
                                                 <rect key="frame" x="15" y="15" width="30" height="30"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="jgh-9y-D95"/>
                                                     <constraint firstAttribute="width" constant="30" id="wXO-Wr-Sgu"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="94c-hY-lkQ" firstAttribute="centerX" secondItem="QNN-3A-Xm6" secondAttribute="centerX" id="5Lk-oG-Y7z"/>
                                             <constraint firstItem="94c-hY-lkQ" firstAttribute="centerY" secondItem="QNN-3A-Xm6" secondAttribute="centerY" id="E5T-Ap-n3O"/>
@@ -167,11 +168,123 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9q-AL-3hv">
+                                        <rect key="frame" x="237" y="0.0" width="60" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="xJQ-Qq-mjF">
+                                                <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fuo-wN-LJv"/>
+                                                    <constraint firstAttribute="width" constant="30" id="r9e-8x-mZN"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CTn-qv-cGe"/>
+                                            <constraint firstAttribute="width" constant="60" id="PLz-9W-5kE"/>
+                                            <constraint firstItem="xJQ-Qq-mjF" firstAttribute="centerY" secondItem="s9q-AL-3hv" secondAttribute="centerY" id="wA3-3F-gld"/>
+                                            <constraint firstItem="xJQ-Qq-mjF" firstAttribute="centerX" secondItem="s9q-AL-3hv" secondAttribute="centerX" id="zRD-bx-i9H"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwQ-pZ-Rxv">
+                                        <rect key="frame" x="77" y="0.0" width="60" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="f0D-2N-6Ov">
+                                                <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="RA6-35-rt6"/>
+                                                    <constraint firstAttribute="width" constant="30" id="g2k-tR-A1F"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="1h2-hV-6dB"/>
+                                            <constraint firstItem="f0D-2N-6Ov" firstAttribute="centerX" secondItem="FwQ-pZ-Rxv" secondAttribute="centerX" id="XhX-HQ-Vmf"/>
+                                            <constraint firstAttribute="height" constant="60" id="eF3-pI-xkk"/>
+                                            <constraint firstItem="f0D-2N-6Ov" firstAttribute="centerY" secondItem="FwQ-pZ-Rxv" secondAttribute="centerY" id="rcm-Kz-9VH"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAx-lx-vrI">
+                                        <rect key="frame" x="-3" y="0.0" width="60" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="Ypf-LV-07a">
+                                                <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="4av-AY-PRe"/>
+                                                    <constraint firstAttribute="height" constant="30" id="hQp-qJ-vlS"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Ypf-LV-07a" firstAttribute="centerY" secondItem="NAx-lx-vrI" secondAttribute="centerY" id="Aib-VX-rh7"/>
+                                            <constraint firstItem="Ypf-LV-07a" firstAttribute="centerX" secondItem="NAx-lx-vrI" secondAttribute="centerX" id="Svk-St-G5z"/>
+                                            <constraint firstAttribute="width" constant="60" id="gC0-oD-tza"/>
+                                            <constraint firstAttribute="height" constant="60" id="jJs-eb-BfR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55h-pw-0QQ">
+                                        <rect key="frame" x="317" y="0.0" width="60" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="pQt-9a-cv9">
+                                                <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="aS1-Gs-38Z"/>
+                                                    <constraint firstAttribute="width" constant="30" id="cJg-aT-OAr"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="pQt-9a-cv9" firstAttribute="centerY" secondItem="55h-pw-0QQ" secondAttribute="centerY" id="DIH-FG-07B"/>
+                                            <constraint firstItem="pQt-9a-cv9" firstAttribute="centerX" secondItem="55h-pw-0QQ" secondAttribute="centerX" id="FbH-4a-Zes"/>
+                                            <constraint firstAttribute="width" constant="60" id="NsO-0v-wYV"/>
+                                            <constraint firstAttribute="height" constant="60" id="ZNk-Gm-neU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="55h-pw-0QQ" firstAttribute="leading" secondItem="s9q-AL-3hv" secondAttribute="trailing" constant="20" id="1QH-Ay-75b"/>
+                                    <constraint firstItem="FwQ-pZ-Rxv" firstAttribute="leading" secondItem="NAx-lx-vrI" secondAttribute="trailing" constant="20" id="3e9-xq-HFr"/>
+                                    <constraint firstItem="QNN-3A-Xm6" firstAttribute="leading" secondItem="FwQ-pZ-Rxv" secondAttribute="trailing" constant="20" id="5U9-qg-K8R"/>
                                     <constraint firstItem="QNN-3A-Xm6" firstAttribute="centerY" secondItem="v6r-ZM-gOc" secondAttribute="centerY" id="BqW-6W-LgV"/>
+                                    <constraint firstItem="55h-pw-0QQ" firstAttribute="centerY" secondItem="v6r-ZM-gOc" secondAttribute="centerY" id="CPX-8Z-rgv"/>
+                                    <constraint firstItem="NAx-lx-vrI" firstAttribute="centerY" secondItem="v6r-ZM-gOc" secondAttribute="centerY" id="eCj-AF-GxG"/>
+                                    <constraint firstItem="FwQ-pZ-Rxv" firstAttribute="centerY" secondItem="v6r-ZM-gOc" secondAttribute="centerY" id="gla-6n-hUy"/>
+                                    <constraint firstItem="s9q-AL-3hv" firstAttribute="centerY" secondItem="v6r-ZM-gOc" secondAttribute="centerY" id="m13-lY-8P4"/>
                                     <constraint firstAttribute="height" constant="60" id="oMk-TO-MKo"/>
+                                    <constraint firstItem="s9q-AL-3hv" firstAttribute="leading" secondItem="QNN-3A-Xm6" secondAttribute="trailing" constant="20" id="rnI-DY-Ceh"/>
                                     <constraint firstItem="QNN-3A-Xm6" firstAttribute="centerX" secondItem="v6r-ZM-gOc" secondAttribute="centerX" id="w7U-59-Xwi"/>
                                 </constraints>
                             </view>
@@ -210,13 +323,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appleView" destination="NAx-lx-vrI" id="64k-OK-qAF"/>
                         <outlet property="closeImage" destination="tmG-2F-KgJ" id="Ffe-vd-iI3"/>
                         <outlet property="emailTextField" destination="6s1-J6-mGT" id="kJv-Yt-vMT"/>
                         <outlet property="facebookView" destination="QNN-3A-Xm6" id="GW1-hO-swC"/>
+                        <outlet property="googleView" destination="FwQ-pZ-Rxv" id="LtA-aP-i4M"/>
+                        <outlet property="linkedinView" destination="s9q-AL-3hv" id="gsU-su-pNi"/>
                         <outlet property="loadingView" destination="jlN-Ba-uoN" id="AGl-1r-GBU"/>
                         <outlet property="passwordTextField" destination="euI-Oy-Yw5" id="Vsr-IJ-VGX"/>
                         <outlet property="signupButton" destination="snq-J3-XV2" id="adB-uW-0Jr"/>
                         <outlet property="submitButton" destination="4Nf-9D-OKo" id="gPj-lW-t51"/>
+                        <outlet property="twitterView" destination="55h-pw-0QQ" id="01r-ON-HKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tkg-5O-QvD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -460,10 +577,14 @@
     </scenes>
     <color key="tintColor" red="0.92549019607843142" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
+        <image name="apple" width="1518" height="1770"/>
         <image name="facebook" width="30" height="30"/>
+        <image name="google" width="512" height="512"/>
         <image name="home" width="24" height="24"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <image name="linkedin" width="512" height="512"/>
         <image name="logo" width="2100" height="2100"/>
+        <image name="twitter" width="512" height="512"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="ColorBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,6 +7,7 @@
 
 import UIKit
 import ViafouraSDK
+import LoginRadiusSDK
 import GoogleMobileAds
 
 @main
@@ -15,12 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
         
+        let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()
+        sdk.applicationLaunched(options: launchOptions)
+        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
         applyUIStyling()
         return true
     }
-    
+
     func applyUIStyling(){
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()

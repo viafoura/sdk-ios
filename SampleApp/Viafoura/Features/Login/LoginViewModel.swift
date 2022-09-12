@@ -18,4 +18,14 @@ class LoginViewModel{
             }
         })
     }
+    
+    func socialLogin(token: String, completion: @escaping ((Result<VFSocialLoginData, VFSocialLoginError>) -> ())){
+        print("SOCIAL LOGIN")
+        print(token)
+        auth.socialLogin(token: token, completion: { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        })
+    }
 }

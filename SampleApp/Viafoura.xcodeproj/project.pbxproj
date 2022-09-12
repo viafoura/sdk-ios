@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4707010028CBEBC500BE9C0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */; };
+		4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4707010728CFAD2C00BE9C0D /* LoginRadius.plist */; };
 		473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC2B285A59E30044D00F /* CustomNavigationController.swift */; };
 		477904112818E2CC0019B2F3 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904102818E2CC0019B2F3 /* ArticleViewController.swift */; };
 		477904152818E73D0019B2F3 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904142818E73D0019B2F3 /* StoryTableViewCell.swift */; };
@@ -64,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.debug.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.debug.xcconfig"; sourceTree = "<group>"; };
+		470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4707010728CFAD2C00BE9C0D /* LoginRadius.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LoginRadius.plist; sourceTree = "<group>"; };
 		473DBC2B285A59E30044D00F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		477904102818E2CC0019B2F3 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		477904142818E73D0019B2F3 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,8 +176,10 @@
 		477904202818E8F40019B2F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */,
 				47B0096F28179DFB00EF93FD /* Assets.xcassets */,
 				47B0097428179DFB00EF93FD /* Info.plist */,
+				4707010728CFAD2C00BE9C0D /* LoginRadius.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -345,8 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */,
+				4707010028CBEBC500BE9C0D /* GoogleService-Info.plist in Resources */,
 				47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */,
 				47B0096E28179DF800EF93FD /* Main.storyboard in Resources */,
+				4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -574,7 +582,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.0.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -590,7 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -604,7 +612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 1.0.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
