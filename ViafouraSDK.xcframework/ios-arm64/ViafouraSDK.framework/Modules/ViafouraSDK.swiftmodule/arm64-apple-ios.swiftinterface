@@ -86,8 +86,12 @@ public enum VFActionCallbackType {
   case writeNewCommentPressed(actionType: ViafouraSDK.VFNewCommentActionType)
   case closeNewCommentPressed
   case openProfilePressed(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType)
-  case notificationPressed
+  case notificationPressed(presentationType: ViafouraSDK.VFNotificationPresentationType)
   case closeProfilePressed
+}
+public enum VFNotificationPresentationType {
+  case profile(userUUID: Foundation.UUID)
+  case content(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String)
 }
 public enum VFProfilePresentationType {
   case profile
@@ -123,9 +127,7 @@ extension ViafouraSDK.VFDislikeCommentError {
   @objc deinit
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginData, ViafouraSDK.VFLoginError>) -> ()))
-}
-public struct VFLoginData {
+  public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> ()))
 }
 public enum VFLoginError : Foundation.LocalizedError {
   case unknown
@@ -217,13 +219,14 @@ public enum VFFilterType {
     get
   }
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFContentEditedView : UIKit.UIView {
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class VFAuthenticationService {
   @objc deinit
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFSignUpData, ViafouraSDK.VFSignUpError>) -> ()))
-}
-public struct VFSignUpData {
+  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSignUpError>) -> ()))
 }
 public enum VFSignUpError : Foundation.LocalizedError {
   case unknown
@@ -239,19 +242,17 @@ extension ViafouraSDK.VFSignUpError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func socialLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFSocialLoginData, ViafouraSDK.VFSocialLoginLoginError>) -> ()))
+  public func socialLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSocialLoginError>) -> ()))
 }
-public struct VFSocialLoginData {
-}
-public enum VFSocialLoginLoginError : Foundation.LocalizedError {
+public enum VFSocialLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFSocialLoginLoginError, b: ViafouraSDK.VFSocialLoginLoginError) -> Swift.Bool
+  public static func == (a: ViafouraSDK.VFSocialLoginError, b: ViafouraSDK.VFSocialLoginError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
-extension ViafouraSDK.VFSocialLoginLoginError {
+extension ViafouraSDK.VFSocialLoginError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -322,9 +323,7 @@ extension ViafouraSDK.VFMuteUserError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFOpenIdLoginData, ViafouraSDK.VFOpenIdLoginError>) -> ()))
-}
-public struct VFOpenIdLoginData {
+  public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFOpenIdLoginError>) -> ()))
 }
 public enum VFOpenIdLoginError : Foundation.LocalizedError {
   case unknown
@@ -450,6 +449,22 @@ extension ViafouraSDK.VFEditCommentError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFCustomBadgeView : UIKit.UIView {
   @objc deinit
+}
+extension ViafouraSDK.VFAuthenticationService {
+  public func loginRadiusLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginRadiusLoginError>) -> ()))
+}
+public enum VFLoginRadiusLoginError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFLoginRadiusLoginError, b: ViafouraSDK.VFLoginRadiusLoginError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFLoginRadiusLoginError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
@@ -645,7 +660,6 @@ public struct VFSettings {
   @objc deinit
 }
 extension ViafouraSDK.VFNewCommentViewController : UIKit.UITextViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
 public enum WidgetType : Swift.String, Swift.Encodable {
@@ -679,6 +693,23 @@ public enum VFUserInfoError : Foundation.LocalizedError {
 }
 extension ViafouraSDK.VFUserInfoError {
   public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFSocialLoginProvider : Swift.String, Swift.Encodable, Swift.Decodable {
+  case google
+  case twitter
+  case linkedin
+  case apple
+  case viafouraDefinedCookie
+  case facebook
+  case yahoo
+  case windowslive
+  case aol
+  case none
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -728,8 +759,8 @@ extension ViafouraSDK.VFFilterType : Swift.Equatable {}
 extension ViafouraSDK.VFFilterType : Swift.Hashable {}
 extension ViafouraSDK.VFSignUpError : Swift.Equatable {}
 extension ViafouraSDK.VFSignUpError : Swift.Hashable {}
-extension ViafouraSDK.VFSocialLoginLoginError : Swift.Equatable {}
-extension ViafouraSDK.VFSocialLoginLoginError : Swift.Hashable {}
+extension ViafouraSDK.VFSocialLoginError : Swift.Equatable {}
+extension ViafouraSDK.VFSocialLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentContainerError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentContainerError : Swift.Hashable {}
 extension ViafouraSDK.VFUnlikeCommentError : Swift.Equatable {}
@@ -755,6 +786,8 @@ extension ViafouraSDK.VFCommentListError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentListError : Swift.Hashable {}
 extension ViafouraSDK.VFEditCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFEditCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFLoginRadiusLoginError : Swift.Equatable {}
+extension ViafouraSDK.VFLoginRadiusLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFUndislikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFUndislikeCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentError : Swift.Equatable {}
@@ -768,5 +801,8 @@ extension ViafouraSDK.WidgetType : Swift.Hashable {}
 extension ViafouraSDK.WidgetType : Swift.RawRepresentable {}
 extension ViafouraSDK.VFUserInfoError : Swift.Equatable {}
 extension ViafouraSDK.VFUserInfoError : Swift.Hashable {}
+extension ViafouraSDK.VFSocialLoginProvider : Swift.Equatable {}
+extension ViafouraSDK.VFSocialLoginProvider : Swift.Hashable {}
+extension ViafouraSDK.VFSocialLoginProvider : Swift.RawRepresentable {}
 extension ViafouraSDK.VFDeleteCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFDeleteCommentError : Swift.Hashable {}

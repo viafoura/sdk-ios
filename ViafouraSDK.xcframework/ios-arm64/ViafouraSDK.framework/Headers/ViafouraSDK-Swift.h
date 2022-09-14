@@ -244,6 +244,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK8VFButton")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK19VFContentEditedView")
+@interface VFContentEditedView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK20VFContentRemovedView")
 @interface VFContentRemovedView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -326,7 +333,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 @class UITextView;
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
-- (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text SWIFT_WARN_UNUSED_RESULT;
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
 
@@ -376,6 +382,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 

@@ -1,4 +1,14 @@
 PODS:
+  - FBSDKCoreKit (5.15.1):
+    - FBSDKCoreKit/Basics (= 5.15.1)
+    - FBSDKCoreKit/Core (= 5.15.1)
+  - FBSDKCoreKit/Basics (5.15.1)
+  - FBSDKCoreKit/Core (5.15.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.15.1):
+    - FBSDKLoginKit/Login (= 5.15.1)
+  - FBSDKLoginKit/Login (5.15.1):
+    - FBSDKCoreKit (~> 5.0)
   - Google-Mobile-Ads-SDK (9.7.0):
     - GoogleAppMeasurement (< 10.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -40,33 +50,46 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.7.0)"
   - GoogleUtilities/Reachability (7.7.0):
     - GoogleUtilities/Logger
+  - LoginRadiusSDK (5.4.2):
+    - FBSDKLoginKit (~> 5.0)
+    - SimpleKeychain (~> 0.7.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.1)
+  - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
+  - LoginRadiusSDK (~> 5.4.2)
 
 SPEC REPOS:
   trunk:
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
+    - LoginRadiusSDK
     - nanopb
     - PromisesObjC
+    - SimpleKeychain
 
 SPEC CHECKSUMS:
+  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
+  FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
   Google-Mobile-Ads-SDK: 2685d6b3374b26de8a71f535614396e57cf80b13
   GoogleAppMeasurement: b907bdad775b6975a8108762345b2cfbf1a93c37
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  LoginRadiusSDK: 8226b8d6e9e0d8f7fe10d4410d63dc3f4ca40a5c
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
-PODFILE CHECKSUM: ef7cc9bd07939b0a0f52a17fe75b12242de00bea
+PODFILE CHECKSUM: 1fd27b349f6b22766600c13b69fa30bc227155ea
 
 COCOAPODS: 1.11.3
