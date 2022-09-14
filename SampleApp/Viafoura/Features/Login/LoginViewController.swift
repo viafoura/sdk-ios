@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import LoginRadiusSDK
+import ViafouraSDK
 
 class LoginViewController: UIViewController{
     let loginViewModel = LoginViewModel()
@@ -29,15 +30,6 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var closeImage: UIImageView!
     
     var onDoneBlock: ((Bool) -> Void)?
-    
-    enum SocialLoginType: String {
-        case facebook
-        case twitter
-        case linkedin
-        case apple
-        case google
-
-    }
 
     struct VCIdentifier {
         static let signupVC = "SignUpViewController"
@@ -163,12 +155,13 @@ class LoginViewController: UIViewController{
         }
     }
     
-    func performSocialLogin(loginType: SocialLoginType){
+    func performSocialLogin(loginType: VFSocialLoginProvider){
         LoginRadiusSocialLoginManager.sharedInstance().login(withProvider: loginType.rawValue, in: self, completionHandler: { result, error in
             if let token = result?["access_token"] as? String {
-                self.loginViewModel.socialLogin(token: token, completion: { result in
+                self.loginViewModel.socialLogin(token: token, provider: loginType, completion: { result in
                     switch result {
-                    case .success(let string):
+                    case .success(_):
+                        self.onDoneBlock?(true)
                         self.dismiss(animated: true)
                     case .failure(let error):
                         self.showAlert(title: "Error", message: error.localizedDescription)
@@ -206,7 +199,7 @@ class LoginViewController: UIViewController{
             self.loadingView.isHidden = true
             self.submitButton.isHidden = false
             switch result {
-            case .success(let string):
+            case .success(_):
                 self.onDoneBlock?(true)
                 self.dismiss(animated: true)
             case .failure(let error):

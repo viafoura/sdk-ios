@@ -11,7 +11,7 @@ import ViafouraSDK
 class LoginViewModel{
     let auth = ViafouraSDK.auth()
     
-    func login(email: String, password: String, completion: @escaping ((Result<VFLoginData, VFLoginError>) -> ())){
+    func login(email: String, password: String, completion: @escaping ((Result<UserResponse, VFLoginError>) -> ())){
         auth.login(email: email, password: password, completion: { result in
             DispatchQueue.main.async {
                 completion(result)
@@ -19,8 +19,8 @@ class LoginViewModel{
         })
     }
     
-    func socialLogin(token: String, completion: @escaping ((Result<VFSocialLoginData, VFSocialLoginError>) -> ())){
-        auth.socialLogin(token: token, completion: { result in
+    func socialLogin(token: String, provider: VFSocialLoginProvider, completion: @escaping ((Result<UserResponse, VFSocialLoginError>) -> ())){
+        auth.socialLogin(token: token, provider: provider, completion: { result in
             DispatchQueue.main.async {
                 completion(result)
             }
