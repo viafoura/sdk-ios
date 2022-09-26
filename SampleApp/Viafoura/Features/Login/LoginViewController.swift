@@ -25,6 +25,8 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var twitterView: UIView!
     @IBOutlet weak var appleView: UIView!
     
+    @IBOutlet weak var passwordResetLabel: UILabel!
+    
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
     @IBOutlet weak var closeImage: UIImageView!
@@ -51,6 +53,9 @@ class LoginViewController: UIViewController{
         closeImage.isUserInteractionEnabled = true
         closeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeTapped)))
         
+        passwordResetLabel.isUserInteractionEnabled = true
+        passwordResetLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(passwordResetTapped)))
+        
         signupButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(signupTapped)))
         submitButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(submitTapped)))
         
@@ -74,12 +79,36 @@ class LoginViewController: UIViewController{
         twitterViewRecognizer.minimumPressDuration = 0
         twitterView.addGestureRecognizer(twitterViewRecognizer)
     }
-    
+
     @objc
     func closeTapped(){
         self.dismiss(animated: true)
     }
-    
+
+    @objc
+    func passwordResetTapped(){
+        let alert = UIAlertController(title: "Reset your password", message: "Enter your e-mail", preferredStyle: UIAlertController.Style.alert)
+        alert.addTextField()
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: { _ in
+            guard let alertTextFields = alert.textFields, let textField = alertTextFields.first, let emailText = textField.text else {
+                return
+            }
+             
+            self.loginViewModel.passwordReset(email: emailText, completion: { result in
+                switch result {
+                case .success(let result):
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            })
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
     @objc
     func twitterTapped(gesture: UILongPressGestureRecognizer){
         if gesture.state == .began {
@@ -94,7 +123,7 @@ class LoginViewController: UIViewController{
             self.performSocialLogin(loginType: .twitter)
         }
     }
-    
+
     @objc
     func appleTapped(gesture: UILongPressGestureRecognizer){
         if gesture.state == .began {

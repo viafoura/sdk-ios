@@ -295,6 +295,12 @@
                                     <constraint firstAttribute="height" constant="30" id="yr4-Nw-gBC"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset my password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpG-1a-oEU">
+                                <rect key="frame" x="140.5" y="644" width="133.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="ColorBorder1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ivk-J8-hVr"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,6 +310,7 @@
                             <constraint firstItem="jlN-Ba-uoN" firstAttribute="top" secondItem="euI-Oy-Yw5" secondAttribute="bottom" constant="55" id="6kP-VV-RQi"/>
                             <constraint firstItem="snq-J3-XV2" firstAttribute="top" secondItem="4Nf-9D-OKo" secondAttribute="bottom" constant="20" id="BAC-Ku-MF4"/>
                             <constraint firstItem="v6r-ZM-gOc" firstAttribute="top" secondItem="snq-J3-XV2" secondAttribute="bottom" constant="40" id="E4z-cI-5gq"/>
+                            <constraint firstItem="jpG-1a-oEU" firstAttribute="centerX" secondItem="XIF-YB-2Qf" secondAttribute="centerX" id="EIg-ds-fJe"/>
                             <constraint firstItem="ivk-J8-hVr" firstAttribute="trailing" secondItem="4Nf-9D-OKo" secondAttribute="trailing" constant="20" id="Gu6-IU-0gs"/>
                             <constraint firstItem="ivk-J8-hVr" firstAttribute="trailing" secondItem="6s1-J6-mGT" secondAttribute="trailing" constant="30" id="Ieu-eR-ynW"/>
                             <constraint firstItem="tmG-2F-KgJ" firstAttribute="top" secondItem="ivk-J8-hVr" secondAttribute="top" constant="20" id="Imd-Yw-Gej"/>
@@ -319,6 +326,7 @@
                             <constraint firstItem="QoS-At-gJk" firstAttribute="top" secondItem="ivk-J8-hVr" secondAttribute="top" constant="30" id="oxz-FR-dXv"/>
                             <constraint firstItem="6s1-J6-mGT" firstAttribute="top" secondItem="QoS-At-gJk" secondAttribute="bottom" constant="60" id="vmb-w1-wFn"/>
                             <constraint firstItem="v6r-ZM-gOc" firstAttribute="leading" secondItem="ivk-J8-hVr" secondAttribute="leading" constant="20" id="xIQ-24-VeX"/>
+                            <constraint firstItem="jpG-1a-oEU" firstAttribute="top" secondItem="v6r-ZM-gOc" secondAttribute="bottom" constant="30" id="y7M-58-PUG"/>
                             <constraint firstItem="euI-Oy-Yw5" firstAttribute="leading" secondItem="ivk-J8-hVr" secondAttribute="leading" constant="30" id="ywm-nF-yLs"/>
                         </constraints>
                     </view>
@@ -330,6 +338,7 @@
                         <outlet property="googleView" destination="FwQ-pZ-Rxv" id="LtA-aP-i4M"/>
                         <outlet property="linkedinView" destination="s9q-AL-3hv" id="gsU-su-pNi"/>
                         <outlet property="loadingView" destination="jlN-Ba-uoN" id="AGl-1r-GBU"/>
+                        <outlet property="passwordResetLabel" destination="jpG-1a-oEU" id="DJa-Mu-hac"/>
                         <outlet property="passwordTextField" destination="euI-Oy-Yw5" id="Vsr-IJ-VGX"/>
                         <outlet property="signupButton" destination="snq-J3-XV2" id="adB-uW-0Jr"/>
                         <outlet property="submitButton" destination="4Nf-9D-OKo" id="gPj-lW-t51"/>
@@ -588,6 +597,9 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="ColorBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorBorder1">
+            <color red="0.58039215686274515" green="0.58039215686274515" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

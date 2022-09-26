@@ -19,6 +19,10 @@ class LoginViewModel{
         })
     }
     
+    func passwordReset(email: String, completion: @escaping ((Result<Bool, VFPasswordResetError>) -> ())){
+        auth.resetPassword(email: email, completion: completion)
+    }
+    
     func socialLogin(token: String, provider: VFSocialLoginProvider, completion: @escaping ((Result<UserResponse, VFSocialLoginError>) -> ())){
         auth.socialLogin(token: token, provider: provider, completion: { result in
             DispatchQueue.main.async {
