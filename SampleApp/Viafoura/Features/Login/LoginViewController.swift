@@ -92,7 +92,7 @@ class LoginViewController: UIViewController{
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: { _ in
-            guard let alertTextFields = alert.textFields, let textField = alertTextFields.first, let emailText = textField.text else {
+            guard let alertTextFields = alert.textFields, let textField = alertTextFields.first, let emailText = textField.text, self.loginViewModel.isValidEmail(emailText) else {
                 return
             }
              
@@ -214,7 +214,7 @@ class LoginViewController: UIViewController{
     
     @objc
     func submitTapped(){
-        guard let email = emailTextField.text else{
+        guard let email = emailTextField.text, self.loginViewModel.isValidEmail(email) else{
             return
         }
         
