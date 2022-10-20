@@ -7,6 +7,7 @@
 
 import UIKit
 import ViafouraSDK
+import FirebaseCore
 import LoginRadiusSDK
 import GoogleMobileAds
 
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
         
+        FirebaseApp.configure()
+
         let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()
         sdk.applicationLaunched(options: launchOptions)
         
