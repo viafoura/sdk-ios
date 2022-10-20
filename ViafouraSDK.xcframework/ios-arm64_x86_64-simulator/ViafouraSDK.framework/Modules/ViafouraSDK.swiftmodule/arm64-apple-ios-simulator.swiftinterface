@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios15.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ViafouraSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import Foundation
 import KeychainAccess
@@ -10,6 +11,20 @@ import SafariServices
 import Swift
 import UIKit
 import _Concurrency
+import _StringProcessing
+public enum VFDislikeChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFDislikeChatError, b: ViafouraSDK.VFDislikeChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFDislikeChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEditorPicksView : UIKit.UIView {
   @objc deinit
 }
@@ -19,11 +34,13 @@ public struct VFColors {
   public static let colorText2Default: UIKit.UIColor
   public static let colorSeparatorDefault: UIKit.UIColor
   public static let colorFollowingDefault: UIKit.UIColor
+  public static let colorErrorDefault: UIKit.UIColor
   public static let colorPinnedDefault: UIKit.UIColor
   public static let colorPrimaryDefault: UIKit.UIColor
   public static let colorPrimaryLightDefault: UIKit.UIColor
   public static let colorBorder1Default: UIKit.UIColor
-  public init(colorPrimary: UIKit.UIColor = colorPrimaryDefault, colorPrimaryLight: UIKit.UIColor = colorPrimaryLightDefault, colorBackground: UIKit.UIColor = colorBackgroundDefault, colorSeparator: UIKit.UIColor = colorSeparatorDefault)
+  public static let colorModeratorBadgeDefault: UIKit.UIColor
+  public init(colorPrimary: UIKit.UIColor = colorPrimaryDefault, colorPrimaryLight: UIKit.UIColor = colorPrimaryLightDefault, colorBackground: UIKit.UIColor = colorBackgroundDefault, colorSeparator: UIKit.UIColor = colorSeparatorDefault, colorAvatars: [UIKit.UIColor] = Constants.AvatarColors.colors)
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
@@ -63,6 +80,19 @@ extension ViafouraSDK.VFLoginStatusError {
     get
   }
 }
+public enum VFUnflagCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFUnflagCommentError, b: ViafouraSDK.VFUnflagCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFUnflagCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public protocol VFAdDelegate {
   func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView
   func getAdInterval() -> Swift.Int
@@ -76,6 +106,19 @@ public enum VFFlagCommentError : Foundation.LocalizedError {
   }
 }
 extension ViafouraSDK.VFFlagCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFChatListError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFChatListError, b: ViafouraSDK.VFChatListError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFChatListError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -107,6 +150,19 @@ public enum VFNewCommentActionType {
   case reply(content: Foundation.UUID)
   case edit(content: Foundation.UUID)
 }
+public enum VFSingleChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFSingleChatError, b: ViafouraSDK.VFSingleChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFSingleChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFDislikeCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFDislikeCommentError, b: ViafouraSDK.VFDislikeCommentError) -> Swift.Bool
@@ -125,6 +181,19 @@ extension ViafouraSDK.VFDislikeCommentError {
   public func logEvent(eventType: ViafouraSDK.EventType, eventSessionUUID: Foundation.UUID, eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
   public func logTyping(contentContainerUUID: Foundation.UUID, threadUUID: Foundation.UUID, contentUUID: Foundation.UUID)
   @objc deinit
+}
+public enum VFChatSelectionError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFChatSelectionError, b: ViafouraSDK.VFChatSelectionError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFChatSelectionError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 extension ViafouraSDK.VFAuthenticationService {
   public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> ()))
@@ -147,8 +216,8 @@ extension ViafouraSDK.VFAuthenticationService {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var isEnabled: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @objc get
+    @objc set
   }
   @objc deinit
 }
@@ -161,6 +230,19 @@ public enum VFLikeCommentError : Foundation.LocalizedError {
   }
 }
 extension ViafouraSDK.VFLikeCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFEnableCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFEnableCommentError, b: ViafouraSDK.VFEnableCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFEnableCommentError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -188,8 +270,34 @@ public enum CommentNodeType {
     get
   }
 }
+public enum VFUnflagChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFUnflagChatError, b: ViafouraSDK.VFUnflagChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFUnflagChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSegmentedControl : UIKit.UISegmentedControl {
   @objc deinit
+}
+public enum VFLikeChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFLikeChatError, b: ViafouraSDK.VFLikeChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFLikeChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
   @objc deinit
@@ -219,11 +327,37 @@ public enum VFFilterType {
     get
   }
 }
+public enum VFUndislikeChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFUndislikeChatError, b: ViafouraSDK.VFUndislikeChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFUndislikeChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFContentEditedView : UIKit.UIView {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class VFAuthenticationService {
   @objc deinit
+}
+public enum VFEditorPickCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFEditorPickCommentError, b: ViafouraSDK.VFEditorPickCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFEditorPickCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 extension ViafouraSDK.VFAuthenticationService {
   public func signup(name: Swift.String, email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSignUpError>) -> ()))
@@ -322,6 +456,19 @@ extension ViafouraSDK.VFMuteUserError {
     get
   }
 }
+public enum VFFlagChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFFlagChatError, b: ViafouraSDK.VFFlagChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFFlagChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 extension ViafouraSDK.VFAuthenticationService {
   public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFOpenIdLoginError>) -> ()))
 }
@@ -342,7 +489,20 @@ public struct UserResponse : Swift.Decodable {
   public init(from decoder: Swift.Decoder) throws
 }
 public protocol VFLayoutDelegate {
-  func containerHeightUpdated(height: CoreGraphics.CGFloat)
+  func containerHeightUpdated(height: CoreFoundation.CGFloat)
+}
+public enum VFDeleteChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFDeleteChatError, b: ViafouraSDK.VFDeleteChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFDeleteChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
@@ -355,6 +515,13 @@ public enum VFCreateCommentError : Foundation.LocalizedError {
 extension ViafouraSDK.VFCreateCommentError {
   public var errorDescription: Swift.String? {
     get
+  }
+}
+public struct Constants {
+}
+extension ViafouraSDK.Constants {
+  public struct AvatarColors {
+    public static let colors: [UIKit.UIColor]
   }
 }
 extension UIKit.UIDevice {
@@ -406,6 +573,9 @@ public enum EventType : Swift.String, Swift.Encodable {
   public var rawValue: Swift.String {
     get
   }
+}
+@_hasMissingDesignatedInitializers public class ChatContent {
+  @objc deinit
 }
 public enum VFSortType {
   case newest
@@ -474,7 +644,7 @@ extension ViafouraSDK.VFLoginRadiusLoginError {
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: ViafouraSDK.VFAdDelegate)
   @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: ViafouraSDK.VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: ViafouraSDK.VFLayoutDelegate)
-  @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -502,7 +672,7 @@ extension ViafouraSDK.VFUndislikeCommentError {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -556,6 +726,19 @@ public enum VFCustomizableView {
   case previewCounterLabel(label: ViafouraSDK.VFLabel)
   case previewLoadingView(loadingView: ViafouraSDK.VFLoadingView)
 }
+public enum VFUnpinCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFUnpinCommentError, b: ViafouraSDK.VFUnpinCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFUnpinCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFCommentRepliesError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFCommentRepliesError, b: ViafouraSDK.VFCommentRepliesError) -> Swift.Bool
@@ -565,6 +748,19 @@ public enum VFCommentRepliesError : Foundation.LocalizedError {
   }
 }
 extension ViafouraSDK.VFCommentRepliesError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFReplyChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFReplyChatError, b: ViafouraSDK.VFReplyChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFReplyChatError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -584,6 +780,19 @@ extension ViafouraSDK.VFCommentRepliesError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSeparatorView : UIKit.UIView {
   @objc deinit
+}
+public enum VFChatContainerError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFChatContainerError, b: ViafouraSDK.VFChatContainerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFChatContainerError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers public class CommentContent {
   @objc deinit
@@ -609,6 +818,19 @@ extension ViafouraSDK.VFCookieLoginError {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNewRepliesNotificationView : UIKit.UIView {
   @objc deinit
 }
+public enum VFCreateChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFCreateChatError, b: ViafouraSDK.VFCreateChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFCreateChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public struct VFFonts {
   public static let fontBlackDefault: UIKit.UIFont
   public static let fontBoldDefault: UIKit.UIFont
@@ -626,14 +848,66 @@ public struct VFFonts {
   public var fontSemibold: UIKit.UIFont
   public init(fontLight: UIKit.UIFont = fontLightDefault, fontRegular: UIKit.UIFont = fontRegularDefault, fontMedium: UIKit.UIFont = fontMediumDefault, fontSemibold: UIKit.UIFont = fontSemiboldDefault, fontBold: UIKit.UIFont = fontBoldDefault)
 }
+public enum VFRemoveEditorPickCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFRemoveEditorPickCommentError, b: ViafouraSDK.VFRemoveEditorPickCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFRemoveEditorPickCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public protocol StoryboardCreateable : UIKit.UIViewController {
   static var storyboardName: Swift.String { get }
 }
 extension ViafouraSDK.StoryboardCreateable {
   public static func new() -> Self?
 }
+public enum VFSpamCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFSpamCommentError, b: ViafouraSDK.VFSpamCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFSpamCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFPinnedView : UIKit.UIView {
   @objc deinit
+}
+public enum VFPinCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFPinCommentError, b: ViafouraSDK.VFPinCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFPinCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFUnlikeChatError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFUnlikeChatError, b: ViafouraSDK.VFUnlikeChatError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFUnlikeChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public protocol VFCustomUIDelegate {
   func customizeView(view: ViafouraSDK.VFCustomizableView)
@@ -650,10 +924,10 @@ public struct VFSettings {
   @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: ViafouraSDK.VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
+    @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var canResignFirstResponder: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
+    @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -675,11 +949,27 @@ public enum WidgetType : Swift.String, Swift.Encodable {
     get
   }
 }
+extension ViafouraSDK.VFAuthenticationService {
+  public func resetPassword(email: Swift.String, completion: @escaping ((Swift.Result<Swift.Bool, ViafouraSDK.VFPasswordResetError>) -> ()))
+}
+public enum VFPasswordResetError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFPasswordResetError, b: ViafouraSDK.VFPasswordResetError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFPasswordResetError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFImageView : UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
   @available(iOS 3.0, *)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -692,6 +982,19 @@ public enum VFUserInfoError : Foundation.LocalizedError {
   }
 }
 extension ViafouraSDK.VFUserInfoError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFDisableCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFDisableCommentError, b: ViafouraSDK.VFDisableCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFDisableCommentError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -715,9 +1018,22 @@ public enum VFSocialLoginProvider : Swift.String, Swift.Encodable, Swift.Decodab
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFTextView : UIKit.UITextView {
   @available(iOS 7.0, *)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+public enum VFUnspamCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFUnspamCommentError, b: ViafouraSDK.VFUnspamCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFUnspamCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public enum VFDeleteCommentError : Foundation.LocalizedError {
   case unknown
@@ -732,31 +1048,59 @@ extension ViafouraSDK.VFDeleteCommentError {
     get
   }
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveChatViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ViafouraSDK.VFDislikeChatError : Swift.Equatable {}
+extension ViafouraSDK.VFDislikeChatError : Swift.Hashable {}
 extension ViafouraSDK.VFCreateCommentReplyError : Swift.Equatable {}
 extension ViafouraSDK.VFCreateCommentReplyError : Swift.Hashable {}
 extension ViafouraSDK.VFLoginStatus : Swift.Equatable {}
 extension ViafouraSDK.VFLoginStatus : Swift.Hashable {}
 extension ViafouraSDK.VFLoginStatusError : Swift.Equatable {}
 extension ViafouraSDK.VFLoginStatusError : Swift.Hashable {}
+extension ViafouraSDK.VFUnflagCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFUnflagCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFFlagCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFFlagCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFChatListError : Swift.Equatable {}
+extension ViafouraSDK.VFChatListError : Swift.Hashable {}
 extension ViafouraSDK.VFProfilePresentationType : Swift.Equatable {}
 extension ViafouraSDK.VFProfilePresentationType : Swift.Hashable {}
+extension ViafouraSDK.VFSingleChatError : Swift.Equatable {}
+extension ViafouraSDK.VFSingleChatError : Swift.Hashable {}
 extension ViafouraSDK.VFDislikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFDislikeCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFChatSelectionError : Swift.Equatable {}
+extension ViafouraSDK.VFChatSelectionError : Swift.Hashable {}
 extension ViafouraSDK.VFLoginError : Swift.Equatable {}
 extension ViafouraSDK.VFLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFLikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFLikeCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFEnableCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFEnableCommentError : Swift.Hashable {}
 extension ViafouraSDK.EventAttemptedAction : Swift.Equatable {}
 extension ViafouraSDK.EventAttemptedAction : Swift.Hashable {}
 extension ViafouraSDK.EventAttemptedAction : Swift.RawRepresentable {}
 extension ViafouraSDK.CommentNodeType : Swift.Equatable {}
 extension ViafouraSDK.CommentNodeType : Swift.Hashable {}
+extension ViafouraSDK.VFUnflagChatError : Swift.Equatable {}
+extension ViafouraSDK.VFUnflagChatError : Swift.Hashable {}
+extension ViafouraSDK.VFLikeChatError : Swift.Equatable {}
+extension ViafouraSDK.VFLikeChatError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentsProfileError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentsProfileError : Swift.Hashable {}
 extension ViafouraSDK.VFFilterType : Swift.Equatable {}
 extension ViafouraSDK.VFFilterType : Swift.Hashable {}
+extension ViafouraSDK.VFUndislikeChatError : Swift.Equatable {}
+extension ViafouraSDK.VFUndislikeChatError : Swift.Hashable {}
+extension ViafouraSDK.VFEditorPickCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFEditorPickCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFSignUpError : Swift.Equatable {}
 extension ViafouraSDK.VFSignUpError : Swift.Hashable {}
 extension ViafouraSDK.VFSocialLoginError : Swift.Equatable {}
@@ -771,8 +1115,12 @@ extension ViafouraSDK.VFUnmuteUserError : Swift.Equatable {}
 extension ViafouraSDK.VFUnmuteUserError : Swift.Hashable {}
 extension ViafouraSDK.VFMuteUserError : Swift.Equatable {}
 extension ViafouraSDK.VFMuteUserError : Swift.Hashable {}
+extension ViafouraSDK.VFFlagChatError : Swift.Equatable {}
+extension ViafouraSDK.VFFlagChatError : Swift.Hashable {}
 extension ViafouraSDK.VFOpenIdLoginError : Swift.Equatable {}
 extension ViafouraSDK.VFOpenIdLoginError : Swift.Hashable {}
+extension ViafouraSDK.VFDeleteChatError : Swift.Equatable {}
+extension ViafouraSDK.VFDeleteChatError : Swift.Hashable {}
 extension ViafouraSDK.VFCreateCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFCreateCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFUserCommentsError : Swift.Equatable {}
@@ -792,17 +1140,39 @@ extension ViafouraSDK.VFUndislikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFUndislikeCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFUnpinCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFUnpinCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentRepliesError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentRepliesError : Swift.Hashable {}
+extension ViafouraSDK.VFReplyChatError : Swift.Equatable {}
+extension ViafouraSDK.VFReplyChatError : Swift.Hashable {}
+extension ViafouraSDK.VFChatContainerError : Swift.Equatable {}
+extension ViafouraSDK.VFChatContainerError : Swift.Hashable {}
 extension ViafouraSDK.VFCookieLoginError : Swift.Equatable {}
 extension ViafouraSDK.VFCookieLoginError : Swift.Hashable {}
+extension ViafouraSDK.VFCreateChatError : Swift.Equatable {}
+extension ViafouraSDK.VFCreateChatError : Swift.Hashable {}
+extension ViafouraSDK.VFRemoveEditorPickCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFRemoveEditorPickCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFSpamCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFSpamCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFPinCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFPinCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFUnlikeChatError : Swift.Equatable {}
+extension ViafouraSDK.VFUnlikeChatError : Swift.Hashable {}
 extension ViafouraSDK.WidgetType : Swift.Equatable {}
 extension ViafouraSDK.WidgetType : Swift.Hashable {}
 extension ViafouraSDK.WidgetType : Swift.RawRepresentable {}
+extension ViafouraSDK.VFPasswordResetError : Swift.Equatable {}
+extension ViafouraSDK.VFPasswordResetError : Swift.Hashable {}
 extension ViafouraSDK.VFUserInfoError : Swift.Equatable {}
 extension ViafouraSDK.VFUserInfoError : Swift.Hashable {}
+extension ViafouraSDK.VFDisableCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFDisableCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFSocialLoginProvider : Swift.Equatable {}
 extension ViafouraSDK.VFSocialLoginProvider : Swift.Hashable {}
 extension ViafouraSDK.VFSocialLoginProvider : Swift.RawRepresentable {}
+extension ViafouraSDK.VFUnspamCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFUnspamCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFDeleteCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFDeleteCommentError : Swift.Hashable {}
