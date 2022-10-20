@@ -56,9 +56,8 @@ class ArticleViewController: UIViewController {
         webView.allowsLinkPreview = false
         webView.load(URLRequest(url: URL(string: articleViewModel.story.link)!))
 
-        let fonts = VFFonts()
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
-        settings = VFSettings(colors: colors, fonts: fonts)
+        settings = VFSettings(colors: colors)
     }
     
     func addPreCommentViewController(){
@@ -205,7 +204,7 @@ extension ArticleViewController: VFLayoutDelegate {
 
 extension ArticleViewController: VFAdDelegate {
     func generateAd(adPosition: Int) -> VFAdView {
-        if articleViewModel.story.title == "Recursos públicos" {
+        if articleViewModel.story.title == "Moving Staff to Cover the Coronavirus" {
             let adView = VFAdView()
             adView.translatesAutoresizingMaskIntoConstraints = false
 
