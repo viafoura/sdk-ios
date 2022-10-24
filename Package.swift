@@ -23,10 +23,12 @@ let package = Package(
         .target(
             name: "SPMTarget",
             dependencies: [
-                .target(name: "ViafouraSDK", condition: .when(platforms: .some([.iOS]))),
+                .target(name: "ViafouraSDK"),
                 "KeychainAccess",
                 "Kingfisher"
-            ]
+            ],
+            path: "Sources/SPMTarget",
+            publicHeadersPath: ""
         ),
         .binaryTarget(
             name: "ViafouraSDK",
