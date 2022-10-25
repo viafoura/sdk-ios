@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ViafouraCore'
-  s.version          = '0.0.5'
+  s.version          = '0.0.6'
   s.swift_versions = ['5.0']
   s.summary          = 'Viafoura SDK'
   s.description      = 'This SDK allows you to integrate Viafoura tools into your iOS app.'
@@ -39,4 +39,6 @@ Pod::Spec.new do |s|
 # the Pre-Compiled Framework:
   s.source          = { :git => 'https://github.com/viafoura/sdk-ios.git', :tag => s.version.to_s }
   s.ios.vendored_frameworks = 'ViafouraSDK.xcframework'
+  s.dependency 'Kingfisher', '~> 7.0'
+  s.dependency 'KeychainAccess'
 end
