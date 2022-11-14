@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ViafouraSDK
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

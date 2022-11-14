@@ -12,6 +12,8 @@ class ArticleViewModel {
     let story: Story
     var articleMetadata: VFArticleMetadata!
     
+    var selectedContentUUID: UUID?
+    
     init(story: Story){
         self.story = story
         
