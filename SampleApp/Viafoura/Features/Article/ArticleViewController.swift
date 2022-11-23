@@ -72,12 +72,13 @@ class ArticleViewController: UIViewController {
         let callbacks: VFActionsCallbacks = { type in
             switch type {
             case .trendingArticlePressed(let metadata, let containerId):
+                break
             default:
                 break
             }
         }
         
-        guard let trendingViewController = VFVerticalTrendingViewController.new(containerId: articleViewModel.story.containerId, title: "Trending content", limit: 5, daysPublished: 12, trendWindow: 12, sort: .comments, viewType: .full, settings: settings) else {
+        guard let trendingViewController = VFCarouselTrendingViewController.new(containerId: articleViewModel.story.containerId, title: "Trending content", limit: 5, daysPublished: nil, trendWindow: 48, sort: .comments, settings: settings) else {
             return
         }
 
@@ -244,7 +245,7 @@ extension ArticleViewController: VFLayoutDelegate {
 
 extension ArticleViewController: VFAdDelegate {
     func generateAd(adPosition: Int) -> VFAdView {
-        if articleViewModel.story.title == "Moving Staff to Cover the Coronavirus" {
+        if false {
             let adView = VFAdView()
             adView.translatesAutoresizingMaskIntoConstraints = false
 

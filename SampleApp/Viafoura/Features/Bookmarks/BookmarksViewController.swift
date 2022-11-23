@@ -14,6 +14,10 @@ class BookmarksViewController: UIViewController {
     
     let viewModel = BookmarksViewModel()
     
+    struct VCIdentifier {
+        static let loginVC = "LoginViewController"
+    }
+    
     struct CellIdentifier {
         static let bookmarkCell = "bookmarkCell"
     }
@@ -32,17 +36,23 @@ class BookmarksViewController: UIViewController {
 
 extension BookmarksViewController: VFLoginDelegate {
     func startLogin() {
+        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+            return
+        }
         
+        self.present(loginVC, animated: true)
     }
 }
 
 extension BookmarksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let metadata = VFArticleMetadata(url: URL(string: "https://www.viafoura-mobile-demo.vercel.app")!, title: "Test", subtitle: "Summar", thumbnailUrl: URL(string: "https://www.viafoura-mobile-demo.vercel.app")!)
+        let bookmark = viewModel.bookmarks[indexPath.row]
+        let metadata = VFArticleMetadata(url: URL(string: "https://www.viafoura-mobile-demo.vercel.app")!, title: bookmark.title, subtitle: "Summar", thumbnailUrl: URL(string: "https://www.viafoura-mobile-demo.vercel.app")!)
         let settings = VFSettings(colors: VFColors())
-        guard let vc = VFLiveChatViewController.new(containerId: "test_container_id", articleMetadata: metadata, loginDelegate: self, settings: settings) else {
+        guard let vc = VFLiveChatViewController.new(containerId: bookmark.title, articleMetadata: metadata, loginDelegate: self, settings: settings) else {
             return
         }
+        vc.title = bookmark.title
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

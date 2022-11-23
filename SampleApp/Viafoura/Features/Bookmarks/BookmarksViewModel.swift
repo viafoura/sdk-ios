@@ -15,6 +15,9 @@ class BookmarksViewModel {
     var bookmarks: [Bookmark] = []
     
     init(){
-        bookmarks.append(Bookmark(title: "Enterteinment", image: "star"))
+        bookmarks.append(Bookmark(title: "Sports", image: "star"))
+        bookmarks.append(Bookmark(title: "Politics", image: "star"))
+        bookmarks.append(Bookmark(title: "Fashion", image: "star"))
+        bookmarks.append(Bookmark(title: "Business", image: "star"))
     }
 }
