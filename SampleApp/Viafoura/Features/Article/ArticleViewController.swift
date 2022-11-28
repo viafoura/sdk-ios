@@ -84,10 +84,11 @@ class ArticleViewController: UIViewController {
 
         trendingViewController.setCustomUIDelegate(customUIDelegate: self)
         trendingViewController.setActionCallbacks(callbacks: callbacks)
-        trendingViewController.setLayoutDelegate(layoutDelegate:  self)
+        trendingViewController.setLayoutDelegate(layoutDelegate: self)
 
         addChild(trendingViewController)
         trendingContainerView.addSubview(trendingViewController.view)
+        trendingContainerView.clipsToBounds = true
 
         trendingViewController.view.frame = CGRect(x: 0, y: 0, width: trendingContainerView.frame.width, height: trendingViewController.view.frame.height)
         
@@ -203,7 +204,7 @@ extension ArticleViewController: WKNavigationDelegate{
         webView.isHidden = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.webViewHeight.constant = webView.scrollView.contentSize.height - 1000
+            self.webViewHeight.constant = webView.scrollView.contentSize.height
         }
     }
 }
