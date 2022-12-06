@@ -17,11 +17,6 @@ class HomeViewController: UIViewController {
         static let storyCell = "storyCell"
     }
     
-    struct VCIdentifier {
-        static let loginVC = "LoginViewController"
-        static let articleVC = "ArticleViewController"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

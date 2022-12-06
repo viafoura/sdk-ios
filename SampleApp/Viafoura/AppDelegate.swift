@@ -8,16 +8,19 @@
 import UIKit
 import ViafouraSDK
 import FirebaseCore
+import FirebaseMessaging
 import LoginRadiusSDK
 import GoogleMobileAds
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
         
         FirebaseApp.configure()
+        
+        Messaging.messaging().delegate = self
 
         let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()
         sdk.applicationLaunched(options: launchOptions)
@@ -25,7 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
         applyUIStyling()
+
+        registerForNotifications(application: application)
+
         return true
+    }
+    
+    func registerForNotifications(application: UIApplication){
+        UNUserNotificationCenter.current().delegate = self
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+          options: authOptions,
+          completionHandler: { _, _ in }
+        )
+
+        application.registerForRemoteNotifications()
     }
 
     func applyUIStyling(){
@@ -38,6 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
     }
 
     // MARK: UISceneSession Lifecycle
@@ -53,7 +79,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

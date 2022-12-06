@@ -14,10 +14,6 @@ class BookmarksViewController: UIViewController {
     
     let viewModel = BookmarksViewModel()
     
-    struct VCIdentifier {
-        static let loginVC = "LoginViewController"
-    }
-    
     struct CellIdentifier {
         static let bookmarkCell = "bookmarkCell"
     }

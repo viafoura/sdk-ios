@@ -26,11 +26,6 @@ class ArticleViewController: UIViewController {
     
     @IBOutlet weak var commentsContainerView: UIView!
     @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
-        
-    struct VCIdentifier {
-        static let loginVC = "LoginViewController"
-        static let articleVC = "ArticleViewController"
-    }
 
     var settings: VFSettings?
     
@@ -38,8 +33,36 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        addPreCommentViewController()
-        addTrendingViewController()
+        
+        if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
+            commentsContainerViewHeight.constant = 120
+            
+            let button = UIButton()
+            button.setTitle("See comments", for: .normal)
+            button.backgroundColor = .red
+            button.layer.cornerRadius = 4
+            button.clipsToBounds = true
+            button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seeCommentsTapped)))
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            commentsContainerView.addSubview(button)
+
+            button.widthAnchor.constraint(equalToConstant: 250).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 42).isActive = true
+            button.centerXAnchor.constraint(equalTo: self.commentsContainerView.centerXAnchor).isActive = true
+            button.centerYAnchor.constraint(equalTo: self.commentsContainerView.centerYAnchor).isActive = true
+        } else {
+            addPreCommentViewController()
+        }
+        
+        if UserDefaults.standard.bool(forKey: SettingsKeys.showTrendingArticles) == true {
+            addTrendingViewController()
+        }
+    }
+    
+    @objc
+    func seeCommentsTapped(){
+        presentCommentsContainerViewController()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -78,10 +101,11 @@ class ArticleViewController: UIViewController {
             }
         }
         
-        guard let trendingViewController = VFCarouselTrendingViewController.new(containerId: articleViewModel.story.containerId, title: "Trending content", limit: 5, daysPublished: nil, trendWindow: 48, sort: .comments, settings: settings) else {
+        guard let trendingViewController = VFVerticalTrendingViewController.new(containerId: articleViewModel.story.containerId, title: "Trending content", limit: 5, daysPublished: nil, trendWindow: 48, sort: .comments, viewType: .condensed, settings: settings) else {
             return
         }
 
+        trendingViewController.setAdDelegate(adDelegate: self)
         trendingViewController.setCustomUIDelegate(customUIDelegate: self)
         trendingViewController.setActionCallbacks(callbacks: callbacks)
         trendingViewController.setLayoutDelegate(layoutDelegate: self)
@@ -194,6 +218,15 @@ class ArticleViewController: UIViewController {
         newCommentViewController.setActionCallbacks(callbacks: callbacks)
         self.present(newCommentViewController, animated: true)
     }
+    
+    func presentCommentsContainerViewController(){
+        guard let commentsVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.commentsContainerVC) as? CommentsContainerViewController else{
+            return
+        }
+        commentsVC.viewModel = CommentsContainerViewModel(story: articleViewModel.story)
+        
+        self.navigationController?.pushViewController(commentsVC, animated: true)
+    }
 }
 
 extension ArticleViewController: WKNavigationDelegate{
@@ -235,7 +268,7 @@ extension ArticleViewController: VFCustomUIDelegate {
 }
 
 extension ArticleViewController: VFLayoutDelegate {
-    func containerHeightUpdated(viewController: UIViewController, height: CGFloat) {
+    func containerHeightUpdated(viewController: VFUIViewController, height: CGFloat) {
         if viewController is VFPreviewCommentsViewController {
             self.commentsContainerViewHeight.constant = height
         } else if viewController is VFVerticalTrendingViewController || viewController is VFCarouselTrendingViewController {
@@ -245,7 +278,7 @@ extension ArticleViewController: VFLayoutDelegate {
 }
 
 extension ArticleViewController: VFAdDelegate {
-    func generateAd(adPosition: Int) -> VFAdView {
+    func generateAd(viewController: VFUIViewController, adPosition: Int) -> VFAdView {
         if false {
             let adView = VFAdView()
             adView.translatesAutoresizingMaskIntoConstraints = false
@@ -325,7 +358,7 @@ extension ArticleViewController: VFAdDelegate {
             
             return adView
         } else {
-            let size = GADAdSizeBanner
+            let size = GADAdSizeMediumRectangle
             
             let adView = VFAdView()
             adView.translatesAutoresizingMaskIntoConstraints = false
@@ -344,7 +377,11 @@ extension ArticleViewController: VFAdDelegate {
         }
     }
     
-    func getAdInterval() -> Int {
+    func getFirstAdPosition(viewController: VFUIViewController) -> Int {
+        return 4
+    }
+    
+    func getAdInterval(viewController: VFUIViewController) -> Int {
         return 5
     }
 }
