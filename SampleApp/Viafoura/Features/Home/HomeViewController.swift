@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ViafouraSDK
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -14,11 +15,6 @@ class HomeViewController: UIViewController {
         
     struct CellIdentifier {
         static let storyCell = "storyCell"
-    }
-    
-    struct VCIdentifier {
-        static let loginVC = "LoginViewController"
-        static let articleVC = "ArticleViewController"
     }
     
     override func viewDidLoad() {

@@ -32,10 +32,6 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var closeImage: UIImageView!
     
     var onDoneBlock: ((Bool) -> Void)?
-
-    struct VCIdentifier {
-        static let signupVC = "SignUpViewController"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
