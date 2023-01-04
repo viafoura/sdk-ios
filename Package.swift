@@ -12,11 +12,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/kishikawakatsumi/KeychainAccess",
-            .branch("master")
+            .exact("4.2.2")
         ),
         .package(
             url: "https://github.com/onevcat/Kingfisher.git",
-            .branch("master")
+            .exact("7.4.0")
         )
     ],
     targets: [
