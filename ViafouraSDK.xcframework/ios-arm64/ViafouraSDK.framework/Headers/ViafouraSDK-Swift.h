@@ -259,6 +259,8 @@ using UInt = size_t;
 
 
 
+
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
@@ -270,6 +272,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK17VFAllCommentsView")
 @interface VFAllCommentsView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK24VFAwaitingModerationView")
+@interface VFAwaitingModerationView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -361,6 +370,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK17VFEditorPicksView")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK16VFEmptyChatsView")
+@interface VFEmptyChatsView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK19VFEmptyCommentsView")
 @interface VFEmptyCommentsView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -427,6 +443,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK24VFLiveChatViewController")
 @interface VFLiveChatViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
+
 
 
 
@@ -538,6 +555,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK9VFTabView")
 @interface VFTabView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK11VFTextField")
+@interface VFTextField : UITextField
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSTextContainer;
