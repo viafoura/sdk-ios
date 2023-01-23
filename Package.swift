@@ -9,16 +9,6 @@ let package = Package(
     products: [
         .library(name: "ViafouraCore", targets: ["SPMTarget"])
     ],
-    dependencies: [
-        .package(
-            url: "https://github.com/kishikawakatsumi/KeychainAccess",
-            .exact("4.2.2")
-        ),
-        .package(
-            url: "https://github.com/onevcat/Kingfisher.git",
-            .exact("7.4.0")
-        )
-    ],
     targets: [
         .target(
             name: "SPMTarget",
