@@ -39,6 +39,4 @@ Pod::Spec.new do |s|
 # the Pre-Compiled Framework:
   s.source          = { :git => 'https://github.com/viafoura/sdk-ios.git', :tag => s.version.to_s }
   s.ios.vendored_frameworks = 'ViafouraSDK.xcframework'
-  s.dependency 'Kingfisher'
-  s.dependency 'KeychainAccess'
 end
