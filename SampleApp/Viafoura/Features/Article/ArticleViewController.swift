@@ -104,7 +104,8 @@ class ArticleViewController: UIViewController {
         guard let trendingViewController = VFVerticalTrendingViewController.new(containerId: articleViewModel.story.containerId, title: "Trending content", limit: 5, daysPublished: nil, trendWindow: 48, sort: .comments, viewType: .condensed, settings: settings) else {
             return
         }
-
+        
+        trendingViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         trendingViewController.setAdDelegate(adDelegate: self)
         trendingViewController.setCustomUIDelegate(customUIDelegate: self)
         trendingViewController.setActionCallbacks(callbacks: callbacks)
@@ -138,12 +139,11 @@ class ArticleViewController: UIViewController {
             }
         }
         
-        let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .mostLiked)
-        
-        guard let preCommentsViewController = preCommentsViewController else {
+        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .mostLiked) else {
             return
         }
-
+        
+        preCommentsViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
@@ -179,10 +179,11 @@ class ArticleViewController: UIViewController {
             }
         }
         
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else {
+        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
             return
         }
 
+        profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
         profileViewController.setActionCallbacks(callbacks: callbacks)
         self.present(profileViewController, animated: true)
@@ -216,6 +217,7 @@ class ArticleViewController: UIViewController {
         guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings) else{
             return
         }
+        newCommentViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         newCommentViewController.setCustomUIDelegate(customUIDelegate: self)
         newCommentViewController.setActionCallbacks(callbacks: callbacks)
         self.present(newCommentViewController, animated: true)

@@ -14,9 +14,11 @@ public struct Setting {
 struct SettingsKeys {
     static let showTrendingArticles = "showTrendingArticles"
     static let commentsContainerFullscreen = "commentsContainerFullscreen"
+    static let darkMode = "darkMode"
 }
 
 public let defaultSettings: [Setting] = [
     Setting(title: "Use comments container on fullscreen", key: SettingsKeys.commentsContainerFullscreen),
-    Setting(title: "Show trending articles", key: SettingsKeys.showTrendingArticles)
+    Setting(title: "Show trending articles", key: SettingsKeys.showTrendingArticles),
+    Setting(title: "Dark mode", key: SettingsKeys.darkMode)
 ]

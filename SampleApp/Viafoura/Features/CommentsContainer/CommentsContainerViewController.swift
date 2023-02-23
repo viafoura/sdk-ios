@@ -47,6 +47,7 @@ class CommentsContainerViewController: UIViewController {
             return
         }
         
+        preCommentsViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
@@ -85,6 +86,7 @@ class CommentsContainerViewController: UIViewController {
             return
         }
 
+        profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
         profileViewController.setActionCallbacks(callbacks: callbacks)
         self.present(profileViewController, animated: true)
@@ -105,6 +107,7 @@ class CommentsContainerViewController: UIViewController {
         guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings) else{
             return
         }
+        newCommentViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         newCommentViewController.setCustomUIDelegate(customUIDelegate: self)
         newCommentViewController.setActionCallbacks(callbacks: callbacks)
         self.present(newCommentViewController, animated: true)
