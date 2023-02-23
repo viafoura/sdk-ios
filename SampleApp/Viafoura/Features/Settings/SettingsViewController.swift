@@ -10,14 +10,29 @@ class SettingsViewController: UITableViewController {
     let viewModel = SettingsViewModel()
     
     @IBOutlet weak var doneBarItem: UIBarButtonItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-
         doneBarItem.target = self
         doneBarItem.action = #selector(donePressed)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.darkModeChanged(notification:)), name: Notification.Name(SettingsKeys.darkMode), object: nil)
+    }
+    
+    @objc func darkModeChanged(notification: Notification) {
+        updateStyling()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateStyling()
+    }
+    
+    func updateStyling(){
+        navigationController?.overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
+        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
     }
     
     @objc func donePressed(sender: UIButton) {

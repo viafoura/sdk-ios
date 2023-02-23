@@ -11,10 +11,10 @@ public struct Setting {
     let key: String
 }
 
-struct SettingsKeys {
-    static let showTrendingArticles = "showTrendingArticles"
-    static let commentsContainerFullscreen = "commentsContainerFullscreen"
-    static let darkMode = "darkMode"
+public struct SettingsKeys {
+    public static let showTrendingArticles = "showTrendingArticles"
+    public static let commentsContainerFullscreen = "commentsContainerFullscreen"
+    public static let darkMode = "darkMode"
 }
 
 public let defaultSettings: [Setting] = [

@@ -25,6 +25,16 @@ class SignUpViewController: UIViewController{
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateStyling()
+    }
+    
+    func updateStyling(){
+        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
+    }
+    
     func setupUI(){
         loadingView.color = .red
         

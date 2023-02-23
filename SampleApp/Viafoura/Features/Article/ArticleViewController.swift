@@ -29,6 +29,8 @@ class ArticleViewController: UIViewController {
 
     var settings: VFSettings?
     
+    let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,11 +67,11 @@ class ArticleViewController: UIViewController {
         presentCommentsContainerViewController()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .darkContent
-    }
-    
     func setupUI(){
+        if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
+            view.backgroundColor = darkBackgroundColor
+        }
+
         self.title = articleViewModel.story.title
         
         webView.uiDelegate = self
@@ -82,7 +84,7 @@ class ArticleViewController: UIViewController {
         webView.scrollView.isScrollEnabled = false
         webView.allowsLinkPreview = false
         webView.load(URLRequest(url: URL(string: articleViewModel.story.link)!))
-
+        
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         settings = VFSettings(colors: colors)
     }
@@ -240,6 +242,10 @@ extension ArticleViewController: WKNavigationDelegate{
         trendingContainerView.isHidden = false
         webView.isHidden = false
         
+        if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
+            webView.evaluateJavaScript("document.documentElement.classList.add(\"dark\");")
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.webViewHeight.constant = webView.scrollView.contentSize.height
         }
@@ -263,6 +269,18 @@ extension ArticleViewController: VFLoginDelegate {
 extension ArticleViewController: VFCustomUIDelegate {
     func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
+        case .previewBackgroundView(let view):
+            if theme == VFTheme.dark {
+                view.backgroundColor = darkBackgroundColor
+            }
+        case .trendingCarouselBackgroundView(let view):
+            if theme == VFTheme.dark {
+                view.backgroundColor = darkBackgroundColor
+            }
+        case .trendingVerticalBackgroundView(let view):
+            if theme == VFTheme.dark {
+                view.backgroundColor = darkBackgroundColor
+            }
         default:
             break
         }
