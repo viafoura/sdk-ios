@@ -138,10 +138,12 @@ class ArticleViewController: UIViewController {
             }
         }
         
-        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .mostLiked) else {
+        let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .mostLiked)
+        
+        guard let preCommentsViewController = preCommentsViewController else {
             return
         }
-        
+
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
@@ -177,7 +179,7 @@ class ArticleViewController: UIViewController {
             }
         }
         
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
+        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else {
             return
         }
 
@@ -257,10 +259,8 @@ extension ArticleViewController: VFLoginDelegate {
 }
 
 extension ArticleViewController: VFCustomUIDelegate {
-    func customizeView(view: VFCustomizableView) {
+    func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
-        case .postButton(let button):
-            break
         default:
             break
         }

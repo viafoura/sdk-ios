@@ -132,7 +132,7 @@ extension CommentsContainerViewController: VFLoginDelegate {
 }
 
 extension CommentsContainerViewController: VFCustomUIDelegate {
-    func customizeView(view: VFCustomizableView) {
+    func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
         case .postButton(let button):
             break
