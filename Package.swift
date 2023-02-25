@@ -13,9 +13,7 @@ let package = Package(
         .target(
             name: "SPMTarget",
             dependencies: [
-                .target(name: "ViafouraSDK"),
-                "KeychainAccess",
-                "Kingfisher"
+                .target(name: "ViafouraSDK")
             ],
             path: "Sources/SPMTarget",
             publicHeadersPath: ""
