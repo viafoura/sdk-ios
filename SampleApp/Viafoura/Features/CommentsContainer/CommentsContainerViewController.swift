@@ -16,9 +16,15 @@ class CommentsContainerViewController: UIViewController {
     var viewModel: CommentsContainerViewModel!
     var settings: VFSettings!
 
+    let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
+            view.backgroundColor = darkBackgroundColor
+        }
+        
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         settings = VFSettings(colors: colors)
         
@@ -137,7 +143,10 @@ extension CommentsContainerViewController: VFLoginDelegate {
 extension CommentsContainerViewController: VFCustomUIDelegate {
     func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
-        case .postButton(let button):
+        case .previewBackgroundView(let view):
+            if theme == .dark {
+                view.backgroundColor = darkBackgroundColor
+            }
             break
         default:
             break
