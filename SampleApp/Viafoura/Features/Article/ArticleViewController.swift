@@ -35,6 +35,12 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+    }
+    
+    func addComponents(){
+        if UserDefaults.standard.bool(forKey: SettingsKeys.showTrendingArticles) == true {
+            addTrendingViewController()
+        }
         
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
             commentsContainerViewHeight.constant = 120
@@ -55,10 +61,6 @@ class ArticleViewController: UIViewController {
             button.centerYAnchor.constraint(equalTo: self.commentsContainerView.centerYAnchor).isActive = true
         } else {
             addPreCommentViewController()
-        }
-        
-        if UserDefaults.standard.bool(forKey: SettingsKeys.showTrendingArticles) == true {
-            addTrendingViewController()
         }
     }
     
@@ -149,8 +151,19 @@ class ArticleViewController: UIViewController {
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
-        preCommentsViewController.setLayoutDelegate(layoutDelegate:  self)
-                
+        preCommentsViewController.setLayoutDelegate(layoutDelegate: self)
+
+        if let contentUUID = articleViewModel.selectedContentUUID {
+            preCommentsViewController.getContentScrollPosition(contentUUID: contentUUID, completion: { [weak self] yPosition in
+                guard let strongSelf = self else {
+                    return
+                }
+
+                let originY = strongSelf.scrollView.convert(CGPoint.zero, from: strongSelf.commentsContainerView).y
+                strongSelf.scrollView.setContentOffset(CGPoint(x: 0, y: originY + yPosition), animated: true)
+            })
+        }
+
         addChild(preCommentsViewController)
         commentsContainerView.addSubview(preCommentsViewController.view)
         
@@ -245,9 +258,12 @@ extension ArticleViewController: WKNavigationDelegate{
         if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
             webView.evaluateJavaScript("document.documentElement.classList.add(\"dark\");")
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.webViewHeight.constant = webView.scrollView.contentSize.height
+            self.view.layoutIfNeeded()
+            
+            self.addComponents()
         }
     }
 }
