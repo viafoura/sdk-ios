@@ -2,7 +2,7 @@ name: Run Fastlane Actions
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, "CI/CD" ]
   pull_request:
         branches: [ "CI/CD" ]
 jobs:
