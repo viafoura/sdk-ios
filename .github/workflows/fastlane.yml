@@ -19,10 +19,6 @@ jobs:
       with:
         xcode-version: '13.1.0'
 
-    - name: Install Pods
-      run: |
-        pod install
-
     - name: Install Fastlane
       run: |
         brew install fastlane
