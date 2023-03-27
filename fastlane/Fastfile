@@ -42,7 +42,7 @@ platform :ios do
 
    #### execute by running "fastlane makeAndSendBuild"
    desc "Make the EOS build and send it to TF"
-   lane :makeAndSendBuildProd do
+   lane :makeAndSendBuild do
 
 	ensure_temp_keychain(keychain_name, keychain_password)
       app_store_connect_api_key(
