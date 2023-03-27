@@ -48,6 +48,7 @@ extension BookmarksViewController: UITableViewDelegate{
         guard let vc = VFLiveChatViewController.new(containerId: bookmark.title, articleMetadata: metadata, loginDelegate: self, settings: settings) else {
             return
         }
+        vc.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         vc.title = bookmark.title
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)

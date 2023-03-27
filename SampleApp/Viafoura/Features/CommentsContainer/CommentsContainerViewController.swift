@@ -16,9 +16,15 @@ class CommentsContainerViewController: UIViewController {
     var viewModel: CommentsContainerViewModel!
     var settings: VFSettings!
 
+    let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
+            view.backgroundColor = darkBackgroundColor
+        }
+        
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         settings = VFSettings(colors: colors)
         
@@ -47,6 +53,7 @@ class CommentsContainerViewController: UIViewController {
             return
         }
         
+        preCommentsViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
@@ -85,6 +92,7 @@ class CommentsContainerViewController: UIViewController {
             return
         }
 
+        profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
         profileViewController.setActionCallbacks(callbacks: callbacks)
         self.present(profileViewController, animated: true)
@@ -105,6 +113,7 @@ class CommentsContainerViewController: UIViewController {
         guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings) else{
             return
         }
+        newCommentViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         newCommentViewController.setCustomUIDelegate(customUIDelegate: self)
         newCommentViewController.setActionCallbacks(callbacks: callbacks)
         self.present(newCommentViewController, animated: true)
@@ -132,9 +141,12 @@ extension CommentsContainerViewController: VFLoginDelegate {
 }
 
 extension CommentsContainerViewController: VFCustomUIDelegate {
-    func customizeView(view: VFCustomizableView) {
+    func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
-        case .postButton(let button):
+        case .previewBackgroundView(let view):
+            if theme == .dark {
+                view.backgroundColor = darkBackgroundColor
+            }
             break
         default:
             break

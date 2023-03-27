@@ -1,0 +1,55 @@
+name: Run Fastlane Actions
+
+on:
+  push:
+    branches: [ main, "CI/CD" ]
+  pull_request:
+        branches: [ "CI/CD" ]
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout
+
+    - name: Select Xcode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '13.1.0'
+
+    - name: Install Pods
+      run: |
+        pod install
+
+    - name: Install Fastlane
+      run: |
+        brew install fastlane
+
+    - name: Create testflight build
+      run: |
+        bundle exec fastlane makeAndSendBuild
+      env:
+          APPLE_TEAM_ID: '${{ secrets.APPLE_TEAM_ID }}'
+          MATCH_GIT_REPOSITORY_TOKEN: '${{ secrets.MATCH_GIT_REPOSITORY_TOKEN }}'
+          MATCH_GIT_URL: '${{ secrets.MATCH_GIT_URL }}'
+          MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+          SLACK_URL: '${{ secrets.SLACK_URL }}'
+          FASTLANE_PASSWORD: '${{ secrets.FASTLANE_PASSWORD }}'
+          APP_STORE_CONNECT_CONTENT: '${{ secrets.APP_STORE_CONNECT_CONTENT }}'
+          APP_STORE_CONNECT_ISSUER_ID: '${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}'
+          APP_STORE_CONNECT_KEY_ID: '${{ secrets.APP_STORE_CONNECT_KEY_ID }}'
+          APP_STORE_CONNECT_CONTENT_OCH: '${{ secrets.APP_STORE_CONNECT_CONTENT_OCH }}'
+          APP_STORE_CONNECT_ISSUER_ID_OCH: '${{ secrets.APP_STORE_CONNECT_ISSUER_ID_OCH }}'
+          APP_STORE_CONNECT_KEY_ID_OCH: '${{ secrets.APP_STORE_CONNECT_KEY_ID_OCH }}'
+
+    - name: Trigger slack Notification on success
+      if: success()
+      run: |
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build Completed \n All fastlane actions run successfully \n Pull request ready to be merged on <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}|*FP iOS App*> \n <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}?check_suite_focus=true|VIEW *DETAILS*>", }' https://hooks.slack.com/services/
+
+    - name: Trigger slack Notification on failure
+      if: failure()
+      run: |
+       curl -X POST -H 'Content-type: application/json' --data '{"text":"Build Failed \n Some fastlane actions failed  \n Pull request *CANCELLED* on <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}|*FP iOS App*> \n <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}?check_suite_focus=true|VIEW *DETAILS*>", }' https://hooks.slack.com/services/

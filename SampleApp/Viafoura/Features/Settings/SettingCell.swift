@@ -26,5 +26,6 @@ class SettingCell: UITableViewCell {
     @objc func switchChanged(mySwitch: UISwitch) {
         let value = settingSwitch.isOn
         UserDefaults.standard.set(value, forKey: setting.key)
+        NotificationCenter.default.post(name: NSNotification.Name(setting.key), object: self, userInfo: ["value": mySwitch.isOn])
     }
 }

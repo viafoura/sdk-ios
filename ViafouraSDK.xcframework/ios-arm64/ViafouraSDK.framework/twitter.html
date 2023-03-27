@@ -1,0 +1,21 @@
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </header>
+    <body style="background: black;">
+        
+    </body>
+    
+    <script>
+        window.buildTwitterBlock = function (twitterId) {
+            document.body.innerHTML += "<blockquote class='twitter-tweet'><a href='https://twitter.com/x/status/" + twitterId + "'></blockquote>";
+            var tag = document.createElement("script");
+            tag.src = "https://platform.twitter.com/widgets.js";
+            document.getElementsByTagName("head")[0].appendChild(tag);
+        };
+        
+        window.setBackgroundColor = function (backgroundColor) {
+            document.body.style.backgroundColor = backgroundColor;
+        };
+    </script>
+</html>
