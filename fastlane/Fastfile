@@ -53,13 +53,6 @@ platform :ios do
          duration: 1200,
          in_house: false)
 
-      match(type: "appstore",
-         app_identifier: "com.viafoura.sampleapp",
-         git_basic_authorization: ENV["MATCH_GIT_REPOSITORY_TOKEN"],
-	      readonly: true,
-         keychain_name: keychain_name,
-         keychain_password: keychain_password)
-
       # Increment build number
       appStoreBuild = app_store_build_number(live: false, app_identifier: "com.viafoura.sampleapp")
       
