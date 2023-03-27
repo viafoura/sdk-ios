@@ -1,0 +1,20 @@
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </header>
+    <body style="background: black;">
+        <a href="http://embed.ly" class="embedly-card">Embedly</a>
+    </body>
+    
+    <script>
+        window.buildEmbedlyBlock = function (twitterId) {
+            var tag = document.createElement("script");
+            tag.src = "https://cdn.embedly.com/widgets/platform.js";
+            document.getElementsByTagName("head")[0].appendChild(tag);
+        };
+        
+        window.setBackgroundColor = function (backgroundColor) {
+            document.body.style.backgroundColor = backgroundColor;
+        };
+    </script>
+</html>

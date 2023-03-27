@@ -24,8 +24,6 @@
 		477904242818EA140019B2F3 /* UIStoryboard+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904232818EA140019B2F3 /* UIStoryboard+Default.swift */; };
 		477904262818EAB90019B2F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904252818EAB90019B2F3 /* LoginViewController.swift */; };
 		477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904272818EC6C0019B2F3 /* ArticleViewModel.swift */; };
-		47833FFC298069CD00A1EAA7 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; };
-		47833FFD298069CD00A1EAA7 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479502D22818F03C00ED9E56 /* MainTabBarController.swift */; };
 		4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795030A2819D05D00ED9E56 /* LoginViewModel.swift */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
@@ -42,23 +40,6 @@
 		47DAE50F2922EF8D008E95E1 /* BookmarksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50E2922EF8D008E95E1 /* BookmarksTableViewCell.swift */; };
 		70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		47833FF8298069B600A1EAA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 47B009052817871500EF93FD;
-			remoteInfo = ViafouraSDK;
-		};
-		47833FFA298069B600A1EAA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 47B0090F2817871500EF93FD;
-			remoteInfo = ViafouraSDKTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		47162763293FAA9400729F25 /* Embed Foundation Extensions */ = {
@@ -77,7 +58,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				47833FFD298069CD00A1EAA7 /* ViafouraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +84,6 @@
 		477904232818EA140019B2F3 /* UIStoryboard+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Default.swift"; sourceTree = "<group>"; };
 		477904252818EAB90019B2F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		477904272818EC6C0019B2F3 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
-		47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		479502D22818F03C00ED9E56 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4795030A2819D05D00ED9E56 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -129,7 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47833FFC298069CD00A1EAA7 /* ViafouraSDK.framework in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -249,15 +227,6 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		47833FF4298069B500A1EAA7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */,
-				47833FFB298069B600A1EAA7 /* ViafouraSDKTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		479502CF2818F03100ED9E56 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +238,6 @@
 		47B0095A28179DF800EF93FD = {
 			isa = PBXGroup;
 			children = (
-				47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
 				47B0096428179DF800EF93FD /* Products */,
 				47B0099928179F0900EF93FD /* Frameworks */,
@@ -390,35 +358,12 @@
 			);
 			productRefGroup = 47B0096428179DF800EF93FD /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 47833FF4298069B500A1EAA7 /* Products */;
-					ProjectRef = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				47B0096228179DF800EF93FD /* Viafoura */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ViafouraSDK.framework;
-			remoteRef = 47833FF8298069B600A1EAA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47833FFB298069B600A1EAA7 /* ViafouraSDKTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ViafouraSDKTests.xctest;
-			remoteRef = 47833FFA298069B600A1EAA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		47B0096128179DF800EF93FD /* Resources */ = {
