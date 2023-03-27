@@ -56,7 +56,7 @@ platform :ios do
       gym(scheme: "Viafoura",
         export_method: "app-store",
         configuration: "Release",
-        workspace: "Viafoura.xcworkspace")
+        workspace: "/SampleApp/Viafoura.xcworkspace")
 
       upload_to_testflight(skip_waiting_for_build_processing: true)
    end
