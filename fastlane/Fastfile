@@ -53,13 +53,8 @@ platform :ios do
          duration: 1200,
          in_house: false)
 
-      # Increment build number
-      appStoreBuild = app_store_build_number(live: false, app_identifier: "com.viafoura.sampleapp")
       
-      buildNumber = appStoreBuild.to_i + 1
-      increment_build_number_in_plist(
-	      target: "Viafoura",
-	      build_number: buildNumber.to_s)
+      increment_build_number_in_plist(target: "Viafoura")
       
       gym(scheme: "Viafoura",
         export_method: "app-store",
