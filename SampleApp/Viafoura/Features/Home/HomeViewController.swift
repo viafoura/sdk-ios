@@ -89,13 +89,24 @@ extension HomeViewController: UITableViewDataSource{
 
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let articleVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.articleVC) as? ArticleViewController else{
-            return
+        let story = viewModel.stories[indexPath.row]
+        if story.storyType == .comments {
+            guard let articleVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.articleVC) as? ArticleViewController else{
+                return
+            }
+            
+            articleVC.articleViewModel = ArticleViewModel(story: viewModel.stories[indexPath.row])
+            articleVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(articleVC, animated: true)
+        } else if story.storyType == .blog {
+            guard let liveBlogVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.liveBlogVC) as? LiveBlogViewController else{
+                return
+            }
+            
+            liveBlogVC.viewModel = LiveBlogViewModel(story: viewModel.stories[indexPath.row])
+            liveBlogVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(liveBlogVC, animated: true)
         }
-        
-        articleVC.articleViewModel = ArticleViewModel(story: viewModel.stories[indexPath.row])
-        articleVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(articleVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

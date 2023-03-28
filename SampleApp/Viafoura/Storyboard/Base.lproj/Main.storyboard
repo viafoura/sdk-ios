@@ -432,6 +432,66 @@
             </objects>
             <point key="canvasLocation" x="1574" y="970"/>
         </scene>
+        <!--Live Blog View Controller-->
+        <scene sceneID="d17-WL-I7D">
+            <objects>
+                <viewController storyboardIdentifier="LiveBlogViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RLk-aD-bKa" customClass="LiveBlogViewController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mww-o3-Yng">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8x-o9-ncs">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aH6-aA-3Vf">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-5G-ivy">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="JE7-Di-O5y"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tdT-5G-ivy" firstAttribute="leading" secondItem="aH6-aA-3Vf" secondAttribute="leading" id="2He-rl-vhQ"/>
+                                            <constraint firstItem="tdT-5G-ivy" firstAttribute="top" secondItem="aH6-aA-3Vf" secondAttribute="top" id="Cpv-8i-jcd"/>
+                                            <constraint firstAttribute="trailing" secondItem="tdT-5G-ivy" secondAttribute="trailing" id="NXV-Sp-mlY"/>
+                                            <constraint firstAttribute="bottom" secondItem="tdT-5G-ivy" secondAttribute="bottom" constant="30" id="OkK-Me-g2k"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aH6-aA-3Vf" secondAttribute="trailing" id="1fs-AM-R3T"/>
+                                    <constraint firstItem="aH6-aA-3Vf" firstAttribute="top" secondItem="C8x-o9-ncs" secondAttribute="top" id="MU2-hX-Q1h"/>
+                                    <constraint firstItem="aH6-aA-3Vf" firstAttribute="leading" secondItem="C8x-o9-ncs" secondAttribute="leading" id="TwE-DK-PnI"/>
+                                    <constraint firstAttribute="bottom" secondItem="aH6-aA-3Vf" secondAttribute="bottom" id="dEd-YR-rK4"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1qQ-Fb-agq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C8x-o9-ncs" firstAttribute="leading" secondItem="1qQ-Fb-agq" secondAttribute="leading" id="DhK-fn-pYW"/>
+                            <constraint firstItem="1qQ-Fb-agq" firstAttribute="trailing" secondItem="C8x-o9-ncs" secondAttribute="trailing" id="Fgs-wT-VQL"/>
+                            <constraint firstItem="C8x-o9-ncs" firstAttribute="top" secondItem="1qQ-Fb-agq" secondAttribute="top" id="MRh-Cf-LD7"/>
+                            <constraint firstItem="1qQ-Fb-agq" firstAttribute="bottom" secondItem="C8x-o9-ncs" secondAttribute="bottom" id="SHq-Wc-dlN"/>
+                            <constraint firstItem="aH6-aA-3Vf" firstAttribute="width" secondItem="mww-o3-Yng" secondAttribute="width" id="pTs-rE-16i"/>
+                            <constraint firstItem="aH6-aA-3Vf" firstAttribute="height" secondItem="mww-o3-Yng" secondAttribute="height" priority="250" id="ylB-4f-doa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="tdT-5G-ivy" id="Hd3-58-gwY"/>
+                        <outlet property="containerViewHeight" destination="JE7-Di-O5y" id="Q5G-JB-WGG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZM-ss-CJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="1789"/>
+        </scene>
         <!--Home-->
         <scene sceneID="pRy-V3-xu7">
             <objects>

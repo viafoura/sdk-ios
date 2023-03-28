@@ -11,4 +11,5 @@ public struct VCIdentifier {
     static let articleVC = "ArticleViewController"
     static let signupVC = "SignUpViewController"
     static let commentsContainerVC = "CommentsContainerViewController"
+    static let liveBlogVC = "LiveBlogViewController"
 }

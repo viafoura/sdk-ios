@@ -24,10 +24,12 @@
 		477904242818EA140019B2F3 /* UIStoryboard+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904232818EA140019B2F3 /* UIStoryboard+Default.swift */; };
 		477904262818EAB90019B2F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904252818EAB90019B2F3 /* LoginViewController.swift */; };
 		477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904272818EC6C0019B2F3 /* ArticleViewModel.swift */; };
-		47833FFC298069CD00A1EAA7 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; };
-		47833FFD298069CD00A1EAA7 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479502D22818F03C00ED9E56 /* MainTabBarController.swift */; };
 		4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795030A2819D05D00ED9E56 /* LoginViewModel.swift */; };
+		479B5A2429D3468A00734F84 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782125029D2182500BA8329 /* ViafouraSDK.framework */; };
+		479B5A2529D3468A00734F84 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4782125029D2182500BA8329 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */; };
+		479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
 		47A8F22B2832D1F300D9EB8B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */; };
 		47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096628179DF800EF93FD /* AppDelegate.swift */; };
@@ -44,16 +46,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		47833FF8298069B600A1EAA7 /* PBXContainerItemProxy */ = {
+		4782124F29D2182500BA8329 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
+			containerPortal = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 47B009052817871500EF93FD;
 			remoteInfo = ViafouraSDK;
 		};
-		47833FFA298069B600A1EAA7 /* PBXContainerItemProxy */ = {
+		4782125129D2182500BA8329 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
+			containerPortal = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 47B0090F2817871500EF93FD;
 			remoteInfo = ViafouraSDKTests;
@@ -77,7 +79,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				47833FFD298069CD00A1EAA7 /* ViafouraSDK.framework in Embed Frameworks */,
+				479B5A2529D3468A00734F84 /* ViafouraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,9 +106,11 @@
 		477904232818EA140019B2F3 /* UIStoryboard+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Default.swift"; sourceTree = "<group>"; };
 		477904252818EAB90019B2F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		477904272818EC6C0019B2F3 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
-		47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
+		4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		479502D22818F03C00ED9E56 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4795030A2819D05D00ED9E56 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewController.swift; sourceTree = "<group>"; };
+		479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewModel.swift; sourceTree = "<group>"; };
 		47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		47B0096328179DF800EF93FD /* Viafoura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viafoura.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47833FFC298069CD00A1EAA7 /* ViafouraSDK.framework in Frameworks */,
+				479B5A2429D3468A00734F84 /* ViafouraSDK.framework in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -198,6 +202,7 @@
 		4779041D2818E8280019B2F3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				479B5A2829D34A9400734F84 /* LiveBlog */,
 				4771BE2E2935544500389833 /* CommentsContainer */,
 				4771BE2429354C2F00389833 /* Settings */,
 				47DAE5082922EF65008E95E1 /* Bookmarks */,
@@ -249,11 +254,11 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		47833FF4298069B500A1EAA7 /* Products */ = {
+		4782124B29D2182500BA8329 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */,
-				47833FFB298069B600A1EAA7 /* ViafouraSDKTests.xctest */,
+				4782125029D2182500BA8329 /* ViafouraSDK.framework */,
+				4782125229D2182500BA8329 /* ViafouraSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,10 +271,19 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
+		479B5A2829D34A9400734F84 /* LiveBlog */ = {
+			isa = PBXGroup;
+			children = (
+				479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */,
+				479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */,
+			);
+			path = LiveBlog;
+			sourceTree = "<group>";
+		};
 		47B0095A28179DF800EF93FD = {
 			isa = PBXGroup;
 			children = (
-				47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */,
+				4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
 				47B0096428179DF800EF93FD /* Products */,
 				47B0099928179F0900EF93FD /* Frameworks */,
@@ -392,8 +406,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 47833FF4298069B500A1EAA7 /* Products */;
-					ProjectRef = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
+					ProductGroup = 4782124B29D2182500BA8329 /* Products */;
+					ProjectRef = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -404,18 +418,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */ = {
+		4782125029D2182500BA8329 /* ViafouraSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ViafouraSDK.framework;
-			remoteRef = 47833FF8298069B600A1EAA7 /* PBXContainerItemProxy */;
+			remoteRef = 4782124F29D2182500BA8329 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		47833FFB298069B600A1EAA7 /* ViafouraSDKTests.xctest */ = {
+		4782125229D2182500BA8329 /* ViafouraSDKTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ViafouraSDKTests.xctest;
-			remoteRef = 47833FFA298069B600A1EAA7 /* PBXContainerItemProxy */;
+			remoteRef = 4782125129D2182500BA8329 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -490,6 +504,7 @@
 				479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */,
 				4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */,
 				4771BE2C2935506E00389833 /* Setting.swift in Sources */,
+				479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */,
 				47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */,
 				4771BE32293556A100389833 /* VCIdentifier.swift in Sources */,
 				4771BE342935571D00389833 /* CommentsContainerViewModel.swift in Sources */,
@@ -498,6 +513,7 @@
 				473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */,
 				477904182818E7FF0019B2F3 /* HomeViewModel.swift in Sources */,
 				4771BE2A29354F4200389833 /* SettingCell.swift in Sources */,
+				479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */,
 				477904112818E2CC0019B2F3 /* ArticleViewController.swift in Sources */,
 				47DAE50F2922EF8D008E95E1 /* BookmarksTableViewCell.swift in Sources */,
 				47A8F22B2832D1F300D9EB8B /* SignUpViewController.swift in Sources */,
@@ -568,6 +584,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -628,6 +645,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
