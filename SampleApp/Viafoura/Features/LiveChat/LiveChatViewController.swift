@@ -14,7 +14,8 @@ class LiveChatViewController: UIViewController {
 
     @IBOutlet weak var videoContainerView: UIView!
     @IBOutlet weak var containerView: UIView!
-    
+    @IBOutlet weak var closeImage: UIImageView!
+
     var player: AVPlayer?
     
     override func viewDidLoad() {
@@ -22,6 +23,21 @@ class LiveChatViewController: UIViewController {
         
         setupVideo()
         setupUI()
+        setupClose()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func setupClose(){
+        closeImage.isUserInteractionEnabled = true
+        closeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeTapped)))
+    }
+    
+    @objc
+    func closeTapped(){
+        self.dismiss(animated: true)
     }
     
     func createGradientBackground(){
