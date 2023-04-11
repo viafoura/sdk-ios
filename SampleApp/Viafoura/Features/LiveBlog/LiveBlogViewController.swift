@@ -49,7 +49,7 @@ class LiveBlogViewController: UIViewController {
         vc.willMove(toParent: self)
         vc.didMove(toParent: self)
     }
-    
+
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
         guard let settings = settings else {
             return
@@ -87,7 +87,11 @@ extension LiveBlogViewController: VFLayoutDelegate {
 }
 
 extension LiveBlogViewController: VFLoginDelegate {
-    public func startLogin() {
+    func startLogin() {
+        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+            return
+        }
         
+        self.present(loginVC, animated: true)
     }
 }

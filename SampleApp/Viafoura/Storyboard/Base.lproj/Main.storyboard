@@ -97,7 +97,7 @@
         <!--Account-->
         <scene sceneID="XXO-df-NmW">
             <objects>
-                <viewController title="Account" id="3oT-IJ-nni" customClass="BookmarksViewController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Account" id="3oT-IJ-nni" customClass="LiveChatsViewController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="51q-4n-9HT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookmarkCell" rowHeight="90" id="qir-U8-r1C" customClass="BookmarksTableViewCell" customModule="Viafoura" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="liveChatCell" rowHeight="90" id="qir-U8-r1C" customClass="LiveChatTableViewCell" customModule="Viafoura" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qir-U8-r1C" id="1ya-aT-OLp">
@@ -149,8 +149,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="bookmarkImage" destination="iXQ-vI-Spg" id="Z5B-Uh-Y1M"/>
-                                            <outlet property="bookmarkLabel" destination="Rry-MW-4hm" id="w7p-LN-tO2"/>
+                                            <outlet property="liveChatImage" destination="iXQ-vI-Spg" id="2sD-ew-8FY"/>
+                                            <outlet property="liveChatLabel" destination="Rry-MW-4hm" id="Syt-sk-Fx6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -889,6 +889,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NV1-xq-dn3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4742.0289855072469" y="296.65178571428572"/>
+        </scene>
+        <!--Live Chat View Controller-->
+        <scene sceneID="R92-Ff-eRd">
+            <objects>
+                <viewController storyboardIdentifier="LiveChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LOa-fT-xgY" customClass="LiveChatViewController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQQ-3b-4Gu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FN-Vk-9Ik">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1L6-LZ-IEJ">
+                                <rect key="frame" x="0.0" y="512" width="414" height="350"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQr-y6-Ezl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JQr-y6-Ezl" secondAttribute="bottom" id="0Wx-dt-TQm"/>
+                                    <constraint firstAttribute="height" constant="350" id="PxP-ki-4rj"/>
+                                    <constraint firstItem="JQr-y6-Ezl" firstAttribute="leading" secondItem="1L6-LZ-IEJ" secondAttribute="leading" id="g56-aU-4T2"/>
+                                    <constraint firstItem="JQr-y6-Ezl" firstAttribute="top" secondItem="1L6-LZ-IEJ" secondAttribute="top" id="t17-Wi-kTc"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQr-y6-Ezl" secondAttribute="trailing" id="ywg-eg-JxK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AUs-LT-VbB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AUs-LT-VbB" firstAttribute="bottom" secondItem="3FN-Vk-9Ik" secondAttribute="bottom" id="7zR-LW-Kyx"/>
+                            <constraint firstItem="AUs-LT-VbB" firstAttribute="trailing" secondItem="3FN-Vk-9Ik" secondAttribute="trailing" id="M3t-Ph-cZf"/>
+                            <constraint firstItem="AUs-LT-VbB" firstAttribute="trailing" secondItem="1L6-LZ-IEJ" secondAttribute="trailing" id="RRd-2t-BjJ"/>
+                            <constraint firstItem="AUs-LT-VbB" firstAttribute="bottom" secondItem="1L6-LZ-IEJ" secondAttribute="bottom" id="Uuw-2A-2FR"/>
+                            <constraint firstItem="3FN-Vk-9Ik" firstAttribute="top" secondItem="pQQ-3b-4Gu" secondAttribute="top" id="mdP-RH-VZw"/>
+                            <constraint firstItem="1L6-LZ-IEJ" firstAttribute="leading" secondItem="AUs-LT-VbB" secondAttribute="leading" id="vd8-Qj-Mel"/>
+                            <constraint firstItem="3FN-Vk-9Ik" firstAttribute="leading" secondItem="AUs-LT-VbB" secondAttribute="leading" id="wo7-fZ-rvo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="1L6-LZ-IEJ" id="z6w-kG-IDo"/>
+                        <outlet property="videoContainerView" destination="3FN-Vk-9Ik" id="eTd-FC-2lv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lvj-uX-Mtn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="1789"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

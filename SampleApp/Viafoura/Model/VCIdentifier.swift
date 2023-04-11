@@ -12,4 +12,5 @@ public struct VCIdentifier {
     static let signupVC = "SignUpViewController"
     static let commentsContainerVC = "CommentsContainerViewController"
     static let liveBlogVC = "LiveBlogViewController"
+    static let liveChatVC = "LiveChatViewController"
 }
