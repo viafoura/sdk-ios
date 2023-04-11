@@ -33,7 +33,7 @@ class LiveChatsViewController: UIViewController {
 extension LiveChatsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let liveChat = viewModel.liveChats[indexPath.row]
-        let articleMetadata = VFArticleMetadata(url: URL(string: "https://test.com")!, title: "Title", subtitle: "Subtitle", thumbnailUrl: URL(string: "https://testing.com")!)
+        let articleMetadata = VFArticleMetadata(url: URL(string: "https://viafoura-mobile-demo.vercel.app")!, title: "Title", subtitle: "Subtitle", thumbnailUrl: URL(string: "https://viafoura-mobile-demo.vercel.app")!)
         if liveChat.isVideo {
             guard let liveChatVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.liveChatVC) as? LiveChatViewController else{
                 return
