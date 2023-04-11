@@ -8,7 +8,9 @@
 import UIKit
 import ViafouraSDK
 
-class LiveBlogViewController: UIViewController {
+class LiveBlogViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "LiveBlog"
+
     var viewModel: LiveBlogViewModel!
     
     @IBOutlet weak var containerView: UIView!
@@ -88,7 +90,7 @@ extension LiveBlogViewController: VFLayoutDelegate {
 
 extension LiveBlogViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         

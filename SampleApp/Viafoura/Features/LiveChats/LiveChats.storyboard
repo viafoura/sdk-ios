@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Account-->
+        <scene sceneID="hKw-BT-a6K">
+            <objects>
+                <viewController storyboardIdentifier="LiveChatsViewController" title="Account" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EWk-UD-Kuu" customClass="LiveChatsViewController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Sx-NS-W37">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6C3-N3-udG">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="liveChatCell" rowHeight="90" id="Huc-3s-ZEI" customClass="LiveChatTableViewCell" customModule="Viafoura" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Huc-3s-ZEI" id="Z0e-w4-YEc">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-0l-Hrx">
+                                                    <rect key="frame" x="20" y="10" width="353" height="70"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyn-EY-tuv">
+                                                            <rect key="frame" x="70" y="24.666666666666664" width="263" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-f6-EbO">
+                                                            <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="Bsn-Cm-Ujv"/>
+                                                                <constraint firstAttribute="height" constant="30" id="jdn-9h-AXC"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Oks-f6-EbO" firstAttribute="leading" secondItem="dzO-0l-Hrx" secondAttribute="leading" constant="20" id="8FY-XK-hRb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Gyn-EY-tuv" secondAttribute="trailing" constant="20" id="Q2m-eG-0C0"/>
+                                                        <constraint firstItem="Gyn-EY-tuv" firstAttribute="centerY" secondItem="dzO-0l-Hrx" secondAttribute="centerY" id="Yf0-Hg-xbS"/>
+                                                        <constraint firstItem="Gyn-EY-tuv" firstAttribute="leading" secondItem="Oks-f6-EbO" secondAttribute="trailing" constant="20" id="jNL-ke-iR4"/>
+                                                        <constraint firstItem="Oks-f6-EbO" firstAttribute="centerY" secondItem="dzO-0l-Hrx" secondAttribute="centerY" id="tcA-ba-eVB"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="dzO-0l-Hrx" firstAttribute="top" secondItem="Z0e-w4-YEc" secondAttribute="top" constant="10" id="dCn-Ty-81f"/>
+                                                <constraint firstAttribute="trailing" secondItem="dzO-0l-Hrx" secondAttribute="trailing" constant="20" id="nlP-rq-V5S"/>
+                                                <constraint firstItem="dzO-0l-Hrx" firstAttribute="leading" secondItem="Z0e-w4-YEc" secondAttribute="leading" constant="20" id="noX-w0-6Dh"/>
+                                                <constraint firstAttribute="bottom" secondItem="dzO-0l-Hrx" secondAttribute="bottom" constant="10" id="tLW-aO-kwK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="liveChatImage" destination="Oks-f6-EbO" id="5A4-5a-ND8"/>
+                                            <outlet property="liveChatLabel" destination="Gyn-EY-tuv" id="zc1-Jh-ag6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Gz-d8-l7U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Gz-d8-l7U" firstAttribute="trailing" secondItem="6C3-N3-udG" secondAttribute="trailing" id="KwS-1D-Jw4"/>
+                            <constraint firstItem="6Gz-d8-l7U" firstAttribute="bottom" secondItem="6C3-N3-udG" secondAttribute="bottom" id="Myl-z6-goF"/>
+                            <constraint firstItem="6C3-N3-udG" firstAttribute="top" secondItem="6Gz-d8-l7U" secondAttribute="top" id="Oze-r3-Ww0"/>
+                            <constraint firstItem="6C3-N3-udG" firstAttribute="leading" secondItem="6Gz-d8-l7U" secondAttribute="leading" id="iiN-v9-Pp6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Live chats" id="Bd1-0n-mxq">
+                        <barButtonItem key="leftBarButtonItem" image="gearshape.fill" catalog="system" id="du1-dl-SBd">
+                            <connections>
+                                <segue destination="W7M-BV-GRq" kind="show" id="zzu-2h-a9x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="6C3-N3-udG" id="UlL-Ow-LHl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWf-xq-yJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2489.8550724637685" y="55.580357142857139"/>
+        </scene>
+        <!--SettingsContainerViewController-->
+        <scene sceneID="mk5-FJ-Icc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsContainerViewController" id="W7M-BV-GRq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Av3-Cj-yRh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrY-nF-3iM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3563" y="27"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.92549019610000005" green="0.1176470588" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+    <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

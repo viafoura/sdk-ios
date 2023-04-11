@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 import ViafouraSDK
 
-class LiveChatsViewController: UIViewController {
+class LiveChatsViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "LiveChats"
+
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = LiveChatsViewModel()
@@ -35,7 +37,7 @@ extension LiveChatsViewController: UITableViewDelegate{
         let liveChat = viewModel.liveChats[indexPath.row]
         let articleMetadata = VFArticleMetadata(url: URL(string: "https://viafoura-mobile-demo.vercel.app")!, title: "Title", subtitle: "Subtitle", thumbnailUrl: URL(string: "https://viafoura-mobile-demo.vercel.app")!)
         if liveChat.isVideo {
-            guard let liveChatVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.liveChatVC) as? LiveChatViewController else{
+            guard let liveChatVC = LiveChatViewController.new() else{
                 return
             }
             
@@ -58,7 +60,7 @@ extension LiveChatsViewController: UITableViewDelegate{
 
 extension LiveChatsViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         

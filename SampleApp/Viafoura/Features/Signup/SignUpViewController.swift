@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
-class SignUpViewController: UIViewController{
+class SignUpViewController: UIViewController, StoryboardCreateable{
+    static var storyboardName = "SignUp"
+
     let viewModel = SignUpViewModel()
     
     @IBOutlet weak var nameTextField: UITextField!

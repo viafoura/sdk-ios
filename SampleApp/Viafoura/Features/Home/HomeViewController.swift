@@ -8,7 +8,9 @@
 import UIKit
 import ViafouraSDK
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "Home"
+
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = HomeViewModel()
@@ -59,7 +61,7 @@ class HomeViewController: UIViewController {
     
     @objc
     func loginTapped(){
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         
@@ -91,7 +93,7 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let story = viewModel.stories[indexPath.row]
         if story.storyType == .comments {
-            guard let articleVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.articleVC) as? ArticleViewController else{
+            guard let articleVC = ArticleViewController.new() else{
                 return
             }
             
@@ -99,7 +101,7 @@ extension HomeViewController: UITableViewDelegate{
             articleVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(articleVC, animated: true)
         } else if story.storyType == .blog {
-            guard let liveBlogVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.liveBlogVC) as? LiveBlogViewController else{
+            guard let liveBlogVC = LiveBlogViewController.new() else{
                 return
             }
             

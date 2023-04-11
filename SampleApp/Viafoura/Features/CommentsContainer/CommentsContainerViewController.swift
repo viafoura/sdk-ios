@@ -8,8 +8,9 @@
 import UIKit
 import ViafouraSDK
 
-class CommentsContainerViewController: UIViewController {
-    
+class CommentsContainerViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "CommentsContainer"
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
 
@@ -132,7 +133,7 @@ extension CommentsContainerViewController: VFAdDelegate {
 
 extension CommentsContainerViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         

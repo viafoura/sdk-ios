@@ -9,7 +9,9 @@ import AVKit
 import UIKit
 import ViafouraSDK
 
-class LiveChatViewController: UIViewController {
+class LiveChatViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "LiveChat"
+
     var viewModel: LiveChatViewModel!
 
     @IBOutlet weak var videoContainerView: UIView!
@@ -97,7 +99,7 @@ class LiveChatViewController: UIViewController {
 
 extension LiveChatViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         
