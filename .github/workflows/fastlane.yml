@@ -26,7 +26,7 @@ jobs:
     - name: Install fastlane plugins
       run: |
         fastlane add_plugin versioning
-        
+         
     - name: Create testflight build
       run: |
         bundle exec fastlane makeAndSendBuild
@@ -40,7 +40,7 @@ jobs:
           APP_STORE_CONNECT_CONTENT: '${{ secrets.APP_STORE_CONNECT_CONTENT }}'
           APP_STORE_CONNECT_ISSUER_ID: '${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}'
           APP_STORE_CONNECT_KEY_ID: '${{ secrets.APP_STORE_CONNECT_KEY_ID }}'
-          
+
     - name: Trigger slack Notification on success
       if: success()
       run: |
