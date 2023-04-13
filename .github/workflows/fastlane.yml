@@ -26,7 +26,7 @@ jobs:
     - name: Install fastlane plugins
       run: |
         fastlane add_plugin versioning
-         
+
     - name: Create testflight build
       run: |
         bundle exec fastlane makeAndSendBuild
@@ -43,10 +43,14 @@ jobs:
 
     - name: Trigger slack Notification on success
       if: success()
+      env:
+        SLACK_WEBHOOK: '${{ secrets.SLACK_WEBHOOK }}'
       run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build Completed \n All fastlane actions run successfully \n Pull request ready to be merged on <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}|*FP iOS App*> \n <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}?check_suite_focus=true|VIEW *DETAILS*>", }' https://hooks.slack.com/services/
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build Completed \n All fastlane actions run successfully \n Pull request ready to be merged on <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}|*FP iOS App*> \n <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}?check_suite_focus=true|VIEW *DETAILS*>", }' https://hooks.slack.com/services/$SLACK_WEBHOOK
 
     - name: Trigger slack Notification on failure
       if: failure()
+      env:
+        SLACK_WEBHOOK: '${{ secrets.SLACK_WEBHOOK }}'
       run: |
-       curl -X POST -H 'Content-type: application/json' --data '{"text":"Build Failed \n Some fastlane actions failed  \n Pull request *CANCELLED* on <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}|*FP iOS App*> \n <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}?check_suite_focus=true|VIEW *DETAILS*>", }' https://hooks.slack.com/services/
+       curl -X POST -H 'Content-type: application/json' --data '{"text":"Build Failed \n Some fastlane actions failed  \n Pull request *CANCELLED* on <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}|*FP iOS App*> \n <https://github.com/Viafoura/sdk-ios/actions/runs/${{github.run_id}}?check_suite_focus=true|VIEW *DETAILS*>", }' https://hooks.slack.com/services/$SLACK_WEBHOOK
