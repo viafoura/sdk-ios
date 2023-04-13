@@ -11,7 +11,9 @@ import WebKit
 import ViafouraSDK
 import GoogleMobileAds
 
-class ArticleViewController: UIViewController {
+class ArticleViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "Article"
+
     var articleViewModel: ArticleViewModel!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -205,7 +207,7 @@ class ArticleViewController: UIViewController {
     }
     
     func presentArticle(containerId: String, contentUUID: UUID){
-        guard let articleVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.articleVC) as? ArticleViewController else{
+        guard let articleVC = ArticleViewController.new() else{
             return
         }
         
@@ -239,7 +241,7 @@ class ArticleViewController: UIViewController {
     }
     
     func presentCommentsContainerViewController(){
-        guard let commentsVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.commentsContainerVC) as? CommentsContainerViewController else{
+        guard let commentsVC = CommentsContainerViewController.new() else{
             return
         }
         commentsVC.viewModel = CommentsContainerViewModel(story: articleViewModel.story)
@@ -274,7 +276,7 @@ extension ArticleViewController: WKUIDelegate{
 
 extension ArticleViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         

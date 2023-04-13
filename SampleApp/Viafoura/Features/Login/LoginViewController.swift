@@ -10,7 +10,9 @@ import UIKit
 import LoginRadiusSDK
 import ViafouraSDK
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "Login"
+
     let loginViewModel = LoginViewModel()
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -210,7 +212,7 @@ class LoginViewController: UIViewController{
     func signupTapped(){
         let presentingVC = self.presentingViewController
         self.dismiss(animated: true, completion: {
-            guard let signUpVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.signupVC) as? SignUpViewController else{
+            guard let signUpVC = SignUpViewController.new() else{
                 return
             }
                     

@@ -8,7 +8,9 @@
 import UIKit
 import ViafouraSDK
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, StoryboardCreateable {
+    static var storyboardName = "Home"
+
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = HomeViewModel()
@@ -59,7 +61,7 @@ class HomeViewController: UIViewController {
     
     @objc
     func loginTapped(){
-        guard let loginVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.loginVC) as? LoginViewController else{
+        guard let loginVC = LoginViewController.new() else{
             return
         }
         
@@ -89,13 +91,24 @@ extension HomeViewController: UITableViewDataSource{
 
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let articleVC = UIStoryboard.defaultStoryboard().instantiateViewController(withIdentifier: VCIdentifier.articleVC) as? ArticleViewController else{
-            return
+        let story = viewModel.stories[indexPath.row]
+        if story.storyType == .comments {
+            guard let articleVC = ArticleViewController.new() else{
+                return
+            }
+            
+            articleVC.articleViewModel = ArticleViewModel(story: viewModel.stories[indexPath.row])
+            articleVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(articleVC, animated: true)
+        } else if story.storyType == .blog {
+            guard let liveBlogVC = LiveBlogViewController.new() else{
+                return
+            }
+            
+            liveBlogVC.viewModel = LiveBlogViewModel(story: viewModel.stories[indexPath.row])
+            liveBlogVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(liveBlogVC, animated: true)
         }
-        
-        articleVC.articleViewModel = ArticleViewModel(story: viewModel.stories[indexPath.row])
-        articleVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(articleVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

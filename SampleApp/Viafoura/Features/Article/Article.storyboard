@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Article View Controller-->
+        <scene sceneID="WFF-oN-Ylw">
+            <objects>
+                <viewController storyboardIdentifier="ArticleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K6I-Ys-fhM" customClass="ArticleViewController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o15-Q9-QQY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dON-gf-zyg">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <wkWebView hidden="YES" contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sG-4q-taD">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="OyS-Nv-KLx"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-VN-cMA">
+                                        <rect key="frame" x="0.0" y="15" width="393" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="0DO-rc-yhK"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkV-IR-sl2">
+                                        <rect key="frame" x="0.0" y="15" width="393" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="jrk-b7-jCz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8nM-VN-cMA" secondAttribute="bottom" constant="100" id="9eR-LT-gen"/>
+                                    <constraint firstItem="8nM-VN-cMA" firstAttribute="centerX" secondItem="dON-gf-zyg" secondAttribute="centerX" id="FEG-tn-GV3"/>
+                                    <constraint firstAttribute="trailing" secondItem="7sG-4q-taD" secondAttribute="trailing" id="K7U-iO-igL"/>
+                                    <constraint firstItem="7sG-4q-taD" firstAttribute="centerX" secondItem="dON-gf-zyg" secondAttribute="centerX" id="TF8-md-vDG"/>
+                                    <constraint firstAttribute="trailing" secondItem="EkV-IR-sl2" secondAttribute="trailing" id="dtC-Qx-Wtb"/>
+                                    <constraint firstItem="7sG-4q-taD" firstAttribute="leading" secondItem="dON-gf-zyg" secondAttribute="leading" id="eG4-AP-fz8"/>
+                                    <constraint firstAttribute="trailing" secondItem="8nM-VN-cMA" secondAttribute="trailing" id="foG-5Q-4iB"/>
+                                    <constraint firstItem="8nM-VN-cMA" firstAttribute="leading" secondItem="dON-gf-zyg" secondAttribute="leading" id="fzh-Zc-G4q"/>
+                                    <constraint firstItem="8nM-VN-cMA" firstAttribute="top" secondItem="EkV-IR-sl2" secondAttribute="bottom" id="hNn-Zo-9b9"/>
+                                    <constraint firstItem="7sG-4q-taD" firstAttribute="top" secondItem="dON-gf-zyg" secondAttribute="top" id="n0e-97-Zei"/>
+                                    <constraint firstItem="EkV-IR-sl2" firstAttribute="top" secondItem="7sG-4q-taD" secondAttribute="bottom" constant="15" id="tNC-TB-Zi1"/>
+                                    <constraint firstItem="EkV-IR-sl2" firstAttribute="leading" secondItem="dON-gf-zyg" secondAttribute="leading" id="txV-fe-RyJ"/>
+                                </constraints>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8El-jN-gvZ">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                                <color key="color" red="0.92549019610000005" green="0.1176470588" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N7h-2H-K05"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N7h-2H-K05" firstAttribute="trailing" secondItem="dON-gf-zyg" secondAttribute="trailing" id="4dk-rN-pB9"/>
+                            <constraint firstItem="N7h-2H-K05" firstAttribute="bottom" secondItem="dON-gf-zyg" secondAttribute="bottom" id="5c5-7O-s8O"/>
+                            <constraint firstItem="dON-gf-zyg" firstAttribute="leading" secondItem="N7h-2H-K05" secondAttribute="leading" id="DRi-p4-X8s"/>
+                            <constraint firstItem="dON-gf-zyg" firstAttribute="top" secondItem="N7h-2H-K05" secondAttribute="top" id="OIB-S8-lZh"/>
+                            <constraint firstItem="8El-jN-gvZ" firstAttribute="centerX" secondItem="o15-Q9-QQY" secondAttribute="centerX" id="OQQ-FN-p7x"/>
+                            <constraint firstItem="8El-jN-gvZ" firstAttribute="centerY" secondItem="o15-Q9-QQY" secondAttribute="centerY" id="e03-p7-HP9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="8El-jN-gvZ" id="qfP-1M-dtW"/>
+                        <outlet property="commentsContainerView" destination="8nM-VN-cMA" id="IKT-Dc-TQd"/>
+                        <outlet property="commentsContainerViewHeight" destination="0DO-rc-yhK" id="IoT-7f-aoX"/>
+                        <outlet property="scrollView" destination="dON-gf-zyg" id="yeV-Ch-QnL"/>
+                        <outlet property="trendingContainerView" destination="EkV-IR-sl2" id="Mgi-Ge-yXB"/>
+                        <outlet property="trendingContainerViewHeight" destination="jrk-b7-jCz" id="uYs-da-EDa"/>
+                        <outlet property="webView" destination="7sG-4q-taD" id="Gzt-Kb-zdM"/>
+                        <outlet property="webViewHeight" destination="OyS-Nv-KLx" id="XaD-MV-xe1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOu-Gj-YvA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4026" y="-644"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

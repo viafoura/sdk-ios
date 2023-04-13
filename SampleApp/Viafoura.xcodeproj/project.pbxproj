@@ -23,11 +23,14 @@
 		477904152818E73D0019B2F3 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904142818E73D0019B2F3 /* StoryTableViewCell.swift */; };
 		477904182818E7FF0019B2F3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904172818E7FF0019B2F3 /* HomeViewModel.swift */; };
 		4779041B2818E81B0019B2F3 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779041A2818E81B0019B2F3 /* Story.swift */; };
-		477904242818EA140019B2F3 /* UIStoryboard+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904232818EA140019B2F3 /* UIStoryboard+Default.swift */; };
 		477904262818EAB90019B2F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904252818EAB90019B2F3 /* LoginViewController.swift */; };
 		477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904272818EC6C0019B2F3 /* ArticleViewModel.swift */; };
 		479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479502D22818F03C00ED9E56 /* MainTabBarController.swift */; };
 		4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795030A2819D05D00ED9E56 /* LoginViewModel.swift */; };
+		479B5A2429D3468A00734F84 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782125029D2182500BA8329 /* ViafouraSDK.framework */; };
+		479B5A2529D3468A00734F84 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4782125029D2182500BA8329 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */; };
+		479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
 		47A8F22B2832D1F300D9EB8B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */; };
 		47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096628179DF800EF93FD /* AppDelegate.swift */; };
@@ -37,23 +40,36 @@
 		47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096F28179DFB00EF93FD /* Assets.xcassets */; };
 		47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0097128179DFB00EF93FD /* LaunchScreen.storyboard */; };
 		47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 47B1DD38297EC13700FBD05C /* Kingfisher */; };
-		47DAE50A2922EF72008E95E1 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE5092922EF72008E95E1 /* BookmarksViewController.swift */; };
-		47DAE50C2922EF7A008E95E1 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50B2922EF7A008E95E1 /* BookmarksViewModel.swift */; };
-		47DAE50F2922EF8D008E95E1 /* BookmarksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50E2922EF8D008E95E1 /* BookmarksTableViewCell.swift */; };
+		47CB993E29E3867C0070FF2B /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB993D29E3867C0070FF2B /* LiveChatViewController.swift */; };
+		47CB994029E386820070FF2B /* LiveChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB993F29E386820070FF2B /* LiveChatViewModel.swift */; };
+		47CB994229E388BE0070FF2B /* video-example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47CB994129E3888C0070FF2B /* video-example.mp4 */; };
+		47CB996029E586880070FF2B /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB995F29E586880070FF2B /* Article.storyboard */; };
+		47CB996229E5868F0070FF2B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996129E5868F0070FF2B /* Login.storyboard */; };
+		47CB996429E586960070FF2B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996329E586960070FF2B /* SignUp.storyboard */; };
+		47CB996629E586A00070FF2B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996529E586A00070FF2B /* Home.storyboard */; };
+		47CB996829E586A80070FF2B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996729E586A80070FF2B /* Settings.storyboard */; };
+		47CB996A29E586B00070FF2B /* LiveBlog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996929E586B00070FF2B /* LiveBlog.storyboard */; };
+		47CB996C29E586B60070FF2B /* LiveChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996B29E586B60070FF2B /* LiveChat.storyboard */; };
+		47CB996E29E586BE0070FF2B /* CommentsContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996D29E586BE0070FF2B /* CommentsContainer.storyboard */; };
+		47CB997029E586C70070FF2B /* LiveChats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996F29E586C70070FF2B /* LiveChats.storyboard */; };
+		47CB997329E589700070FF2B /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB997229E589700070FF2B /* StoryboardCreatable.swift */; };
+		47DAE50A2922EF72008E95E1 /* LiveChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE5092922EF72008E95E1 /* LiveChatsViewController.swift */; };
+		47DAE50C2922EF7A008E95E1 /* LiveChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50B2922EF7A008E95E1 /* LiveChatsViewModel.swift */; };
+		47DAE50F2922EF8D008E95E1 /* LiveChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50E2922EF8D008E95E1 /* LiveChatTableViewCell.swift */; };
 		70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		47833FF8298069B600A1EAA7 /* PBXContainerItemProxy */ = {
+		4782124F29D2182500BA8329 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
+			containerPortal = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 47B009052817871500EF93FD;
 			remoteInfo = ViafouraSDK;
 		};
-		47833FFA298069B600A1EAA7 /* PBXContainerItemProxy */ = {
+		4782125129D2182500BA8329 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
+			containerPortal = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 47B0090F2817871500EF93FD;
 			remoteInfo = ViafouraSDKTests;
@@ -77,7 +93,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4776BF1E29AAC1D9006C6642 /* ViafouraSDK.framework in Embed Frameworks */,
+				479B5A2529D3468A00734F84 /* ViafouraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,12 +117,13 @@
 		477904142818E73D0019B2F3 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		477904172818E7FF0019B2F3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4779041A2818E81B0019B2F3 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		477904232818EA140019B2F3 /* UIStoryboard+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Default.swift"; sourceTree = "<group>"; };
 		477904252818EAB90019B2F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		477904272818EC6C0019B2F3 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
-		47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
+		4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		479502D22818F03C00ED9E56 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4795030A2819D05D00ED9E56 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewController.swift; sourceTree = "<group>"; };
+		479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewModel.swift; sourceTree = "<group>"; };
 		47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		47B0096328179DF800EF93FD /* Viafoura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viafoura.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,9 +134,22 @@
 		47B0096F28179DFB00EF93FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47B0097228179DFB00EF93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47B0097428179DFB00EF93FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47DAE5092922EF72008E95E1 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
-		47DAE50B2922EF7A008E95E1 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
-		47DAE50E2922EF8D008E95E1 /* BookmarksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewCell.swift; sourceTree = "<group>"; };
+		47CB993D29E3867C0070FF2B /* LiveChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
+		47CB993F29E386820070FF2B /* LiveChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewModel.swift; sourceTree = "<group>"; };
+		47CB994129E3888C0070FF2B /* video-example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-example.mp4"; sourceTree = "<group>"; };
+		47CB995F29E586880070FF2B /* Article.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
+		47CB996129E5868F0070FF2B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		47CB996329E586960070FF2B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		47CB996529E586A00070FF2B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		47CB996729E586A80070FF2B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		47CB996929E586B00070FF2B /* LiveBlog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveBlog.storyboard; sourceTree = "<group>"; };
+		47CB996B29E586B60070FF2B /* LiveChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChat.storyboard; sourceTree = "<group>"; };
+		47CB996D29E586BE0070FF2B /* CommentsContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommentsContainer.storyboard; sourceTree = "<group>"; };
+		47CB996F29E586C70070FF2B /* LiveChats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChats.storyboard; sourceTree = "<group>"; };
+		47CB997229E589700070FF2B /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
+		47DAE5092922EF72008E95E1 /* LiveChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatsViewController.swift; sourceTree = "<group>"; };
+		47DAE50B2922EF7A008E95E1 /* LiveChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatsViewModel.swift; sourceTree = "<group>"; };
+		47DAE50E2922EF8D008E95E1 /* LiveChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatTableViewCell.swift; sourceTree = "<group>"; };
 		828EF67343F1A1E05E74D4B0 /* Pods-Viafoura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.release.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.release.xcconfig"; sourceTree = "<group>"; };
 		8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viafoura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,7 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4776BF1D29AAC1D9006C6642 /* ViafouraSDK.framework in Frameworks */,
+				479B5A2429D3468A00734F84 /* ViafouraSDK.framework in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -144,6 +174,7 @@
 				4771BE2529354C3800389833 /* SettingsViewController.swift */,
 				4771BE2729354C4E00389833 /* SettingsViewModel.swift */,
 				4771BE2929354F4100389833 /* SettingCell.swift */,
+				47CB996729E586A80070FF2B /* Settings.storyboard */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -153,6 +184,7 @@
 			children = (
 				4771BE2F2935545600389833 /* CommentsContainerViewController.swift */,
 				4771BE332935571D00389833 /* CommentsContainerViewModel.swift */,
+				47CB996D29E586BE0070FF2B /* CommentsContainer.storyboard */,
 			);
 			path = CommentsContainer;
 			sourceTree = "<group>";
@@ -162,6 +194,7 @@
 			children = (
 				47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */,
 				47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */,
+				47CB996329E586960070FF2B /* SignUp.storyboard */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -172,6 +205,7 @@
 				4779041F2818E86B0019B2F3 /* Cell */,
 				47B0096A28179DF800EF93FD /* HomeViewController.swift */,
 				477904172818E7FF0019B2F3 /* HomeViewModel.swift */,
+				47CB996529E586A00070FF2B /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -191,6 +225,7 @@
 			children = (
 				477904252818EAB90019B2F3 /* LoginViewController.swift */,
 				4795030A2819D05D00ED9E56 /* LoginViewModel.swift */,
+				47CB996129E5868F0070FF2B /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -198,9 +233,11 @@
 		4779041D2818E8280019B2F3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				47CB993C29E3866F0070FF2B /* LiveChat */,
+				479B5A2829D34A9400734F84 /* LiveBlog */,
 				4771BE2E2935544500389833 /* CommentsContainer */,
 				4771BE2429354C2F00389833 /* Settings */,
-				47DAE5082922EF65008E95E1 /* Bookmarks */,
+				47DAE5082922EF65008E95E1 /* LiveChats */,
 				479502CF2818F03100ED9E56 /* Tab */,
 				4779041E2818E85B0019B2F3 /* Article */,
 				4779041C2818E81E0019B2F3 /* Login */,
@@ -216,6 +253,7 @@
 			children = (
 				477904102818E2CC0019B2F3 /* ArticleViewController.swift */,
 				477904272818EC6C0019B2F3 /* ArticleViewModel.swift */,
+				47CB995F29E586880070FF2B /* Article.storyboard */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -231,6 +269,7 @@
 		477904202818E8F40019B2F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47CB994129E3888C0070FF2B /* video-example.mp4 */,
 				470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */,
 				47B0096F28179DFB00EF93FD /* Assets.xcassets */,
 				47B0097428179DFB00EF93FD /* Info.plist */,
@@ -239,21 +278,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		477904212818E8FD0019B2F3 /* Storyboard */ = {
+		477904212818E8FD0019B2F3 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				47B0096C28179DF800EF93FD /* Main.storyboard */,
 				47B0097128179DFB00EF93FD /* LaunchScreen.storyboard */,
-				477904232818EA140019B2F3 /* UIStoryboard+Default.swift */,
 			);
-			path = Storyboard;
+			path = Splash;
 			sourceTree = "<group>";
 		};
-		47833FF4298069B500A1EAA7 /* Products */ = {
+		4782124B29D2182500BA8329 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */,
-				47833FFB298069B600A1EAA7 /* ViafouraSDKTests.xctest */,
+				4782125029D2182500BA8329 /* ViafouraSDK.framework */,
+				4782125229D2182500BA8329 /* ViafouraSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,15 +298,26 @@
 		479502CF2818F03100ED9E56 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
+				47B0096C28179DF800EF93FD /* Main.storyboard */,
 				479502D22818F03C00ED9E56 /* MainTabBarController.swift */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
 		};
+		479B5A2829D34A9400734F84 /* LiveBlog */ = {
+			isa = PBXGroup;
+			children = (
+				479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */,
+				479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */,
+				47CB996929E586B00070FF2B /* LiveBlog.storyboard */,
+			);
+			path = LiveBlog;
+			sourceTree = "<group>";
+		};
 		47B0095A28179DF800EF93FD = {
 			isa = PBXGroup;
 			children = (
-				47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */,
+				4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
 				47B0096428179DF800EF93FD /* Products */,
 				47B0099928179F0900EF93FD /* Frameworks */,
@@ -289,7 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				47162750293FA61100729F25 /* Viafoura.entitlements */,
-				477904212818E8FD0019B2F3 /* Storyboard */,
+				47CB997129E589600070FF2B /* Protocol */,
+				477904212818E8FD0019B2F3 /* Splash */,
 				477904202818E8F40019B2F3 /* Resources */,
 				4779041D2818E8280019B2F3 /* Features */,
 				477904192818E8150019B2F3 /* Model */,
@@ -307,20 +356,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		47DAE5082922EF65008E95E1 /* Bookmarks */ = {
+		47CB993C29E3866F0070FF2B /* LiveChat */ = {
+			isa = PBXGroup;
+			children = (
+				47CB993D29E3867C0070FF2B /* LiveChatViewController.swift */,
+				47CB993F29E386820070FF2B /* LiveChatViewModel.swift */,
+				47CB996B29E586B60070FF2B /* LiveChat.storyboard */,
+			);
+			path = LiveChat;
+			sourceTree = "<group>";
+		};
+		47CB997129E589600070FF2B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				47CB997229E589700070FF2B /* StoryboardCreatable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		47DAE5082922EF65008E95E1 /* LiveChats */ = {
 			isa = PBXGroup;
 			children = (
 				47DAE50D2922EF7D008E95E1 /* Cell */,
-				47DAE5092922EF72008E95E1 /* BookmarksViewController.swift */,
-				47DAE50B2922EF7A008E95E1 /* BookmarksViewModel.swift */,
+				47DAE5092922EF72008E95E1 /* LiveChatsViewController.swift */,
+				47DAE50B2922EF7A008E95E1 /* LiveChatsViewModel.swift */,
+				47CB996F29E586C70070FF2B /* LiveChats.storyboard */,
 			);
-			path = Bookmarks;
+			path = LiveChats;
 			sourceTree = "<group>";
 		};
 		47DAE50D2922EF7D008E95E1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				47DAE50E2922EF8D008E95E1 /* BookmarksTableViewCell.swift */,
+				47DAE50E2922EF8D008E95E1 /* LiveChatTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -392,8 +460,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 47833FF4298069B500A1EAA7 /* Products */;
-					ProjectRef = 47833FF3298069B500A1EAA7 /* ViafouraSDK.xcodeproj */;
+					ProductGroup = 4782124B29D2182500BA8329 /* Products */;
+					ProjectRef = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -404,18 +472,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */ = {
+		4782125029D2182500BA8329 /* ViafouraSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ViafouraSDK.framework;
-			remoteRef = 47833FF8298069B600A1EAA7 /* PBXContainerItemProxy */;
+			remoteRef = 4782124F29D2182500BA8329 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		47833FFB298069B600A1EAA7 /* ViafouraSDKTests.xctest */ = {
+		4782125229D2182500BA8329 /* ViafouraSDKTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ViafouraSDKTests.xctest;
-			remoteRef = 47833FFA298069B600A1EAA7 /* PBXContainerItemProxy */;
+			remoteRef = 4782125129D2182500BA8329 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -425,11 +493,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CB996229E5868F0070FF2B /* Login.storyboard in Resources */,
+				47CB996629E586A00070FF2B /* Home.storyboard in Resources */,
+				47CB996829E586A80070FF2B /* Settings.storyboard in Resources */,
+				47CB994229E388BE0070FF2B /* video-example.mp4 in Resources */,
+				47CB997029E586C70070FF2B /* LiveChats.storyboard in Resources */,
+				47CB996E29E586BE0070FF2B /* CommentsContainer.storyboard in Resources */,
+				47CB996429E586960070FF2B /* SignUp.storyboard in Resources */,
 				47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */,
+				47CB996A29E586B00070FF2B /* LiveBlog.storyboard in Resources */,
+				47CB996029E586880070FF2B /* Article.storyboard in Resources */,
 				4707010028CBEBC500BE9C0D /* GoogleService-Info.plist in Resources */,
 				47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */,
 				47B0096E28179DF800EF93FD /* Main.storyboard in Resources */,
 				4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */,
+				47CB996C29E586B60070FF2B /* LiveChat.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,30 +560,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47DAE50A2922EF72008E95E1 /* BookmarksViewController.swift in Sources */,
+				47DAE50A2922EF72008E95E1 /* LiveChatsViewController.swift in Sources */,
 				477904262818EAB90019B2F3 /* LoginViewController.swift in Sources */,
 				47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */,
 				4779041B2818E81B0019B2F3 /* Story.swift in Sources */,
 				4771BE302935545600389833 /* CommentsContainerViewController.swift in Sources */,
+				47CB997329E589700070FF2B /* StoryboardCreatable.swift in Sources */,
 				479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */,
 				4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */,
 				4771BE2C2935506E00389833 /* Setting.swift in Sources */,
+				479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */,
 				47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */,
 				4771BE32293556A100389833 /* VCIdentifier.swift in Sources */,
 				4771BE342935571D00389833 /* CommentsContainerViewModel.swift in Sources */,
 				477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */,
-				47DAE50C2922EF7A008E95E1 /* BookmarksViewModel.swift in Sources */,
+				47DAE50C2922EF7A008E95E1 /* LiveChatsViewModel.swift in Sources */,
 				473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */,
 				477904182818E7FF0019B2F3 /* HomeViewModel.swift in Sources */,
 				4771BE2A29354F4200389833 /* SettingCell.swift in Sources */,
+				479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */,
 				477904112818E2CC0019B2F3 /* ArticleViewController.swift in Sources */,
-				47DAE50F2922EF8D008E95E1 /* BookmarksTableViewCell.swift in Sources */,
+				47CB994029E386820070FF2B /* LiveChatViewModel.swift in Sources */,
+				47DAE50F2922EF8D008E95E1 /* LiveChatTableViewCell.swift in Sources */,
 				47A8F22B2832D1F300D9EB8B /* SignUpViewController.swift in Sources */,
-				477904242818EA140019B2F3 /* UIStoryboard+Default.swift in Sources */,
 				4771BE2829354C4E00389833 /* SettingsViewModel.swift in Sources */,
 				4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */,
 				47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */,
 				47B0096928179DF800EF93FD /* SceneDelegate.swift in Sources */,
+				47CB993E29E3867C0070FF2B /* LiveChatViewController.swift in Sources */,
 				477904152818E73D0019B2F3 /* StoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +650,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -628,6 +711,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
