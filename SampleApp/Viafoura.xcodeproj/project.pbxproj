@@ -17,6 +17,8 @@
 		4771BE302935545600389833 /* CommentsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2F2935545600389833 /* CommentsContainerViewController.swift */; };
 		4771BE32293556A100389833 /* VCIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE31293556A000389833 /* VCIdentifier.swift */; };
 		4771BE342935571D00389833 /* CommentsContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE332935571D00389833 /* CommentsContainerViewModel.swift */; };
+		4776BF1D29AAC1D9006C6642 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; };
+		4776BF1E29AAC1D9006C6642 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477904112818E2CC0019B2F3 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904102818E2CC0019B2F3 /* ArticleViewController.swift */; };
 		477904152818E73D0019B2F3 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904142818E73D0019B2F3 /* StoryTableViewCell.swift */; };
 		477904182818E7FF0019B2F3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904172818E7FF0019B2F3 /* HomeViewModel.swift */; };
@@ -85,7 +87,7 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		47B629B82899AFA1006F5F63 /* Embed Frameworks */ = {
+		4776BF1F29AAC1D9006C6642 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -412,8 +414,8 @@
 				47B0096028179DF800EF93FD /* Frameworks */,
 				47B0096128179DF800EF93FD /* Resources */,
 				5AAEF5A1819B1F8289A16C03 /* [CP] Embed Pods Frameworks */,
-				47B629B82899AFA1006F5F63 /* Embed Frameworks */,
 				47162763293FAA9400729F25 /* Embed Foundation Extensions */,
+				4776BF1F29AAC1D9006C6642 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -733,7 +735,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
@@ -765,7 +766,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 828EF67343F1A1E05E74D4B0 /* Pods-Viafoura.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;

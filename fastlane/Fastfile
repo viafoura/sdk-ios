@@ -42,7 +42,7 @@ platform :ios do
 
    #### execute by running "fastlane makeAndSendBuild"
    desc "Make the EOS build and send it to TF"
-   lane :makeAndSendBuildProd do
+   lane :makeAndSendBuild do
 
 	ensure_temp_keychain(keychain_name, keychain_password)
       app_store_connect_api_key(
@@ -52,29 +52,13 @@ platform :ios do
          is_key_content_base64: true,
          duration: 1200,
          in_house: false)
-
-      match(type: "appstore",
-         app_identifier: "com.viafoura.sampleapp",
-         git_basic_authorization: ENV["MATCH_GIT_REPOSITORY_TOKEN"],
-	      readonly: true,
-         keychain_name: keychain_name,
-         keychain_password: keychain_password)
-
-      # Increment build number
-      appStoreBuild = app_store_build_number(live: false, app_identifier: "com.viafoura.sampleapp")
-      
-      buildNumber = appStoreBuild.to_i + 1
-      increment_build_number_in_plist(
-	      target: "Viafoura",
-	      build_number: buildNumber.to_s)
       
       gym(scheme: "Viafoura",
         export_method: "app-store",
         configuration: "Release",
-        workspace: "Viafoura.xcworkspace")
+        workspace: "SampleApp/Viafoura.xcworkspace")
 
       upload_to_testflight(skip_waiting_for_build_processing: true)
-      delete_temp_keychain(keychain_name)
    end
 
 end
