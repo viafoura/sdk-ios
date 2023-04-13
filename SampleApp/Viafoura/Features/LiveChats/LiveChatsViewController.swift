@@ -51,6 +51,7 @@ extension LiveChatsViewController: UITableViewDelegate{
                 return
             }
             
+            liveChatVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
             liveChatVC.hidesBottomBarWhenPushed = true
             liveChatVC.title = liveChatVC.title
             self.navigationController?.pushViewController(liveChatVC, animated: true)
