@@ -88,11 +88,22 @@ class LiveChatViewController: UIViewController, StoryboardCreateable {
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.videoContainerView.bounds
         self.videoContainerView.layer.addSublayer(playerLayer)
+        player.isMuted = true
         player.play()
         
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { [weak self] _ in
             self?.player?.seek(to: CMTime.zero)
             self?.player?.play()
+        }
+        
+        videoContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(videoTapped)))
+    }
+
+    @objc
+    func videoTapped(){
+        UIView.animate(withDuration: 0.25) {
+            self.containerView.alpha = self.containerView.alpha == 0 ? 1 : 0
+            self.view.layoutIfNeeded()
         }
     }
 }
