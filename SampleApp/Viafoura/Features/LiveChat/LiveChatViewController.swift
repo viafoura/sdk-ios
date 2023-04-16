@@ -57,6 +57,16 @@ class LiveChatViewController: UIViewController, StoryboardCreateable {
     func setupUI(){
         let colors = VFColors(colorPrimary: .red, colorPrimaryLight: .red, colorBackground: .clear)
         let settings = VFSettings(colors: colors)
+        
+        let callbacks: VFActionsCallbacks = { type in
+            switch type {
+            case .openProfilePressed(let userUUID, let presentationType):
+                self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+            default:
+                break
+            }
+        }
+        
         guard let vc = VFLiveChatViewController.new(containerId: viewModel.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings) else {
             return
         }
@@ -70,8 +80,20 @@ class LiveChatViewController: UIViewController, StoryboardCreateable {
         vc.didMove(toParent: self)
         
         vc.setTheme(theme: .dark)
+        vc.setActionCallbacks(callbacks: callbacks)
         
         createGradientBackground()
+    }
+    
+    func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
+        let colors = VFColors(colorPrimary: .red, colorPrimaryLight: .red)
+        let settings = VFSettings(colors: colors)
+        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
+            return
+        }
+
+        profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+        self.present(profileViewController, animated: true)
     }
     
     func setupVideo(){

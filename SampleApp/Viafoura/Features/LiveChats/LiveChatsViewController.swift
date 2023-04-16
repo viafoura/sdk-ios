@@ -30,6 +30,17 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
+        let colors = VFColors(colorPrimary: .red, colorPrimaryLight: .red)
+        let settings = VFSettings(colors: colors)
+        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
+            return
+        }
+
+        profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+        self.present(profileViewController, animated: true)
+    }
 }
 
 extension LiveChatsViewController: UITableViewDelegate{
@@ -46,11 +57,21 @@ extension LiveChatsViewController: UITableViewDelegate{
             liveChatVC.hidesBottomBarWhenPushed = true
             self.present(liveChatVC, animated: true)
         } else {
+            let callbacks: VFActionsCallbacks = { type in
+                switch type {
+                case .openProfilePressed(let userUUID, let presentationType):
+                    self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                default:
+                    break
+                }
+            }
+            
             let settings = VFSettings(colors: VFColors())
             guard let liveChatVC = VFLiveChatViewController.new(containerId: liveChat.containerId, articleMetadata: articleMetadata, loginDelegate: self, settings: settings) else {
                 return
             }
             
+            liveChatVC.setActionCallbacks(callbacks: callbacks)
             liveChatVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
             liveChatVC.hidesBottomBarWhenPushed = true
             liveChatVC.title = liveChatVC.title
