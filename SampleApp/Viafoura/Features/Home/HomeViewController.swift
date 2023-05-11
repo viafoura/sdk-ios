@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     
     let viewModel = HomeViewModel()
         
+    let notificationBellTag = 5
+    
     struct CellIdentifier {
         static let storyCell = "storyCell"
     }
@@ -29,7 +31,40 @@ class HomeViewController: UIViewController, StoryboardCreateable {
         super.viewWillAppear(animated)
         
         updateStyling()
-        getAuthState()
+        setNotificationBell()
+    }
+    
+    func setNotificationBell(){
+        for view in view.subviews where view.tag == notificationBellTag {
+            view.removeFromSuperview()
+        }
+
+        let settings = VFSettings(colors: VFColors())
+        let bellView = VFNotificationBellView(settings: settings, loginDelegate: self, onBellClicked: { _ in
+
+        })
+        
+        bellView.tag = notificationBellTag
+        bellView.translatesAutoresizingMaskIntoConstraints = false
+        bellView.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+
+        if UserDefaults.standard.bool(forKey: SettingsKeys.showNotificationBellInTopBar) {
+            bellView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            bellView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            
+            let bellBarButtonItem = UIBarButtonItem(customView: bellView)
+            navigationItem.rightBarButtonItem = bellBarButtonItem
+        } else {
+            view.addSubview(bellView)
+            
+            bellView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            bellView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+            bellView.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: -20).isActive = true
+            bellView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: -20).isActive = true
+            bellView.layoutIfNeeded()
+            
+            navigationItem.rightBarButtonItem = nil
+        }
     }
     
     func updateStyling(){
@@ -42,7 +77,14 @@ class HomeViewController: UIViewController, StoryboardCreateable {
         tableView.delegate = self
         tableView.dataSource = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.bellChanged(notification:)), name: Notification.Name(SettingsKeys.showNotificationBellInTopBar), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.darkModeChanged(notification:)), name: Notification.Name(SettingsKeys.darkMode), object: nil)
+    }
+    
+    
+    @objc func bellChanged(notification: Notification) {
+        getAuthState()
+        setNotificationBell()
     }
     
     @objc func darkModeChanged(notification: Notification) {
@@ -50,6 +92,10 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     }
     
     func getAuthState(){
+        if UserDefaults.standard.bool(forKey: SettingsKeys.showNotificationBellInTopBar) {
+            return
+        }
+
         viewModel.getAuthState(completion: { loginStatus in
             if loginStatus == .loggedIn {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(self.logoutTapped))
@@ -119,3 +165,8 @@ extension HomeViewController: UITableViewDelegate{
     }
 }
 
+extension HomeViewController: VFLoginDelegate {
+    func startLogin() {
+        loginTapped()
+    }
+}

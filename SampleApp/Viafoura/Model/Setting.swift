@@ -15,10 +15,12 @@ public struct SettingsKeys {
     public static let showTrendingArticles = "showTrendingArticles"
     public static let commentsContainerFullscreen = "commentsContainerFullscreen"
     public static let darkMode = "darkMode"
+    public static let showNotificationBellInTopBar = "showNotificationBellInTopBar"
 }
 
 public let defaultSettings: [Setting] = [
     Setting(title: "Use comments container on fullscreen", key: SettingsKeys.commentsContainerFullscreen),
     Setting(title: "Show trending articles", key: SettingsKeys.showTrendingArticles),
-    Setting(title: "Dark mode", key: SettingsKeys.darkMode)
+    Setting(title: "Dark mode", key: SettingsKeys.darkMode),
+    Setting(title: "Show notification bell in top bar", key: SettingsKeys.showNotificationBellInTopBar)
 ]
