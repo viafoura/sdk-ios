@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4707010028CBEBC500BE9C0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */; };
 		4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4707010728CFAD2C00BE9C0D /* LoginRadius.plist */; };
+		4710CE122A164F0A00A4115D /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710CE112A164F0A00A4115D /* UIViewController+HideKeyboard.swift */; };
 		473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC2B285A59E30044D00F /* CustomNavigationController.swift */; };
 		4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2529354C3800389833 /* SettingsViewController.swift */; };
 		4771BE2829354C4E00389833 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2729354C4E00389833 /* SettingsViewModel.swift */; };
@@ -17,8 +18,6 @@
 		4771BE302935545600389833 /* CommentsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2F2935545600389833 /* CommentsContainerViewController.swift */; };
 		4771BE32293556A100389833 /* VCIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE31293556A000389833 /* VCIdentifier.swift */; };
 		4771BE342935571D00389833 /* CommentsContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE332935571D00389833 /* CommentsContainerViewModel.swift */; };
-		4776BF1D29AAC1D9006C6642 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; };
-		4776BF1E29AAC1D9006C6642 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47833FF9298069B600A1EAA7 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		477904112818E2CC0019B2F3 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904102818E2CC0019B2F3 /* ArticleViewController.swift */; };
 		477904152818E73D0019B2F3 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904142818E73D0019B2F3 /* StoryTableViewCell.swift */; };
 		477904182818E7FF0019B2F3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904172818E7FF0019B2F3 /* HomeViewModel.swift */; };
@@ -104,6 +103,7 @@
 		422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.debug.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.debug.xcconfig"; sourceTree = "<group>"; };
 		470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4707010728CFAD2C00BE9C0D /* LoginRadius.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LoginRadius.plist; sourceTree = "<group>"; };
+		4710CE112A164F0A00A4115D /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		47162750293FA61100729F25 /* Viafoura.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Viafoura.entitlements; sourceTree = "<group>"; };
 		473DBC2B285A59E30044D00F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		4771BE2529354C3800389833 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +168,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4710CE102A164EFC00A4115D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4710CE112A164F0A00A4115D /* UIViewController+HideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4771BE2429354C2F00389833 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +344,7 @@
 		47B0096528179DF800EF93FD /* Viafoura */ = {
 			isa = PBXGroup;
 			children = (
+				4710CE102A164EFC00A4115D /* Extensions */,
 				47162750293FA61100729F25 /* Viafoura.entitlements */,
 				47CB997129E589600070FF2B /* Protocol */,
 				477904212818E8FD0019B2F3 /* Splash */,
@@ -569,6 +578,7 @@
 				479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */,
 				4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */,
 				4771BE2C2935506E00389833 /* Setting.swift in Sources */,
+				4710CE122A164F0A00A4115D /* UIViewController+HideKeyboard.swift in Sources */,
 				479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */,
 				47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */,
 				4771BE32293556A100389833 /* VCIdentifier.swift in Sources */,
@@ -739,7 +749,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -753,7 +763,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.22;
+				MARKETING_VERSION = 1.0.26;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -770,7 +780,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -784,7 +794,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.22;
+				MARKETING_VERSION = 1.0.26;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController, StoryboardCreateable{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideKeyboardWhenTappedAround()
         setupUI()
     }
     
@@ -41,10 +42,14 @@ class SignUpViewController: UIViewController, StoryboardCreateable{
         loadingView.color = .red
         
         if #available(iOS 13.0, *) {
-            nameTextField.overrideUserInterfaceStyle = .light
-            passwordTextField.overrideUserInterfaceStyle = .light
-            emailTextField.overrideUserInterfaceStyle = .light
+            nameTextField.overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
+            passwordTextField.overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
+            emailTextField.overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
         }
+        
+        nameTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
         
         closeImage.isUserInteractionEnabled = true
         closeImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeTapped)))
@@ -99,5 +104,12 @@ class SignUpViewController: UIViewController, StoryboardCreateable{
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
