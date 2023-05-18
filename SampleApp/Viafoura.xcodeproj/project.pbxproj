@@ -425,6 +425,7 @@
 				5AAEF5A1819B1F8289A16C03 /* [CP] Embed Pods Frameworks */,
 				47162763293FAA9400729F25 /* Embed Foundation Extensions */,
 				4776BF1F29AAC1D9006C6642 /* Embed Frameworks */,
+				4710CE282A1689A900A4115D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -523,6 +524,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4710CE282A1689A900A4115D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\n",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		4EB6334018611936660C7F10 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,6 +770,7 @@
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;
@@ -781,6 +802,7 @@
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viafoura/Resources/Info.plist;

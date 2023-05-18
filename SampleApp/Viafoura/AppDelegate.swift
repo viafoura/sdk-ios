@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
         
         FirebaseApp.configure()
-        
+
         Messaging.messaging().delegate = self
 
         let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()

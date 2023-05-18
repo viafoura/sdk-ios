@@ -50,7 +50,7 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .mostLiked) else {
+        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .newest) else {
             return
         }
         
