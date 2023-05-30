@@ -8,6 +8,7 @@
     
     <script>
         window.buildTwitterBlock = function (twitterId) {
+            document.body.innerHTML = '';
             document.body.innerHTML += "<blockquote class='twitter-tweet'><a href='https://twitter.com/x/status/" + twitterId + "'></blockquote>";
             var tag = document.createElement("script");
             tag.src = "https://platform.twitter.com/widgets.js";
@@ -17,5 +18,25 @@
         window.setBackgroundColor = function (backgroundColor) {
             document.body.style.backgroundColor = backgroundColor;
         };
+        
+        function onElementHeightChange(elm, callback) {
+          var lastHeight = elm.clientHeight, newHeight;
+
+          (function run() {
+            newHeight = elm.clientHeight;
+            if (lastHeight != newHeight)
+              callback(newHeight)
+            lastHeight = newHeight
+
+            if (elm.onElementHeightChangeTimer)
+              clearTimeout(elm.onElementHeightChangeTimer)
+
+            elm.onElementHeightChangeTimer = setTimeout(run, 200)
+          })()
+        }
+
+        onElementHeightChange(document.body, function(h) {
+            console.log(h)
+        })
     </script>
 </html>

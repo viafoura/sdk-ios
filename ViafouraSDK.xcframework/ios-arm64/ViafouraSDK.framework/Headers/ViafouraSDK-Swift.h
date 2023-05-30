@@ -255,15 +255,50 @@ using UInt = size_t;
 #if defined(__OBJC__)
 
 
-
-
-
-
-
-
-
-
+@class NSString;
+@class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC11ViafouraSDK18VFUIViewController")
+@interface VFUIViewController : UIViewController
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK23ChatReplyViewController")
+@interface ChatReplyViewController : VFUIViewController
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITextView;
+
+@interface ChatReplyViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
+- (void)textViewDidChange:(UITextView * _Nonnull)textView;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
+@interface SingleChatViewController : VFUIViewController
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+
+
+
+
+
+
+
 
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
@@ -293,15 +328,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK8VFButton")
 @property (nonatomic, getter=isEnabled) BOOL enabled;
 @end
 
-@class NSString;
-@class NSBundle;
-
-SWIFT_CLASS("_TtC11ViafouraSDK18VFUIViewController")
-@interface VFUIViewController : UIViewController
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 
 SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 @interface VFCarouselTrendingViewController : VFUIViewController
@@ -309,6 +335,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -321,7 +348,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -382,6 +408,20 @@ SWIFT_CLASS("_TtC11ViafouraSDK16VFEmptyChatsView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK19VFEmptyCommentsView")
 @interface VFEmptyCommentsView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK21VFEmptyModerationView")
+@interface VFEmptyModerationView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK16VFEnablePushView")
+@interface VFEnablePushView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -454,11 +494,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK24VFLiveChatViewController")
 
 
 
-@class UITextView;
 
 @interface VFLiveChatViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
+
 
 
 
@@ -488,6 +528,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 @property (nonatomic, readonly) BOOL canResignFirstResponder;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@protocol UIViewControllerTransitionCoordinator;
+
+@interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
 
 
@@ -544,6 +590,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
+@interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+@end
+
+
 
 
 
@@ -566,9 +617,22 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 
 
 
+@class UIImagePickerController;
+
+@interface VFProfileViewController (SWIFT_EXTENSION(ViafouraSDK)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
+@end
 
 
 
+
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK16VFScrollDownView")
+@interface VFScrollDownView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
 
 
 SWIFT_CLASS("_TtC11ViafouraSDK18VFSegmentedControl")
@@ -653,6 +717,15 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK27ViewChatReplyViewController")
+@interface ViewChatReplyViewController : VFUIViewController
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #endif
