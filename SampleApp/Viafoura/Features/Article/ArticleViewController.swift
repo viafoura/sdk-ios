@@ -175,6 +175,14 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         preCommentsViewController.didMove(toParent: self)
     }
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
+        if navigationAction.request.url?.absoluteString == articleViewModel.story.link {
+            return .allow
+        }
+        
+        return .cancel
+    }
+    
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
         guard let settings = settings else {
             return
