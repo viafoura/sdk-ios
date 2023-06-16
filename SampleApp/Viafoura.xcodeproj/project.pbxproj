@@ -26,8 +26,6 @@
 		477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904272818EC6C0019B2F3 /* ArticleViewModel.swift */; };
 		479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479502D22818F03C00ED9E56 /* MainTabBarController.swift */; };
 		4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795030A2819D05D00ED9E56 /* LoginViewModel.swift */; };
-		479B5A2429D3468A00734F84 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782125029D2182500BA8329 /* ViafouraSDK.framework */; };
-		479B5A2529D3468A00734F84 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4782125029D2182500BA8329 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */; };
 		479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
@@ -59,16 +57,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4782124F29D2182500BA8329 /* PBXContainerItemProxy */ = {
+		47A7E5092A3215440056AF74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
+			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 47B009052817871500EF93FD;
 			remoteInfo = ViafouraSDK;
 		};
-		4782125129D2182500BA8329 /* PBXContainerItemProxy */ = {
+		47A7E50B2A3215440056AF74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
+			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 47B0090F2817871500EF93FD;
 			remoteInfo = ViafouraSDKTests;
@@ -92,7 +90,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				479B5A2529D3468A00734F84 /* ViafouraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,11 +116,11 @@
 		4779041A2818E81B0019B2F3 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		477904252818EAB90019B2F3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		477904272818EC6C0019B2F3 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
-		4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		479502D22818F03C00ED9E56 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4795030A2819D05D00ED9E56 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewController.swift; sourceTree = "<group>"; };
 		479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewModel.swift; sourceTree = "<group>"; };
+		47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		47B0096328179DF800EF93FD /* Viafoura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viafoura.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +156,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				479B5A2429D3468A00734F84 /* ViafouraSDK.framework in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -294,15 +290,6 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		4782124B29D2182500BA8329 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4782125029D2182500BA8329 /* ViafouraSDK.framework */,
-				4782125229D2182500BA8329 /* ViafouraSDKTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		479502CF2818F03100ED9E56 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,10 +309,19 @@
 			path = LiveBlog;
 			sourceTree = "<group>";
 		};
+		47A7E5052A3215440056AF74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */,
+				47A7E50C2A3215440056AF74 /* ViafouraSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		47B0095A28179DF800EF93FD = {
 			isa = PBXGroup;
 			children = (
-				4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */,
+				47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
 				47B0096428179DF800EF93FD /* Products */,
 				47B0099928179F0900EF93FD /* Frameworks */,
@@ -470,8 +466,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4782124B29D2182500BA8329 /* Products */;
-					ProjectRef = 4782124A29D2182500BA8329 /* ViafouraSDK.xcodeproj */;
+					ProductGroup = 47A7E5052A3215440056AF74 /* Products */;
+					ProjectRef = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -482,18 +478,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4782125029D2182500BA8329 /* ViafouraSDK.framework */ = {
+		47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ViafouraSDK.framework;
-			remoteRef = 4782124F29D2182500BA8329 /* PBXContainerItemProxy */;
+			remoteRef = 47A7E5092A3215440056AF74 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4782125229D2182500BA8329 /* ViafouraSDKTests.xctest */ = {
+		47A7E50C2A3215440056AF74 /* ViafouraSDKTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ViafouraSDKTests.xctest;
-			remoteRef = 4782125129D2182500BA8329 /* PBXContainerItemProxy */;
+			remoteRef = 47A7E50B2A3215440056AF74 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -769,7 +765,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -784,7 +780,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.26;
+				MARKETING_VERSION = 1.0.28;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -801,7 +797,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JJ3874BH56;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -816,7 +812,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.26;
+				MARKETING_VERSION = 1.0.28;
 				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

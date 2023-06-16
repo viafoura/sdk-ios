@@ -617,7 +617,7 @@ extension VFStoryContainerError {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-public protocol VFLoginDelegate {
+public protocol VFLoginDelegate : AnyObject {
   func startLogin()
 }
 public enum VFFilterType {
@@ -980,7 +980,7 @@ extension VFLoginRadiusLoginError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest) -> VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2) -> VFPreviewCommentsViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1420,11 +1420,11 @@ public struct VFFonts {
   public static let fontRegularDefault: UIKit.UIFont
   public static let fontSemiboldDefault: UIKit.UIFont
   public static let fontThinDefault: UIKit.UIFont
-  public var fontRegular: UIKit.UIFont
-  public var fontMedium: UIKit.UIFont
-  public var fontBold: UIKit.UIFont
-  public var fontLight: UIKit.UIFont
-  public var fontSemibold: UIKit.UIFont
+  unowned public var fontRegular: UIKit.UIFont
+  unowned public var fontMedium: UIKit.UIFont
+  unowned public var fontBold: UIKit.UIFont
+  unowned public var fontLight: UIKit.UIFont
+  unowned public var fontSemibold: UIKit.UIFont
   public init(fontLight: UIKit.UIFont = fontLightDefault, fontRegular: UIKit.UIFont = fontRegularDefault, fontMedium: UIKit.UIFont = fontMediumDefault, fontSemibold: UIKit.UIFont = fontSemiboldDefault, fontBold: UIKit.UIFont = fontBoldDefault)
 }
 public enum VFRemoveEditorPickCommentError : Foundation.LocalizedError {
@@ -1507,7 +1507,7 @@ extension VFUnlikeChatError {
     get
   }
 }
-public protocol VFCustomUIDelegate {
+public protocol VFCustomUIDelegate : AnyObject {
   func customizeView(theme: VFTheme, view: VFCustomizableView)
 }
 public struct VFSettings {
