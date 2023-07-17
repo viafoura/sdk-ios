@@ -549,6 +549,19 @@ extension ViafouraSDK.VFUndislikeStoryError {
     get
   }
 }
+public enum VFVotePollError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFVotePollError, b: ViafouraSDK.VFVotePollError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFVotePollError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
   @objc deinit
 }
@@ -608,6 +621,19 @@ extension ViafouraSDK.VFCommentsProfileError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEnablePushView : UIKit.UIView {
   @objc deinit
+}
+public enum VFPollContainerError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFPollContainerError, b: ViafouraSDK.VFPollContainerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFPollContainerError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers public class ImageService {
   @objc deinit
@@ -961,6 +987,15 @@ extension ViafouraSDK.VFUpdateUserAvatarError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPollViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFPollViewController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public enum VFEditCommentError : Foundation.LocalizedError {
   case unknown
@@ -1779,10 +1814,14 @@ extension ViafouraSDK.VFLikeChatError : Swift.Equatable {}
 extension ViafouraSDK.VFLikeChatError : Swift.Hashable {}
 extension ViafouraSDK.VFUndislikeStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFUndislikeStoryError : Swift.Hashable {}
+extension ViafouraSDK.VFVotePollError : Swift.Equatable {}
+extension ViafouraSDK.VFVotePollError : Swift.Hashable {}
 extension ViafouraSDK.VFReplyStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFReplyStoryError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentsProfileError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentsProfileError : Swift.Hashable {}
+extension ViafouraSDK.VFPollContainerError : Swift.Equatable {}
+extension ViafouraSDK.VFPollContainerError : Swift.Hashable {}
 extension ViafouraSDK.VFStoryContainerError : Swift.Equatable {}
 extension ViafouraSDK.VFStoryContainerError : Swift.Hashable {}
 extension ViafouraSDK.VFFilterType : Swift.Equatable {}

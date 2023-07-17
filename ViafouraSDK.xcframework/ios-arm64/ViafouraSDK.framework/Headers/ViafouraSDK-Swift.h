@@ -574,12 +574,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
 @protocol UIViewControllerTransitionCoordinator;
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
+
 
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
@@ -618,6 +618,16 @@ SWIFT_CLASS("_TtC11ViafouraSDK12VFPinnedView")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
+@interface VFPollViewController : VFUIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK23VFPoweredByViafouraView")
 @interface VFPoweredByViafouraView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -634,10 +644,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
-
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
 
 
 

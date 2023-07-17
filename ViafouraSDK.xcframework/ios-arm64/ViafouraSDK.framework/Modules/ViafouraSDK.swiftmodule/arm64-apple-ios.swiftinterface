@@ -549,6 +549,19 @@ extension VFUndislikeStoryError {
     get
   }
 }
+public enum VFVotePollError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFVotePollError, b: VFVotePollError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFVotePollError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
   @objc deinit
 }
@@ -608,6 +621,19 @@ extension VFCommentsProfileError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEnablePushView : UIKit.UIView {
   @objc deinit
+}
+public enum VFPollContainerError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFPollContainerError, b: VFPollContainerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFPollContainerError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers public class ImageService {
   @objc deinit
@@ -961,6 +987,15 @@ extension VFUpdateUserAvatarError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPollViewController : VFUIViewController {
+  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFPollViewController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 public enum VFEditCommentError : Foundation.LocalizedError {
   case unknown
@@ -1779,10 +1814,14 @@ extension VFLikeChatError : Swift.Equatable {}
 extension VFLikeChatError : Swift.Hashable {}
 extension VFUndislikeStoryError : Swift.Equatable {}
 extension VFUndislikeStoryError : Swift.Hashable {}
+extension VFVotePollError : Swift.Equatable {}
+extension VFVotePollError : Swift.Hashable {}
 extension VFReplyStoryError : Swift.Equatable {}
 extension VFReplyStoryError : Swift.Hashable {}
 extension VFCommentsProfileError : Swift.Equatable {}
 extension VFCommentsProfileError : Swift.Hashable {}
+extension VFPollContainerError : Swift.Equatable {}
+extension VFPollContainerError : Swift.Hashable {}
 extension VFStoryContainerError : Swift.Equatable {}
 extension VFStoryContainerError : Swift.Hashable {}
 extension VFFilterType : Swift.Equatable {}
