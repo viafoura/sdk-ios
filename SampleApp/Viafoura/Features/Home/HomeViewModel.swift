@@ -9,7 +9,7 @@ import Foundation
 import ViafouraSDK
 
 class HomeViewModel {
-    var stories = defaultStories
+    var contents = defaultContents
     let auth = ViafouraSDK.auth()
 
     func getAuthState(completion: @escaping (VFLoginStatus) -> Void){

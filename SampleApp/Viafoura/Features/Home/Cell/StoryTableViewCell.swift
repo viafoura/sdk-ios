@@ -41,9 +41,4 @@ class StoryTableViewCell: UITableViewCell{
         
         selectionStyle = .none
     }
-    
-    @objc
-    func shareTapped(){
-        
-    }
 }

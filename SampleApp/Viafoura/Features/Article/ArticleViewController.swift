@@ -220,7 +220,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             return
         }
         
-        if let story = defaultStories.filter { $0.containerId == containerId }.first {
+        if let content = defaultContents.filter({ $0.story?.containerId == containerId }).first, let story = content.story {
             articleVC.articleViewModel = ArticleViewModel(story: story)
             articleVC.articleViewModel.selectedContentUUID = contentUUID
             articleVC.hidesBottomBarWhenPushed = true
