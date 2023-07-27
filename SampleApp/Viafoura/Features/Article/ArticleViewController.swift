@@ -296,6 +296,8 @@ extension ArticleViewController: VFLoginDelegate {
 extension ArticleViewController: VFCustomUIDelegate {
     func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
+        case .profileLogoutLabel(let label):
+            label.isHidden = true
         case .previewBackgroundView(let view):
             if theme == VFTheme.dark {
                 view.backgroundColor = darkBackgroundColor
