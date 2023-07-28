@@ -330,6 +330,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 
 
 
+
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -626,6 +629,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 @end
 
 
+@class UITextField;
+
+@interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 
 
 SWIFT_CLASS("_TtC11ViafouraSDK23VFPoweredByViafouraView")
@@ -644,10 +654,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 
@@ -1130,6 +1140,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 
 
 
+
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -1426,6 +1439,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 @end
 
 
+@class UITextField;
+
+@interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 
 
 SWIFT_CLASS("_TtC11ViafouraSDK23VFPoweredByViafouraView")
@@ -1444,10 +1464,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 
