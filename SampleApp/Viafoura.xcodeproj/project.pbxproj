@@ -30,8 +30,6 @@
 		479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
 		47A8F22B2832D1F300D9EB8B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */; };
-		47A90B832A3CCC4A004DE7B9 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */; };
-		47A90B842A3CCC4A004DE7B9 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096628179DF800EF93FD /* AppDelegate.swift */; };
 		47B0096928179DF800EF93FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096828179DF800EF93FD /* SceneDelegate.swift */; };
 		47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096A28179DF800EF93FD /* HomeViewController.swift */; };
@@ -55,6 +53,8 @@
 		47DAE50A2922EF72008E95E1 /* LiveChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE5092922EF72008E95E1 /* LiveChatsViewController.swift */; };
 		47DAE50C2922EF7A008E95E1 /* LiveChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50B2922EF7A008E95E1 /* LiveChatsViewModel.swift */; };
 		47DAE50F2922EF8D008E95E1 /* LiveChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50E2922EF8D008E95E1 /* LiveChatTableViewCell.swift */; };
+		47E991D42A780D46006DE6F5 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */; };
+		47E991D52A780D46006DE6F5 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		47F912E02A683F81004D457C /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912DF2A683F81004D457C /* PollTableViewCell.swift */; };
 		47F912E22A684199004D457C /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912E12A684199004D457C /* Content.swift */; };
 		47F912E42A68419F004D457C /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912E32A68419F004D457C /* Poll.swift */; };
@@ -92,13 +92,13 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4776BF1F29AAC1D9006C6642 /* Embed Frameworks */ = {
+		47E991D62A780D46006DE6F5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				47A90B842A3CCC4A004DE7B9 /* ViafouraSDK.framework in Embed Frameworks */,
+				47E991D52A780D46006DE6F5 /* ViafouraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47A90B832A3CCC4A004DE7B9 /* ViafouraSDK.framework in Frameworks */,
+				47E991D42A780D46006DE6F5 /* ViafouraSDK.framework in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
 			);
@@ -450,8 +450,8 @@
 				47B0096128179DF800EF93FD /* Resources */,
 				5AAEF5A1819B1F8289A16C03 /* [CP] Embed Pods Frameworks */,
 				47162763293FAA9400729F25 /* Embed Foundation Extensions */,
-				4776BF1F29AAC1D9006C6642 /* Embed Frameworks */,
 				4710CE282A1689A900A4115D /* ShellScript */,
+				47E991D62A780D46006DE6F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
