@@ -246,6 +246,8 @@ public enum VFActionCallbackType {
   case notificationPressed(presentationType: VFNotificationPresentationType)
   case closeProfilePressed
   case trendingArticlePressed(metadata: VFArticleMetadata, containerId: Swift.String)
+  case commentPosted(contentUUID: Foundation.UUID)
+  case replyPosted(contentUUID: Foundation.UUID)
 }
 public enum VFNotificationPresentationType {
   case profile(userUUID: Foundation.UUID)
