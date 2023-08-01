@@ -235,6 +235,8 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
 
         let callbacks: VFActionsCallbacks = { type in
             switch type {
+            case .commentPosted(let contentUUID):
+                break
             default:
                 break
             }
