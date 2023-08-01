@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     
     struct CellIdentifier {
         static let storyCell = "storyCell"
+        static let pollCell = "pollCell"
     }
     
     override func viewDidLoad() {
@@ -134,37 +135,58 @@ extension HomeViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.stories.count
+        return viewModel.contents.count
     }
 }
 
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let story = viewModel.stories[indexPath.row]
-        if story.storyType == .comments {
-            guard let articleVC = ArticleViewController.new() else{
+        let content = viewModel.contents[indexPath.row]
+        if let story = content.story {
+            if story.storyType == .comments {
+                guard let articleVC = ArticleViewController.new() else{
+                    return
+                }
+                
+                articleVC.articleViewModel = ArticleViewModel(story: story)
+                articleVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(articleVC, animated: true)
+            } else if story.storyType == .blog {
+                guard let liveBlogVC = LiveBlogViewController.new() else{
+                    return
+                }
+                
+                liveBlogVC.viewModel = LiveBlogViewModel(story: story)
+                liveBlogVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(liveBlogVC, animated: true)
+            }
+        } else if let poll = content.poll {
+            guard let pollVC = PollViewController.new() else{
                 return
             }
-            
-            articleVC.articleViewModel = ArticleViewModel(story: viewModel.stories[indexPath.row])
-            articleVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(articleVC, animated: true)
-        } else if story.storyType == .blog {
-            guard let liveBlogVC = LiveBlogViewController.new() else{
-                return
-            }
-            
-            liveBlogVC.viewModel = LiveBlogViewModel(story: viewModel.stories[indexPath.row])
-            liveBlogVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(liveBlogVC, animated: true)
+            pollVC.pollViewModel = PollViewModel(poll: poll)
+            pollVC.modalPresentationStyle = .overCurrentContext
+
+            self.present(pollVC, animated: true)
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let content = viewModel.contents[indexPath.row]
+        return content.type == .poll ? 90 : 280
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.storyCell) as! StoryTableViewCell
-        let story = viewModel.stories[indexPath.row]
-        cell.setup(forStory: story)
-        return cell
+        let content = viewModel.contents[indexPath.row]
+        if content.type == .story, let story = content.story {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.storyCell) as! StoryTableViewCell
+            cell.setup(forStory: story)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.pollCell) as! PollTableViewCell
+            cell.setup(forPoll: content.poll!)
+            return cell
+        }
     }
 }
 

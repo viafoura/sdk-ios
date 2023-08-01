@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
+        //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-a3692e0c0e77", siteDomain: "test.viafoura.com")
+        //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-0892b54dbf4e", siteDomain: "reactqa5.smgdigitaldev.com")
         
         FirebaseApp.configure()
 

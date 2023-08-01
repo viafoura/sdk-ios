@@ -154,7 +154,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
         preCommentsViewController.setLayoutDelegate(layoutDelegate: self)
-        preCommentsViewController.setAuthorsIds(authors: [articleViewModel.story.authorId])
+        preCommentsViewController.setAuthorsIds(authors: [articleViewModel.story.authorId] )
 
         if let contentUUID = articleViewModel.selectedContentUUID {
             preCommentsViewController.getContentScrollPosition(contentUUID: contentUUID, completion: { [weak self] yPosition in
@@ -220,7 +220,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             return
         }
         
-        if let story = defaultStories.filter { $0.containerId == containerId }.first {
+        if let content = defaultContents.filter({ $0.story?.containerId == containerId }).first, let story = content.story {
             articleVC.articleViewModel = ArticleViewModel(story: story)
             articleVC.articleViewModel.selectedContentUUID = contentUUID
             articleVC.hidesBottomBarWhenPushed = true
@@ -235,6 +235,8 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
 
         let callbacks: VFActionsCallbacks = { type in
             switch type {
+            case .commentPosted(let contentUUID):
+                break
             default:
                 break
             }
@@ -296,6 +298,8 @@ extension ArticleViewController: VFLoginDelegate {
 extension ArticleViewController: VFCustomUIDelegate {
     func customizeView(theme: VFTheme, view: VFCustomizableView) {
         switch view {
+        case .profileLogoutLabel(let label):
+            label.isHidden = true
         case .previewBackgroundView(let view):
             if theme == VFTheme.dark {
                 view.backgroundColor = darkBackgroundColor
