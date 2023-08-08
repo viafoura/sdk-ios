@@ -335,6 +335,19 @@ extension ViafouraSDK.VFDislikeCommentError {
   public func logEventAttemptedAction(eventSessionUUID: Foundation.UUID, eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String?, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?, eventSessionStart: Foundation.Date)
   @objc deinit
 }
+public enum VFCommentContainerSignatureError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFCommentContainerSignatureError, b: ViafouraSDK.VFCommentContainerSignatureError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFCommentContainerSignatureError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFChatSelectionError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFChatSelectionError, b: ViafouraSDK.VFChatSelectionError) -> Swift.Bool
@@ -1066,7 +1079,7 @@ extension ViafouraSDK.VFLoginRadiusLoginError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2) -> ViafouraSDK.VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil) -> ViafouraSDK.VFPreviewCommentsViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
@@ -1837,6 +1850,8 @@ extension ViafouraSDK.VFClosePollError : Swift.Equatable {}
 extension ViafouraSDK.VFClosePollError : Swift.Hashable {}
 extension ViafouraSDK.VFDislikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFDislikeCommentError : Swift.Hashable {}
+extension ViafouraSDK.VFCommentContainerSignatureError : Swift.Equatable {}
+extension ViafouraSDK.VFCommentContainerSignatureError : Swift.Hashable {}
 extension ViafouraSDK.VFChatSelectionError : Swift.Equatable {}
 extension ViafouraSDK.VFChatSelectionError : Swift.Hashable {}
 extension ViafouraSDK.VFEnableChatError : Swift.Equatable {}
