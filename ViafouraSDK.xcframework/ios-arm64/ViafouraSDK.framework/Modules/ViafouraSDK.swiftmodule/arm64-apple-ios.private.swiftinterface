@@ -335,6 +335,19 @@ extension VFDislikeCommentError {
   public func logEventAttemptedAction(eventSessionUUID: Foundation.UUID, eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventArticleMetadata: VFArticleMetadata?, eventSessionStart: Foundation.Date)
   @objc deinit
 }
+public enum VFCommentContainerSignatureError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFCommentContainerSignatureError, b: VFCommentContainerSignatureError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFCommentContainerSignatureError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFChatSelectionError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFChatSelectionError, b: VFChatSelectionError) -> Swift.Bool
@@ -1066,7 +1079,7 @@ extension VFLoginRadiusLoginError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2) -> VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil) -> VFPreviewCommentsViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1837,6 +1850,8 @@ extension VFClosePollError : Swift.Equatable {}
 extension VFClosePollError : Swift.Hashable {}
 extension VFDislikeCommentError : Swift.Equatable {}
 extension VFDislikeCommentError : Swift.Hashable {}
+extension VFCommentContainerSignatureError : Swift.Equatable {}
+extension VFCommentContainerSignatureError : Swift.Hashable {}
 extension VFChatSelectionError : Swift.Equatable {}
 extension VFChatSelectionError : Swift.Hashable {}
 extension VFEnableChatError : Swift.Equatable {}
