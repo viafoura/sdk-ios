@@ -1,0 +1,1012 @@
+{
+    "activity": {
+        "content": {
+            "alert": {
+                "disabled": {
+                    "other": "Contenu désactivé.",
+                    "self": "Contenu désactivé."
+                },
+                "missing": {
+                    "other": "Contenu désactivé.",
+                    "self": "Contenu désactivé."
+                },
+                "removed": {
+                    "other": "Contenu supprimé par {name}.",
+                    "self": "Contenu supprimé."
+                }
+            }
+        }
+    },
+    "ads": {
+        "advertisement": "Publicité",
+        "recommended_by": "Recommandé par",
+        "outbrain": {
+            "sponsored_label": "SPONSORISE"
+        }
+    },
+    "aria": {
+        "close_date_time": "Fermer les réglages du temps et de l'heure",
+        "feed": {
+            "header": {
+                "older": "{count} notifications plus anciennes",
+                "today": "{count} notifications d'aujourd'hui",
+                "trending_articles": "{count} conversations actives",
+                "yesterday": "{count} notifications d'hier"
+            },
+            "notifications": {
+                "delete": "Supprimer cette notification de votre fil d'actualité de façon permanente",
+                "delete_section": "Supprimer toutes les notifications dans cette section de façon permanente",
+                "new": "Nouvelle notification",
+                "tray_feed_header": "Vos notifications et conversations actives",
+                "read": "Notification lue.",
+                "seen": "Notification vue."
+            }
+        },
+        "images": {
+            "avatar_current_user": "Votre avatar",
+            "avatar_login": "Se rendre à la connexion ou à l'inscription",
+            "avatar_user": "Avatar de \"{username}\"",
+            "open_other_profile": "Voir le profil de \"{username}\"",
+            "open_profile": "Voir vos notifications"
+        },
+        "more_actions": "Plus d'actions",
+        "navigation": {
+            "aria_label": "Notifications de votre fil d'actualité et de votre profil",
+            "community": "Engager avec d'autres usagers",
+            "feed": "Voir les notifications de votre fil d'actualité",
+            "profile": "Voir votre profil d'utilisateur",
+            "settings": "Voir vos paramètres pour les notifications"
+        },
+        "new_notifications": "Vous avez {num} {num, plural, =1{nouvelle notification} other {nouvelles notifications}}",
+        "open_tray": "Voir les paramètres pour vos notifications et votre profil",
+        "loading_data": "Chargement..."
+    },
+    "average_rating": {
+        "average_rating_slot_1": " basé sur ",
+        "average_rating_slot_2": " cotes"
+    },
+    "badges": {
+        "author_owner": "auteur",
+        "editors_pick": "Le choix de la rédaction",
+        "make_editors_pick": "Sélectionner comme choix de la rédaction",
+        "moderator": "M",
+        "moderator_title": "Modérateur",
+        "pinned": "épinglé",
+        "reply_to_edited_post": "Répondre au message modifié",
+        "topic": "sujet",
+        "trusted_user": "Utilisateur de confiance"
+    },
+    "branding": {
+        "powered_by": "Optimisé par :"
+    },
+    "community": {
+        "empty": "Ce site n'a pas activé les fonctionnalités communautaires.",
+        "followers": {
+            "empty": "Vous n'avez aucun abonné.",
+            "getDate": "Abonné à vous",
+            "header": "{count, plural, =0{Abonné} =1{Abonné} other{Abonnés}}",
+            "headerAriaLabel": "Liste des utilisateurs qui vous suivent. Vous avez {num} suiveurs."
+        },
+        "following": {
+            "empty": "Vous n'avez aucun abonnement.",
+            "getDate": "Abonnés",
+            "header": "{count, plural, =1{Abonnement} other{Abonnements}}",
+            "headerAriaLabel": "Liste des utilisateurs que vous avez suivi. Vous suivez {num} utilisateurs."
+        },
+        "following_description": "Vous n'avez pas d'abonnements en ce moment. Les personnes, les rubriques et les nouvelles auxquelles vous êtes abonné apparaîtront ici.",
+        "muted": {
+            "empty": "Vous n'avez masqué aucun utilisateur.",
+            "getDate": "Masqué",
+            "header": "{count, plural, =0{Masqué} =1{Masqué} other{Masqués}}",
+            "headerAriaLabel": "Liste des utilisateurs que vous avez masqué. Vous avez masqué {num} utilisateurs."
+        },
+        "suggest_follow": "Commencez par suivre une personne!",
+        "suggestion_header": "recommandé pour vous",
+        "suggestions": {
+            "getDate": "Inscrit"
+        }
+    },
+    "content": {
+        "removed": "le contenu a été supprimé."
+    },
+    "error": {
+        "banned_from_posting": "Votre compte a été banni de publier {permanent, select, 1 {en permanence} other {jusqu'à {endDate, date, longDateTime}}}{reason, select, undefined {.} other {. Raison : {reason}.}}",
+        "error": "Erreur",
+        "login_banned": "Votre compte a été banni {isPermanent, select, 1 {en permanence} other {jusqu'à{endDate, date, long}}}{reason, select, undefined {.} other {. Raison : {reason}.}}",
+        "why_banned": "Pourquoi ai-je été banni?"
+    },
+    "feed": {
+        "account": {
+            "error": {
+                "cookies_blocked": "Vous devez activer les cookies de tierce partie",
+                "email": "Email invalide",
+                "learn_more": "en apprendre plus",
+                "login": "Erreur de connexion",
+                "name": "Nom d'utilisateur invalide",
+                "password": "Le mot de passe doit comporter au moins 8 caractères",
+                "required": "{field} est un espace obligatoire",
+                "signup": "Erreur d'inscription"
+            },
+            "forgot_password": {
+                "description": "Indiquez ci-dessous l'email avec lequel vous vous êtes inscrit; vous recevrez un email contenant un lien vous permettant de changer votre mot de passe.",
+                "email": "Votre email",
+                "title": "Mot de passe oublié?"
+            },
+            "input": {
+                "date_format": "JJ/MM/AAAA",
+                "email": "Email",
+                "name": "Nom d'utilisateur",
+                "password": "Mot de passe"
+            },
+            "nav": {
+                "login": "Connexion",
+                "show_less": "Voir moins d'options",
+                "show_more": "Voir plus d'options",
+                "signup": "S'inscrire"
+            },
+            "reset": {
+                "success": "Un email contenant les instructions pour changer votre mot de passe a été envoyé à {email}."
+            }
+        },
+        "additionalInfo": {
+            "nav": {
+                "finish": "terminer",
+                "thirdparty": "Encore une chose..."
+            }
+        },
+        "alerts": {
+            "follow": "Il vous a été impossible de vous abonner à cet utilisateur en ce moment.",
+            "max_mutes": "Vous avez atteint le nombre maximum d'utilisateurs que vous pouvez masquer.",
+            "mute": "Il vous a été impossible de masquer cet utilisateur en ce moment.",
+            "no_reset": "Votre mot de passe n'a pas pu être réinitialisé. Veuillez réessayer plus tard",
+            "read": "Vous n'êtes pas en mesure de marquer cette notification comme lue pour le moment.",
+            "unfollow": "Vous n'êtes pas en mesure de vous désabonner à cet utilisateur en ce moment.",
+            "unmute": "Vous n'êtes pas en mesure de réafficher cet utilisateur en ce moment."
+        },
+        "header": {
+            "older": "plus ancien",
+            "today": "aujourd'hui",
+            "trending_articles": "Conversations actives",
+            "yesterday": "hier"
+        },
+        "login": {
+            "nav": {
+                "forgot": "Vous avez oublié votre mot de passe?",
+                "header": "Se connecter ou s'inscrire",
+                "thirdparty": "Se connecter avec :"
+            }
+        },
+        "notifications": {
+            "author": "a publié un nouvel article.",
+            "clear": "Supprimer",
+            "comment": "{num, plural, =0{<em>{user}</em> a publié un commentaire} =1{<em>{user}</em> et <em>{secondUser}</em> ont publié un commentaire} other{<em>{user}</em>, <em>{secondUser}</em> et d'autres ont publié un commentaire}}",
+            "comments": {
+                "many": "{num, plural, =1{a} other{ont}} publié un commentaire pour \"{pageTitle}\"",
+                "single": "a publié un commentaire"
+            },
+            "common": {
+                "and": "et",
+                "others": "et {num} {num, plural, =1{autre} other{d'autres}}"
+            },
+            "follow": "{num, plural, =1{est maintenant un de vos abonnés} other{sont maintenant vos abonnés}}.",
+            "like": "{num, plural, =0{<em>{user}</em> aime votre commentaire} =1{<em>{user}</em> et <em>{secondUser}</em> ont aimé votre commentaire} other{<em>{user}</em>, <em>{secondUser}</em> et <em>{num} autres</em> ont aimé votre commentaire}}",
+            "likes": {
+                "generic": "{num, plural, =1{aime} other{ont aimé}} votre commentaire sur \"{pageTitle}\""
+            },
+            "mentions": {
+                "many": "{num, plural, =1{a} other{ont}} répondu à votre commentaire sur \"{pageTitle}\"",
+                "single": "a répondu"
+            },
+            "new_comments": "{num} nouveaux commentaires sur",
+            "other": "Nouvelle mise à jour sur le sujet : <strong>{description}</strong>",
+            "reply": "{num, plural, =0{<em>{user}</em> a répondu à votre commentaire sur} =1{<em>{user}</em> et <em>{secondUser}</em> ont répondu à votre commentaire sur} other{<em>{user}</em>, <em>{secondUser}</em> et <em>{num} others</em> ont répondu à votre commentaire sur}}",
+            "topic": "Mise à jour:",
+            "author_deprecated": "<strong>{description}</strong> a publié un nouvel article",
+            "comment_deprecated": "{num, plural, =0{<em>{user}</em> a publié un commentaire} =1{<em>{user}</em> et <em>{secondUser}</em> ont publié un commentaire} other{<em>{user}</em>, <em>{secondUser}</em> et d'autres ont publié un commentaire}}",
+            "follow_deprecated": "{num, plural, =0{<em>{user}</em> est maintenant un de vos abonnés} =1{<em>{user}</em> et <em>{secondUser}</em> sont maintenant vos abonnés} other{<em>{user}</em>, <em>{secondUser}</em> et <em>{num} autres</em> sont maintenant vos abonnés}}",
+            "like_deprecated": "{num, plural, =0{<em>{user}</em> aime votre commentaire} =1{<em>{user}</em> et <em>{secondUser}</em> ont aimé votre commentaire} other{<em>{user}</em>, <em>{secondUser}</em> et <em>{num} autres</em> ont aimé votre commentaire}}",
+            "other_deprecated": "Nouvelle mise à jour sur le sujet : <strong>{description}</strong>",
+            "reply_deprecated": "{num, plural, =0{<em>{user}</em> a répondu à votre commentaire sur} =1{<em>{user}</em> et <em>{secondUser}</em> ont répondu à votre commentaire sur} other{<em>{user}</em>, <em>{secondUser}</em> et <em>{num} others</em> ont répondu à votre commentaire sur}}"
+        },
+        "opt_in": {
+            "close": "Annuler ce message",
+            "description_desktop": "Activez les notification poussées directement sur votre ordinateur!",
+            "description_mobile": "Activez les notification poussées directement sur votre mobile multifonction!",
+            "header": "Ne manquez jamais les mises à jour dans votre fil d’actualité",
+            "link_description_desktop": "Vous serez redirigé vers une nouvelle page où vous pouvez activer les notifications pour votre ordinateur.",
+            "link_description_mobile": "Cela vous redirigera vers une nouvelle page où vous pourrez activer les notifications sur votre mobile multifonction.",
+            "link_error": "Essayez de nouveau",
+            "link_processing": "Abonnement en cours...",
+            "link_subcription_status_unsubscribed": "Vous ne vous êtes pas abonné aux notifications poussées pour ce navigateur.",
+            "link_subscribe": "Activer maintenant",
+            "link_subscription_status_error": "Désolé, quelque chose n'a pas bien fonctionné. Vous n'avez pas pu vous abonner aux notifications poussées pour ce navigateur.",
+            "link_subscription_status_processing": "Vous essayez de vous abonner aux notifications poussées pour ce navigateur.",
+            "link_subscription_status_subscribed": "Vous êtes maintenant abonné aux notifications poussées pour ce navigateur."
+        },
+        "signup": {
+            "nav": {
+                "header": "Joignez vous à la communauté",
+                "thirdparty": "S'inscrire avec :",
+                "verification_required": "Votre email doit être vérifié pour compléter votre inscription"
+            }
+        }
+    },
+    "media": {
+        "processing": "Traitement en cours"
+    },
+    "modal": {
+        "close": "fermer"
+    },
+    "moderation": {
+        "avatar_pending_new": "Votre avatar est en attente d'approbation.",
+        "avatar_pending_update": "Votre nouvel avatar est en attente d'approbation. Il ne sera pas visible jusqu'à ce qu'il soit approuvé par un modérateur.",
+        "avatar_rejected": "Votre avatar a été rejeté par les administrateurs du site.",
+        "email_pending_new": "Un lien de vérification a été envoyé à votre adresse électronique. Veuillez vérifier votre boîte de réception.",
+        "email_pending_update": "Veuillez cliquer sur le lien de vérification dans l'email pour que vos changements soient enregistrés. Vous ne pourrez pas vous connecter avec votre nouvelle adresse email jusqu'à ce que vous l'ayiez vérifié.",
+        "username_pending_new": "Votre nom d'utilisateur est en attente d'approbation.",
+        "username_pending_update": "Votre nouveau nom d'utiisateur est en attente en attente d'approbation. Il ne sera pas visible jusqu'à ce qu'il soit approuvé par un modérateur.",
+        "username_rejected": "Votre nom d'utilisateur a été rejeté par les administrateurs du site."
+    },
+    "navigation": {
+        "close": "fermer les notifications",
+        "close_alert": "fermer cette alerte",
+        "close_profile": "fermer le profil de cet utilisateur",
+        "community": "Communauté",
+        "feed": "Fil d'actualité",
+        "profile": "Profil",
+        "settings": "paramètres"
+    },
+    "none": "aucun",
+    "profile": {
+        "back": "retour",
+        "comment": "{num} {num, plural, =0{commentaire} =1{commentaire} other{commentaires}}",
+        "followers": "{num} {num, plural, =0{abonné} =1{abonné} other{abonnés}}",
+        "id_container_footer_text": "Seuls les administrateurs et les modérateurs peuvent voir ceci",
+        "id_container_title": "Renseignements de l'utilisateur",
+        "like": "{num} {num, plural, =1{j'aime} other{j'aime}}",
+        "login": "Veuillez vous connecter ou vous inscire pour voir votre profil",
+        "third_party_id": "ID de tierce partie",
+        "user_actions": {
+            "comment": {
+                "comment": {
+                    "other": "{name} a commenté le",
+                    "self": "Vous avez publié le"
+                },
+                "none": {
+                    "other": "{name} n'a laissé aucun commentaire.",
+                    "self": "Vous n'avez laissé aucun commentaire."
+                },
+                "review": {
+                    "other": "{name} a révisé",
+                    "self": "Vous avez révisé"
+                }
+            },
+            "comment_history": "Historique des commentaires"
+        },
+        "user_details_button_description": "Cliquez pour montrer/cacher les détails de l'utilisateur",
+        "viafoura_id": "Viafoura ID"
+    },
+    "push-opt-in": {
+        "approved": {
+            "redirect-text": "Terminer",
+            "subtext": "Vous serez automatiquement redirigé vers le site Web en 2 secondes."
+        },
+        "failed": {
+            "link-text": "Retourner au site Web",
+            "redirect-text": "essayer de nouveau",
+            "text": "Les notifications n'ont pas pu être activées."
+        },
+        "pending": {
+            "text": "Traitement en cours..."
+        },
+        "rejected": {
+            "instructions": {
+                "heading": "Pour activer les notifications, veuillez suivre les étapes suivantes :",
+                "one": "Cliquez sur l'icône à côté de l'URL.",
+                "three": "Recharger cette page.",
+                "two": "Trouvez les \"Notifications\" et sélectionnez \"autoriser pour ce site\""
+            },
+            "redirect-text": "retourner au site Web",
+            "text": "Vous avez bloqué les notifications."
+        },
+        "subscribed": {
+            "text": "notifications activées"
+        },
+        "unsubscribed": {
+            "text": "notifications désactivées"
+        }
+    },
+    "settings": {
+        "avatar_success": "Avatar mis à jour.",
+        "controls": {
+            "browser_notification_blocked": "Vous avez bloqué les notifications poussées pour ce navigateur Web.",
+            "browser_notification_blocked_link": "Comment activer",
+            "browser_notification_enable": "Activer les notifications poussées dans ce navigateur Web.",
+            "browser_notification_enable_link": "Activer maintenant",
+            "browser_notification_error": "Erreur.  Veuillez réessayer plus tard",
+            "browser_notification_unsupported": "Ce navigateur ne supporte pas les notifications poussées.  Vous continuerez à recevoir les notifications poussées dans les navigateurs Web qui les supportent.",
+            "browser_notifications": "Notifications poussées du navigateur.",
+            "email_notifications": "Email",
+            "logout": "déconnexion",
+            "reset": "réinitialiser",
+            "update_profile": "Mise à jour du profil"
+        },
+        "email_success": "Email actualisé.",
+        "error": {
+            "email_in_use": "Cet email est déjà enregistré",
+            "empty_current_password": "Pa de mot de passe actuel dans la boîte de dialogue",
+            "empty_form": "Le formulaire est vide",
+            "error_fetching": "Une erreur est survenue lors de la récupération des données.",
+            "file_too_big": "Le fichier est trop grand pour le télécharger.",
+            "file_wrong_type": "Le fichier doit être une image.",
+            "generic_error": "Une erreur est survenue",
+            "invalid_email_address": "Email invalide",
+            "invalid_image_type": "Format d'image invalide",
+            "invalid_password": "Mot de passe invalide",
+            "mismatching_new_passwords": "Les nouveaux mots de passe ne correspondent pas",
+            "service_unavailable": "Les serveurs sont occupés, veuillez réessayer plus tard",
+            "unable_to_logout": "Erreur de déconnexion",
+            "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action",
+            "unknown": "Erreur lors du traitement de la mise à jour, veuillez réessayer plus tard"
+        },
+        "file": {
+            "choose_file": "sélectionner le fichier",
+            "max_size": "Taille maximale de l'image: 1Mo",
+            "no_file_chosen": "Aucun fichier sélectionné",
+            "supported_types": "Formats d'image acceptés: JPG, PNG, GIF",
+            "use_default": "Utiliser l'avatar par défaut"
+        },
+        "password_success": "Mot de passe actualisé.",
+        "placeholders": {
+            "current_password": "Saisir le mot de passe actuel",
+            "display_name": "Nom d'utilisateur",
+            "email": "Email",
+            "new_password": "Nouveau mot de passe",
+            "reenter_password": "Confirmer le nouveau mot de passe"
+        },
+        "profile_success": "Profil mis à jour",
+        "update": {
+            "credentials": "Veuillez saisir votre mot de passe pour modifier votre profil",
+            "notifications": "Suivre et répondre aux notifications",
+            "password": "Modifier le mot de passe",
+            "profile": "Modifier les renseignements personnels de votre profil",
+            "avatar": "Modifier l'avatar",
+            "display_name": "Modifier votre nom d'affichage"
+        }
+    },
+    "svod": {
+        "email_verification": {
+            "already_used": "Ce lien de vérification d'email a déjà été utilisé",
+            "expired": "Ce lien de vérification d'email a expiré, veuillez en demander un nouveau",
+            "invalid": "Ce lien de vérification d'email est invalide, veuillez en demander un nouveau",
+            "pending": "Vérification de l'email...",
+            "success": "Votre email a été vérifié avec succès!",
+            "unknown": "Une erreur est survenue lors de la vérification de votre email"
+        },
+        "reset_password": {
+            "already_used": "Ce lien de réinitialisation de mot de passe a déjà été utilisé",
+            "confirm": "Confirmez votre mot de passe",
+            "expired": "Ce lien de vérification de mot de passe a expiré, veuillez demander un nouveau lien",
+            "invalid": "Ce lien de réinitialisation de mot de passe est invalide, veuillez demander un nouveau lien",
+            "none": "Réinitialiser le mot de passe",
+            "not_filled": "Vous devez remplir tous les espaces",
+            "password": "Nouveau mot de passe",
+            "password_mismatch": "Vos mots de passe ne correspondent pas",
+            "pending": "Réinitialisation du mot de passe...",
+            "success": "Votre mot de passe a été réinitialisé avec succès!",
+            "too_similar": "Votre nouveau mot de passe est trop similaire à l'ancien. Veuillez réinitialiser et essayer de nouveau",
+            "unknown": "Une erreur est survenue lors de la réinitialisation de votre mot de passe"
+        },
+        "settings": {
+            "email_taken": "L'email que vous avez choisi est déjà en usage pour ce site",
+            "expired": "Le jeton d'accès LoginRadius a expiré. Pour actualiser votre profil, veuillez vous déconnecter et vous reconnecter pour obtenir un nouveau jeton",
+            "incorrect_format": "Un paramètre n'a pas été formaté correctement dans la demande",
+            "invalid": "Le jeton d'accès LoginRadius est invalide",
+            "invalid_credentials": "Mot de passe incorrect"
+        }
+    },
+    "time": {
+        "long_date": "{date, date, long}",
+        "relative": {
+            "day": "il y a {num} {num, plural, =1{jour} other{jours}}",
+            "hour": "il y a {num} {num, plural, =1{heure} other{heures}}",
+            "minute": "il y a {num} {num, plural, =1{minute} other{minutes}}",
+            "now": "il y a quelques secondes",
+            "second": "il y a {num} {num, plural, =1{seconde} other{secondes}}"
+        }
+    },
+    "timers": {
+        "countdown": {
+            "less_than_a_minute": "Il reste moins d'une minute.",
+            "minutes_remaining": "{minutes} {minutes, plural, =1{minute} other{minutes}} restantes."
+        }
+    },
+    "tooltip": {
+        "push": {
+            "body": "Afin de recevoir les notifications dans votre navigateur, veuillez sélectionner \"autoriser\" lorsque demandé.",
+            "heading": "Sélectionner \"Autoriser\""
+        }
+    },
+    "tray": {
+        "authentication": {
+            "aria": {
+                "description": "Connectez-vous ou inscrivez-vous en utilisant un réseau social ou un nom d'utilisateur et un mot de passe",
+                "header": "Connectez-vous ou inscrivez-vous"
+            },
+            "login": {
+                "aria": {
+                    "email": "Connectez-vous en utilisant un email et un mot de passe",
+                    "social": "Connectez-vous en utilisant un réseau social"
+                }
+            },
+            "signup": {
+                "aria": {
+                    "email": "Inscrivez-vous en utilisant un email et un mot de passe",
+                    "social": "Inscrivez-vous en utilisant un réseau social"
+                }
+            }
+        },
+        "community": {
+            "aria": {
+                "header": "Suivre et suivre des utilisateurs."
+            }
+        },
+        "user_actions": {
+            "author_follow_aria_label": "S'abonner à la page des auteurs pour recevoir les notifications de leurs nouveaux articles.",
+            "author_unfollow_aria_label": "Se désabonner de la page des auteurs pour ne plus recevoir les notifications de leurs nouveaux articles.",
+            "topic_follow_aria_label": "S'abonner à \"{topic}\" pour recevoir des notifications à propos de nouvelles pages sur \"{topic}\".",
+            "topic_unfollow_aria_label": "Se désabonner de \"{topic}\" pour ne plus recevoir des notifications à propos de nouvelles pages sur \"{topic}\".",
+            "user_follow_aria_label": "S'abonner à {username} pour recevoir des notifications à propos de ses messages.",
+            "user_unfollow_aria_label": "Se désabonner de {username} pour ne plus recevoir de notifications à propos de ses messages."
+        }
+    },
+    "user_actions": {
+        "follow": "S'abonner",
+        "following": "Abonné(e)",
+        "mute": "masquer",
+        "mute_aria_label": "Masquer {username} pour cacher ses publications et notifications.",
+        "muted": "masqué",
+        "unfollow": "Se désabonner",
+        "unmute": "réactiver",
+        "unmute_aria_label": "Réactiver {username} pour montrer ses messages et pour recevoir des notifications de sa part."
+    },
+    "or": {
+        "or": "ou"
+    },
+    "comments": {
+        "heading": "Commentaires",
+        "navigation": {
+            "all_comments": "Tous les commentaires",
+            "all_comments_tab_label": "Tous les commentaires, {count} article{count, plural, =0{s} =1{} other{s}}",
+            "featured": "En vedette",
+            "featured_tab_content_description": "Les commentaires en vedette sont des contributions sur lesquelles l'éditeur souhaite mettre l'accent pour une attention particulière.",
+            "featured_tab_heading": "Commentaires en vedette",
+            "featured_tab_label": "Commentaires en vedette, {count} article{count, plural, =0{s} =1{} other{s}}",
+            "filter_label": "Choisissez un filtre pour les commentaires"
+        },
+        "new_comment": {
+            "join_placeholder": "Participez à la conversation",
+            "join_placeholder_with_name": "Écrivez votre commentaire ici, {name}",
+            "start_placeholder": "Démarrez la conversation",
+            "start_placeholder_with_name": "Démarrez la conversation, {name}"
+        },
+        "settings": {
+            "clear_end_date": "Effacer la date de fin",
+            "expiry_time_label": "Date de fin des commentaires",
+            "no_date_set": "Pas de date fixée",
+            "premod": "Pré-modérer tous les commentaires",
+            "title": "Réglages",
+            "hide": "Masquer la conversation",
+            "hidden": "Les commentaires sont cachés au public."
+        },
+        "comment": "commentaire{count, plural, =1{} other{s}}"
+    },
+    "conversations": {
+        "actions": {
+            "button_aria": "Actions des publications",
+            "copied": "Copié",
+            "copy_url": "Copier l'URL",
+            "disable": "désactiver",
+            "disable_post": "désactiver la publication",
+            "edit": "Éditer",
+            "email": "email",
+            "enable": "activer",
+            "enable_post": "activer la publication",
+            "facebook": "facebook",
+            "load_content": "afficher plus de {contentType}",
+            "load_content_a11y": "Charger {count} plus de {contentType}.",
+            "mark_as_spam": "Signaler comme spam",
+            "pin": "épingler",
+            "pin_post": "épingler la publication",
+            "reconnect": "Cliquez ici pour recevoir des mises à jour en temps réel",
+            "remove_comment": "Supprimer",
+            "remove_post": "Supprimer",
+            "return": "montrer tous les commentaires",
+            "twitter": "twitter",
+            "unflag": "réactiver",
+            "unpin": "annuler ancrage",
+            "unpin_post": "annuler l'ancrage de la publication",
+            "unspam": "annuler spam",
+            "copy_console_url": "Copier le lien vers la console"
+        },
+        "announce": {
+            "empty": {
+                "subtitle": {
+                    "all_comments": "Aucun commentaire n'a encore été affiché",
+                    "featured_comments": "Les commentaires en vedette et les choix de la rédaction seront affichés ici.",
+                    "posts": "Aucune publication n'a encore été affichée"
+                },
+                "title": {
+                    "comments": "Démarrez la conversation",
+                    "posts": "Il n'y a rien ici"
+                }
+            }
+        },
+        "content_container": {
+            "expiry_notice": {
+                "comments": "Il n'est plus possible de commenter",
+                "posts": "Le blogue en direct est terminé"
+            },
+            "user_actions": {
+                "follow_aria_label": {
+                    "comments": "Suivez la section des commentaires pour recevoir des notifications.",
+                    "posts": "Suivez la section en direct du blogue pour recevoir des notifications."
+                },
+                "unfollow_aria_label": {
+                    "comments": "Arrêter de suivre la section des commentaires et arrêter de recevoir des notifications.",
+                    "posts": "Arrêter de suivre la section du blogue en direct et arrêter de recevoir des notifications."
+                }
+            }
+        },
+        "load_more": {
+            "error_aria": {
+                "comments": "Un problème est survenu lors de la récupération de la série de commentaires suivante. Veuillez essayer de nouveau.",
+                "posts": "Un problème est survenu lors de la récupération de la série de commentaires suivante. Veuillez essayer de nouveau."
+            },
+            "label": {
+                "comments": "Afficher plus de commentaires",
+                "posts": "Afficher plus de commentaires"
+            }
+        },
+        "moderation": {
+            "awaiting_moderation": "En attente de modération",
+            "awaiting_moderation_aria_label": "Ce contenu est en attente de modération de la part d'un modérateur.",
+            "comment_status_banned": "Cet utilisateur a été banni",
+            "disabled": "désactivé",
+            "disabled_aria_label": "Ce contenu est désactivé.",
+            "disabled_content": "contenu désactivé",
+            "disabled_reason": "Vous avez enfreint les directives de la communauté concernant les propos inappropriés ou les jurons.",
+            "disabled_reason_trigger": "Pourquoi?",
+            "flagged": "{count} signalé{count, plural, =0{s} =1{} other{s}}",
+            "flagged_aria_label": "Ce contenu a {count} signalement{count, plural, =0{s} =1{} other{s}}.",
+            "pending": "en attente d'approbation",
+            "pending_aria_label": "Ce contenu est en attente d'approbation par un modérateur.",
+            "spam": "spam",
+            "spam_aria_label": "Ce contenu est marqué comme étant un spam.",
+            "unavailable": "contenu indisponible",
+            "unavailable_aria_label": "Ce contenu est indisponible en ce moment"
+        },
+        "navigation": {
+            "settings_a11y_jump": "Passer aux paramètres",
+            "settings_aria": "Basculer l'onglet des paramètres"
+        },
+        "post": "publication{count, plural, =1{} other{s}}",
+        "posts": {
+            "ban": "Votre compte a été banni de publier.  {reason, plural, =0{} other{Raison: {reason}}}",
+            "deleted": "contenu supprimé",
+            "deleted_aria_label": "Ce contenu a été masqué ca il a été supprimé par son auteur.",
+            "dislike": {
+                "noun": "je n'aime pas",
+                "past": "je n'aime pas",
+                "verb": "je n'aime pas"
+            },
+            "dislike_aria_label": "Il y a {count} \"je n'aime pas\" pour cette publication. Ajouter un \"je n'aime pas\" à cette publication.",
+            "undislike_aria_label": "Il y a {count} \"je n'aime pas\" pour cette publication. Enlever votre \"je n'aime pas\" pour cette publication.",
+            "edited": "édité",
+            "edited_aria_label": "Ce contenu a été édité",
+            "flag": {
+                "past": "signalé",
+                "verb": "signaler"
+            },
+            "like": {
+                "noun": "j'aime",
+                "past": "aimé",
+                "verb": "j'aime"
+            },
+            "like_aria_label": "Il y a {count} \"j'aime\" pour cette publication. Aimer cette publication.",
+            "unlike_aria_label": "Il y a {count} \"j'aime\" pour cette publication. Enlever votre \"j'aime\" de cette publication.",
+            "load": "afficher plus de publications",
+            "muted": "Utilisateur masqué",
+            "muted_aria_label": "Ce contenu a été masqué car vous avez masqué l'utilisateur.",
+            "offline": "Nous ne parvenons pas à nous connecter à Internet, la publication est actuellement désactivée.",
+            "replies_aria_label": "Charger {count} {count, plural, =1{réponse} other{réponses}} à  cette publication en vue modale.",
+            "reply": {
+                "noun": "{count, plural, =1{réponse} other{réponses}}",
+                "verb": "répondre"
+            },
+            "reply_aria_label": "Répondre à cette publication.",
+            "share": "partager",
+            "aria_title": {
+                "enabled": {
+                    "comment": "Commentaire de {username}.",
+                    "post": "Publication de {username}.",
+                    "reply": "Réponse de {username}."
+                },
+                "stubbed": {
+                    "comment": "Commentaire masqué.",
+                    "post": "Publication masquée.",
+                    "reply": "Réponse masquée."
+                }
+            }
+        },
+        "realtime_bar": {
+            "label": {
+                "comments": "Montrer {count} {count, plural, =1{nouveau} other{nouveaux}} {count, plural, =1{commentaire} other{commentaires}}",
+                "mentions": "Montrer {count} {count, plural, =1{nouvelle} other{nouvelles}} {count, plural, =1{mention} other{mentions}}",
+                "posts": "Montrer {count} {count, plural, =1{nouveau} other{nouveaux}} {count, plural, =1{publication} other{publications}}"
+            },
+            "skip_to_top": "Se rendre directement au haut"
+        },
+        "reload": "Charger du nouveau contenu",
+        "reply_to": {
+            "reply_to": "Répondre à",
+            "reply_to_aria_label": "Ceci est une réponse à {user}.",
+            "reply_to_button_aria_label": "Ceci est une réponse à {user}. Voir la publication de {user} dans le fil de discussion.",
+            "twitter_post": "Publication dans Twitter",
+            "view_message": "voir la publication"
+        },
+        "rich_text": {
+            "cancel": "annuler",
+            "character_limit": {
+                "error": "Vous avez dépassé la limite de caractères de {count} {count, plural, =1{caractère} other{caractères}}, la soumission de votre publication a été désactivé.",
+                "warning": "{count} {count, plural, =1{caractère} other{caractères}} {count, plural, =1{restant} other{restants}} jusqu'à ce que vous atteigniez la limite de caractères."
+            },
+            "post": "Publier",
+            "reply_placeholder": "Ajouter votre réponse"
+        },
+        "settings": {
+            "syndicate": "Syndication",
+            "syndication_html_snippet": "Syndication du fragment HTML"
+        },
+        "sorts": {
+            "most_liked": "Les plus aimés",
+            "most_replies": "Les plus de réponses",
+            "newest": "Les plus récents",
+            "oldest": "Les plus anciens",
+            "aria_label": "sorting by {sorted_by} button"
+        },
+        "threads": {
+            "content_indicator": {
+                "mention": {
+                    "count": "{count} {count, plural, =1{nouvelle} other{nouvelles}} {count, plural, =1{mention} other{mentions}}",
+                    "label": "montrer {count, plural, =1{mention} other{mentions}}"
+                },
+                "reply": {
+                    "count": "{count} new {count, plural, =1{réponse} other{réponses}}",
+                    "label": "Montrer des réponses plus récentes"
+                },
+                "reply_and_mention": {
+                    "count": "{count} nouvelles mentions et réponses",
+                    "label": "montrer les nouvelles mentions et réponses"
+                }
+            },
+            "old_content_indicator": {
+                "mention": {
+                    "count": "{count} {count, plural, =1{mention} other {mentions}} plus {count, plural, =1{ancienne} other {anciennes}}",
+                    "label": "montrer les mentions plus anciennes"
+                },
+                "reply": {
+                    "count": "{count} {count, plural, =1{réponse} other {réponses}} plus {count, plural, =1{ancienne} other {anciennes}}",
+                    "label": "montrer les réponses plus anciennes"
+                },
+                "thread": {
+                    "count": "montrer {count} le contenu dans le fil",
+                    "label": "montrer le fil"
+                }
+            },
+            "reply_thread": {
+                "aria_close_label": "Fermer le fil de réponse.",
+                "aria_label": "Réponses à {name}.",
+                "back": "retour"
+            },
+            "title": "Fil de réponses",
+            "title_loading": "Chargement du fil de réponses..."
+        },
+        "typing": {
+            "top_level": "Quelqu'un est en train d'écrire un commentaire"
+        },
+        "view_all": {
+            "comments": "Voir tous les commentaires",
+            "posts": "Voir toutes les publications"
+        },
+        "alert": {
+            "posted": {
+                "post": "Votre commentaire a été envoyé",
+                "reply": "Votre réponse a été envoyée"
+            }
+        }
+    },
+    "liveblog": {
+        "rich_text": {
+            "post_placeholder": "Écrire une publication"
+        },
+        "secondary_actions": {
+            "label": "Ouvrir ou fermer le menu Actions"
+        },
+        "settings": {
+            "activation_time_label": "Démarrer le blogue en direct",
+            "display_name": {
+                "description": "nom affiché",
+                "save_button": "Sauvegarder le nom",
+                "tooltip": "infobulle"
+            },
+            "enable_replies": {
+                "description": "Activer les réponses"
+            },
+            "end_now": "Terminer maintenant",
+            "errors": {
+                "end_after_start": "La fin de l'histoire en direct doit être après l'heure du début",
+                "error_fetching": "Une erreur est survenue lors de la récupération des données",
+                "generic_error": "Une erreur est survenue",
+                "max_rules": "Nombre maximum de règles atteint",
+                "query_invalid": "Votre règle contient des erreurs",
+                "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action"
+            },
+            "expiry_time_label": "Fin du blogue en direct",
+            "ingest_activation_time_label": "Démarrer ingestion",
+            "ingest_expiry_time_label": "Fin de l'ingestion",
+            "no_date_set": "Pas de date fixée",
+            "premod": "Pré-modérer toutes les réponses",
+            "social_feed": {
+                "description": "Pré-modérer les fils d'actualité "
+            },
+            "social_tag": {
+                "description": "Nom d'utilisateur ou hashtag de la balise de médias sociaux",
+                "label": "tag des médias sociaux",
+                "placeholder": "Saisir @nom de l'utilisateur ou @nom de l'utilisateur + #hashtag",
+                "submit": "Soumettre tag des médias sociaux",
+                "tooltip": "infobulle"
+            },
+            "start_now": "Démarrer maintenant",
+            "title": "Paramètres du liveblog"
+        },
+        "status": {
+            "live": "en direct",
+            "notlive": "pas en direct",
+            "status_live_aria": "Ce liveblog est en direct car il reçoit actuellement du nouveau contenu.",
+            "status_notlive_aria": "Ce liveblog n'est pas en direct car il ne reçoit pas de nouveau contenu actuellement."
+        }
+    },
+    "social": {
+        "check_out": "Regarde ce {content_type}",
+        "email_body": "Regarde ce {content_type}: {url}",
+        "twitter": "De Twitter"
+    },
+    "conversation_starter": {
+        "action_without_comment_count": "",
+        "title_comments_enabled": "",
+        "description_comments_enabled": "",
+        "action_first_comment": "",
+        "action_with_comment_count": "",
+        "title_comments_closed": "",
+        "description_comments_closed": "",
+        "header_without_comments": "",
+        "header_with_comments": "",
+        "header_comments_closed": "",
+        "read_more": "",
+        "editors_pick_header": ""
+    },
+    "report": {
+        "starter": {
+            "text": "Nous apprécions vos commentaires! Si vous pensez que ce contenu enfreint nos directives de la communauté ou nos conditions d'utilisation, nous vous encourageons à le signaler. Le signalement nous aide à maintenir un environnement sûr et inclusif pour tous les utilisateurs.",
+            "start_button": "Commencer le signalement"
+        },
+        "reasons": {
+            "disagree": {
+                "title": "Je ne suis pas d'accord avec cet utilisateur",
+                "description": "Est en désaccord ou n'aime pas le contenu de l'utilisateur"
+            },
+            "harassment": {
+                "title": "Harcèlement ciblé",
+                "description": "Rabaisser quelqu'un, contacts non désirés répétés, attaquer quelqu'un en raison de son identité tels que la race, le genre, l'orientation sexuelle ou l'appartenance religieuse"
+            },
+            "spam": {
+                "title": "Pourriel",
+                "description": "Sollicitation de devises, encourager l'interaction avec du contenu sous de faux prétextes, inciter les utilisateurs à quitter le site avec des liens trompeurs"
+            },
+            "inappropriate": {
+                "title": "Nom d'utilisateur ou avatar inapproprié",
+                "description": "Le nom d'utilisateur ou l'avatar contrevient aux directives de la communauté"
+            },
+            "threatening": {
+                "title": "Contenu menaçant",
+                "description": "Menaces de violence dirigées contre une ou plusieurs personnes"
+            },
+            "impersonation": {
+                "title": "Usurpation d'identité",
+                "description": "Se faire passer pour une autre personne sous de faux prétextes"
+            },
+            "private": {
+                "title": "Informations privées",
+                "description": "Partage d'informations d'identification personnelle"
+            },
+            "submit_button": "Soumettre",
+            "cancel_button": "Annuler",
+            "title": "Quelle est la raison de votre signalement?"
+        },
+        "confirmation": {
+            "text": "Nous vous remercions d'avoir signalé ce contenu. Vos commentaires nous aident à garantir une expérience plus sûre et agréable pour tous les utilisateurs. Notre équipe examinera rapidement le contenu signalé.",
+            "return_button": "Revenir au commentaire"
+        },
+        "cancel_button": "Annuler",
+        "aria_close_label": "Fermer la boîte de dialogue du rapport"
+    },
+    "sdk": {
+        "sort_by": "Trier par",
+        "privacy": "Confidentialité",
+        "commenting_on": "Commentant",
+        "replying_to": "Répondre à",
+        "greeting": "Bonjour, ",
+        "activity": "Activité",
+        "expand_replies": "Développer les réponses",
+        "flag": "signaler",
+        "flags": "signalers",
+        "like": "aime",
+        "likes": "aime",
+        "gallery": "Galerie",
+        "camera": "Caméra",
+        "follower": "Disciple",
+        "followers": "Suiveurs",
+        "remove_editor_pick": "Supprimer le choix de l'éditeur",
+        "commented_on": "commenté sur ",
+        "select_picture": "Sélectionnez une image",
+        "empty_notifications": "Il n'y a aucune notification",
+        "empty_moderation": "Rien à modérer",
+        "new_comment_single": "nouveau commentaire",
+        "new_comments_plural": "nouveaux commentaires",
+        "liked_comment_on": "j'ai aimé votre commentaire sur",
+        "replied_comment": "répondu à votre commentaire sur ",
+        "comments_plural": "commentaires",
+        "comment_single": "commentaire",
+        "post_report_message": "Merci d'avoir signalé ce commentaire. Nous prenons tous les rapports au sérieux et enquêterons sur le problème dès que possible.",
+        "read_more": "En savoir plus",
+        "add_reply": "Ajoutez votre réponse"
+    },
+    "chat": {
+        "actions": {
+            "button_aria": "Actions des messages",
+            "delete": "Supprimer",
+            "disable": "Désactiver",
+            "dislike": "Ne pas aimer le message de {author_name}.",
+            "enable": "activer",
+            "flag": "Signaler",
+            "flagged": "signalé",
+            "like": "Aimer le message de {author_name}.",
+            "reply": "Répondre",
+            "undislike": "Annuler l'action de ne pas aimer le message de {author_name}.",
+            "unflag": "réactiver",
+            "unlike": "Ne plus aimer le message de {author_name}."
+        },
+        "chat_form": {
+            "character_limit": {
+                "error": "Vous avez dépassé la limite de caractères de {count} {count, plural, =1{caractère} other{caractères}}, la soumission de votre message a été désactivée.",
+                "warning": "{count} {count, plural, =1{caractère} other{caractères}} restant jusqu'à ce que vous atteigniez la limite de caractères."
+            },
+            "message_no_longer_available": "Le message sélectionné n'est pas disponible",
+            "placeholder": "Écrivez votre message...",
+            "reply_cancel_aria": "Annuler la réponse",
+            "reply_to": "Répondre à {author_name}",
+            "status_messages": {
+                "generic_warning": "Quelque chose n'a pas fonctionné. Veuillez essayer de nouveau sous peu",
+                "guideline_violation": "Votre message ne respecte pas les règlements de la communauté",
+                "no_connection": "Pas de connexion réseau"
+            }
+        },
+        "countdown": {
+            "starts_at": "La conversation en direct commence { today, select, true { { startDate } } other {} } à { startTime }"
+        },
+        "message": {
+            "state": {
+                "disabled": "Désactivé",
+                "ghostbanned": "Banni (ghost)",
+                "spam": "Pourriel"
+            }
+        },
+        "navigation": {
+            "chat": "Conversation",
+            "moderate": "Modérer",
+            "moderate_tab_label": "Modération, {count} item{count, plural, =0{s} =1{} other{s}}",
+            "settings": "Paramètres"
+        },
+        "older_mark": {
+            "older": "plus ancien"
+        },
+        "realtime_bar": {
+            "label": "{new_post_number} {new_post_number, plural, =1{mise à jour} other{mises à jour}}\n",
+            "mod_label": "Charger {new_post_number} {new_post_number, plural, =1{nouveau message} other{nouveaux messages}}",
+            "newest": "plus récent",
+            "replies_label": "{new_replies_number} {new_replies_number, plural, =1{nouvelle réponse} other{nouvelles réponses}}"
+        },
+        "reply": {
+            "close_aria_label": "Fermer le fil de discussion",
+            "to": "Répondre à",
+            "to_you": "vous",
+            "view_message": "voir le message"
+        },
+        "settings": {
+            "close_aria_label": "Fermer les paramètres",
+            "display_name": {
+                "description": "Nom d'utilisateur de la conversation en direct",
+                "label": "nom d'utilisateur",
+                "save_button": "Sauvegarder le nom"
+            },
+            "end_time": {
+                "button": "Terminer maintenant",
+                "description": "Heure de fin de la conversation en direct",
+                "label": "Fin",
+                "tooltip": "infobulle"
+            },
+            "errors": {
+                "end_after_start": "L'heure de fin de la conversation en direct doit être après l'heure de commencement"
+            },
+            "no_date_set": "Pas de date fixée",
+            "start_time": {
+                "button": "Commencer maintenant",
+                "description": "Heure de commencement de la conversation en direct",
+                "label": "Commencer",
+                "tooltip": "infobulle"
+            },
+            "title": "Paramètres de la conversation en direct"
+        },
+        "status": {
+            "ended": "la conversation est terminée",
+            "live": "en direct",
+            "notlive": "pas en direct",
+            "notstarted": "la conversation n'a pas encore commencé"
+        },
+        "top_of_chat": "Début de la conversation en direct",
+        "default_title": "Live Chat"
+    },
+    "trending_articles": {
+        "count": {
+            "comments": "{count} {count, plural, =1{commentaire} other{commentaires}}"
+        },
+        "header": {
+            "a11y_label": {
+                "comments": {
+                    "all_time": "Voici une liste des articles les plus commentés de tous les temps.",
+                    "num_days": "Voici une liste des articles les plus commentés des derniers {days} {days, plural, =1{jour} other{jours}}."
+                }
+            },
+            "heading": "Les articles tendances"
+        },
+        "states": {
+            "empty": "Rien n'a tendance en ce moment",
+            "error": {
+                "action": "recharger",
+                "text": "Quelque chose n'a pas fonctionné"
+            },
+            "loading": "Chargement"
+        },
+        "summary": {
+            "count": {
+                "comments": "{count, plural, =1{commentaire} other {commentaires}}"
+            }
+        },
+        "trending_article": {
+            "comments": {
+                "a11y_label": "L'article en tendance intitulé \"{title}\" avec {count} {count, plural, =1{commentaire} other {commentaires}}."
+            }
+        },
+        "visual": {
+            "image_alt_text": "Vignette de page."
+        },
+        "swiper": {
+            "first_slide": "This is the first slide",
+            "last_slide": "This is the last slide",
+            "next_slide": "Next Slide",
+            "pagination_bullet": "Go to slide \\{\\{index\\}\\}",
+            "prev_slide": "Previous Slide"
+        }
+    }
+}
