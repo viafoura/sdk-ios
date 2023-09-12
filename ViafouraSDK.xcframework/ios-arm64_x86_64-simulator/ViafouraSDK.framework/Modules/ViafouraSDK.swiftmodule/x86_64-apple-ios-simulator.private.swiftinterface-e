@@ -189,6 +189,9 @@ extension ViafouraSDK.VFFlagCommentError {
     get
   }
 }
+@_hasMissingDesignatedInitializers public class VFLiveCommentsService {
+  @objc deinit
+}
 public enum VFChatListError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFChatListError, b: ViafouraSDK.VFChatListError) -> Swift.Bool
@@ -941,12 +944,11 @@ public struct VFArticleMetadata {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ViafouraSDK {
-  public static let authentication: ViafouraSDK.VFAuthenticationService
-  public static let notifications: ViafouraSDK.VFNotificationsService
   public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
   public static func auth() -> ViafouraSDK.VFAuthenticationService
+  public static func comments() -> ViafouraSDK.VFLiveCommentsService
   @objc deinit
 }
 public enum VFUserCommentsError : Foundation.LocalizedError {
@@ -1195,6 +1197,25 @@ public enum VFRemovePollError : Foundation.LocalizedError {
   }
 }
 extension ViafouraSDK.VFRemovePollError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension ViafouraSDK.VFLiveCommentsService {
+  public func commentCount(containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> ()))
+  #if compiler(>=5.3) && $AsyncAwait
+  public func commentCount(containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>)
+  #endif
+}
+public enum VFCommentCountError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFCommentCountError, b: ViafouraSDK.VFCommentCountError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFCommentCountError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1971,6 +1992,8 @@ extension ViafouraSDK.VFUndislikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFUndislikeCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFRemovePollError : Swift.Equatable {}
 extension ViafouraSDK.VFRemovePollError : Swift.Hashable {}
+extension ViafouraSDK.VFCommentCountError : Swift.Equatable {}
+extension ViafouraSDK.VFCommentCountError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFTopicsSubscribedError : Swift.Equatable {}

@@ -3998,6 +3998,123 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "VFLiveCommentsService",
+        "printedName": "VFLiveCommentsService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "commentCount",
+            "printedName": "commentCount(containerId:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCommentCountError",
+                        "printedName": "ViafouraSDK.VFCommentCountError",
+                        "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC12commentCount11containerId10completionySS_ys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC12commentCount11containerId10completionySS_ys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "commentCount",
+            "printedName": "commentCount(containerId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCommentCountError",
+                    "printedName": "ViafouraSDK.VFCommentCountError",
+                    "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC12commentCount11containerIds6ResultOySiAA09VFCommentG5ErrorOGSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC12commentCount11containerIds6ResultOySiAA09VFCommentG5ErrorOGSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC",
+        "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -23152,108 +23269,6 @@
         "printedName": "ViafouraSDK",
         "children": [
           {
-            "kind": "Var",
-            "name": "authentication",
-            "printedName": "authentication",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "VFAuthenticationService",
-                "printedName": "ViafouraSDK.VFAuthenticationService",
-                "usr": "s:11ViafouraSDK23VFAuthenticationServiceC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDKAAC14authenticationAA23VFAuthenticationServiceCvpZ",
-            "mangledName": "$s11ViafouraSDKAAC14authenticationAA23VFAuthenticationServiceCvpZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "VFAuthenticationService",
-                    "printedName": "ViafouraSDK.VFAuthenticationService",
-                    "usr": "s:11ViafouraSDK23VFAuthenticationServiceC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDKAAC14authenticationAA23VFAuthenticationServiceCvgZ",
-                "mangledName": "$s11ViafouraSDKAAC14authenticationAA23VFAuthenticationServiceCvgZ",
-                "moduleName": "ViafouraSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "notifications",
-            "printedName": "notifications",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "VFNotificationsService",
-                "printedName": "ViafouraSDK.VFNotificationsService",
-                "usr": "s:11ViafouraSDK22VFNotificationsServiceC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDKAAC13notificationsAA22VFNotificationsServiceCvpZ",
-            "mangledName": "$s11ViafouraSDKAAC13notificationsAA22VFNotificationsServiceCvpZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "VFNotificationsService",
-                    "printedName": "ViafouraSDK.VFNotificationsService",
-                    "usr": "s:11ViafouraSDK22VFNotificationsServiceC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDKAAC13notificationsAA22VFNotificationsServiceCvgZ",
-                "mangledName": "$s11ViafouraSDKAAC13notificationsAA22VFNotificationsServiceCvgZ",
-                "moduleName": "ViafouraSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
             "kind": "Function",
             "name": "initialize",
             "printedName": "initialize(siteUUID:siteDomain:)",
@@ -23353,6 +23368,29 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDKAAC4authAA23VFAuthenticationServiceCyFZ",
             "mangledName": "$s11ViafouraSDKAAC4authAA23VFAuthenticationServiceCyFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "comments",
+            "printedName": "comments()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFLiveCommentsService",
+                "printedName": "ViafouraSDK.VFLiveCommentsService",
+                "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDKAAC8commentsAA21VFLiveCommentsServiceCyFZ",
+            "mangledName": "$s11ViafouraSDKAAC8commentsAA21VFLiveCommentsServiceCyFZ",
             "moduleName": "ViafouraSDK",
             "static": true,
             "declAttributes": [
@@ -30182,6 +30220,258 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "VFCommentCountError",
+        "printedName": "VFCommentCountError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCommentCountError.Type) -> ViafouraSDK.VFCommentCountError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCommentCountError",
+                    "printedName": "ViafouraSDK.VFCommentCountError",
+                    "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCommentCountError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCommentCountError",
+                        "printedName": "ViafouraSDK.VFCommentCountError",
+                        "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK19VFCommentCountErrorO7unknownyA2CmF",
+            "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO7unknownyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFCommentCountError",
+                "printedName": "ViafouraSDK.VFCommentCountError",
+                "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFCommentCountError",
+                "printedName": "ViafouraSDK.VFCommentCountError",
+                "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK19VFCommentCountErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK19VFCommentCountErrorO9hashValueSivp",
+            "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO9hashValueSivp",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK19VFCommentCountErrorO9hashValueSivg",
+                "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO9hashValueSivg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK19VFCommentCountErrorO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO4hash4intoys6HasherVz_tF",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK19VFCommentCountErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO16errorDescriptionSSSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK19VFCommentCountErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO16errorDescriptionSSSgvg",
+                "moduleName": "ViafouraSDK",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ViafouraSDK19VFCommentCountErrorO",
+        "mangledName": "$s11ViafouraSDK19VFCommentCountErrorO",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -63171,56 +63461,56 @@
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 846,
+      "offset": 832,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "StringLiteral",
-      "offset": 1140,
+      "offset": 1126,
       "length": 33,
       "value": "\"ViafouraSDK already initialized\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "StringLiteral",
-      "offset": 1277,
+      "offset": 1263,
       "length": 22,
       "value": "\"Site UUID is invalid\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "StringLiteral",
-      "offset": 1778,
+      "offset": 1764,
       "length": 22,
       "value": "\"Connected to network\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "StringLiteral",
-      "offset": 1996,
+      "offset": 1982,
       "length": 27,
       "value": "\"Disconnected from network\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "StringLiteral",
-      "offset": 2217,
+      "offset": 2203,
       "length": 9,
       "value": "\"Monitor\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 2347,
+      "offset": 2333,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "StringLiteral",
-      "offset": 2362,
+      "offset": 2348,
       "length": 42,
       "value": "\"_UIConstraintBasedLayoutLogUnsatisfiable\""
     },
@@ -71077,6 +71367,20 @@
       "offset": 35255,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/LiveComments\/VFLiveCommentsService+CommentCount.swift",
+      "kind": "IntegerLiteral",
+      "offset": 737,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/LiveComments\/VFLiveCommentsService+CommentCount.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1255,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentsList\/Cell\/AdCell.swift",

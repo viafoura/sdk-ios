@@ -189,6 +189,9 @@ extension VFFlagCommentError {
     get
   }
 }
+@_hasMissingDesignatedInitializers public class VFLiveCommentsService {
+  @objc deinit
+}
 public enum VFChatListError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFChatListError, b: VFChatListError) -> Swift.Bool
@@ -941,12 +944,11 @@ public struct VFArticleMetadata {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ViafouraSDK {
-  public static let authentication: VFAuthenticationService
-  public static let notifications: VFNotificationsService
   public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
   public static func auth() -> VFAuthenticationService
+  public static func comments() -> VFLiveCommentsService
   @objc deinit
 }
 public enum VFUserCommentsError : Foundation.LocalizedError {
@@ -1195,6 +1197,25 @@ public enum VFRemovePollError : Foundation.LocalizedError {
   }
 }
 extension VFRemovePollError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension VFLiveCommentsService {
+  public func commentCount(containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> ()))
+  #if compiler(>=5.3) && $AsyncAwait
+  public func commentCount(containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, VFCommentCountError>)
+  #endif
+}
+public enum VFCommentCountError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFCommentCountError, b: VFCommentCountError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFCommentCountError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1971,6 +1992,8 @@ extension VFUndislikeCommentError : Swift.Equatable {}
 extension VFUndislikeCommentError : Swift.Hashable {}
 extension VFRemovePollError : Swift.Equatable {}
 extension VFRemovePollError : Swift.Hashable {}
+extension VFCommentCountError : Swift.Equatable {}
+extension VFCommentCountError : Swift.Hashable {}
 extension VFCommentError : Swift.Equatable {}
 extension VFCommentError : Swift.Hashable {}
 extension VFTopicsSubscribedError : Swift.Equatable {}
