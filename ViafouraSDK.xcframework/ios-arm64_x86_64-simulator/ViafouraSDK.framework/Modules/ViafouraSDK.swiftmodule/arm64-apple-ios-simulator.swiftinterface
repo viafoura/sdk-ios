@@ -80,6 +80,7 @@ extension VFSingleStoryError {
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
+  case unauthorized
   public static func == (a: VFCreateCommentReplyError, b: VFCreateCommentReplyError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -916,6 +917,7 @@ extension VFDeleteChatError {
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
+  case unauthorized
   public static func == (a: VFCreateCommentError, b: VFCreateCommentError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1053,6 +1055,7 @@ extension VFPollViewController : UIKit.UITextFieldDelegate {
 }
 public enum VFEditCommentError : Foundation.LocalizedError {
   case unknown
+  case unauthorized
   public static func == (a: VFEditCommentError, b: VFEditCommentError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
