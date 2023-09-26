@@ -132,14 +132,14 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             return
         }
 
-        let callbacks: VFActionsCallbacks = { type in
+        let callbacks: VFActionsCallbacks = { [weak self] type in
             switch type {
             case .writeNewCommentPressed(let actionType):
-                self.presentNewCommentViewController(actionType: actionType)
+                self?.presentNewCommentViewController(actionType: actionType)
             case .seeMoreCommentsPressed:
                 break
             case .openProfilePressed(let userUUID, let presentationType):
-                self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
             default:
                 break
             }
@@ -189,15 +189,15 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             return
         }
 
-        let callbacks: VFActionsCallbacks = { type in
+        let callbacks: VFActionsCallbacks = { [weak self] type in
             switch type {
             case .notificationPressed(let presentationType):
                 switch presentationType {
                 case .profile(let userUUID):
-                    self.presentProfileViewController(userUUID: userUUID, presentationType: .feed)
+                    self?.presentProfileViewController(userUUID: userUUID, presentationType: .feed)
                     break
                 case .content(let containerUUID, let contentUUID, let containerId):
-                    self.presentArticle(containerId: containerId, contentUUID: contentUUID)
+                    self?.presentArticle(containerId: containerId, contentUUID: contentUUID)
                     break
                 }
             default:
