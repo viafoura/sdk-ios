@@ -1114,10 +1114,10 @@ extension ViafouraSDK.VFLoginRadiusLoginError {
   @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) public func setAuthorsIds(authors: [Swift.String])
   @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+  @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 extension ViafouraSDK.VFPreviewCommentsViewController : ViafouraSDK.VFLocalAdDelegate {
   @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView
