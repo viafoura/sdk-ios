@@ -337,23 +337,23 @@ extension ViafouraSDK.VFDislikeCommentError {
 @_hasMissingDesignatedInitializers public class AnalyticsService {
   public func addWidget(_ widgetType: ViafouraSDK.WidgetType)
   public func removeWidget(_ widgetType: ViafouraSDK.WidgetType)
-  public func logLoadMoreClick(eventSessionUUID: Foundation.UUID, tab: Swift.String, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
-  public func logConversationsBellClick(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
+  public func logLoadMoreClick(eventSessionUUID: Foundation.UUID, tab: Swift.String, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
+  public func logConversationsBellClick(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
   public func logTrayTriggerClick(eventSessionUUID: Foundation.UUID, eventSessionStart: Foundation.Date)
-  public func logSortChange(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, sort: Swift.String, defaultSort: Swift.String, oldSort: Swift.String)
-  public func logEventEngage(widgetType: ViafouraSDK.WidgetType, eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, time: Swift.Int64, vfTime: Swift.Int64, hiddenTime: Swift.Int64, focuses: Swift.Int)
-  public func logTrackAdCode(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: ViafouraSDK.VFArticleMetadata, status: Swift.String, failureReason: Swift.String, widgetType: ViafouraSDK.WidgetType)
-  public func logTrackAdView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: ViafouraSDK.VFArticleMetadata, adIntegration: Swift.String, limit: Swift.Int, childLimit: Swift.Int, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int, firstPromoPosition: Swift.Int, totalCount: Swift.Int, index: Swift.Int, threadType: Swift.String, widgetType: ViafouraSDK.WidgetType)
+  public func logSortChange(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, sort: Swift.String, defaultSort: Swift.String, oldSort: Swift.String)
+  public func logEventEngage(widgetType: ViafouraSDK.WidgetType, eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, time: Swift.Int64, vfTime: Swift.Int64, hiddenTime: Swift.Int64, focuses: Swift.Int)
+  public func logTrackAdCode(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: ViafouraSDK.VFArticleMetadata, status: Swift.String, failureReason: Swift.String, widgetType: ViafouraSDK.WidgetType)
+  public func logTrackAdView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: ViafouraSDK.VFArticleMetadata, adIntegration: Swift.String, limit: Swift.Int, childLimit: Swift.Int, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int, firstPromoPosition: Swift.Int, totalCount: Swift.Int, index: Swift.Int, threadType: Swift.String, widgetType: ViafouraSDK.WidgetType)
   public func logLogout()
-  public func logTrackAd(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID? = nil, eventSessionStart: Foundation.Date, articleMetadata: ViafouraSDK.VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int? = nil, childLimit: Swift.Int? = nil, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int? = nil, firstPromoPosition: Swift.Int, totalCount: Swift.Int? = nil, index: Swift.Int, threadType: Swift.String? = nil, widgetType: ViafouraSDK.WidgetType)
-  public func logInteraction(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, label: Swift.String, action: Swift.String)
+  public func logTrackAd(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, eventSessionStart: Foundation.Date, articleMetadata: ViafouraSDK.VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int? = nil, childLimit: Swift.Int? = nil, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int? = nil, firstPromoPosition: Swift.Int, totalCount: Swift.Int? = nil, index: Swift.Int, threadType: Swift.String? = nil, widgetType: ViafouraSDK.WidgetType)
+  public func logInteraction(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, label: Swift.String, action: Swift.String)
   public func logPasswordReset(email: Swift.String)
   public func logSignup(loginType: Swift.String)
   public func logLoginFailure(loginType: Swift.String, error: Swift.String)
   public func logLoginSuccess()
-  public func logContainerLoad(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, allCommentsCount: Swift.Int, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, contentContainerType: Swift.String)
-  public func logPageView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
-  public func logEventAttemptedAction(eventSessionUUID: Foundation.UUID, eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String?, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?, eventSessionStart: Foundation.Date)
+  public func logContainerLoad(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, allCommentsCount: Swift.Int, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date, contentContainerType: Swift.String)
+  public func logPageView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, eventSessionStart: Foundation.Date)
+  public func logEventAttemptedAction(eventSessionUUID: Foundation.UUID, eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?, eventSessionStart: Foundation.Date)
   @objc deinit
 }
 public enum VFCommentContainerSignatureError : Foundation.LocalizedError {
@@ -534,7 +534,7 @@ extension ViafouraSDK.VFDisableChatError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, viewType: ViafouraSDK.VFTrendingViewType, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFVerticalTrendingViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, viewType: ViafouraSDK.VFTrendingViewType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFVerticalTrendingViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
@@ -620,7 +620,7 @@ extension ViafouraSDK.VFVotePollError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFCarouselTrendingViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFCarouselTrendingViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFCarouselTrendingViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
@@ -1105,7 +1105,7 @@ extension ViafouraSDK.VFLoginRadiusLoginError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil) -> ViafouraSDK.VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFPreviewCommentsViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
@@ -1149,7 +1149,7 @@ public enum VFTrendingViewType {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveBlogViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFLiveBlogViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveBlogViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
@@ -1205,9 +1205,9 @@ extension ViafouraSDK.VFRemovePollError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func commentCount(containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> ()))
+  public func commentCount(sectionUUID: Foundation.UUID, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> ()))
   #if compiler(>=5.3) && $AsyncAwait
-  public func commentCount(containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>)
+  public func commentCount(sectionUUID: Foundation.UUID, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>)
   #endif
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
@@ -1680,7 +1680,7 @@ public struct VFSettings {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFNewCommentViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFNewCommentViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
@@ -1850,7 +1850,7 @@ extension ViafouraSDK.VFDeleteCommentError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveChatViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10) -> ViafouraSDK.VFLiveChatViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveChatViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
