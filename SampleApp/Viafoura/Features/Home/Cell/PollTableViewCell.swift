@@ -14,6 +14,8 @@ class PollTableViewCell: UITableViewCell{
     
     func setup(forPoll poll: Poll){
         containerLabel.text = poll.title
+        
+        containerImage.image = UIImage(systemName: "soccerball")?.withRenderingMode(.alwaysTemplate)
 
         containerView.backgroundColor = .white
         containerView.layer.masksToBounds = false
