@@ -37,14 +37,18 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
             return
         }
 
-        let callbacks: VFActionsCallbacks = { type in
+        let callbacks: VFActionsCallbacks = { [weak self] type in
+            guard let strongSelf = self else {
+                return
+            }
+
             switch type {
             case .writeNewCommentPressed(let actionType):
-                self.presentNewCommentViewController(actionType: actionType)
+                strongSelf.presentNewCommentViewController(actionType: actionType)
             case .seeMoreCommentsPressed:
                 break
             case .openProfilePressed(let userUUID, let presentationType):
-                self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                strongSelf.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
             default:
                 break
             }
@@ -74,12 +78,16 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
             return
         }
 
-        let callbacks: VFActionsCallbacks = { type in
+        let callbacks: VFActionsCallbacks = { [weak self] type in
+            guard let strongSelf = self else {
+                return
+            }
+
             switch type {
             case .notificationPressed(let presentationType):
                 switch presentationType {
                 case .profile(let userUUID):
-                    self.presentProfileViewController(userUUID: userUUID, presentationType: .feed)
+                    strongSelf.presentProfileViewController(userUUID: userUUID, presentationType: .feed)
                     break
                 default:
                     break
