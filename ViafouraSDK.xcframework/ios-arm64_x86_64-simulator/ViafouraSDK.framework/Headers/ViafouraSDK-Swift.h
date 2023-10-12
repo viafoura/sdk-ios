@@ -672,6 +672,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 
 
 
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 @interface VFProfileViewController : VFUIViewController
 - (void)viewDidLoad;
@@ -1469,6 +1471,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
+
 
 
 
