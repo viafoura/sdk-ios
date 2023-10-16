@@ -4044,9 +4044,18 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "UUID",
-                "printedName": "Foundation.UUID",
-                "usr": "s:10Foundation4UUIDV"
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -4088,8 +4097,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerId10completiony10Foundation0I0V_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
-            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerId10completiony10Foundation0I0V_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerId10completiony10Foundation0I0VSg_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerId10completiony10Foundation0I0VSg_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -4124,9 +4133,18 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "UUID",
-                "printedName": "Foundation.UUID",
-                "usr": "s:10Foundation4UUIDV"
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -4136,8 +4154,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0V_SStYaKF",
-            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0V_SStYaKF",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_SStYaKF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceC12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_SStYaKF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -51083,35 +51101,35 @@
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel+WebSocket.swift",
       "kind": "IntegerLiteral",
-      "offset": 517,
+      "offset": 608,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel+WebSocket.swift",
       "kind": "BooleanLiteral",
-      "offset": 1220,
+      "offset": 1337,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel+WebSocket.swift",
       "kind": "BooleanLiteral",
-      "offset": 2967,
+      "offset": 3084,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel+WebSocket.swift",
       "kind": "BooleanLiteral",
-      "offset": 3224,
+      "offset": 3341,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel+WebSocket.swift",
       "kind": "BooleanLiteral",
-      "offset": 3473,
+      "offset": 3590,
       "length": 5,
       "value": "false"
     },
@@ -51868,314 +51886,328 @@
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
       "offset": 13095,
-      "length": 22,
-      "value": "\"report.reasons.title\""
+      "length": 32,
+      "value": "\"report.starter.text.first_line\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 13216,
-      "length": 21,
-      "value": "\"report.starter.text\""
+      "offset": 13227,
+      "length": 33,
+      "value": "\"report.starter.text.second_line\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 13337,
+      "offset": 13360,
+      "length": 32,
+      "value": "\"report.starter.text.third_line\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
+      "kind": "StringLiteral",
+      "offset": 13492,
+      "length": 33,
+      "value": "\"report.starter.text.fourth_line\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
+      "kind": "StringLiteral",
+      "offset": 13625,
       "length": 29,
       "value": "\"report.starter.start_button\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 13473,
+      "offset": 13761,
       "length": 36,
       "value": "\"report.reasons.impersonation.title\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 13615,
+      "offset": 13903,
       "length": 42,
       "value": "\"report.reasons.impersonation.description\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 13763,
+      "offset": 14051,
       "length": 36,
       "value": "\"report.reasons.inappropriate.title\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 13904,
+      "offset": 14192,
       "length": 42,
       "value": "\"report.reasons.inappropriate.description\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14051,
+      "offset": 14339,
       "length": 34,
       "value": "\"report.reasons.threatening.title\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14189,
+      "offset": 14477,
       "length": 40,
       "value": "\"report.reasons.threatening.description\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14333,
+      "offset": 14621,
       "length": 33,
       "value": "\"report.reasons.harassment.title\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14469,
+      "offset": 14757,
       "length": 39,
       "value": "\"report.reasons.harassment.description\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14610,
+      "offset": 14898,
       "length": 31,
       "value": "\"report.reasons.disagree.title\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14742,
+      "offset": 15030,
       "length": 37,
       "value": "\"report.reasons.disagree.description\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 14876,
+      "offset": 15164,
       "length": 20,
       "value": "\"sdk.select_picture\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15019,
+      "offset": 15307,
       "length": 27,
       "value": "\"conversations.posts.share\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15163,
+      "offset": 15451,
       "length": 25,
       "value": "\"feed.account.nav.signup\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15284,
+      "offset": 15572,
       "length": 32,
       "value": "\"conversations.typing.top_level\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15405,
+      "offset": 15693,
       "length": 13,
       "value": "\"sdk.sort_by\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15505,
+      "offset": 15793,
       "length": 36,
       "value": "\"conversations.actions.mark_as_spam\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15635,
+      "offset": 15923,
       "length": 31,
       "value": "\"conversations.moderation.spam\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15765,
+      "offset": 16053,
       "length": 27,
       "value": "\"feed.notifications.follow\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 15881,
+      "offset": 16169,
       "length": 19,
       "value": "\"feed.header.today\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16016,
+      "offset": 16304,
       "length": 14,
       "value": "\"badges.topic\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16119,
+      "offset": 16407,
       "length": 30,
       "value": "\"conversations.actions.unflag\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16244,
+      "offset": 16532,
       "length": 21,
       "value": "\"user_actions.unmute\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16354,
+      "offset": 16642,
       "length": 29,
       "value": "\"conversations.actions.unpin\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16501,
+      "offset": 16789,
       "length": 30,
       "value": "\"conversations.actions.unspam\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16655,
+      "offset": 16943,
       "length": 28,
       "value": "\"conversations.actions.edit\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16809,
+      "offset": 17097,
       "length": 33,
       "value": "\"conversations.view_all.comments\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 16937,
+      "offset": 17225,
       "length": 28,
       "value": "\"chat.chat_form.placeholder\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 17058,
+      "offset": 17346,
       "length": 23,
       "value": "\"feed.header.yesterday\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 17208,
+      "offset": 17496,
       "length": 43,
       "value": "\"profile.user_actions.comment.comment.self\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 17289,
+      "offset": 17577,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 17467,
+      "offset": 17755,
       "length": 6,
       "value": "\"json\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 17868,
+      "offset": 18156,
       "length": 34,
       "value": "\"Unable to parse \""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 17896,
+      "offset": 18184,
       "length": 1,
       "value": "\".json\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18087,
+      "offset": 18375,
       "length": 17,
       "value": "\"Strings-Spanish\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18145,
+      "offset": 18433,
       "length": 15,
       "value": "\"Strings-Dutch\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18202,
+      "offset": 18490,
       "length": 16,
       "value": "\"Strings-French\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18260,
+      "offset": 18548,
       "length": 16,
       "value": "\"Strings-Korean\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18318,
+      "offset": 18606,
       "length": 16,
       "value": "\"Strings-Danish\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18380,
+      "offset": 18668,
       "length": 20,
       "value": "\"Strings-Portuguese\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18443,
+      "offset": 18731,
       "length": 17,
       "value": "\"Strings-English\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18503,
+      "offset": 18791,
       "length": 17,
       "value": "\"Strings-Italian\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Translations\/TranslationsService.swift",
       "kind": "StringLiteral",
-      "offset": 18562,
+      "offset": 18850,
       "length": 16,
       "value": "\"Strings-German\""
     },
@@ -53470,98 +53502,91 @@
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 7918,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
-      "kind": "StringLiteral",
-      "offset": 8010,
+      "offset": 7919,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 8278,
+      "offset": 8187,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 8327,
+      "offset": 8236,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 8448,
+      "offset": 8357,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 9412,
+      "offset": 9321,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 9698,
+      "offset": 9607,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 9707,
+      "offset": 9616,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 10406,
+      "offset": 10315,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 10692,
+      "offset": 10601,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 10701,
+      "offset": 10610,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 11307,
+      "offset": 11216,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 11593,
+      "offset": 11502,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "StringLiteral",
-      "offset": 11602,
+      "offset": 11511,
       "length": 2,
       "value": "\"\""
     },
@@ -57453,147 +57478,168 @@
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5093,
-      "length": 18,
-      "value": "\"StartReportTitle\""
+      "offset": 5094,
+      "length": 19,
+      "value": "\"StartReportTitle1\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5147,
+      "offset": 5149,
+      "length": 19,
+      "value": "\"StartReportTitle2\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 5204,
+      "length": 19,
+      "value": "\"StartReportTitle3\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 5259,
+      "length": 19,
+      "value": "\"StartReportTitle4\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 5319,
       "length": 19,
       "value": "\"StartReportAction\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5205,
+      "offset": 5377,
       "length": 21,
       "value": "\"ReportDisagreeTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5263,
+      "offset": 5435,
       "length": 20,
       "value": "\"ReportDisagreeDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5324,
+      "offset": 5496,
       "length": 23,
       "value": "\"ReportHarassmentTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5386,
+      "offset": 5558,
       "length": 22,
       "value": "\"ReportHarassmentDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5447,
+      "offset": 5619,
       "length": 17,
       "value": "\"ReportSpamTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5497,
+      "offset": 5669,
       "length": 16,
       "value": "\"ReportSpamDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5560,
+      "offset": 5732,
       "length": 25,
       "value": "\"ReportInappropiateTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5626,
+      "offset": 5798,
       "length": 24,
       "value": "\"ReportInappropiateDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5696,
+      "offset": 5868,
       "length": 24,
       "value": "\"ReportThreateningTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5760,
+      "offset": 5932,
       "length": 23,
       "value": "\"ReportThreateningDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5831,
+      "offset": 6003,
       "length": 26,
       "value": "\"ReportImpersonationTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5899,
+      "offset": 6071,
       "length": 25,
       "value": "\"ReportImpersonationDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 5966,
+      "offset": 6138,
       "length": 20,
       "value": "\"ReportPrivateTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 6022,
+      "offset": 6194,
       "length": 19,
       "value": "\"ReportPrivateDesc\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 6082,
+      "offset": 6254,
       "length": 19,
       "value": "\"ReportReasonTitle\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 6132,
+      "offset": 6304,
       "length": 14,
       "value": "\"ReportCancel\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 6177,
+      "offset": 6349,
       "length": 14,
       "value": "\"ReportSubmit\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 6227,
+      "offset": 6399,
       "length": 14,
       "value": "\"ReportThanks\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 6271,
+      "offset": 6443,
       "length": 13,
       "value": "\"ReportClose\""
     },
@@ -57935,239 +57981,260 @@
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8214,
-      "length": 2,
-      "value": "16"
+      "kind": "StringLiteral",
+      "offset": 8077,
+      "length": 6,
+      "value": "\"\n\n\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 8276,
+      "length": 3,
+      "value": "\" \""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 8471,
+      "length": 6,
+      "value": "\"\n\n\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8362,
+      "offset": 9008,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8406,
+      "offset": 9052,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8866,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 9103,
-      "length": 3,
-      "value": "0.1"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 9115,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 9259,
-      "length": 3,
-      "value": "0.9"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 9267,
-      "length": 3,
-      "value": "0.9"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 9393,
-      "length": 3,
-      "value": "0.1"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 9405,
-      "length": 3,
-      "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9940,
+      "offset": 9447,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10072,
+      "offset": 9623,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 9860,
+      "length": 3,
+      "value": "0.1"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 9872,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 10016,
+      "length": 3,
+      "value": "0.9"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 10024,
+      "length": 3,
+      "value": "0.9"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 10150,
+      "length": 3,
+      "value": "0.1"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 10162,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10697,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10829,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10111,
+      "offset": 10868,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10546,
+      "offset": 11303,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 10773,
+      "offset": 11530,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 10785,
+      "offset": 11542,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 10924,
+      "offset": 11681,
       "length": 3,
       "value": "0.9"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 10932,
+      "offset": 11689,
       "length": 3,
       "value": "0.9"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 11058,
+      "offset": 11815,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 11070,
+      "offset": 11827,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11532,
+      "offset": 12289,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 11580,
+      "offset": 12337,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 11640,
+      "offset": 12397,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11880,
+      "offset": 12637,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12178,
+      "offset": 12935,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12395,
+      "offset": 13152,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 12460,
+      "offset": 13217,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12750,
+      "offset": 13507,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 12791,
+      "offset": 13548,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 12851,
+      "offset": 13608,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12965,
+      "offset": 13722,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13108,
+      "offset": 13865,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 13954,
+      "offset": 14711,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Report\/ReportViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 16032,
+      "offset": 16789,
       "length": 1,
       "value": "1"
     },
@@ -62981,6 +63048,13 @@
       "value": "\"X-Request-Signature\""
     },
     {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 3995,
+      "length": 4,
+      "value": "20.0"
+    },
+    {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Extensions\/UIDevice+Model.swift",
       "kind": "StringLiteral",
       "offset": 361,
@@ -65041,455 +65115,476 @@
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4041,
+      "offset": 4097,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4110,
+      "offset": 4166,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4116,
+      "offset": 4172,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4406,
+      "offset": 4462,
       "length": 13,
       "value": "\"Remove poll\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 4548,
+      "offset": 4604,
       "length": 7,
       "value": "\"trash\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5058,
+      "offset": 5114,
       "length": 12,
       "value": "\"Close poll\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 5195,
+      "offset": 5251,
       "length": 8,
       "value": "\"pencil\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5726,
+      "offset": 5782,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5975,
+      "offset": 6031,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6022,
+      "offset": 6078,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6062,
+      "offset": 6118,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6177,
+      "offset": 6233,
       "length": 9,
       "value": "\"Publish\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "Array",
-      "offset": 6677,
+      "offset": 6733,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6842,
+      "offset": 6898,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7089,
+      "offset": 7145,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7328,
+      "offset": 7384,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7531,
+      "offset": 7587,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7730,
+      "offset": 7786,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7773,
+      "offset": 7829,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8229,
+      "offset": 8285,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8292,
+      "offset": 8348,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8415,
+      "offset": 8471,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8450,
+      "offset": 8506,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8485,
+      "offset": 8541,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8520,
+      "offset": 8576,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8556,
+      "offset": 8612,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8601,
+      "offset": 8657,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8645,
+      "offset": 8701,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8795,
+      "offset": 8851,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8988,
+      "offset": 9044,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 9180,
+      "offset": 9236,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 9372,
+      "offset": 9428,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 9564,
+      "offset": 9620,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9938,
+      "offset": 9994,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10087,
+      "offset": 10143,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10306,
+      "offset": 10362,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 10671,
+      "offset": 10727,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 11215,
+      "offset": 11374,
       "length": 10,
       "value": "\"Question\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 11571,
+      "offset": 11730,
       "length": 10,
       "value": "\"Option 1\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 11938,
+      "offset": 12097,
       "length": 10,
       "value": "\"Option 2\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 12293,
+      "offset": 12452,
       "length": 10,
       "value": "\"Option 3\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 12660,
+      "offset": 12819,
       "length": 10,
       "value": "\"Option 4\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13048,
+      "offset": 13207,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13163,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 13204,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 13243,
+      "offset": 13250,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13292,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 13391,
+      "offset": 13373,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13524,
+      "offset": 13409,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13450,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13489,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13538,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13637,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13770,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13685,
+      "offset": 13931,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13796,
+      "offset": 14042,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 14010,
+      "offset": 14256,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 14016,
+      "offset": 14262,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 14207,
+      "offset": 14453,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 14277,
+      "offset": 14523,
       "length": 13,
       "value": "\"Poll Closed\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 14293,
+      "offset": 14539,
       "length": 16,
       "value": "\"Poll Question \""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14450,
+      "offset": 14703,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14491,
+      "offset": 14739,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14780,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14531,
+      "offset": 14820,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 14566,
+      "offset": 14855,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14603,
+      "offset": 14892,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14640,
+      "offset": 14929,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14688,
+      "offset": 14977,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "StringLiteral",
-      "offset": 14729,
+      "offset": 15018,
       "length": 13,
       "value": "\"Create Poll\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Polls\/VFPollViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15891,
+      "offset": 16180,
       "length": 4,
       "value": "true"
     },
@@ -67903,463 +67998,456 @@
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
-      "kind": "FloatLiteral",
-      "offset": 1112,
-      "length": 4,
-      "value": "20.0"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "BooleanLiteral",
-      "offset": 1188,
+      "offset": 1222,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 2379,
+      "offset": 2413,
       "length": 14,
       "value": "\"section_uuid\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 2401,
+      "offset": 2435,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 2519,
+      "offset": 2553,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 2535,
+      "offset": 2569,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "Array",
-      "offset": 2553,
+      "offset": 2587,
       "length": 12,
       "value": "[\"notified\"]"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 2622,
+      "offset": 2656,
       "length": 12,
       "value": "\"event_type\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 2642,
+      "offset": 2676,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3473,
+      "offset": 3507,
       "length": 16,
       "value": "\"container_uuid\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3497,
+      "offset": 3531,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3606,
+      "offset": 3640,
       "length": 14,
       "value": "\"section_uuid\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3628,
+      "offset": 3662,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3746,
+      "offset": 3780,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3762,
+      "offset": 3796,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "Array",
-      "offset": 3780,
+      "offset": 3814,
       "length": 130,
       "value": "[\"created\", \"visible\", \"spammed\", \"disabled\", \"flagged\", \"flags_cleared\", \"deleted\", \"liked\", \"unliked\", \"disliked\", \"undisliked\"]"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3969,
+      "offset": 4003,
       "length": 14,
       "value": "\"message_type\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 3991,
+      "offset": 4025,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 4910,
+      "offset": 4944,
       "length": 16,
       "value": "\"container_uuid\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 4934,
+      "offset": 4968,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 5043,
+      "offset": 5077,
       "length": 14,
       "value": "\"section_uuid\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 5065,
+      "offset": 5099,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 5174,
+      "offset": 5208,
       "length": 8,
       "value": "\"action\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 5190,
+      "offset": 5224,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "Array",
-      "offset": 5208,
+      "offset": 5242,
       "length": 203,
       "value": "[\"created\", \"updated\", \"visible\", \"spammed\", \"disabled\", \"flagged\", \"flags_cleared\", \"deleted\", \"liked\", \"unliked\", \"disliked\", \"undisliked\", \"started_typing\", \"picked\", \"unpicked\", \"pinned\", \"unpinned\"]"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 5470,
+      "offset": 5504,
       "length": 14,
       "value": "\"message_type\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 5492,
+      "offset": 5526,
       "length": 8,
       "value": "\"one_of\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7194,
+      "offset": 7228,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7203,
+      "offset": 7237,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7556,
+      "offset": 7590,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7565,
+      "offset": 7599,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "IntegerLiteral",
-      "offset": 7719,
+      "offset": 7753,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7890,
+      "offset": 7924,
       "length": 40,
       "value": "\"Error when sending a WebSocket message\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7934,
+      "offset": 7968,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 7943,
+      "offset": 7977,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8349,
+      "offset": 8383,
       "length": 6,
       "value": "\"type\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8400,
+      "offset": 8434,
       "length": 11,
       "value": "\"subscribe\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8582,
+      "offset": 8616,
       "length": 22,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8603,
+      "offset": 8637,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8670,
+      "offset": 8704,
       "length": 13,
       "value": "\"unsubscribe\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8858,
+      "offset": 8892,
       "length": 24,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8881,
+      "offset": 8915,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 8948,
+      "offset": 8982,
       "length": 7,
       "value": "\"event\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 9368,
+      "offset": 9402,
       "length": 37,
       "value": "\"Error when receiving WebSocket data\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 9408,
+      "offset": 9442,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 9417,
+      "offset": 9451,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "Array",
-      "offset": 9815,
+      "offset": 9849,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 9917,
+      "offset": 9951,
       "length": 10,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 9926,
+      "offset": 9960,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 10246,
+      "offset": 10280,
       "length": 24,
       "value": "\"Web Socket did connect\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 10432,
+      "offset": 10466,
       "length": 44,
       "value": "\"Web Socket did become invalid with error: \""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 10511,
+      "offset": 10545,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 10671,
+      "offset": 10705,
       "length": 38,
       "value": "\"Web Socket did complete with error: \""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 10744,
+      "offset": 10778,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 10965,
+      "offset": 10999,
       "length": 27,
       "value": "\"Web Socket did disconnect\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 11110,
+      "offset": 11144,
       "length": 13,
       "value": "\"unsubscribe\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 11296,
+      "offset": 11330,
       "length": 12,
       "value": "\"keep-alive\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 11512,
+      "offset": 11546,
       "length": 11,
       "value": "\"subscribe\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "Array",
-      "offset": 15556,
+      "offset": 15590,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 15986,
+      "offset": 16020,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 16004,
+      "offset": 16038,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 16024,
+      "offset": 16058,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 16040,
+      "offset": 16074,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 16062,
+      "offset": 16096,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 16084,
+      "offset": 16118,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/WebSocket\/WebSocket.swift",
       "kind": "StringLiteral",
-      "offset": 16107,
+      "offset": 16141,
       "length": 2,
       "value": "\"\""
     },
@@ -72356,14 +72444,14 @@
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/LiveComments\/VFLiveCommentsService+CommentCount.swift",
       "kind": "IntegerLiteral",
-      "offset": 782,
+      "offset": 813,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/LiveComments\/VFLiveCommentsService+CommentCount.swift",
       "kind": "IntegerLiteral",
-      "offset": 1345,
+      "offset": 1407,
       "length": 1,
       "value": "0"
     },
@@ -82246,85 +82334,78 @@
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 13532,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13775,
+      "offset": 13887,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14187,
+      "offset": 14299,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14563,
+      "offset": 14675,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15581,
+      "offset": 15693,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 15628,
+      "offset": 15740,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15677,
+      "offset": 15789,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "StringLiteral",
-      "offset": 15856,
+      "offset": 15968,
       "length": 4,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "StringLiteral",
-      "offset": 15889,
+      "offset": 16001,
       "length": 4,
       "value": "\"\"\""
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 16112,
+      "offset": 16224,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 16155,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 16368,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 16415,
+      "offset": 16267,
       "length": 4,
       "value": "true"
     },
@@ -82332,97 +82413,111 @@
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 16480,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 16526,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 16726,
+      "offset": 16527,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16592,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16638,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16838,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 16946,
+      "offset": 17058,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 18486,
+      "offset": 18598,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 18541,
+      "offset": 18653,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 18631,
+      "offset": 18743,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 18678,
+      "offset": 18790,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 18759,
+      "offset": 18871,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 18809,
+      "offset": 18921,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19023,
+      "offset": 19135,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19068,
+      "offset": 19180,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 19155,
+      "offset": 19267,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/martindesimone\/Desktop\/Viafoura\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 19202,
+      "offset": 19314,
       "length": 4,
       "value": "true"
     },

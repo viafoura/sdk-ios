@@ -1205,9 +1205,9 @@ extension VFRemovePollError {
   }
 }
 extension VFLiveCommentsService {
-  public func commentCount(sectionUUID: Foundation.UUID, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> ()))
+  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> ()))
   #if compiler(>=5.3) && $AsyncAwait
-  public func commentCount(sectionUUID: Foundation.UUID, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, VFCommentCountError>)
+  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, VFCommentCountError>)
   #endif
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
