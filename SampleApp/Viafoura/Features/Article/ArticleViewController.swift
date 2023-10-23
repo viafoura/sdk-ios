@@ -100,9 +100,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             case .openProfilePressed(let userUUID, let presentationType):
                 self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
             case .trendingArticlePressed(let metadata, let containerId):
-                print("TRENDING ARTICLE PRESSED")
                 self?.presentArticle(containerId: containerId, contentUUID: nil)
-                print(containerId)
             default:
                 break
             }
