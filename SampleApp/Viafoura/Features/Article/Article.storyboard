@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,17 +32,10 @@
                                         </wkWebViewConfiguration>
                                     </wkWebView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nM-VN-cMA">
-                                        <rect key="frame" x="0.0" y="15" width="393" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="0DO-rc-yhK"/>
-                                        </constraints>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkV-IR-sl2">
-                                        <rect key="frame" x="0.0" y="15" width="393" height="0.0"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" id="jrk-b7-jCz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -52,14 +45,11 @@
                                     <constraint firstItem="8nM-VN-cMA" firstAttribute="centerX" secondItem="dON-gf-zyg" secondAttribute="centerX" id="FEG-tn-GV3"/>
                                     <constraint firstAttribute="trailing" secondItem="7sG-4q-taD" secondAttribute="trailing" id="K7U-iO-igL"/>
                                     <constraint firstItem="7sG-4q-taD" firstAttribute="centerX" secondItem="dON-gf-zyg" secondAttribute="centerX" id="TF8-md-vDG"/>
-                                    <constraint firstAttribute="trailing" secondItem="EkV-IR-sl2" secondAttribute="trailing" id="dtC-Qx-Wtb"/>
                                     <constraint firstItem="7sG-4q-taD" firstAttribute="leading" secondItem="dON-gf-zyg" secondAttribute="leading" id="eG4-AP-fz8"/>
                                     <constraint firstAttribute="trailing" secondItem="8nM-VN-cMA" secondAttribute="trailing" id="foG-5Q-4iB"/>
                                     <constraint firstItem="8nM-VN-cMA" firstAttribute="leading" secondItem="dON-gf-zyg" secondAttribute="leading" id="fzh-Zc-G4q"/>
-                                    <constraint firstItem="8nM-VN-cMA" firstAttribute="top" secondItem="EkV-IR-sl2" secondAttribute="bottom" id="hNn-Zo-9b9"/>
                                     <constraint firstItem="7sG-4q-taD" firstAttribute="top" secondItem="dON-gf-zyg" secondAttribute="top" id="n0e-97-Zei"/>
-                                    <constraint firstItem="EkV-IR-sl2" firstAttribute="top" secondItem="7sG-4q-taD" secondAttribute="bottom" constant="15" id="tNC-TB-Zi1"/>
-                                    <constraint firstItem="EkV-IR-sl2" firstAttribute="leading" secondItem="dON-gf-zyg" secondAttribute="leading" id="txV-fe-RyJ"/>
+                                    <constraint firstItem="8nM-VN-cMA" firstAttribute="top" secondItem="7sG-4q-taD" secondAttribute="bottom" id="u4a-hx-WKI"/>
                                 </constraints>
                             </scrollView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8El-jN-gvZ">
@@ -83,8 +73,6 @@
                         <outlet property="commentsContainerView" destination="8nM-VN-cMA" id="IKT-Dc-TQd"/>
                         <outlet property="commentsContainerViewHeight" destination="0DO-rc-yhK" id="IoT-7f-aoX"/>
                         <outlet property="scrollView" destination="dON-gf-zyg" id="yeV-Ch-QnL"/>
-                        <outlet property="trendingContainerView" destination="EkV-IR-sl2" id="Mgi-Ge-yXB"/>
-                        <outlet property="trendingContainerViewHeight" destination="jrk-b7-jCz" id="uYs-da-EDa"/>
                         <outlet property="webView" destination="7sG-4q-taD" id="Gzt-Kb-zdM"/>
                         <outlet property="webViewHeight" destination="OyS-Nv-KLx" id="XaD-MV-xe1"/>
                     </connections>

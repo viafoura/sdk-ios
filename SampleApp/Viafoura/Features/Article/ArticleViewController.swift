@@ -23,9 +23,6 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var trendingContainerView: UIView!
-    @IBOutlet weak var trendingContainerViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var commentsContainerView: UIView!
     @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
 
@@ -40,10 +37,6 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func addComponents(){
-        if UserDefaults.standard.bool(forKey: SettingsKeys.showTrendingArticles) == true {
-            addTrendingViewController()
-        }
-        
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
             commentsContainerViewHeight.constant = 120
             
@@ -93,40 +86,6 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         settings = VFSettings(colors: colors)
     }
     
-    func addTrendingViewController(){
-        guard let settings = settings else {
-            return
-        }
-        
-        let callbacks: VFActionsCallbacks = { type in
-            switch type {
-            case .trendingArticlePressed(let metadata, let containerId):
-                break
-            default:
-                break
-            }
-        }
-        
-        guard let trendingViewController = VFVerticalTrendingViewController.new(containerId: articleViewModel.story.containerId, title: "Trending content", limit: 5, daysPublished: nil, trendWindow: 48, sort: .comments, viewType: .condensed, settings: settings) else {
-            return
-        }
-        
-        trendingViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
-        trendingViewController.setAdDelegate(adDelegate: self)
-        trendingViewController.setCustomUIDelegate(customUIDelegate: self)
-        trendingViewController.setActionCallbacks(callbacks: callbacks)
-        trendingViewController.setLayoutDelegate(layoutDelegate: self)
-
-        addChild(trendingViewController)
-        trendingContainerView.addSubview(trendingViewController.view)
-        trendingContainerView.clipsToBounds = true
-
-        trendingViewController.view.frame = CGRect(x: 0, y: 0, width: trendingContainerView.frame.width, height: trendingViewController.view.frame.height)
-        
-        trendingViewController.willMove(toParent: self)
-        trendingViewController.didMove(toParent: self)
-    }
-    
     func addPreCommentViewController(){
         guard let settings = settings else {
             return
@@ -140,6 +99,10 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
                 break
             case .openProfilePressed(let userUUID, let presentationType):
                 self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+            case .trendingArticlePressed(let metadata, let containerId):
+                print("TRENDING ARTICLE PRESSED")
+                self?.presentArticle(containerId: containerId, contentUUID: nil)
+                print(containerId)
             default:
                 break
             }
@@ -215,7 +178,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         self.present(profileViewController, animated: true)
     }
     
-    func presentArticle(containerId: String, contentUUID: UUID){
+    func presentArticle(containerId: String, contentUUID: UUID?){
         guard let articleVC = ArticleViewController.new() else{
             return
         }
@@ -233,7 +196,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             return
         }
 
-        let callbacks: VFActionsCallbacks = { type in
+        let callbacks: VFActionsCallbacks = { [weak self] type in
             switch type {
             case .commentPosted(let contentUUID):
                 break
@@ -265,7 +228,6 @@ extension ArticleViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.isHidden = true
         commentsContainerView.isHidden = false
-        trendingContainerView.isHidden = false
         webView.isHidden = false
         
         if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
@@ -320,8 +282,6 @@ extension ArticleViewController: VFLayoutDelegate {
     func containerHeightUpdated(viewController: VFUIViewController, height: CGFloat) {
         if viewController is VFPreviewCommentsViewController {
             self.commentsContainerViewHeight.constant = height
-        } else if viewController is VFVerticalTrendingViewController || viewController is VFCarouselTrendingViewController {
-            self.trendingContainerViewHeight.constant = height
         }
     }
 }
