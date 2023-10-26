@@ -219,15 +219,15 @@ extension ViafouraSDK.VFLikeStoryError {
     get
   }
 }
-public enum VFUpdateUserError : Foundation.LocalizedError {
+public enum VFUpdateUserAvatarError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFUpdateUserError, b: ViafouraSDK.VFUpdateUserError) -> Swift.Bool
+  public static func == (a: ViafouraSDK.VFUpdateUserAvatarError, b: ViafouraSDK.VFUpdateUserAvatarError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
-extension ViafouraSDK.VFUpdateUserError {
+extension ViafouraSDK.VFUpdateUserAvatarError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -534,7 +534,7 @@ extension ViafouraSDK.VFDisableChatError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, viewType: ViafouraSDK.VFTrendingViewType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFVerticalTrendingViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFVerticalTrendingViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
@@ -545,13 +545,12 @@ extension ViafouraSDK.VFDisableChatError {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension ViafouraSDK.VFVerticalTrendingViewController : UIKit.UITableViewDataSource {
+extension ViafouraSDK.VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-}
-extension ViafouraSDK.VFVerticalTrendingViewController : UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
 }
 extension ViafouraSDK.VFVerticalTrendingViewController : ViafouraSDK.VFLocalAdDelegate {
   @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView
@@ -613,9 +612,6 @@ extension ViafouraSDK.VFVotePollError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFDisableView : UIKit.UIView {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFCarouselTrendingViewController : ViafouraSDK.VFUIViewController {
@@ -736,9 +732,6 @@ extension ViafouraSDK.VFUndislikeChatError {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class VFAuthenticationService {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFUnflagView : UIKit.UIView {
   @objc deinit
 }
 public enum VFDislikeStoryError : Foundation.LocalizedError {
@@ -1026,15 +1019,15 @@ extension ViafouraSDK.VFCommentListError {
     get
   }
 }
-public enum VFUpdateUserAvatarError : Foundation.LocalizedError {
+public enum VFUpdateUserError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFUpdateUserAvatarError, b: ViafouraSDK.VFUpdateUserAvatarError) -> Swift.Bool
+  public static func == (a: ViafouraSDK.VFUpdateUserError, b: ViafouraSDK.VFUpdateUserError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
-extension ViafouraSDK.VFUpdateUserAvatarError {
+extension ViafouraSDK.VFUpdateUserError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1115,6 +1108,7 @@ extension ViafouraSDK.VFLoginRadiusLoginError {
   @_Concurrency.MainActor(unsafe) public func setAuthorsIds(authors: [Swift.String])
   @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
   @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -1127,6 +1121,9 @@ extension ViafouraSDK.VFPreviewCommentsViewController : ViafouraSDK.VFLocalAdDel
 extension ViafouraSDK.VFPreviewCommentsViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
 }
+extension ViafouraSDK.VFPreviewCommentsViewController : ViafouraSDK.VFLayoutDelegate {
+  @_Concurrency.MainActor(unsafe) public func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFlagsView : UIKit.UIView {
   @objc deinit
 }
@@ -1135,15 +1132,6 @@ public enum VFTrendingSortType : Swift.String {
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
-    get
-  }
-}
-public enum VFTrendingViewType {
-  case condensed
-  case full
-  public static func == (a: ViafouraSDK.VFTrendingViewType, b: ViafouraSDK.VFTrendingViewType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
     get
   }
 }
@@ -1434,9 +1422,6 @@ extension ViafouraSDK.VFUpdateStoryContainerError {
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEnableView : UIKit.UIView {
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFProfileViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
   @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFProfileViewController?
@@ -1632,9 +1617,6 @@ extension ViafouraSDK.VFUnsubscribeTopicError {
   public var errorDescription: Swift.String? {
     get
   }
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFUnspamView : UIKit.UIView {
-  @objc deinit
 }
 public enum VFPinCommentError : Foundation.LocalizedError {
   case unknown
@@ -1884,8 +1866,8 @@ extension ViafouraSDK.VFChatListError : Swift.Equatable {}
 extension ViafouraSDK.VFChatListError : Swift.Hashable {}
 extension ViafouraSDK.VFLikeStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFLikeStoryError : Swift.Hashable {}
-extension ViafouraSDK.VFUpdateUserError : Swift.Equatable {}
-extension ViafouraSDK.VFUpdateUserError : Swift.Hashable {}
+extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Equatable {}
+extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Hashable {}
 extension ViafouraSDK.VFTheme : Swift.Equatable {}
 extension ViafouraSDK.VFTheme : Swift.Hashable {}
 extension ViafouraSDK.VFAuthPromptType : Swift.Equatable {}
@@ -1976,8 +1958,8 @@ extension ViafouraSDK.VFSortType : Swift.Equatable {}
 extension ViafouraSDK.VFSortType : Swift.Hashable {}
 extension ViafouraSDK.VFCommentListError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentListError : Swift.Hashable {}
-extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Equatable {}
-extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Hashable {}
+extension ViafouraSDK.VFUpdateUserError : Swift.Equatable {}
+extension ViafouraSDK.VFUpdateUserError : Swift.Hashable {}
 extension ViafouraSDK.VFEditCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFEditCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFCreatePollError : Swift.Equatable {}
@@ -1987,8 +1969,6 @@ extension ViafouraSDK.VFLoginRadiusLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFTrendingSortType : Swift.Equatable {}
 extension ViafouraSDK.VFTrendingSortType : Swift.Hashable {}
 extension ViafouraSDK.VFTrendingSortType : Swift.RawRepresentable {}
-extension ViafouraSDK.VFTrendingViewType : Swift.Equatable {}
-extension ViafouraSDK.VFTrendingViewType : Swift.Hashable {}
 extension ViafouraSDK.VFStorySelectionError : Swift.Equatable {}
 extension ViafouraSDK.VFStorySelectionError : Swift.Hashable {}
 extension ViafouraSDK.VFUndislikeCommentError : Swift.Equatable {}

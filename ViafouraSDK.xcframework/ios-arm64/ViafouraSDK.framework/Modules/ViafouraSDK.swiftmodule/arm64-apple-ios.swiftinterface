@@ -219,15 +219,15 @@ extension VFLikeStoryError {
     get
   }
 }
-public enum VFUpdateUserError : Foundation.LocalizedError {
+public enum VFUpdateUserAvatarError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: VFUpdateUserError, b: VFUpdateUserError) -> Swift.Bool
+  public static func == (a: VFUpdateUserAvatarError, b: VFUpdateUserAvatarError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
-extension VFUpdateUserError {
+extension VFUpdateUserAvatarError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -534,7 +534,7 @@ extension VFDisableChatError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, viewType: VFTrendingViewType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFVerticalTrendingViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFVerticalTrendingViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any VFAdDelegate)
@@ -545,13 +545,12 @@ extension VFDisableChatError {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension VFVerticalTrendingViewController : UIKit.UITableViewDataSource {
+extension VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-}
-extension VFVerticalTrendingViewController : UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
 }
 extension VFVerticalTrendingViewController : VFLocalAdDelegate {
   @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView
@@ -613,9 +612,6 @@ extension VFVotePollError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFDisableView : UIKit.UIView {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFCarouselTrendingViewController : VFUIViewController {
@@ -736,9 +732,6 @@ extension VFUndislikeChatError {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class VFAuthenticationService {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFUnflagView : UIKit.UIView {
   @objc deinit
 }
 public enum VFDislikeStoryError : Foundation.LocalizedError {
@@ -1026,15 +1019,15 @@ extension VFCommentListError {
     get
   }
 }
-public enum VFUpdateUserAvatarError : Foundation.LocalizedError {
+public enum VFUpdateUserError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: VFUpdateUserAvatarError, b: VFUpdateUserAvatarError) -> Swift.Bool
+  public static func == (a: VFUpdateUserError, b: VFUpdateUserError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
-extension VFUpdateUserAvatarError {
+extension VFUpdateUserError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1115,6 +1108,7 @@ extension VFLoginRadiusLoginError {
   @_Concurrency.MainActor(unsafe) public func setAuthorsIds(authors: [Swift.String])
   @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
   @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -1127,6 +1121,9 @@ extension VFPreviewCommentsViewController : VFLocalAdDelegate {
 extension VFPreviewCommentsViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
 }
+extension VFPreviewCommentsViewController : VFLayoutDelegate {
+  @_Concurrency.MainActor(unsafe) public func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFlagsView : UIKit.UIView {
   @objc deinit
 }
@@ -1135,15 +1132,6 @@ public enum VFTrendingSortType : Swift.String {
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
-    get
-  }
-}
-public enum VFTrendingViewType {
-  case condensed
-  case full
-  public static func == (a: VFTrendingViewType, b: VFTrendingViewType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
     get
   }
 }
@@ -1434,9 +1422,6 @@ extension VFUpdateStoryContainerError {
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEnableView : UIKit.UIView {
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFProfileViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
   @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFProfileViewController?
@@ -1632,9 +1617,6 @@ extension VFUnsubscribeTopicError {
   public var errorDescription: Swift.String? {
     get
   }
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFUnspamView : UIKit.UIView {
-  @objc deinit
 }
 public enum VFPinCommentError : Foundation.LocalizedError {
   case unknown
@@ -1884,8 +1866,8 @@ extension VFChatListError : Swift.Equatable {}
 extension VFChatListError : Swift.Hashable {}
 extension VFLikeStoryError : Swift.Equatable {}
 extension VFLikeStoryError : Swift.Hashable {}
-extension VFUpdateUserError : Swift.Equatable {}
-extension VFUpdateUserError : Swift.Hashable {}
+extension VFUpdateUserAvatarError : Swift.Equatable {}
+extension VFUpdateUserAvatarError : Swift.Hashable {}
 extension VFTheme : Swift.Equatable {}
 extension VFTheme : Swift.Hashable {}
 extension VFAuthPromptType : Swift.Equatable {}
@@ -1976,8 +1958,8 @@ extension VFSortType : Swift.Equatable {}
 extension VFSortType : Swift.Hashable {}
 extension VFCommentListError : Swift.Equatable {}
 extension VFCommentListError : Swift.Hashable {}
-extension VFUpdateUserAvatarError : Swift.Equatable {}
-extension VFUpdateUserAvatarError : Swift.Hashable {}
+extension VFUpdateUserError : Swift.Equatable {}
+extension VFUpdateUserError : Swift.Hashable {}
 extension VFEditCommentError : Swift.Equatable {}
 extension VFEditCommentError : Swift.Hashable {}
 extension VFCreatePollError : Swift.Equatable {}
@@ -1987,8 +1969,6 @@ extension VFLoginRadiusLoginError : Swift.Hashable {}
 extension VFTrendingSortType : Swift.Equatable {}
 extension VFTrendingSortType : Swift.Hashable {}
 extension VFTrendingSortType : Swift.RawRepresentable {}
-extension VFTrendingViewType : Swift.Equatable {}
-extension VFTrendingViewType : Swift.Hashable {}
 extension VFStorySelectionError : Swift.Equatable {}
 extension VFStorySelectionError : Swift.Hashable {}
 extension VFUndislikeCommentError : Swift.Equatable {}

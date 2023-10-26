@@ -332,7 +332,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 
 
 
-
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -379,6 +378,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
+
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -387,7 +387,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -413,13 +412,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFContentRemovedView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK17VFCustomBadgeView")
 @interface VFCustomBadgeView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK13VFDisableView")
-@interface VFDisableView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -462,13 +454,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK21VFEmptyModerationView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK16VFEnablePushView")
 @interface VFEnablePushView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK12VFEnableView")
-@interface VFEnableView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -629,12 +614,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
@@ -649,6 +634,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFPoweredByViafouraView")
 SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController : VFUIViewController
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -658,6 +644,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
+
+
 
 
 
@@ -755,29 +744,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK13VFTrustedView")
 
 
 
-SWIFT_CLASS("_TtC11ViafouraSDK12VFUnflagView")
-@interface VFUnflagView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK12VFUnspamView")
-@interface VFUnspamView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
 SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @interface VFVerticalTrendingViewController : VFUIViewController
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDelegate>
 @end
 
 
@@ -787,11 +758,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @class UITableView;
 @class UITableViewCell;
 
-@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDataSource>
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
@@ -1145,7 +1117,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 
 
 
-
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -1192,6 +1163,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
+
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -1200,7 +1172,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -1226,13 +1197,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFContentRemovedView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK17VFCustomBadgeView")
 @interface VFCustomBadgeView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK13VFDisableView")
-@interface VFDisableView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -1275,13 +1239,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK21VFEmptyModerationView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK16VFEnablePushView")
 @interface VFEnablePushView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK12VFEnableView")
-@interface VFEnableView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
@@ -1442,12 +1399,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
@@ -1462,6 +1419,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFPoweredByViafouraView")
 SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController : VFUIViewController
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
@@ -1471,6 +1429,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
+
+
 
 
 
@@ -1568,29 +1529,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK13VFTrustedView")
 
 
 
-SWIFT_CLASS("_TtC11ViafouraSDK12VFUnflagView")
-@interface VFUnflagView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK12VFUnspamView")
-@interface VFUnspamView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
 SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @interface VFVerticalTrendingViewController : VFUIViewController
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDelegate>
 @end
 
 
@@ -1600,11 +1543,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @class UITableView;
 @class UITableViewCell;
 
-@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDataSource>
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
