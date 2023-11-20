@@ -936,6 +936,10 @@ extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
 }
 public struct VFArticleMetadata {
+  public let url: Foundation.URL
+  public let title: Swift.String
+  public let subtitle: Swift.String
+  public let thumbnailUrl: Foundation.URL
   public init(url: Foundation.URL, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Foundation.URL)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAdView : UIKit.UIView {
