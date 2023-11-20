@@ -6,20 +6,26 @@
 //
 
 import Foundation
+
+enum LiveChatType {
+    case portraitOverlay
+    case fullscreen
+    case portrait
+}
 struct LiveChat {
     let title: String
     let image: String
     let containerId: String
-    let isVideo: Bool
+    let type: LiveChatType
 }
 
 class LiveChatsViewModel {
     var liveChats: [LiveChat] = []
     
     init(){
-        liveChats.append(LiveChat(title: "Sports", image: "star", containerId: "sports", isVideo: true))
-        liveChats.append(LiveChat(title: "Politics", image: "star", containerId: "politics", isVideo: false))
-        liveChats.append(LiveChat(title: "Fashion", image: "star", containerId: "fashion", isVideo: false))
-        liveChats.append(LiveChat(title: "Business", image: "star", containerId: "business", isVideo: false))
+        liveChats.append(LiveChat(title: "Sports", image: "star", containerId: "sports", type: .portraitOverlay))
+        liveChats.append(LiveChat(title: "Politics", image: "star", containerId: "politics", type: .portraitOverlay))
+        liveChats.append(LiveChat(title: "Fashion", image: "star", containerId: "fashion", type: .portrait))
+        liveChats.append(LiveChat(title: "Business", image: "star", containerId: "business", type: .fullscreen))
     }
 }

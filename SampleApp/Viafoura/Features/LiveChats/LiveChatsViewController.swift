@@ -47,14 +47,24 @@ extension LiveChatsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let liveChat = viewModel.liveChats[indexPath.row]
         let articleMetadata = VFArticleMetadata(url: URL(string: "https://viafoura-mobile-demo.vercel.app")!, title: "Title", subtitle: "Subtitle", thumbnailUrl: URL(string: "https://viafoura-mobile-demo.vercel.app")!)
-        if liveChat.isVideo {
-            guard let liveChatVC = LiveChatViewController.new() else{
+        if liveChat.type == .portraitOverlay {
+            guard let liveChatVC = LiveChatPortraitOverlayViewController.new() else{
                 return
             }
             
             liveChatVC.modalPresentationStyle = .fullScreen
             liveChatVC.viewModel = LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata)
             liveChatVC.hidesBottomBarWhenPushed = true
+            self.present(liveChatVC, animated: true)
+        } else if liveChat.type == .portrait {
+            guard let liveChatVC = LiveChatPortraitViewController.new() else{
+                return
+            }
+            
+            liveChatVC.modalPresentationStyle = .pageSheet
+            liveChatVC.viewModel = LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata)
+            liveChatVC.hidesBottomBarWhenPushed = true
+            liveChatVC.title = liveChatVC.title
             self.present(liveChatVC, animated: true)
         } else {
             let callbacks: VFActionsCallbacks = { type in

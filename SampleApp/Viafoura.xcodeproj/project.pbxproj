@@ -26,6 +26,8 @@
 		477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904272818EC6C0019B2F3 /* ArticleViewModel.swift */; };
 		479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479502D22818F03C00ED9E56 /* MainTabBarController.swift */; };
 		4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795030A2819D05D00ED9E56 /* LoginViewModel.swift */; };
+		479A3C382B08106000E455A5 /* LiveChatPortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479A3C372B08106000E455A5 /* LiveChatPortraitViewController.swift */; };
+		479A3C3A2B08107600E455A5 /* LiveChatPortrait.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479A3C392B08107600E455A5 /* LiveChatPortrait.storyboard */; };
 		479B5A2A29D34AA600734F84 /* LiveBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */; };
 		479B5A2C29D34AFD00734F84 /* LiveBlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
@@ -37,7 +39,7 @@
 		47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096F28179DFB00EF93FD /* Assets.xcassets */; };
 		47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0097128179DFB00EF93FD /* LaunchScreen.storyboard */; };
 		47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 47B1DD38297EC13700FBD05C /* Kingfisher */; };
-		47CB993E29E3867C0070FF2B /* LiveChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB993D29E3867C0070FF2B /* LiveChatViewController.swift */; };
+		47CB993E29E3867C0070FF2B /* LiveChatPortraitOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB993D29E3867C0070FF2B /* LiveChatPortraitOverlayViewController.swift */; };
 		47CB994029E386820070FF2B /* LiveChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB993F29E386820070FF2B /* LiveChatViewModel.swift */; };
 		47CB994229E388BE0070FF2B /* video-example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47CB994129E3888C0070FF2B /* video-example.mp4 */; };
 		47CB996029E586880070FF2B /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB995F29E586880070FF2B /* Article.storyboard */; };
@@ -46,13 +48,14 @@
 		47CB996629E586A00070FF2B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996529E586A00070FF2B /* Home.storyboard */; };
 		47CB996829E586A80070FF2B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996729E586A80070FF2B /* Settings.storyboard */; };
 		47CB996A29E586B00070FF2B /* LiveBlog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996929E586B00070FF2B /* LiveBlog.storyboard */; };
-		47CB996C29E586B60070FF2B /* LiveChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996B29E586B60070FF2B /* LiveChat.storyboard */; };
+		47CB996C29E586B60070FF2B /* LiveChatPortraitOverlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996B29E586B60070FF2B /* LiveChatPortraitOverlay.storyboard */; };
 		47CB996E29E586BE0070FF2B /* CommentsContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996D29E586BE0070FF2B /* CommentsContainer.storyboard */; };
 		47CB997029E586C70070FF2B /* LiveChats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47CB996F29E586C70070FF2B /* LiveChats.storyboard */; };
 		47CB997329E589700070FF2B /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CB997229E589700070FF2B /* StoryboardCreatable.swift */; };
 		47DAE50A2922EF72008E95E1 /* LiveChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE5092922EF72008E95E1 /* LiveChatsViewController.swift */; };
 		47DAE50C2922EF7A008E95E1 /* LiveChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50B2922EF7A008E95E1 /* LiveChatsViewModel.swift */; };
 		47DAE50F2922EF8D008E95E1 /* LiveChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DAE50E2922EF8D008E95E1 /* LiveChatTableViewCell.swift */; };
+		47E29F0F2B0BB6B300BB5267 /* video-cnn.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47E29F0E2B0BB6B000BB5267 /* video-cnn.mp4 */; };
 		47E991D42A780D46006DE6F5 /* ViafouraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */; };
 		47E991D52A780D46006DE6F5 /* ViafouraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		47F912E02A683F81004D457C /* PollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912DF2A683F81004D457C /* PollTableViewCell.swift */; };
@@ -127,6 +130,8 @@
 		477904272818EC6C0019B2F3 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		479502D22818F03C00ED9E56 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4795030A2819D05D00ED9E56 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		479A3C372B08106000E455A5 /* LiveChatPortraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatPortraitViewController.swift; sourceTree = "<group>"; };
+		479A3C392B08107600E455A5 /* LiveChatPortrait.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChatPortrait.storyboard; sourceTree = "<group>"; };
 		479B5A2929D34AA600734F84 /* LiveBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewController.swift; sourceTree = "<group>"; };
 		479B5A2B29D34AFD00734F84 /* LiveBlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBlogViewModel.swift; sourceTree = "<group>"; };
 		47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
@@ -140,7 +145,7 @@
 		47B0096F28179DFB00EF93FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47B0097228179DFB00EF93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47B0097428179DFB00EF93FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47CB993D29E3867C0070FF2B /* LiveChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewController.swift; sourceTree = "<group>"; };
+		47CB993D29E3867C0070FF2B /* LiveChatPortraitOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatPortraitOverlayViewController.swift; sourceTree = "<group>"; };
 		47CB993F29E386820070FF2B /* LiveChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatViewModel.swift; sourceTree = "<group>"; };
 		47CB994129E3888C0070FF2B /* video-example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-example.mp4"; sourceTree = "<group>"; };
 		47CB995F29E586880070FF2B /* Article.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
@@ -149,13 +154,14 @@
 		47CB996529E586A00070FF2B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		47CB996729E586A80070FF2B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		47CB996929E586B00070FF2B /* LiveBlog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveBlog.storyboard; sourceTree = "<group>"; };
-		47CB996B29E586B60070FF2B /* LiveChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChat.storyboard; sourceTree = "<group>"; };
+		47CB996B29E586B60070FF2B /* LiveChatPortraitOverlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChatPortraitOverlay.storyboard; sourceTree = "<group>"; };
 		47CB996D29E586BE0070FF2B /* CommentsContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommentsContainer.storyboard; sourceTree = "<group>"; };
 		47CB996F29E586C70070FF2B /* LiveChats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChats.storyboard; sourceTree = "<group>"; };
 		47CB997229E589700070FF2B /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
 		47DAE5092922EF72008E95E1 /* LiveChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatsViewController.swift; sourceTree = "<group>"; };
 		47DAE50B2922EF7A008E95E1 /* LiveChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatsViewModel.swift; sourceTree = "<group>"; };
 		47DAE50E2922EF8D008E95E1 /* LiveChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatTableViewCell.swift; sourceTree = "<group>"; };
+		47E29F0E2B0BB6B000BB5267 /* video-cnn.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-cnn.mp4"; sourceTree = "<group>"; };
 		47F912DF2A683F81004D457C /* PollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollTableViewCell.swift; sourceTree = "<group>"; };
 		47F912E12A684199004D457C /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		47F912E32A68419F004D457C /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
@@ -293,6 +299,7 @@
 		477904202818E8F40019B2F3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47E29F0E2B0BB6B000BB5267 /* video-cnn.mp4 */,
 				47CB994129E3888C0070FF2B /* video-example.mp4 */,
 				470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */,
 				47B0096F28179DFB00EF93FD /* Assets.xcassets */,
@@ -317,6 +324,24 @@
 				479502D22818F03C00ED9E56 /* MainTabBarController.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		479A3C352B080FF800E455A5 /* LiveChatPortraitOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				47CB993D29E3867C0070FF2B /* LiveChatPortraitOverlayViewController.swift */,
+				47CB996B29E586B60070FF2B /* LiveChatPortraitOverlay.storyboard */,
+			);
+			path = LiveChatPortraitOverlay;
+			sourceTree = "<group>";
+		};
+		479A3C362B08101900E455A5 /* LiveChatPortrait */ = {
+			isa = PBXGroup;
+			children = (
+				479A3C372B08106000E455A5 /* LiveChatPortraitViewController.swift */,
+				479A3C392B08107600E455A5 /* LiveChatPortrait.storyboard */,
+			);
+			path = LiveChatPortrait;
 			sourceTree = "<group>";
 		};
 		479B5A2829D34A9400734F84 /* LiveBlog */ = {
@@ -384,9 +409,9 @@
 		47CB993C29E3866F0070FF2B /* LiveChat */ = {
 			isa = PBXGroup;
 			children = (
-				47CB993D29E3867C0070FF2B /* LiveChatViewController.swift */,
+				479A3C362B08101900E455A5 /* LiveChatPortrait */,
+				479A3C352B080FF800E455A5 /* LiveChatPortraitOverlay */,
 				47CB993F29E386820070FF2B /* LiveChatViewModel.swift */,
-				47CB996B29E586B60070FF2B /* LiveChat.storyboard */,
 			);
 			path = LiveChat;
 			sourceTree = "<group>";
@@ -541,10 +566,12 @@
 				47CB996029E586880070FF2B /* Article.storyboard in Resources */,
 				4707010028CBEBC500BE9C0D /* GoogleService-Info.plist in Resources */,
 				47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */,
+				479A3C3A2B08107600E455A5 /* LiveChatPortrait.storyboard in Resources */,
+				47E29F0F2B0BB6B300BB5267 /* video-cnn.mp4 in Resources */,
 				47B0096E28179DF800EF93FD /* Main.storyboard in Resources */,
 				47F912EB2A684694004D457C /* Poll.storyboard in Resources */,
 				4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */,
-				47CB996C29E586B60070FF2B /* LiveChat.storyboard in Resources */,
+				47CB996C29E586B60070FF2B /* LiveChatPortraitOverlay.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +662,7 @@
 				477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */,
 				47F912E02A683F81004D457C /* PollTableViewCell.swift in Sources */,
 				47F912E72A68431A004D457C /* PollViewController.swift in Sources */,
+				479A3C382B08106000E455A5 /* LiveChatPortraitViewController.swift in Sources */,
 				47DAE50C2922EF7A008E95E1 /* LiveChatsViewModel.swift in Sources */,
 				473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */,
 				477904182818E7FF0019B2F3 /* HomeViewModel.swift in Sources */,
@@ -649,7 +677,7 @@
 				4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */,
 				47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */,
 				47B0096928179DF800EF93FD /* SceneDelegate.swift in Sources */,
-				47CB993E29E3867C0070FF2B /* LiveChatViewController.swift in Sources */,
+				47CB993E29E3867C0070FF2B /* LiveChatPortraitOverlayViewController.swift in Sources */,
 				477904152818E73D0019B2F3 /* StoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
