@@ -351,6 +351,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 
 
 
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -397,6 +399,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
+
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -405,7 +408,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -633,13 +635,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -660,10 +662,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
-
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
 
 
 
@@ -1155,6 +1157,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 
 
 
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK8VFAdView")
 @interface VFAdView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -1201,6 +1205,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
+
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -1209,7 +1214,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -1437,13 +1441,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -1464,10 +1468,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
-
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
 
 
 
