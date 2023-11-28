@@ -346,7 +346,7 @@ extension VFDislikeCommentError {
   public func logSortChange(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date, sort: Swift.String, defaultSort: Swift.String, oldSort: Swift.String)
   public func logEventEngage(widgetType: WidgetType, eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date, time: Swift.Int64, vfTime: Swift.Int64, hiddenTime: Swift.Int64, focuses: Swift.Int)
   public func logTrackAdCode(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata, status: Swift.String, failureReason: Swift.String, widgetType: WidgetType)
-  public func logTrackAdView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata, adIntegration: Swift.String, limit: Swift.Int, childLimit: Swift.Int, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int, firstPromoPosition: Swift.Int, totalCount: Swift.Int, index: Swift.Int, threadType: Swift.String, widgetType: WidgetType)
+  public func logTrackAdView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int, childLimit: Swift.Int, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int, firstPromoPosition: Swift.Int, totalCount: Swift.Int, index: Swift.Int, threadType: Swift.String, widgetType: WidgetType)
   public func logLogout()
   public func logTrackAd(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int? = nil, childLimit: Swift.Int? = nil, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int? = nil, firstPromoPosition: Swift.Int, totalCount: Swift.Int? = nil, index: Swift.Int, threadType: Swift.String? = nil, widgetType: WidgetType)
   public func logInteraction(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, eventArticleMetadata: VFArticleMetadata, label: Swift.String, action: Swift.String)
@@ -538,6 +538,7 @@ extension VFDisableChatError {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
   @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFVerticalTrendingViewController?
+  @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any VFAdDelegate)
@@ -546,7 +547,6 @@ extension VFDisableChatError {
   @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 extension VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
@@ -558,6 +558,12 @@ extension VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.
 extension VFVerticalTrendingViewController : VFLocalAdDelegate {
   @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView
   @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
+}
+extension VFVerticalTrendingViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
+}
+extension VFVerticalTrendingViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
 }
 public enum VFUnflagChatError : Foundation.LocalizedError {
   case unknown
@@ -764,7 +770,7 @@ extension VFEditorPickCommentError {
   }
 }
 extension VFAuthenticationService {
-  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<UserResponse, VFSignUpError>) -> ()))
+  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil, completion: @escaping ((Swift.Result<UserResponse, VFSignUpError>) -> ()))
 }
 public enum VFSignUpError : Foundation.LocalizedError {
   case unknown
@@ -1531,9 +1537,6 @@ extension VFSubscribeTopicError {
   public var errorDescription: Swift.String? {
     get
   }
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNewRepliesNotificationView : UIKit.UIView {
-  @objc deinit
 }
 public enum VFStoryListError : Foundation.LocalizedError {
   case unknown

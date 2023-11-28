@@ -605,13 +605,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK29VFNewCommentsNotificationView")
 @end
 
 
-SWIFT_CLASS("_TtC11ViafouraSDK28VFNewRepliesNotificationView")
-@interface VFNewRepliesNotificationView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
 SWIFT_CLASS("_TtC11ViafouraSDK22VFNotificationBellView")
 @interface VFNotificationBellView : UIView
 @property (nonatomic) CGRect bounds;
@@ -635,13 +628,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
-
-
 
 
 
@@ -662,10 +655,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 
@@ -770,6 +763,17 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+@end
+
+
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
 
@@ -1411,13 +1415,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK29VFNewCommentsNotificationView")
 @end
 
 
-SWIFT_CLASS("_TtC11ViafouraSDK28VFNewRepliesNotificationView")
-@interface VFNewRepliesNotificationView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-@end
-
-
 SWIFT_CLASS("_TtC11ViafouraSDK22VFNotificationBellView")
 @interface VFNotificationBellView : UIView
 @property (nonatomic) CGRect bounds;
@@ -1441,13 +1438,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
-
-
 
 
 
@@ -1468,10 +1465,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 
@@ -1576,6 +1573,17 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 - (void)viewDidLoad;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+@end
+
+
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
 
