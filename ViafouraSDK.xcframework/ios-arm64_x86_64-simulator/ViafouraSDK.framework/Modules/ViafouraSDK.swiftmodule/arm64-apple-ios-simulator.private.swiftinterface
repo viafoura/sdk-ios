@@ -1402,6 +1402,19 @@ extension VFTrendingError {
     get
   }
 }
+public enum VFCreateCommentMediaError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFCreateCommentMediaError, b: VFCreateCommentMediaError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFCreateCommentMediaError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFDisabledView : UIKit.UIView {
   @objc deinit
 }
@@ -2001,6 +2014,8 @@ extension VFCommentModerationListError : Swift.Equatable {}
 extension VFCommentModerationListError : Swift.Hashable {}
 extension VFTrendingError : Swift.Equatable {}
 extension VFTrendingError : Swift.Hashable {}
+extension VFCreateCommentMediaError : Swift.Equatable {}
+extension VFCreateCommentMediaError : Swift.Hashable {}
 extension VFUpdateStoryContainerError : Swift.Equatable {}
 extension VFUpdateStoryContainerError : Swift.Hashable {}
 extension VFChatContainerError : Swift.Equatable {}
