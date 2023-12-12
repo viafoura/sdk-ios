@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ViafouraSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -48,6 +48,7 @@ public struct VFDefaultColors {
   public static func colorSeparatorDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorErrorDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorWarningDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorStarDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorEditorPicksDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorThreadingLines(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorChatBubbleDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
@@ -193,6 +194,19 @@ extension VFFlagCommentError {
     get
   }
 }
+public enum VFLikeReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFLikeReviewError, b: VFLikeReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFLikeReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers public class VFLiveCommentsService {
   @objc deinit
 }
@@ -289,10 +303,11 @@ public enum VFProfilePresentationType {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEmptyChatsView : UIKit.UIView {
   @objc deinit
 }
-public enum VFNewCommentActionType {
+public enum VFNewCommentActionType : Swift.Equatable {
   case create
   case reply(content: Foundation.UUID)
   case edit(content: Foundation.UUID)
+  public static func == (a: VFNewCommentActionType, b: VFNewCommentActionType) -> Swift.Bool
 }
 public enum VFSingleChatError : Foundation.LocalizedError {
   case unknown
@@ -316,6 +331,20 @@ public enum VFClosePollError : Foundation.LocalizedError {
   }
 }
 extension VFClosePollError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFCreateReviewError : Foundation.LocalizedError {
+  case unknown
+  case unauthorized
+  public static func == (a: VFCreateReviewError, b: VFCreateReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFCreateReviewError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -463,6 +492,9 @@ extension VFEnableCommentError {
     get
   }
 }
+@_hasMissingDesignatedInitializers public class VFLiveReviewsService {
+  @objc deinit
+}
 public enum EventAttemptedAction : Swift.String, Swift.Encodable {
   case LIVEBLOG_LIKED
   case LIVEBLOG_DISLIKED
@@ -535,6 +567,19 @@ extension VFDisableChatError {
     get
   }
 }
+public enum VFUnspamReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUnspamReviewError, b: VFUnspamReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUnspamReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
   @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFVerticalTrendingViewController?
@@ -565,6 +610,16 @@ extension VFVerticalTrendingViewController {
 extension VFVerticalTrendingViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFRatingsSummaryView : UIKit.UIView {
+  @objc deinit
+}
+extension VFRatingsSummaryView : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+}
 public enum VFUnflagChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFUnflagChatError, b: VFUnflagChatError) -> Swift.Bool
@@ -574,6 +629,19 @@ public enum VFUnflagChatError : Foundation.LocalizedError {
   }
 }
 extension VFUnflagChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFUndislikeReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUndislikeReviewError, b: VFUndislikeReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUndislikeReviewError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -712,6 +780,19 @@ extension VFStoryContainerError {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+public enum VFFlagReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFFlagReviewError, b: VFFlagReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFFlagReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public protocol VFLoginDelegate : AnyObject {
   func startLogin()
 }
@@ -739,6 +820,19 @@ extension VFUndislikeChatError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFContentEditedView : UIKit.UIView {
   @objc deinit
+}
+public enum VFDislikeReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFDislikeReviewError, b: VFDislikeReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFDislikeReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers public class VFAuthenticationService {
   @objc deinit
@@ -898,6 +992,19 @@ extension VFOpenIdLoginError {
     get
   }
 }
+public enum VFUnflagReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUnflagReviewError, b: VFUnflagReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUnflagReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public struct UserResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -1005,6 +1112,19 @@ public enum EventType : Swift.String, Swift.Encodable {
   @objc deinit
   required public init(from decoder: any Swift.Decoder) throws
 }
+public enum VFUnlikeReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUnlikeReviewError, b: VFUnlikeReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUnlikeReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFSortType {
   case newest
   case oldest
@@ -1073,6 +1193,25 @@ extension VFEditCommentError {
     get
   }
 }
+extension VFLiveReviewsService {
+  public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFReviewCountError>) -> ()))
+  #if compiler(>=5.3) && $AsyncAwait
+  public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, VFReviewCountError>)
+  #endif
+}
+public enum VFReviewCountError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewCountError, b: VFReviewCountError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewCountError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFCreatePollError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFCreatePollError, b: VFCreatePollError) -> Swift.Bool
@@ -1082,6 +1221,19 @@ public enum VFCreatePollError : Foundation.LocalizedError {
   }
 }
 extension VFCreatePollError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFCreateReviewMediaError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFCreateReviewMediaError, b: VFCreateReviewMediaError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFCreateReviewMediaError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1109,9 +1261,44 @@ extension VFLoginRadiusLoginError {
     get
   }
 }
+public enum VFReviewRepliesError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewRepliesError, b: VFReviewRepliesError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewRepliesError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFReviewModerationListError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewModerationListError, b: VFReviewModerationListError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewModerationListError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFCommentsContainerType {
+  case conversations
+  case reviews
+  public static func == (a: VFCommentsContainerType, b: VFCommentsContainerType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> VFPreviewCommentsViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1176,6 +1363,20 @@ extension VFStorySelectionError {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentsNotificationView : UIKit.UIView {
   @objc deinit
 }
+public enum VFCreateReviewReplyError : Foundation.LocalizedError {
+  case unknown
+  case unauthorized
+  public static func == (a: VFCreateReviewReplyError, b: VFCreateReviewReplyError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFCreateReviewReplyError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAllCommentsView : UIKit.UIView {
   @objc deinit
 }
@@ -1188,6 +1389,19 @@ public enum VFUndislikeCommentError : Foundation.LocalizedError {
   }
 }
 extension VFUndislikeCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFSpamReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFSpamReviewError, b: VFSpamReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFSpamReviewError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1220,6 +1434,32 @@ public enum VFCommentCountError : Foundation.LocalizedError {
   }
 }
 extension VFCommentCountError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFEnableReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFEnableReviewError, b: VFEnableReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFEnableReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFRemoveEditorPickReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFRemoveEditorPickReviewError, b: VFRemoveEditorPickReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFRemoveEditorPickReviewError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1497,6 +1737,19 @@ extension VFCreateStoryError {
 @_hasMissingDesignatedInitializers public class CommentContent {
   @objc deinit
 }
+public enum VFReviewContainerError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewContainerError, b: VFReviewContainerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewContainerError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ViewChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
   @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ViewChatReplyViewController?
@@ -1506,6 +1759,32 @@ extension VFCreateStoryError {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+public enum VFUserReviewsError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUserReviewsError, b: VFUserReviewsError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUserReviewsError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFDeleteReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFDeleteReviewError, b: VFDeleteReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFDeleteReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
@@ -1519,6 +1798,19 @@ extension VFCreateStoryError {
 }
 extension ChatReplyViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+}
+public enum VFUpdateReviewsContainerSettingsError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUpdateReviewsContainerSettingsError, b: VFUpdateReviewsContainerSettingsError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUpdateReviewsContainerSettingsError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 extension VFAuthenticationService {
   public func cookieLogin(token: Swift.String, type: Swift.String = "viafouraDefinedCookie", completion: @escaping ((Swift.Result<VFCookieLoginData, VFCookieLoginError>) -> ()))
@@ -1538,6 +1830,32 @@ extension VFCookieLoginError {
     get
   }
 }
+public enum VFPinReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFPinReviewError, b: VFPinReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFPinReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFReviewListError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewListError, b: VFReviewListError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewListError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFSubscribeTopicError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFSubscribeTopicError, b: VFSubscribeTopicError) -> Swift.Bool
@@ -1547,6 +1865,19 @@ public enum VFSubscribeTopicError : Foundation.LocalizedError {
   }
 }
 extension VFSubscribeTopicError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFUnpinReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFUnpinReviewError, b: VFUnpinReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFUnpinReviewError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1573,6 +1904,20 @@ public enum VFCreateChatError : Foundation.LocalizedError {
   }
 }
 extension VFCreateChatError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFEditReviewError : Foundation.LocalizedError {
+  case unknown
+  case unauthorized
+  public static func == (a: VFEditReviewError, b: VFEditReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFEditReviewError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1606,6 +1951,19 @@ extension VFRemoveEditorPickCommentError {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFPoweredByViafouraView : UIKit.UIView {
   @objc deinit
 }
+public enum VFReviewsProfileError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewsProfileError, b: VFReviewsProfileError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewsProfileError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public protocol StoryboardCreateable : UIKit.UIViewController {
   static var storyboardName: Swift.String { get }
 }
@@ -1627,6 +1985,32 @@ extension VFSpamCommentError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFPinnedView : UIKit.UIView {
   @objc deinit
+}
+public enum VFTrendingReviewsError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFTrendingReviewsError, b: VFTrendingReviewsError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFTrendingReviewsError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum VFDisableReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFDisableReviewError, b: VFDisableReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFDisableReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public enum VFUnsubscribeTopicError : Foundation.LocalizedError {
   case unknown
@@ -1667,8 +2051,34 @@ extension VFUnlikeChatError {
     get
   }
 }
+public enum VFReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewError, b: VFReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public protocol VFCustomUIDelegate : AnyObject {
   func customizeView(theme: VFTheme, view: VFCustomizableView)
+}
+public enum VFEditorPickReviewError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFEditorPickReviewError, b: VFEditorPickReviewError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFEditorPickReviewError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public struct VFSettings {
   public let fonts: VFFonts
@@ -1685,7 +2095,7 @@ public struct VFSettings {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentViewController : VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: VFNewCommentActionType, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFNewCommentViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: VFNewCommentActionType, containerType: VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFNewCommentViewController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1761,6 +2171,19 @@ extension VFUserInfoError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFLiveView : UIKit.UIView {
   @objc deinit
+}
+public enum VFReviewContainerSignatureError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFReviewContainerSignatureError, b: VFReviewContainerSignatureError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFReviewContainerSignatureError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public enum VFUpdateChatContainerError : Foundation.LocalizedError {
   case unknown
@@ -1885,6 +2308,8 @@ extension VFUnlikeStoryError : Swift.Equatable {}
 extension VFUnlikeStoryError : Swift.Hashable {}
 extension VFFlagCommentError : Swift.Equatable {}
 extension VFFlagCommentError : Swift.Hashable {}
+extension VFLikeReviewError : Swift.Equatable {}
+extension VFLikeReviewError : Swift.Hashable {}
 extension VFChatListError : Swift.Equatable {}
 extension VFChatListError : Swift.Hashable {}
 extension VFLikeStoryError : Swift.Equatable {}
@@ -1901,6 +2326,8 @@ extension VFSingleChatError : Swift.Equatable {}
 extension VFSingleChatError : Swift.Hashable {}
 extension VFClosePollError : Swift.Equatable {}
 extension VFClosePollError : Swift.Hashable {}
+extension VFCreateReviewError : Swift.Equatable {}
+extension VFCreateReviewError : Swift.Hashable {}
 extension VFDislikeCommentError : Swift.Equatable {}
 extension VFDislikeCommentError : Swift.Hashable {}
 extension VFCommentContainerSignatureError : Swift.Equatable {}
@@ -1926,8 +2353,12 @@ extension VFUpdateCommentsContainerSettingsError : Swift.Equatable {}
 extension VFUpdateCommentsContainerSettingsError : Swift.Hashable {}
 extension VFDisableChatError : Swift.Equatable {}
 extension VFDisableChatError : Swift.Hashable {}
+extension VFUnspamReviewError : Swift.Equatable {}
+extension VFUnspamReviewError : Swift.Hashable {}
 extension VFUnflagChatError : Swift.Equatable {}
 extension VFUnflagChatError : Swift.Hashable {}
+extension VFUndislikeReviewError : Swift.Equatable {}
+extension VFUndislikeReviewError : Swift.Hashable {}
 extension VFLikeChatError : Swift.Equatable {}
 extension VFLikeChatError : Swift.Hashable {}
 extension VFUndislikeStoryError : Swift.Equatable {}
@@ -1942,10 +2373,14 @@ extension VFPollContainerError : Swift.Equatable {}
 extension VFPollContainerError : Swift.Hashable {}
 extension VFStoryContainerError : Swift.Equatable {}
 extension VFStoryContainerError : Swift.Hashable {}
+extension VFFlagReviewError : Swift.Equatable {}
+extension VFFlagReviewError : Swift.Hashable {}
 extension VFFilterType : Swift.Equatable {}
 extension VFFilterType : Swift.Hashable {}
 extension VFUndislikeChatError : Swift.Equatable {}
 extension VFUndislikeChatError : Swift.Hashable {}
+extension VFDislikeReviewError : Swift.Equatable {}
+extension VFDislikeReviewError : Swift.Hashable {}
 extension VFDislikeStoryError : Swift.Equatable {}
 extension VFDislikeStoryError : Swift.Hashable {}
 extension VFEditorPickCommentError : Swift.Equatable {}
@@ -1968,6 +2403,8 @@ extension VFFlagChatError : Swift.Equatable {}
 extension VFFlagChatError : Swift.Hashable {}
 extension VFOpenIdLoginError : Swift.Equatable {}
 extension VFOpenIdLoginError : Swift.Hashable {}
+extension VFUnflagReviewError : Swift.Equatable {}
+extension VFUnflagReviewError : Swift.Hashable {}
 extension VFDeleteChatError : Swift.Equatable {}
 extension VFDeleteChatError : Swift.Hashable {}
 extension VFCreateCommentError : Swift.Equatable {}
@@ -1977,6 +2414,8 @@ extension VFUserCommentsError : Swift.Hashable {}
 extension EventType : Swift.Equatable {}
 extension EventType : Swift.Hashable {}
 extension EventType : Swift.RawRepresentable {}
+extension VFUnlikeReviewError : Swift.Equatable {}
+extension VFUnlikeReviewError : Swift.Hashable {}
 extension VFSortType : Swift.Equatable {}
 extension VFSortType : Swift.Hashable {}
 extension VFCommentListError : Swift.Equatable {}
@@ -1985,21 +2424,39 @@ extension VFUpdateUserError : Swift.Equatable {}
 extension VFUpdateUserError : Swift.Hashable {}
 extension VFEditCommentError : Swift.Equatable {}
 extension VFEditCommentError : Swift.Hashable {}
+extension VFReviewCountError : Swift.Equatable {}
+extension VFReviewCountError : Swift.Hashable {}
 extension VFCreatePollError : Swift.Equatable {}
 extension VFCreatePollError : Swift.Hashable {}
+extension VFCreateReviewMediaError : Swift.Equatable {}
+extension VFCreateReviewMediaError : Swift.Hashable {}
 extension VFLoginRadiusLoginError : Swift.Equatable {}
 extension VFLoginRadiusLoginError : Swift.Hashable {}
+extension VFReviewRepliesError : Swift.Equatable {}
+extension VFReviewRepliesError : Swift.Hashable {}
+extension VFReviewModerationListError : Swift.Equatable {}
+extension VFReviewModerationListError : Swift.Hashable {}
+extension VFCommentsContainerType : Swift.Equatable {}
+extension VFCommentsContainerType : Swift.Hashable {}
 extension VFTrendingSortType : Swift.Equatable {}
 extension VFTrendingSortType : Swift.Hashable {}
 extension VFTrendingSortType : Swift.RawRepresentable {}
 extension VFStorySelectionError : Swift.Equatable {}
 extension VFStorySelectionError : Swift.Hashable {}
+extension VFCreateReviewReplyError : Swift.Equatable {}
+extension VFCreateReviewReplyError : Swift.Hashable {}
 extension VFUndislikeCommentError : Swift.Equatable {}
 extension VFUndislikeCommentError : Swift.Hashable {}
+extension VFSpamReviewError : Swift.Equatable {}
+extension VFSpamReviewError : Swift.Hashable {}
 extension VFRemovePollError : Swift.Equatable {}
 extension VFRemovePollError : Swift.Hashable {}
 extension VFCommentCountError : Swift.Equatable {}
 extension VFCommentCountError : Swift.Hashable {}
+extension VFEnableReviewError : Swift.Equatable {}
+extension VFEnableReviewError : Swift.Hashable {}
+extension VFRemoveEditorPickReviewError : Swift.Equatable {}
+extension VFRemoveEditorPickReviewError : Swift.Hashable {}
 extension VFCommentError : Swift.Equatable {}
 extension VFCommentError : Swift.Hashable {}
 extension VFTopicsSubscribedError : Swift.Equatable {}
@@ -2022,24 +2479,50 @@ extension VFChatContainerError : Swift.Equatable {}
 extension VFChatContainerError : Swift.Hashable {}
 extension VFCreateStoryError : Swift.Equatable {}
 extension VFCreateStoryError : Swift.Hashable {}
+extension VFReviewContainerError : Swift.Equatable {}
+extension VFReviewContainerError : Swift.Hashable {}
+extension VFUserReviewsError : Swift.Equatable {}
+extension VFUserReviewsError : Swift.Hashable {}
+extension VFDeleteReviewError : Swift.Equatable {}
+extension VFDeleteReviewError : Swift.Hashable {}
+extension VFUpdateReviewsContainerSettingsError : Swift.Equatable {}
+extension VFUpdateReviewsContainerSettingsError : Swift.Hashable {}
 extension VFCookieLoginError : Swift.Equatable {}
 extension VFCookieLoginError : Swift.Hashable {}
+extension VFPinReviewError : Swift.Equatable {}
+extension VFPinReviewError : Swift.Hashable {}
+extension VFReviewListError : Swift.Equatable {}
+extension VFReviewListError : Swift.Hashable {}
 extension VFSubscribeTopicError : Swift.Equatable {}
 extension VFSubscribeTopicError : Swift.Hashable {}
+extension VFUnpinReviewError : Swift.Equatable {}
+extension VFUnpinReviewError : Swift.Hashable {}
 extension VFStoryListError : Swift.Equatable {}
 extension VFStoryListError : Swift.Hashable {}
 extension VFCreateChatError : Swift.Equatable {}
 extension VFCreateChatError : Swift.Hashable {}
+extension VFEditReviewError : Swift.Equatable {}
+extension VFEditReviewError : Swift.Hashable {}
 extension VFRemoveEditorPickCommentError : Swift.Equatable {}
 extension VFRemoveEditorPickCommentError : Swift.Hashable {}
+extension VFReviewsProfileError : Swift.Equatable {}
+extension VFReviewsProfileError : Swift.Hashable {}
 extension VFSpamCommentError : Swift.Equatable {}
 extension VFSpamCommentError : Swift.Hashable {}
+extension VFTrendingReviewsError : Swift.Equatable {}
+extension VFTrendingReviewsError : Swift.Hashable {}
+extension VFDisableReviewError : Swift.Equatable {}
+extension VFDisableReviewError : Swift.Hashable {}
 extension VFUnsubscribeTopicError : Swift.Equatable {}
 extension VFUnsubscribeTopicError : Swift.Hashable {}
 extension VFPinCommentError : Swift.Equatable {}
 extension VFPinCommentError : Swift.Hashable {}
 extension VFUnlikeChatError : Swift.Equatable {}
 extension VFUnlikeChatError : Swift.Hashable {}
+extension VFReviewError : Swift.Equatable {}
+extension VFReviewError : Swift.Hashable {}
+extension VFEditorPickReviewError : Swift.Equatable {}
+extension VFEditorPickReviewError : Swift.Hashable {}
 extension WidgetType : Swift.Equatable {}
 extension WidgetType : Swift.Hashable {}
 extension WidgetType : Swift.RawRepresentable {}
@@ -2047,6 +2530,8 @@ extension VFPasswordResetError : Swift.Equatable {}
 extension VFPasswordResetError : Swift.Hashable {}
 extension VFUserInfoError : Swift.Equatable {}
 extension VFUserInfoError : Swift.Hashable {}
+extension VFReviewContainerSignatureError : Swift.Equatable {}
+extension VFReviewContainerSignatureError : Swift.Hashable {}
 extension VFUpdateChatContainerError : Swift.Equatable {}
 extension VFUpdateChatContainerError : Swift.Hashable {}
 extension VFDisableCommentError : Swift.Equatable {}
