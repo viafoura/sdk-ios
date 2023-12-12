@@ -106,7 +106,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .newest) else {
+        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .newest) else {
             return
         }
         
@@ -203,7 +203,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings) else{
+        guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations, containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings) else{
             return
         }
         newCommentViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)

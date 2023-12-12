@@ -20,4 +20,5 @@ public struct Story {
 enum StoryType {
     case blog
     case comments
+    case reviews
 }

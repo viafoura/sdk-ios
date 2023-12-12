@@ -143,7 +143,7 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let content = viewModel.contents[indexPath.row]
         if let story = content.story {
-            if story.storyType == .comments {
+            if story.storyType == .comments || story.storyType == .reviews {
                 guard let articleVC = ArticleViewController.new() else{
                     return
                 }
