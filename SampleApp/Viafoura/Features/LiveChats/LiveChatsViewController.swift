@@ -34,10 +34,8 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         let settings = VFSettings(colors: colors)
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
-            return
-        }
 
+        let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings)
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         self.present(profileViewController, animated: true)
     }
@@ -77,9 +75,12 @@ extension LiveChatsViewController: UITableViewDelegate{
             }
             
             let settings = VFSettings(colors: VFColors())
-            guard let liveChatVC = VFLiveChatViewController.new(containerId: liveChat.containerId, articleMetadata: articleMetadata, loginDelegate: self, settings: settings) else {
-                return
-            }
+            let liveChatVC = VFLiveChatViewController.new(
+                containerId: liveChat.containerId,
+                articleMetadata: articleMetadata,
+                loginDelegate: self,
+                settings: settings
+            )
             
             liveChatVC.setActionCallbacks(callbacks: callbacks)
             liveChatVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)

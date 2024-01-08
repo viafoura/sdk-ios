@@ -582,7 +582,7 @@ extension VFUnspamReviewError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFVerticalTrendingViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFVerticalTrendingViewController
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
@@ -611,6 +611,10 @@ extension VFVerticalTrendingViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFRatingsSummaryView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
   @objc deinit
 }
 extension VFRatingsSummaryView : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
@@ -693,7 +697,7 @@ extension VFVotePollError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFCarouselTrendingViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFCarouselTrendingViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFCarouselTrendingViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any VFAdDelegate)
@@ -1054,6 +1058,7 @@ public struct VFArticleMetadata {
   public let subtitle: Swift.String
   public let thumbnailUrl: Foundation.URL
   public init(url: Foundation.URL, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Foundation.URL)
+  public init(url: Swift.String, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAdView : UIKit.UIView {
   @objc deinit
@@ -1167,7 +1172,7 @@ extension VFUpdateUserError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPollViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFPollViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFPollViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1298,7 +1303,7 @@ public enum VFCommentsContainerType {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> VFPreviewCommentsViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> VFPreviewCommentsViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1337,7 +1342,7 @@ public enum VFTrendingSortType : Swift.String {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveBlogViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFLiveBlogViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFLiveBlogViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1525,6 +1530,9 @@ public enum VFCustomizableView {
   case profileFollowersLabel(label: VFLabel)
   case profileSegmentedControl(segmentedControl: VFSegmentedControl)
   case profileBackgroundView(view: UIKit.UIView)
+  case commentCellExpandRepliesLoading(loadingView: VFLoadingView)
+  case commentCellExpandRepliesImage(image: VFImageView)
+  case commentCellExpandRepliesLabel(label: VFLabel)
   case commentCellDateLabel(label: VFLabel)
   case commentCellNameLabel(label: VFLabel)
   case commentCellContentLabel(label: VFLabel)
@@ -1553,6 +1561,10 @@ public enum VFCustomizableView {
   case trendingCarouselImage(image: VFImageView)
   case trendingCarouselCount(label: VFLabel)
   case trendingCarouselBackgroundView(view: UIKit.UIView)
+  case bottomPickerView(view: UIKit.UIView)
+  case bottomPickerTitle(label: VFLabel)
+  case bottomPickerTitleLabel(label: VFLabel)
+  case bottomPickerLabel(label: VFLabel, isActive: Swift.Bool)
   case chatCellContentLabel(label: VFLabel)
   case chatCellDateLabel(label: VFLabel)
   case chatCellUserNameLabel(label: VFLabel)
@@ -1690,7 +1702,7 @@ extension VFUpdateStoryContainerError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFProfileViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFProfileViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFProfileViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -1752,7 +1764,7 @@ extension VFReviewContainerError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ViewChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ViewChatReplyViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ViewChatReplyViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -1788,7 +1800,7 @@ extension VFDeleteReviewError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ChatReplyViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ChatReplyViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -2095,7 +2107,7 @@ public struct VFSettings {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentViewController : VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: VFNewCommentActionType, containerType: VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFNewCommentViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: VFNewCommentActionType, containerType: VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFNewCommentViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
@@ -2278,7 +2290,7 @@ extension VFDeleteCommentError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveChatViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> VFLiveChatViewController?
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> VFLiveChatViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)

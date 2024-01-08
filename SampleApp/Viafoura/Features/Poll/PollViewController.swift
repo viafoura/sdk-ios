@@ -32,9 +32,7 @@ class PollViewController: UIViewController, StoryboardCreateable {
     
     func addPollViewController(){
         let settings = VFSettings(colors: VFColors())
-        guard let pollVC = VFPollViewController.new(contentContainerUUID: pollViewModel.poll.contentContainerUUID, loginDelegate: self, settings: settings) else {
-            return
-        }
+        let pollVC = VFPollViewController.new(contentContainerUUID: pollViewModel.poll.contentContainerUUID, loginDelegate: self, settings: settings)
         
         pollVC.setLayoutDelegate(layoutDelegate: self)
         pollVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)

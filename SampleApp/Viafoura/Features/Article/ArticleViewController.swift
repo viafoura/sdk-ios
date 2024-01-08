@@ -106,9 +106,15 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: articleViewModel.story.containerId, containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .newest) else {
-            return
-        }
+        let preCommentsViewController = VFPreviewCommentsViewController.new(
+            containerId: articleViewModel.story.containerId,
+            containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations,
+            articleMetadata: articleViewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings,
+            paginationSize: 10,
+            defaultSort: articleViewModel.story.storyType == .reviews ? .mostLiked : .newest
+        )
         
         preCommentsViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
@@ -166,10 +172,12 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
-            return
-        }
-
+        let profileViewController = VFProfileViewController.new(
+            userUUID: userUUID,
+            presentationType: presentationType,
+            loginDelegate: self,
+            settings: settings
+        )
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
         profileViewController.setActionCallbacks(callbacks: callbacks)
@@ -203,9 +211,14 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations, containerId: articleViewModel.story.containerId, articleMetadata: articleViewModel.articleMetadata, loginDelegate: self, settings: settings) else{
-            return
-        }
+        let newCommentViewController = VFNewCommentViewController.new(
+            newCommentActionType: actionType,
+            containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations,
+            containerId: articleViewModel.story.containerId,
+            articleMetadata: articleViewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings
+        )
         newCommentViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         newCommentViewController.setCustomUIDelegate(customUIDelegate: self)
         newCommentViewController.setActionCallbacks(callbacks: callbacks)

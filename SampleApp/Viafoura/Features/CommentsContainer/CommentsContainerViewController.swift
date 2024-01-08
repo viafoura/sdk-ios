@@ -54,10 +54,15 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let preCommentsViewController = VFPreviewCommentsViewController.new(containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings, paginationSize: 10, defaultSort: .newest) else {
-            return
-        }
-        
+        let preCommentsViewController = VFPreviewCommentsViewController.new(
+            containerId: viewModel.story.containerId,
+            articleMetadata: viewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings,
+            paginationSize: 10,
+            defaultSort: .newest
+        )
+
         preCommentsViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         preCommentsViewController.setCustomUIDelegate(customUIDelegate: self)
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
@@ -97,9 +102,12 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
-            return
-        }
+        let profileViewController = VFProfileViewController.new(
+            userUUID: userUUID,
+            presentationType: presentationType,
+            loginDelegate: self,
+            settings: settings
+        ) 
 
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
@@ -119,9 +127,13 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let newCommentViewController = VFNewCommentViewController.new(newCommentActionType: actionType, containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings) else{
-            return
-        }
+        let newCommentViewController = VFNewCommentViewController.new(
+            newCommentActionType: actionType,
+            containerId: viewModel.story.containerId,
+            articleMetadata: viewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings
+        )
         newCommentViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         newCommentViewController.setCustomUIDelegate(customUIDelegate: self)
         newCommentViewController.setActionCallbacks(callbacks: callbacks)

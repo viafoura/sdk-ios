@@ -36,9 +36,7 @@ class LiveBlogViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let vc = VFLiveBlogViewController.new(containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings) else {
-            return
-        }
+        let vc = VFLiveBlogViewController.new(containerId: viewModel.story.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings)
         vc.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         vc.setLayoutDelegate(layoutDelegate: self)
         vc.setActionCallbacks(callbacks: callbacks)
@@ -72,9 +70,12 @@ class LiveBlogViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
-            return
-        }
+        let profileViewController = VFProfileViewController.new(
+            userUUID: userUUID,
+            presentationType: presentationType,
+            loginDelegate: self,
+            settings: settings
+        )
 
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setActionCallbacks(callbacks: callbacks)

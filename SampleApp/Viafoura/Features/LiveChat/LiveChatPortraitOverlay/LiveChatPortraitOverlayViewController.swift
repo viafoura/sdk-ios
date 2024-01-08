@@ -67,9 +67,12 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
             }
         }
         
-        guard let vc = VFLiveChatViewController.new(containerId: viewModel.containerId, articleMetadata: viewModel.articleMetadata, loginDelegate: self, settings: settings) else {
-            return
-        }
+        let vc = VFLiveChatViewController.new(
+            containerId: viewModel.containerId,
+            articleMetadata: viewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings
+        )
         
         addChild(vc)
         containerView.addSubview(vc.view)
@@ -88,9 +91,12 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         let settings = VFSettings(colors: colors)
-        guard let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings) else{
-            return
-        }
+        let profileViewController = VFProfileViewController.new(
+            userUUID: userUUID,
+            presentationType: presentationType,
+            loginDelegate: self,
+            settings: settings
+        )
 
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         self.present(profileViewController, animated: true)

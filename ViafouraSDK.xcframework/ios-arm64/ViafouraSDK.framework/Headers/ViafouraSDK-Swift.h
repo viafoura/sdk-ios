@@ -699,9 +699,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 
 
 
+@class UIColor;
 
 SWIFT_CLASS("_TtC11ViafouraSDK20VFRatingsSummaryView")
 @interface VFRatingsSummaryView : UIView
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end

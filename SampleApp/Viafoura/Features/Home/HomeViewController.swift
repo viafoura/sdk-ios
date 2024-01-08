@@ -42,9 +42,12 @@ class HomeViewController: UIViewController, StoryboardCreateable {
 
         let settings = VFSettings(colors: VFColors())
         let bellView = VFNotificationBellView(settings: settings, loginDelegate: self, onBellClicked: { userUUID in
-            guard let vc = VFProfileViewController.new(userUUID: userUUID, presentationType: .profile, loginDelegate: self, settings: settings) else {
-                return
-            }
+            let vc = VFProfileViewController.new(
+                userUUID: userUUID,
+                presentationType: .profile,
+                loginDelegate: self,
+                settings: settings
+            )
             self.present(vc, animated: true)
         })
         
