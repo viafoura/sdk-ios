@@ -1,3 +1,13 @@
+<p align="center">
+<img src="https://github.com/viafoura/sdk-ios/assets/103942744/f4b6b449-c64b-452c-8260-8e1c1795266f" alt="Kingfisher" title="Kingfisher" width="557"/>
+</p>
+
+<p align="center">
+<a href="https://documentation.viafoura.com/docs/getting-started-on-ios"><img src="https://img.shields.io/badge/Swift-Doc-DE5C43.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/Kingfisher"><img src="https://img.shields.io/github/v/tag/viafoura/sdk-ios.svg?color=red&include_prereleases=&sort=semver"></a>
+<a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat"></a>
+</p>
+
 # Viafoura iOS SDK
 
 This library allows you to integrate Viafoura tools into a native iOS app.
