@@ -4,7 +4,7 @@
 
 <p align="center">
 <a href="https://documentation.viafoura.com/docs/getting-started-on-ios"><img src="https://img.shields.io/badge/Swift-Doc-DE5C43.svg?style=flat"></a>
-<a href="https://cocoapods.org/pods/Kingfisher"><img src="https://img.shields.io/github/v/tag/viafoura/sdk-ios.svg?color=red&include_prereleases=&sort=semver"></a>
+<a href="https://cocoapods.org/pods/ViafouraCore"><img src="https://img.shields.io/github/v/tag/viafoura/sdk-ios.svg?color=red&include_prereleases=&sort=semver"></a>
 <a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat"></a>
 </p>
 
