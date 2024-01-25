@@ -52,6 +52,7 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
          gradientLayer.frame = self.containerView.bounds
                  
          self.containerView.layer.insertSublayer(gradientLayer, at: 0)
+        containerView.fadeView(style: .top, percentage: 0.1)
     }
     
     func setupUI(){
