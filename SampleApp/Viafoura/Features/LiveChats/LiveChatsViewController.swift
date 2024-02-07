@@ -65,10 +65,10 @@ extension LiveChatsViewController: UITableViewDelegate{
             liveChatVC.title = liveChatVC.title
             self.present(liveChatVC, animated: true)
         } else {
-            let callbacks: VFActionsCallbacks = { type in
+            let callbacks: VFActionsCallbacks = { [weak self] type in
                 switch type {
                 case .openProfilePressed(let userUUID, let presentationType):
-                    self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                    self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
                 default:
                     break
                 }

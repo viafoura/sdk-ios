@@ -35,10 +35,10 @@ class LiveChatPortraitViewController: UIViewController, StoryboardCreateable {
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         let settings = VFSettings(colors: colors)
         
-        let callbacks: VFActionsCallbacks = { type in
+        let callbacks: VFActionsCallbacks = { [weak self] type in
             switch type {
             case .openProfilePressed(let userUUID, let presentationType):
-                self.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
             default:
                 break
             }
