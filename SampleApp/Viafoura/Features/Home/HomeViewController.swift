@@ -118,8 +118,8 @@ class HomeViewController: UIViewController, StoryboardCreateable {
             return
         }
         
-        loginVC.onDoneBlock = { result in
-            self.getAuthState()
+        loginVC.onDoneBlock = { [weak self] result in
+            self?.getAuthState()
         }
         
         self.present(loginVC, animated: true)
