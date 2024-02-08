@@ -277,6 +277,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreData;
 @import CoreFoundation;
 @import Foundation;
 @import UIKit;
@@ -327,6 +328,22 @@ SWIFT_CLASS("_TtC11ViafouraSDK23ChatReplyViewController")
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
 
+@class NSEntityDescription;
+@class NSManagedObjectContext;
+
+SWIFT_CLASS_NAMED("EventLog")
+@interface EventLog : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class NSDate;
+
+@interface EventLog (SWIFT_EXTENSION(ViafouraSDK))
+@property (nonatomic, copy) NSDate * _Nullable createdAt;
+@property (nonatomic, copy) NSString * _Nullable jsonValue;
+@end
+
 
 SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 @interface SingleChatViewController : VFUIViewController
@@ -335,6 +352,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -542,12 +560,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK24VFLiveChatViewController")
 
 
 
+
+
+
 @interface VFLiveChatViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
-
-
-
 
 
 
@@ -630,12 +648,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 @end
 
 
+
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
@@ -657,10 +675,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 
@@ -749,6 +767,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK10VFSpamView")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK8VFSwitch")
+@interface VFSwitch : UISwitch
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK9VFTabView")
 @interface VFTabView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -787,11 +812,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @end
 
 
-
-
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
+
+
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
@@ -1106,6 +1131,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreData;
 @import CoreFoundation;
 @import Foundation;
 @import UIKit;
@@ -1156,6 +1182,22 @@ SWIFT_CLASS("_TtC11ViafouraSDK23ChatReplyViewController")
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
 
+@class NSEntityDescription;
+@class NSManagedObjectContext;
+
+SWIFT_CLASS_NAMED("EventLog")
+@interface EventLog : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class NSDate;
+
+@interface EventLog (SWIFT_EXTENSION(ViafouraSDK))
+@property (nonatomic, copy) NSDate * _Nullable createdAt;
+@property (nonatomic, copy) NSString * _Nullable jsonValue;
+@end
+
 
 SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 @interface SingleChatViewController : VFUIViewController
@@ -1164,6 +1206,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -1371,12 +1414,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK24VFLiveChatViewController")
 
 
 
+
+
+
 @interface VFLiveChatViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextViewDelegate>
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
-
-
-
 
 
 
@@ -1459,12 +1502,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 @end
 
 
+
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
@@ -1486,10 +1529,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 
@@ -1578,6 +1621,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK10VFSpamView")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK8VFSwitch")
+@interface VFSwitch : UISwitch
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK9VFTabView")
 @interface VFTabView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -1616,11 +1666,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @end
 
 
-
-
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
+
+
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))

@@ -5,6 +5,7 @@
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
+import CoreData
 import CoreLocation
 import CoreTelephony
 import DeveloperToolsSupport
@@ -1130,6 +1131,9 @@ extension VFUnlikeReviewError {
     get
   }
 }
+public struct ChatContainerSettings : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public enum VFSortType {
   case newest
   case oldest
@@ -1576,9 +1580,6 @@ public enum VFCustomizableView {
   case chatLoading(loadingView: VFLoadingView)
   case chatLoadingMore(loadingView: VFLoadingView)
   case chatEmptyView(emptyView: VFEmptyChatsView)
-  case chatReplyingToClose(image: VFImageView)
-  case chatReplyingToTitle(label: VFLabel)
-  case chatReplyingToDescription(label: VFLabel)
 }
 public enum VFUnpinCommentError : Foundation.LocalizedError {
   case unknown
@@ -1682,6 +1683,11 @@ extension VFUpdateStoryContainerError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFSwitch : UIKit.UISwitch {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNotificationBellView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var isElevationEnabled: Swift.Bool {
@@ -1800,7 +1806,7 @@ extension VFDeleteReviewError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ChatReplyViewController
+  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, containerSettings: ChatContainerSettings?, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ChatReplyViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -2301,6 +2307,24 @@ extension VFDeleteCommentError {
 }
 extension VFLiveChatViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+}
+@_inheritsConvenienceInitializers @objc(EventLog) public class EventLog : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension EventLog {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<EventLog>
+  @objc @NSManaged dynamic public var createdAt: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var jsonValue: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension EventLog : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
 }
 extension VFDislikeChatError : Swift.Equatable {}
 extension VFDislikeChatError : Swift.Hashable {}
