@@ -104,9 +104,9 @@ class HomeViewController: UIViewController, StoryboardCreateable {
         }
 
         viewModel.getAuthState(completion: { loginStatus in
-            if loginStatus == .loggedIn {
+            if case .loggedIn(let userUUID) = loginStatus {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(self.logoutTapped))
-            } else if loginStatus == .notLoggedIn {
+            } else if case .notLoggedIn = loginStatus {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", style: .plain, target: self, action: #selector(self.loginTapped))
             }
         })
