@@ -20,6 +20,9 @@ import _StringProcessing
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFModeratorView : UIKit.UIView {
   @objc deinit
 }
+public struct CommentError : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum VFDislikeChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFDislikeChatError, b: VFDislikeChatError) -> Swift.Bool
@@ -82,12 +85,8 @@ extension VFSingleStoryError {
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
+  case banned(banResponse: BanResponse)
   case unauthorized
-  public static func == (a: VFCreateCommentReplyError, b: VFCreateCommentReplyError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension VFCreateCommentReplyError {
   public var errorDescription: Swift.String? {
@@ -301,6 +300,10 @@ public enum VFNewCommentActionType : Swift.Equatable {
   case reply(content: Foundation.UUID)
   case edit(content: Foundation.UUID)
   public static func == (a: VFNewCommentActionType, b: VFNewCommentActionType) -> Swift.Bool
+}
+public enum VFSubmitContentError : Foundation.LocalizedError {
+  case unknown
+  case banned(banResponse: BanResponse)
 }
 public enum VFSingleChatError : Foundation.LocalizedError {
   case unknown
@@ -1023,12 +1026,8 @@ extension VFDeleteChatError {
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
+  case banned(banResponse: BanResponse)
   case unauthorized
-  public static func == (a: VFCreateCommentError, b: VFCreateCommentError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension VFCreateCommentError {
   public var errorDescription: Swift.String? {
@@ -1770,6 +1769,9 @@ extension VFReviewContainerError {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+public struct BanResponse : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum VFUserReviewsError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFUserReviewsError, b: VFUserReviewsError) -> Swift.Bool
@@ -2322,8 +2324,6 @@ extension VFDislikeChatError : Swift.Equatable {}
 extension VFDislikeChatError : Swift.Hashable {}
 extension VFSingleStoryError : Swift.Equatable {}
 extension VFSingleStoryError : Swift.Hashable {}
-extension VFCreateCommentReplyError : Swift.Equatable {}
-extension VFCreateCommentReplyError : Swift.Hashable {}
 extension VFDeleteStoryError : Swift.Equatable {}
 extension VFDeleteStoryError : Swift.Hashable {}
 extension VFLoginStatusError : Swift.Equatable {}
@@ -2433,8 +2433,6 @@ extension VFUnflagReviewError : Swift.Equatable {}
 extension VFUnflagReviewError : Swift.Hashable {}
 extension VFDeleteChatError : Swift.Equatable {}
 extension VFDeleteChatError : Swift.Hashable {}
-extension VFCreateCommentError : Swift.Equatable {}
-extension VFCreateCommentError : Swift.Hashable {}
 extension VFUserCommentsError : Swift.Equatable {}
 extension VFUserCommentsError : Swift.Hashable {}
 extension EventType : Swift.Equatable {}

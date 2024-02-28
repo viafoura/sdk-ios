@@ -20,6 +20,9 @@ import _StringProcessing
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFModeratorView : UIKit.UIView {
   @objc deinit
 }
+public struct CommentError : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum VFDislikeChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFDislikeChatError, b: ViafouraSDK.VFDislikeChatError) -> Swift.Bool
@@ -82,12 +85,8 @@ extension ViafouraSDK.VFSingleStoryError {
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
+  case banned(banResponse: ViafouraSDK.BanResponse)
   case unauthorized
-  public static func == (a: ViafouraSDK.VFCreateCommentReplyError, b: ViafouraSDK.VFCreateCommentReplyError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension ViafouraSDK.VFCreateCommentReplyError {
   public var errorDescription: Swift.String? {
@@ -301,6 +300,10 @@ public enum VFNewCommentActionType : Swift.Equatable {
   case reply(content: Foundation.UUID)
   case edit(content: Foundation.UUID)
   public static func == (a: ViafouraSDK.VFNewCommentActionType, b: ViafouraSDK.VFNewCommentActionType) -> Swift.Bool
+}
+public enum VFSubmitContentError : Foundation.LocalizedError {
+  case unknown
+  case banned(banResponse: ViafouraSDK.BanResponse)
 }
 public enum VFSingleChatError : Foundation.LocalizedError {
   case unknown
@@ -1023,12 +1026,8 @@ extension ViafouraSDK.VFDeleteChatError {
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
+  case banned(banResponse: ViafouraSDK.BanResponse)
   case unauthorized
-  public static func == (a: ViafouraSDK.VFCreateCommentError, b: ViafouraSDK.VFCreateCommentError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension ViafouraSDK.VFCreateCommentError {
   public var errorDescription: Swift.String? {
@@ -1770,6 +1769,9 @@ extension ViafouraSDK.VFReviewContainerError {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+public struct BanResponse : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum VFUserReviewsError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFUserReviewsError, b: ViafouraSDK.VFUserReviewsError) -> Swift.Bool
@@ -2322,8 +2324,6 @@ extension ViafouraSDK.VFDislikeChatError : Swift.Equatable {}
 extension ViafouraSDK.VFDislikeChatError : Swift.Hashable {}
 extension ViafouraSDK.VFSingleStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFSingleStoryError : Swift.Hashable {}
-extension ViafouraSDK.VFCreateCommentReplyError : Swift.Equatable {}
-extension ViafouraSDK.VFCreateCommentReplyError : Swift.Hashable {}
 extension ViafouraSDK.VFDeleteStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFDeleteStoryError : Swift.Hashable {}
 extension ViafouraSDK.VFLoginStatusError : Swift.Equatable {}
@@ -2433,8 +2433,6 @@ extension ViafouraSDK.VFUnflagReviewError : Swift.Equatable {}
 extension ViafouraSDK.VFUnflagReviewError : Swift.Hashable {}
 extension ViafouraSDK.VFDeleteChatError : Swift.Equatable {}
 extension ViafouraSDK.VFDeleteChatError : Swift.Hashable {}
-extension ViafouraSDK.VFCreateCommentError : Swift.Equatable {}
-extension ViafouraSDK.VFCreateCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFUserCommentsError : Swift.Equatable {}
 extension ViafouraSDK.VFUserCommentsError : Swift.Hashable {}
 extension ViafouraSDK.EventType : Swift.Equatable {}
