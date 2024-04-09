@@ -20,6 +20,9 @@ import _StringProcessing
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFModeratorView : UIKit.UIView {
   @objc deinit
 }
+public struct CommentError : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum VFDislikeChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFDislikeChatError, b: VFDislikeChatError) -> Swift.Bool
@@ -82,12 +85,8 @@ extension VFSingleStoryError {
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
+  case banned(banResponse: BanResponse)
   case unauthorized
-  public static func == (a: VFCreateCommentReplyError, b: VFCreateCommentReplyError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension VFCreateCommentReplyError {
   public var errorDescription: Swift.String? {
@@ -113,24 +112,14 @@ extension VFDeleteStoryError {
   }
 }
 extension VFAuthenticationService {
-  public func getUserLoginStatus(completion: @escaping ((Swift.Result<VFLoginStatus, VFLoginStatusError>) -> ()))
+  public func getUserLoginStatus(completion: @escaping ((Swift.Result<VFLoginStatus, Swift.Never>) -> ()))
+  #if compiler(>=5.3) && $AsyncAwait
+  public func getUserLoginStatus() async -> (Swift.Result<VFLoginStatus, Swift.Never>)
+  #endif
 }
 public enum VFLoginStatus {
   case notLoggedIn
   case loggedIn(userUUID: Foundation.UUID)
-}
-public enum VFLoginStatusError : Foundation.LocalizedError {
-  case unknown
-  public static func == (a: VFLoginStatusError, b: VFLoginStatusError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension VFLoginStatusError {
-  public var errorDescription: Swift.String? {
-    get
-  }
 }
 public enum VFUnflagCommentError : Foundation.LocalizedError {
   case unknown
@@ -302,6 +291,10 @@ public enum VFNewCommentActionType : Swift.Equatable {
   case edit(content: Foundation.UUID)
   public static func == (a: VFNewCommentActionType, b: VFNewCommentActionType) -> Swift.Bool
 }
+public enum VFSubmitContentError : Foundation.LocalizedError {
+  case unknown
+  case banned(banResponse: BanResponse)
+}
 public enum VFSingleChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFSingleChatError, b: VFSingleChatError) -> Swift.Bool
@@ -360,25 +353,25 @@ extension VFDislikeCommentError {
   required public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class AnalyticsService {
-  public func addWidget(_ widgetType: WidgetType)
-  public func removeWidget(_ widgetType: WidgetType)
-  public func logLoadMoreClick(eventSessionUUID: Foundation.UUID, tab: Swift.String, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date)
-  public func logConversationsBellClick(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date)
-  public func logTrayTriggerClick(eventSessionUUID: Foundation.UUID, eventSessionStart: Foundation.Date)
-  public func logSortChange(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date, sort: Swift.String, defaultSort: Swift.String, oldSort: Swift.String)
-  public func logEventEngage(widgetType: WidgetType, eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date, time: Swift.Int64, vfTime: Swift.Int64, hiddenTime: Swift.Int64, focuses: Swift.Int)
-  public func logTrackAdCode(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata, status: Swift.String, failureReason: Swift.String, widgetType: WidgetType)
-  public func logTrackAdView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int, childLimit: Swift.Int, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int, firstPromoPosition: Swift.Int, totalCount: Swift.Int, index: Swift.Int, threadType: Swift.String, widgetType: WidgetType)
+  public func addWidget(_ widgetType: WidgetType, uniqueUUID: Foundation.UUID)
+  public func removeWidget(_ widgetType: WidgetType, uniqueUUID: Foundation.UUID)
+  public func logLoadMoreClick(tab: Swift.String, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata)
+  public func logConversationsBellClick(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata)
+  public func logTrayTriggerClick()
+  public func logSortChange(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, sort: Swift.String, defaultSort: Swift.String, oldSort: Swift.String)
+  public func logEventEngage(timeInPage: Swift.Int64, vfTime: Swift.Int64, hiddenTime: Swift.Int64?, focuses: Swift.Int, containerTimes: [VFEventEngageContainerTime])
+  public func logTrackAdCode(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, articleMetadata: VFArticleMetadata, status: Swift.String, failureReason: Swift.String, widgetType: WidgetType)
+  public func logTrackAdView(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, articleMetadata: VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int, childLimit: Swift.Int, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int, firstPromoPosition: Swift.Int, totalCount: Swift.Int, index: Swift.Int, threadType: Swift.String, widgetType: WidgetType)
   public func logLogout()
-  public func logTrackAd(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, eventSessionStart: Foundation.Date, articleMetadata: VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int? = nil, childLimit: Swift.Int? = nil, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int? = nil, firstPromoPosition: Swift.Int, totalCount: Swift.Int? = nil, index: Swift.Int, threadType: Swift.String? = nil, widgetType: WidgetType)
-  public func logInteraction(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventSessionStart: Foundation.Date, eventArticleMetadata: VFArticleMetadata, label: Swift.String, action: Swift.String)
+  public func logTrackAd(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID? = nil, articleMetadata: VFArticleMetadata? = nil, adIntegration: Swift.String, limit: Swift.Int? = nil, childLimit: Swift.Int? = nil, scrollDepth: CoreFoundation.CGFloat, promoInterval: Swift.Int? = nil, firstPromoPosition: Swift.Int, totalCount: Swift.Int? = nil, index: Swift.Int, threadType: Swift.String? = nil, widgetType: WidgetType)
+  public func logInteraction(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, label: Swift.String, action: Swift.String)
   public func logPasswordReset(email: Swift.String)
   public func logSignup(loginType: Swift.String)
   public func logLoginFailure(loginType: Swift.String, error: Swift.String)
   public func logLoginSuccess()
-  public func logContainerLoad(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, allCommentsCount: Swift.Int, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date, contentContainerType: Swift.String)
-  public func logPageView(eventSessionUUID: Foundation.UUID, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, eventSessionStart: Foundation.Date)
-  public func logEventAttemptedAction(eventSessionUUID: Foundation.UUID, eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?, eventSessionStart: Foundation.Date)
+  public func logContainerLoad(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, allCommentsCount: Swift.Int, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, contentContainerType: Swift.String)
+  public func logPageView(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata)
+  public func logEventAttemptedAction(eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
   @objc deinit
 }
 public enum VFCommentContainerSignatureError : Foundation.LocalizedError {
@@ -1023,12 +1016,8 @@ extension VFDeleteChatError {
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
+  case banned(banResponse: BanResponse)
   case unauthorized
-  public static func == (a: VFCreateCommentError, b: VFCreateCommentError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension VFCreateCommentError {
   public var errorDescription: Swift.String? {
@@ -1165,6 +1154,9 @@ extension VFUpdateUserError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+public struct VFEventEngageContainerTime : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPollViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
@@ -1423,7 +1415,7 @@ extension VFRemovePollError {
 extension VFLiveCommentsService {
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> ()))
   #if compiler(>=5.3) && $AsyncAwait
-  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, VFCommentCountError>)
+  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async -> (Swift.Result<Swift.Int, VFCommentCountError>)
   #endif
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
@@ -1769,6 +1761,9 @@ extension VFReviewContainerError {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+public struct BanResponse : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum VFUserReviewsError : Foundation.LocalizedError {
   case unknown
@@ -2322,12 +2317,8 @@ extension VFDislikeChatError : Swift.Equatable {}
 extension VFDislikeChatError : Swift.Hashable {}
 extension VFSingleStoryError : Swift.Equatable {}
 extension VFSingleStoryError : Swift.Hashable {}
-extension VFCreateCommentReplyError : Swift.Equatable {}
-extension VFCreateCommentReplyError : Swift.Hashable {}
 extension VFDeleteStoryError : Swift.Equatable {}
 extension VFDeleteStoryError : Swift.Hashable {}
-extension VFLoginStatusError : Swift.Equatable {}
-extension VFLoginStatusError : Swift.Hashable {}
 extension VFUnflagCommentError : Swift.Equatable {}
 extension VFUnflagCommentError : Swift.Hashable {}
 extension VFUnlikeStoryError : Swift.Equatable {}
@@ -2433,8 +2424,6 @@ extension VFUnflagReviewError : Swift.Equatable {}
 extension VFUnflagReviewError : Swift.Hashable {}
 extension VFDeleteChatError : Swift.Equatable {}
 extension VFDeleteChatError : Swift.Hashable {}
-extension VFCreateCommentError : Swift.Equatable {}
-extension VFCreateCommentError : Swift.Hashable {}
 extension VFUserCommentsError : Swift.Equatable {}
 extension VFUserCommentsError : Swift.Hashable {}
 extension EventType : Swift.Equatable {}
