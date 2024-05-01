@@ -1,27 +1,29 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ViafouraSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ViafouraSDK
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
 import CoreData
 import CoreLocation
 import CoreTelephony
+import DeveloperToolsSupport
 import Foundation
 import Network
 import SafariServices
 import Swift
+import SwiftUI
 import SystemConfiguration
 import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFModeratorView : UIKit.UIView {
   @objc deinit
 }
 public struct CommentError : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFDislikeChatError : Foundation.LocalizedError {
   case unknown
@@ -350,7 +352,7 @@ extension VFDislikeCommentError {
 }
 @_hasMissingDesignatedInitializers public class StoryContent : Swift.Decodable {
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class AnalyticsService {
   public func addWidget(_ widgetType: WidgetType, uniqueUUID: Foundation.UUID)
@@ -572,10 +574,10 @@ extension VFUnspamReviewError {
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: VFAdDelegate)
+  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any VFAdDelegate)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
@@ -686,10 +688,10 @@ extension VFVotePollError {
   @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: VFTrendingSortType, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFCarouselTrendingViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: VFAdDelegate)
+  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any VFAdDelegate)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -996,7 +998,7 @@ extension VFUnflagReviewError {
   }
 }
 public struct UserResponse : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public protocol VFLayoutDelegate : ObjectiveC.NSObject {
   func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
@@ -1097,7 +1099,7 @@ public enum EventType : Swift.String, Swift.Encodable {
 }
 @_hasMissingDesignatedInitializers public class ChatContent : Swift.Decodable {
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFUnlikeReviewError : Foundation.LocalizedError {
   case unknown
@@ -1113,7 +1115,7 @@ extension VFUnlikeReviewError {
   }
 }
 public struct ChatContainerSettings : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFSortType {
   case newest
@@ -1156,15 +1158,15 @@ extension VFUpdateUserError {
   }
 }
 public struct VFEventEngageContainerTime : Swift.Encodable {
-  public func encode(to encoder: Swift.Encoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPollViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: VFLoginDelegate, settings: VFSettings) -> VFPollViewController
+  @_Concurrency.MainActor(unsafe) public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFPollViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: VFLayoutDelegate)
+  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -1291,15 +1293,15 @@ public enum VFCommentsContainerType {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> VFPreviewCommentsViewController
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> VFPreviewCommentsViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: VFAdDelegate)
+  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any VFAdDelegate)
   @_Concurrency.MainActor(unsafe) public func getContentScrollPosition(contentUUID: Foundation.UUID, completion: @escaping (CoreFoundation.CGFloat) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) public func setAuthorsIds(authors: [Swift.String])
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: VFLayoutDelegate)
+  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
@@ -1330,12 +1332,12 @@ public enum VFTrendingSortType : Swift.String {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveBlogViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFLiveBlogViewController
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFLiveBlogViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -1686,17 +1688,17 @@ extension VFUpdateStoryContainerError {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public init(settings: VFSettings, loginDelegate: VFLoginDelegate, onBellClicked: @escaping ((Foundation.UUID) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) public init(settings: VFSettings, loginDelegate: any VFLoginDelegate, onBellClicked: @escaping ((Foundation.UUID) -> Swift.Void))
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFProfileViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, loginDelegate: VFLoginDelegate, settings: VFSettings) -> VFProfileViewController
+  @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFProfileViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -1754,7 +1756,7 @@ extension VFReviewContainerError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ViewChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, loginDelegate: VFLoginDelegate, settings: VFSettings) -> ViewChatReplyViewController
+  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ViewChatReplyViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -1763,7 +1765,7 @@ extension VFReviewContainerError {
   @objc deinit
 }
 public struct BanResponse : Swift.Decodable {
-  public init(from decoder: Swift.Decoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFUserReviewsError : Foundation.LocalizedError {
   case unknown
@@ -1793,7 +1795,7 @@ extension VFDeleteReviewError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ChatReplyViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, containerSettings: ChatContainerSettings?, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings) -> ChatReplyViewController
+  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ChatContent, containerSettings: ChatContainerSettings?, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> ChatReplyViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -2100,11 +2102,11 @@ public struct VFSettings {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentViewController : VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: VFNewCommentActionType, containerType: VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFNewCommentViewController
+  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: VFNewCommentActionType, containerType: VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil) -> VFNewCommentViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
     @objc get
@@ -2120,7 +2122,7 @@ extension VFNewCommentViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
 extension VFNewCommentViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
 }
 public enum WidgetType : Swift.String, Swift.Encodable {
   case LIVE_BLOG
@@ -2283,11 +2285,11 @@ extension VFDeleteCommentError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveChatViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> VFLiveChatViewController
+  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> VFLiveChatViewController
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: VFCustomUIDelegate)
+  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
