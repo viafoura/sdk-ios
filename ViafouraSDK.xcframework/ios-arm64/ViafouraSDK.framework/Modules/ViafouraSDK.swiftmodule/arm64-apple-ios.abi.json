@@ -54836,6 +54836,43 @@
           },
           {
             "kind": "Var",
+            "name": "LIVE_REVIEWS",
+            "printedName": "LIVE_REVIEWS",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.WidgetType.Type) -> ViafouraSDK.WidgetType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WidgetType",
+                    "printedName": "ViafouraSDK.WidgetType",
+                    "usr": "s:11ViafouraSDK10WidgetTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.WidgetType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WidgetType",
+                        "printedName": "ViafouraSDK.WidgetType",
+                        "usr": "s:11ViafouraSDK10WidgetTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK10WidgetTypeO12LIVE_REVIEWSyA2CmF",
+            "mangledName": "$s11ViafouraSDK10WidgetTypeO12LIVE_REVIEWSyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "LIVE_CONVERSATIONS",
             "printedName": "LIVE_CONVERSATIONS",
             "children": [
@@ -63082,14 +63119,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Cache\/Cache.swift",
       "kind": "StringLiteral",
-      "offset": 497,
-      "length": 12,
-      "value": "\"sessionKey\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Cache\/Cache.swift",
-      "kind": "StringLiteral",
-      "offset": 541,
+      "offset": 499,
       "length": 14,
       "value": "\"visitorIdKey\""
     },
@@ -67619,36 +67649,36 @@
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Fonts\/VFFonts.swift",
       "kind": "StringLiteral",
       "offset": 179,
-      "length": 13,
-      "value": "\"Roboto-Bold\""
+      "length": 12,
+      "value": "\"Inter-Bold\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Fonts\/VFFonts.swift",
       "kind": "StringLiteral",
-      "offset": 277,
+      "offset": 276,
+      "length": 13,
+      "value": "\"Inter-Light\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Fonts\/VFFonts.swift",
+      "kind": "StringLiteral",
+      "offset": 375,
       "length": 14,
-      "value": "\"Roboto-Light\""
+      "value": "\"Inter-Medium\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Fonts\/VFFonts.swift",
       "kind": "StringLiteral",
-      "offset": 377,
+      "offset": 476,
       "length": 15,
-      "value": "\"Roboto-Medium\""
+      "value": "\"Inter-Regular\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Fonts\/VFFonts.swift",
       "kind": "StringLiteral",
-      "offset": 479,
-      "length": 16,
-      "value": "\"Roboto-Regular\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Fonts\/VFFonts.swift",
-      "kind": "StringLiteral",
-      "offset": 583,
-      "length": 13,
-      "value": "\"Roboto-Bold\""
+      "offset": 579,
+      "length": 12,
+      "value": "\"Inter-Bold\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/liveChat\/UndislikeChatEndpoint.swift",
@@ -68066,14 +68096,21 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Analytics\/Ingest\/WidgetType.swift",
       "kind": "StringLiteral",
-      "offset": 452,
+      "offset": 446,
+      "length": 16,
+      "value": "\"vf-livereviews\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Analytics\/Ingest\/WidgetType.swift",
+      "kind": "StringLiteral",
+      "offset": 493,
       "length": 18,
       "value": "\"vf-conversations\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Analytics\/Ingest\/WidgetType.swift",
       "kind": "StringLiteral",
-      "offset": 495,
+      "offset": 536,
       "length": 17,
       "value": "\"vf-tray-trigger\""
     },
@@ -68122,14 +68159,21 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Analytics\/Ingest\/WidgetType.swift",
       "kind": "StringLiteral",
-      "offset": 452,
+      "offset": 446,
+      "length": 16,
+      "value": "\"vf-livereviews\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Analytics\/Ingest\/WidgetType.swift",
+      "kind": "StringLiteral",
+      "offset": 493,
       "length": 18,
       "value": "\"vf-conversations\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Analytics\/Ingest\/WidgetType.swift",
       "kind": "StringLiteral",
-      "offset": 495,
+      "offset": 536,
       "length": 17,
       "value": "\"vf-tray-trigger\""
     },
