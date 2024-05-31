@@ -1238,6 +1238,7 @@ extension VFCreateReviewMediaError {
     get
     set
   }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func sizeToFit()
   @objc deinit
 }
 extension VFAuthenticationService {
