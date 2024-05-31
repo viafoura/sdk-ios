@@ -452,6 +452,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFContentRemovedView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK17VFCustomBadgeView")
 @interface VFCustomBadgeView : UIView
+- (void)sizeToFit;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
