@@ -1239,6 +1239,7 @@ extension VFCreateReviewMediaError {
     set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func sizeToFit()
+  @_Concurrency.MainActor(unsafe) public func setupView(isProfile: Swift.Bool)
   @objc deinit
 }
 extension VFAuthenticationService {
