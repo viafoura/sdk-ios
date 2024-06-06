@@ -8,7 +8,7 @@ jobs:
   
   build:
 
-    if: github.event.pull_request.merged == true && contains(github.event.pull_request.head.ref, "release")
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.head.ref, 'release')
     runs-on: macos-latest
 
     steps:
