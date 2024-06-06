@@ -1,19 +1,37 @@
-name: Run Fastlane Actions
+name: Publish iOS SDK
 
 on:
-  push:
-    branches: [ main, "CI/CD" ]
   pull_request:
-        branches: [ "CI/CD" ]
+    types: [closed]
+    
 jobs:
+  
   build:
 
+    if: github.event.pull_request.merged == true
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
       name: Checkout
 
+    - name: Select Xcode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Create SDK Release
+      id: create_release
+      uses: avakar/tag-and-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+      with:
+        tag_name: ${{ github.event.pull_request.title }}
+        release_name: ${{ github.event.pull_request.title }}
+        body: |
+
+        draft: false
+        prerelease: false
     - name: Push cocoapods version
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
