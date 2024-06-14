@@ -39034,6 +39034,63 @@
           },
           {
             "kind": "Var",
+            "name": "commentCellSeparator",
+            "printedName": "commentCellSeparator",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFSeparatorView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFSeparatorView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(separator: ViafouraSDK.VFSeparatorView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFSeparatorView",
+                            "printedName": "ViafouraSDK.VFSeparatorView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFSeparatorView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO20commentCellSeparatoryAcA011VFSeparatorD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO20commentCellSeparatoryAcA011VFSeparatorD0C_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "previewEmptyCommentsView",
             "printedName": "previewEmptyCommentsView",
             "children": [
@@ -40347,6 +40404,63 @@
             "declKind": "EnumElement",
             "usr": "s:11ViafouraSDK18VFCustomizableViewO17bottomPickerLabelyAcA7VFLabelC_SbtcACmF",
             "mangledName": "$s11ViafouraSDK18VFCustomizableViewO17bottomPickerLabelyAcA7VFLabelC_SbtcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "bottomPickerSeparator",
+            "printedName": "bottomPickerSeparator",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFSeparatorView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFSeparatorView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(separatorView: ViafouraSDK.VFSeparatorView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFSeparatorView",
+                            "printedName": "ViafouraSDK.VFSeparatorView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFSeparatorView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO21bottomPickerSeparatoryAcA011VFSeparatorD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO21bottomPickerSeparatoryAcA011VFSeparatorD0C_tcACmF",
             "moduleName": "ViafouraSDK"
           },
           {
@@ -44162,6 +44276,37 @@
             "mangledName": "$s11ViafouraSDK23VFProfileViewControllerC011imagePickerE0_29didFinishPickingMediaWithInfoySo07UIImagegE0C_SDySo0ngeM3KeyaypGtF",
             "moduleName": "ViafouraSDK",
             "objc_name": "imagePickerController:didFinishPickingMediaWithInfo:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "scrollViewDidScroll",
+            "printedName": "scrollViewDidScroll(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIScrollView",
+                "printedName": "UIKit.UIScrollView",
+                "usr": "c:objc(cs)UIScrollView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@ViafouraSDK@objc(cs)VFProfileViewController(im)scrollViewDidScroll:",
+            "mangledName": "$s11ViafouraSDK23VFProfileViewControllerC06scrollD9DidScrollyySo08UIScrollD0CF",
+            "moduleName": "ViafouraSDK",
+            "objc_name": "scrollViewDidScroll:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -62833,7 +62978,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/UserCommentsList\/UserCommentsTableViewController.swift",
       "kind": "StringLiteral",
-      "offset": 527,
+      "offset": 526,
       "length": 17,
       "value": "\"userCommentCell\""
     },

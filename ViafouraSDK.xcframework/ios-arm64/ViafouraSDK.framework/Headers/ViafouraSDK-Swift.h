@@ -603,12 +603,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
 @protocol UIViewControllerTransitionCoordinator;
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
+
 
 
 
@@ -676,10 +676,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 
 
 
-
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
 
 
 
@@ -707,6 +707,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 
 
 
+
+@class UIScrollView;
+
+@interface VFProfileViewController (SWIFT_EXTENSION(ViafouraSDK)) <UIScrollViewDelegate>
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+@end
 
 
 @class UIImagePickerController;
@@ -815,14 +821,14 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
-- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
 
 
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
-- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
 

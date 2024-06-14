@@ -1534,6 +1534,7 @@ public enum VFCustomizableView {
   case commentCellDislikeLabel(label: ViafouraSDK.VFLabel)
   case commentCellReplyLabel(label: ViafouraSDK.VFLabel)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
+  case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
   case previewEmptyCommentsView(emptyCommentsView: ViafouraSDK.VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: ViafouraSDK.VFButton)
   case previewTitleLabel(label: ViafouraSDK.VFLabel)
@@ -1557,6 +1558,7 @@ public enum VFCustomizableView {
   case bottomPickerTitle(label: ViafouraSDK.VFLabel)
   case bottomPickerTitleLabel(label: ViafouraSDK.VFLabel)
   case bottomPickerLabel(label: ViafouraSDK.VFLabel, isActive: Swift.Bool)
+  case bottomPickerSeparator(separatorView: ViafouraSDK.VFSeparatorView)
   case chatCellContentLabel(label: ViafouraSDK.VFLabel)
   case chatCellDateLabel(label: ViafouraSDK.VFLabel)
   case chatCellUserNameLabel(label: ViafouraSDK.VFLabel)
@@ -1707,6 +1709,9 @@ extension ViafouraSDK.VFUpdateStoryContainerError {
 }
 extension ViafouraSDK.VFProfileViewController : UIKit.UIImagePickerControllerDelegate, UIKit.UINavigationControllerDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [UIKit.UIImagePickerController.InfoKey : Any])
+}
+extension ViafouraSDK.VFProfileViewController : UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSeparatorView : UIKit.UIView {
   @objc deinit
