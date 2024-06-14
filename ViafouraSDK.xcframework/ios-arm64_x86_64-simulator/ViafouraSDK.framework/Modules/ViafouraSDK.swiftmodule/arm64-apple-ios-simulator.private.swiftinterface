@@ -1534,6 +1534,7 @@ public enum VFCustomizableView {
   case commentCellDislikeLabel(label: VFLabel)
   case commentCellReplyLabel(label: VFLabel)
   case commentCellCustomBadge(badge: VFCustomBadgeView)
+  case commentCellSeparator(separator: VFSeparatorView)
   case previewEmptyCommentsView(emptyCommentsView: VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: VFButton)
   case previewTitleLabel(label: VFLabel)
@@ -1557,6 +1558,7 @@ public enum VFCustomizableView {
   case bottomPickerTitle(label: VFLabel)
   case bottomPickerTitleLabel(label: VFLabel)
   case bottomPickerLabel(label: VFLabel, isActive: Swift.Bool)
+  case bottomPickerSeparator(separatorView: VFSeparatorView)
   case chatCellContentLabel(label: VFLabel)
   case chatCellDateLabel(label: VFLabel)
   case chatCellUserNameLabel(label: VFLabel)
@@ -1707,6 +1709,9 @@ extension VFUpdateStoryContainerError {
 }
 extension VFProfileViewController : UIKit.UIImagePickerControllerDelegate, UIKit.UINavigationControllerDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [UIKit.UIImagePickerController.InfoKey : Any])
+}
+extension VFProfileViewController : UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSeparatorView : UIKit.UIView {
   @objc deinit
