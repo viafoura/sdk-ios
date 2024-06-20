@@ -74,9 +74,11 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         
-        webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = false
         webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
         webView.configuration.allowsInlineMediaPlayback = true
+
+        let contentController = webView.configuration.userContentController
+        contentController.add(self, name: "messageHandler")
         
         webView.scrollView.isScrollEnabled = false
         webView.allowsLinkPreview = false
@@ -233,6 +235,22 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         
         self.navigationController?.pushViewController(commentsVC, animated: true)
     }
+
+    func addEngagementStarterListener(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.webView.evaluateJavaScript("""
+             setTimeout(function() {
+                                    document.querySelector('.vf-conversation-starter_link').onclick = function() {
+                                       if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.messageHandler) {
+                                            window.webkit.messageHandlers.messageHandler.postMessage({
+                                                "action": "ENGAGEMENT_STARTER_CLICKED"
+                                            });
+                                        }
+                                    };
+            }, 2000);
+            """)
+        }
+    }
 }
 
 extension ArticleViewController: WKNavigationDelegate{
@@ -244,6 +262,8 @@ extension ArticleViewController: WKNavigationDelegate{
         if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
             webView.evaluateJavaScript("document.documentElement.classList.add(\"dark\");")
         }
+
+        addEngagementStarterListener()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.webViewHeight.constant = webView.scrollView.contentSize.height
@@ -429,5 +449,18 @@ extension ArticleViewController: GADBannerViewDelegate {
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
       print("bannerViewDidDismissScreen")
+    }
+}
+
+extension ArticleViewController: WKScriptMessageHandler{
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        guard let data = message.body as? [String : AnyObject] else {
+            return
+        }
+        
+        if data["action"] as? String == "ENGAGEMENT_STARTER_CLICKED" {
+            let originY = scrollView.convert(CGPoint.zero, from: commentsContainerView).y
+            scrollView.setContentOffset(CGPoint(x: 0, y: originY), animated: true)
+        }
     }
 }
