@@ -41,14 +41,17 @@ extension VFDislikeChatError {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEditorPicksView : UIKit.UIView {
   @objc deinit
 }
-public struct VFColors {
+public struct VFColors : Swift.Equatable {
   public init(colorPrimary: UIKit.UIColor = VFDefaultColors.colorPrimaryDefault(), colorPrimaryLight: UIKit.UIColor = VFDefaultColors.colorPrimaryLightDefault(), colorBackground: UIKit.UIColor = VFDefaultColors.colorBackgroundDefault(), colorSeparator: UIKit.UIColor = VFDefaultColors.colorSeparatorDefault(), colorAvatars: [UIKit.UIColor] = Constants.AvatarColors.colors)
+  public static func == (a: VFColors, b: VFColors) -> Swift.Bool
 }
 public struct VFDefaultColors {
   public static func colorBackgroundDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorText1Default(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorText2Default(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorSeparatorDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func skeletonGradientBackgroundColor(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func skeletonGradientHightlightColor(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorErrorDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorWarningDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorStarDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
@@ -750,6 +753,11 @@ extension VFPollContainerError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFSkeletonView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ImageService {
   @objc deinit
@@ -1513,7 +1521,9 @@ public enum VFCustomizableView {
   case postCloseImage(image: VFImageView)
   case postTitle(label: VFLabel)
   case postPlaceholderLabel(label: VFLabel)
-  case postLoadingView(loadingView: VFLoadingView)
+  case postImageSkeletonView(skeletonView: VFSkeletonView)
+  case postTitleSkeletonView(skeletonView: VFSkeletonView)
+  case postDescriptionSkeletonView(skeletonView: VFSkeletonView)
   case postBackgroundView(view: UIKit.UIView)
   case profileNameLabel(label: VFLabel)
   case profileLogoutLabel(label: VFLabel)
@@ -1541,7 +1551,7 @@ public enum VFCustomizableView {
   case previewCounterLabel(label: VFLabel)
   case previewPrivacyLabel(label: VFLabel)
   case previewPoweredByView(poweredByView: VFPoweredByViafouraView)
-  case previewLoadingView(loadingView: VFLoadingView)
+  case previewSkeletonView(skeletonView: UIKit.UIView)
   case previewFollowView(followView: VFFollowView)
   case previewBackgroundView(view: UIKit.UIView)
   case trendingVerticalBackgroundView(view: UIKit.UIView)
@@ -1936,7 +1946,7 @@ extension VFEditReviewError {
     get
   }
 }
-public struct VFFonts {
+public struct VFFonts : Swift.Equatable {
   public static let fontBoldDefault: UIKit.UIFont
   public static let fontLightDefault: UIKit.UIFont
   public static let fontMediumDefault: UIKit.UIFont
@@ -1948,6 +1958,7 @@ public struct VFFonts {
   public var fontLight: UIKit.UIFont
   public var fontSemibold: UIKit.UIFont
   public init(fontLight: UIKit.UIFont = fontLightDefault, fontRegular: UIKit.UIFont = fontRegularDefault, fontMedium: UIKit.UIFont = fontMediumDefault, fontSemibold: UIKit.UIFont = fontSemiboldDefault, fontBold: UIKit.UIFont = fontBoldDefault)
+  public static func == (a: VFFonts, b: VFFonts) -> Swift.Bool
 }
 public enum VFRemoveEditorPickCommentError : Foundation.LocalizedError {
   case unknown
@@ -2094,10 +2105,11 @@ extension VFEditorPickReviewError {
     get
   }
 }
-public struct VFSettings {
+public struct VFSettings : Swift.Equatable {
   public let fonts: VFFonts
   public var colors: VFColors
   public init(colors: VFColors, fonts: VFFonts = VFFonts())
+  public static func == (lhs: VFSettings, rhs: VFSettings) -> Swift.Bool
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SingleChatViewController : VFUIViewController {
   @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String

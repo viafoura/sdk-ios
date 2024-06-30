@@ -418,6 +418,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
+
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -426,7 +427,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -675,10 +675,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
-
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
+
 
 
 
@@ -708,12 +708,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 
 
 
+
 @class UIScrollView;
 
 @interface VFProfileViewController (SWIFT_EXTENSION(ViafouraSDK)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
-
 
 @class UIImagePickerController;
 
@@ -765,6 +765,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK15VFSeparatorView")
 @interface VFSeparatorView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC11ViafouraSDK14VFSkeletonView")
+@interface VFSkeletonView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -820,11 +827,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @end
 
 
+
+
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
-
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
