@@ -240,14 +240,23 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.webView.evaluateJavaScript("""
              setTimeout(function() {
-                                    document.querySelector('.vf-conversation-starter_link').onclick = function() {
-                                       if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.messageHandler) {
-                                            window.webkit.messageHandlers.messageHandler.postMessage({
-                                                "action": "ENGAGEMENT_STARTER_CLICKED"
-                                            });
-                                        }
-                                    };
-            }, 2000);
+                  document.querySelector('.vf-conversation-starter_link').onclick = function() {
+                      scrollToComments();
+                  };
+
+                  document.querySelector('.vf-editors-pick_container-actions').onclick = function() {
+                      scrollToComments();
+                  };
+
+                  function scrollToComments() {
+                      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.messageHandler) {
+                          window.webkit.messageHandlers.messageHandler.postMessage({
+                              "action": "ENGAGEMENT_STARTER_CLICKED"
+                          });
+                      }
+                  }
+              }, 2000);
+            """)
             """)
         }
     }
