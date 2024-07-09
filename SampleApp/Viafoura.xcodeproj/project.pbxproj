@@ -18,6 +18,8 @@
 		4730704B2C3DE42200BE0E7D /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */; };
 		473070512C3DE85E00BE0E7D /* LoginRadiusPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 473070502C3DE85E00BE0E7D /* LoginRadiusPackage */; };
 		473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 473070532C3DE8E300BE0E7D /* GoogleMobileAds */; };
+		473070602C3DED0500BE0E7D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4730705F2C3DED0500BE0E7D /* FirebaseAnalytics */; };
+		473070622C3DED0500BE0E7D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 473070612C3DED0500BE0E7D /* FirebaseCrashlytics */; };
 		473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC2B285A59E30044D00F /* CustomNavigationController.swift */; };
 		4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2529354C3800389833 /* SettingsViewController.swift */; };
 		4771BE2829354C4E00389833 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2729354C4E00389833 /* SettingsViewModel.swift */; };
@@ -202,10 +204,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473070602C3DED0500BE0E7D /* FirebaseAnalytics in Frameworks */,
 				4730704B2C3DE42200BE0E7D /* OneSignalInAppMessages in Frameworks */,
 				473070492C3DE42200BE0E7D /* OneSignalFramework in Frameworks */,
 				47E991D42A780D46006DE6F5 /* ViafouraSDK.framework in Frameworks */,
 				473070512C3DE85E00BE0E7D /* LoginRadiusPackage in Frameworks */,
+				473070622C3DED0500BE0E7D /* FirebaseCrashlytics in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */,
 			);
@@ -530,6 +534,8 @@
 				4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */,
 				473070502C3DE85E00BE0E7D /* LoginRadiusPackage */,
 				473070532C3DE8E300BE0E7D /* GoogleMobileAds */,
+				4730705F2C3DED0500BE0E7D /* FirebaseAnalytics */,
+				473070612C3DED0500BE0E7D /* FirebaseCrashlytics */,
 			);
 			productName = Viafoura;
 			productReference = 47B0096328179DF800EF93FD /* Viafoura.app */;
@@ -567,6 +573,7 @@
 				473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 				4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */,
 				473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				4730705E2C3DED0500BE0E7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 47B0096428179DF800EF93FD /* Products */;
 			projectDirPath = "";
@@ -654,7 +661,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1043,6 +1050,14 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		4730705E2C3DED0500BE0E7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
 		47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1078,6 +1093,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		4730705F2C3DED0500BE0E7D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4730705E2C3DED0500BE0E7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		473070612C3DED0500BE0E7D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4730705E2C3DED0500BE0E7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		47B1DD38297EC13700FBD05C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
