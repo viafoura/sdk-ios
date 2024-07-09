@@ -1,12 +1,22 @@
 {
+  "originHash" : "76eda8a788eac2e10c6a1b47f4b4f1f4728e83d63f0eaf21ab62f8fd1b4da0bb",
   "pins" : [
     {
-      "identity" : "keychainaccess",
+      "identity" : "facebook-ios-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kishikawakatsumi/KeychainAccess",
+      "location" : "https://github.com/facebook/facebook-ios-sdk.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "6299daec1d74be12164fec090faf9ed14d0da9d6"
+        "revision" : "c19607d535864533523d1f437c84035e5fb101cf",
+        "version" : "14.1.0"
+      }
+    },
+    {
+      "identity" : "ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LoginRadius/ios-sdk",
+      "state" : {
+        "revision" : "74d9ec1ab78e6c0ba86ea95c4543091feb1560c5",
+        "version" : "5.9.0"
       }
     },
     {
@@ -17,7 +27,34 @@
         "branch" : "master",
         "revision" : "59eb199fdb8dd47733624e8b0277822d0232579e"
       }
+    },
+    {
+      "identity" : "onesignal-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OneSignal/OneSignal-XCFramework",
+      "state" : {
+        "revision" : "4b1006d361811aa8f1c4d2ae0fab94a18540ff75",
+        "version" : "5.2.2"
+      }
+    },
+    {
+      "identity" : "swift-package-manager-google-mobile-ads",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
+      "state" : {
+        "revision" : "2e4ae78561feac7192c5d8757464546adebb4c7d",
+        "version" : "11.6.0"
+      }
+    },
+    {
+      "identity" : "swift-package-manager-google-user-messaging-platform",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+      "state" : {
+        "revision" : "459949af1286c12487a6efd76f00f3e9d951c9ba",
+        "version" : "2.5.0"
+      }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

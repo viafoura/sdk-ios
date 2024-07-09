@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import LoginRadiusSDK
+import LoginRadiusPackage
 import ViafouraSDK
 
 class LoginViewController: UIViewController, StoryboardCreateable {

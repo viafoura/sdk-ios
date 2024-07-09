@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import LoginRadiusSDK
+import LoginRadiusPackage
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

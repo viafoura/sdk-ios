@@ -8,12 +8,12 @@
 import UIKit
 import ViafouraSDK
 import FirebaseCore
-import FirebaseMessaging
-import LoginRadiusSDK
+import LoginRadiusPackage
 import GoogleMobileAds
+import OneSignalFramework
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, UIWindowSceneDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
@@ -23,9 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-a3692e0c0e77", siteDomain: "test.viafoura.com")
         //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-0892b54dbf4e", siteDomain: "reactqa5.smgdigitaldev.com")
         
+        OneSignal.Debug.setLogLevel(.LL_VERBOSE)        
+        OneSignal.initialize("85a688d0-16cd-495a-99a9-1407fd349364", withLaunchOptions: launchOptions)
+        
+        OneSignal.Notifications.requestPermission({ accepted in
+              print("User accepted notifications: \(accepted)")
+            }, fallbackToSettings: true)
+        
         FirebaseApp.configure()
-
-        Messaging.messaging().delegate = self
 
         let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()
         sdk.applicationLaunched(options: launchOptions)
@@ -33,23 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
         applyUIStyling()
-
-        registerForNotifications(application: application)
         
         return true
-    }
-    
-    func registerForNotifications(application: UIApplication){
-        Messaging.messaging().subscribe(toTopic: "vfUsers")
-        UNUserNotificationCenter.current().delegate = self
-
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(
-          options: authOptions,
-          completionHandler: { _, _ in }
-        )
-
-        application.registerForRemoteNotifications()
     }
 
     func applyUIStyling(){
@@ -60,18 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
     }
-    
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .badge, .sound])
-    }
-    
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Messaging.messaging().apnsToken = deviceToken
-    }
 
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

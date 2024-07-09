@@ -11,6 +11,13 @@
 		4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4707010728CFAD2C00BE9C0D /* LoginRadius.plist */; };
 		470D07DF2B62B43800932D2C /* UIViewController+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D07DE2B62B43800932D2C /* UIViewController+Fade.swift */; };
 		4710CE122A164F0A00A4115D /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710CE112A164F0A00A4115D /* UIViewController+HideKeyboard.swift */; };
+		4730703C2C3DE33B00BE0E7D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730703B2C3DE33B00BE0E7D /* NotificationService.swift */; };
+		473070402C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 473070392C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		473070472C3DE42200BE0E7D /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 473070462C3DE42200BE0E7D /* OneSignalExtension */; };
+		473070492C3DE42200BE0E7D /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 473070482C3DE42200BE0E7D /* OneSignalFramework */; };
+		4730704B2C3DE42200BE0E7D /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */; };
+		473070512C3DE85E00BE0E7D /* LoginRadiusPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 473070502C3DE85E00BE0E7D /* LoginRadiusPackage */; };
+		473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 473070532C3DE8E300BE0E7D /* GoogleMobileAds */; };
 		473DBC2C285A59E30044D00F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473DBC2B285A59E30044D00F /* CustomNavigationController.swift */; };
 		4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2529354C3800389833 /* SettingsViewController.swift */; };
 		4771BE2829354C4E00389833 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771BE2729354C4E00389833 /* SettingsViewModel.swift */; };
@@ -65,10 +72,16 @@
 		47F912E72A68431A004D457C /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912E62A68431A004D457C /* PollViewController.swift */; };
 		47F912E92A684650004D457C /* PollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912E82A684650004D457C /* PollViewModel.swift */; };
 		47F912EB2A684694004D457C /* Poll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F912EA2A684694004D457C /* Poll.storyboard */; };
-		70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4730703E2C3DE33B00BE0E7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47B0095B28179DF800EF93FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 473070382C3DE33B00BE0E7D;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 		47A7E5092A3215440056AF74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
@@ -92,6 +105,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				473070402C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,12 +124,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.debug.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.debug.xcconfig"; sourceTree = "<group>"; };
 		470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4707010728CFAD2C00BE9C0D /* LoginRadius.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LoginRadius.plist; sourceTree = "<group>"; };
 		470D07DE2B62B43800932D2C /* UIViewController+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Fade.swift"; sourceTree = "<group>"; };
 		4710CE112A164F0A00A4115D /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		47162750293FA61100729F25 /* Viafoura.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Viafoura.entitlements; sourceTree = "<group>"; };
+		473070392C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4730703B2C3DE33B00BE0E7D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		4730703D2C3DE33B00BE0E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		473070442C3DE3C400BE0E7D /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		473DBC2B285A59E30044D00F /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		4771BE2529354C3800389833 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4771BE2729354C4E00389833 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -170,18 +187,27 @@
 		47F912E62A68431A004D457C /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		47F912E82A684650004D457C /* PollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewModel.swift; sourceTree = "<group>"; };
 		47F912EA2A684694004D457C /* Poll.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poll.storyboard; sourceTree = "<group>"; };
-		828EF67343F1A1E05E74D4B0 /* Pods-Viafoura.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Viafoura.release.xcconfig"; path = "Target Support Files/Pods-Viafoura/Pods-Viafoura.release.xcconfig"; sourceTree = "<group>"; };
-		8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Viafoura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		473070362C3DE33B00BE0E7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				473070472C3DE42200BE0E7D /* OneSignalExtension in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47B0096028179DF800EF93FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4730704B2C3DE42200BE0E7D /* OneSignalInAppMessages in Frameworks */,
+				473070492C3DE42200BE0E7D /* OneSignalFramework in Frameworks */,
 				47E991D42A780D46006DE6F5 /* ViafouraSDK.framework in Frameworks */,
+				473070512C3DE85E00BE0E7D /* LoginRadiusPackage in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
-				70ACF1AD7E6B5FDF8B92884B /* Pods_Viafoura.framework in Frameworks */,
+				473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +221,16 @@
 				470D07DE2B62B43800932D2C /* UIViewController+Fade.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4730703A2C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				473070442C3DE3C400BE0E7D /* OneSignalNotificationServiceExtension.entitlements */,
+				4730703B2C3DE33B00BE0E7D /* NotificationService.swift */,
+				4730703D2C3DE33B00BE0E7D /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		4771BE2429354C2F00389833 /* Settings */ = {
@@ -371,9 +407,8 @@
 			children = (
 				47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
+				4730703A2C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension */,
 				47B0096428179DF800EF93FD /* Products */,
-				47B0099928179F0900EF93FD /* Frameworks */,
-				647EE21E98ADD6C38637E6BB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -381,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				47B0096328179DF800EF93FD /* Viafoura.app */,
+				473070392C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,14 +435,6 @@
 				47B0096828179DF800EF93FD /* SceneDelegate.swift */,
 			);
 			path = Viafoura;
-			sourceTree = "<group>";
-		};
-		47B0099928179F0900EF93FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8D84CA436C59C8B7F6588B2B /* Pods_Viafoura.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		47CB993C29E3866F0070FF2B /* LiveChat */ = {
@@ -456,27 +484,36 @@
 			path = Poll;
 			sourceTree = "<group>";
 		};
-		647EE21E98ADD6C38637E6BB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */,
-				828EF67343F1A1E05E74D4B0 /* Pods-Viafoura.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		473070382C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 473070412C3DE33B00BE0E7D /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				473070352C3DE33B00BE0E7D /* Sources */,
+				473070362C3DE33B00BE0E7D /* Frameworks */,
+				473070372C3DE33B00BE0E7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				473070462C3DE42200BE0E7D /* OneSignalExtension */,
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 473070392C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		47B0096228179DF800EF93FD /* Viafoura */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 47B0097728179DFB00EF93FD /* Build configuration list for PBXNativeTarget "Viafoura" */;
 			buildPhases = (
-				4EB6334018611936660C7F10 /* [CP] Check Pods Manifest.lock */,
 				47B0095F28179DF800EF93FD /* Sources */,
 				47B0096028179DF800EF93FD /* Frameworks */,
 				47B0096128179DF800EF93FD /* Resources */,
-				5AAEF5A1819B1F8289A16C03 /* [CP] Embed Pods Frameworks */,
 				47162763293FAA9400729F25 /* Embed Foundation Extensions */,
 				47E991D62A780D46006DE6F5 /* Embed Frameworks */,
 				4710CE282A1689A900A4115D /* ShellScript */,
@@ -484,10 +521,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				4730703F2C3DE33B00BE0E7D /* PBXTargetDependency */,
 			);
 			name = Viafoura;
 			packageProductDependencies = (
 				47B1DD38297EC13700FBD05C /* Kingfisher */,
+				473070482C3DE42200BE0E7D /* OneSignalFramework */,
+				4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */,
+				473070502C3DE85E00BE0E7D /* LoginRadiusPackage */,
+				473070532C3DE8E300BE0E7D /* GoogleMobileAds */,
 			);
 			productName = Viafoura;
 			productReference = 47B0096328179DF800EF93FD /* Viafoura.app */;
@@ -500,9 +542,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					473070382C3DE33B00BE0E7D = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					47B0096228179DF800EF93FD = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -519,6 +564,9 @@
 			mainGroup = 47B0095A28179DF800EF93FD;
 			packageReferences = (
 				47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 47B0096428179DF800EF93FD /* Products */;
 			projectDirPath = "";
@@ -531,6 +579,7 @@
 			projectRoot = "";
 			targets = (
 				47B0096228179DF800EF93FD /* Viafoura */,
+				473070382C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -553,6 +602,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		473070372C3DE33B00BE0E7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47B0096128179DF800EF93FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -600,48 +656,17 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		4EB6334018611936660C7F10 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Viafoura-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5AAEF5A1819B1F8289A16C03 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Viafoura/Pods-Viafoura-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Viafoura/Pods-Viafoura-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Viafoura/Pods-Viafoura-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		473070352C3DE33B00BE0E7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4730703C2C3DE33B00BE0E7D /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47B0095F28179DF800EF93FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,6 +713,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4730703F2C3DE33B00BE0E7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 473070382C3DE33B00BE0E7D /* OneSignalNotificationServiceExtension */;
+			targetProxy = 4730703E2C3DE33B00BE0E7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		47B0096C28179DF800EF93FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -708,6 +741,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		473070422C3DE33B00BE0E7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JJ3874BH56;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		473070432C3DE33B00BE0E7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JJ3874BH56;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viafoura.sampleapp.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		47B0097528179DFB00EF93FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -825,8 +924,8 @@
 		};
 		47B0097828179DFB00EF93FD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 422FA97CFCF760DBE8152637 /* Pods-Viafoura.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
@@ -857,8 +956,8 @@
 		};
 		47B0097928179DFB00EF93FD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828EF67343F1A1E05E74D4B0 /* Pods-Viafoura.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Viafoura/Viafoura.entitlements;
@@ -890,6 +989,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		473070412C3DE33B00BE0E7D /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473070422C3DE33B00BE0E7D /* Debug */,
+				473070432C3DE33B00BE0E7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		47B0095E28179DF800EF93FD /* Build configuration list for PBXProject "Viafoura" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -911,6 +1019,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LoginRadius/ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+		473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
 		47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -922,6 +1054,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		473070462C3DE42200BE0E7D /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		473070482C3DE42200BE0E7D /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		473070502C3DE85E00BE0E7D /* LoginRadiusPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = LoginRadiusPackage;
+		};
+		473070532C3DE8E300BE0E7D /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		47B1DD38297EC13700FBD05C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */;
