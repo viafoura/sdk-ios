@@ -168,6 +168,12 @@ public protocol VFLocalAdDelegate : ObjectiveC.NSObject {
 extension ViafouraSDK.VFLocalAdDelegate {
   public func getFirstAdPosition() -> Swift.Int
 }
+public struct ServerError : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ServerErrorData : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public enum VFFlagCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFFlagCommentError, b: ViafouraSDK.VFFlagCommentError) -> Swift.Bool
@@ -435,12 +441,8 @@ extension ViafouraSDK.VFAuthenticationService {
   public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> ()))
 }
 public enum VFLoginError : Foundation.LocalizedError {
+  case banned(banData: ViafouraSDK.ServerErrorData)
   case unknown
-  public static func == (a: ViafouraSDK.VFLoginError, b: ViafouraSDK.VFLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension ViafouraSDK.VFLoginError {
   public var errorDescription: Swift.String? {
@@ -884,11 +886,7 @@ extension ViafouraSDK.VFAuthenticationService {
 }
 public enum VFSocialLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFSocialLoginError, b: ViafouraSDK.VFSocialLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ViafouraSDK.ServerErrorData)
 }
 extension ViafouraSDK.VFSocialLoginError {
   public var errorDescription: Swift.String? {
@@ -981,11 +979,7 @@ extension ViafouraSDK.VFAuthenticationService {
 }
 public enum VFOpenIdLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFOpenIdLoginError, b: ViafouraSDK.VFOpenIdLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ViafouraSDK.ServerErrorData)
 }
 extension ViafouraSDK.VFOpenIdLoginError {
   public var errorDescription: Swift.String? {
@@ -1006,6 +1000,7 @@ extension ViafouraSDK.VFUnflagReviewError {
   }
 }
 public struct UserResponse : Swift.Decodable {
+  public let id: Swift.Int64
   public init(from decoder: any Swift.Decoder) throws
 }
 public protocol VFLayoutDelegate : ObjectiveC.NSObject {
@@ -1255,11 +1250,7 @@ extension ViafouraSDK.VFAuthenticationService {
 }
 public enum VFLoginRadiusLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFLoginRadiusLoginError, b: ViafouraSDK.VFLoginRadiusLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ViafouraSDK.ServerErrorData)
 }
 extension ViafouraSDK.VFLoginRadiusLoginError {
   public var errorDescription: Swift.String? {
@@ -1843,11 +1834,7 @@ public struct VFCookieLoginData {
 }
 public enum VFCookieLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: ViafouraSDK.VFCookieLoginError, b: ViafouraSDK.VFCookieLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ViafouraSDK.ServerErrorData)
 }
 extension ViafouraSDK.VFCookieLoginError {
   public var errorDescription: Swift.String? {
@@ -2377,8 +2364,6 @@ extension ViafouraSDK.VFEnableChatError : Swift.Equatable {}
 extension ViafouraSDK.VFEnableChatError : Swift.Hashable {}
 extension ViafouraSDK.VFChatModerationListError : Swift.Equatable {}
 extension ViafouraSDK.VFChatModerationListError : Swift.Hashable {}
-extension ViafouraSDK.VFLoginError : Swift.Equatable {}
-extension ViafouraSDK.VFLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFLikeCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFLikeCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFEnableCommentError : Swift.Equatable {}
@@ -2426,8 +2411,6 @@ extension ViafouraSDK.VFEditorPickCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFEditorPickCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFSignUpError : Swift.Equatable {}
 extension ViafouraSDK.VFSignUpError : Swift.Hashable {}
-extension ViafouraSDK.VFSocialLoginError : Swift.Equatable {}
-extension ViafouraSDK.VFSocialLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFCommentContainerError : Swift.Equatable {}
 extension ViafouraSDK.VFCommentContainerError : Swift.Hashable {}
 extension ViafouraSDK.VFUnlikeCommentError : Swift.Equatable {}
@@ -2440,8 +2423,6 @@ extension ViafouraSDK.VFMuteUserError : Swift.Equatable {}
 extension ViafouraSDK.VFMuteUserError : Swift.Hashable {}
 extension ViafouraSDK.VFFlagChatError : Swift.Equatable {}
 extension ViafouraSDK.VFFlagChatError : Swift.Hashable {}
-extension ViafouraSDK.VFOpenIdLoginError : Swift.Equatable {}
-extension ViafouraSDK.VFOpenIdLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFUnflagReviewError : Swift.Equatable {}
 extension ViafouraSDK.VFUnflagReviewError : Swift.Hashable {}
 extension ViafouraSDK.VFDeleteChatError : Swift.Equatable {}
@@ -2467,8 +2448,6 @@ extension ViafouraSDK.VFCreatePollError : Swift.Equatable {}
 extension ViafouraSDK.VFCreatePollError : Swift.Hashable {}
 extension ViafouraSDK.VFCreateReviewMediaError : Swift.Equatable {}
 extension ViafouraSDK.VFCreateReviewMediaError : Swift.Hashable {}
-extension ViafouraSDK.VFLoginRadiusLoginError : Swift.Equatable {}
-extension ViafouraSDK.VFLoginRadiusLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFReviewRepliesError : Swift.Equatable {}
 extension ViafouraSDK.VFReviewRepliesError : Swift.Hashable {}
 extension ViafouraSDK.VFReviewModerationListError : Swift.Equatable {}
@@ -2524,8 +2503,6 @@ extension ViafouraSDK.VFDeleteReviewError : Swift.Equatable {}
 extension ViafouraSDK.VFDeleteReviewError : Swift.Hashable {}
 extension ViafouraSDK.VFUpdateReviewsContainerSettingsError : Swift.Equatable {}
 extension ViafouraSDK.VFUpdateReviewsContainerSettingsError : Swift.Hashable {}
-extension ViafouraSDK.VFCookieLoginError : Swift.Equatable {}
-extension ViafouraSDK.VFCookieLoginError : Swift.Hashable {}
 extension ViafouraSDK.VFPinReviewError : Swift.Equatable {}
 extension ViafouraSDK.VFPinReviewError : Swift.Hashable {}
 extension ViafouraSDK.VFReviewListError : Swift.Equatable {}

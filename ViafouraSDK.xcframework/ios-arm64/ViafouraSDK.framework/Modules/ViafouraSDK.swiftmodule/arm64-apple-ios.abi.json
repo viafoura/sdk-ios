@@ -3631,6 +3631,104 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "ServerError",
+        "printedName": "ServerError",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ServerError",
+                "printedName": "ViafouraSDK.ServerError",
+                "usr": "s:11ViafouraSDK11ServerErrorV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK11ServerErrorV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK11ServerErrorV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK11ServerErrorV",
+        "mangledName": "$s11ViafouraSDK11ServerErrorV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ServerErrorData",
+        "printedName": "ServerErrorData",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ServerErrorData",
+                "printedName": "ViafouraSDK.ServerErrorData",
+                "usr": "s:11ViafouraSDK15ServerErrorDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK15ServerErrorDataV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK15ServerErrorDataV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK15ServerErrorDataV",
+        "mangledName": "$s11ViafouraSDK15ServerErrorDataV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -10698,6 +10796,63 @@
         "children": [
           {
             "kind": "Var",
+            "name": "banned",
+            "printedName": "banned",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFLoginError.Type) -> (ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFLoginError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFLoginError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFLoginError",
+                        "printedName": "ViafouraSDK.VFLoginError",
+                        "usr": "s:11ViafouraSDK12VFLoginErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(banData: ViafouraSDK.ServerErrorData)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerErrorData",
+                            "printedName": "ViafouraSDK.ServerErrorData",
+                            "usr": "s:11ViafouraSDK15ServerErrorDataV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFLoginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFLoginError",
+                        "printedName": "ViafouraSDK.VFLoginError",
+                        "usr": "s:11ViafouraSDK12VFLoginErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK12VFLoginErrorO6bannedyAcA06ServerD4DataV_tcACmF",
+            "mangledName": "$s11ViafouraSDK12VFLoginErrorO6bannedyAcA06ServerD4DataV_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "unknown",
             "printedName": "unknown",
             "children": [
@@ -10732,102 +10887,6 @@
             "usr": "s:11ViafouraSDK12VFLoginErrorO7unknownyA2CmF",
             "mangledName": "$s11ViafouraSDK12VFLoginErrorO7unknownyA2CmF",
             "moduleName": "ViafouraSDK"
-          },
-          {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFLoginError",
-                "printedName": "ViafouraSDK.VFLoginError",
-                "usr": "s:11ViafouraSDK12VFLoginErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFLoginError",
-                "printedName": "ViafouraSDK.VFLoginError",
-                "usr": "s:11ViafouraSDK12VFLoginErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK12VFLoginErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s11ViafouraSDK12VFLoginErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDK12VFLoginErrorO9hashValueSivp",
-            "mangledName": "$s11ViafouraSDK12VFLoginErrorO9hashValueSivp",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDK12VFLoginErrorO9hashValueSivg",
-                "mangledName": "$s11ViafouraSDK12VFLoginErrorO9hashValueSivg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK12VFLoginErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s11ViafouraSDK12VFLoginErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Var",
@@ -10896,20 +10955,6 @@
           "AccessControl"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
           {
             "kind": "Conformance",
             "name": "LocalizedError",
@@ -22820,100 +22865,61 @@
             "moduleName": "ViafouraSDK"
           },
           {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFSocialLoginError",
-                "printedName": "ViafouraSDK.VFSocialLoginError",
-                "usr": "s:11ViafouraSDK18VFSocialLoginErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFSocialLoginError",
-                "printedName": "ViafouraSDK.VFSocialLoginError",
-                "usr": "s:11ViafouraSDK18VFSocialLoginErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK18VFSocialLoginErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s11ViafouraSDK18VFSocialLoginErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
             "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
+            "name": "banned",
+            "printedName": "banned",
             "children": [
               {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDK18VFSocialLoginErrorO9hashValueSivp",
-            "mangledName": "$s11ViafouraSDK18VFSocialLoginErrorO9hashValueSivp",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFSocialLoginError.Type) -> (ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFSocialLoginError",
                 "children": [
                   {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFSocialLoginError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFSocialLoginError",
+                        "printedName": "ViafouraSDK.VFSocialLoginError",
+                        "usr": "s:11ViafouraSDK18VFSocialLoginErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(banData: ViafouraSDK.ServerErrorData)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerErrorData",
+                            "printedName": "ViafouraSDK.ServerErrorData",
+                            "usr": "s:11ViafouraSDK15ServerErrorDataV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFSocialLoginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFSocialLoginError",
+                        "printedName": "ViafouraSDK.VFSocialLoginError",
+                        "usr": "s:11ViafouraSDK18VFSocialLoginErrorO"
+                      }
+                    ]
                   }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDK18VFSocialLoginErrorO9hashValueSivg",
-                "mangledName": "$s11ViafouraSDK18VFSocialLoginErrorO9hashValueSivg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
+                ]
               }
             ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK18VFSocialLoginErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s11ViafouraSDK18VFSocialLoginErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFSocialLoginErrorO6bannedyAcA06ServerE4DataV_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFSocialLoginErrorO6bannedyAcA06ServerE4DataV_tcACmF",
+            "moduleName": "ViafouraSDK"
           },
           {
             "kind": "Var",
@@ -22982,20 +22988,6 @@
           "AccessControl"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
           {
             "kind": "Conformance",
             "name": "LocalizedError",
@@ -24705,100 +24697,61 @@
             "moduleName": "ViafouraSDK"
           },
           {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFOpenIdLoginError",
-                "printedName": "ViafouraSDK.VFOpenIdLoginError",
-                "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFOpenIdLoginError",
-                "printedName": "ViafouraSDK.VFOpenIdLoginError",
-                "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s11ViafouraSDK18VFOpenIdLoginErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
             "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
+            "name": "banned",
+            "printedName": "banned",
             "children": [
               {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO9hashValueSivp",
-            "mangledName": "$s11ViafouraSDK18VFOpenIdLoginErrorO9hashValueSivp",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFOpenIdLoginError.Type) -> (ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFOpenIdLoginError",
                 "children": [
                   {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFOpenIdLoginError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFOpenIdLoginError",
+                        "printedName": "ViafouraSDK.VFOpenIdLoginError",
+                        "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(banData: ViafouraSDK.ServerErrorData)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerErrorData",
+                            "printedName": "ViafouraSDK.ServerErrorData",
+                            "usr": "s:11ViafouraSDK15ServerErrorDataV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFOpenIdLoginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFOpenIdLoginError",
+                        "printedName": "ViafouraSDK.VFOpenIdLoginError",
+                        "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO"
+                      }
+                    ]
                   }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO9hashValueSivg",
-                "mangledName": "$s11ViafouraSDK18VFOpenIdLoginErrorO9hashValueSivg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
+                ]
               }
             ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s11ViafouraSDK18VFOpenIdLoginErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFOpenIdLoginErrorO6bannedyAcA06ServerF4DataV_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFOpenIdLoginErrorO6bannedyAcA06ServerF4DataV_tcACmF",
+            "moduleName": "ViafouraSDK"
           },
           {
             "kind": "Var",
@@ -24867,20 +24820,6 @@
           "AccessControl"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
           {
             "kind": "Conformance",
             "name": "LocalizedError",
@@ -25171,6 +25110,50 @@
         "name": "UserResponse",
         "printedName": "UserResponse",
         "children": [
+          {
+            "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK12UserResponseV2ids5Int64Vvp",
+            "mangledName": "$s11ViafouraSDK12UserResponseV2ids5Int64Vvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12UserResponseV2ids5Int64Vvg",
+                "mangledName": "$s11ViafouraSDK12UserResponseV2ids5Int64Vvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Constructor",
             "name": "init",
@@ -31137,100 +31120,61 @@
             "moduleName": "ViafouraSDK"
           },
           {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFLoginRadiusLoginError",
-                "printedName": "ViafouraSDK.VFLoginRadiusLoginError",
-                "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFLoginRadiusLoginError",
-                "printedName": "ViafouraSDK.VFLoginRadiusLoginError",
-                "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s11ViafouraSDK23VFLoginRadiusLoginErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
             "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
+            "name": "banned",
+            "printedName": "banned",
             "children": [
               {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO9hashValueSivp",
-            "mangledName": "$s11ViafouraSDK23VFLoginRadiusLoginErrorO9hashValueSivp",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFLoginRadiusLoginError.Type) -> (ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFLoginRadiusLoginError",
                 "children": [
                   {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFLoginRadiusLoginError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFLoginRadiusLoginError",
+                        "printedName": "ViafouraSDK.VFLoginRadiusLoginError",
+                        "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(banData: ViafouraSDK.ServerErrorData)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerErrorData",
+                            "printedName": "ViafouraSDK.ServerErrorData",
+                            "usr": "s:11ViafouraSDK15ServerErrorDataV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFLoginRadiusLoginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFLoginRadiusLoginError",
+                        "printedName": "ViafouraSDK.VFLoginRadiusLoginError",
+                        "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO"
+                      }
+                    ]
                   }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO9hashValueSivg",
-                "mangledName": "$s11ViafouraSDK23VFLoginRadiusLoginErrorO9hashValueSivg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
+                ]
               }
             ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s11ViafouraSDK23VFLoginRadiusLoginErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23VFLoginRadiusLoginErrorO6bannedyAcA06ServerF4DataV_tcACmF",
+            "mangledName": "$s11ViafouraSDK23VFLoginRadiusLoginErrorO6bannedyAcA06ServerF4DataV_tcACmF",
+            "moduleName": "ViafouraSDK"
           },
           {
             "kind": "Var",
@@ -31299,20 +31243,6 @@
           "AccessControl"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
           {
             "kind": "Conformance",
             "name": "LocalizedError",
@@ -47782,100 +47712,61 @@
             "moduleName": "ViafouraSDK"
           },
           {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFCookieLoginError",
-                "printedName": "ViafouraSDK.VFCookieLoginError",
-                "usr": "s:11ViafouraSDK18VFCookieLoginErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VFCookieLoginError",
-                "printedName": "ViafouraSDK.VFCookieLoginError",
-                "usr": "s:11ViafouraSDK18VFCookieLoginErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK18VFCookieLoginErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s11ViafouraSDK18VFCookieLoginErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
             "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
+            "name": "banned",
+            "printedName": "banned",
             "children": [
               {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11ViafouraSDK18VFCookieLoginErrorO9hashValueSivp",
-            "mangledName": "$s11ViafouraSDK18VFCookieLoginErrorO9hashValueSivp",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCookieLoginError.Type) -> (ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFCookieLoginError",
                 "children": [
                   {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.ServerErrorData) -> ViafouraSDK.VFCookieLoginError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCookieLoginError",
+                        "printedName": "ViafouraSDK.VFCookieLoginError",
+                        "usr": "s:11ViafouraSDK18VFCookieLoginErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(banData: ViafouraSDK.ServerErrorData)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ServerErrorData",
+                            "printedName": "ViafouraSDK.ServerErrorData",
+                            "usr": "s:11ViafouraSDK15ServerErrorDataV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCookieLoginError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCookieLoginError",
+                        "printedName": "ViafouraSDK.VFCookieLoginError",
+                        "usr": "s:11ViafouraSDK18VFCookieLoginErrorO"
+                      }
+                    ]
                   }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11ViafouraSDK18VFCookieLoginErrorO9hashValueSivg",
-                "mangledName": "$s11ViafouraSDK18VFCookieLoginErrorO9hashValueSivg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
+                ]
               }
             ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK18VFCookieLoginErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s11ViafouraSDK18VFCookieLoginErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "ViafouraSDK",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCookieLoginErrorO6bannedyAcA06ServerE4DataV_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCookieLoginErrorO6bannedyAcA06ServerE4DataV_tcACmF",
+            "moduleName": "ViafouraSDK"
           },
           {
             "kind": "Var",
@@ -47944,20 +47835,6 @@
           "AccessControl"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
           {
             "kind": "Conformance",
             "name": "LocalizedError",

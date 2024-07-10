@@ -168,6 +168,12 @@ public protocol VFLocalAdDelegate : ObjectiveC.NSObject {
 extension VFLocalAdDelegate {
   public func getFirstAdPosition() -> Swift.Int
 }
+public struct ServerError : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ServerErrorData : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public enum VFFlagCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFFlagCommentError, b: VFFlagCommentError) -> Swift.Bool
@@ -435,12 +441,8 @@ extension VFAuthenticationService {
   public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<UserResponse, VFLoginError>) -> ()))
 }
 public enum VFLoginError : Foundation.LocalizedError {
+  case banned(banData: ServerErrorData)
   case unknown
-  public static func == (a: VFLoginError, b: VFLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
 }
 extension VFLoginError {
   public var errorDescription: Swift.String? {
@@ -884,11 +886,7 @@ extension VFAuthenticationService {
 }
 public enum VFSocialLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: VFSocialLoginError, b: VFSocialLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ServerErrorData)
 }
 extension VFSocialLoginError {
   public var errorDescription: Swift.String? {
@@ -981,11 +979,7 @@ extension VFAuthenticationService {
 }
 public enum VFOpenIdLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: VFOpenIdLoginError, b: VFOpenIdLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ServerErrorData)
 }
 extension VFOpenIdLoginError {
   public var errorDescription: Swift.String? {
@@ -1006,6 +1000,7 @@ extension VFUnflagReviewError {
   }
 }
 public struct UserResponse : Swift.Decodable {
+  public let id: Swift.Int64
   public init(from decoder: any Swift.Decoder) throws
 }
 public protocol VFLayoutDelegate : ObjectiveC.NSObject {
@@ -1255,11 +1250,7 @@ extension VFAuthenticationService {
 }
 public enum VFLoginRadiusLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: VFLoginRadiusLoginError, b: VFLoginRadiusLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ServerErrorData)
 }
 extension VFLoginRadiusLoginError {
   public var errorDescription: Swift.String? {
@@ -1843,11 +1834,7 @@ public struct VFCookieLoginData {
 }
 public enum VFCookieLoginError : Foundation.LocalizedError {
   case unknown
-  public static func == (a: VFCookieLoginError, b: VFCookieLoginError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
+  case banned(banData: ServerErrorData)
 }
 extension VFCookieLoginError {
   public var errorDescription: Swift.String? {
@@ -2377,8 +2364,6 @@ extension VFEnableChatError : Swift.Equatable {}
 extension VFEnableChatError : Swift.Hashable {}
 extension VFChatModerationListError : Swift.Equatable {}
 extension VFChatModerationListError : Swift.Hashable {}
-extension VFLoginError : Swift.Equatable {}
-extension VFLoginError : Swift.Hashable {}
 extension VFLikeCommentError : Swift.Equatable {}
 extension VFLikeCommentError : Swift.Hashable {}
 extension VFEnableCommentError : Swift.Equatable {}
@@ -2426,8 +2411,6 @@ extension VFEditorPickCommentError : Swift.Equatable {}
 extension VFEditorPickCommentError : Swift.Hashable {}
 extension VFSignUpError : Swift.Equatable {}
 extension VFSignUpError : Swift.Hashable {}
-extension VFSocialLoginError : Swift.Equatable {}
-extension VFSocialLoginError : Swift.Hashable {}
 extension VFCommentContainerError : Swift.Equatable {}
 extension VFCommentContainerError : Swift.Hashable {}
 extension VFUnlikeCommentError : Swift.Equatable {}
@@ -2440,8 +2423,6 @@ extension VFMuteUserError : Swift.Equatable {}
 extension VFMuteUserError : Swift.Hashable {}
 extension VFFlagChatError : Swift.Equatable {}
 extension VFFlagChatError : Swift.Hashable {}
-extension VFOpenIdLoginError : Swift.Equatable {}
-extension VFOpenIdLoginError : Swift.Hashable {}
 extension VFUnflagReviewError : Swift.Equatable {}
 extension VFUnflagReviewError : Swift.Hashable {}
 extension VFDeleteChatError : Swift.Equatable {}
@@ -2467,8 +2448,6 @@ extension VFCreatePollError : Swift.Equatable {}
 extension VFCreatePollError : Swift.Hashable {}
 extension VFCreateReviewMediaError : Swift.Equatable {}
 extension VFCreateReviewMediaError : Swift.Hashable {}
-extension VFLoginRadiusLoginError : Swift.Equatable {}
-extension VFLoginRadiusLoginError : Swift.Hashable {}
 extension VFReviewRepliesError : Swift.Equatable {}
 extension VFReviewRepliesError : Swift.Hashable {}
 extension VFReviewModerationListError : Swift.Equatable {}
@@ -2524,8 +2503,6 @@ extension VFDeleteReviewError : Swift.Equatable {}
 extension VFDeleteReviewError : Swift.Hashable {}
 extension VFUpdateReviewsContainerSettingsError : Swift.Equatable {}
 extension VFUpdateReviewsContainerSettingsError : Swift.Hashable {}
-extension VFCookieLoginError : Swift.Equatable {}
-extension VFCookieLoginError : Swift.Hashable {}
 extension VFPinReviewError : Swift.Equatable {}
 extension VFPinReviewError : Swift.Hashable {}
 extension VFReviewListError : Swift.Equatable {}
