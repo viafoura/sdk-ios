@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-0892b54dbf4e", siteDomain: "reactqa5.smgdigitaldev.com")
         
         OneSignal.Debug.setLogLevel(.LL_VERBOSE)        
-        OneSignal.initialize("85a688d0-16cd-495a-99a9-1407fd349364", withLaunchOptions: launchOptions)
+        OneSignal.initialize("8add46ba-1535-4c77-8c97-4faccd2cd7e5", withLaunchOptions: launchOptions)
         
         OneSignal.Notifications.requestPermission({ accepted in
               print("User accepted notifications: \(accepted)")
