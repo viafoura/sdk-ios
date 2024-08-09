@@ -38,6 +38,19 @@ extension VFDislikeChatError {
     get
   }
 }
+public enum VFTopCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFTopCommentError, b: VFTopCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFTopCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEditorPicksView : UIKit.UIView {
   @objc deinit
 }
@@ -346,6 +359,10 @@ extension VFCreateReviewError {
     get
   }
 }
+public struct EventTestInfo : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public enum VFDislikeCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFDislikeCommentError, b: VFDislikeCommentError) -> Swift.Bool
@@ -383,6 +400,7 @@ extension VFDislikeCommentError {
   public func logContainerLoad(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, allCommentsCount: Swift.Int, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata, contentContainerType: Swift.String)
   public func logPageView(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata)
   public func logEventAttemptedAction(eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
+  public func logABTestEvent(eventTestInfo: EventTestInfo, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
   @objc deinit
 }
 public enum VFCommentContainerSignatureError : Foundation.LocalizedError {
@@ -672,6 +690,19 @@ extension VFUndislikeStoryError {
     get
   }
 }
+public enum VFRemoveTopCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFRemoveTopCommentError, b: VFRemoveTopCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFRemoveTopCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFVotePollError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFVotePollError, b: VFVotePollError) -> Swift.Bool
@@ -801,6 +832,7 @@ public protocol VFLoginDelegate : AnyObject {
 public enum VFFilterType {
   case allComments
   case featured
+  case topComments
   public static func == (a: VFFilterType, b: VFFilterType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1094,6 +1126,7 @@ public enum EventType : Swift.String, Swift.Encodable {
   case CONVERSATION_STARTER_CLICK
   case CONVERSATION_STARTER_VIEW
   case CONVERSATION_STARTER_LOAD
+  case AB_TEST
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -2324,6 +2357,8 @@ extension EventLog : Swift.Identifiable {
 }
 extension VFDislikeChatError : Swift.Equatable {}
 extension VFDislikeChatError : Swift.Hashable {}
+extension VFTopCommentError : Swift.Equatable {}
+extension VFTopCommentError : Swift.Hashable {}
 extension VFSingleStoryError : Swift.Equatable {}
 extension VFSingleStoryError : Swift.Hashable {}
 extension VFDeleteStoryError : Swift.Equatable {}
@@ -2387,6 +2422,8 @@ extension VFLikeChatError : Swift.Equatable {}
 extension VFLikeChatError : Swift.Hashable {}
 extension VFUndislikeStoryError : Swift.Equatable {}
 extension VFUndislikeStoryError : Swift.Hashable {}
+extension VFRemoveTopCommentError : Swift.Equatable {}
+extension VFRemoveTopCommentError : Swift.Hashable {}
 extension VFVotePollError : Swift.Equatable {}
 extension VFVotePollError : Swift.Hashable {}
 extension VFReplyStoryError : Swift.Equatable {}
