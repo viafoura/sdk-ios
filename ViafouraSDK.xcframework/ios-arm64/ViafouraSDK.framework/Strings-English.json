@@ -68,7 +68,7 @@
     "badges": {
         "author_owner": "author",
         "editors_pick": "Featured",
-        "make_editors_pick": "Make editor's pick",
+        "make_editors_pick": "Mark Featured",
         "moderator": "M",
         "moderator_title": "Moderator",
         "pinned": "pinned",
@@ -479,7 +479,8 @@
             "featured_tab_content_description": "Featured comments are contributions that the publisher wishes to highlight for special attention.",
             "featured_tab_heading": "Featured comments",
             "featured_tab_label": "Featured Comments, {count} item{count, plural, =0{s} =1{} other{s}}",
-            "filter_label": "Choose a comments filter"
+            "filter_label": "Choose a comments filter",
+            "top_comments": "Top Comments"
         },
         "new_comment": {
             "join_placeholder": "Join the conversation",
@@ -494,7 +495,8 @@
             "premod": "Pre-moderate all comments",
             "title": "Settings",
             "hide": "Hide the conversation",
-            "hidden": "Commenting is hidden to the public."
+            "hidden": "Commenting is hidden to the public.",
+            "is_top_comment_filtering_enabled": "Enable Top Comments"
         },
         "comment": "comment{count, plural, =1{} other{s}}"
     },
@@ -524,7 +526,9 @@
             "unpin": "unpin",
             "unpin_post": "unpin post",
             "unspam": "unspam",
-            "copy_console_url": "Copy Link to Console"
+            "copy_console_url": "Copy Link to Console",
+            "top_comment_exclude": "Exclude Top Comment",
+            "top_comment_add": "Undo Exclusion"
         },
         "announce": {
             "empty": {
@@ -881,7 +885,7 @@
         "follower": "Follower",
         "followers": "Followers",
         "commented_on": "commented on ",
-        "remove_editor_pick": "Remove editor's pick",
+        "remove_editor_pick": "Remove Featured",
         "select_picture": "Select picture",
         "comment_single": "comment",
         "comments_plural": "comments",

@@ -38,6 +38,19 @@ extension ViafouraSDK.VFDislikeChatError {
     get
   }
 }
+public enum VFTopCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFTopCommentError, b: ViafouraSDK.VFTopCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFTopCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEditorPicksView : UIKit.UIView {
   @objc deinit
 }
@@ -346,6 +359,10 @@ extension ViafouraSDK.VFCreateReviewError {
     get
   }
 }
+public struct EventTestInfo : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public enum VFDislikeCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFDislikeCommentError, b: ViafouraSDK.VFDislikeCommentError) -> Swift.Bool
@@ -383,6 +400,7 @@ extension ViafouraSDK.VFDislikeCommentError {
   public func logContainerLoad(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, allCommentsCount: Swift.Int, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, contentContainerType: Swift.String)
   public func logPageView(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata)
   public func logEventAttemptedAction(eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?)
+  public func logABTestEvent(eventTestInfo: ViafouraSDK.EventTestInfo, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?)
   @objc deinit
 }
 public enum VFCommentContainerSignatureError : Foundation.LocalizedError {
@@ -672,6 +690,19 @@ extension ViafouraSDK.VFUndislikeStoryError {
     get
   }
 }
+public enum VFRemoveTopCommentError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFRemoveTopCommentError, b: ViafouraSDK.VFRemoveTopCommentError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ViafouraSDK.VFRemoveTopCommentError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public enum VFVotePollError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFVotePollError, b: ViafouraSDK.VFVotePollError) -> Swift.Bool
@@ -801,6 +832,7 @@ public protocol VFLoginDelegate : AnyObject {
 public enum VFFilterType {
   case allComments
   case featured
+  case topComments
   public static func == (a: ViafouraSDK.VFFilterType, b: ViafouraSDK.VFFilterType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1094,6 +1126,7 @@ public enum EventType : Swift.String, Swift.Encodable {
   case CONVERSATION_STARTER_CLICK
   case CONVERSATION_STARTER_VIEW
   case CONVERSATION_STARTER_LOAD
+  case AB_TEST
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -2324,6 +2357,8 @@ extension ViafouraSDK.EventLog : Swift.Identifiable {
 }
 extension ViafouraSDK.VFDislikeChatError : Swift.Equatable {}
 extension ViafouraSDK.VFDislikeChatError : Swift.Hashable {}
+extension ViafouraSDK.VFTopCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFTopCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFSingleStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFSingleStoryError : Swift.Hashable {}
 extension ViafouraSDK.VFDeleteStoryError : Swift.Equatable {}
@@ -2387,6 +2422,8 @@ extension ViafouraSDK.VFLikeChatError : Swift.Equatable {}
 extension ViafouraSDK.VFLikeChatError : Swift.Hashable {}
 extension ViafouraSDK.VFUndislikeStoryError : Swift.Equatable {}
 extension ViafouraSDK.VFUndislikeStoryError : Swift.Hashable {}
+extension ViafouraSDK.VFRemoveTopCommentError : Swift.Equatable {}
+extension ViafouraSDK.VFRemoveTopCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFVotePollError : Swift.Equatable {}
 extension ViafouraSDK.VFVotePollError : Swift.Hashable {}
 extension ViafouraSDK.VFReplyStoryError : Swift.Equatable {}
