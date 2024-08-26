@@ -101,6 +101,11 @@ extension VFSingleStoryError {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEmptyModerationView : UIKit.UIView {
   @objc deinit
 }
+extension VFLiveCommentsService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: VFArticleMetadata, content: Swift.String) async -> (Swift.Result<Foundation.UUID, VFCreateCommentReplyError>)
+  #endif
+}
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
   case banned(banResponse: BanResponse)
@@ -139,6 +144,11 @@ public enum VFLoginStatus {
   case notLoggedIn
   case loggedIn(userUUID: Foundation.UUID)
 }
+extension VFLiveCommentsService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, VFUnflagCommentError>)
+  #endif
+}
 public enum VFUnflagCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFUnflagCommentError, b: VFUnflagCommentError) -> Swift.Bool
@@ -166,7 +176,7 @@ extension VFUnlikeStoryError {
   }
 }
 public protocol VFAdDelegate : ObjectiveC.NSObject {
-  func generateAd(viewController: VFUIViewController, adPosition: Swift.Int) -> VFAdView
+  func generateAd(viewController: VFUIViewController, adPosition: Swift.Int) -> VFAdView?
   func getAdInterval(viewController: VFUIViewController) -> Swift.Int
   func getFirstAdPosition(viewController: VFUIViewController) -> Swift.Int
 }
@@ -174,7 +184,7 @@ extension VFAdDelegate {
   public func getFirstAdPosition(viewController: VFUIViewController) -> Swift.Int
 }
 public protocol VFLocalAdDelegate : ObjectiveC.NSObject {
-  func generateAd(adPosition: Swift.Int) -> VFAdView
+  func generateAd(adPosition: Swift.Int) -> VFAdView?
   func getAdInterval() -> Swift.Int
   func getFirstAdPosition() -> Swift.Int
 }
@@ -186,6 +196,11 @@ public struct ServerError : Swift.Decodable {
 }
 public struct ServerErrorData : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
+}
+extension VFLiveCommentsService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?) async -> (Swift.Result<Swift.Bool, VFFlagCommentError>)
+  #endif
 }
 public enum VFFlagCommentError : Foundation.LocalizedError {
   case unknown
@@ -213,7 +228,27 @@ extension VFLikeReviewError {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class VFLiveCommentsService {
+public protocol VFLiveCommentsServiceProtocol {
+  #if compiler(>=5.3) && $AsyncAwait
+  func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, VFUnflagCommentError>)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?) async -> (Swift.Result<Swift.Bool, VFFlagCommentError>)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, VFLikeCommentError>)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, VFDislikeCommentError>)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String]) async -> (Swift.Result<Foundation.UUID, VFCreateCommentError>)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: VFArticleMetadata, content: Swift.String) async -> (Swift.Result<Foundation.UUID, VFCreateCommentReplyError>)
+  #endif
+}
+@_hasMissingDesignatedInitializers public class VFLiveCommentsService : VFLiveCommentsServiceProtocol {
   @objc deinit
 }
 public enum VFChatListError : Foundation.LocalizedError {
@@ -363,6 +398,11 @@ public struct EventTestInfo : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+extension VFLiveCommentsService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, VFDislikeCommentError>)
+  #endif
+}
 public enum VFDislikeCommentError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFDislikeCommentError, b: VFDislikeCommentError) -> Swift.Bool
@@ -476,6 +516,11 @@ extension VFAuthenticationService {
     @objc set
   }
   @objc deinit
+}
+extension VFLiveCommentsService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, VFLikeCommentError>)
+  #endif
 }
 public enum VFLikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -612,7 +657,7 @@ extension VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
 }
 extension VFVerticalTrendingViewController : VFLocalAdDelegate {
-  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView
+  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView?
   @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
 }
 extension VFVerticalTrendingViewController {
@@ -741,7 +786,7 @@ extension VFCarouselTrendingViewController : UIKit.UICollectionViewDelegateFlowL
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
 }
 extension VFCarouselTrendingViewController : VFLocalAdDelegate {
-  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView
+  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView?
   @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
 }
 public enum VFReplyStoryError : Foundation.LocalizedError {
@@ -1051,6 +1096,11 @@ extension VFDeleteChatError {
     get
   }
 }
+extension VFLiveCommentsService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String]) async -> (Swift.Result<Foundation.UUID, VFCreateCommentError>)
+  #endif
+}
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
   case banned(banResponse: BanResponse)
@@ -1343,7 +1393,7 @@ public enum VFCommentsContainerType {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension VFPreviewCommentsViewController : VFLocalAdDelegate {
-  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView
+  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> VFAdView?
   @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
   @_Concurrency.MainActor(unsafe) public func getFirstAdPosition() -> Swift.Int
 }
