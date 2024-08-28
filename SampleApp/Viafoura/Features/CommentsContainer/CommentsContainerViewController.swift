@@ -146,7 +146,7 @@ extension CommentsContainerViewController: VFAdDelegate {
         return 0
     }
     
-    func generateAd(viewController: VFUIViewController, adPosition: Int) -> VFAdView {
+    func generateAd(viewController: VFUIViewController, adPosition: Int) -> VFAdView? {
         return VFAdView()
     }
 }
