@@ -318,7 +318,7 @@ extension ArticleViewController: VFLayoutDelegate {
 }
 
 extension ArticleViewController: VFAdDelegate {
-    func generateAd(viewController: VFUIViewController, adPosition: Int) -> VFAdView {
+    func generateAd(viewController: VFUIViewController, adPosition: Int) -> VFAdView? {
         if false {
             let adView = VFAdView()
             adView.translatesAutoresizingMaskIntoConstraints = false
