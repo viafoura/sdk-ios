@@ -32,3 +32,17 @@ dependencies: [
 ### See our documentation
 
 Please follow [the official Viafoura iOS SDK documentation](https://documentation.viafoura.com/docs/add-the-viafoura-ios-sdk-to-your-app).
+
+## How to initialize the SDK?
+1) Initialize the SDK in `application(application:didFinishLaunchingWithOptions)`. Make sure to replace SITE_UUID and SITE_DOMAIN with the values corresponding to your domain.
+
+```swift
+import ViafouraSDK
+
+func application(_ application: UIApplication, 
+                                didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]?) -> Bool { 
+    ViafouraSDK.initialize(siteUUID: "SITE_UUID", siteDomain: "SITE_DOMAIN")
+    return true
+}
+```
+
