@@ -1897,6 +1897,16 @@ extension ViafouraSDK.VFDeleteReviewError {
 extension ViafouraSDK.ChatReplyViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TopCommentsDisclaimerViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
+  @_Concurrency.MainActor(unsafe) public static func new(settings: ViafouraSDK.VFSettings) -> ViafouraSDK.TopCommentsDisclaimerViewController
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 public enum VFUpdateReviewsContainerSettingsError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFUpdateReviewsContainerSettingsError, b: ViafouraSDK.VFUpdateReviewsContainerSettingsError) -> Swift.Bool

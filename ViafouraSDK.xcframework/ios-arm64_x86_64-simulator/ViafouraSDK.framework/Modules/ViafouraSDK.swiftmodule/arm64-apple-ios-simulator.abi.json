@@ -20973,6 +20973,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "VFStoryContainerError",
         "printedName": "VFStoryContainerError",
@@ -48762,6 +48772,417 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TopCommentsDisclaimerViewController",
+        "printedName": "TopCommentsDisclaimerViewController",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "storyboardName",
+            "printedName": "storyboardName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvpZ",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvpZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "Custom",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvgZ",
+                "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvgZ",
+                "moduleName": "ViafouraSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvsZ",
+                "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvsZ",
+                "moduleName": "ViafouraSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvMZ",
+                "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC14storyboardNameSSvMZ",
+                "moduleName": "ViafouraSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "new",
+            "printedName": "new(settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TopCommentsDisclaimerViewController",
+                "printedName": "ViafouraSDK.TopCommentsDisclaimerViewController",
+                "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFSettings",
+                "printedName": "ViafouraSDK.VFSettings",
+                "usr": "s:11ViafouraSDK10VFSettingsV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35TopCommentsDisclaimerViewControllerC3new8settingsAcA10VFSettingsV_tFZ",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC3new8settingsAcA10VFSettingsV_tFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController(im)viewDidLoad",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC11viewDidLoadyyF",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTheme",
+            "printedName": "setTheme(theme:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFTheme",
+                "printedName": "ViafouraSDK.VFTheme",
+                "usr": "s:11ViafouraSDK7VFThemeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35TopCommentsDisclaimerViewControllerC8setTheme5themeyAA7VFThemeO_tF",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC8setTheme5themeyAA7VFThemeO_tF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidAppear",
+            "printedName": "viewDidAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController(im)viewDidAppear:",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC13viewDidAppearyySbF",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "objc_name": "viewDidAppear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TopCommentsDisclaimerViewController",
+                "printedName": "ViafouraSDK.TopCommentsDisclaimerViewController",
+                "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController(im)initWithNibName:bundle:",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.TopCommentsDisclaimerViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TopCommentsDisclaimerViewController",
+                    "printedName": "ViafouraSDK.TopCommentsDisclaimerViewController",
+                    "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController(im)initWithCoder:",
+            "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@ViafouraSDK@objc(cs)TopCommentsDisclaimerViewController",
+        "mangledName": "$s11ViafouraSDK35TopCommentsDisclaimerViewControllerC",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@ViafouraSDK@objc(cs)VFUIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ViafouraSDK.VFUIViewController",
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -64534,6 +64955,13 @@
       "value": "\"TopCommentsFiltering\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 7873,
+      "length": 23,
+      "value": "\"TopCommentsDisclaimer\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Settings\/Switch\/SettingSwitchCell.swift",
       "kind": "FloatLiteral",
       "offset": 185,
@@ -68197,21 +68625,21 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/VFPreviewCommentsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5057,
+      "offset": 5111,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/VFPreviewCommentsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5124,
+      "offset": 5178,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/VFPreviewCommentsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5144,
+      "offset": 5198,
       "length": 1,
       "value": "2"
     },
@@ -69357,6 +69785,13 @@
       "value": "\"ChatReply\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/TopCommentsDisclaimer\/TopCommentsDisclaimerViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 242,
+      "length": 23,
+      "value": "\"TopCommentsDisclaimer\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Images\/ImageKeys.swift",
       "kind": "StringLiteral",
       "offset": 158,
@@ -69611,7 +70046,14 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Images\/ImageKeys.swift",
       "kind": "StringLiteral",
-      "offset": 1791,
+      "offset": 1778,
+      "length": 11,
+      "value": "\"icon_help\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Images\/ImageKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 1829,
       "length": 25,
       "value": "\"icon_dislike_unselected\""
     },
@@ -70964,180 +71406,187 @@
       "kind": "StringLiteral",
       "offset": 6806,
       "length": 11,
+      "value": "\"icon_help\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 6944,
+      "length": 11,
       "value": "\"icon_like\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 6965,
+      "offset": 7103,
       "length": 22,
       "value": "\"icon_like_unselected\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7114,
+      "offset": 7252,
       "length": 11,
       "value": "\"icon_mute\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7262,
+      "offset": 7400,
       "length": 16,
       "value": "\"icon_newspaper\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7409,
+      "offset": 7547,
       "length": 13,
       "value": "\"icon_person\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7566,
+      "offset": 7704,
       "length": 20,
       "value": "\"icon_person_filled\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7717,
+      "offset": 7855,
       "length": 13,
       "value": "\"icon_pinned\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7864,
+      "offset": 8002,
       "length": 15,
       "value": "\"icon_pinned_2\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8006,
+      "offset": 8144,
       "length": 11,
       "value": "\"icon_plus\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8144,
+      "offset": 8282,
       "length": 11,
       "value": "\"icon_poll\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8284,
+      "offset": 8422,
       "length": 12,
       "value": "\"icon_reply\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8446,
+      "offset": 8584,
       "length": 23,
       "value": "\"icon_reply_unselected\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8596,
+      "offset": 8734,
       "length": 11,
       "value": "\"icon_send\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8736,
+      "offset": 8874,
       "length": 12,
       "value": "\"icon_share\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8875,
+      "offset": 9013,
       "length": 11,
       "value": "\"icon_sort\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9013,
+      "offset": 9151,
       "length": 11,
       "value": "\"icon_spam\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9151,
+      "offset": 9289,
       "length": 11,
       "value": "\"icon_star\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9302,
+      "offset": 9440,
       "length": 18,
       "value": "\"icon_star_border\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9449,
+      "offset": 9587,
       "length": 12,
       "value": "\"icon_topic\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9596,
+      "offset": 9734,
       "length": 15,
       "value": "\"icon_trending\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9757,
+      "offset": 9895,
       "length": 21,
       "value": "\"icon_trending_empty\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 9909,
+      "offset": 10047,
       "length": 13,
       "value": "\"icon_trophy\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 10055,
+      "offset": 10193,
       "length": 14,
       "value": "\"icon_twitter\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 10200,
+      "offset": 10338,
       "length": 13,
       "value": "\"icon_typing\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 10344,
+      "offset": 10482,
       "length": 13,
       "value": "\"icon_unmute\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/ViafouraSDK-ebuqqiuapoqcguekuxwmixfcthob\/Build\/Intermediates.noindex\/ArchiveIntermediates\/ViafouraSDK\/IntermediateBuildFilesPath\/ViafouraSDK.build\/Release-iphonesimulator\/ViafouraSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 10492,
+      "offset": 10630,
       "length": 15,
       "value": "\"viafoura_logo\""
     }
