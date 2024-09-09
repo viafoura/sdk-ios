@@ -354,6 +354,15 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK35TopCommentsDisclaimerViewController")
+@interface TopCommentsDisclaimerViewController : VFUIViewController
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 
 
@@ -418,7 +427,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
-
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -427,6 +435,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 @class UICollectionViewLayout;
 
@@ -1223,6 +1232,15 @@ SWIFT_CLASS("_TtC11ViafouraSDK24SingleChatViewController")
 @end
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK35TopCommentsDisclaimerViewController")
+@interface TopCommentsDisclaimerViewController : VFUIViewController
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 
 
@@ -1287,7 +1305,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
-
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -1296,6 +1313,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 @class UICollectionViewLayout;
 
