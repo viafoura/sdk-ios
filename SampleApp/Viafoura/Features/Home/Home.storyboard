@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -149,11 +149,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kh3-yT-UiP">
+                                <rect key="frame" x="20" y="750" width="48" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5ao-Gv-ef2">
+                                        <rect key="frame" x="4" y="6.3333333333333321" width="40" height="35.666666666666671"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.1176470588" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5ao-Gv-ef2" secondAttribute="bottom" constant="4" id="Fhj-QU-o1E"/>
+                                    <constraint firstItem="5ao-Gv-ef2" firstAttribute="leading" secondItem="Kh3-yT-UiP" secondAttribute="leading" constant="4" id="GzF-U9-NMK"/>
+                                    <constraint firstAttribute="height" constant="48" id="Pui-Fn-oPc"/>
+                                    <constraint firstItem="5ao-Gv-ef2" firstAttribute="top" secondItem="Kh3-yT-UiP" secondAttribute="top" constant="4" id="iaM-SJ-H4k"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ao-Gv-ef2" secondAttribute="trailing" constant="4" id="k4O-2o-SZA"/>
+                                    <constraint firstAttribute="width" constant="48" id="pjG-eK-vzi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mlF-Dn-4yX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Kh3-yT-UiP" firstAttribute="leading" secondItem="mlF-Dn-4yX" secondAttribute="leading" constant="20" id="YUe-Fz-eDa"/>
                             <constraint firstItem="JaG-yV-pxw" firstAttribute="leading" secondItem="mlF-Dn-4yX" secondAttribute="leading" id="ZZg-w2-uRD"/>
+                            <constraint firstItem="mlF-Dn-4yX" firstAttribute="bottom" secondItem="Kh3-yT-UiP" secondAttribute="bottom" constant="20" id="hl9-oX-9qg"/>
                             <constraint firstItem="mlF-Dn-4yX" firstAttribute="bottom" secondItem="JaG-yV-pxw" secondAttribute="bottom" id="k1g-fE-9Ri"/>
                             <constraint firstItem="mlF-Dn-4yX" firstAttribute="trailing" secondItem="JaG-yV-pxw" secondAttribute="trailing" id="tP0-Dg-OsT"/>
                             <constraint firstItem="JaG-yV-pxw" firstAttribute="top" secondItem="mlF-Dn-4yX" secondAttribute="top" id="wmA-pi-bnH"/>
@@ -167,6 +193,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="customAddView" destination="Kh3-yT-UiP" id="gel-8Z-ai4"/>
                         <outlet property="tableView" destination="JaG-yV-pxw" id="t71-lo-IXK"/>
                     </connections>
                 </viewController>
@@ -188,6 +215,7 @@
     <color key="tintColor" red="0.92549019610000005" green="0.1176470588" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

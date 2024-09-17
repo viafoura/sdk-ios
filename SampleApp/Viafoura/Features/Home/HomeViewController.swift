@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     static var storyboardName = "Home"
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var customAddView: UIView!
     
     let viewModel = HomeViewModel()
         
@@ -84,10 +85,16 @@ class HomeViewController: UIViewController, StoryboardCreateable {
         tableView.delegate = self
         tableView.dataSource = self
         
+        customAddView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showCustomContainerAlert)))
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.bellChanged(notification:)), name: Notification.Name(SettingsKeys.showNotificationBellInTopBar), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.darkModeChanged(notification:)), name: Notification.Name(SettingsKeys.darkMode), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.customContainerIDsChanged(notification:)), name: Notification.Name(SettingsKeys.customContainerIDs), object: nil)
     }
     
+    @objc func customContainerIDsChanged(notification: Notification) {
+        customAddView.isHidden = UserDefaults.standard.bool(forKey: SettingsKeys.customContainerIDs) == false
+    }
     
     @objc func bellChanged(notification: Notification) {
         getAuthState()
@@ -129,6 +136,33 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     func logoutTapped(){
         viewModel.logout()
         getAuthState()
+    }
+    
+    @objc
+    func showCustomContainerAlert(){
+        let alert = UIAlertController(title: "Custo container ID", message: "Enter a container ID for the article", preferredStyle: .alert)
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "ID"
+        }
+
+        alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { [weak alert, self] (_) in
+            let textField = alert?.textFields![0]
+            guard let value = textField?.text, value.isEmpty == false else {
+                return
+            }
+            
+            guard let articleVC = ArticleViewController.new() else{
+                return
+            }
+            
+            articleVC.articleViewModel = ArticleViewModel(story: Story.randomWithContainerId(containerId: value))
+            articleVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(articleVC, animated: true)
+        }))
+        
+        alert.addAction(.init(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
