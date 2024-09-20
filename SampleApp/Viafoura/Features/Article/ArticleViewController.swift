@@ -78,7 +78,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         webView.configuration.allowsInlineMediaPlayback = true
 
         let contentController = webView.configuration.userContentController
-        contentController.add(self, name: "messageHandler")
+        contentController.add(MessageHandlerLeakAvoider(delegate: self), name: "messageHandler")
         
         webView.scrollView.isScrollEnabled = false
         webView.allowsLinkPreview = false
@@ -462,5 +462,19 @@ extension ArticleViewController: WKScriptMessageHandler{
             let originY = scrollView.convert(CGPoint.zero, from: commentsContainerView).y
             scrollView.setContentOffset(CGPoint(x: 0, y: originY), animated: true)
         }
+    }
+}
+
+class MessageHandlerLeakAvoider: NSObject, WKScriptMessageHandler {
+    weak var delegate: WKScriptMessageHandler?
+    
+    init(delegate: WKScriptMessageHandler) {
+        self.delegate = delegate
+        super.init()
+    }
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+            self.delegate?.userContentController(
+                userContentController, didReceive: message)
     }
 }
