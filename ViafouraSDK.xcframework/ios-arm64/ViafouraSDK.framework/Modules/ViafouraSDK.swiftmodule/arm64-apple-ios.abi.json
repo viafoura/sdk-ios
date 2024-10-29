@@ -18848,13 +18848,6 @@
       },
       {
         "kind": "Import",
-        "name": "CoreTelephony",
-        "printedName": "CoreTelephony",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK"
-      },
-      {
-        "kind": "Import",
         "name": "SystemConfiguration",
         "printedName": "SystemConfiguration",
         "declKind": "Import",
@@ -28282,7 +28275,9 @@
             "usr": "s:11ViafouraSDK12UserResponseV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s11ViafouraSDK12UserResponseV4fromACs7Decoder_p_tKcfc",
             "moduleName": "ViafouraSDK",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           }
