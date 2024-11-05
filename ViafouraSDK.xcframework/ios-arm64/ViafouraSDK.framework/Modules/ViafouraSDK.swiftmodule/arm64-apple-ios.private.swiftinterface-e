@@ -103,7 +103,7 @@ extension ViafouraSDK.VFSingleStoryError {
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>)
+  public func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>)
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
@@ -134,7 +134,7 @@ extension ViafouraSDK.VFDeleteStoryError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func getUserLoginStatus(completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>) -> ()))
+  public func getUserLoginStatus(completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>) -> Swift.Void))
   public func getUserLoginStatus() async -> (Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>)
 }
 public enum VFLoginStatus {
@@ -142,7 +142,7 @@ public enum VFLoginStatus {
   case loggedIn(userUUID: Foundation.UUID)
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnflagCommentError>)
+  public func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnflagCommentError>)
 }
 public enum VFUnflagCommentError : Foundation.LocalizedError {
   case unknown
@@ -193,7 +193,7 @@ public struct ServerErrorData : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFFlagCommentError>)
+  public func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFFlagCommentError>)
 }
 public enum VFFlagCommentError : Foundation.LocalizedError {
   case unknown
@@ -222,12 +222,12 @@ extension ViafouraSDK.VFLikeReviewError {
   }
 }
 public protocol VFLiveCommentsServiceProtocol {
-  func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnflagCommentError>)
-  func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFFlagCommentError>)
-  func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFLikeCommentError>)
-  func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDislikeCommentError>)
-  func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String]) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>)
-  func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>)
+  func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnflagCommentError>)
+  func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFFlagCommentError>)
+  func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFLikeCommentError>)
+  func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDislikeCommentError>)
+  func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>)
+  func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>)
 }
 @_hasMissingDesignatedInitializers public class VFLiveCommentsService : ViafouraSDK.VFLiveCommentsServiceProtocol {
   @objc deinit
@@ -380,7 +380,7 @@ public struct EventTestInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDislikeCommentError>)
+  public func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDislikeCommentError>)
 }
 public enum VFDislikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -475,7 +475,7 @@ extension ViafouraSDK.VFChatModerationListError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> ()))
+  public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> Swift.Void))
 }
 public enum VFLoginError : Foundation.LocalizedError {
   case banned(banData: ViafouraSDK.ServerErrorData)
@@ -497,7 +497,7 @@ extension ViafouraSDK.VFAuthenticationService {
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFLikeCommentError>)
+  public func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFLikeCommentError>)
 }
 public enum VFLikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -923,7 +923,7 @@ extension ViafouraSDK.VFEditorPickCommentError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSignUpError>) -> ()))
+  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSignUpError>) -> Swift.Void))
 }
 public enum VFSignUpError : Foundation.LocalizedError {
   case unknown
@@ -939,7 +939,7 @@ extension ViafouraSDK.VFSignUpError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func socialLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSocialLoginError>) -> ()))
+  public func socialLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSocialLoginError>) -> Swift.Void))
 }
 public enum VFSocialLoginError : Foundation.LocalizedError {
   case unknown
@@ -1032,7 +1032,7 @@ extension ViafouraSDK.VFFlagChatError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFOpenIdLoginError>) -> ()))
+  public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFOpenIdLoginError>) -> Swift.Void))
 }
 public enum VFOpenIdLoginError : Foundation.LocalizedError {
   case unknown
@@ -1077,7 +1077,7 @@ extension ViafouraSDK.VFDeleteChatError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String]) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>)
+  public func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>)
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
@@ -1253,7 +1253,7 @@ extension ViafouraSDK.VFEditCommentError {
   }
 }
 extension ViafouraSDK.VFLiveReviewsService {
-  public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFReviewCountError>) -> ()))
+  public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFReviewCountError>) -> Swift.Void))
   public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, ViafouraSDK.VFReviewCountError>)
 }
 public enum VFReviewCountError : Foundation.LocalizedError {
@@ -1305,7 +1305,7 @@ extension ViafouraSDK.VFCreateReviewMediaError {
   @objc deinit
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func loginRadiusLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginRadiusLoginError>) -> ()))
+  public func loginRadiusLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginRadiusLoginError>) -> Swift.Void))
 }
 public enum VFLoginRadiusLoginError : Foundation.LocalizedError {
   case unknown
@@ -1475,7 +1475,7 @@ extension ViafouraSDK.VFRemovePollError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsService {
-  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> ()))
+  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> Swift.Void))
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async -> (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>)
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
@@ -1688,7 +1688,7 @@ extension ViafouraSDK.VFCommentModerationListError {
   @objc deinit
 }
 extension ViafouraSDK.AnalyticsService {
-  public func logTyping(contentContainerUUID: Foundation.UUID, threadUUID: Foundation.UUID, contentUUID: Foundation.UUID)
+  public func logTyping(contentContainerUUID: Foundation.UUID, threadUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?)
 }
 public enum VFTrendingError : Foundation.LocalizedError {
   case unknown
@@ -1895,7 +1895,7 @@ extension ViafouraSDK.VFUpdateReviewsContainerSettingsError {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func cookieLogin(token: Swift.String, type: Swift.String = "viafouraDefinedCookie", completion: @escaping ((Swift.Result<ViafouraSDK.VFCookieLoginData, ViafouraSDK.VFCookieLoginError>) -> ()))
+  public func cookieLogin(token: Swift.String, type: Swift.String = "viafouraDefinedCookie", completion: @escaping ((Swift.Result<ViafouraSDK.VFCookieLoginData, ViafouraSDK.VFCookieLoginError>) -> Swift.Void))
 }
 public struct VFCookieLoginData {
 }
@@ -2175,7 +2175,7 @@ public struct VFSettings : Swift.Equatable {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFNewCommentViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFNewCommentViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFNewCommentViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
@@ -2214,7 +2214,7 @@ public enum WidgetType : Swift.String, Swift.Encodable {
   }
 }
 extension ViafouraSDK.VFAuthenticationService {
-  public func resetPassword(email: Swift.String, completion: @escaping ((Swift.Result<Swift.Bool, ViafouraSDK.VFPasswordResetError>) -> ()))
+  public func resetPassword(email: Swift.String, completion: @escaping ((Swift.Result<Swift.Bool, ViafouraSDK.VFPasswordResetError>) -> Swift.Void))
 }
 public enum VFPasswordResetError : Foundation.LocalizedError {
   case unknown
