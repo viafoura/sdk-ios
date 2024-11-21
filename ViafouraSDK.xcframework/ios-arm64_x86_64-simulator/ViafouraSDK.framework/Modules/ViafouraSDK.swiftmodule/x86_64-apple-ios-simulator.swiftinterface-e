@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target x86_64-apple-ios15.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ViafouraSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -18,7 +19,7 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFModeratorView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFModeratorView : UIKit.UIView {
   @objc deinit
 }
 public struct CommentError : Swift.Decodable {
@@ -38,9 +39,7 @@ extension ViafouraSDK.VFDislikeChatError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func makeTopComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFTopCommentError>)
-  #endif
 }
 public enum VFTopCommentError : Foundation.LocalizedError {
   case unknown
@@ -55,7 +54,7 @@ extension ViafouraSDK.VFTopCommentError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEditorPicksView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEditorPicksView : UIKit.UIView {
   @objc deinit
 }
 public struct VFColors : Swift.Equatable {
@@ -103,16 +102,14 @@ extension ViafouraSDK.VFSingleStoryError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAwaitingModerationView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAwaitingModerationView : UIKit.UIView {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEmptyModerationView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEmptyModerationView : UIKit.UIView {
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>)
-  #endif
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
@@ -124,9 +121,9 @@ extension ViafouraSDK.VFCreateCommentReplyError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFTextField : UIKit.UITextField {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFTextField : UIKit.UITextField {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum VFDeleteStoryError : Foundation.LocalizedError {
@@ -142,20 +139,16 @@ extension ViafouraSDK.VFDeleteStoryError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func getUserLoginStatus(completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   public func getUserLoginStatus() async -> (Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>)
-  #endif
 }
 public enum VFLoginStatus {
   case notLoggedIn
   case loggedIn(userUUID: Foundation.UUID)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnflagCommentError>)
-  #endif
 }
 public enum VFUnflagCommentError : Foundation.LocalizedError {
   case unknown
@@ -206,9 +199,7 @@ public struct ServerErrorData : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFFlagCommentError>)
-  #endif
 }
 public enum VFFlagCommentError : Foundation.LocalizedError {
   case unknown
@@ -237,99 +228,39 @@ extension ViafouraSDK.VFLikeReviewError {
   }
 }
 public protocol VFLiveCommentsService {
-  #if compiler(>=5.3) && $AsyncAwait
   func spamComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFSpamCommentError>)
-  #endif
   func getComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<ViafouraSDK.CommentResponse, ViafouraSDK.VFCommentError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   func getComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async throws -> (Swift.Result<ViafouraSDK.CommentResponse, ViafouraSDK.VFCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func makeTopComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFTopCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func enableComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFEnableCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func disableComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDisableCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func getUserComments(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID, limit: Swift.Int) async -> (Swift.Result<[ViafouraSDK.CommentResponse], ViafouraSDK.VFUserCommentsError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func editorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFEditorPickCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func createMedia(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, imageData: Foundation.Data) async -> (Swift.Result<ViafouraSDK.CreateCommentMediaResponse, ViafouraSDK.VFCreateCommentMediaError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func removeTopComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFRemoveTopCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func removeEditorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFRemoveEditorPickCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnpinCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func unspamComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnspamCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func pinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFPinCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func undislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUndislikeCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func unflagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnflagCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func flagComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, flagReason: Swift.String?, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFFlagCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFLikeCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDislikeCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func trendingComments(sectionUUID: Foundation.UUID, limit: Swift.Int, contentContainerWindowDays: Swift.Int?, contentContainerWindowHours: Swift.Int, sortedBy: ViafouraSDK.VFTrendingSortType) async -> (Swift.Result<[ViafouraSDK.TrendingResultResponse], ViafouraSDK.VFTrendingError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func updateCommentContainerSettings(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, isHidden: Swift.Bool, expiryTime: Swift.Int64?, isContentPremoderationEnabled: Swift.Bool) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateCommentsContainerSettingsError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func getCommentContainer(sectionUUID: Foundation.UUID, containerId: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<ViafouraSDK.CommentContainerByIdResponse, ViafouraSDK.VFCommentContainerError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func getCommentContainer(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID) async throws -> (Swift.Result<ViafouraSDK.CommentContainerByIdResponse, ViafouraSDK.VFCommentContainerError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func getCommentsProfile(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID) async -> (Swift.Result<ViafouraSDK.CommentsProfileResponse, ViafouraSDK.VFCommentsProfileError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func deleteComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDeleteCommentError>)
-  #endif
   func getCommentsReplies(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String?, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<[ViafouraSDK.CommentResponse], ViafouraSDK.VFCommentRepliesError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   func getCommentsReplies(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String?, syndicationKey: Swift.String?) async throws -> (Swift.Result<[ViafouraSDK.CommentResponse], ViafouraSDK.VFCommentRepliesError>)
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   func unlikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnlikeCommentError>)
-  #endif
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String?) async throws -> (Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>)
-  #endif
 }
 @_hasMissingDesignatedInitializers public class VFLiveCommentsServiceImplementation : ViafouraSDK.VFLiveCommentsService {
   @objc deinit
@@ -424,7 +355,7 @@ public enum VFProfilePresentationType {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEmptyChatsView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEmptyChatsView : UIKit.UIView {
   @objc deinit
 }
 public enum VFNewCommentActionType : Swift.Equatable {
@@ -488,9 +419,7 @@ public struct CommentResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func dislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDislikeCommentError>)
-  #endif
 }
 public enum VFDislikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -509,7 +438,7 @@ extension ViafouraSDK.VFDislikeCommentError {
   @objc deinit
   required public init(from decoder: any Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers public class AnalyticsService {
+@_hasMissingDesignatedInitializers public class AnalyticsServiceImplementation {
   public func addWidget(_ widgetType: ViafouraSDK.WidgetType, uniqueUUID: Foundation.UUID)
   public func removeWidget(_ widgetType: ViafouraSDK.WidgetType, uniqueUUID: Foundation.UUID)
   public func logLoadMoreClick(tab: Swift.String, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata)
@@ -584,7 +513,7 @@ extension ViafouraSDK.VFChatModerationListError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> Swift.Void))
 }
 public enum VFLoginError : Foundation.LocalizedError {
@@ -596,20 +525,18 @@ extension ViafouraSDK.VFLoginError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func logout()
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isEnabled: Swift.Bool {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFButton : UIKit.UIButton {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var isEnabled: Swift.Bool {
     @objc get
     @objc set
   }
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func likeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFLikeCommentError>)
-  #endif
 }
 public enum VFLikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -625,9 +552,7 @@ extension ViafouraSDK.VFLikeCommentError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func enableComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFEnableCommentError>)
-  #endif
 }
 public enum VFEnableCommentError : Foundation.LocalizedError {
   case unknown
@@ -642,7 +567,14 @@ extension ViafouraSDK.VFEnableCommentError {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class VFLiveReviewsService {
+@_hasMissingDesignatedInitializers public class KeychainServiceImplementation {
+  open subscript(key: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class VFLiveReviewsServiceImplementation {
   @objc deinit
 }
 public enum EventAttemptedAction : Swift.String, Swift.Encodable {
@@ -689,9 +621,7 @@ public enum CommentNodeType {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func updateCommentContainerSettings(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, isHidden: Swift.Bool, expiryTime: Swift.Int64?, isContentPremoderationEnabled: Swift.Bool) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateCommentsContainerSettingsError>)
-  #endif
 }
 public enum VFUpdateCommentsContainerSettingsError : Foundation.LocalizedError {
   case unknown
@@ -706,7 +636,7 @@ extension ViafouraSDK.VFUpdateCommentsContainerSettingsError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAuthorView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAuthorView : UIKit.UIView {
   @objc deinit
 }
 public enum VFDisableChatError : Foundation.LocalizedError {
@@ -735,49 +665,49 @@ extension ViafouraSDK.VFUnspamReviewError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFVerticalTrendingViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFVerticalTrendingViewController
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFVerticalTrendingViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFVerticalTrendingViewController
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension ViafouraSDK.VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
 }
 extension ViafouraSDK.VFVerticalTrendingViewController : ViafouraSDK.VFLocalAdDelegate {
-  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
-  @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
+  @_Concurrency.MainActor @preconcurrency public func getAdInterval() -> Swift.Int
 }
 extension ViafouraSDK.VFVerticalTrendingViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
 }
 extension ViafouraSDK.VFVerticalTrendingViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFRatingsSummaryView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFRatingsSummaryView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var backgroundColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
   @objc deinit
 }
 extension ViafouraSDK.VFRatingsSummaryView : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
 }
 public enum VFUnflagChatError : Foundation.LocalizedError {
   case unknown
@@ -805,13 +735,11 @@ extension ViafouraSDK.VFUndislikeReviewError {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSegmentedControl : UIKit.UISegmentedControl {
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFSegmentedControl : UIKit.UISegmentedControl {
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func getCommentContainer(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID) async throws -> (Swift.Result<ViafouraSDK.CommentContainerByIdResponse, ViafouraSDK.VFCommentContainerError>)
-  #endif
 }
 public enum VFLikeChatError : Foundation.LocalizedError {
   case unknown
@@ -840,9 +768,7 @@ extension ViafouraSDK.VFUndislikeStoryError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func removeTopComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFRemoveTopCommentError>)
-  #endif
 }
 public enum VFRemoveTopCommentError : Foundation.LocalizedError {
   case unknown
@@ -870,33 +796,33 @@ extension ViafouraSDK.VFVotePollError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFeaturedView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFFeaturedView : UIKit.UIView {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFCarouselTrendingViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFCarouselTrendingViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFCarouselTrendingViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String?, title: Swift.String, limit: Swift.Int, daysPublished: Swift.Int?, trendWindow: Swift.Int, sort: ViafouraSDK.VFTrendingSortType, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFCarouselTrendingViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFCarouselTrendingViewController : UIKit.UICollectionViewDataSource {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
 }
 extension ViafouraSDK.VFCarouselTrendingViewController : UIKit.UICollectionViewDelegateFlowLayout {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, insetForSectionAt section: Swift.Int) -> UIKit.UIEdgeInsets
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, insetForSectionAt section: Swift.Int) -> UIKit.UIEdgeInsets
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
 }
 extension ViafouraSDK.VFCarouselTrendingViewController : ViafouraSDK.VFLocalAdDelegate {
-  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
-  @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
+  @_Concurrency.MainActor @preconcurrency public func getAdInterval() -> Swift.Int
 }
 public enum VFReplyStoryError : Foundation.LocalizedError {
   case unknown
@@ -912,9 +838,7 @@ extension ViafouraSDK.VFReplyStoryError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func getCommentsProfile(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID) async -> (Swift.Result<ViafouraSDK.CommentsProfileResponse, ViafouraSDK.VFCommentsProfileError>)
-  #endif
 }
 public enum VFCommentsProfileError : Foundation.LocalizedError {
   case unknown
@@ -929,7 +853,7 @@ extension ViafouraSDK.VFCommentsProfileError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEnablePushView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEnablePushView : UIKit.UIView {
   @objc deinit
 }
 public enum VFPollContainerError : Foundation.LocalizedError {
@@ -946,12 +870,12 @@ extension ViafouraSDK.VFPollContainerError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFRatingsPromptView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFRatingsPromptView : UIKit.UIView {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFSkeletonView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFSkeletonView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ImageService {
@@ -970,9 +894,9 @@ extension ViafouraSDK.VFStoryContainerError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFUIViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFUIViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum VFFlagReviewError : Foundation.LocalizedError {
@@ -1014,7 +938,7 @@ extension ViafouraSDK.VFUndislikeChatError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFContentEditedView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFContentEditedView : UIKit.UIView {
   @objc deinit
 }
 public struct CreateCommentMediaResponse : Swift.Decodable {
@@ -1033,7 +957,19 @@ extension ViafouraSDK.VFDislikeReviewError {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class VFAuthenticationService {
+public protocol VFAuthenticationService {
+  func cookieLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFCookieLoginData, ViafouraSDK.VFCookieLoginError>) -> Swift.Void))
+  func logout()
+  func login(email: Swift.String, password: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginError>) -> Swift.Void))
+  func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFOpenIdLoginError>) -> Swift.Void))
+  func socialLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSocialLoginError>) -> Swift.Void))
+  func loginRadiusLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginRadiusLoginError>) -> Swift.Void))
+  func resetPassword(email: Swift.String, completion: @escaping ((Swift.Result<Swift.Bool, ViafouraSDK.VFPasswordResetError>) -> Swift.Void))
+  func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String?, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSignUpError>) -> Swift.Void))
+  func getUserLoginStatus(completion: @escaping ((Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>) -> Swift.Void))
+  func getUserLoginStatus() async -> (Swift.Result<ViafouraSDK.VFLoginStatus, Swift.Never>)
+}
+@_hasMissingDesignatedInitializers public class VFAuthenticationServiceImplementation : ViafouraSDK.VFAuthenticationService {
   @objc deinit
 }
 public enum VFDislikeStoryError : Foundation.LocalizedError {
@@ -1050,9 +986,7 @@ extension ViafouraSDK.VFDislikeStoryError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func editorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFEditorPickCommentError>)
-  #endif
 }
 public enum VFEditorPickCommentError : Foundation.LocalizedError {
   case unknown
@@ -1067,7 +1001,7 @@ extension ViafouraSDK.VFEditorPickCommentError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSignUpError>) -> Swift.Void))
 }
 public enum VFSignUpError : Foundation.LocalizedError {
@@ -1083,7 +1017,7 @@ extension ViafouraSDK.VFSignUpError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func socialLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFSocialLoginError>) -> Swift.Void))
 }
 public enum VFSocialLoginError : Foundation.LocalizedError {
@@ -1096,9 +1030,7 @@ extension ViafouraSDK.VFSocialLoginError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func getCommentContainer(sectionUUID: Foundation.UUID, containerId: Swift.String, syndicationKey: Swift.String? = nil) async -> (Swift.Result<ViafouraSDK.CommentContainerByIdResponse, ViafouraSDK.VFCommentContainerError>)
-  #endif
 }
 public enum VFCommentContainerError : Foundation.LocalizedError {
   case unknown
@@ -1114,9 +1046,7 @@ extension ViafouraSDK.VFCommentContainerError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func unlikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnlikeCommentError>)
-  #endif
 }
 public enum VFUnlikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -1170,7 +1100,7 @@ extension ViafouraSDK.VFMuteUserError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSpamView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFSpamView : UIKit.UIView {
   @objc deinit
 }
 public enum VFFlagChatError : Foundation.LocalizedError {
@@ -1186,7 +1116,7 @@ extension ViafouraSDK.VFFlagChatError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func openIdLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFOpenIdLoginError>) -> Swift.Void))
 }
 public enum VFOpenIdLoginError : Foundation.LocalizedError {
@@ -1232,9 +1162,7 @@ extension ViafouraSDK.VFDeleteChatError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], syndicationKey: Swift.String?) async -> (Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>)
-  #endif
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
   case unknown
@@ -1254,7 +1182,7 @@ extension ViafouraSDK.Constants {
   }
 }
 extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
 }
 public struct VFArticleMetadata {
   public let url: Foundation.URL
@@ -1264,21 +1192,20 @@ public struct VFArticleMetadata {
   public init(url: Foundation.URL, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Foundation.URL)
   public init(url: Swift.String, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Swift.String)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAdView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAdView : UIKit.UIView {
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class ViafouraSDK {
+@_inheritsConvenienceInitializers @objc public class ViafouraSDK : ObjectiveC.NSObject {
   public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
-  public static func auth() -> ViafouraSDK.VFAuthenticationService
+  public static func auth() -> any ViafouraSDK.VFAuthenticationService
   public static func comments() -> any ViafouraSDK.VFLiveCommentsService
+  @objc override dynamic public init()
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func getUserComments(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID, limit: Swift.Int) async -> (Swift.Result<[ViafouraSDK.CommentResponse], ViafouraSDK.VFUserCommentsError>)
-  #endif
 }
 public enum VFUserCommentsError : Foundation.LocalizedError {
   case unknown
@@ -1359,9 +1286,7 @@ public enum VFSortType {
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   public func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String? = nil, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String? = nil, completion: @escaping ((Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   public func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String? = nil, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String? = nil) async throws -> (Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>)
-  #endif
 }
 public enum VFCommentListError : Foundation.LocalizedError {
   case unknown
@@ -1392,24 +1317,22 @@ extension ViafouraSDK.VFUpdateUserError {
 public struct VFEventEngageContainerTime : Swift.Encodable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPollViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFPollViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFPollViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFPollViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFPollViewController : UIKit.UITextFieldDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>)
-  #endif
 }
 public enum VFEditCommentError : Foundation.LocalizedError {
   case unknown
@@ -1425,11 +1348,9 @@ extension ViafouraSDK.VFEditCommentError {
     get
   }
 }
-extension ViafouraSDK.VFLiveReviewsService {
+extension ViafouraSDK.VFLiveReviewsServiceImplementation {
   public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFReviewCountError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async throws -> (Swift.Result<Swift.Int, ViafouraSDK.VFReviewCountError>)
-  #endif
 }
 public enum VFReviewCountError : Foundation.LocalizedError {
   case unknown
@@ -1473,16 +1394,16 @@ extension ViafouraSDK.VFCreateReviewMediaError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFCustomBadgeView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var text: Swift.String {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFCustomBadgeView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var text: Swift.String {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func sizeToFit()
-  @_Concurrency.MainActor(unsafe) public func setupView(isProfile: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func sizeToFit()
+  @_Concurrency.MainActor @preconcurrency public func setupView(isProfile: Swift.Bool)
   @objc deinit
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func loginRadiusLogin(token: Swift.String, provider: ViafouraSDK.VFSocialLoginProvider, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFLoginRadiusLoginError>) -> Swift.Void))
 }
 public enum VFLoginRadiusLoginError : Foundation.LocalizedError {
@@ -1529,35 +1450,35 @@ public enum VFCommentsContainerType {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFPreviewCommentsViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFPreviewCommentsViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
-  @_Concurrency.MainActor(unsafe) public func getContentScrollPosition(contentUUID: Foundation.UUID, completion: @escaping (CoreFoundation.CGFloat) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) public func setAuthorsIds(authors: [Swift.String])
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFPreviewCommentsViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFPreviewCommentsViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
+  @_Concurrency.MainActor @preconcurrency public func getContentScrollPosition(contentUUID: Foundation.UUID, completion: @escaping (CoreFoundation.CGFloat) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency public func setAuthorsIds(authors: [Swift.String])
+  @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension ViafouraSDK.VFPreviewCommentsViewController : ViafouraSDK.VFLocalAdDelegate {
-  @_Concurrency.MainActor(unsafe) public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
-  @_Concurrency.MainActor(unsafe) public func getAdInterval() -> Swift.Int
-  @_Concurrency.MainActor(unsafe) public func getFirstAdPosition() -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency public func generateAd(adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
+  @_Concurrency.MainActor @preconcurrency public func getAdInterval() -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency public func getFirstAdPosition() -> Swift.Int
 }
 extension ViafouraSDK.VFPreviewCommentsViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
 }
 extension ViafouraSDK.VFPreviewCommentsViewController : ViafouraSDK.VFLayoutDelegate {
-  @_Concurrency.MainActor(unsafe) public func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor @preconcurrency public func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFlagsView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFFlagsView : UIKit.UIView {
   @objc deinit
 }
 public enum VFTrendingSortType : Swift.String {
@@ -1568,16 +1489,16 @@ public enum VFTrendingSortType : Swift.String {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveBlogViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveBlogViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFLiveBlogViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveBlogViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum VFStorySelectionError : Foundation.LocalizedError {
@@ -1593,7 +1514,7 @@ extension ViafouraSDK.VFStorySelectionError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentsNotificationView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFNewCommentsNotificationView : UIKit.UIView {
   @objc deinit
 }
 public enum VFCreateReviewReplyError : Foundation.LocalizedError {
@@ -1610,13 +1531,11 @@ extension ViafouraSDK.VFCreateReviewReplyError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFAllCommentsView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAllCommentsView : UIKit.UIView {
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func undislikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUndislikeCommentError>)
-  #endif
 }
 public enum VFUndislikeCommentError : Foundation.LocalizedError {
   case unknown
@@ -1659,9 +1578,7 @@ extension ViafouraSDK.VFRemovePollError {
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async -> (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>)
-  #endif
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
   case unknown
@@ -1702,19 +1619,17 @@ extension ViafouraSDK.VFRemoveEditorPickReviewError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFFollowView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFFollowView : UIKit.UIView {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFLabel : UIKit.UILabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   public func getComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil, completion: @escaping ((Swift.Result<ViafouraSDK.CommentResponse, ViafouraSDK.VFCommentError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   public func getComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async throws -> (Swift.Result<ViafouraSDK.CommentResponse, ViafouraSDK.VFCommentError>)
-  #endif
 }
 public enum VFCommentError : Foundation.LocalizedError {
   case unknown
@@ -1729,10 +1644,10 @@ extension ViafouraSDK.VFCommentError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFContentRemovedView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFContentRemovedView : UIKit.UIView {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFLoadingView : UIKit.UIActivityIndicatorView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFLoadingView : UIKit.UIActivityIndicatorView {
   @objc deinit
 }
 public enum VFTopicsSubscribedError : Foundation.LocalizedError {
@@ -1748,10 +1663,10 @@ extension ViafouraSDK.VFTopicsSubscribedError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFTabView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFTabView : UIKit.UIView {
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFScrollDownView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFScrollDownView : UIKit.UIView {
   @objc deinit
 }
 public enum VFCustomizableView {
@@ -1821,9 +1736,7 @@ public enum VFCustomizableView {
   case chatEmptyView(emptyView: ViafouraSDK.VFEmptyChatsView)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnpinCommentError>)
-  #endif
 }
 public enum VFUnpinCommentError : Foundation.LocalizedError {
   case unknown
@@ -1840,9 +1753,7 @@ extension ViafouraSDK.VFUnpinCommentError {
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   public func getCommentsReplies(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String? = nil, syndicationKey: Swift.String? = nil, completion: @escaping ((Swift.Result<[ViafouraSDK.CommentResponse], ViafouraSDK.VFCommentRepliesError>) -> Swift.Void))
-  #if compiler(>=5.3) && $AsyncAwait
   public func getCommentsReplies(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String? = nil, syndicationKey: Swift.String? = nil) async throws -> (Swift.Result<[ViafouraSDK.CommentResponse], ViafouraSDK.VFCommentRepliesError>)
-  #endif
 }
 public enum VFCommentRepliesError : Foundation.LocalizedError {
   case unknown
@@ -1857,7 +1768,7 @@ extension ViafouraSDK.VFCommentRepliesError {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class VFNotificationsService {
+@_hasMissingDesignatedInitializers public class VFNotificationsServiceImplementation {
   @objc deinit
 }
 public enum VFReplyChatError : Foundation.LocalizedError {
@@ -1886,16 +1797,14 @@ extension ViafouraSDK.VFCommentModerationListError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFEmptyCommentsView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEmptyCommentsView : UIKit.UIView {
   @objc deinit
 }
-extension ViafouraSDK.AnalyticsService {
+extension ViafouraSDK.AnalyticsServiceImplementation {
   public func logTyping(contentContainerUUID: Foundation.UUID, threadUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func trendingComments(sectionUUID: Foundation.UUID, limit: Swift.Int, contentContainerWindowDays: Swift.Int?, contentContainerWindowHours: Swift.Int, sortedBy: ViafouraSDK.VFTrendingSortType) async -> (Swift.Result<[ViafouraSDK.TrendingResultResponse], ViafouraSDK.VFTrendingError>)
-  #endif
 }
 public enum VFTrendingError : Foundation.LocalizedError {
   case unknown
@@ -1911,9 +1820,7 @@ extension ViafouraSDK.VFTrendingError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func createMedia(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, imageData: Foundation.Data) async -> (Swift.Result<ViafouraSDK.CreateCommentMediaResponse, ViafouraSDK.VFCreateCommentMediaError>)
-  #endif
 }
 public enum VFCreateCommentMediaError : Foundation.LocalizedError {
   case unknown
@@ -1928,7 +1835,7 @@ extension ViafouraSDK.VFCreateCommentMediaError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFDisabledView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFDisabledView : UIKit.UIView {
   @objc deinit
 }
 public enum VFUpdateStoryContainerError : Foundation.LocalizedError {
@@ -1944,46 +1851,46 @@ extension ViafouraSDK.VFUpdateStoryContainerError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFSwitch : UIKit.UISwitch {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFSwitch : UIKit.UISwitch {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFNotificationBellView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var isElevationEnabled: Swift.Bool {
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFNotificationBellView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var isElevationEnabled: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var isBackgroundColorEnabled: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var isBackgroundColorEnabled: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var bounds: CoreFoundation.CGRect {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var bounds: CoreFoundation.CGRect {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public init(settings: ViafouraSDK.VFSettings, loginDelegate: any ViafouraSDK.VFLoginDelegate, onBellClicked: @escaping ((Foundation.UUID) -> Swift.Void))
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public init(settings: ViafouraSDK.VFSettings, loginDelegate: any ViafouraSDK.VFLoginDelegate, onBellClicked: @escaping ((Foundation.UUID) -> Swift.Void))
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFProfileViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFProfileViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFProfileViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFProfileViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFProfileViewController : UIKit.UIImagePickerControllerDelegate, UIKit.UINavigationControllerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [UIKit.UIImagePickerController.InfoKey : Any])
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [UIKit.UIImagePickerController.InfoKey : Any])
 }
 extension ViafouraSDK.VFProfileViewController : UIKit.UIScrollViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFSeparatorView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFSeparatorView : UIKit.UIView {
   @objc deinit
 }
 public enum VFChatContainerError : Foundation.LocalizedError {
@@ -2031,14 +1938,14 @@ extension ViafouraSDK.VFReviewContainerError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ViewChatReplyViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ViafouraSDK.ChatContent, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ViewChatReplyViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class ViewChatReplyViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(originalChatContent: ViafouraSDK.ChatContent, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ViewChatReplyViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public struct BanResponse : Swift.Decodable {
@@ -2070,27 +1977,27 @@ extension ViafouraSDK.VFDeleteReviewError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ChatReplyViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(originalChatContent: ViafouraSDK.ChatContent, containerSettings: ViafouraSDK.ChatContainerSettings?, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ChatReplyViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class ChatReplyViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(originalChatContent: ViafouraSDK.ChatContent, containerSettings: ViafouraSDK.ChatContainerSettings?, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ChatReplyViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.ChatReplyViewController : UIKit.UITextViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TopCommentsDisclaimerViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(settings: ViafouraSDK.VFSettings) -> ViafouraSDK.TopCommentsDisclaimerViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class TopCommentsDisclaimerViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(settings: ViafouraSDK.VFSettings) -> ViafouraSDK.TopCommentsDisclaimerViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum VFUpdateReviewsContainerSettingsError : Foundation.LocalizedError {
@@ -2106,8 +2013,8 @@ extension ViafouraSDK.VFUpdateReviewsContainerSettingsError {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
-  public func cookieLogin(token: Swift.String, type: Swift.String = "viafouraDefinedCookie", completion: @escaping ((Swift.Result<ViafouraSDK.VFCookieLoginData, ViafouraSDK.VFCookieLoginError>) -> Swift.Void))
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
+  public func cookieLogin(token: Swift.String, completion: @escaping ((Swift.Result<ViafouraSDK.VFCookieLoginData, ViafouraSDK.VFCookieLoginError>) -> Swift.Void))
 }
 public struct VFCookieLoginData {
 }
@@ -2230,9 +2137,7 @@ public struct VFFonts : Swift.Equatable {
   public static func == (a: ViafouraSDK.VFFonts, b: ViafouraSDK.VFFonts) -> Swift.Bool
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func removeEditorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFRemoveEditorPickCommentError>)
-  #endif
 }
 public enum VFRemoveEditorPickCommentError : Foundation.LocalizedError {
   case unknown
@@ -2247,7 +2152,7 @@ extension ViafouraSDK.VFRemoveEditorPickCommentError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFPoweredByViafouraView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFPoweredByViafouraView : UIKit.UIView {
   @objc deinit
 }
 public enum VFReviewsProfileError : Foundation.LocalizedError {
@@ -2270,9 +2175,7 @@ extension ViafouraSDK.StoryboardCreateable {
   public static func new() -> Self?
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func spamComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFSpamCommentError>)
-  #endif
 }
 public enum VFSpamCommentError : Foundation.LocalizedError {
   case unknown
@@ -2287,7 +2190,7 @@ extension ViafouraSDK.VFSpamCommentError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFPinnedView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFPinnedView : UIKit.UIView {
   @objc deinit
 }
 public enum VFTrendingReviewsError : Foundation.LocalizedError {
@@ -2330,9 +2233,7 @@ extension ViafouraSDK.VFUnsubscribeTopicError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func pinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFPinCommentError>)
-  #endif
 }
 public enum VFPinCommentError : Foundation.LocalizedError {
   case unknown
@@ -2395,37 +2296,37 @@ public struct VFSettings : Swift.Equatable {
   public init(colors: ViafouraSDK.VFColors, fonts: ViafouraSDK.VFFonts = VFFonts())
   public static func == (lhs: ViafouraSDK.VFSettings, rhs: ViafouraSDK.VFSettings) -> Swift.Bool
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SingleChatViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class SingleChatViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFNewCommentViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFNewCommentViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFNewCommentViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static func new(newCommentActionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFNewCommentViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canResignFirstResponder: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var canResignFirstResponder: Swift.Bool {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFNewCommentViewController : UIKit.UITextViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
 extension ViafouraSDK.VFNewCommentViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
 }
 public enum WidgetType : Swift.String, Swift.Encodable {
   case LIVE_BLOG
@@ -2443,7 +2344,7 @@ public enum WidgetType : Swift.String, Swift.Encodable {
     get
   }
 }
-extension ViafouraSDK.VFAuthenticationService {
+extension ViafouraSDK.VFAuthenticationServiceImplementation {
   public func resetPassword(email: Swift.String, completion: @escaping ((Swift.Result<Swift.Bool, ViafouraSDK.VFPasswordResetError>) -> Swift.Void))
 }
 public enum VFPasswordResetError : Foundation.LocalizedError {
@@ -2459,12 +2360,12 @@ extension ViafouraSDK.VFPasswordResetError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFImageView : UIKit.UIImageView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(image: UIKit.UIImage?)
   @available(iOS 3.0, *)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum VFUserInfoError : Foundation.LocalizedError {
@@ -2480,7 +2381,7 @@ extension ViafouraSDK.VFUserInfoError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFLiveView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFLiveView : UIKit.UIView {
   @objc deinit
 }
 public enum VFReviewContainerSignatureError : Foundation.LocalizedError {
@@ -2510,9 +2411,7 @@ extension ViafouraSDK.VFUpdateChatContainerError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func disableComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDisableCommentError>)
-  #endif
 }
 public enum VFDisableCommentError : Foundation.LocalizedError {
   case unknown
@@ -2544,13 +2443,13 @@ public enum VFSocialLoginProvider : Swift.String, Swift.Encodable, Swift.Decodab
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFTextView : UIKit.UITextView {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFTextView : UIKit.UITextView {
   @available(iOS 7.0, *)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class VFTrustedView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFTrustedView : UIKit.UIView {
   @objc deinit
 }
 public enum EventLoginType : Swift.String, Swift.Encodable {
@@ -2567,9 +2466,7 @@ public enum EventLoginType : Swift.String, Swift.Encodable {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func unspamComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnspamCommentError>)
-  #endif
 }
 public enum VFUnspamCommentError : Foundation.LocalizedError {
   case unknown
@@ -2585,9 +2482,7 @@ extension ViafouraSDK.VFUnspamCommentError {
   }
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
-  #if compiler(>=5.3) && $AsyncAwait
   public func deleteComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFDeleteCommentError>)
-  #endif
 }
 public enum VFDeleteCommentError : Foundation.LocalizedError {
   case unknown
@@ -2602,19 +2497,19 @@ extension ViafouraSDK.VFDeleteCommentError {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VFLiveChatViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor(unsafe) public static var storyboardName: Swift.String
-  @_Concurrency.MainActor(unsafe) public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveChatViewController
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func setTheme(theme: ViafouraSDK.VFTheme)
-  @_Concurrency.MainActor(unsafe) public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
-  @_Concurrency.MainActor(unsafe) public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFLiveChatViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveChatViewController
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFLiveChatViewController : UIKit.UITextViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
 @_inheritsConvenienceInitializers @objc(EventLog) public class EventLog : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
