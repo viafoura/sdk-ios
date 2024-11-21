@@ -22,7 +22,7 @@ This library allows you to integrate Viafoura tools into a native iOS app.
 
 #### Using [Swift Package Manager](https://swift.org/package-manager)
 The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
-Once you have your Swift package set up, adding SpotIM as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+Once you have your Swift package set up, adding Viafoura as a dependency is as easy as adding it to the dependencies value of your Package.swift.
 ```
 dependencies: [
     .package(url: "https://github.com/viafoura/sdk-ios.git")
