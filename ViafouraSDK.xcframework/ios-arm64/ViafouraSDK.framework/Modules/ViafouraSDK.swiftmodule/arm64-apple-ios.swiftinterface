@@ -683,7 +683,6 @@ extension VFVerticalTrendingViewController : UIKit.UITableViewDataSource, UIKit.
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
 }
 extension VFVerticalTrendingViewController : VFLocalAdDelegate {
   @_Concurrency.MainActor @preconcurrency public func generateAd(adPosition: Swift.Int) -> VFAdView?
@@ -1195,13 +1194,12 @@ public struct VFArticleMetadata {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAdView : UIKit.UIView {
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class ViafouraSDK : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers public class ViafouraSDK {
   public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
   public static func auth() -> any VFAuthenticationService
   public static func comments() -> any VFLiveCommentsService
-  @objc override dynamic public init()
   @objc deinit
 }
 extension VFLiveCommentsServiceImplementation {

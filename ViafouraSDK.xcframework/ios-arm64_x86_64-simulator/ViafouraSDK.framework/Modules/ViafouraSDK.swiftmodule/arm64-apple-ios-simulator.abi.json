@@ -21527,50 +21527,6 @@
           },
           {
             "kind": "Function",
-            "name": "tableView",
-            "printedName": "tableView(_:willDisplay:forRowAt:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UITableView",
-                "printedName": "UIKit.UITableView",
-                "usr": "c:objc(cs)UITableView"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UITableViewCell",
-                "printedName": "UIKit.UITableViewCell",
-                "usr": "c:objc(cs)UITableViewCell"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "IndexPath",
-                "printedName": "Foundation.IndexPath",
-                "usr": "s:10Foundation9IndexPathV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@ViafouraSDK@objc(cs)VFVerticalTrendingViewController(im)tableView:willDisplayCell:forRowAtIndexPath:",
-            "mangledName": "$s11ViafouraSDK32VFVerticalTrendingViewControllerC05tableE0_11willDisplay8forRowAtySo07UITableE0C_So0mE4CellC10Foundation9IndexPathVtF",
-            "moduleName": "ViafouraSDK",
-            "objc_name": "tableView:willDisplayCell:forRowAtIndexPath:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "generateAd",
             "printedName": "generateAd(adPosition:)",
             "children": [
@@ -35005,47 +34961,16 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ViafouraSDK",
-                "printedName": "ViafouraSDK.ViafouraSDK",
-                "usr": "c:@M@ViafouraSDK@objc(cs)ViafouraSDK"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@ViafouraSDK@objc(cs)ViafouraSDK(im)init",
-            "mangledName": "$s11ViafouraSDKAACABycfc",
-            "moduleName": "ViafouraSDK",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "init",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Override"
-            ],
-            "init_kind": "Designated"
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@ViafouraSDK@objc(cs)ViafouraSDK",
+        "usr": "s:11ViafouraSDKAAC",
         "mangledName": "$s11ViafouraSDKAAC",
         "moduleName": "ViafouraSDK",
         "declAttributes": [
-          "AccessControl",
-          "ObjC"
+          "AccessControl"
         ],
-        "superclassUsr": "c:objc(cs)NSObject",
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
+        "hasMissingDesignatedInitializers": true,
         "conformances": [
           {
             "kind": "Conformance",
@@ -35060,55 +34985,6 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -72354,22 +72230,15 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/TrendingConversations\/VFVerticalTrendingViewController.swift",
-      "kind": "FloatLiteral",
-      "offset": 964,
-      "length": 4,
-      "value": "80.0"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/TrendingConversations\/VFVerticalTrendingViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1113,
+      "offset": 1079,
       "length": 18,
       "value": "\"fullTrendingCell\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/TrendingConversations\/VFVerticalTrendingViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1160,
+      "offset": 1126,
       "length": 8,
       "value": "\"adCell\""
     },
@@ -76618,7 +76487,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 1565,
+      "offset": 1549,
       "length": 5,
       "value": "false"
     },
