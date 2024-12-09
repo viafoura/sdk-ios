@@ -283,7 +283,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreData;
 @import CoreFoundation;
 @import Foundation;
-@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -432,6 +431,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 
 
 
+
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewCell;
@@ -440,7 +440,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFCarouselTrendingViewController")
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UICollectionViewLayout;
 
@@ -663,12 +662,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 @end
 
 
-
 @class UITextField;
 
 @interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 
@@ -722,12 +721,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 
 
 
+
 @class UIScrollView;
 
 @interface VFProfileViewController (SWIFT_EXTENSION(ViafouraSDK)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
-
 
 
 @class UIImagePickerController;
@@ -852,14 +851,14 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
-- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
-
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
-- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
+
 
 
 
@@ -870,13 +869,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-@end
-
-
-SWIFT_CLASS("_TtC11ViafouraSDK11ViafouraSDK")
-@interface ViafouraSDK : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
