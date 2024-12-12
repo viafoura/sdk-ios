@@ -958,13 +958,20 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(colorPrimary:colorPrimaryLight:colorBackground:colorSeparator:colorAvatars:)",
+            "printedName": "init(colorPrimary:colorPrimaryLight:colorBackground:colorSeparator:colorIcons:colorAvatars:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "VFColors",
                 "printedName": "ViafouraSDK.VFColors",
                 "usr": "s:11ViafouraSDK8VFColorsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "hasDefaultArg": true,
+                "usr": "c:objc(cs)UIColor"
               },
               {
                 "kind": "TypeNominal",
@@ -1011,8 +1018,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11ViafouraSDK8VFColorsV12colorPrimary0dE5Light0D10Background0D9Separator0D7AvatarsACSo7UIColorC_A3JSayAJGtcfc",
-            "mangledName": "$s11ViafouraSDK8VFColorsV12colorPrimary0dE5Light0D10Background0D9Separator0D7AvatarsACSo7UIColorC_A3JSayAJGtcfc",
+            "usr": "s:11ViafouraSDK8VFColorsV12colorPrimary0dE5Light0D10Background0D9Separator0D5Icons0D7AvatarsACSo7UIColorC_A4KSayAKGtcfc",
+            "mangledName": "$s11ViafouraSDK8VFColorsV12colorPrimary0dE5Light0D10Background0D9Separator0D5Icons0D7AvatarsACSo7UIColorC_A4KSayAKGtcfc",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -7384,6 +7391,135 @@
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
             "protocolReq": true,
             "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "commentCount",
+            "printedName": "commentCount(sectionUUID:containerId:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCommentCountError",
+                        "printedName": "ViafouraSDK.VFCommentCountError",
+                        "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId10completiony10Foundation0I0VSg_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId10completiony10Foundation0I0VSg_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "commentCount",
+            "printedName": "commentCount(sectionUUID:containerId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCommentCountError",
+                    "printedName": "ViafouraSDK.VFCommentCountError",
+                    "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_SStYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_SStYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
@@ -71244,14 +71380,21 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/VFColors.swift",
       "kind": "BooleanLiteral",
-      "offset": 356,
+      "offset": 385,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/VFColors.swift",
       "kind": "BooleanLiteral",
-      "offset": 391,
+      "offset": 420,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/VFColors.swift",
+      "kind": "BooleanLiteral",
+      "offset": 456,
       "length": 5,
       "value": "false"
     },
