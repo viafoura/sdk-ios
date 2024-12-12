@@ -58,7 +58,7 @@ extension ViafouraSDK.VFTopCommentError {
   @objc deinit
 }
 public struct VFColors : Swift.Equatable {
-  public init(colorPrimary: UIKit.UIColor = VFDefaultColors.colorPrimaryDefault(), colorPrimaryLight: UIKit.UIColor = VFDefaultColors.colorPrimaryLightDefault(), colorBackground: UIKit.UIColor = VFDefaultColors.colorBackgroundDefault(), colorSeparator: UIKit.UIColor = VFDefaultColors.colorSeparatorDefault(), colorAvatars: [UIKit.UIColor] = Constants.AvatarColors.colors)
+  public init(colorPrimary: UIKit.UIColor = VFDefaultColors.colorPrimaryDefault(), colorPrimaryLight: UIKit.UIColor = VFDefaultColors.colorPrimaryLightDefault(), colorBackground: UIKit.UIColor = VFDefaultColors.colorBackgroundDefault(), colorSeparator: UIKit.UIColor = VFDefaultColors.colorSeparatorDefault(), colorIcons: UIKit.UIColor = VFDefaultColors.colorIcons(), colorAvatars: [UIKit.UIColor] = Constants.AvatarColors.colors)
   public static func == (a: ViafouraSDK.VFColors, b: ViafouraSDK.VFColors) -> Swift.Bool
 }
 public struct VFDefaultColors {
@@ -261,6 +261,8 @@ public protocol VFLiveCommentsService {
   func unlikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnlikeCommentError>)
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>) -> Swift.Void))
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String?) async throws -> (Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>)
+  func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> Swift.Void))
+  func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String) async -> (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>)
 }
 @_hasMissingDesignatedInitializers public class VFLiveCommentsServiceImplementation : ViafouraSDK.VFLiveCommentsService {
   @objc deinit
