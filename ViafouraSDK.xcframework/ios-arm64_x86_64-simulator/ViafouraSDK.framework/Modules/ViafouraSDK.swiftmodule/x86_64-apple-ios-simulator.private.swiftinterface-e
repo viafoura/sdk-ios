@@ -1702,7 +1702,6 @@ public enum VFCustomizableView {
   case previewEmptyCommentsView(emptyCommentsView: ViafouraSDK.VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: ViafouraSDK.VFButton)
   case previewTitleLabel(label: ViafouraSDK.VFLabel)
-  case previewCounterLabel(label: ViafouraSDK.VFLabel)
   case previewPrivacyLabel(label: ViafouraSDK.VFLabel)
   case previewPoweredByView(poweredByView: ViafouraSDK.VFPoweredByViafouraView)
   case previewSkeletonView(skeletonView: UIKit.UIView)
@@ -1734,6 +1733,8 @@ public enum VFCustomizableView {
   case chatLoading(loadingView: ViafouraSDK.VFLoadingView)
   case chatLoadingMore(loadingView: ViafouraSDK.VFLoadingView)
   case chatEmptyView(emptyView: ViafouraSDK.VFEmptyChatsView)
+  case notificationBellText(label: ViafouraSDK.VFLabel)
+  case notificationBellIcon(icon: ViafouraSDK.VFImageView)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUnpinCommentError>)
@@ -1870,6 +1871,7 @@ extension ViafouraSDK.VFUpdateStoryContainerError {
     @objc set
   }
   @_Concurrency.MainActor @preconcurrency public init(settings: ViafouraSDK.VFSettings, loginDelegate: any ViafouraSDK.VFLoginDelegate, onBellClicked: @escaping ((Foundation.UUID) -> Swift.Void))
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @objc deinit
 }

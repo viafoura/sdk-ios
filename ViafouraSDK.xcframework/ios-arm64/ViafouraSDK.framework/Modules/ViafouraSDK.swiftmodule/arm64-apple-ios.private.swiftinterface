@@ -1702,7 +1702,6 @@ public enum VFCustomizableView {
   case previewEmptyCommentsView(emptyCommentsView: VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: VFButton)
   case previewTitleLabel(label: VFLabel)
-  case previewCounterLabel(label: VFLabel)
   case previewPrivacyLabel(label: VFLabel)
   case previewPoweredByView(poweredByView: VFPoweredByViafouraView)
   case previewSkeletonView(skeletonView: UIKit.UIView)
@@ -1734,6 +1733,8 @@ public enum VFCustomizableView {
   case chatLoading(loadingView: VFLoadingView)
   case chatLoadingMore(loadingView: VFLoadingView)
   case chatEmptyView(emptyView: VFEmptyChatsView)
+  case notificationBellText(label: VFLabel)
+  case notificationBellIcon(icon: VFImageView)
 }
 extension VFLiveCommentsServiceImplementation {
   public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> (Swift.Result<Swift.Bool, VFUnpinCommentError>)
@@ -1870,6 +1871,7 @@ extension VFUpdateStoryContainerError {
     @objc set
   }
   @_Concurrency.MainActor @preconcurrency public init(settings: VFSettings, loginDelegate: any VFLoginDelegate, onBellClicked: @escaping ((Foundation.UUID) -> Swift.Void))
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: VFTheme)
   @objc deinit
 }
