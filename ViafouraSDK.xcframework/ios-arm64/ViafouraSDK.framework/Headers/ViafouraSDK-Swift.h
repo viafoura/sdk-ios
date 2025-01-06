@@ -609,12 +609,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @protocol UIViewControllerTransitionCoordinator;
 
 @interface VFNewCommentViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
-
 
 
 
@@ -685,6 +685,11 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 - (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
 @end
 
+
+
+@interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+@end
 
 
 
