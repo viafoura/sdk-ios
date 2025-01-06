@@ -1470,6 +1470,9 @@ extension VFPreviewCommentsViewController : VFLocalAdDelegate {
   @_Concurrency.MainActor @preconcurrency public func getFirstAdPosition() -> Swift.Int
 }
 extension VFPreviewCommentsViewController {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+}
+extension VFPreviewCommentsViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func didMove(toParent parent: UIKit.UIViewController?)
 }
 extension VFPreviewCommentsViewController : VFLayoutDelegate {
