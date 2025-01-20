@@ -87,6 +87,7 @@ public struct VFDefaultColors {
   public static func colorInputBox(_ forTheme: VFTheme = .light) -> UIKit.UIColor
 }
 public struct CommentContainerByIdResponse : Swift.Decodable {
+  public let content_container_uuid: Foundation.UUID
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFSingleStoryError : Foundation.LocalizedError {
@@ -415,9 +416,13 @@ public struct EventTestInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct CommentListResponse : Swift.Decodable {
+  public let contents: [CommentResponse]
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct CommentResponse : Swift.Decodable {
+  public let actor_uuid: Foundation.UUID
+  public var content: Swift.String
+  public let date_created: Swift.Int64
   public init(from decoder: any Swift.Decoder) throws
 }
 extension VFLiveCommentsServiceImplementation {
@@ -1141,6 +1146,9 @@ extension VFUnflagReviewError {
 }
 public struct UserResponse : Swift.Decodable {
   public let id: Swift.Int64
+  public let pic_small: Swift.String?
+  public let pic_large: Swift.String?
+  public let name: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
 public protocol VFLayoutDelegate : ObjectiveC.NSObject {
