@@ -18,7 +18,7 @@ jobs:
     - name: Select Xcode Version
       uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: latest-stable
+        xcode-version: 16.1.0
 
     - name: Create SDK Release
       id: create_release
