@@ -347,7 +347,7 @@ public enum VFAuthPromptType {
 }
 public enum VFNotificationPresentationType {
   case profile(userUUID: Foundation.UUID)
-  case content(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String)
+  case content(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String, articleMetadata: VFArticleMetadata)
 }
 public enum VFProfilePresentationType {
   case profile
