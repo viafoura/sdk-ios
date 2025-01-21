@@ -2231,6 +2231,69 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "UserMutesResponse",
+        "printedName": "UserMutesResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserMutesResponse",
+                "printedName": "ViafouraSDK.UserMutesResponse",
+                "usr": "s:11ViafouraSDK17UserMutesResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK17UserMutesResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK17UserMutesResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK17UserMutesResponseV",
+        "mangledName": "$s11ViafouraSDK17UserMutesResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -28868,6 +28931,69 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "UnmuteUserResponse",
+        "printedName": "UnmuteUserResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnmuteUserResponse",
+                "printedName": "ViafouraSDK.UnmuteUserResponse",
+                "usr": "s:11ViafouraSDK18UnmuteUserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK18UnmuteUserResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK18UnmuteUserResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK18UnmuteUserResponseV",
+        "mangledName": "$s11ViafouraSDK18UnmuteUserResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -35395,6 +35521,29 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDKAAC4authAA23VFAuthenticationService_pyFZ",
             "mangledName": "$s11ViafouraSDKAAC4authAA23VFAuthenticationService_pyFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "users",
+            "printedName": "users()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFUsersService",
+                "printedName": "any ViafouraSDK.VFUsersService",
+                "usr": "s:11ViafouraSDK14VFUsersServiceP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDKAAC5usersAA14VFUsersService_pyFZ",
+            "mangledName": "$s11ViafouraSDKAAC5usersAA14VFUsersService_pyFZ",
             "moduleName": "ViafouraSDK",
             "static": true,
             "declAttributes": [
@@ -59964,6 +60113,69 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "MuteUserResponse",
+        "printedName": "MuteUserResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MuteUserResponse",
+                "printedName": "ViafouraSDK.MuteUserResponse",
+                "usr": "s:11ViafouraSDK16MuteUserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK16MuteUserResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK16MuteUserResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK16MuteUserResponseV",
+        "mangledName": "$s11ViafouraSDK16MuteUserResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -67311,6 +67523,546 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "VFUsersService",
+        "printedName": "VFUsersService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "isUserMuted",
+            "printedName": "isUserMuted(userId:mutedUserUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFUserMutesError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUserMutesError",
+                    "printedName": "ViafouraSDK.VFUserMutesError",
+                    "usr": "s:11ViafouraSDK16VFUserMutesErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP11isUserMuted6userId05mutedF4UUIDs6ResultOySbAA16VFUserMutesErrorOGSS_10Foundation0K0VtYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP11isUserMuted6userId05mutedF4UUIDs6ResultOySbAA16VFUserMutesErrorOGSS_10Foundation0K0VtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserMutes",
+            "printedName": "getUserMutes(userId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UserMutesResponse, ViafouraSDK.VFUserMutesError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserMutesResponse",
+                    "printedName": "ViafouraSDK.UserMutesResponse",
+                    "usr": "s:11ViafouraSDK17UserMutesResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUserMutesError",
+                    "printedName": "ViafouraSDK.VFUserMutesError",
+                    "usr": "s:11ViafouraSDK16VFUserMutesErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP12getUserMutes6userIds6ResultOyAA0fG8ResponseVAA06VFUserG5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP12getUserMutes6userIds6ResultOyAA0fG8ResponseVAA06VFUserG5ErrorOGSS_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unmuteUser",
+            "printedName": "unmuteUser(userId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UnmuteUserResponse, ViafouraSDK.VFUnmuteUserError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnmuteUserResponse",
+                    "printedName": "ViafouraSDK.UnmuteUserResponse",
+                    "usr": "s:11ViafouraSDK18UnmuteUserResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUnmuteUserError",
+                    "printedName": "ViafouraSDK.VFUnmuteUserError",
+                    "usr": "s:11ViafouraSDK17VFUnmuteUserErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP10unmuteUser6userIds6ResultOyAA06UnmuteF8ResponseVAA08VFUnmuteF5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP10unmuteUser6userIds6ResultOyAA06UnmuteF8ResponseVAA08VFUnmuteF5ErrorOGSS_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "muteUser",
+            "printedName": "muteUser(userId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.MuteUserResponse, ViafouraSDK.VFMuteUserError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MuteUserResponse",
+                    "printedName": "ViafouraSDK.MuteUserResponse",
+                    "usr": "s:11ViafouraSDK16MuteUserResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFMuteUserError",
+                    "printedName": "ViafouraSDK.VFMuteUserError",
+                    "usr": "s:11ViafouraSDK15VFMuteUserErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP8muteUser6userIds6ResultOyAA04MuteF8ResponseVAA06VFMuteF5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP8muteUser6userIds6ResultOyAA04MuteF8ResponseVAA06VFMuteF5ErrorOGSS_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUsersInfo",
+            "printedName": "getUsersInfo(usersUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.UserResponse?]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "ViafouraSDK.UserResponse?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UserResponse",
+                            "printedName": "ViafouraSDK.UserResponse",
+                            "usr": "s:11ViafouraSDK12UserResponseV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUserInfoError",
+                    "printedName": "ViafouraSDK.VFUserInfoError",
+                    "usr": "s:11ViafouraSDK15VFUserInfoErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[(Foundation.UUID, Swift.String?)]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Foundation.UUID, Swift.String?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UUID",
+                        "printedName": "Foundation.UUID",
+                        "usr": "s:10Foundation4UUIDV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP12getUsersInfo9usersUUIDs6ResultOySayAA12UserResponseVSgGAA06VFUserG5ErrorOGSay10Foundation0I0V_SSSgtG_tYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP12getUsersInfo9usersUUIDs6ResultOySayAA12UserResponseVSgGAA06VFUserG5ErrorOGSay10Foundation0I0V_SSSgtG_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserInfo",
+            "printedName": "getUserInfo(userUUID:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UserResponse",
+                        "printedName": "ViafouraSDK.UserResponse",
+                        "usr": "s:11ViafouraSDK12UserResponseV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFUserInfoError",
+                        "printedName": "ViafouraSDK.VFUserInfoError",
+                        "usr": "s:11ViafouraSDK15VFUserInfoErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP11getUserInfo8userUUID10completiony10Foundation0I0V_ys6ResultOyAA0F8ResponseVAA06VFUserG5ErrorOGctF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP11getUserInfo8userUUID10completiony10Foundation0I0V_ys6ResultOyAA0F8ResponseVAA06VFUserG5ErrorOGctF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserInfo",
+            "printedName": "getUserInfo(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserResponse",
+                    "printedName": "ViafouraSDK.UserResponse",
+                    "usr": "s:11ViafouraSDK12UserResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUserInfoError",
+                    "printedName": "ViafouraSDK.VFUserInfoError",
+                    "usr": "s:11ViafouraSDK15VFUserInfoErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP11getUserInfo8userUUIDs6ResultOyAA0F8ResponseVAA06VFUserG5ErrorOG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP11getUserInfo8userUUIDs6ResultOyAA0F8ResponseVAA06VFUserG5ErrorOG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateUserAvatar",
+            "printedName": "updateUserAvatar(imageData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUpdateUserAvatarError",
+                    "printedName": "ViafouraSDK.VFUpdateUserAvatarError",
+                    "usr": "s:11ViafouraSDK23VFUpdateUserAvatarErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP16updateUserAvatar9imageDatas6ResultOySbAA08VFUpdatefG5ErrorOG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP16updateUserAvatar9imageDatas6ResultOySbAA08VFUpdatefG5ErrorOG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateUser",
+            "printedName": "updateUser(email:name:password:newPassword:emailNoticeFrequency:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUpdateUserError",
+                    "printedName": "ViafouraSDK.VFUpdateUserError",
+                    "usr": "s:11ViafouraSDK17VFUpdateUserErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK14VFUsersServiceP10updateUser5email4name8password11newPassword0G15NoticeFrequencys6ResultOySbAA08VFUpdateF5ErrorOGSSSg_A4OtYaF",
+            "mangledName": "$s11ViafouraSDK14VFUsersServiceP10updateUser5email4name8password11newPassword0G15NoticeFrequencys6ResultOySbAA08VFUpdateF5ErrorOGSSSg_A4OtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFUsersService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFUsersService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:11ViafouraSDK14VFUsersServiceP",
+        "mangledName": "$s11ViafouraSDK14VFUsersServiceP",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "VFUserInfoError",
         "printedName": "VFUserInfoError",
         "children": [
@@ -72008,28 +72760,28 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveBlog\/LiveBlogViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1380,
+      "offset": 1387,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveBlog\/LiveBlogViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1412,
+      "offset": 1419,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveBlog\/LiveBlogViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1449,
+      "offset": 1456,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveBlog\/LiveBlogViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 1543,
+      "offset": 1550,
       "length": 1,
       "value": "0"
     },
@@ -72099,7 +72851,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2641,
+      "offset": 2648,
       "length": 5,
       "value": "false"
     },
@@ -72897,70 +73649,70 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3412,
+      "offset": 3419,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3449,
+      "offset": 3456,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3525,
+      "offset": 3532,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3557,
+      "offset": 3564,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3646,
+      "offset": 3653,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3687,
+      "offset": 3694,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3772,
+      "offset": 3779,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3811,
+      "offset": 3818,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3843,
+      "offset": 3850,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3876,
+      "offset": 3883,
       "length": 5,
       "value": "false"
     },
@@ -75123,70 +75875,70 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 1767,
+      "offset": 1774,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2052,
+      "offset": 2059,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2092,
+      "offset": 2099,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2137,
+      "offset": 2144,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2167,
+      "offset": 2174,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2197,
+      "offset": 2204,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2232,
+      "offset": 2239,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2664,
+      "offset": 2671,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 2777,
+      "offset": 2784,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveChat\/LiveChatViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 2781,
+      "offset": 2788,
       "length": 1,
       "value": "1"
     },
@@ -77083,7 +77835,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 1549,
+      "offset": 1560,
       "length": 5,
       "value": "false"
     },
@@ -77818,105 +78570,105 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 4682,
+      "offset": 4689,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5856,
+      "offset": 5863,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5889,
+      "offset": 5896,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5927,
+      "offset": 5934,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5966,
+      "offset": 5973,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6005,
+      "offset": 6012,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6049,
+      "offset": 6056,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6087,
+      "offset": 6094,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6428,
+      "offset": 6435,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "Array",
-      "offset": 6466,
+      "offset": 6473,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6510,
+      "offset": 6517,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6547,
+      "offset": 6554,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6584,
+      "offset": 6591,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6622,
+      "offset": 6629,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6741,
+      "offset": 6748,
       "length": 1,
       "value": "0"
     },
@@ -79680,7 +80432,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Users\/UsersService.swift",
       "kind": "Dictionary",
-      "offset": 1249,
+      "offset": 1262,
       "length": 3,
       "value": "[]"
     },

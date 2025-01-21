@@ -103,6 +103,9 @@ extension ViafouraSDK.VFSingleStoryError {
     get
   }
 }
+public struct UserMutesResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAwaitingModerationView : UIKit.UIView {
   @objc deinit
 }
@@ -947,6 +950,9 @@ extension ViafouraSDK.VFUndislikeChatError {
 public struct CreateCommentMediaResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct UnmuteUserResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public enum VFDislikeReviewError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFDislikeReviewError, b: ViafouraSDK.VFDislikeReviewError) -> Swift.Bool
@@ -1206,6 +1212,7 @@ public struct VFArticleMetadata {
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
   public static func auth() -> any ViafouraSDK.VFAuthenticationService
+  public static func users() -> any ViafouraSDK.VFUsersService
   public static func comments() -> any ViafouraSDK.VFLiveCommentsService
   @objc deinit
 }
@@ -2102,6 +2109,9 @@ extension ViafouraSDK.VFStoryListError {
     get
   }
 }
+public struct MuteUserResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct TrendingResultResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2377,6 +2387,17 @@ extension ViafouraSDK.VFPasswordResetError {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+public protocol VFUsersService {
+  func isUserMuted(userId: Swift.String, mutedUserUUID: Foundation.UUID) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUserMutesError>)
+  func getUserMutes(userId: Swift.String) async -> (Swift.Result<ViafouraSDK.UserMutesResponse, ViafouraSDK.VFUserMutesError>)
+  func unmuteUser(userId: Swift.String) async -> (Swift.Result<ViafouraSDK.UnmuteUserResponse, ViafouraSDK.VFUnmuteUserError>)
+  func muteUser(userId: Swift.String) async -> (Swift.Result<ViafouraSDK.MuteUserResponse, ViafouraSDK.VFMuteUserError>)
+  func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)]) async -> (Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>)
+  func getUserInfo(userUUID: Foundation.UUID, completion: @escaping ((Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>) -> Swift.Void))
+  func getUserInfo(userUUID: Foundation.UUID) async -> (Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>)
+  func updateUserAvatar(imageData: Foundation.Data) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>)
+  func updateUser(email: Swift.String?, name: Swift.String?, password: Swift.String?, newPassword: Swift.String?, emailNoticeFrequency: Swift.String?) async -> (Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserError>)
 }
 public enum VFUserInfoError : Foundation.LocalizedError {
   case unknown
