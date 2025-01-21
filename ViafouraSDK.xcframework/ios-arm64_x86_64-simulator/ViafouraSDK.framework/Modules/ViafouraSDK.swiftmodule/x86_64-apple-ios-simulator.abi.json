@@ -12524,12 +12524,12 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(ViafouraSDK.VFNotificationPresentationType.Type) -> (Foundation.UUID, Foundation.UUID, Swift.String) -> ViafouraSDK.VFNotificationPresentationType",
+                "printedName": "(ViafouraSDK.VFNotificationPresentationType.Type) -> (Foundation.UUID, Foundation.UUID, Swift.String, ViafouraSDK.VFArticleMetadata) -> ViafouraSDK.VFNotificationPresentationType",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Foundation.UUID, Foundation.UUID, Swift.String) -> ViafouraSDK.VFNotificationPresentationType",
+                    "printedName": "(Foundation.UUID, Foundation.UUID, Swift.String, ViafouraSDK.VFArticleMetadata) -> ViafouraSDK.VFNotificationPresentationType",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -12540,7 +12540,7 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Tuple",
-                        "printedName": "(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String)",
+                        "printedName": "(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata)",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -12559,6 +12559,12 @@
                             "name": "String",
                             "printedName": "Swift.String",
                             "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFArticleMetadata",
+                            "printedName": "ViafouraSDK.VFArticleMetadata",
+                            "usr": "s:11ViafouraSDK17VFArticleMetadataV"
                           }
                         ]
                       }
@@ -12581,8 +12587,8 @@
               }
             ],
             "declKind": "EnumElement",
-            "usr": "s:11ViafouraSDK30VFNotificationPresentationTypeO7contentyAC10Foundation4UUIDV_AGSStcACmF",
-            "mangledName": "$s11ViafouraSDK30VFNotificationPresentationTypeO7contentyAC10Foundation4UUIDV_AGSStcACmF",
+            "usr": "s:11ViafouraSDK30VFNotificationPresentationTypeO7contentyAC10Foundation4UUIDV_AGSSAA17VFArticleMetadataVtcACmF",
+            "mangledName": "$s11ViafouraSDK30VFNotificationPresentationTypeO7contentyAC10Foundation4UUIDV_AGSSAA17VFArticleMetadataVtcACmF",
             "moduleName": "ViafouraSDK"
           }
         ],
