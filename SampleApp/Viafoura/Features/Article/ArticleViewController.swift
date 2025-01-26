@@ -165,7 +165,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
                 case .profile(let userUUID):
                     self?.presentProfileViewController(userUUID: userUUID, presentationType: .feed)
                     break
-                case .content(let containerUUID, let contentUUID, let containerId):
+                case .content(let containerUUID, let contentUUID, let containerId, let metadata):
                     self?.presentArticle(containerId: containerId, contentUUID: contentUUID)
                     break
                 }
