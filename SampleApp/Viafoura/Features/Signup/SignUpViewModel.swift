@@ -12,7 +12,7 @@ class SignUpViewModel{
     let auth = ViafouraSDK.auth()
 
     func signup(name: String, email: String, password: String, completion: @escaping ((Result<UserResponse, VFSignUpError>) -> ())){
-        auth.signup(name: name, email: email, password: password, completion: { result in
+        auth.signup(name: name, email: email, password: password, recaptchaToken: nil, completion: { result in
             DispatchQueue.main.async {
                 completion(result)
             }

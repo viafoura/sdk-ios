@@ -19,9 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
-        //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-0892B54DBF4E", siteDomain: "www.thestar.com")
-        //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-a3692e0c0e77", siteDomain: "test.viafoura.com")
-        //ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-0892b54dbf4e", siteDomain: "reactqa5.smgdigitaldev.com")
         
         OneSignal.Debug.setLogLevel(.LL_VERBOSE)        
         OneSignal.initialize("8add46ba-1535-4c77-8c97-4faccd2cd7e5", withLaunchOptions: launchOptions)

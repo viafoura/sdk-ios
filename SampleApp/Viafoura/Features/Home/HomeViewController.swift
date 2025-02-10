@@ -180,23 +180,13 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let content = viewModel.contents[indexPath.row]
         if let story = content.story {
-            if story.storyType == .comments || story.storyType == .reviews {
-                guard let articleVC = ArticleViewController.new() else{
-                    return
-                }
-                
-                articleVC.articleViewModel = ArticleViewModel(story: story)
-                articleVC.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(articleVC, animated: true)
-            } else if story.storyType == .blog {
-                guard let liveBlogVC = LiveBlogViewController.new() else{
-                    return
-                }
-                
-                liveBlogVC.viewModel = LiveBlogViewModel(story: story)
-                liveBlogVC.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(liveBlogVC, animated: true)
+            guard let articleVC = ArticleViewController.new() else{
+                return
             }
+            
+            articleVC.articleViewModel = ArticleViewModel(story: story)
+            articleVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(articleVC, animated: true)
         } else if let poll = content.poll {
             guard let pollVC = PollViewController.new() else{
                 return
