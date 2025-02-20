@@ -6666,7 +6666,7 @@
           {
             "kind": "Function",
             "name": "commentCount",
-            "printedName": "commentCount(sectionUUID:containerId:completion:)",
+            "printedName": "commentCount(sectionUUID:containerId:syndicationKey:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6692,6 +6692,20 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -6727,8 +6741,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId10completiony10Foundation0I0VSg_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
-            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId10completiony10Foundation0I0VSg_SSys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId14syndicationKey10completiony10Foundation0I0VSg_S2SSgys6ResultOySiAA09VFCommentG5ErrorOGctF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId14syndicationKey10completiony10Foundation0I0VSg_S2SSgys6ResultOySiAA09VFCommentG5ErrorOGctF",
             "moduleName": "ViafouraSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
@@ -6739,7 +6753,7 @@
           {
             "kind": "Function",
             "name": "commentCount",
-            "printedName": "commentCount(sectionUUID:containerId:)",
+            "printedName": "commentCount(sectionUUID:containerId:syndicationKey:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6780,11 +6794,25 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_SStYaF",
-            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_SStYaF",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId14syndicationKeys6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_S2SSgtYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP12commentCount11sectionUUID11containerId14syndicationKeys6ResultOySiAA09VFCommentG5ErrorOG10Foundation0I0VSg_S2SSgtYaF",
             "moduleName": "ViafouraSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
@@ -8309,7 +8337,7 @@
           {
             "kind": "Function",
             "name": "commentCount",
-            "printedName": "commentCount(sectionUUID:containerId:completion:)",
+            "printedName": "commentCount(sectionUUID:containerId:syndicationKey:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8336,6 +8364,20 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -8371,8 +8413,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId10completiony10Foundation0J0VSg_SSys6ResultOySiAA09VFCommentH5ErrorOGctF",
-            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId10completiony10Foundation0J0VSg_SSys6ResultOySiAA09VFCommentH5ErrorOGctF",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId14syndicationKey10completiony10Foundation0J0VSg_S2SSgys6ResultOySiAA09VFCommentH5ErrorOGctF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId14syndicationKey10completiony10Foundation0J0VSg_S2SSgys6ResultOySiAA09VFCommentH5ErrorOGctF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -8383,7 +8425,7 @@
           {
             "kind": "Function",
             "name": "commentCount",
-            "printedName": "commentCount(sectionUUID:containerId:)",
+            "printedName": "commentCount(sectionUUID:containerId:syndicationKey:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8425,11 +8467,25 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentH5ErrorOG10Foundation0J0VSg_SStYaF",
-            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerIds6ResultOySiAA09VFCommentH5ErrorOG10Foundation0J0VSg_SStYaF",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId14syndicationKeys6ResultOySiAA09VFCommentH5ErrorOG10Foundation0J0VSg_S2SSgtYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId14syndicationKeys6ResultOySiAA09VFCommentH5ErrorOG10Foundation0J0VSg_S2SSgtYaF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
