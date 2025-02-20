@@ -226,8 +226,8 @@ public protocol VFLiveCommentsService {
   func unlikeComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Bool, VFUnlikeCommentError>)
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: VFSortType, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<CommentListResponse, VFCommentListError>) -> Swift.Void))
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: VFSortType, syndicationKey: Swift.String?) async throws -> (Swift.Result<CommentListResponse, VFCommentListError>)
-  func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void))
-  func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String) async -> (Swift.Result<Swift.Int, VFCommentCountError>)
+  func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void))
+  func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Int, VFCommentCountError>)
 }
 @_hasMissingDesignatedInitializers public class VFLiveCommentsServiceImplementation : VFLiveCommentsService {
   @objc deinit
@@ -1456,8 +1456,8 @@ extension VFRemovePollError {
   }
 }
 extension VFLiveCommentsServiceImplementation {
-  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void))
-  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async -> (Swift.Result<Swift.Int, VFCommentCountError>)
+  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping ((Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void))
+  public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, syndicationKey: Swift.String?) async -> (Swift.Result<Swift.Int, VFCommentCountError>)
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
   case unknown
