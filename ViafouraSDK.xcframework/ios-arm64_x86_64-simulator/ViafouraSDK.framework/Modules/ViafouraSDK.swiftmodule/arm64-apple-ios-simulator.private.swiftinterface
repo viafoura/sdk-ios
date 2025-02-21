@@ -1578,6 +1578,8 @@ public enum VFCustomizableView {
   case commentCellDislikeLabel(label: VFLabel)
   case commentCellReplyLabel(label: VFLabel)
   case commentCellReplyImage(image: VFImageView)
+  case commentCellUserImage(image: VFImageView)
+  case commentCellUserAvatar(view: UIKit.UIView)
   case commentCellCustomBadge(badge: VFCustomBadgeView)
   case commentCellSeparator(separator: VFSeparatorView)
   case previewEmptyCommentsView(emptyCommentsView: VFEmptyCommentsView)

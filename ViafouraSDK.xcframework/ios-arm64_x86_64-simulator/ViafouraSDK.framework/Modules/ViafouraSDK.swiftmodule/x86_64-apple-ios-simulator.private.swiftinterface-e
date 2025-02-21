@@ -1578,6 +1578,8 @@ public enum VFCustomizableView {
   case commentCellDislikeLabel(label: ViafouraSDK.VFLabel)
   case commentCellReplyLabel(label: ViafouraSDK.VFLabel)
   case commentCellReplyImage(image: ViafouraSDK.VFImageView)
+  case commentCellUserImage(image: ViafouraSDK.VFImageView)
+  case commentCellUserAvatar(view: UIKit.UIView)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
   case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
   case previewEmptyCommentsView(emptyCommentsView: ViafouraSDK.VFEmptyCommentsView)
