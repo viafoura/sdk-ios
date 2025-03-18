@@ -2129,6 +2129,11 @@ extension ViafouraSDK.VFReviewError {
     get
   }
 }
+public struct VFAccessibilityIdentifiers {
+  public static let previewCommentsPromptView: Swift.String
+  public static let postButton: Swift.String
+  public static let postTextField: Swift.String
+}
 public protocol VFCustomUIDelegate : AnyObject {
   func customizeView(theme: ViafouraSDK.VFTheme, view: ViafouraSDK.VFCustomizableView)
 }

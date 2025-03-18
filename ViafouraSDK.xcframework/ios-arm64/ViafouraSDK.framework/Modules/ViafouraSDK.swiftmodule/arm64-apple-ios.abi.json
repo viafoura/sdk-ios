@@ -60990,6 +60990,178 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "VFAccessibilityIdentifiers",
+        "printedName": "VFAccessibilityIdentifiers",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "previewCommentsPromptView",
+            "printedName": "previewCommentsPromptView",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV25previewCommentsPromptViewSSvpZ",
+            "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV25previewCommentsPromptViewSSvpZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV25previewCommentsPromptViewSSvgZ",
+                "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV25previewCommentsPromptViewSSvgZ",
+                "moduleName": "ViafouraSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "postButton",
+            "printedName": "postButton",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV10postButtonSSvpZ",
+            "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV10postButtonSSvpZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV10postButtonSSvgZ",
+                "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV10postButtonSSvgZ",
+                "moduleName": "ViafouraSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "postTextField",
+            "printedName": "postTextField",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV13postTextFieldSSvpZ",
+            "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV13postTextFieldSSvpZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV13postTextFieldSSvgZ",
+                "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV13postTextFieldSSvgZ",
+                "moduleName": "ViafouraSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK26VFAccessibilityIdentifiersV",
+        "mangledName": "$s11ViafouraSDK26VFAccessibilityIdentifiersV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -76175,6 +76347,27 @@
       "value": "\"contentContainerPath\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Accessibility\/VFAccessibilityIdentifiers.swift",
+      "kind": "StringLiteral",
+      "offset": 203,
+      "length": 27,
+      "value": "\"previewCommentsPromptView\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Accessibility\/VFAccessibilityIdentifiers.swift",
+      "kind": "StringLiteral",
+      "offset": 267,
+      "length": 12,
+      "value": "\"postButton\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Accessibility\/VFAccessibilityIdentifiers.swift",
+      "kind": "StringLiteral",
+      "offset": 318,
+      "length": 15,
+      "value": "\"postTextField\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livereviews\/PinReviewEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 215,
@@ -76415,14 +76608,14 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 11846,
+      "offset": 12120,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 11930,
+      "offset": 12204,
       "length": 5,
       "value": "false"
     },
