@@ -1588,9 +1588,11 @@ public enum VFCustomizableView {
   case previewSeeMoreCommentsButton(button: ViafouraSDK.VFButton)
   case previewTitleLabel(label: ViafouraSDK.VFLabel)
   case previewPrivacyLabel(label: ViafouraSDK.VFLabel)
+  case previewUserPromptLabel(label: ViafouraSDK.VFLabel)
   case previewCommentPrompt(view: UIKit.UIView)
   case previewHeaderView(view: UIKit.UIView)
   case previewSortImage(image: ViafouraSDK.VFImageView)
+  case previewSortLabel(label: ViafouraSDK.VFLabel)
   case previewAllComments(view: UIKit.UIView)
   case previewPoweredByView(poweredByView: ViafouraSDK.VFPoweredByViafouraView)
   case previewSkeletonView(skeletonView: UIKit.UIView)
@@ -1688,6 +1690,7 @@ extension ViafouraSDK.VFCommentModerationListError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEmptyCommentsView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let label: UIKit.UILabel
   @objc deinit
 }
 extension ViafouraSDK.AnalyticsServiceImplementation {

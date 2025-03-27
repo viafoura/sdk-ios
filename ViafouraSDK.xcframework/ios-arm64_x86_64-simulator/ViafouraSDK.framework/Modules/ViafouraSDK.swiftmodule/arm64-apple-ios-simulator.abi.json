@@ -46487,6 +46487,63 @@
           },
           {
             "kind": "Var",
+            "name": "previewUserPromptLabel",
+            "printedName": "previewUserPromptLabel",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFLabel) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFLabel) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(label: ViafouraSDK.VFLabel)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFLabel",
+                            "printedName": "ViafouraSDK.VFLabel",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFLabel"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO22previewUserPromptLabelyAcA7VFLabelC_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO22previewUserPromptLabelyAcA7VFLabelC_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "previewCommentPrompt",
             "printedName": "previewCommentPrompt",
             "children": [
@@ -46654,6 +46711,63 @@
             "declKind": "EnumElement",
             "usr": "s:11ViafouraSDK18VFCustomizableViewO16previewSortImageyAcA07VFImageD0C_tcACmF",
             "mangledName": "$s11ViafouraSDK18VFCustomizableViewO16previewSortImageyAcA07VFImageD0C_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "previewSortLabel",
+            "printedName": "previewSortLabel",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFLabel) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFLabel) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(label: ViafouraSDK.VFLabel)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFLabel",
+                            "printedName": "ViafouraSDK.VFLabel",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFLabel"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO16previewSortLabelyAcA7VFLabelC_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO16previewSortLabelyAcA7VFLabelC_tcACmF",
             "moduleName": "ViafouraSDK"
           },
           {
@@ -49735,6 +49849,59 @@
         "kind": "TypeDecl",
         "name": "VFEmptyCommentsView",
         "printedName": "VFEmptyCommentsView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "label",
+            "printedName": "label",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UILabel",
+                "printedName": "UIKit.UILabel",
+                "usr": "c:objc(cs)UILabel"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK19VFEmptyCommentsViewC5labelSo7UILabelCvp",
+            "mangledName": "$s11ViafouraSDK19VFEmptyCommentsViewC5labelSo7UILabelCvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UILabel",
+                    "printedName": "UIKit.UILabel",
+                    "usr": "c:objc(cs)UILabel"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK19VFEmptyCommentsViewC5labelSo7UILabelCvg",
+                "mangledName": "$s11ViafouraSDK19VFEmptyCommentsViewC5labelSo7UILabelCvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
         "declKind": "Class",
         "usr": "c:@M@ViafouraSDK@objc(cs)VFEmptyCommentsView",
         "mangledName": "$s11ViafouraSDK19VFEmptyCommentsViewC",

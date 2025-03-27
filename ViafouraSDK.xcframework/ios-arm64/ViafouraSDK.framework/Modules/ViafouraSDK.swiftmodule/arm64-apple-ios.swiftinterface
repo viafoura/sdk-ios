@@ -1588,9 +1588,11 @@ public enum VFCustomizableView {
   case previewSeeMoreCommentsButton(button: VFButton)
   case previewTitleLabel(label: VFLabel)
   case previewPrivacyLabel(label: VFLabel)
+  case previewUserPromptLabel(label: VFLabel)
   case previewCommentPrompt(view: UIKit.UIView)
   case previewHeaderView(view: UIKit.UIView)
   case previewSortImage(image: VFImageView)
+  case previewSortLabel(label: VFLabel)
   case previewAllComments(view: UIKit.UIView)
   case previewPoweredByView(poweredByView: VFPoweredByViafouraView)
   case previewSkeletonView(skeletonView: UIKit.UIView)
@@ -1688,6 +1690,7 @@ extension VFCommentModerationListError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFEmptyCommentsView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let label: UIKit.UILabel
   @objc deinit
 }
 extension AnalyticsServiceImplementation {
