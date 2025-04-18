@@ -36407,16 +36407,6 @@
       },
       {
         "kind": "Import",
-        "name": "CoreData",
-        "printedName": "CoreData",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -62441,23 +62431,6 @@
       },
       {
         "kind": "Import",
-        "name": "CoreData",
-        "printedName": "CoreData",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK"
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -68511,472 +68484,6 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "ViafouraSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreData",
-        "printedName": "CoreData",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "EventLog",
-        "printedName": "EventLog",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(entity:insertInto:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "EventLog",
-                "printedName": "ViafouraSDK.EventLog",
-                "usr": "c:@M@ViafouraSDK@objc(cs)EventLog"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NSEntityDescription",
-                "printedName": "CoreData.NSEntityDescription",
-                "usr": "c:objc(cs)NSEntityDescription"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "CoreData.NSManagedObjectContext?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSManagedObjectContext",
-                    "printedName": "CoreData.NSManagedObjectContext",
-                    "usr": "c:objc(cs)NSManagedObjectContext"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@ViafouraSDK@objc(cs)EventLog(im)initWithEntity:insertIntoManagedObjectContext:",
-            "mangledName": "$s11ViafouraSDK8EventLogC6entity10insertIntoACSo19NSEntityDescriptionC_So22NSManagedObjectContextCSgtcfc",
-            "moduleName": "ViafouraSDK",
-            "overriding": true,
-            "implicit": true,
-            "objc_name": "initWithEntity:insertIntoManagedObjectContext:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Override"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "fetchRequest",
-            "printedName": "fetchRequest()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "NSFetchRequest",
-                "printedName": "CoreData.NSFetchRequest<ViafouraSDK.EventLog>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventLog",
-                    "printedName": "ViafouraSDK.EventLog",
-                    "usr": "c:@M@ViafouraSDK@objc(cs)EventLog"
-                  }
-                ],
-                "usr": "c:objc(cs)NSFetchRequest"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11ViafouraSDK8EventLogC12fetchRequestSo07NSFetchF0CyACGyFZ",
-            "mangledName": "$s11ViafouraSDK8EventLogC12fetchRequestSo07NSFetchF0CyACGyFZ",
-            "moduleName": "ViafouraSDK",
-            "static": true,
-            "declAttributes": [
-              "AccessControl",
-              "NonObjC"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "createdAt",
-            "printedName": "createdAt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Date?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@CM@ViafouraSDK@objc(cs)EventLog(py)createdAt",
-            "mangledName": "$s11ViafouraSDK8EventLogC9createdAt10Foundation4DateVSgvp",
-            "moduleName": "ViafouraSDK",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "NSManaged",
-              "ObjC"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@ViafouraSDK@objc(cs)EventLog(im)createdAt",
-                "mangledName": "$s11ViafouraSDK8EventLogC9createdAt10Foundation4DateVSgvg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@ViafouraSDK@objc(cs)EventLog(im)setCreatedAt:",
-                "mangledName": "$s11ViafouraSDK8EventLogC9createdAt10Foundation4DateVSgvs",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "set"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "jsonValue",
-            "printedName": "jsonValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@CM@ViafouraSDK@objc(cs)EventLog(py)jsonValue",
-            "mangledName": "$s11ViafouraSDK8EventLogC9jsonValueSSSgvp",
-            "moduleName": "ViafouraSDK",
-            "declAttributes": [
-              "Dynamic",
-              "AccessControl",
-              "NSManaged",
-              "ObjC"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@ViafouraSDK@objc(cs)EventLog(im)jsonValue",
-                "mangledName": "$s11ViafouraSDK8EventLogC9jsonValueSSSgvg",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.String?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@ViafouraSDK@objc(cs)EventLog(im)setJsonValue:",
-                "mangledName": "$s11ViafouraSDK8EventLogC9jsonValueSSSgvs",
-                "moduleName": "ViafouraSDK",
-                "implicit": true,
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "set"
-              }
-            ]
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:@M@ViafouraSDK@objc(cs)EventLog",
-        "mangledName": "$s11ViafouraSDK8EventLogC",
-        "moduleName": "ViafouraSDK",
-        "objc_name": "EventLog",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:objc(cs)NSManagedObject",
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "CoreData.NSManagedObject",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "ObservableObject",
-            "printedName": "ObservableObject",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "ObjectWillChangePublisher",
-                "printedName": "ObjectWillChangePublisher",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ObservableObjectPublisher",
-                    "printedName": "Combine.ObservableObjectPublisher",
-                    "usr": "s:7Combine25ObservableObjectPublisherC"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:7Combine16ObservableObjectP",
-            "mangledName": "$s7Combine16ObservableObjectP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Identifiable",
-            "printedName": "Identifiable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "ID",
-                "printedName": "ID",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ObjectIdentifier",
-                    "printedName": "Swift.ObjectIdentifier",
-                    "usr": "s:SO"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:s12IdentifiableP",
-            "mangledName": "$ss12IdentifiableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreData",
-        "printedName": "CoreData",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreData",
-        "printedName": "CoreData",
-        "declKind": "Import",
-        "moduleName": "ViafouraSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
         "moduleName": "ViafouraSDK"
       },
       {
@@ -69761,42 +69268,42 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Analytics\/AnalyticsService.swift",
       "kind": "Dictionary",
-      "offset": 3254,
+      "offset": 3207,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Analytics\/AnalyticsService.swift",
       "kind": "Array",
-      "offset": 3312,
+      "offset": 3265,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Analytics\/AnalyticsService.swift",
       "kind": "IntegerLiteral",
-      "offset": 3397,
+      "offset": 3350,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Analytics\/AnalyticsService.swift",
       "kind": "IntegerLiteral",
-      "offset": 3496,
+      "offset": 3449,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Analytics\/AnalyticsService.swift",
       "kind": "IntegerLiteral",
-      "offset": 3619,
+      "offset": 3572,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Analytics\/AnalyticsService.swift",
       "kind": "BooleanLiteral",
-      "offset": 4573,
+      "offset": 4526,
       "length": 5,
       "value": "false"
     },
@@ -74360,7 +73867,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 1481,
+      "offset": 1437,
       "length": 5,
       "value": "false"
     },
@@ -76638,13 +76145,6 @@
       "offset": 280,
       "length": 12,
       "value": "\"siteIdPath\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Storage\/CoreDataService.swift",
-      "kind": "StringLiteral",
-      "offset": 221,
-      "length": 13,
-      "value": "\"ViafouraSDK\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livereviews\/ReviewCommentMediaEndpoint.swift",
