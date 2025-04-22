@@ -1950,6 +1950,14 @@ public struct MuteUserResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct TrendingResultResponse : Swift.Decodable {
+  public let container_id: Swift.String
+  public let content_container_uuid: Swift.String
+  public let origin_title: Swift.String
+  public let origin_summary: Swift.String?
+  public let origin_url: Swift.String
+  public let origin_image_url: Swift.String
+  public let total_visible_contents: Swift.Int
+  public let date_published: Swift.Int64
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFCreateChatError : Foundation.LocalizedError {
