@@ -1551,7 +1551,11 @@ public enum VFCustomizableView {
   case postButton(button: VFButton)
   case postTextView(textField: VFTextView)
   case postCloseImage(image: VFImageView)
-  case postTitle(label: VFLabel)
+  case postUserImage(image: VFImageView)
+  case postUserAvatar(avatar: VFUserAvatarView)
+  case postMetadataTitle(label: VFLabel)
+  case postMetadataImage(image: VFImageView)
+  case postMetadataDescription(label: VFLabel)
   case postHeaderDescription(label: VFLabel)
   case postPlaceholderLabel(label: VFLabel)
   case postImageSkeletonView(skeletonView: VFSkeletonView)
@@ -1787,6 +1791,11 @@ extension VFChatContainerError {
   }
 }
 @_hasMissingDesignatedInitializers public class TrendingContent {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFUserAvatarView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func setupView()
+  @_Concurrency.MainActor @preconcurrency public func setupForUser(user: UserResponse)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CommentContent {

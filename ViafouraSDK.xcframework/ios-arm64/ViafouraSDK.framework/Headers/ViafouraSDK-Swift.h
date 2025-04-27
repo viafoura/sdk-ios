@@ -657,10 +657,10 @@ SWIFT_CLASS("_TtC11ViafouraSDK31VFPreviewCommentsViewController")
 @end
 
 
+
 @interface VFPreviewCommentsViewController (SWIFT_EXTENSION(ViafouraSDK))
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
-
 
 
 
@@ -810,6 +810,13 @@ SWIFT_CLASS("_TtC11ViafouraSDK13VFTrustedView")
 
 
 
+SWIFT_CLASS("_TtC11ViafouraSDK16VFUserAvatarView")
+@interface VFUserAvatarView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @interface VFVerticalTrendingViewController : VFUIViewController
 - (void)viewDidLoad;
@@ -818,9 +825,6 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @end
 
 
-@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
-- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
-@end
 
 
 @interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
@@ -828,6 +832,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK32VFVerticalTrendingViewController")
 @end
 
 
+@interface VFVerticalTrendingViewController (SWIFT_EXTENSION(ViafouraSDK))
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+@end
 
 
 
