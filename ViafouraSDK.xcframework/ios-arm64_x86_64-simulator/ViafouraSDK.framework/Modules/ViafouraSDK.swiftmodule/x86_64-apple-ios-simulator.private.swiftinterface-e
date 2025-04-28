@@ -1551,7 +1551,11 @@ public enum VFCustomizableView {
   case postButton(button: ViafouraSDK.VFButton)
   case postTextView(textField: ViafouraSDK.VFTextView)
   case postCloseImage(image: ViafouraSDK.VFImageView)
-  case postTitle(label: ViafouraSDK.VFLabel)
+  case postUserImage(image: ViafouraSDK.VFImageView)
+  case postUserAvatar(avatar: ViafouraSDK.VFUserAvatarView)
+  case postMetadataTitle(label: ViafouraSDK.VFLabel)
+  case postMetadataImage(image: ViafouraSDK.VFImageView)
+  case postMetadataDescription(label: ViafouraSDK.VFLabel)
   case postHeaderDescription(label: ViafouraSDK.VFLabel)
   case postPlaceholderLabel(label: ViafouraSDK.VFLabel)
   case postImageSkeletonView(skeletonView: ViafouraSDK.VFSkeletonView)
@@ -1787,6 +1791,11 @@ extension ViafouraSDK.VFChatContainerError {
   }
 }
 @_hasMissingDesignatedInitializers public class TrendingContent {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFUserAvatarView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func setupView()
+  @_Concurrency.MainActor @preconcurrency public func setupForUser(user: ViafouraSDK.UserResponse)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CommentContent {
