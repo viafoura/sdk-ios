@@ -20,6 +20,12 @@ jobs:
       with:
         xcode-version: 16.1.0
 
+    - name: Push cocoapods version
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+      run: |
+        pod trunk push ViafouraCore.podspec
+
     - name: Create SDK Release
       id: create_release
       uses: avakar/tag-and-release@v1
@@ -31,8 +37,3 @@ jobs:
         body: ${{ github.event.pull_request.body }}
         draft: false
         prerelease: false
-    - name: Push cocoapods version
-      env:
-        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-      run: |
-        pod trunk push ViafouraCore.podspec
