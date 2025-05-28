@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     LICENSE
   }
 
-  s.author          = { 'Martin De Simone' => 'martin.desimone@viafoura.com' }
+  s.author          = { 'Viafoura' => 'support@viafoura.com' }
   s.platform        = :ios
   s.ios.deployment_target = '10.3'
   # Setting pod `BUILD_LIBRARY_FOR_DISTRIBUTION` to `YES`
