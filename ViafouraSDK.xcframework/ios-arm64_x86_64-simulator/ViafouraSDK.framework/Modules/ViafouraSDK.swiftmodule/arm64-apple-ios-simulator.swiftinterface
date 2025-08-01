@@ -2327,6 +2327,7 @@ extension VFDisableCommentError {
 public enum VFSocialLoginProvider : Swift.String, Swift.Encodable, Swift.Decodable {
   case google
   case twitter
+  case oidc
   case linkedin
   case apple
   case viafouraDefinedCookie
