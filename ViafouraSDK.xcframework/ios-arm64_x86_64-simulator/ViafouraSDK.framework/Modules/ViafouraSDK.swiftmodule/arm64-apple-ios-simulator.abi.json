@@ -6819,6 +6819,92 @@
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bulkCommentCount",
+            "printedName": "bulkCommentCount(sectionUUID:containerIds:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<[ViafouraSDK.CommentContainerCountStatusResponse], ViafouraSDK.VFCommentCountError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.CommentContainerCountStatusResponse]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CommentContainerCountStatusResponse",
+                        "printedName": "ViafouraSDK.CommentContainerCountStatusResponse",
+                        "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCommentCountError",
+                    "printedName": "ViafouraSDK.VFCommentCountError",
+                    "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP16bulkCommentCount11sectionUUID12containerIds14syndicationKeys6ResultOySayAA0g9ContainerH14StatusResponseVGAA09VFCommentH5ErrorOG10Foundation0J0VSg_SaySSGSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP16bulkCommentCount11sectionUUID12containerIds14syndicationKeys6ResultOySayAA0g9ContainerH14StatusResponseVGAA09VFCommentH5ErrorOG10Foundation0J0VSg_SaySSGSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -8486,6 +8572,92 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId14syndicationKeys6ResultOySiAA09VFCommentH5ErrorOG10Foundation0J0VSg_S2SSgtYaF",
             "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC12commentCount11sectionUUID11containerId14syndicationKeys6ResultOySiAA09VFCommentH5ErrorOG10Foundation0J0VSg_S2SSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bulkCommentCount",
+            "printedName": "bulkCommentCount(sectionUUID:containerIds:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<[ViafouraSDK.CommentContainerCountStatusResponse], ViafouraSDK.VFCommentCountError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.CommentContainerCountStatusResponse]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CommentContainerCountStatusResponse",
+                        "printedName": "ViafouraSDK.CommentContainerCountStatusResponse",
+                        "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCommentCountError",
+                    "printedName": "ViafouraSDK.VFCommentCountError",
+                    "usr": "s:11ViafouraSDK19VFCommentCountErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC16bulkCommentCount11sectionUUID12containerIds14syndicationKeys6ResultOySayAA0h9ContainerI14StatusResponseVGAA09VFCommentI5ErrorOG10Foundation0K0VSg_SaySSGSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC16bulkCommentCount11sectionUUID12containerIds14syndicationKeys6ResultOySayAA0h9ContainerI14StatusResponseVGAA09VFCommentI5ErrorOG10Foundation0K0VSg_SaySSGSSSgtYaF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -16919,6 +17091,16 @@
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -68783,6 +68965,79 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "CommentContainerCountStatusResponse",
+        "printedName": "CommentContainerCountStatusResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CommentContainerCountStatusResponse",
+                "printedName": "ViafouraSDK.CommentContainerCountStatusResponse",
+                "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV",
+        "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "VFDeleteCommentError",
         "printedName": "VFDeleteCommentError",
         "children": [
@@ -70462,6 +70717,13 @@
       "offset": 369,
       "length": 17,
       "value": "\"containerIdPath\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livecomments\/CommentContainerBulkEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 363,
+      "length": 12,
+      "value": "\"siteIdPath\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/VFButton.swift",
