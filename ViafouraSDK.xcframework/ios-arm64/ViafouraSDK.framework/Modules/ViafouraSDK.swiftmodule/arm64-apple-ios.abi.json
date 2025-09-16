@@ -27714,6 +27714,35 @@
           },
           {
             "kind": "Function",
+            "name": "cookieLogin",
+            "printedName": "cookieLogin(token:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFCookieLoginData",
+                "printedName": "ViafouraSDK.VFCookieLoginData",
+                "usr": "s:11ViafouraSDK17VFCookieLoginDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP11cookieLogin5tokenAA08VFCookieF4DataVSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP11cookieLogin5tokenAA08VFCookieF4DataVSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "logout",
             "printedName": "logout()",
             "children": [
@@ -27800,6 +27829,41 @@
           },
           {
             "kind": "Function",
+            "name": "login",
+            "printedName": "login(email:password:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP5login5email8passwordAA12UserResponseVSS_SStYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP5login5email8passwordAA12UserResponseVSS_SStYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "openIdLogin",
             "printedName": "openIdLogin(token:completion:)",
             "children": [
@@ -27854,6 +27918,35 @@
             "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
             "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openIdLogin",
+            "printedName": "openIdLogin(token:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP11openIdLogin5tokenAA12UserResponseVSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP11openIdLogin5tokenAA12UserResponseVSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
@@ -27924,6 +28017,41 @@
           },
           {
             "kind": "Function",
+            "name": "socialLogin",
+            "printedName": "socialLogin(token:provider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFSocialLoginProvider",
+                "printedName": "ViafouraSDK.VFSocialLoginProvider",
+                "usr": "s:11ViafouraSDK21VFSocialLoginProviderO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP11socialLogin5token8providerAA12UserResponseVSS_AA08VFSocialF8ProviderOtYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP11socialLogin5token8providerAA12UserResponseVSS_AA08VFSocialF8ProviderOtYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "loginRadiusLogin",
             "printedName": "loginRadiusLogin(token:provider:completion:)",
             "children": [
@@ -27989,6 +28117,41 @@
           },
           {
             "kind": "Function",
+            "name": "loginRadiusLogin",
+            "printedName": "loginRadiusLogin(token:provider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFSocialLoginProvider",
+                "printedName": "ViafouraSDK.VFSocialLoginProvider",
+                "usr": "s:11ViafouraSDK21VFSocialLoginProviderO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP16loginRadiusLogin5token8providerAA12UserResponseVSS_AA08VFSocialG8ProviderOtYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP16loginRadiusLogin5token8providerAA12UserResponseVSS_AA08VFSocialG8ProviderOtYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "resetPassword",
             "printedName": "resetPassword(email:completion:)",
             "children": [
@@ -28043,6 +28206,35 @@
             "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
             "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "resetPassword",
+            "printedName": "resetPassword(email:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP13resetPassword5emailSbSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP13resetPassword5emailSbSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
@@ -28128,6 +28320,61 @@
             "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
             "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "signup",
+            "printedName": "signup(name:email:password:recaptchaToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFAuthenticationServiceP6signup4name5email8password14recaptchaTokenAA12UserResponseVSS_S3SSgtYaKF",
+            "mangledName": "$s11ViafouraSDK23VFAuthenticationServiceP6signup4name5email8password14recaptchaTokenAA12UserResponseVSS_S3SSgtYaKF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFAuthenticationService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFAuthenticationService>",
+            "protocolReq": true,
+            "throwing": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
@@ -28406,6 +28653,41 @@
           },
           {
             "kind": "Function",
+            "name": "login",
+            "printedName": "login(email:password:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC5login5email8passwordAA12UserResponseVSS_SStYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC5login5email8passwordAA12UserResponseVSS_SStYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "logout",
             "printedName": "logout()",
             "children": [
@@ -28513,6 +28795,62 @@
           },
           {
             "kind": "Function",
+            "name": "signup",
+            "printedName": "signup(name:email:password:recaptchaToken:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC6signup4name5email8password14recaptchaTokenAA12UserResponseVSS_S3SSgtYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC6signup4name5email8password14recaptchaTokenAA12UserResponseVSS_S3SSgtYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "socialLogin",
             "printedName": "socialLogin(token:provider:completion:)",
             "children": [
@@ -28578,6 +28916,41 @@
           },
           {
             "kind": "Function",
+            "name": "socialLogin",
+            "printedName": "socialLogin(token:provider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFSocialLoginProvider",
+                "printedName": "ViafouraSDK.VFSocialLoginProvider",
+                "usr": "s:11ViafouraSDK21VFSocialLoginProviderO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC11socialLogin5token8providerAA12UserResponseVSS_AA08VFSocialG8ProviderOtYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC11socialLogin5token8providerAA12UserResponseVSS_AA08VFSocialG8ProviderOtYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "openIdLogin",
             "printedName": "openIdLogin(token:completion:)",
             "children": [
@@ -28633,6 +29006,35 @@
               "AccessControl"
             ],
             "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openIdLogin",
+            "printedName": "openIdLogin(token:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC11openIdLogin5tokenAA12UserResponseVSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC11openIdLogin5tokenAA12UserResponseVSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -28702,6 +29104,41 @@
           },
           {
             "kind": "Function",
+            "name": "loginRadiusLogin",
+            "printedName": "loginRadiusLogin(token:provider:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserResponse",
+                "printedName": "ViafouraSDK.UserResponse",
+                "usr": "s:11ViafouraSDK12UserResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFSocialLoginProvider",
+                "printedName": "ViafouraSDK.VFSocialLoginProvider",
+                "usr": "s:11ViafouraSDK21VFSocialLoginProviderO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC16loginRadiusLogin5token8providerAA12UserResponseVSS_AA08VFSocialH8ProviderOtYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC16loginRadiusLogin5token8providerAA12UserResponseVSS_AA08VFSocialH8ProviderOtYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "cookieLogin",
             "printedName": "cookieLogin(token:completion:)",
             "children": [
@@ -28761,6 +29198,35 @@
           },
           {
             "kind": "Function",
+            "name": "cookieLogin",
+            "printedName": "cookieLogin(token:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFCookieLoginData",
+                "printedName": "ViafouraSDK.VFCookieLoginData",
+                "usr": "s:11ViafouraSDK17VFCookieLoginDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC11cookieLogin5tokenAA08VFCookieG4DataVSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC11cookieLogin5tokenAA08VFCookieG4DataVSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "resetPassword",
             "printedName": "resetPassword(email:completion:)",
             "children": [
@@ -28816,6 +29282,35 @@
               "AccessControl"
             ],
             "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "resetPassword",
+            "printedName": "resetPassword(email:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFAuthenticationServiceImplementationC13resetPassword5emailSbSS_tYaKF",
+            "mangledName": "$s11ViafouraSDK37VFAuthenticationServiceImplementationC13resetPassword5emailSbSS_tYaKF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           }
         ],

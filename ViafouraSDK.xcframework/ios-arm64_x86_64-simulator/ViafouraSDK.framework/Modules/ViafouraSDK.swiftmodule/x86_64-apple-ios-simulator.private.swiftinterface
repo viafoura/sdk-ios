@@ -477,6 +477,7 @@ extension VFChatModerationListError {
 }
 extension VFAuthenticationServiceImplementation {
   public func login(email: Swift.String, password: Swift.String, completion: @escaping (Swift.Result<UserResponse, VFLoginError>) -> Swift.Void)
+  public func login(email: Swift.String, password: Swift.String) async throws -> UserResponse
 }
 public enum VFLoginError : Foundation.LocalizedError {
   case banned(banData: ServerErrorData)
@@ -878,13 +879,20 @@ extension VFDislikeReviewError {
 }
 public protocol VFAuthenticationService {
   func cookieLogin(token: Swift.String, completion: @escaping (Swift.Result<VFCookieLoginData, VFCookieLoginError>) -> Swift.Void)
+  func cookieLogin(token: Swift.String) async throws -> VFCookieLoginData
   func logout()
   func login(email: Swift.String, password: Swift.String, completion: @escaping (Swift.Result<UserResponse, VFLoginError>) -> Swift.Void)
+  func login(email: Swift.String, password: Swift.String) async throws -> UserResponse
   func openIdLogin(token: Swift.String, completion: @escaping (Swift.Result<UserResponse, VFOpenIdLoginError>) -> Swift.Void)
+  func openIdLogin(token: Swift.String) async throws -> UserResponse
   func socialLogin(token: Swift.String, provider: VFSocialLoginProvider, completion: @escaping (Swift.Result<UserResponse, VFSocialLoginError>) -> Swift.Void)
+  func socialLogin(token: Swift.String, provider: VFSocialLoginProvider) async throws -> UserResponse
   func loginRadiusLogin(token: Swift.String, provider: VFSocialLoginProvider, completion: @escaping (Swift.Result<UserResponse, VFLoginRadiusLoginError>) -> Swift.Void)
+  func loginRadiusLogin(token: Swift.String, provider: VFSocialLoginProvider) async throws -> UserResponse
   func resetPassword(email: Swift.String, completion: @escaping (Swift.Result<Swift.Bool, VFPasswordResetError>) -> Swift.Void)
+  func resetPassword(email: Swift.String) async throws -> Swift.Bool
   func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String?, completion: @escaping (Swift.Result<UserResponse, VFSignUpError>) -> Swift.Void)
+  func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String?) async throws -> UserResponse
   func getUserLoginStatus(completion: @escaping (Swift.Result<VFLoginStatus, Swift.Never>) -> Swift.Void)
   func getUserLoginStatus() async -> Swift.Result<VFLoginStatus, Swift.Never>
 }
@@ -909,6 +917,7 @@ extension VFEditorPickCommentError {
 }
 extension VFAuthenticationServiceImplementation {
   public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil, completion: @escaping (Swift.Result<UserResponse, VFSignUpError>) -> Swift.Void)
+  public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil) async throws -> UserResponse
 }
 public enum VFSignUpError : Foundation.LocalizedError {
   case unknown
@@ -925,6 +934,7 @@ extension VFSignUpError {
 }
 extension VFAuthenticationServiceImplementation {
   public func socialLogin(token: Swift.String, provider: VFSocialLoginProvider, completion: @escaping (Swift.Result<UserResponse, VFSocialLoginError>) -> Swift.Void)
+  public func socialLogin(token: Swift.String, provider: VFSocialLoginProvider) async throws -> UserResponse
 }
 public enum VFSocialLoginError : Foundation.LocalizedError {
   case unknown
@@ -1024,6 +1034,7 @@ extension VFFlagChatError {
 }
 extension VFAuthenticationServiceImplementation {
   public func openIdLogin(token: Swift.String, completion: @escaping (Swift.Result<UserResponse, VFOpenIdLoginError>) -> Swift.Void)
+  public func openIdLogin(token: Swift.String) async throws -> UserResponse
 }
 public enum VFOpenIdLoginError : Foundation.LocalizedError {
   case unknown
@@ -1314,6 +1325,7 @@ extension VFCreateReviewMediaError {
 }
 extension VFAuthenticationServiceImplementation {
   public func loginRadiusLogin(token: Swift.String, provider: VFSocialLoginProvider, completion: @escaping (Swift.Result<UserResponse, VFLoginRadiusLoginError>) -> Swift.Void)
+  public func loginRadiusLogin(token: Swift.String, provider: VFSocialLoginProvider) async throws -> UserResponse
 }
 public enum VFLoginRadiusLoginError : Foundation.LocalizedError {
   case unknown
@@ -1901,6 +1913,7 @@ extension VFUpdateReviewsContainerSettingsError {
 }
 extension VFAuthenticationServiceImplementation {
   public func cookieLogin(token: Swift.String, completion: @escaping (Swift.Result<VFCookieLoginData, VFCookieLoginError>) -> Swift.Void)
+  public func cookieLogin(token: Swift.String) async throws -> VFCookieLoginData
 }
 public struct VFCookieLoginData {
 }
@@ -2235,6 +2248,7 @@ public enum WidgetType : Swift.String, Swift.Encodable {
 }
 extension VFAuthenticationServiceImplementation {
   public func resetPassword(email: Swift.String, completion: @escaping (Swift.Result<Swift.Bool, VFPasswordResetError>) -> Swift.Void)
+  public func resetPassword(email: Swift.String) async throws -> Swift.Bool
 }
 public enum VFPasswordResetError : Foundation.LocalizedError {
   case unknown
