@@ -69464,6 +69464,138 @@
         "printedName": "CommentContainerCountStatusResponse",
         "children": [
           {
+            "kind": "Var",
+            "name": "containerId",
+            "printedName": "containerId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV11containerIdSSvp",
+            "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV11containerIdSSvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV11containerIdSSvg",
+                "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV11containerIdSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "commentCount",
+            "printedName": "commentCount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV07commentE0s5Int64Vvp",
+            "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV07commentE0s5Int64Vvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV07commentE0s5Int64Vvg",
+                "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV07commentE0s5Int64Vvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "status",
+            "printedName": "status",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV6statusSSvp",
+            "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV6statusSSvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK35CommentContainerCountStatusResponseV6statusSSvg",
+                "mangledName": "$s11ViafouraSDK35CommentContainerCountStatusResponseV6statusSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
