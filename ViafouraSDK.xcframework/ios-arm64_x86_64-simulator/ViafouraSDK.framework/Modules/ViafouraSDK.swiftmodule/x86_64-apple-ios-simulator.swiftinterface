@@ -2397,6 +2397,9 @@ extension VFUnspamCommentError {
   }
 }
 public struct CommentContainerCountStatusResponse : Swift.Decodable {
+  public let containerId: Swift.String
+  public let commentCount: Swift.Int64
+  public let status: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
 extension VFLiveCommentsServiceImplementation {
