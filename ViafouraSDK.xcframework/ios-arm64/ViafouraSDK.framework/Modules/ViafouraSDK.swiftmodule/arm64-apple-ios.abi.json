@@ -47039,6 +47039,63 @@
           },
           {
             "kind": "Var",
+            "name": "commentCellTrustedView",
+            "printedName": "commentCellTrustedView",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFTrustedView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFTrustedView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(view: ViafouraSDK.VFTrustedView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFTrustedView",
+                            "printedName": "ViafouraSDK.VFTrustedView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFTrustedView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO018commentCellTrustedD0yAcA09VFTrustedD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO018commentCellTrustedD0yAcA09VFTrustedD0C_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "commentCellFollowView",
             "printedName": "commentCellFollowView",
             "children": [

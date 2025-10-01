@@ -1601,6 +1601,7 @@ public enum VFCustomizableView {
   case commentCellLikeImage(image: VFImageView)
   case commentCellLikeLabel(label: VFLabel)
   case commentCellDislikeImage(image: VFImageView)
+  case commentCellTrustedView(view: VFTrustedView)
   case commentCellFollowView(view: UIKit.UIView)
   case commentCellDislikeLabel(label: VFLabel)
   case commentCellReplyLabel(label: VFLabel)
