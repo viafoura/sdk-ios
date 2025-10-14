@@ -1,14 +1,6 @@
-#
-# Be sure to run `pod lib lint Spot.IM-Core.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'ViafouraCore'
-  s.version          = '1.2.30'
+  s.version          = '1.2.31'
   s.swift_versions = ['5.0']
   s.summary          = 'Viafoura SDK'
   s.description      = 'This SDK allows you to integrate Viafoura tools into your iOS app.'
