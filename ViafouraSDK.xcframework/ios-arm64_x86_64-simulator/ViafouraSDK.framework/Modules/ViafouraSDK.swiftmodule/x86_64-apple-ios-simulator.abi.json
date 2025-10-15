@@ -19915,6 +19915,96 @@
         "kind": "TypeDecl",
         "name": "VFAuthorView",
         "printedName": "VFAuthorView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "text",
+            "printedName": "text",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK12VFAuthorViewC4textSSvp",
+            "mangledName": "$s11ViafouraSDK12VFAuthorViewC4textSSvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12VFAuthorViewC4textSSvg",
+                "mangledName": "$s11ViafouraSDK12VFAuthorViewC4textSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12VFAuthorViewC4textSSvs",
+                "mangledName": "$s11ViafouraSDK12VFAuthorViewC4textSSvs",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12VFAuthorViewC4textSSvM",
+                "mangledName": "$s11ViafouraSDK12VFAuthorViewC4textSSvM",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
         "declKind": "Class",
         "usr": "c:@M@ViafouraSDK@objc(cs)VFAuthorView",
         "mangledName": "$s11ViafouraSDK12VFAuthorViewC",
@@ -47096,6 +47186,63 @@
           },
           {
             "kind": "Var",
+            "name": "commentCellAuthorView",
+            "printedName": "commentCellAuthorView",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFAuthorView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFAuthorView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(view: ViafouraSDK.VFAuthorView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFAuthorView",
+                            "printedName": "ViafouraSDK.VFAuthorView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFAuthorView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO017commentCellAuthorD0yAcA08VFAuthorD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO017commentCellAuthorD0yAcA08VFAuthorD0C_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "commentCellFollowView",
             "printedName": "commentCellFollowView",
             "children": [
@@ -71786,6 +71933,13 @@
       "offset": 312,
       "length": 12,
       "value": "\"siteIdPath\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/VFAuthorView.swift",
+      "kind": "StringLiteral",
+      "offset": 244,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/authentication\/LoginRadiusEndpoint.swift",
