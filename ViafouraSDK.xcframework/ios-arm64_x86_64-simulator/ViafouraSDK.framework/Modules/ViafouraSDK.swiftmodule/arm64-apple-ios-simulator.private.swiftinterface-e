@@ -597,6 +597,10 @@ extension ViafouraSDK.VFUpdateCommentsContainerSettingsError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAuthorView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var text: Swift.String {
+    get
+    set
+  }
   @objc deinit
 }
 public enum VFDisableChatError : Foundation.LocalizedError {
@@ -1602,6 +1606,7 @@ public enum VFCustomizableView {
   case commentCellLikeLabel(label: ViafouraSDK.VFLabel)
   case commentCellDislikeImage(image: ViafouraSDK.VFImageView)
   case commentCellTrustedView(view: ViafouraSDK.VFTrustedView)
+  case commentCellAuthorView(view: ViafouraSDK.VFAuthorView)
   case commentCellFollowView(view: UIKit.UIView)
   case commentCellDislikeLabel(label: ViafouraSDK.VFLabel)
   case commentCellReplyLabel(label: ViafouraSDK.VFLabel)
