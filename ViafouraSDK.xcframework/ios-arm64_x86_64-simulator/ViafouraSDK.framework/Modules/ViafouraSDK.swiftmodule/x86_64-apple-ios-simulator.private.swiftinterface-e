@@ -1112,9 +1112,12 @@ public struct VFArticleMetadata {
   public let url: Foundation.URL
   public let title: Swift.String
   public let subtitle: Swift.String
-  public let thumbnailUrl: Foundation.URL
+  public let thumbnailUrl: Foundation.URL?
+  public let localThumbnail: UIKit.UIImage?
   public init(url: Foundation.URL, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Foundation.URL)
   public init(url: Swift.String, title: Swift.String, subtitle: Swift.String, thumbnailUrl: Swift.String)
+  public init(url: Foundation.URL, title: Swift.String, subtitle: Swift.String, localThumbnail: UIKit.UIImage)
+  public init(url: Swift.String, title: Swift.String, subtitle: Swift.String, localThumbnail: UIKit.UIImage)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAdView : UIKit.UIView {
   @objc deinit
@@ -1613,6 +1616,7 @@ public enum VFCustomizableView {
   case commentCellReplyImage(image: ViafouraSDK.VFImageView)
   case commentCellUserImage(image: ViafouraSDK.VFImageView)
   case commentCellUserAvatar(view: UIKit.UIView)
+  case commentCellUserIndicator(image: ViafouraSDK.VFImageView)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
   case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
   case previewEmptyCommentsView(emptyCommentsView: ViafouraSDK.VFEmptyCommentsView)
