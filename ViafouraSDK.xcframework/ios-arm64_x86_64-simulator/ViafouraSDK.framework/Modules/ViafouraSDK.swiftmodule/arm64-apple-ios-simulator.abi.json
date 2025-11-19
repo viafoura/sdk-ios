@@ -33639,6 +33639,13 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "VFArticleMetadata",
         "printedName": "VFArticleMetadata",
@@ -33782,14 +33789,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVvp",
-            "mangledName": "$s11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVvp",
+            "usr": "s:11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVSgvp",
+            "mangledName": "$s11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVSgvp",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "HasStorage",
@@ -33805,14 +33820,82 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "URL",
-                    "printedName": "Foundation.URL",
-                    "usr": "s:10Foundation3URLV"
+                    "name": "Optional",
+                    "printedName": "Foundation.URL?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URL",
+                        "printedName": "Foundation.URL",
+                        "usr": "s:10Foundation3URLV"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVvg",
-                "mangledName": "$s11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVvg",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVSgvg",
+                "mangledName": "$s11ViafouraSDK17VFArticleMetadataV12thumbnailUrl10Foundation3URLVSgvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "localThumbnail",
+            "printedName": "localThumbnail",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK17VFArticleMetadataV14localThumbnailSo7UIImageCSgvp",
+            "mangledName": "$s11ViafouraSDK17VFArticleMetadataV14localThumbnailSo7UIImageCSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV14localThumbnailSo7UIImageCSgvg",
+                "mangledName": "$s11ViafouraSDK17VFArticleMetadataV14localThumbnailSo7UIImageCSgvg",
                 "moduleName": "ViafouraSDK",
                 "implicit": true,
                 "accessorKind": "get"
@@ -33903,6 +33986,96 @@
             "declKind": "Constructor",
             "usr": "s:11ViafouraSDK17VFArticleMetadataV3url5title8subtitle12thumbnailUrlACSS_S3Stcfc",
             "mangledName": "$s11ViafouraSDK17VFArticleMetadataV3url5title8subtitle12thumbnailUrlACSS_S3Stcfc",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(url:title:subtitle:localThumbnail:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK17VFArticleMetadataV3url5title8subtitle14localThumbnailAC10Foundation3URLV_S2SSo7UIImageCtcfc",
+            "mangledName": "$s11ViafouraSDK17VFArticleMetadataV3url5title8subtitle14localThumbnailAC10Foundation3URLV_S2SSo7UIImageCtcfc",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(url:title:subtitle:localThumbnail:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIImage",
+                "printedName": "UIKit.UIImage",
+                "usr": "c:objc(cs)UIImage"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK17VFArticleMetadataV3url5title8subtitle14localThumbnailACSS_S2SSo7UIImageCtcfc",
+            "mangledName": "$s11ViafouraSDK17VFArticleMetadataV3url5title8subtitle14localThumbnailACSS_S2SSo7UIImageCtcfc",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -47581,6 +47754,63 @@
             "declKind": "EnumElement",
             "usr": "s:11ViafouraSDK18VFCustomizableViewO21commentCellUserAvataryACSo6UIViewC_tcACmF",
             "mangledName": "$s11ViafouraSDK18VFCustomizableViewO21commentCellUserAvataryACSo6UIViewC_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "commentCellUserIndicator",
+            "printedName": "commentCellUserIndicator",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFImageView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFImageView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(image: ViafouraSDK.VFImageView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFImageView",
+                            "printedName": "ViafouraSDK.VFImageView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFImageView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO24commentCellUserIndicatoryAcA07VFImageD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO24commentCellUserIndicatoryAcA07VFImageD0C_tcACmF",
             "moduleName": "ViafouraSDK"
           },
           {
