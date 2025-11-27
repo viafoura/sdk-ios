@@ -1571,6 +1571,16 @@ extension ViafouraSDK.VFTopicsSubscribedError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFTabView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let option1View: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option2View: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option3View: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option1Label: ViafouraSDK.VFLabel
+  @_Concurrency.MainActor @preconcurrency final public let option2Label: ViafouraSDK.VFLabel
+  @_Concurrency.MainActor @preconcurrency final public let option3Label: ViafouraSDK.VFLabel
+  @_Concurrency.MainActor @preconcurrency final public let option1BottomView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option2BottomView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option3BottomView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let separatorView: ViafouraSDK.VFSeparatorView
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFScrollDownView : UIKit.UIView {
@@ -1597,6 +1607,7 @@ public enum VFCustomizableView {
   case profileLikesLabel(label: ViafouraSDK.VFLabel)
   case profileFollowersLabel(label: ViafouraSDK.VFLabel)
   case profileSegmentedControl(segmentedControl: ViafouraSDK.VFSegmentedControl)
+  case profileCommunityTabView(tabView: ViafouraSDK.VFTabView)
   case profileBackgroundView(view: UIKit.UIView)
   case commentCellExpandRepliesLoading(loadingView: ViafouraSDK.VFLoadingView)
   case commentCellExpandRepliesImage(image: ViafouraSDK.VFImageView)
@@ -1633,6 +1644,18 @@ public enum VFCustomizableView {
   case previewSkeletonView(skeletonView: UIKit.UIView)
   case previewFollowView(followView: ViafouraSDK.VFFollowView)
   case previewBackgroundView(view: UIKit.UIView)
+  case reportReasonOptionLabel(label: ViafouraSDK.VFLabel)
+  case reportTitleLabel(label: ViafouraSDK.VFLabel)
+  case reportPickReasonLabel(label: ViafouraSDK.VFLabel)
+  case reportStartCloseLabel(label: ViafouraSDK.VFLabel)
+  case reportStartDescriptionLabel(label: ViafouraSDK.VFLabel)
+  case reportStartButton(button: ViafouraSDK.VFButton)
+  case reportChosenTitleLabel(label: ViafouraSDK.VFLabel)
+  case reportChosenDescriptionLabel(label: ViafouraSDK.VFLabel)
+  case reportChosenCloseLabel(label: ViafouraSDK.VFLabel)
+  case reportChosenButton(button: ViafouraSDK.VFButton)
+  case reportThanksLabel(label: ViafouraSDK.VFLabel)
+  case reportThanksButton(button: ViafouraSDK.VFButton)
   case trendingVerticalBackgroundView(view: UIKit.UIView)
   case trendingVerticalFullImage(image: ViafouraSDK.VFImageView)
   case trendingVerticalFullTitle(label: ViafouraSDK.VFLabel)
