@@ -1571,6 +1571,16 @@ extension VFTopicsSubscribedError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFTabView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let option1View: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option2View: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option3View: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option1Label: VFLabel
+  @_Concurrency.MainActor @preconcurrency final public let option2Label: VFLabel
+  @_Concurrency.MainActor @preconcurrency final public let option3Label: VFLabel
+  @_Concurrency.MainActor @preconcurrency final public let option1BottomView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option2BottomView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let option3BottomView: UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency final public let separatorView: VFSeparatorView
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFScrollDownView : UIKit.UIView {
@@ -1597,6 +1607,7 @@ public enum VFCustomizableView {
   case profileLikesLabel(label: VFLabel)
   case profileFollowersLabel(label: VFLabel)
   case profileSegmentedControl(segmentedControl: VFSegmentedControl)
+  case profileCommunityTabView(tabView: VFTabView)
   case profileBackgroundView(view: UIKit.UIView)
   case commentCellExpandRepliesLoading(loadingView: VFLoadingView)
   case commentCellExpandRepliesImage(image: VFImageView)
@@ -1633,6 +1644,18 @@ public enum VFCustomizableView {
   case previewSkeletonView(skeletonView: UIKit.UIView)
   case previewFollowView(followView: VFFollowView)
   case previewBackgroundView(view: UIKit.UIView)
+  case reportReasonOptionLabel(label: VFLabel)
+  case reportTitleLabel(label: VFLabel)
+  case reportPickReasonLabel(label: VFLabel)
+  case reportStartCloseLabel(label: VFLabel)
+  case reportStartDescriptionLabel(label: VFLabel)
+  case reportStartButton(button: VFButton)
+  case reportChosenTitleLabel(label: VFLabel)
+  case reportChosenDescriptionLabel(label: VFLabel)
+  case reportChosenCloseLabel(label: VFLabel)
+  case reportChosenButton(button: VFButton)
+  case reportThanksLabel(label: VFLabel)
+  case reportThanksButton(button: VFButton)
   case trendingVerticalBackgroundView(view: UIKit.UIView)
   case trendingVerticalFullImage(image: VFImageView)
   case trendingVerticalFullTitle(label: VFLabel)
