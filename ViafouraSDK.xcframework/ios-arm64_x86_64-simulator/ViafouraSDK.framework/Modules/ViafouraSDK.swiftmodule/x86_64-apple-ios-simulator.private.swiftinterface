@@ -227,7 +227,7 @@ public protocol VFLiveCommentsService {
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: VFSortType, syndicationKey: Swift.String?) async throws -> Swift.Result<CommentListResponse, VFCommentListError>
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void)
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Int, VFCommentCountError>
-  func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String], syndicationKey: Swift.String?) async -> Swift.Result<[CommentContainerCountStatusResponse], VFCommentCountError>
+  func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String]) async -> Swift.Result<[CommentContainerCountStatusResponse], VFCommentCountError>
 }
 @_hasMissingDesignatedInitializers public class VFLiveCommentsServiceImplementation : VFLiveCommentsService {
   @objc deinit
@@ -1485,7 +1485,7 @@ extension VFRemovePollError {
 extension VFLiveCommentsServiceImplementation {
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void)
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Int, VFCommentCountError>
-  public func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String], syndicationKey: Swift.String?) async -> Swift.Result<[CommentContainerCountStatusResponse], VFCommentCountError>
+  public func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String]) async -> Swift.Result<[CommentContainerCountStatusResponse], VFCommentCountError>
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
   case unknown
@@ -1527,6 +1527,7 @@ extension VFRemoveEditorPickReviewError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFFollowView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let label: VFLabel
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFLabel : UIKit.UILabel {
@@ -1630,11 +1631,27 @@ public enum VFCustomizableView {
   case commentCellUserIndicator(image: VFImageView)
   case commentCellCustomBadge(badge: VFCustomBadgeView)
   case commentCellSeparator(separator: VFSeparatorView)
+  case userCommentDescLabel(label: VFLabel)
+  case userCommentOriginalImage(image: VFImageView)
+  case userCommentOriginalTitle(label: VFLabel)
+  case userCommentContentLabel(label: VFLabel)
+  case userCommentSeparator(separator: VFSeparatorView)
+  case userCommentDateLabel(label: VFLabel)
+  case userCellImage(image: VFImageView)
+  case userCellAvatarView(view: VFUserAvatarView)
+  case userCellNameLabel(label: VFLabel)
+  case userCellActionDateLabel(label: VFLabel)
+  case userCellBadgeLabel(label: VFLabel)
+  case userCellBadgeView(view: UIKit.UIView)
+  case userCellSeparator(separator: VFSeparatorView)
+  case userCellFollowView(view: VFFollowView)
   case previewEmptyCommentsView(emptyCommentsView: VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: VFButton)
   case previewTitleLabel(label: VFLabel)
   case previewPrivacyLabel(label: VFLabel)
   case previewUserPromptLabel(label: VFLabel)
+  case previewUserSomeoneWritingLabel(label: VFLabel)
+  case previewNewCommentsNotificationView(view: VFNewCommentsNotificationView)
   case previewCommentPrompt(view: UIKit.UIView)
   case previewHeaderView(view: UIKit.UIView)
   case previewSortImage(image: VFImageView)
@@ -1658,8 +1675,10 @@ public enum VFCustomizableView {
   case reportThanksButton(button: VFButton)
   case trendingVerticalBackgroundView(view: UIKit.UIView)
   case trendingVerticalFullImage(image: VFImageView)
+  case trendingVerticalFullImageIcon(image: VFImageView)
   case trendingVerticalFullTitle(label: VFLabel)
   case trendingVerticalFullCount(label: VFLabel)
+  case trendingVerticalViewMoreButton(button: VFButton)
   case trendingVerticalCondensedTitle(label: VFLabel)
   case trendingVerticalCondensedCount(label: VFLabel)
   case trendingCarouselTitle(label: VFLabel)

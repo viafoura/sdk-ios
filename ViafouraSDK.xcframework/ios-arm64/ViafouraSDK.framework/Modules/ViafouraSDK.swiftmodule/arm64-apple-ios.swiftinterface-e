@@ -227,7 +227,7 @@ public protocol VFLiveCommentsService {
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String?) async throws -> Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> Swift.Void)
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>
-  func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String], syndicationKey: Swift.String?) async -> Swift.Result<[ViafouraSDK.CommentContainerCountStatusResponse], ViafouraSDK.VFCommentCountError>
+  func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String]) async -> Swift.Result<[ViafouraSDK.CommentContainerCountStatusResponse], ViafouraSDK.VFCommentCountError>
 }
 @_hasMissingDesignatedInitializers public class VFLiveCommentsServiceImplementation : ViafouraSDK.VFLiveCommentsService {
   @objc deinit
@@ -1485,7 +1485,7 @@ extension ViafouraSDK.VFRemovePollError {
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> Swift.Void)
   public func commentCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>
-  public func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String], syndicationKey: Swift.String?) async -> Swift.Result<[ViafouraSDK.CommentContainerCountStatusResponse], ViafouraSDK.VFCommentCountError>
+  public func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String]) async -> Swift.Result<[ViafouraSDK.CommentContainerCountStatusResponse], ViafouraSDK.VFCommentCountError>
 }
 public enum VFCommentCountError : Foundation.LocalizedError {
   case unknown
@@ -1527,6 +1527,7 @@ extension ViafouraSDK.VFRemoveEditorPickReviewError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFFollowView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let label: ViafouraSDK.VFLabel
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFLabel : UIKit.UILabel {
@@ -1630,11 +1631,27 @@ public enum VFCustomizableView {
   case commentCellUserIndicator(image: ViafouraSDK.VFImageView)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
   case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
+  case userCommentDescLabel(label: ViafouraSDK.VFLabel)
+  case userCommentOriginalImage(image: ViafouraSDK.VFImageView)
+  case userCommentOriginalTitle(label: ViafouraSDK.VFLabel)
+  case userCommentContentLabel(label: ViafouraSDK.VFLabel)
+  case userCommentSeparator(separator: ViafouraSDK.VFSeparatorView)
+  case userCommentDateLabel(label: ViafouraSDK.VFLabel)
+  case userCellImage(image: ViafouraSDK.VFImageView)
+  case userCellAvatarView(view: ViafouraSDK.VFUserAvatarView)
+  case userCellNameLabel(label: ViafouraSDK.VFLabel)
+  case userCellActionDateLabel(label: ViafouraSDK.VFLabel)
+  case userCellBadgeLabel(label: ViafouraSDK.VFLabel)
+  case userCellBadgeView(view: UIKit.UIView)
+  case userCellSeparator(separator: ViafouraSDK.VFSeparatorView)
+  case userCellFollowView(view: ViafouraSDK.VFFollowView)
   case previewEmptyCommentsView(emptyCommentsView: ViafouraSDK.VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: ViafouraSDK.VFButton)
   case previewTitleLabel(label: ViafouraSDK.VFLabel)
   case previewPrivacyLabel(label: ViafouraSDK.VFLabel)
   case previewUserPromptLabel(label: ViafouraSDK.VFLabel)
+  case previewUserSomeoneWritingLabel(label: ViafouraSDK.VFLabel)
+  case previewNewCommentsNotificationView(view: ViafouraSDK.VFNewCommentsNotificationView)
   case previewCommentPrompt(view: UIKit.UIView)
   case previewHeaderView(view: UIKit.UIView)
   case previewSortImage(image: ViafouraSDK.VFImageView)
@@ -1658,8 +1675,10 @@ public enum VFCustomizableView {
   case reportThanksButton(button: ViafouraSDK.VFButton)
   case trendingVerticalBackgroundView(view: UIKit.UIView)
   case trendingVerticalFullImage(image: ViafouraSDK.VFImageView)
+  case trendingVerticalFullImageIcon(image: ViafouraSDK.VFImageView)
   case trendingVerticalFullTitle(label: ViafouraSDK.VFLabel)
   case trendingVerticalFullCount(label: ViafouraSDK.VFLabel)
+  case trendingVerticalViewMoreButton(button: ViafouraSDK.VFButton)
   case trendingVerticalCondensedTitle(label: ViafouraSDK.VFLabel)
   case trendingVerticalCondensedCount(label: ViafouraSDK.VFLabel)
   case trendingCarouselTitle(label: ViafouraSDK.VFLabel)
