@@ -85,6 +85,12 @@ public struct VFDefaultColors {
   public static func colorIcons(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorInputBox(_ forTheme: VFTheme = .light) -> UIKit.UIColor
 }
+public struct VFFeatures : Swift.Equatable {
+  public let enableFollowInBottomSheet: Swift.Bool
+  public let enableShareInBottomSheet: Swift.Bool
+  public init(enableFollowInBottomSheet: Swift.Bool = true, enableShareInBottomSheet: Swift.Bool = true)
+  public static func == (lhs: VFFeatures, rhs: VFFeatures) -> Swift.Bool
+}
 public struct CommentContainerByIdResponse : Swift.Decodable {
   public let content_container_uuid: Foundation.UUID
   public init(from decoder: any Swift.Decoder) throws
@@ -2248,7 +2254,8 @@ extension VFEditorPickReviewError {
 public struct VFSettings : Swift.Equatable {
   public let fonts: VFFonts
   public var colors: VFColors
-  public init(colors: VFColors, fonts: VFFonts = VFFonts())
+  public let features: VFFeatures?
+  public init(colors: VFColors, fonts: VFFonts = VFFonts(), features: VFFeatures? = nil)
   public static func == (lhs: VFSettings, rhs: VFSettings) -> Swift.Bool
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class SingleChatViewController : VFUIViewController {

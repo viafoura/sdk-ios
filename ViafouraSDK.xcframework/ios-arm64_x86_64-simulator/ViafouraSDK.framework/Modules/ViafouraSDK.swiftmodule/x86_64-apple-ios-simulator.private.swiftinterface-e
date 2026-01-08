@@ -85,6 +85,12 @@ public struct VFDefaultColors {
   public static func colorIcons(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
   public static func colorInputBox(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
 }
+public struct VFFeatures : Swift.Equatable {
+  public let enableFollowInBottomSheet: Swift.Bool
+  public let enableShareInBottomSheet: Swift.Bool
+  public init(enableFollowInBottomSheet: Swift.Bool = true, enableShareInBottomSheet: Swift.Bool = true)
+  public static func == (lhs: ViafouraSDK.VFFeatures, rhs: ViafouraSDK.VFFeatures) -> Swift.Bool
+}
 public struct CommentContainerByIdResponse : Swift.Decodable {
   public let content_container_uuid: Foundation.UUID
   public init(from decoder: any Swift.Decoder) throws
@@ -2248,7 +2254,8 @@ extension ViafouraSDK.VFEditorPickReviewError {
 public struct VFSettings : Swift.Equatable {
   public let fonts: ViafouraSDK.VFFonts
   public var colors: ViafouraSDK.VFColors
-  public init(colors: ViafouraSDK.VFColors, fonts: ViafouraSDK.VFFonts = VFFonts())
+  public let features: ViafouraSDK.VFFeatures?
+  public init(colors: ViafouraSDK.VFColors, fonts: ViafouraSDK.VFFonts = VFFonts(), features: ViafouraSDK.VFFeatures? = nil)
   public static func == (lhs: ViafouraSDK.VFSettings, rhs: ViafouraSDK.VFSettings) -> Swift.Bool
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class SingleChatViewController : ViafouraSDK.VFUIViewController {
