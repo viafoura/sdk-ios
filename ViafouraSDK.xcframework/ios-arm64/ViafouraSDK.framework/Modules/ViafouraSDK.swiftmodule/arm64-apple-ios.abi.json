@@ -1769,6 +1769,210 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "VFFeatures",
+        "printedName": "VFFeatures",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "enableFollowInBottomSheet",
+            "printedName": "enableFollowInBottomSheet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK10VFFeaturesV25enableFollowInBottomSheetSbvp",
+            "mangledName": "$s11ViafouraSDK10VFFeaturesV25enableFollowInBottomSheetSbvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK10VFFeaturesV25enableFollowInBottomSheetSbvg",
+                "mangledName": "$s11ViafouraSDK10VFFeaturesV25enableFollowInBottomSheetSbvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "enableShareInBottomSheet",
+            "printedName": "enableShareInBottomSheet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK10VFFeaturesV24enableShareInBottomSheetSbvp",
+            "mangledName": "$s11ViafouraSDK10VFFeaturesV24enableShareInBottomSheetSbvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK10VFFeaturesV24enableShareInBottomSheetSbvg",
+                "mangledName": "$s11ViafouraSDK10VFFeaturesV24enableShareInBottomSheetSbvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(enableFollowInBottomSheet:enableShareInBottomSheet:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFFeatures",
+                "printedName": "ViafouraSDK.VFFeatures",
+                "usr": "s:11ViafouraSDK10VFFeaturesV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK10VFFeaturesV25enableFollowInBottomSheet0d5SharefgH0ACSb_Sbtcfc",
+            "mangledName": "$s11ViafouraSDK10VFFeaturesV25enableFollowInBottomSheet0d5SharefgH0ACSb_Sbtcfc",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFFeatures",
+                "printedName": "ViafouraSDK.VFFeatures",
+                "usr": "s:11ViafouraSDK10VFFeaturesV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFFeatures",
+                "printedName": "ViafouraSDK.VFFeatures",
+                "usr": "s:11ViafouraSDK10VFFeaturesV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK10VFFeaturesV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11ViafouraSDK10VFFeaturesV2eeoiySbAC_ACtFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK10VFFeaturesV",
+        "mangledName": "$s11ViafouraSDK10VFFeaturesV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -66441,9 +66645,69 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "features",
+            "printedName": "features",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.VFFeatures?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFFeatures",
+                    "printedName": "ViafouraSDK.VFFeatures",
+                    "usr": "s:11ViafouraSDK10VFFeaturesV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK10VFSettingsV8featuresAA10VFFeaturesVSgvp",
+            "mangledName": "$s11ViafouraSDK10VFSettingsV8featuresAA10VFFeaturesVSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ViafouraSDK.VFFeatures?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFFeatures",
+                        "printedName": "ViafouraSDK.VFFeatures",
+                        "usr": "s:11ViafouraSDK10VFFeaturesV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK10VFSettingsV8featuresAA10VFFeaturesVSgvg",
+                "mangledName": "$s11ViafouraSDK10VFSettingsV8featuresAA10VFFeaturesVSgvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(colors:fonts:)",
+            "printedName": "init(colors:fonts:features:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -66463,11 +66727,26 @@
                 "printedName": "ViafouraSDK.VFFonts",
                 "hasDefaultArg": true,
                 "usr": "s:11ViafouraSDK7VFFontsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.VFFeatures?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFFeatures",
+                    "printedName": "ViafouraSDK.VFFeatures",
+                    "usr": "s:11ViafouraSDK10VFFeaturesV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11ViafouraSDK10VFSettingsV6colors5fontsAcA8VFColorsV_AA7VFFontsVtcfc",
-            "mangledName": "$s11ViafouraSDK10VFSettingsV6colors5fontsAcA8VFColorsV_AA7VFFontsVtcfc",
+            "usr": "s:11ViafouraSDK10VFSettingsV6colors5fonts8featuresAcA8VFColorsV_AA7VFFontsVAA10VFFeaturesVSgtcfc",
+            "mangledName": "$s11ViafouraSDK10VFSettingsV6colors5fonts8featuresAcA8VFColorsV_AA7VFFontsVAA10VFFeaturesVSgtcfc",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "AccessControl"
@@ -73635,6 +73914,20 @@
       "offset": 456,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Local\/VFFeatures.swift",
+      "kind": "BooleanLiteral",
+      "offset": 295,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Local\/VFFeatures.swift",
+      "kind": "BooleanLiteral",
+      "offset": 334,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentsList\/CommentsTableViewModel.swift",
