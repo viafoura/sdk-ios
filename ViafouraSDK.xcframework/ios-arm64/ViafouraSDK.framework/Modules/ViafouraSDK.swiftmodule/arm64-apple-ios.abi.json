@@ -26656,6 +26656,69 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "TopicSubscribeResponse",
+        "printedName": "TopicSubscribeResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TopicSubscribeResponse",
+                "printedName": "ViafouraSDK.TopicSubscribeResponse",
+                "usr": "s:11ViafouraSDK22TopicSubscribeResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK22TopicSubscribeResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK22TopicSubscribeResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK22TopicSubscribeResponseV",
+        "mangledName": "$s11ViafouraSDK22TopicSubscribeResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -32996,6 +33059,132 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "UserSubscriptionsResponse",
+        "printedName": "UserSubscriptionsResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserSubscriptionsResponse",
+                "printedName": "ViafouraSDK.UserSubscriptionsResponse",
+                "usr": "s:11ViafouraSDK25UserSubscriptionsResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK25UserSubscriptionsResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK25UserSubscriptionsResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK25UserSubscriptionsResponseV",
+        "mangledName": "$s11ViafouraSDK25UserSubscriptionsResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SubscriptionResponse",
+        "printedName": "SubscriptionResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SubscriptionResponse",
+                "printedName": "ViafouraSDK.SubscriptionResponse",
+                "usr": "s:11ViafouraSDK20SubscriptionResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK20SubscriptionResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK20SubscriptionResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK20SubscriptionResponseV",
+        "mangledName": "$s11ViafouraSDK20SubscriptionResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -34548,6 +34737,29 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDKAAC4authAA23VFAuthenticationService_pyFZ",
             "mangledName": "$s11ViafouraSDKAAC4authAA23VFAuthenticationService_pyFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "notifications",
+            "printedName": "notifications()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFNotificationsService",
+                "printedName": "any ViafouraSDK.VFNotificationsService",
+                "usr": "s:11ViafouraSDK22VFNotificationsServiceP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDKAAC13notificationsAA22VFNotificationsService_pyFZ",
+            "mangledName": "$s11ViafouraSDKAAC13notificationsAA22VFNotificationsService_pyFZ",
             "moduleName": "ViafouraSDK",
             "static": true,
             "declAttributes": [
@@ -53993,6 +54205,69 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "UserSubscribersResponse",
+        "printedName": "UserSubscribersResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserSubscribersResponse",
+                "printedName": "ViafouraSDK.UserSubscribersResponse",
+                "usr": "s:11ViafouraSDK23UserSubscribersResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK23UserSubscribersResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK23UserSubscribersResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK23UserSubscribersResponseV",
+        "mangledName": "$s11ViafouraSDK23UserSubscribersResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -54004,8 +54279,1500 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "VFNotificationsService",
+        "printedName": "VFNotificationsService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "isSubscribedToUser",
+            "printedName": "isSubscribedToUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP18isSubscribedToUser8userUUIDSb10Foundation0J0V_tF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP18isSubscribedToUser8userUUIDSb10Foundation0J0V_tF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isSubscribedToContentContainer",
+            "printedName": "isSubscribedToContentContainer(contentContainerUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP30isSubscribedToContentContainer07contentI4UUIDs6ResultOySbs5Error_pG10Foundation0K0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP30isSubscribedToContentContainer07contentI4UUIDs6ResultOySbs5Error_pG10Foundation0K0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "subscribeToContentContainer",
+            "printedName": "subscribeToContentContainer(contentContainerUUID:authorHostSectionUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP27subscribeToContentContainer07contentH4UUID017authorHostSectionJ0s6ResultOySbs5Error_pG10Foundation0J0V_AMtYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP27subscribeToContentContainer07contentH4UUID017authorHostSectionJ0s6ResultOySbs5Error_pG10Foundation0J0V_AMtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unsubscribeFromContentContainer",
+            "printedName": "unsubscribeFromContentContainer(contentContainerUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP31unsubscribeFromContentContainer07contentH4UUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP31unsubscribeFromContentContainer07contentH4UUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "subscribeToUser",
+            "printedName": "subscribeToUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP15subscribeToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP15subscribeToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unsubscribeFromUser",
+            "printedName": "unsubscribeFromUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP19unsubscribeFromUser8userUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP19unsubscribeFromUser8userUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isSubscribedToUser",
+            "printedName": "isSubscribedToUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP18isSubscribedToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP18isSubscribedToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unsubscribeTopic",
+            "printedName": "unsubscribeTopic(topicId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<(), ViafouraSDK.VFUnsubscribeTopicError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUnsubscribeTopicError",
+                    "printedName": "ViafouraSDK.VFUnsubscribeTopicError",
+                    "usr": "s:11ViafouraSDK23VFUnsubscribeTopicErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP16unsubscribeTopic7topicIds6ResultOyytAA013VFUnsubscribeF5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP16unsubscribeTopic7topicIds6ResultOyytAA013VFUnsubscribeF5ErrorOGSS_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "topicsSubscribed",
+            "printedName": "topicsSubscribed()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<[ViafouraSDK.Topic], ViafouraSDK.VFTopicsSubscribedError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.Topic]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Topic",
+                        "printedName": "ViafouraSDK.Topic",
+                        "usr": "s:11ViafouraSDK5TopicV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFTopicsSubscribedError",
+                    "printedName": "ViafouraSDK.VFTopicsSubscribedError",
+                    "usr": "s:11ViafouraSDK23VFTopicsSubscribedErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP16topicsSubscribeds6ResultOySayAA5TopicVGAA08VFTopicsF5ErrorOGyYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP16topicsSubscribeds6ResultOySayAA5TopicVGAA08VFTopicsF5ErrorOGyYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "subscribeTopic",
+            "printedName": "subscribeTopic(topicId:topicName:topicType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.TopicSubscribeResponse, ViafouraSDK.VFSubscribeTopicError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TopicSubscribeResponse",
+                    "printedName": "ViafouraSDK.TopicSubscribeResponse",
+                    "usr": "s:11ViafouraSDK22TopicSubscribeResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFSubscribeTopicError",
+                    "printedName": "ViafouraSDK.VFSubscribeTopicError",
+                    "usr": "s:11ViafouraSDK21VFSubscribeTopicErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP14subscribeTopic7topicId0G4Name0G4Types6ResultOyAA0F17SubscribeResponseVAA011VFSubscribeF5ErrorOGSS_S2StYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP14subscribeTopic7topicId0G4Name0G4Types6ResultOyAA0F17SubscribeResponseVAA011VFSubscribeF5ErrorOGSS_S2StYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserSubscribers",
+            "printedName": "getUserSubscribers(pageNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UserSubscribersResponse, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserSubscribersResponse",
+                    "printedName": "ViafouraSDK.UserSubscribersResponse",
+                    "usr": "s:11ViafouraSDK23UserSubscribersResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP18getUserSubscribers10pageNumbers6ResultOyAA0fG8ResponseVs5Error_pGSiSg_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP18getUserSubscribers10pageNumbers6ResultOyAA0fG8ResponseVs5Error_pGSiSg_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserSubscriptions",
+            "printedName": "getUserSubscriptions(pageNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UserSubscriptionsResponse, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserSubscriptionsResponse",
+                    "printedName": "ViafouraSDK.UserSubscriptionsResponse",
+                    "usr": "s:11ViafouraSDK25UserSubscriptionsResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP20getUserSubscriptions10pageNumbers6ResultOyAA0fG8ResponseVs5Error_pGSiSg_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP20getUserSubscriptions10pageNumbers6ResultOyAA0fG8ResponseVs5Error_pGSiSg_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserNotifications",
+            "printedName": "getUserNotifications()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.AllNotificationsResponse, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AllNotificationsResponse",
+                    "printedName": "ViafouraSDK.AllNotificationsResponse",
+                    "usr": "s:11ViafouraSDK24AllNotificationsResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP20getUserNotificationss6ResultOyAA03AllG8ResponseVs5Error_pGyYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP20getUserNotificationss6ResultOyAA03AllG8ResponseVs5Error_pGyYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationRead",
+            "printedName": "markNotificationRead(notificationUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP20markNotificationRead16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP20markNotificationRead16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationSeen",
+            "printedName": "markNotificationSeen(notificationUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeNotification",
+            "printedName": "removeNotification(notificationUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP18removeNotification16notificationUUIDs6ResultOySbs5Error_pG10Foundation0H0V_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP18removeNotification16notificationUUIDs6ResultOySbs5Error_pG10Foundation0H0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeNotifications",
+            "printedName": "removeNotifications(notifications:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.UUID]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP19removeNotifications13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP19removeNotifications13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:11ViafouraSDK22VFNotificationsServiceP",
+        "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "VFNotificationsServiceImplementation",
         "printedName": "VFNotificationsServiceImplementation",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "isSubscribedToUser",
+            "printedName": "isSubscribedToUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC18isSubscribedToUser8userUUIDSb10Foundation0K0V_tF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC18isSubscribedToUser8userUUIDSb10Foundation0K0V_tF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isSubscribedToContentContainer",
+            "printedName": "isSubscribedToContentContainer(contentContainerUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC30isSubscribedToContentContainer07contentJ4UUIDs6ResultOySbs5Error_pG10Foundation0L0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC30isSubscribedToContentContainer07contentJ4UUIDs6ResultOySbs5Error_pG10Foundation0L0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "subscribeToContentContainer",
+            "printedName": "subscribeToContentContainer(contentContainerUUID:authorHostSectionUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC27subscribeToContentContainer07contentI4UUID017authorHostSectionK0s6ResultOySbs5Error_pG10Foundation0K0V_AMtYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC27subscribeToContentContainer07contentI4UUID017authorHostSectionK0s6ResultOySbs5Error_pG10Foundation0K0V_AMtYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unsubscribeFromContentContainer",
+            "printedName": "unsubscribeFromContentContainer(contentContainerUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC31unsubscribeFromContentContainer07contentI4UUIDs6ResultOySbs5Error_pG10Foundation0K0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC31unsubscribeFromContentContainer07contentI4UUIDs6ResultOySbs5Error_pG10Foundation0K0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "subscribeToUser",
+            "printedName": "subscribeToUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC15subscribeToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC15subscribeToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unsubscribeFromUser",
+            "printedName": "unsubscribeFromUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC19unsubscribeFromUser8userUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC19unsubscribeFromUser8userUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isSubscribedToUser",
+            "printedName": "isSubscribedToUser(userUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC18isSubscribedToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0K0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC18isSubscribedToUser8userUUIDs6ResultOySbs5Error_pG10Foundation0K0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserSubscribers",
+            "printedName": "getUserSubscribers(pageNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UserSubscribersResponse, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserSubscribersResponse",
+                    "printedName": "ViafouraSDK.UserSubscribersResponse",
+                    "usr": "s:11ViafouraSDK23UserSubscribersResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC18getUserSubscribers10pageNumbers6ResultOyAA0gH8ResponseVs5Error_pGSiSg_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC18getUserSubscribers10pageNumbers6ResultOyAA0gH8ResponseVs5Error_pGSiSg_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserSubscriptions",
+            "printedName": "getUserSubscriptions(pageNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.UserSubscriptionsResponse, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserSubscriptionsResponse",
+                    "printedName": "ViafouraSDK.UserSubscriptionsResponse",
+                    "usr": "s:11ViafouraSDK25UserSubscriptionsResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC20getUserSubscriptions10pageNumbers6ResultOyAA0gH8ResponseVs5Error_pGSiSg_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC20getUserSubscriptions10pageNumbers6ResultOyAA0gH8ResponseVs5Error_pGSiSg_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserNotifications",
+            "printedName": "getUserNotifications()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.AllNotificationsResponse, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AllNotificationsResponse",
+                    "printedName": "ViafouraSDK.AllNotificationsResponse",
+                    "usr": "s:11ViafouraSDK24AllNotificationsResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC20getUserNotificationss6ResultOyAA03AllH8ResponseVs5Error_pGyYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC20getUserNotificationss6ResultOyAA03AllH8ResponseVs5Error_pGyYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationRead",
+            "printedName": "markNotificationRead(notificationUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC20markNotificationRead16notificationUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC20markNotificationRead16notificationUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationSeen",
+            "printedName": "markNotificationSeen(notificationUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeNotification",
+            "printedName": "removeNotification(notificationUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC18removeNotification16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC18removeNotification16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeNotifications",
+            "printedName": "removeNotifications(notifications:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.UUID]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC19removeNotifications13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC19removeNotifications13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "topicsSubscribed",
+            "printedName": "topicsSubscribed()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<[ViafouraSDK.Topic], ViafouraSDK.VFTopicsSubscribedError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.Topic]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Topic",
+                        "printedName": "ViafouraSDK.Topic",
+                        "usr": "s:11ViafouraSDK5TopicV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFTopicsSubscribedError",
+                    "printedName": "ViafouraSDK.VFTopicsSubscribedError",
+                    "usr": "s:11ViafouraSDK23VFTopicsSubscribedErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC16topicsSubscribeds6ResultOySayAA5TopicVGAA08VFTopicsG5ErrorOGyYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC16topicsSubscribeds6ResultOySayAA5TopicVGAA08VFTopicsG5ErrorOGyYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "subscribeTopic",
+            "printedName": "subscribeTopic(topicId:topicName:topicType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.TopicSubscribeResponse, ViafouraSDK.VFSubscribeTopicError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TopicSubscribeResponse",
+                    "printedName": "ViafouraSDK.TopicSubscribeResponse",
+                    "usr": "s:11ViafouraSDK22TopicSubscribeResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFSubscribeTopicError",
+                    "printedName": "ViafouraSDK.VFSubscribeTopicError",
+                    "usr": "s:11ViafouraSDK21VFSubscribeTopicErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC14subscribeTopic7topicId0H4Name0H4Types6ResultOyAA0G17SubscribeResponseVAA011VFSubscribeG5ErrorOGSS_S2StYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC14subscribeTopic7topicId0H4Name0H4Types6ResultOyAA0G17SubscribeResponseVAA011VFSubscribeG5ErrorOGSS_S2StYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unsubscribeTopic",
+            "printedName": "unsubscribeTopic(topicId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<(), ViafouraSDK.VFUnsubscribeTopicError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFUnsubscribeTopicError",
+                    "printedName": "ViafouraSDK.VFUnsubscribeTopicError",
+                    "usr": "s:11ViafouraSDK23VFUnsubscribeTopicErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC16unsubscribeTopic7topicIds6ResultOyytAA013VFUnsubscribeG5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC16unsubscribeTopic7topicIds6ResultOyytAA013VFUnsubscribeG5ErrorOGSS_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
         "declKind": "Class",
         "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC",
         "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC",
@@ -54028,6 +55795,13 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "VFNotificationsService",
+            "printedName": "VFNotificationsService",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP"
           }
         ]
       },
@@ -63550,6 +65324,894 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "AllNotificationsResponse",
+        "printedName": "AllNotificationsResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AllNotificationsResponse",
+                "printedName": "ViafouraSDK.AllNotificationsResponse",
+                "usr": "s:11ViafouraSDK24AllNotificationsResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK24AllNotificationsResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK24AllNotificationsResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK24AllNotificationsResponseV",
+        "mangledName": "$s11ViafouraSDK24AllNotificationsResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BroadcastResponse",
+        "printedName": "BroadcastResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BroadcastResponse",
+                "printedName": "ViafouraSDK.BroadcastResponse",
+                "usr": "s:11ViafouraSDK17BroadcastResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK17BroadcastResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK17BroadcastResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK17BroadcastResponseV",
+        "mangledName": "$s11ViafouraSDK17BroadcastResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NotificationResponse",
+        "printedName": "NotificationResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NotificationResponse",
+                "printedName": "ViafouraSDK.NotificationResponse",
+                "usr": "s:11ViafouraSDK20NotificationResponseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK20NotificationResponseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK20NotificationResponseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK20NotificationResponseV",
+        "mangledName": "$s11ViafouraSDK20NotificationResponseV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NotificationServiceType",
+        "printedName": "NotificationServiceType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "livecomments",
+            "printedName": "livecomments",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationServiceType.Type) -> ViafouraSDK.NotificationServiceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationServiceType",
+                    "printedName": "ViafouraSDK.NotificationServiceType",
+                    "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationServiceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationServiceType",
+                        "printedName": "ViafouraSDK.NotificationServiceType",
+                        "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23NotificationServiceTypeO12livecommentsyA2CmF",
+            "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO12livecommentsyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "notifications",
+            "printedName": "notifications",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationServiceType.Type) -> ViafouraSDK.NotificationServiceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationServiceType",
+                    "printedName": "ViafouraSDK.NotificationServiceType",
+                    "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationServiceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationServiceType",
+                        "printedName": "ViafouraSDK.NotificationServiceType",
+                        "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23NotificationServiceTypeO13notificationsyA2CmF",
+            "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO13notificationsyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "livechat",
+            "printedName": "livechat",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationServiceType.Type) -> ViafouraSDK.NotificationServiceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationServiceType",
+                    "printedName": "ViafouraSDK.NotificationServiceType",
+                    "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationServiceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationServiceType",
+                        "printedName": "ViafouraSDK.NotificationServiceType",
+                        "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23NotificationServiceTypeO8livechatyA2CmF",
+            "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO8livechatyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.NotificationServiceType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationServiceType",
+                    "printedName": "ViafouraSDK.NotificationServiceType",
+                    "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK23NotificationServiceTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK23NotificationServiceTypeO8rawValueSSvp",
+            "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO8rawValueSSvp",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK23NotificationServiceTypeO8rawValueSSvg",
+                "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO8rawValueSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ViafouraSDK23NotificationServiceTypeO",
+        "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NotificationType",
+        "printedName": "NotificationType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "reply",
+            "printedName": "reply",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO5replyyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO5replyyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "follow",
+            "printedName": "follow",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO6followyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO6followyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "like",
+            "printedName": "like",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO4likeyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO4likeyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "reply_removed",
+            "printedName": "reply_removed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO13reply_removedyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO13reply_removedyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "subscribed_page_content",
+            "printedName": "subscribed_page_content",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO23subscribed_page_contentyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO23subscribed_page_contentyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "broadcast_topic",
+            "printedName": "broadcast_topic",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO15broadcast_topicyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO15broadcast_topicyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "subscribed_user_content",
+            "printedName": "subscribed_user_content",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO23subscribed_user_contentyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO23subscribed_user_contentyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "broadcast_site",
+            "printedName": "broadcast_site",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationType.Type) -> ViafouraSDK.NotificationType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationType",
+                        "printedName": "ViafouraSDK.NotificationType",
+                        "usr": "s:11ViafouraSDK16NotificationTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16NotificationTypeO14broadcast_siteyA2CmF",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO14broadcast_siteyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.NotificationType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationType",
+                    "printedName": "ViafouraSDK.NotificationType",
+                    "usr": "s:11ViafouraSDK16NotificationTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK16NotificationTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK16NotificationTypeO8rawValueSSvp",
+            "mangledName": "$s11ViafouraSDK16NotificationTypeO8rawValueSSvp",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK16NotificationTypeO8rawValueSSvg",
+                "mangledName": "$s11ViafouraSDK16NotificationTypeO8rawValueSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ViafouraSDK16NotificationTypeO",
+        "mangledName": "$s11ViafouraSDK16NotificationTypeO",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -64275,6 +66937,69 @@
         "moduleName": "ViafouraSDK",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Topic",
+        "printedName": "Topic",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Topic",
+                "printedName": "ViafouraSDK.Topic",
+                "usr": "s:11ViafouraSDK5TopicV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK5TopicV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK5TopicV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK5TopicV",
+        "mangledName": "$s11ViafouraSDK5TopicV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
         ]
       },
       {
@@ -75453,70 +78178,70 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3466,
+      "offset": 3473,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3503,
+      "offset": 3510,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3579,
+      "offset": 3586,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3611,
+      "offset": 3618,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3700,
+      "offset": 3707,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3741,
+      "offset": 3748,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3826,
+      "offset": 3833,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3865,
+      "offset": 3872,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3897,
+      "offset": 3904,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3930,
+      "offset": 3937,
       "length": 5,
       "value": "false"
     },
@@ -79520,7 +82245,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViafouraSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 1437,
+      "offset": 1444,
       "length": 5,
       "value": "false"
     },
@@ -80192,105 +82917,105 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 4687,
+      "offset": 4694,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5861,
+      "offset": 5868,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5894,
+      "offset": 5901,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5932,
+      "offset": 5939,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5971,
+      "offset": 5978,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6010,
+      "offset": 6017,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6054,
+      "offset": 6061,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6092,
+      "offset": 6099,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6433,
+      "offset": 6440,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "Array",
-      "offset": 6471,
+      "offset": 6478,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6515,
+      "offset": 6522,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6552,
+      "offset": 6559,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 6589,
+      "offset": 6596,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6627,
+      "offset": 6634,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6746,
+      "offset": 6753,
       "length": 1,
       "value": "0"
     },
@@ -80661,7 +83386,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Notifications\/VFNotificationsService.swift",
       "kind": "Array",
-      "offset": 1829,
+      "offset": 1836,
       "length": 2,
       "value": "[]"
     },
@@ -80892,21 +83617,21 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Local\/CommentContent.swift",
       "kind": "BooleanLiteral",
-      "offset": 567,
+      "offset": 574,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Local\/CommentContent.swift",
       "kind": "StringLiteral",
-      "offset": 2129,
+      "offset": 2136,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Local\/CommentContent.swift",
       "kind": "StringLiteral",
-      "offset": 2155,
+      "offset": 2162,
       "length": 2,
       "value": "\"\""
     },
