@@ -842,6 +842,9 @@ extension VFFlagReviewError {
     get
   }
 }
+public struct TopicSubscribeResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public protocol VFLoginDelegate : AnyObject {
   func startLogin()
 }
@@ -1075,6 +1078,12 @@ public struct UserResponse : Swift.Decodable {
   public let name: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct UserSubscriptionsResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SubscriptionResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
 public protocol VFLayoutDelegate : ObjectiveC.NSObject {
   func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
 }
@@ -1133,6 +1142,7 @@ public struct VFArticleMetadata {
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
   public static func auth() -> any VFAuthenticationService
+  public static func notifications() -> any VFNotificationsService
   public static func users() -> any VFUsersService
   public static func comments() -> any VFLiveCommentsService
   @objc deinit
@@ -1564,6 +1574,9 @@ extension VFCommentError {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFLoadingView : UIKit.UIActivityIndicatorView {
   @objc deinit
 }
+extension VFNotificationsServiceImplementation {
+  public func topicsSubscribed() async -> Swift.Result<[Topic], VFTopicsSubscribedError>
+}
 public enum VFTopicsSubscribedError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFTopicsSubscribedError, b: VFTopicsSubscribedError) -> Swift.Bool
@@ -1753,7 +1766,43 @@ extension VFCommentRepliesError {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class VFNotificationsServiceImplementation {
+public struct UserSubscribersResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol VFNotificationsService {
+  func isSubscribedToUser(userUUID: Foundation.UUID) -> Swift.Bool
+  func isSubscribedToContentContainer(contentContainerUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func subscribeToContentContainer(contentContainerUUID: Foundation.UUID, authorHostSectionUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func unsubscribeFromContentContainer(contentContainerUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func subscribeToUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func unsubscribeFromUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func isSubscribedToUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func unsubscribeTopic(topicId: Swift.String) async -> Swift.Result<Swift.Void, VFUnsubscribeTopicError>
+  func topicsSubscribed() async -> Swift.Result<[Topic], VFTopicsSubscribedError>
+  func subscribeTopic(topicId: Swift.String, topicName: Swift.String, topicType: Swift.String) async -> Swift.Result<TopicSubscribeResponse, VFSubscribeTopicError>
+  func getUserSubscribers(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscribersResponse, any Swift.Error>
+  func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscriptionsResponse, any Swift.Error>
+  func getUserNotifications() async -> Swift.Result<AllNotificationsResponse, any Swift.Error>
+  func markNotificationRead(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func markNotificationSeen(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func removeNotification(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func removeNotifications(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
+}
+@_hasMissingDesignatedInitializers public class VFNotificationsServiceImplementation : VFNotificationsService {
+  public func isSubscribedToUser(userUUID: Foundation.UUID) -> Swift.Bool
+  public func isSubscribedToContentContainer(contentContainerUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func subscribeToContentContainer(contentContainerUUID: Foundation.UUID, authorHostSectionUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func unsubscribeFromContentContainer(contentContainerUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func subscribeToUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func unsubscribeFromUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func isSubscribedToUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func getUserSubscribers(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscribersResponse, any Swift.Error>
+  public func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscriptionsResponse, any Swift.Error>
+  public func getUserNotifications() async -> Swift.Result<AllNotificationsResponse, any Swift.Error>
+  public func markNotificationRead(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func markNotificationSeen(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func removeNotification(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  public func removeNotifications(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
   @objc deinit
 }
 public enum VFReplyChatError : Foundation.LocalizedError {
@@ -2020,6 +2069,9 @@ extension VFReviewListError {
     get
   }
 }
+extension VFNotificationsServiceImplementation {
+  public func subscribeTopic(topicId: Swift.String, topicName: Swift.String, topicType: Swift.String) async -> Swift.Result<TopicSubscribeResponse, VFSubscribeTopicError>
+}
 public enum VFSubscribeTopicError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFSubscribeTopicError, b: VFSubscribeTopicError) -> Swift.Bool
@@ -2101,6 +2153,40 @@ public struct VFFonts : Swift.Equatable {
   public init(fontLight: UIKit.UIFont = fontLightDefault, fontRegular: UIKit.UIFont = fontRegularDefault, fontMedium: UIKit.UIFont = fontMediumDefault, fontSemibold: UIKit.UIFont = fontSemiboldDefault, fontBold: UIKit.UIFont = fontBoldDefault)
   public static func == (a: VFFonts, b: VFFonts) -> Swift.Bool
 }
+public struct AllNotificationsResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BroadcastResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct NotificationResponse : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum NotificationServiceType : Swift.String, Swift.Decodable {
+  case livecomments
+  case notifications
+  case livechat
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum NotificationType : Swift.String, Swift.Decodable {
+  case reply
+  case follow
+  case like
+  case reply_removed
+  case subscribed_page_content
+  case broadcast_topic
+  case subscribed_user_content
+  case broadcast_site
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 extension VFLiveCommentsServiceImplementation {
   public func removeEditorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, VFRemoveEditorPickCommentError>
 }
@@ -2132,6 +2218,9 @@ extension VFReviewsProfileError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+public struct Topic : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
 }
 public protocol StoryboardCreateable : UIKit.UIViewController {
   static var storyboardName: Swift.String { get }
@@ -2183,6 +2272,9 @@ extension VFDisableReviewError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+extension VFNotificationsServiceImplementation {
+  public func unsubscribeTopic(topicId: Swift.String) async -> Swift.Result<Swift.Void, VFUnsubscribeTopicError>
 }
 public enum VFUnsubscribeTopicError : Foundation.LocalizedError {
   case unknown
@@ -2676,6 +2768,12 @@ extension VFCreateChatError : Swift.Equatable {}
 extension VFCreateChatError : Swift.Hashable {}
 extension VFEditReviewError : Swift.Equatable {}
 extension VFEditReviewError : Swift.Hashable {}
+extension NotificationServiceType : Swift.Equatable {}
+extension NotificationServiceType : Swift.Hashable {}
+extension NotificationServiceType : Swift.RawRepresentable {}
+extension NotificationType : Swift.Equatable {}
+extension NotificationType : Swift.Hashable {}
+extension NotificationType : Swift.RawRepresentable {}
 extension VFRemoveEditorPickCommentError : Swift.Equatable {}
 extension VFRemoveEditorPickCommentError : Swift.Hashable {}
 extension VFReviewsProfileError : Swift.Equatable {}
