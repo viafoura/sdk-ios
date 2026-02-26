@@ -1141,6 +1141,7 @@ public struct VFArticleMetadata {
   public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
+  public static func setDataTrackingEnabled(_ isDataTrackingEnabled: Swift.Bool)
   public static func auth() -> any VFAuthenticationService
   public static func notifications() -> any VFNotificationsService
   public static func users() -> any VFUsersService
