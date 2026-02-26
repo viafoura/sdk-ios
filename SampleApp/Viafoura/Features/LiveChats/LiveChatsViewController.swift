@@ -15,6 +15,7 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = LiveChatsViewModel()
+    private let defaultSectionUUIDString = "00000000-0000-4000-8000-c8cddfd7b365"
     
     struct CellIdentifier {
         static let liveChatCell = "liveChatCell"
@@ -23,12 +24,67 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Live Q&A", style: .plain, target: self, action: #selector(liveQuestionsTapped))
         setupUI()
     }
     
     func setupUI(){
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    @objc
+    private func liveQuestionsTapped() {
+        let alert = UIAlertController(title: "Live Q&A", message: "Enter containerId and sectionUUID", preferredStyle: .alert)
+
+        alert.addTextField { textField in
+            textField.placeholder = "containerId"
+            textField.autocapitalizationType = .none
+            textField.autocorrectionType = .no
+            textField.text = UserDefaults.standard.string(forKey: SettingsKeys.liveQuestionsContainerId)
+        }
+
+        alert.addTextField { [weak self] textField in
+            textField.placeholder = "sectionUUID"
+            textField.autocapitalizationType = .none
+            textField.autocorrectionType = .no
+            textField.text = UserDefaults.standard.string(forKey: SettingsKeys.liveQuestionsSectionUUID) ?? self?.defaultSectionUUIDString
+        }
+
+        alert.addAction(UIAlertAction(title: "Open", style: .default, handler: { [weak alert, weak self] _ in
+            guard let self else { return }
+            let containerId = (alert?.textFields?.first?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+            let sectionUUIDString = (alert?.textFields?.dropFirst().first?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+            guard
+                containerId.isEmpty == false,
+                let sectionUUID = UUID(uuidString: sectionUUIDString)
+            else { return }
+
+            UserDefaults.standard.set(containerId, forKey: SettingsKeys.liveQuestionsContainerId)
+            UserDefaults.standard.set(sectionUUIDString, forKey: SettingsKeys.liveQuestionsSectionUUID)
+
+            let articleMetadata = VFArticleMetadata(
+                url: URL(string: "https://viafoura-mobile-demo.vercel.app")!,
+                title: "Title",
+                subtitle: "Subtitle",
+                thumbnailUrl: URL(string: "https://viafoura-mobile-demo.vercel.app")!
+            )
+
+            let settings = VFSettings(colors: VFColors())
+            let vc = VFLiveQuestionsViewController.new(
+                containerId: containerId,
+                articleMetadata: articleMetadata,
+                loginDelegate: self,
+                settings: settings,
+                sectionUUID: sectionUUID
+            )
+            vc.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
     }
     
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
