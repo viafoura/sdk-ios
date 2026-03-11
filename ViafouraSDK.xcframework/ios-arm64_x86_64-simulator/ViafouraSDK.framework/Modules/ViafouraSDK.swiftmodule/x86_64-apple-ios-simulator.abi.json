@@ -49398,6 +49398,63 @@
           },
           {
             "kind": "Var",
+            "name": "commentCellModeratorView",
+            "printedName": "commentCellModeratorView",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFModeratorView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFModeratorView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(view: ViafouraSDK.VFModeratorView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFModeratorView",
+                            "printedName": "ViafouraSDK.VFModeratorView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFModeratorView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO020commentCellModeratorD0yAcA011VFModeratorD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO020commentCellModeratorD0yAcA011VFModeratorD0C_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "commentCellAuthorView",
             "printedName": "commentCellAuthorView",
             "children": [
