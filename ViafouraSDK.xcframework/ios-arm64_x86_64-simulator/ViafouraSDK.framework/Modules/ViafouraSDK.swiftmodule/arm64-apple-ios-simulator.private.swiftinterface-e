@@ -1409,6 +1409,9 @@ public struct VFArticleMetadata : @unchecked Swift.Sendable {
   public init(url: Swift.String, title: Swift.String, subtitle: Swift.String, localThumbnail: UIKit.UIImage)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFAdView : UIKit.UIView {
+  public typealias SizeChangeHandler = () -> Swift.Void
+  @_Concurrency.MainActor @preconcurrency public var onSizeChange: ViafouraSDK.VFAdView.SizeChangeHandler?
+  @_Concurrency.MainActor public func notifySizeChanged()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ViafouraSDK {
