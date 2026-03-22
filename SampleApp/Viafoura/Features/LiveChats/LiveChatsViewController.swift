@@ -15,7 +15,6 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = LiveChatsViewModel()
-    private let defaultSectionUUIDString = "00000000-0000-4000-8000-c8cddfd7b365"
     
     struct CellIdentifier {
         static let liveChatCell = "liveChatCell"
@@ -35,7 +34,7 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
 
     @objc
     private func liveQuestionsTapped() {
-        let alert = UIAlertController(title: "Live Q&A", message: "Enter containerId and sectionUUID", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Live Q&A", message: "Enter containerId", preferredStyle: .alert)
 
         alert.addTextField { textField in
             textField.placeholder = "containerId"
@@ -44,24 +43,12 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
             textField.text = UserDefaults.standard.string(forKey: SettingsKeys.liveQuestionsContainerId)
         }
 
-        alert.addTextField { [weak self] textField in
-            textField.placeholder = "sectionUUID"
-            textField.autocapitalizationType = .none
-            textField.autocorrectionType = .no
-            textField.text = UserDefaults.standard.string(forKey: SettingsKeys.liveQuestionsSectionUUID) ?? self?.defaultSectionUUIDString
-        }
-
         alert.addAction(UIAlertAction(title: "Open", style: .default, handler: { [weak alert, weak self] _ in
             guard let self else { return }
             let containerId = (alert?.textFields?.first?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-            let sectionUUIDString = (alert?.textFields?.dropFirst().first?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-            guard
-                containerId.isEmpty == false,
-                let sectionUUID = UUID(uuidString: sectionUUIDString)
-            else { return }
+            guard containerId.isEmpty == false else { return }
 
             UserDefaults.standard.set(containerId, forKey: SettingsKeys.liveQuestionsContainerId)
-            UserDefaults.standard.set(sectionUUIDString, forKey: SettingsKeys.liveQuestionsSectionUUID)
 
             let articleMetadata = VFArticleMetadata(
                 url: URL(string: "https://viafoura-mobile-demo.vercel.app")!,
@@ -75,8 +62,7 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
                 containerId: containerId,
                 articleMetadata: articleMetadata,
                 loginDelegate: self,
-                settings: settings,
-                sectionUUID: sectionUUID
+                settings: settings
             )
             vc.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
             vc.hidesBottomBarWhenPushed = true
