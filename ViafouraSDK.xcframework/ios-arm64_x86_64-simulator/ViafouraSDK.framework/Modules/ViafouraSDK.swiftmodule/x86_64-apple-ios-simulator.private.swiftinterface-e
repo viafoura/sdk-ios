@@ -1900,6 +1900,7 @@ extension ViafouraSDK.VFRemoveEditorPickReviewError {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFFollowView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency final public let label: ViafouraSDK.VFLabel
+  @_Concurrency.MainActor @preconcurrency public var isActive: Swift.Bool
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFLabel : UIKit.UILabel {
@@ -2019,6 +2020,8 @@ public enum VFCustomizableView {
   case commentCellUserAvatar(view: UIKit.UIView)
   case commentCellUserIndicator(image: ViafouraSDK.VFImageView)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
+  case commentCellPinnedView(view: ViafouraSDK.VFPinnedView)
+  case commentCellEditorPickView(view: ViafouraSDK.VFEditorPicksView)
   case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
   case userCommentDescLabel(label: ViafouraSDK.VFLabel)
   case userCommentOriginalImage(image: ViafouraSDK.VFImageView)
@@ -2039,6 +2042,9 @@ public enum VFCustomizableView {
   case previewTitleLabel(label: ViafouraSDK.VFLabel)
   case previewPrivacyLabel(label: ViafouraSDK.VFLabel)
   case previewUserPromptLabel(label: ViafouraSDK.VFLabel)
+  case previewLoginLabel(label: ViafouraSDK.VFLabel)
+  case previewAuthOrLabel(label: ViafouraSDK.VFLabel)
+  case previewSignupLabel(label: ViafouraSDK.VFLabel)
   case previewUserImage(image: ViafouraSDK.VFImageView)
   case previewUserAvatar(avatar: ViafouraSDK.VFUserAvatarView)
   case previewUserSomeoneWritingLabel(label: ViafouraSDK.VFLabel)
