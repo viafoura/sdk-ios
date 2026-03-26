@@ -2019,6 +2019,7 @@ public enum VFCustomizableView {
   case commentCellUserImage(image: ViafouraSDK.VFImageView)
   case commentCellUserAvatar(view: UIKit.UIView)
   case commentCellUserIndicator(image: ViafouraSDK.VFImageView)
+  case commentCellAwaitingModerationView(view: ViafouraSDK.VFAwaitingModerationView)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
   case commentCellPinnedView(view: ViafouraSDK.VFPinnedView)
   case commentCellEditorPickView(view: ViafouraSDK.VFEditorPicksView)

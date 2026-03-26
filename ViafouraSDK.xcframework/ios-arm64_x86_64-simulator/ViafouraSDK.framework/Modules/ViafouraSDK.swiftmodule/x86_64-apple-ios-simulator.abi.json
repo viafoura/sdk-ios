@@ -50167,6 +50167,63 @@
           },
           {
             "kind": "Var",
+            "name": "commentCellAwaitingModerationView",
+            "printedName": "commentCellAwaitingModerationView",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFCustomizableView.Type) -> (ViafouraSDK.VFAwaitingModerationView) -> ViafouraSDK.VFCustomizableView",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFAwaitingModerationView) -> ViafouraSDK.VFCustomizableView",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(view: ViafouraSDK.VFAwaitingModerationView)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFAwaitingModerationView",
+                            "printedName": "ViafouraSDK.VFAwaitingModerationView",
+                            "usr": "c:@M@ViafouraSDK@objc(cs)VFAwaitingModerationView"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFCustomizableView.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFCustomizableView",
+                        "printedName": "ViafouraSDK.VFCustomizableView",
+                        "usr": "s:11ViafouraSDK18VFCustomizableViewO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK18VFCustomizableViewO029commentCellAwaitingModerationD0yAcA010VFAwaitinghD0C_tcACmF",
+            "mangledName": "$s11ViafouraSDK18VFCustomizableViewO029commentCellAwaitingModerationD0yAcA010VFAwaitinghD0C_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
             "name": "commentCellCustomBadge",
             "printedName": "commentCellCustomBadge",
             "children": [
@@ -85613,7 +85670,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/NotificationBell\/VFNotificationBellView.swift",
       "kind": "IntegerLiteral",
-      "offset": 994,
+      "offset": 1031,
       "length": 1,
       "value": "2"
     },
@@ -86775,14 +86832,14 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12656,
+      "offset": 12689,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12740,
+      "offset": 12773,
       "length": 5,
       "value": "false"
     },
