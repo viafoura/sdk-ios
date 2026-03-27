@@ -2019,6 +2019,7 @@ public enum VFCustomizableView {
   case commentCellUserImage(image: VFImageView)
   case commentCellUserAvatar(view: UIKit.UIView)
   case commentCellUserIndicator(image: VFImageView)
+  case commentCellAwaitingModerationView(view: VFAwaitingModerationView)
   case commentCellCustomBadge(badge: VFCustomBadgeView)
   case commentCellPinnedView(view: VFPinnedView)
   case commentCellEditorPickView(view: VFEditorPicksView)
