@@ -508,6 +508,12 @@ SWIFT_CLASS("_TtC11ViafouraSDK15VFModeratorView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
+SWIFT_CLASS("_TtC11ViafouraSDK10VFMuteView")
+@interface VFMuteView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
+
 SWIFT_CLASS("_TtC11ViafouraSDK26VFNewCommentViewController")
 @interface VFNewCommentViewController : VFUIViewController
 - (void)viewDidLoad;

@@ -1187,6 +1187,13 @@ extension VFSignUpError {
   }
   #endif
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFMuteView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency final public let imageView: VFImageView
+  @_Concurrency.MainActor @preconcurrency final public let label: VFLabel
+  @_Concurrency.MainActor @preconcurrency public func setMuteButtonState(active: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func applySettings(settings: VFSettings)
+  @objc deinit
+}
 extension VFAuthenticationServiceImplementation {
   #if compiler(>=5.3) && $NonescapableTypes
   public func socialLogin(token: Swift.String, provider: VFSocialLoginProvider, completion: @escaping (Swift.Result<UserResponse, VFSocialLoginError>) -> Swift.Void)
@@ -1998,6 +2005,7 @@ public enum VFCustomizableView {
   case profileSegmentedControl(segmentedControl: VFSegmentedControl)
   case profileCommunityTabView(tabView: VFTabView)
   case profileFollowView(view: VFFollowView)
+  case profileMuteView(view: VFMuteView)
   case profileBackgroundView(view: UIKit.UIView)
   case commentCellExpandRepliesLoading(loadingView: VFLoadingView)
   case commentCellExpandRepliesImage(image: VFImageView)
@@ -2090,6 +2098,7 @@ public enum VFCustomizableView {
   case bottomPickerTitleLabel(label: VFLabel)
   case bottomPickerLabel(label: VFLabel, isActive: Swift.Bool)
   case bottomPickerSeparator(separatorView: VFSeparatorView)
+  case bottomPickerIcon(image: VFImageView)
   case chatCellContentLabel(label: VFLabel)
   case chatCellDateLabel(label: VFLabel)
   case chatCellUserNameLabel(label: VFLabel)
