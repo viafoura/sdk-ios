@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ViafouraCore'
-  s.version          = '1.2.57'
+  s.version          = '1.2.58'
   s.swift_versions = ['5.0']
   s.summary          = 'Viafoura SDK'
   s.description      = 'This SDK allows you to integrate Viafoura tools into your iOS app.'
