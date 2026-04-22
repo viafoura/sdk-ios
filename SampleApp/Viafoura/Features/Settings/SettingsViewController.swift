@@ -132,11 +132,11 @@ class SettingsViewController: UITableViewController {
         let uuid = (siteUUID ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
         let domain = (siteDomain ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
 
-        if uuid.isEmpty {
-            UserDefaults.standard.removeObject(forKey: SettingsKeys.siteUUID)
-        } else {
-            UserDefaults.standard.set(uuid, forKey: SettingsKeys.siteUUID)
+        guard let parsedUUID = UUID(uuidString: uuid) else {
+            presentInvalidSiteAlert(message: "Site UUID must be a valid UUID.")
+            return
         }
+        UserDefaults.standard.set(parsedUUID.uuidString.lowercased(), forKey: SettingsKeys.siteUUID)
 
         if domain.isEmpty {
             UserDefaults.standard.removeObject(forKey: SettingsKeys.siteDomain)
@@ -149,5 +149,11 @@ class SettingsViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             exit(0)
         }
+    }
+
+    private func presentInvalidSiteAlert(message: String) {
+        let alert = UIAlertController(title: "Invalid site", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }

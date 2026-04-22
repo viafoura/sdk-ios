@@ -21,10 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         let storedUUID = UserDefaults.standard.string(forKey: SettingsKeys.siteUUID)?.trimmingCharacters(in: .whitespacesAndNewlines)
         let storedDomain = UserDefaults.standard.string(forKey: SettingsKeys.siteDomain)?.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        let siteUUID = (storedUUID?.isEmpty == false ? storedUUID : nil) ?? SiteDefaults.siteUUID
+        let rawSiteUUID = (storedUUID?.isEmpty == false ? storedUUID : nil) ?? SiteDefaults.siteUUID
         let siteDomain = (storedDomain?.isEmpty == false ? storedDomain : nil) ?? SiteDefaults.siteDomain
 
-        ViafouraSDK.initialize(siteUUID: siteUUID, siteDomain: siteDomain)
+        guard let parsedSiteUUID = UUID(uuidString: rawSiteUUID.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+            assertionFailure("Invalid Viafoura site UUID")
+            return true
+        }
+
+        ViafouraSDK.initialize(siteUUID: parsedSiteUUID.uuidString.lowercased(), siteDomain: siteDomain)
         
         OneSignal.Debug.setLogLevel(.LL_VERBOSE)        
         OneSignal.initialize("8add46ba-1535-4c77-8c97-4faccd2cd7e5", withLaunchOptions: launchOptions)
