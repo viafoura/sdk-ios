@@ -50,11 +50,13 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
 
             UserDefaults.standard.set(containerId, forKey: SettingsKeys.liveQuestionsContainerId)
 
+            let storedDomain = UserDefaults.standard.string(forKey: SettingsKeys.siteDomain)?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let siteDomain = (storedDomain?.isEmpty == false ? storedDomain : nil) ?? SiteDefaults.siteDomain
             let articleMetadata = VFArticleMetadata(
-                url: URL(string: "https://viafoura-mobile-demo.vercel.app")!,
+                url: URL(string: "https://\(siteDomain)")!,
                 title: "Title",
                 subtitle: "Subtitle",
-                thumbnailUrl: URL(string: "https://viafoura-mobile-demo.vercel.app")!
+                thumbnailUrl: URL(string: "https://\(siteDomain)")!
             )
 
             let settings = VFSettings(colors: VFColors())
@@ -86,7 +88,9 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
 extension LiveChatsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let liveChat = viewModel.liveChats[indexPath.row]
-        let articleMetadata = VFArticleMetadata(url: URL(string: "https://viafoura-mobile-demo.vercel.app")!, title: "Title", subtitle: "Subtitle", thumbnailUrl: URL(string: "https://viafoura-mobile-demo.vercel.app")!)
+        let storedDomain = UserDefaults.standard.string(forKey: SettingsKeys.siteDomain)?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let siteDomain = (storedDomain?.isEmpty == false ? storedDomain : nil) ?? SiteDefaults.siteDomain
+        let articleMetadata = VFArticleMetadata(url: URL(string: "https://\(siteDomain)")!, title: "Title", subtitle: "Subtitle", thumbnailUrl: URL(string: "https://\(siteDomain)")!)
         if liveChat.type == .portraitOverlay {
             guard let liveChatVC = LiveChatPortraitOverlayViewController.new() else{
                 return
