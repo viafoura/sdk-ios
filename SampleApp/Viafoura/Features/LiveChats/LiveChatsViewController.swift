@@ -66,6 +66,15 @@ class LiveChatsViewController: UIViewController, StoryboardCreateable {
                 loginDelegate: self,
                 settings: settings
             )
+            let callbacks: VFActionsCallbacks = { [weak self] type in
+                switch type {
+                case .openProfilePressed(let userUUID, let presentationType):
+                    self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                default:
+                    break
+                }
+            }
+            vc.setActionCallbacks(callbacks: callbacks)
             vc.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
