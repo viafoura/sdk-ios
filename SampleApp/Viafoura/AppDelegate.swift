@@ -8,7 +8,6 @@
 import UIKit
 import ViafouraSDK
 import FirebaseCore
-import LoginRadiusPackage
 import GoogleMobileAds
 import OneSignalFramework
 
@@ -39,9 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
             }, fallbackToSettings: true)
         
         FirebaseApp.configure()
-
-        let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()
-        sdk.applicationLaunched(options: launchOptions)
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
