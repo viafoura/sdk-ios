@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4707010028CBEBC500BE9C0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 470700FD28CBEBC500BE9C0D /* GoogleService-Info.plist */; };
-		4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4707010728CFAD2C00BE9C0D /* LoginRadius.plist */; };
 		470D07DF2B62B43800932D2C /* UIViewController+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D07DE2B62B43800932D2C /* UIViewController+Fade.swift */; };
 		4710CE122A164F0A00A4115D /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710CE112A164F0A00A4115D /* UIViewController+HideKeyboard.swift */; };
 		4730703C2C3DE33B00BE0E7D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730703B2C3DE33B00BE0E7D /* NotificationService.swift */; };
@@ -16,7 +15,6 @@
 		473070472C3DE42200BE0E7D /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 473070462C3DE42200BE0E7D /* OneSignalExtension */; };
 		473070492C3DE42200BE0E7D /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 473070482C3DE42200BE0E7D /* OneSignalFramework */; };
 		4730704B2C3DE42200BE0E7D /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */; };
-		473070512C3DE85E00BE0E7D /* LoginRadiusPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 473070502C3DE85E00BE0E7D /* LoginRadiusPackage */; };
 		473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 473070532C3DE8E300BE0E7D /* GoogleMobileAds */; };
 		473070602C3DED0500BE0E7D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4730705F2C3DED0500BE0E7D /* FirebaseAnalytics */; };
 		473070622C3DED0500BE0E7D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 473070612C3DED0500BE0E7D /* FirebaseCrashlytics */; };
@@ -40,6 +38,7 @@
 		479A3C3A2B08107600E455A5 /* LiveChatPortrait.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479A3C392B08107600E455A5 /* LiveChatPortrait.storyboard */; };
 		47A8F2272832D1E700D9EB8B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */; };
 		47A8F22B2832D1F300D9EB8B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */; };
+		47AB927C2F9A6FFC004C130B /* SiteDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB927B2F9A6FFC004C130B /* SiteDefaults.swift */; };
 		47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096628179DF800EF93FD /* AppDelegate.swift */; };
 		47B0096928179DF800EF93FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096828179DF800EF93FD /* SceneDelegate.swift */; };
 		47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096A28179DF800EF93FD /* HomeViewController.swift */; };
@@ -93,6 +92,20 @@
 			remoteGlobalIDString = 47B0090F2817871500EF93FD;
 			remoteInfo = ViafouraSDKTests;
 		};
+		47AB92772F9A6FD9004C130B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 476F38B72D88864D00E5622C;
+			remoteInfo = ViafouraSDKUITests;
+		};
+		47AB92792F9A6FD9004C130B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4760AD872D88913A003D30D6;
+			remoteInfo = ViafouraSDKUITestsHost;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,6 +153,7 @@
 		47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		47AB927B2F9A6FFC004C130B /* SiteDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDefaults.swift; sourceTree = "<group>"; };
 		47B0096328179DF800EF93FD /* Viafoura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viafoura.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B0096628179DF800EF93FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47B0096828179DF800EF93FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,7 +202,6 @@
 				473070602C3DED0500BE0E7D /* FirebaseAnalytics in Frameworks */,
 				4730704B2C3DE42200BE0E7D /* OneSignalInAppMessages in Frameworks */,
 				473070492C3DE42200BE0E7D /* OneSignalFramework in Frameworks */,
-				473070512C3DE85E00BE0E7D /* LoginRadiusPackage in Frameworks */,
 				473070622C3DED0500BE0E7D /* FirebaseCrashlytics in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */,
@@ -262,6 +275,7 @@
 		477904192818E8150019B2F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				47AB927B2F9A6FFC004C130B /* SiteDefaults.swift */,
 				4779041A2818E81B0019B2F3 /* Story.swift */,
 				4771BE2B2935506E00389833 /* Setting.swift */,
 				4771BE31293556A000389833 /* VCIdentifier.swift */,
@@ -371,6 +385,8 @@
 			children = (
 				47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */,
 				47A7E50C2A3215440056AF74 /* ViafouraSDKTests.xctest */,
+				47AB92782F9A6FD9004C130B /* ViafouraSDKUITests.xctest */,
+				47AB927A2F9A6FD9004C130B /* ViafouraSDKUITestsHost.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -500,7 +516,6 @@
 				47B1DD38297EC13700FBD05C /* Kingfisher */,
 				473070482C3DE42200BE0E7D /* OneSignalFramework */,
 				4730704A2C3DE42200BE0E7D /* OneSignalInAppMessages */,
-				473070502C3DE85E00BE0E7D /* LoginRadiusPackage */,
 				473070532C3DE8E300BE0E7D /* GoogleMobileAds */,
 				4730705F2C3DED0500BE0E7D /* FirebaseAnalytics */,
 				473070612C3DED0500BE0E7D /* FirebaseCrashlytics */,
@@ -539,7 +554,6 @@
 			packageReferences = (
 				47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
-				4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */,
 				473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				4730705E2C3DED0500BE0E7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4760931E2D597A0500C57CC8 /* XCRemoteSwiftPackageReference "sdk-ios" */,
@@ -575,6 +589,20 @@
 			remoteRef = 47A7E50B2A3215440056AF74 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		47AB92782F9A6FD9004C130B /* ViafouraSDKUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ViafouraSDKUITests.xctest;
+			remoteRef = 47AB92772F9A6FD9004C130B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		47AB927A2F9A6FD9004C130B /* ViafouraSDKUITestsHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ViafouraSDKUITestsHost.app;
+			remoteRef = 47AB92792F9A6FD9004C130B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -604,7 +632,6 @@
 				47E29F0F2B0BB6B300BB5267 /* video-cnn.mp4 in Resources */,
 				47B0096E28179DF800EF93FD /* Main.storyboard in Resources */,
 				47F912EB2A684694004D457C /* Poll.storyboard in Resources */,
-				4707010828CFAD2C00BE9C0D /* LoginRadius.plist in Resources */,
 				47CB996C29E586B60070FF2B /* LiveChatPortraitOverlay.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +683,7 @@
 				47CB997329E589700070FF2B /* StoryboardCreatable.swift in Sources */,
 				479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */,
 				4771BE2629354C3800389833 /* SettingsViewController.swift in Sources */,
+				47AB927C2F9A6FFC004C130B /* SiteDefaults.swift in Sources */,
 				4771BE2C2935506E00389833 /* Setting.swift in Sources */,
 				4710CE122A164F0A00A4115D /* UIViewController+HideKeyboard.swift in Sources */,
 				47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */,
@@ -1000,14 +1028,6 @@
 				minimumVersion = 5.2.2;
 			};
 		};
-		4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/LoginRadius/ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.0;
-			};
-		};
 		473070522C3DE8E300BE0E7D /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
@@ -1057,11 +1077,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 473070452C3DE42200BE0E7D /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalInAppMessages;
-		};
-		473070502C3DE85E00BE0E7D /* LoginRadiusPackage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4730704F2C3DE85E00BE0E7D /* XCRemoteSwiftPackageReference "ios-sdk" */;
-			productName = LoginRadiusPackage;
 		};
 		473070532C3DE8E300BE0E7D /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
