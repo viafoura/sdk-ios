@@ -16,7 +16,6 @@ public struct SettingsKeys {
     public static let darkMode = "darkMode"
     public static let showNotificationBellInTopBar = "showNotificationBellInTopBar"
     public static let customContainerIDs = "customContainerIDs"
-    public static let liveQuestionsContainerId = "liveQuestionsContainerId"
     public static let siteUUID = "siteUUID"
     public static let siteDomain = "siteDomain"
 }
