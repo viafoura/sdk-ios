@@ -195,12 +195,16 @@ extension HomeViewController: UITableViewDelegate{
             pollVC.modalPresentationStyle = .overCurrentContext
 
             self.present(pollVC, animated: true)
+        } else if let liveChat = content.liveChat {
+            presentLiveChat(liveChat)
+        } else if let liveQuestions = content.liveQuestions {
+            presentLiveQuestions(liveQuestions)
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let content = viewModel.contents[indexPath.row]
-        return content.type == .poll ? 90 : 280
+        return content.type == .story ? 280 : 110
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -211,9 +215,101 @@ extension HomeViewController: UITableViewDelegate{
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.pollCell) as! PollTableViewCell
-            cell.setup(forPoll: content.poll!)
+            if let poll = content.poll {
+                cell.setup(forPoll: poll)
+            } else if let liveChat = content.liveChat {
+                cell.setup(title: liveChat.title, image: liveChat.image)
+            } else if let liveQuestions = content.liveQuestions {
+                cell.setup(title: liveQuestions.title, image: "questionmark.circle.fill")
+            }
             return cell
         }
+    }
+}
+
+private extension HomeViewController {
+    func articleMetadata() -> VFArticleMetadata {
+        let storedDomain = UserDefaults.standard.string(forKey: SettingsKeys.siteDomain)?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let siteDomain = (storedDomain?.isEmpty == false ? storedDomain : nil) ?? SiteDefaults.siteDomain
+        let url = URL(string: "https://\(siteDomain)")!
+        return VFArticleMetadata(url: url, title: "Title", subtitle: "Subtitle", thumbnailUrl: url)
+    }
+
+    func presentLiveChat(_ liveChat: LiveChat) {
+        if liveChat.type == .portraitOverlay {
+            guard let liveChatVC = LiveChatPortraitOverlayViewController.new() else{
+                return
+            }
+
+            liveChatVC.modalPresentationStyle = .fullScreen
+            liveChatVC.viewModel = LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata())
+            liveChatVC.hidesBottomBarWhenPushed = true
+            present(liveChatVC, animated: true)
+        } else if liveChat.type == .portrait {
+            guard let liveChatVC = LiveChatPortraitViewController.new() else{
+                return
+            }
+
+            liveChatVC.modalPresentationStyle = .pageSheet
+            liveChatVC.viewModel = LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata())
+            liveChatVC.hidesBottomBarWhenPushed = true
+            present(liveChatVC, animated: true)
+        } else {
+            let callbacks: VFActionsCallbacks = { [weak self] type in
+                switch type {
+                case .openProfilePressed(let userUUID, let presentationType):
+                    self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+                default:
+                    break
+                }
+            }
+
+            let settings = VFSettings(colors: VFColors())
+            let liveChatVC = VFLiveChatViewController.new(
+                containerId: liveChat.containerId,
+                articleMetadata: articleMetadata(),
+                loginDelegate: self,
+                settings: settings
+            )
+
+            liveChatVC.setActionCallbacks(callbacks: callbacks)
+            liveChatVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+            liveChatVC.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(liveChatVC, animated: true)
+        }
+    }
+
+    func presentLiveQuestions(_ liveQuestions: LiveQuestions) {
+        let callbacks: VFActionsCallbacks = { [weak self] type in
+            switch type {
+            case .openProfilePressed(let userUUID, let presentationType):
+                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+            default:
+                break
+            }
+        }
+
+        let settings = VFSettings(colors: VFColors())
+        let liveQuestionsVC = VFLiveQuestionsViewController.new(
+            containerId: liveQuestions.containerId,
+            articleMetadata: articleMetadata(),
+            loginDelegate: self,
+            settings: settings
+        )
+
+        liveQuestionsVC.setActionCallbacks(callbacks: callbacks)
+        liveQuestionsVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+        liveQuestionsVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(liveQuestionsVC, animated: true)
+    }
+
+    func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
+        let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
+        let settings = VFSettings(colors: colors)
+
+        let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings)
+        profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+        present(profileViewController, animated: true)
     }
 }
 

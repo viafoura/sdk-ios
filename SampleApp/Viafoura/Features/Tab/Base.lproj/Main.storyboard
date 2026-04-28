@@ -18,7 +18,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="6eo-Sd-CX8" kind="relationship" relationship="viewControllers" id="BOt-uB-0ez"/>
-                        <segue destination="ufl-Px-UWA" kind="relationship" relationship="viewControllers" id="1Vw-TG-A5t"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VQ-ts-em9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -44,35 +43,6 @@
             </objects>
             <point key="canvasLocation" x="1579.7101449275362" y="-643.52678571428567"/>
         </scene>
-        <!--Live chats-->
-        <scene sceneID="yis-93-0wk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ufl-Px-UWA" customClass="CustomNavigationController" customModule="Viafoura" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Live chats" image="message.fill" catalog="system" id="NYD-13-nss"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B2y-Zg-D72">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nXb-Xt-3Ug" kind="relationship" relationship="rootViewController" id="joL-Bz-9qE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GVi-XH-qsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1579.7101449275362" y="55.580357142857139"/>
-        </scene>
-        <!--LiveChatsViewController-->
-        <scene sceneID="3XS-Gg-2HC">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LiveChats" referencedIdentifier="LiveChatsViewController" id="nXb-Xt-3Ug" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zlM-4g-dmP"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5gf-Qn-9yv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2754" y="24"/>
-        </scene>
         <!--HomeViewController-->
         <scene sceneID="cXE-g8-7YT">
             <objects>
@@ -87,6 +57,5 @@
     <color key="tintColor" red="0.92549019607843142" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="home" width="24" height="24"/>
-        <image name="message.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>
