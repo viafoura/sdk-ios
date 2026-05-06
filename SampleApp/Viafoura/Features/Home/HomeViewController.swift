@@ -140,7 +140,7 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     
     @objc
     func showCustomContainerAlert(){
-        let alert = UIAlertController(title: "Custo container ID", message: "Enter a container ID for the article", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Custom container ID", message: "Enter a container ID for the article", preferredStyle: .alert)
 
         alert.addTextField { (textField) in
             textField.placeholder = "ID"
