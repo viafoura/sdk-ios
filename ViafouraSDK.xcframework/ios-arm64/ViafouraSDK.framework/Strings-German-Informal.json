@@ -1027,5 +1027,254 @@
             "pagination_bullet": "Gehe zu Folie \\{\\{index\\}\\}",
             "prev_slide": "Vorherige Folie"
         }
+    },
+    "livequestions": {
+        "container": {
+            "configure": {
+                "actions": {
+                    "cancel": "Cancel",
+                    "update": "Update"
+                },
+                "fields": {
+                    "duration": {
+                        "hint": "Display purposes only; does not trigger automatic event start or end.",
+                        "label": "Event duration (minutes)"
+                    },
+                    "isAutoHostAssignment": {
+                        "hint": "Host as {username} to answer audience questions. Any staff user can moderate, and join as host after the event is created.",
+                        "label": "Set yourself as host"
+                    },
+                    "isPremoderationEnabled": {
+                        "hint": "Questions and replies will not be published, even during a live event, until approved in moderation.",
+                        "label": "Prescreen all questions and replies"
+                    },
+                    "isReplyEnabled": {
+                        "hint": "Allow replies to questions, answers, and comments during the live event.",
+                        "label": "Enable replies"
+                    },
+                    "title": {
+                        "hint": "Used for analytics and reporting; not visible to your audience.",
+                        "label": "Event name"
+                    }
+                },
+                "title": "Configure Event",
+                "trigger": "Configure Event"
+            },
+            "empty": {
+                "textDefault": "Be the first to ask a question.",
+                "textForAdmin": "Your audience hasn’t asked anything yet.",
+                "textNoAnswer": "There are currently no questions with answers.",
+                "title": "Start the conversation",
+                "titleNoAnswer": "No answered questions"
+            },
+            "end": {
+                "action": "End Event",
+                "cancel": "Cancel",
+                "description": "Ending the event means your audience can no longer post anything, unless you go live again. Existing questions, answers and replies remain viewable and can still receive reactions.",
+                "title": "End Live Q&A Event",
+                "trigger": "End Event"
+            },
+            "schedule": {
+                "fields": {
+                    "now": {
+                        "hint": "Event is happening now and open to participation.",
+                        "label": "Start event now"
+                    }
+                }
+            },
+            "setup": {
+                "statusLabel": "Not visible to users",
+                "step1": {
+                    "description": "Set up your event now and decide later when to go live.",
+                    "next": "Create Event",
+                    "title": "Live Q&A ready to configure"
+                },
+                "step2": {
+                    "description": "Set up your live Q&A session in just a few steps",
+                    "next": "Next",
+                    "prev": "Cancel",
+                    "title": "Live Q&A Setup"
+                },
+                "step3": {
+                    "description": "Schedule your event for the future, or go live now.",
+                    "next": "Start Event",
+                    "prev": "Previous",
+                    "title": "Live Q&A Setup"
+                }
+            },
+            "start": {
+                "action": "Start Event"
+            },
+            "statuses": {
+                "concluded": "CONCLUDED",
+                "draft": "DRAFT",
+                "hidden": "HIDDEN",
+                "live": "LIVE",
+                "upcoming": "UPCOMING"
+            }
+        },
+        "content": {
+            "actions": {
+                "cancelDelete": "Cancel",
+                "confirmDelete": "Confirm Removal",
+                "reply": "Reply",
+                "showReplies": "{count} Replies"
+            },
+            "answerLabel": "ANSWER",
+            "ariaTitle": {
+                "answer": "Answer by {username}",
+                "contentPinned": "Announcement by {username}",
+                "question": "Question by {username}"
+            },
+            "contentPinnedLabel": "ANNOUNCEMENT",
+            "deletedLabel": "Comment removed",
+            "inlineNotification": {
+                "showAnswer": "Show {count} new answer{count, plural, =1{} other{s}}"
+            },
+            "menu": {
+                "approved": "Approved",
+                "copyConsoleUrl": {
+                    "action": "Copy Link to Console"
+                },
+                "delete": {
+                    "action": "Remove"
+                },
+                "disable": {
+                    "action": "Violation"
+                },
+                "edit": {
+                    "action": "Edit"
+                },
+                "notPublished": "Not Published",
+                "published": "Published",
+                "report": {
+                    "action": "Report",
+                    "status": "Reported"
+                },
+                "reported": "Reported",
+                "spam": {
+                    "action": "Spam"
+                },
+                "trigger-aria-label": "Content menu"
+            },
+            "mutedLabel": "Comment from muted user",
+            "replies": {
+                "noun": "{count, plural, =1{reply} other{replies}}"
+            },
+            "replyLabel": "Replying to @{username}",
+            "violationLabel": "VIOLATES COMMUNITY GUIDELINES"
+        },
+        "hosts": {
+            "badge": "Host",
+            "management": {
+                "actions": {
+                    "join": "Join as Host",
+                    "leave": "Leave Host Role",
+                    "remove": "Remove Host"
+                },
+                "badgeFallback": "Displayed when hosting",
+                "trigger": "Manage Hosts"
+            },
+            "removeConfirmation": {
+                "cancel": "Cancel",
+                "confirm": "Confirm Removal",
+                "description": "Once removed, they lose host privileges, but their posts remain. Only they can re-join as host.",
+                "title": "Remove host?"
+            }
+        },
+        "moderation": {
+            "actions": {
+                "approved": "Approved",
+                "keep-approved": "Keep Approved",
+                "pending": "Pending",
+                "reported": "Reported",
+                "spam": "Spam",
+                "violation": "Violation"
+            },
+            "empty": {
+                "text": "There are no questions or replies to review.",
+                "title": "No pending items"
+            },
+            "inlineNotification": {
+                "newPost": "{count} new post{count, plural, =1{} other{s}}"
+            },
+            "realtime": {
+                "load": "Load {count} new post{count, plural, =1{} other{s}}"
+            }
+        },
+        "pagination": {
+            "loadMoreQuestions": "Load more"
+        },
+        "post": {
+            "actions": {
+                "cancel": "Cancel",
+                "post": "Post"
+            },
+            "contentPinned": {
+                "placeholder": "Post an announcement"
+            },
+            "question": {
+                "placeholder": "Ask a question",
+                "postAsAnnouncement": "Post as an announcement"
+            },
+            "reply": {
+                "markAnswer": "Mark as answer",
+                "placeholder": "Type reply"
+            }
+        },
+        "report": {
+            "actions": {
+                "cancel": "Cancel",
+                "hideComment": "Hide Comment",
+                "report": "Report",
+                "showComment": "Show Comment",
+                "start": "Start Report"
+            },
+            "confirmation": {
+                "title": "YOU REPORTED THIS COMMENT"
+            },
+            "introduction": {
+                "title": "Report this Comment"
+            },
+            "moderation": {
+                "status": "Comment reported",
+                "users": "({count} user{count, plural, =1{} other{s}})"
+            }
+        },
+        "review": "PENDING REVIEW",
+        "tabs": {
+            "all": "Questions",
+            "filter": {
+                "all": "All",
+                "answered": "Answered"
+            },
+            "moderation": "Moderation"
+        },
+        "threads": {
+            "replies": {
+                "showMore": "Show more replies",
+                "showNew": "Show {count, plural, =1{new reply} other{{count} new replies}}",
+                "showPrevious": "Show {count, plural, =1{previous reply} other{{count} previous replies}}"
+            }
+        },
+        "time": {
+            "edited": "Edited",
+            "relative": {
+                "day": "{num} d",
+                "hour": "{num} h",
+                "minute": "{num} m",
+                "now": "Now",
+                "second": "{num} s",
+                "week": "{num} w",
+                "year": "{num} y"
+            }
+        },
+        "title": "Live Q&A",
+        "typing": {
+            "hostAnswering": "Host is answering"
+        },
+        "footer": {
+            "poweredBy": "Powered by viafoura"
+        }
     }
 }
