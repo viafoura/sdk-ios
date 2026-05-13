@@ -13,9 +13,13 @@ class PollTableViewCell: UITableViewCell{
     @IBOutlet weak var containerLabel: UILabel!
     
     func setup(forPoll poll: Poll){
-        containerLabel.text = poll.title
-        
-        containerImage.image = UIImage(systemName: "soccerball")?.withRenderingMode(.alwaysTemplate)
+        setup(title: poll.title, image: "soccerball")
+    }
+
+    func setup(title: String, image: String) {
+        containerLabel.text = title
+
+        containerImage.image = UIImage(systemName: image)?.withRenderingMode(.alwaysTemplate)
 
         containerView.backgroundColor = .white
         containerView.layer.masksToBounds = false

@@ -8,7 +8,6 @@
 import UIKit
 import ViafouraSDK
 import FirebaseCore
-import LoginRadiusPackage
 import GoogleMobileAds
 import OneSignalFramework
 
@@ -18,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        ViafouraSDK.initialize(siteUUID: "00000000-0000-4000-8000-c8cddfd7b365", siteDomain: "viafoura-mobile-demo.vercel.app")
+        let storedUUID = UserDefaults.standard.string(forKey: SettingsKeys.siteUUID)?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let storedDomain = UserDefaults.standard.string(forKey: SettingsKeys.siteDomain)?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let rawSiteUUID = (storedUUID?.isEmpty == false ? storedUUID : nil) ?? SiteDefaults.siteUUID
+        let siteDomain = (storedDomain?.isEmpty == false ? storedDomain : nil) ?? SiteDefaults.siteDomain
+
+        guard let parsedSiteUUID = UUID(uuidString: rawSiteUUID.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+            assertionFailure("Invalid Viafoura site UUID")
+            return true
+        }
+
+        ViafouraSDK.initialize(siteUUID: parsedSiteUUID.uuidString.lowercased(), siteDomain: siteDomain)
         
         OneSignal.Debug.setLogLevel(.LL_VERBOSE)        
         OneSignal.initialize("8add46ba-1535-4c77-8c97-4faccd2cd7e5", withLaunchOptions: launchOptions)
@@ -28,9 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
             }, fallbackToSettings: true)
         
         FirebaseApp.configure()
-
-        let sdk: LoginRadiusSDK = LoginRadiusSDK.instance()
-        sdk.applicationLaunched(options: launchOptions)
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
@@ -63,4 +70,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-
