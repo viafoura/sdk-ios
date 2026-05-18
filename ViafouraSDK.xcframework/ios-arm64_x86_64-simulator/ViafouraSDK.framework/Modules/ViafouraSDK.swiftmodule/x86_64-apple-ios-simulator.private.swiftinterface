@@ -2051,6 +2051,8 @@ public enum VFCustomizableView {
   case commentCellPinnedView(view: VFPinnedView)
   case commentCellEditorPickView(view: VFEditorPicksView)
   case commentCellSeparator(separator: VFSeparatorView)
+  case writeReplyUserImage(image: VFImageView)
+  case writeReplyUserAvatar(view: VFUserAvatarView)
   case userCommentDescLabel(label: VFLabel)
   case userCommentOriginalImage(image: VFImageView)
   case userCommentOriginalTitle(label: VFLabel)
