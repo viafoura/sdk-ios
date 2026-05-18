@@ -2051,6 +2051,8 @@ public enum VFCustomizableView {
   case commentCellPinnedView(view: ViafouraSDK.VFPinnedView)
   case commentCellEditorPickView(view: ViafouraSDK.VFEditorPicksView)
   case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
+  case writeReplyUserImage(image: ViafouraSDK.VFImageView)
+  case writeReplyUserAvatar(view: ViafouraSDK.VFUserAvatarView)
   case userCommentDescLabel(label: ViafouraSDK.VFLabel)
   case userCommentOriginalImage(image: ViafouraSDK.VFImageView)
   case userCommentOriginalTitle(label: ViafouraSDK.VFLabel)
