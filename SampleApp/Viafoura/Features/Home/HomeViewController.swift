@@ -280,6 +280,11 @@ private extension HomeViewController {
     }
 
     func presentLiveQuestions(_ liveQuestions: LiveQuestions) {
+        let liveQuestionsVC = makeLiveQuestionsViewController(liveQuestions)
+        navigationController?.pushViewController(liveQuestionsVC, animated: true)
+    }
+
+    func makeLiveQuestionsViewController(_ liveQuestions: LiveQuestions) -> VFLiveQuestionsViewController {
         let callbacks: VFActionsCallbacks = { [weak self] type in
             switch type {
             case .openProfilePressed(let userUUID, let presentationType):
@@ -300,7 +305,47 @@ private extension HomeViewController {
         liveQuestionsVC.setActionCallbacks(callbacks: callbacks)
         liveQuestionsVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         liveQuestionsVC.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(liveQuestionsVC, animated: true)
+
+        liveQuestionsVC.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Change ID",
+            image: nil,
+            primaryAction: UIAction { [weak self, weak liveQuestionsVC] _ in
+                self?.showLiveQuestionsContainerAlert(liveQuestions, from: liveQuestionsVC)
+            },
+            menu: nil
+        )
+
+        return liveQuestionsVC
+    }
+
+    func showLiveQuestionsContainerAlert(_ liveQuestions: LiveQuestions, from presentingViewController: UIViewController?) {
+        let alert = UIAlertController(title: "Live Q&A container ID", message: "Enter a container ID for Live Q&A", preferredStyle: .alert)
+
+        alert.addTextField { textField in
+            textField.placeholder = "ID"
+            textField.text = liveQuestions.containerId
+        }
+
+        alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { [weak self, weak alert] _ in
+            guard let self else { return }
+            let value = alert?.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            guard value.isEmpty == false else { return }
+
+            let updatedVC = self.makeLiveQuestionsViewController(LiveQuestions(title: liveQuestions.title, containerId: value))
+            if let navigationController = self.navigationController {
+                var viewControllers = navigationController.viewControllers
+                if viewControllers.last === presentingViewController {
+                    viewControllers.removeLast()
+                }
+                viewControllers.append(updatedVC)
+                navigationController.setViewControllers(viewControllers, animated: false)
+            } else {
+                self.presentLiveQuestions(LiveQuestions(title: liveQuestions.title, containerId: value))
+            }
+        }))
+
+        alert.addAction(.init(title: "Cancel", style: .cancel))
+        (presentingViewController ?? self).present(alert, animated: true)
     }
 
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
