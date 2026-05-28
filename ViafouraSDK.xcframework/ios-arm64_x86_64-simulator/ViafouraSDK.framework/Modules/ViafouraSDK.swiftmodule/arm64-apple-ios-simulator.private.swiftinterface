@@ -2005,6 +2005,8 @@ public enum VFCustomizableView {
   case postUserAvatar(avatar: VFUserAvatarView)
   case postMetadataTitle(label: VFLabel)
   case postMetadataImage(image: VFImageView)
+  case postReplyToUserImage(image: VFImageView)
+  case postReplyToUserAvatar(avatar: VFUserAvatarView)
   case postMetadataDescription(label: VFLabel)
   case postHeaderDescription(label: VFLabel)
   case postPlaceholderLabel(label: VFLabel)
@@ -3615,8 +3617,12 @@ extension VFLiveQuestionsDeleteContainerSettingsError {
   #endif
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsViewController : VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, limit: Swift.Int = 20, replyLimit: Swift.Int = 2) -> VFLiveQuestionsViewController
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 20, replyLimit: Swift.Int = 2) -> VFLiveQuestionsViewController
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, limit: Swift.Int = 20, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> VFLiveQuestionsViewController
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 20, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> VFLiveQuestionsViewController
+  #endif
   @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
