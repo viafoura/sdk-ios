@@ -2005,6 +2005,8 @@ public enum VFCustomizableView {
   case postUserAvatar(avatar: ViafouraSDK.VFUserAvatarView)
   case postMetadataTitle(label: ViafouraSDK.VFLabel)
   case postMetadataImage(image: ViafouraSDK.VFImageView)
+  case postReplyToUserImage(image: ViafouraSDK.VFImageView)
+  case postReplyToUserAvatar(avatar: ViafouraSDK.VFUserAvatarView)
   case postMetadataDescription(label: ViafouraSDK.VFLabel)
   case postHeaderDescription(label: ViafouraSDK.VFLabel)
   case postPlaceholderLabel(label: ViafouraSDK.VFLabel)
@@ -3615,8 +3617,12 @@ extension ViafouraSDK.VFLiveQuestionsDeleteContainerSettingsError {
   #endif
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 20, replyLimit: Swift.Int = 2) -> ViafouraSDK.VFLiveQuestionsViewController
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 20, replyLimit: Swift.Int = 2) -> ViafouraSDK.VFLiveQuestionsViewController
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 20, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 20, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
+  #endif
   @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
