@@ -69034,6 +69034,43 @@
             "moduleName": "ViafouraSDK"
           },
           {
+            "kind": "Var",
+            "name": "livequestions",
+            "printedName": "livequestions",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.NotificationServiceType.Type) -> ViafouraSDK.NotificationServiceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NotificationServiceType",
+                    "printedName": "ViafouraSDK.NotificationServiceType",
+                    "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.NotificationServiceType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NotificationServiceType",
+                        "printedName": "ViafouraSDK.NotificationServiceType",
+                        "usr": "s:11ViafouraSDK23NotificationServiceTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23NotificationServiceTypeO13livequestionsyA2CmF",
+            "mangledName": "$s11ViafouraSDK23NotificationServiceTypeO13livequestionsyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(rawValue:)",
@@ -95105,6 +95142,13 @@
       "offset": 312,
       "length": 12,
       "value": "\"userIdPath\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/users\/UserInfoEndpoint.swift",
+      "kind": "BooleanLiteral",
+      "offset": 427,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/users\/UserMutesEndpoint.swift",
