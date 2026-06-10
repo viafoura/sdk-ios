@@ -98,7 +98,7 @@ public struct VFFeatures : Swift.Equatable {
   public init(enableFollowInBottomSheet: Swift.Bool = true, enableShareInBottomSheet: Swift.Bool = true)
   public static func == (lhs: VFFeatures, rhs: VFFeatures) -> Swift.Bool
 }
-public struct CommentContainerByIdResponse : Swift.Decodable, @unchecked Swift.Sendable {
+public struct CommentContainerByIdResponse : Swift.Decodable, Swift.Sendable {
   public let content_container_uuid: Foundation.UUID
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -193,7 +193,7 @@ extension VFLocalAdDelegate {
 public struct ServerError : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct ServerErrorData : Swift.Decodable {
+public struct ServerErrorData : Swift.Decodable, Swift.Sendable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension VFLiveCommentsServiceImplementation {
@@ -488,18 +488,18 @@ public struct EventTestInfo : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct CommentListResponse : Swift.Decodable, @unchecked Swift.Sendable {
+public struct CommentListResponse : Swift.Decodable, Swift.Sendable {
   public let contents: [CommentResponse]
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct CommentResponse : Swift.Decodable, @unchecked Swift.Sendable {
+public struct CommentResponse : Swift.Decodable, Swift.Sendable {
   public let actor_uuid: Foundation.UUID
   public var content: Swift.String
   public let date_created: Swift.Int64
   public let metadata: CommentMetadata
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct CommentMetadata : Swift.Decodable {
+public struct CommentMetadata : Swift.Decodable, Swift.Sendable {
   public let origin_title: Swift.String
   public let origin_summary: Swift.String?
   public let origin_url: Swift.String?
@@ -629,7 +629,7 @@ extension VFAuthenticationServiceImplementation {
   #endif
   public func login(email: Swift.String, password: Swift.String) async throws -> UserResponse
 }
-public enum VFLoginError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFLoginError : Foundation.LocalizedError, Swift.Sendable {
   case banned(banData: ServerErrorData)
   case unknown
 }
@@ -1185,7 +1185,7 @@ extension VFAuthenticationServiceImplementation {
   public func signup(name: Swift.String, email: Swift.String, password: Swift.String, recaptchaToken: Swift.String? = nil) async throws -> UserResponse
   #endif
 }
-public enum VFSignUpError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFSignUpError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFSignUpError, b: VFSignUpError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -1213,7 +1213,7 @@ extension VFAuthenticationServiceImplementation {
   #endif
   public func socialLogin(token: Swift.String, provider: VFSocialLoginProvider) async throws -> UserResponse
 }
-public enum VFSocialLoginError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFSocialLoginError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   case banned(banData: ServerErrorData)
 }
@@ -1229,7 +1229,7 @@ extension VFLiveCommentsServiceImplementation {
   public func getCommentContainer(sectionUUID: Foundation.UUID, containerId: Swift.String, syndicationKey: Swift.String? = nil) async -> Swift.Result<CommentContainerByIdResponse, VFCommentContainerError>
   #endif
 }
-public enum VFCommentContainerError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFCommentContainerError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFCommentContainerError, b: VFCommentContainerError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -1359,7 +1359,7 @@ extension VFUnflagReviewError {
   }
   #endif
 }
-public struct UserResponse : Swift.Decodable, @unchecked Swift.Sendable {
+public struct UserResponse : Swift.Decodable, Swift.Sendable {
   public let id: Swift.Int64
   public let pic_small: Swift.String?
   public let pic_large: Swift.String?
@@ -1417,7 +1417,7 @@ extension Constants {
 extension UIKit.UIDevice {
   @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
 }
-public struct VFArticleMetadata : @unchecked Swift.Sendable {
+public struct VFArticleMetadata : Swift.Sendable {
   public let url: Foundation.URL
   public let title: Swift.String
   public let subtitle: Swift.String
@@ -1543,7 +1543,7 @@ extension VFLiveCommentsServiceImplementation {
   public func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String? = nil, filteredBy: Swift.String?, sortType: VFSortType, syndicationKey: Swift.String? = nil) async throws -> Swift.Result<CommentListResponse, VFCommentListError>
   #endif
 }
-public enum VFCommentListError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFCommentListError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFCommentListError, b: VFCommentListError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -1623,7 +1623,7 @@ extension VFLiveReviewsServiceImplementation {
   public func reviewCount(sectionUUID: Foundation.UUID? = nil, containerId: Swift.String) async throws -> Swift.Result<Swift.Int, VFReviewCountError>
   #endif
 }
-public enum VFReviewCountError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFReviewCountError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFReviewCountError, b: VFReviewCountError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -1697,7 +1697,7 @@ extension VFLoginRadiusLoginError {
   }
   #endif
 }
-public enum VFReviewRepliesError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFReviewRepliesError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFReviewRepliesError, b: VFReviewRepliesError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -1875,7 +1875,7 @@ extension VFLiveCommentsServiceImplementation {
   public func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String]) async -> Swift.Result<[CommentContainerCountStatusResponse], VFCommentCountError>
   #endif
 }
-public enum VFCommentCountError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFCommentCountError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFCommentCountError, b: VFCommentCountError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -1940,7 +1940,7 @@ extension VFLiveCommentsServiceImplementation {
   public func getComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async throws -> Swift.Result<CommentResponse, VFCommentError>
   #endif
 }
-public enum VFCommentError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFCommentError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFCommentError, b: VFCommentError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -2143,6 +2143,28 @@ public enum VFCustomizableView {
   case notificationGroupTitleLabel(label: UIKit.UILabel)
   case notificationBellText(label: VFLabel)
   case notificationBellIcon(icon: VFImageView)
+  case liveQuestionCellUserAvatar(avatar: VFUserAvatarView)
+  case liveQuestionCellUserImage(image: UIKit.UIImageView)
+  case liveQuestionCellUserNameLabel(label: VFLabel)
+  case liveQuestionCellDateLabel(label: VFLabel)
+  case liveQuestionCellContentLabel(label: VFLabel)
+  case liveQuestionCellLikeButton(button: UIKit.UIButton)
+  case liveQuestionCellLikeLabel(label: VFLabel)
+  case liveQuestionCellDislikeButton(button: UIKit.UIButton)
+  case liveQuestionCellDislikeLabel(label: VFLabel)
+  case liveQuestionCellReplyButton(button: UIKit.UIButton)
+  case liveQuestionCellOptionsButton(button: UIKit.UIButton)
+  case liveQuestionCellReplyingToLabel(label: VFLabel)
+  case liveQuestionCellPinnedView(view: VFPinnedView)
+  case liveQuestionCellHostPillView(view: UIKit.UIView)
+  case liveQuestionCellSeparator(view: UIKit.UIView)
+  case liveQuestionComposerUserAvatar(view: UIKit.UIView)
+  case liveQuestionComposerUserImage(image: UIKit.UIImageView)
+  case liveQuestionComposerHintLabel(label: VFLabel)
+  case liveQuestionComposerPillView(view: UIKit.UIView)
+  case liveQuestionTitleLabel(label: VFLabel)
+  case liveQuestionPoweredByView(view: VFPoweredByViafouraView)
+  case liveQuestionBackgroundView(view: UIKit.UIView)
 }
 extension VFLiveCommentsServiceImplementation {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -2172,7 +2194,7 @@ extension VFLiveCommentsServiceImplementation {
   public func getCommentsReplies(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String? = nil, syndicationKey: Swift.String? = nil) async throws -> Swift.Result<[CommentResponse], VFCommentRepliesError>
   #endif
 }
-public enum VFCommentRepliesError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFCommentRepliesError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFCommentRepliesError, b: VFCommentRepliesError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -2439,7 +2461,7 @@ extension VFChatContainerError {
   @_Concurrency.MainActor @preconcurrency public func setupForUser(user: UserResponse)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class CommentContent {
+@_hasMissingDesignatedInitializers public class CommentContent : @unchecked Swift.Sendable {
   @objc deinit
 }
 public enum VFReviewContainerError : Foundation.LocalizedError {
@@ -2560,7 +2582,7 @@ extension VFAuthenticationServiceImplementation {
 }
 public struct VFCookieLoginData : Swift.Sendable {
 }
-public enum VFCookieLoginError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFCookieLoginError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   case banned(banData: ServerErrorData)
 }
@@ -3005,7 +3027,7 @@ extension VFAuthenticationServiceImplementation {
   #endif
   public func resetPassword(email: Swift.String) async throws -> Swift.Bool
 }
-public enum VFPasswordResetError : Foundation.LocalizedError, @unchecked Swift.Sendable {
+public enum VFPasswordResetError : Foundation.LocalizedError, Swift.Sendable {
   case unknown
   public static func == (a: VFPasswordResetError, b: VFPasswordResetError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -3442,6 +3464,22 @@ public enum VFLiveQuestionsDeleteContainerSettingsError : Foundation.LocalizedEr
     get
   }
 }
+public enum VFLiveQuestionsAddHostError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFLiveQuestionsAddHostError, b: VFLiveQuestionsAddHostError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum VFLiveQuestionsRemoveHostError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFLiveQuestionsRemoveHostError, b: VFLiveQuestionsRemoveHostError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension VFLiveQuestionsContainerError {
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -3611,6 +3649,20 @@ extension VFLiveQuestionsUpdateContainerSettingsError {
   #endif
 }
 extension VFLiveQuestionsDeleteContainerSettingsError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+extension VFLiveQuestionsAddHostError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+extension VFLiveQuestionsRemoveHostError {
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
@@ -3921,3 +3973,7 @@ extension VFLiveQuestionsUpdateContainerSettingsError : Swift.Equatable {}
 extension VFLiveQuestionsUpdateContainerSettingsError : Swift.Hashable {}
 extension VFLiveQuestionsDeleteContainerSettingsError : Swift.Equatable {}
 extension VFLiveQuestionsDeleteContainerSettingsError : Swift.Hashable {}
+extension VFLiveQuestionsAddHostError : Swift.Equatable {}
+extension VFLiveQuestionsAddHostError : Swift.Hashable {}
+extension VFLiveQuestionsRemoveHostError : Swift.Equatable {}
+extension VFLiveQuestionsRemoveHostError : Swift.Hashable {}
