@@ -394,6 +394,8 @@ public enum VFActionCallbackType {
   case trendingArticlePressed(metadata: ViafouraSDK.VFArticleMetadata, containerId: Swift.String)
   case commentPosted(contentUUID: Foundation.UUID)
   case replyPosted(contentUUID: Foundation.UUID)
+  case commentLiked(contentUUID: Foundation.UUID)
+  case commentDisliked(contentUUID: Foundation.UUID)
   case authPressed(promptType: ViafouraSDK.VFAuthPromptType)
 }
 public enum VFAuthPromptType {
@@ -3671,10 +3673,10 @@ extension ViafouraSDK.VFLiveQuestionsRemoveHostError {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsViewController : ViafouraSDK.VFUIViewController {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 20, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 20, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
   #endif
   @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
