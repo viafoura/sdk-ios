@@ -9,7 +9,6 @@ import UIKit
 import ViafouraSDK
 import FirebaseCore
 import GoogleMobileAds
-import OneSignalFramework
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
@@ -29,14 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         }
 
         ViafouraSDK.initialize(siteUUID: parsedSiteUUID.uuidString.lowercased(), siteDomain: siteDomain)
-        
-        OneSignal.Debug.setLogLevel(.LL_VERBOSE)        
-        OneSignal.initialize("8add46ba-1535-4c77-8c97-4faccd2cd7e5", withLaunchOptions: launchOptions)
-        
-        OneSignal.Notifications.requestPermission({ accepted in
-              print("User accepted notifications: \(accepted)")
-            }, fallbackToSettings: true)
-        
+
         FirebaseApp.configure()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
