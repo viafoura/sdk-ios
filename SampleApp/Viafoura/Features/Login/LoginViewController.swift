@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import ViafouraSDK
-import OneSignalFramework
 
 class LoginViewController: UIViewController, StoryboardCreateable {
     static var storyboardName = "Login"
@@ -136,8 +135,7 @@ class LoginViewController: UIViewController, StoryboardCreateable {
             self.loadingView.isHidden = true
             self.submitButton.isHidden = false
             switch result {
-            case .success(let user):
-                OneSignal.login(String(user.id))
+            case .success:
                 self.onDoneBlock?(true)
                 self.dismiss(animated: true)
             case .failure(let error):
