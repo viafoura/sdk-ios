@@ -82,6 +82,14 @@ class SettingsViewController: UITableViewController {
             self?.setSiteAndRestart(siteUUID: SiteDefaults.siteUUID, siteDomain: SiteDefaults.siteDomain)
         })
 
+        sheet.addAction(UIAlertAction(title: "demo.viafoura.com", style: .default) { [weak self] _ in
+            self?.setSiteAndRestart(siteUUID: "00000000-0000-4000-8000-d47205fca416", siteDomain: "demo.viafoura.com")
+        })
+
+        sheet.addAction(UIAlertAction(title: "test.viafoura.com", style: .default) { [weak self] _ in
+            self?.setSiteAndRestart(siteUUID: "00000000-0000-4000-8000-a3692e0c0e77", siteDomain: "test.viafoura.com")
+        })
+
         sheet.addAction(UIAlertAction(title: "Custom…", style: .default) { [weak self] _ in
             self?.presentCustomSitePrompt()
         })
