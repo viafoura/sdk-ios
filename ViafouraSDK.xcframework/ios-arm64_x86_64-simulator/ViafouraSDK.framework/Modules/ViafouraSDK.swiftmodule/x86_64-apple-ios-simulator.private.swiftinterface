@@ -1377,6 +1377,53 @@ public struct SubscriptionResponse : Swift.Decodable {
 @_Concurrency.MainActor public protocol VFLayoutDelegate : ObjectiveC.NSObject {
   @_Concurrency.MainActor func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
 }
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class VFViewCoordinator : ObjectiveC.NSObject, VFLoginDelegate, VFLayoutDelegate, VFCustomUIDelegate {
+  nonisolated final public func startLogin()
+  @_Concurrency.MainActor final public func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
+  nonisolated final public func customizeView(theme: VFTheme, view: VFCustomizableView)
+  @objc deinit
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFPreviewCommentsView : SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, authorsIds: [Swift.String] = [], theme: VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @available(iOS 13.0, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK21VFPreviewCommentsViewV4bodyQrvp", 0) __
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFProfileView : SwiftUI.UIViewControllerRepresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, settings: VFSettings, theme: VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> VFViewCoordinator
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: VFProfileView.Context) -> VFProfileViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: VFProfileViewController, context: VFProfileView.Context)
+  @available(iOS 13.0, *)
+  public typealias Body = Swift.Never
+  @available(iOS 13.0, *)
+  public typealias Coordinator = VFViewCoordinator
+  @available(iOS 13.0, *)
+  public typealias UIViewControllerType = VFProfileViewController
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFNewCommentView : SwiftUI.UIViewControllerRepresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(actionType: VFNewCommentActionType, containerType: VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: VFArticleMetadata, settings: VFSettings, theme: VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> VFViewCoordinator
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: VFNewCommentView.Context) -> VFNewCommentViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: VFNewCommentViewController, context: VFNewCommentView.Context)
+  @available(iOS 13.0, *)
+  public typealias Body = Swift.Never
+  @available(iOS 13.0, *)
+  public typealias Coordinator = VFViewCoordinator
+  @available(iOS 13.0, *)
+  public typealias UIViewControllerType = VFNewCommentViewController
+}
 public enum VFDeleteChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: VFDeleteChatError, b: VFDeleteChatError) -> Swift.Bool
@@ -3482,6 +3529,22 @@ public enum VFLiveQuestionsRemoveHostError : Foundation.LocalizedError {
     get
   }
 }
+public enum VFLiveQuestionsUpdateHostError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFLiveQuestionsUpdateHostError, b: VFLiveQuestionsUpdateHostError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum VFLiveQuestionsUploadHostAvatarError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: VFLiveQuestionsUploadHostAvatarError, b: VFLiveQuestionsUploadHostAvatarError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension VFLiveQuestionsContainerError {
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -3671,6 +3734,20 @@ extension VFLiveQuestionsRemoveHostError {
   }
   #endif
 }
+extension VFLiveQuestionsUpdateHostError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+extension VFLiveQuestionsUploadHostAvatarError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsViewController : VFUIViewController {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: VFArticleMetadata, loginDelegate: any VFLoginDelegate, settings: VFSettings, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> VFLiveQuestionsViewController
@@ -3794,6 +3871,13 @@ extension VFFlagChatError : Swift.Equatable {}
 extension VFFlagChatError : Swift.Hashable {}
 extension VFUnflagReviewError : Swift.Equatable {}
 extension VFUnflagReviewError : Swift.Hashable {}
+extension VFViewCoordinator : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension VFPreviewCommentsView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension VFProfileView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension VFNewCommentView : Swift.Sendable {}
 extension VFDeleteChatError : Swift.Equatable {}
 extension VFDeleteChatError : Swift.Hashable {}
 extension VFUserCommentsError : Swift.Equatable {}
@@ -3979,3 +4063,7 @@ extension VFLiveQuestionsAddHostError : Swift.Equatable {}
 extension VFLiveQuestionsAddHostError : Swift.Hashable {}
 extension VFLiveQuestionsRemoveHostError : Swift.Equatable {}
 extension VFLiveQuestionsRemoveHostError : Swift.Hashable {}
+extension VFLiveQuestionsUpdateHostError : Swift.Equatable {}
+extension VFLiveQuestionsUpdateHostError : Swift.Hashable {}
+extension VFLiveQuestionsUploadHostAvatarError : Swift.Equatable {}
+extension VFLiveQuestionsUploadHostAvatarError : Swift.Hashable {}
