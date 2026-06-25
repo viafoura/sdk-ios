@@ -18,11 +18,13 @@ public struct SettingsKeys {
     public static let customContainerIDs = "customContainerIDs"
     public static let siteUUID = "siteUUID"
     public static let siteDomain = "siteDomain"
+    public static let useSwiftUI = "useSwiftUI"
 }
 
 public let defaultSettings: [Setting] = [
     Setting(title: "Use comments container on fullscreen", key: SettingsKeys.commentsContainerFullscreen),
     Setting(title: "Dark mode", key: SettingsKeys.darkMode),
     Setting(title: "Enable custom containers", key: SettingsKeys.customContainerIDs),
-    Setting(title: "Show notification bell in top bar", key: SettingsKeys.showNotificationBellInTopBar)
+    Setting(title: "Show notification bell in top bar", key: SettingsKeys.showNotificationBellInTopBar),
+    Setting(title: "Use SwiftUI views", key: SettingsKeys.useSwiftUI)
 ]
