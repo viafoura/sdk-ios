@@ -1377,6 +1377,53 @@ public struct SubscriptionResponse : Swift.Decodable {
 @_Concurrency.MainActor public protocol VFLayoutDelegate : ObjectiveC.NSObject {
   @_Concurrency.MainActor func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
 }
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class VFViewCoordinator : ObjectiveC.NSObject, ViafouraSDK.VFLoginDelegate, ViafouraSDK.VFLayoutDelegate, ViafouraSDK.VFCustomUIDelegate {
+  nonisolated final public func startLogin()
+  @_Concurrency.MainActor final public func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
+  nonisolated final public func customizeView(theme: ViafouraSDK.VFTheme, view: ViafouraSDK.VFCustomizableView)
+  @objc deinit
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFPreviewCommentsView : SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @available(iOS 13.0, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK21VFPreviewCommentsViewV4bodyQrvp", 0) __
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFProfileView : SwiftUI.UIViewControllerRepresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, settings: ViafouraSDK.VFSettings, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> ViafouraSDK.VFViewCoordinator
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: ViafouraSDK.VFProfileView.Context) -> ViafouraSDK.VFProfileViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: ViafouraSDK.VFProfileViewController, context: ViafouraSDK.VFProfileView.Context)
+  @available(iOS 13.0, *)
+  public typealias Body = Swift.Never
+  @available(iOS 13.0, *)
+  public typealias Coordinator = ViafouraSDK.VFViewCoordinator
+  @available(iOS 13.0, *)
+  public typealias UIViewControllerType = ViafouraSDK.VFProfileViewController
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFNewCommentView : SwiftUI.UIViewControllerRepresentable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(actionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> ViafouraSDK.VFViewCoordinator
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: ViafouraSDK.VFNewCommentView.Context) -> ViafouraSDK.VFNewCommentViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: ViafouraSDK.VFNewCommentViewController, context: ViafouraSDK.VFNewCommentView.Context)
+  @available(iOS 13.0, *)
+  public typealias Body = Swift.Never
+  @available(iOS 13.0, *)
+  public typealias Coordinator = ViafouraSDK.VFViewCoordinator
+  @available(iOS 13.0, *)
+  public typealias UIViewControllerType = ViafouraSDK.VFNewCommentViewController
+}
 public enum VFDeleteChatError : Foundation.LocalizedError {
   case unknown
   public static func == (a: ViafouraSDK.VFDeleteChatError, b: ViafouraSDK.VFDeleteChatError) -> Swift.Bool
@@ -3482,6 +3529,22 @@ public enum VFLiveQuestionsRemoveHostError : Foundation.LocalizedError {
     get
   }
 }
+public enum VFLiveQuestionsUpdateHostError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFLiveQuestionsUpdateHostError, b: ViafouraSDK.VFLiveQuestionsUpdateHostError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum VFLiveQuestionsUploadHostAvatarError : Foundation.LocalizedError {
+  case unknown
+  public static func == (a: ViafouraSDK.VFLiveQuestionsUploadHostAvatarError, b: ViafouraSDK.VFLiveQuestionsUploadHostAvatarError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension ViafouraSDK.VFLiveQuestionsContainerError {
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -3671,6 +3734,20 @@ extension ViafouraSDK.VFLiveQuestionsRemoveHostError {
   }
   #endif
 }
+extension ViafouraSDK.VFLiveQuestionsUpdateHostError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+extension ViafouraSDK.VFLiveQuestionsUploadHostAvatarError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsViewController : ViafouraSDK.VFUIViewController {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
@@ -3794,6 +3871,13 @@ extension ViafouraSDK.VFFlagChatError : Swift.Equatable {}
 extension ViafouraSDK.VFFlagChatError : Swift.Hashable {}
 extension ViafouraSDK.VFUnflagReviewError : Swift.Equatable {}
 extension ViafouraSDK.VFUnflagReviewError : Swift.Hashable {}
+extension ViafouraSDK.VFViewCoordinator : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension ViafouraSDK.VFPreviewCommentsView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension ViafouraSDK.VFProfileView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension ViafouraSDK.VFNewCommentView : Swift.Sendable {}
 extension ViafouraSDK.VFDeleteChatError : Swift.Equatable {}
 extension ViafouraSDK.VFDeleteChatError : Swift.Hashable {}
 extension ViafouraSDK.VFUserCommentsError : Swift.Equatable {}
@@ -3979,3 +4063,7 @@ extension ViafouraSDK.VFLiveQuestionsAddHostError : Swift.Equatable {}
 extension ViafouraSDK.VFLiveQuestionsAddHostError : Swift.Hashable {}
 extension ViafouraSDK.VFLiveQuestionsRemoveHostError : Swift.Equatable {}
 extension ViafouraSDK.VFLiveQuestionsRemoveHostError : Swift.Hashable {}
+extension ViafouraSDK.VFLiveQuestionsUpdateHostError : Swift.Equatable {}
+extension ViafouraSDK.VFLiveQuestionsUpdateHostError : Swift.Hashable {}
+extension ViafouraSDK.VFLiveQuestionsUploadHostAvatarError : Swift.Equatable {}
+extension ViafouraSDK.VFLiveQuestionsUploadHostAvatarError : Swift.Hashable {}
