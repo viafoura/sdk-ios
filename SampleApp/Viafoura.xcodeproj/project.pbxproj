@@ -27,6 +27,7 @@
 		4779041B2818E81B0019B2F3 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779041A2818E81B0019B2F3 /* Story.swift */; };
 		477904262818EAB90019B2F3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904252818EAB90019B2F3 /* LoginViewController.swift */; };
 		477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477904272818EC6C0019B2F3 /* ArticleViewModel.swift */; };
+		478530B82FED710F00F4F0FD /* ViafouraCore in Frameworks */ = {isa = PBXBuildFile; productRef = 478530B72FED710F00F4F0FD /* ViafouraCore */; };
 		479502D32818F03C00ED9E56 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479502D22818F03C00ED9E56 /* MainTabBarController.swift */; };
 		4795030B2819D05D00ED9E56 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795030A2819D05D00ED9E56 /* LoginViewModel.swift */; };
 		479A3C382B08106000E455A5 /* LiveChatPortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479A3C372B08106000E455A5 /* LiveChatPortraitViewController.swift */; };
@@ -60,37 +61,6 @@
 		47F912E92A684650004D457C /* PollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912E82A684650004D457C /* PollViewModel.swift */; };
 		47F912EB2A684694004D457C /* Poll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F912EA2A684694004D457C /* Poll.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		47A7E5092A3215440056AF74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 47B009052817871500EF93FD;
-			remoteInfo = ViafouraSDK;
-		};
-		47A7E50B2A3215440056AF74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 47B0090F2817871500EF93FD;
-			remoteInfo = ViafouraSDKTests;
-		};
-		47AB92772F9A6FD9004C130B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 476F38B72D88864D00E5622C;
-			remoteInfo = ViafouraSDKUITests;
-		};
-		47AB92792F9A6FD9004C130B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4760AD872D88913A003D30D6;
-			remoteInfo = ViafouraSDKUITestsHost;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		47162763293FAA9400729F25 /* Embed Foundation Extensions */ = {
@@ -129,7 +99,6 @@
 		4795030A2819D05D00ED9E56 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		479A3C372B08106000E455A5 /* LiveChatPortraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChatPortraitViewController.swift; sourceTree = "<group>"; };
 		479A3C392B08107600E455A5 /* LiveChatPortrait.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LiveChatPortrait.storyboard; sourceTree = "<group>"; };
-		47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ViafouraSDK.xcodeproj; path = "../../sdk-ios-core/Viafoura SDK/ViafouraSDK.xcodeproj"; sourceTree = "<group>"; };
 		47A8F2262832D1E700D9EB8B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		47A8F22A2832D1F300D9EB8B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		47AB927B2F9A6FFC004C130B /* SiteDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDefaults.swift; sourceTree = "<group>"; };
@@ -167,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				473070602C3DED0500BE0E7D /* FirebaseAnalytics in Frameworks */,
+				478530B82FED710F00F4F0FD /* ViafouraCore in Frameworks */,
 				473070622C3DED0500BE0E7D /* FirebaseCrashlytics in Frameworks */,
 				47B1DD39297EC13700FBD05C /* Kingfisher in Frameworks */,
 				473070542C3DE8E300BE0E7D /* GoogleMobileAds in Frameworks */,
@@ -307,6 +277,13 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		478530B62FED710F00F4F0FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		479502CF2818F03100ED9E56 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,22 +311,11 @@
 			path = LiveChatPortrait;
 			sourceTree = "<group>";
 		};
-		47A7E5052A3215440056AF74 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */,
-				47A7E50C2A3215440056AF74 /* ViafouraSDKTests.xctest */,
-				47AB92782F9A6FD9004C130B /* ViafouraSDKUITests.xctest */,
-				47AB927A2F9A6FD9004C130B /* ViafouraSDKUITestsHost.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		47B0095A28179DF800EF93FD = {
 			isa = PBXGroup;
 			children = (
-				47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */,
 				47B0096528179DF800EF93FD /* Viafoura */,
+				478530B62FED710F00F4F0FD /* Frameworks */,
 				47B0096428179DF800EF93FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -429,6 +395,7 @@
 				473070532C3DE8E300BE0E7D /* GoogleMobileAds */,
 				4730705F2C3DED0500BE0E7D /* FirebaseAnalytics */,
 				473070612C3DED0500BE0E7D /* FirebaseCrashlytics */,
+				478530B72FED710F00F4F0FD /* ViafouraCore */,
 			);
 			productName = Viafoura;
 			productReference = 47B0096328179DF800EF93FD /* Viafoura.app */;
@@ -444,9 +411,6 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					473070382C3DE33B00BE0E7D = {
-						CreatedOnToolsVersion = 15.4;
-					};
 					47B0096228179DF800EF93FD = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -469,49 +433,12 @@
 			);
 			productRefGroup = 47B0096428179DF800EF93FD /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 47A7E5052A3215440056AF74 /* Products */;
-					ProjectRef = 47A7E5042A3215440056AF74 /* ViafouraSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				47B0096228179DF800EF93FD /* Viafoura */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		47A7E50A2A3215440056AF74 /* ViafouraSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ViafouraSDK.framework;
-			remoteRef = 47A7E5092A3215440056AF74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47A7E50C2A3215440056AF74 /* ViafouraSDKTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ViafouraSDKTests.xctest;
-			remoteRef = 47A7E50B2A3215440056AF74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47AB92782F9A6FD9004C130B /* ViafouraSDKUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ViafouraSDKUITests.xctest;
-			remoteRef = 47AB92772F9A6FD9004C130B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		47AB927A2F9A6FD9004C130B /* ViafouraSDKUITestsHost.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ViafouraSDKUITestsHost.app;
-			remoteRef = 47AB92792F9A6FD9004C130B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		47B0096128179DF800EF93FD /* Resources */ = {
@@ -847,7 +774,7 @@
 			repositoryURL = "https://github.com/viafoura/sdk-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.30;
+				minimumVersion = 1.2.75;
 			};
 		};
 		47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -875,6 +802,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4730705E2C3DED0500BE0E7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		478530B72FED710F00F4F0FD /* ViafouraCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4760931E2D597A0500C57CC8 /* XCRemoteSwiftPackageReference "sdk-ios" */;
+			productName = ViafouraCore;
 		};
 		47B1DD38297EC13700FBD05C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
