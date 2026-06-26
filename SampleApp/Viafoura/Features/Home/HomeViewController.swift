@@ -280,8 +280,27 @@ private extension HomeViewController {
     }
 
     func presentLiveQuestions(_ liveQuestions: LiveQuestions) {
+        let container = makeLiveQuestionsContainer(liveQuestions)
+        navigationController?.pushViewController(container, animated: true)
+    }
+
+    func makeLiveQuestionsContainer(_ liveQuestions: LiveQuestions) -> LiveQuestionsContainerViewController {
         let liveQuestionsVC = makeLiveQuestionsViewController(liveQuestions)
-        navigationController?.pushViewController(liveQuestionsVC, animated: true)
+        let container = LiveQuestionsContainerViewController(liveQuestionsViewController: liveQuestionsVC)
+        container.title = liveQuestions.title
+        container.hidesBottomBarWhenPushed = true
+        if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
+            container.view.backgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
+        }
+        container.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Change ID",
+            image: nil,
+            primaryAction: UIAction { [weak self, weak container] _ in
+                self?.showLiveQuestionsContainerAlert(liveQuestions, from: container)
+            },
+            menu: nil
+        )
+        return container
     }
 
     func makeLiveQuestionsViewController(_ liveQuestions: LiveQuestions) -> VFLiveQuestionsViewController {
@@ -304,16 +323,6 @@ private extension HomeViewController {
 
         liveQuestionsVC.setActionCallbacks(callbacks: callbacks)
         liveQuestionsVC.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
-        liveQuestionsVC.hidesBottomBarWhenPushed = true
-
-        liveQuestionsVC.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Change ID",
-            image: nil,
-            primaryAction: UIAction { [weak self, weak liveQuestionsVC] _ in
-                self?.showLiveQuestionsContainerAlert(liveQuestions, from: liveQuestionsVC)
-            },
-            menu: nil
-        )
 
         return liveQuestionsVC
     }
@@ -331,7 +340,7 @@ private extension HomeViewController {
             let value = alert?.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             guard value.isEmpty == false else { return }
 
-            let updatedVC = self.makeLiveQuestionsViewController(LiveQuestions(title: liveQuestions.title, containerId: value))
+            let updatedVC = self.makeLiveQuestionsContainer(LiveQuestions(title: liveQuestions.title, containerId: value))
             if let navigationController = self.navigationController {
                 var viewControllers = navigationController.viewControllers
                 if viewControllers.last === presentingViewController {
