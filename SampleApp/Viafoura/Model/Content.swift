@@ -48,7 +48,7 @@ struct LiveQuestions {
 }
 
 public let defaultContents: [Content] = [
-    Content(type: .liveQuestions, story: nil, poll: nil, liveChat: nil, liveQuestions: LiveQuestions(title: "Live Q&A", containerId: "liveqa")),
+    Content(type: .liveQuestions, story: nil, poll: nil, liveChat: nil, liveQuestions: LiveQuestions(title: "Live Q&A", containerId: "600042387794")),
     Content(type: .story, story: Story(pictureUrl: "https://www.datocms-assets.com/55856/1636753460-information-overload.jpg?crop=focalpoint&fit=crop&fm=webp&fp-x=0.86&fp-y=0.47&h=428&w=856", title: "Moving Staff to Cover the Coronavirus", description: "Here Are What Media Companies Are Doing to Deal With COVID-19 Information Overload", author: "Norman Phillips", category: "ECONOMY", link: "https://viafoura-mobile-demo.vercel.app/posts/here-are-what-media-companies-are-doing-with-covid-19-overload", containerId: "1994-7e39-5de6-8a3c-9a643ddc103d", authorId: "3147700024522", storyType: .comments), poll: nil),
     Content(type: .liveChat, story: nil, poll: nil, liveChat: LiveChat(title: "Sports live chat", image: "message.fill", containerId: "sports", type: .portraitOverlay), liveQuestions: nil),
     Content(type: .poll, story: nil, poll: Poll(contentContainerUUID: UUID(uuidString: "9BC06A89-2B04-402F-8379-D4E21A249B3C")!, title: "Who is the best player ever?")),
