@@ -498,6 +498,8 @@ SWIFT_CLASS("_TtC11ViafouraSDK29VFLiveQuestionsViewController")
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -515,11 +517,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK29VFLiveQuestionsViewController")
 
 @class UITableView;
 @class UITableViewCell;
-@class UIScrollView;
 @interface VFLiveQuestionsViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
 
 SWIFT_CLASS("_TtC11ViafouraSDK10VFLiveView")
@@ -627,6 +627,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK23VFProfileViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIScrollView;
 @interface VFProfileViewController (SWIFT_EXTENSION(ViafouraSDK)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
