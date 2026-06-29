@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import ViafouraSDK
 
 class HomeViewController: UIViewController, StoryboardCreateable {
@@ -152,17 +153,44 @@ class HomeViewController: UIViewController, StoryboardCreateable {
                 return
             }
             
-            guard let articleVC = ArticleViewController.new() else{
-                return
-            }
-            
-            articleVC.articleViewModel = ArticleViewModel(story: Story.randomWithContainerId(containerId: value))
-            articleVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(articleVC, animated: true)
+            self.openArticle(story: Story.randomWithContainerId(containerId: value))
         }))
         
         alert.addAction(.init(title: "Cancel", style: .cancel))
         self.present(alert, animated: true, completion: nil)
+    }
+
+    func openArticle(story: Story) {
+        if UserDefaults.standard.bool(forKey: SettingsKeys.useSwiftUI) {
+            let isDark = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode)
+            let viewModel = ArticleViewModel(story: story)
+            let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
+            let settings = VFSettings(colors: colors)
+            let articleView = ArticleView(
+                story: story,
+                articleMetadata: viewModel.articleMetadata,
+                settings: settings,
+                isDark: isDark,
+                onOpenArticle: { [weak self] containerId in
+                    guard let content = defaultContents.first(where: { $0.story?.containerId == containerId }),
+                          let nextStory = content.story else { return }
+                    self?.openArticle(story: nextStory)
+                }
+            )
+            let hosting = UIHostingController(rootView: articleView)
+            hosting.title = story.title
+            if isDark {
+                hosting.view.backgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.0)
+            }
+            hosting.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(hosting, animated: true)
+            return
+        }
+
+        guard let articleVC = ArticleViewController.new() else { return }
+        articleVC.articleViewModel = ArticleViewModel(story: story)
+        articleVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(articleVC, animated: true)
     }
 }
 
@@ -180,13 +208,7 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let content = viewModel.contents[indexPath.row]
         if let story = content.story {
-            guard let articleVC = ArticleViewController.new() else{
-                return
-            }
-            
-            articleVC.articleViewModel = ArticleViewModel(story: story)
-            articleVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(articleVC, animated: true)
+            openArticle(story: story)
         } else if let poll = content.poll {
             guard let pollVC = PollViewController.new() else{
                 return
