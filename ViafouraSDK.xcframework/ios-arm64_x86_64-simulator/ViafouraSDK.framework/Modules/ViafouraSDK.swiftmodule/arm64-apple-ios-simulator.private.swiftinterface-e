@@ -3757,13 +3757,20 @@ extension ViafouraSDK.VFLiveQuestionsUploadHostAvatarError {
   #endif
   @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
+  @objc deinit
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency final public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency final public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency final public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLayoutSubviews()
-  @objc deinit
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override final public func didMove(toParent parent: UIKit.UIViewController?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc override final public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  #endif
 }
 extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
   @_Concurrency.MainActor @preconcurrency @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
@@ -3774,7 +3781,6 @@ extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UICollectionViewData
 extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc final public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
   @_Concurrency.MainActor @preconcurrency @objc final public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-  @_Concurrency.MainActor @preconcurrency @objc final public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
 }
 extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
