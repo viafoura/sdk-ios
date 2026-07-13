@@ -397,6 +397,17 @@ public enum VFActionCallbackType {
   case commentLiked(contentUUID: Foundation.UUID)
   case commentDisliked(contentUUID: Foundation.UUID)
   case authPressed(promptType: VFAuthPromptType)
+  case profileTabPressed(tab: VFProfileTab)
+}
+public enum VFProfileTab {
+  case feed
+  case profile
+  case community
+  public static func == (a: VFProfileTab, b: VFProfileTab) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public enum VFAuthPromptType {
   case dislike
@@ -2782,6 +2793,8 @@ public enum NotificationServiceType : Swift.String, Swift.Decodable {
   case notifications
   case livechat
   case livequestions
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
@@ -2799,6 +2812,9 @@ public enum NotificationType : Swift.String, Swift.Decodable {
   case broadcast_topic
   case subscribed_user_content
   case broadcast_site
+  case answer
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
@@ -3804,6 +3820,8 @@ extension VFUpdateUserAvatarError : Swift.Equatable {}
 extension VFUpdateUserAvatarError : Swift.Hashable {}
 extension VFTheme : Swift.Equatable {}
 extension VFTheme : Swift.Hashable {}
+extension VFProfileTab : Swift.Equatable {}
+extension VFProfileTab : Swift.Hashable {}
 extension VFAuthPromptType : Swift.Equatable {}
 extension VFAuthPromptType : Swift.Hashable {}
 extension VFProfilePresentationType : Swift.Equatable {}
