@@ -332,6 +332,12 @@ public protocol VFLiveCommentsService : Swift.Sendable {
   func getComments(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, replyLimit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, sortType: ViafouraSDK.VFSortType, syndicationKey: Swift.String?) async throws -> Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  func getContents(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func getContents(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String?, filteredBy: Swift.String?, syndicationKey: Swift.String?) async throws -> Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<Swift.Int, ViafouraSDK.VFCommentCountError>) -> Swift.Void)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
@@ -1406,6 +1412,17 @@ public struct SubscriptionResponse : Swift.Decodable {
   public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK21VFPreviewCommentsViewV4bodyQrvp", 0) __
 }
 @available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFLiveQuestionsView : SwiftUICore.View {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  #endif
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @available(iOS 13.0, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK19VFLiveQuestionsViewV4bodyQrvp", 0) __
+}
+@available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFProfileView : SwiftUI.UIViewControllerRepresentable {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, settings: ViafouraSDK.VFSettings, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
@@ -1616,6 +1633,14 @@ extension ViafouraSDK.VFCommentListError {
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
+}
+extension ViafouraSDK.VFLiveCommentsServiceImplementation {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getContents(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String? = nil, filteredBy: Swift.String?, syndicationKey: Swift.String? = nil, completion: @escaping (Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getContents(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String? = nil, filteredBy: Swift.String?, syndicationKey: Swift.String? = nil) async throws -> Swift.Result<ViafouraSDK.CommentListResponse, ViafouraSDK.VFCommentListError>
   #endif
 }
 public enum VFUpdateUserError : Foundation.LocalizedError {
@@ -2220,6 +2245,9 @@ public enum VFCustomizableView {
   case liveQuestionCellPinnedView(view: ViafouraSDK.VFPinnedView)
   case liveQuestionCellHostPillView(view: UIKit.UIView)
   case liveQuestionCellSeparator(view: UIKit.UIView)
+  case liveQuestionCellAnnouncementLabel(label: ViafouraSDK.VFLabel)
+  case liveQuestionCellAnnouncementIcon(image: UIKit.UIImageView)
+  case liveQuestionCellAnnouncementBackground(view: UIKit.UIView)
   case liveQuestionComposerUserAvatar(view: UIKit.UIView)
   case liveQuestionComposerUserImage(image: UIKit.UIImageView)
   case liveQuestionComposerHintLabel(label: ViafouraSDK.VFLabel)
@@ -3900,6 +3928,8 @@ extension ViafouraSDK.VFUnflagReviewError : Swift.Hashable {}
 extension ViafouraSDK.VFViewCoordinator : Swift.Sendable {}
 @available(iOS 13.0, *)
 extension ViafouraSDK.VFPreviewCommentsView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension ViafouraSDK.VFLiveQuestionsView : Swift.Sendable {}
 @available(iOS 13.0, *)
 extension ViafouraSDK.VFProfileView : Swift.Sendable {}
 @available(iOS 13.0, *)

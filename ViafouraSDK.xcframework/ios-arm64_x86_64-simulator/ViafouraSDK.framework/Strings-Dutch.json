@@ -1032,254 +1032,278 @@
         "container": {
             "configure": {
                 "actions": {
-                    "cancel": "Cancel",
+                    "cancel": "Annuleer",
                     "update": "Update"
                 },
                 "fields": {
                     "duration": {
-                        "hint": "Display purposes only; does not trigger automatic event start or end.",
-                        "label": "Event duration (minutes)"
+                        "hint": "Uitsluitend ter illustratie; leidt niet tot automatische start of beëindiging van een evenement.",
+                        "label": "Duur evenement (minuten)"
                     },
                     "isAutoHostAssignment": {
-                        "hint": "Host as {username} to answer audience questions. Any staff user can moderate, and join as host after the event is created.",
-                        "label": "Set yourself as host"
+                        "hint": "Host als {username} om vragen van het publiek te beantwoorden. Elke medewerker kan modereren en zich na het aanmaken van het evenement aanmelden als host.",
+                        "label": "Stel jezelf in als host"
                     },
                     "isPremoderationEnabled": {
-                        "hint": "Questions and replies will not be published, even during a live event, until approved in moderation.",
-                        "label": "Prescreen all questions and replies"
+                        "hint": "Vragen en antwoorden worden, zelfs tijdens een live-evenement, pas gepubliceerd nadat ze door het moderatieteam zijn goedgekeurd.",
+                        "label": "Screen alle vragen en antwoorden vooraf."
                     },
                     "isReplyEnabled": {
-                        "hint": "Allow replies to questions, answers, and comments during the live event.",
-                        "label": "Enable replies"
+                        "hint": "Sta reacties op vragen, antwoorden en opmerkingen toe tijdens het live-evenement.",
+                        "label": "Sta reacties toe"
                     },
                     "title": {
-                        "hint": "Used for analytics and reporting; not visible to your audience.",
-                        "label": "Event name"
+                        "hint": "Gebruikt voor analyses en rapportages; niet zichtbaar voor uw publiek.",
+                        "label": "Naam evenement"
                     }
                 },
-                "title": "Configure Event",
-                "trigger": "Configure Event"
+                "title": "Configureer evenement",
+                "trigger": "Configureer evenement"
             },
             "empty": {
-                "textDefault": "Be the first to ask a question.",
-                "textForAdmin": "Your audience hasn’t asked anything yet.",
-                "textNoAnswer": "There are currently no questions with answers.",
-                "title": "Start the conversation",
-                "titleNoAnswer": "No answered questions"
+                "textDefault": "Stel als eerste een vraag.",
+                "textForAdmin": "Je publiek heeft nog geen vragen gesteld.",
+                "textNoAnswer": "Er zijn op dit moment geen vragen met antwoorden.",
+                "title": "Begin het gesprek",
+                "titleNoAnswer": "Geen beantwoorde vragen"
             },
             "end": {
-                "action": "End Event",
-                "cancel": "Cancel",
-                "description": "Ending the event means your audience can no longer post anything, unless you go live again. Existing questions, answers and replies remain viewable and can still receive reactions.",
-                "title": "End Live Q&A Event",
-                "trigger": "End Event"
+                "action": "Einde evenement",
+                "cancel": "Annuleer",
+                "description": "Het beëindigen van het evenement betekent dat uw publiek niets meer kan posten, tenzij u opnieuw live gaat. Bestaande vragen, antwoorden en reacties blijven zichtbaar en kunnen nog steeds reacties ontvangen.",
+                "title": "Einde Live Q&A Event",
+                "trigger": "Einde evenement"
             },
             "schedule": {
                 "fields": {
                     "now": {
-                        "hint": "Event is happening now and open to participation.",
-                        "label": "Start event now"
+                        "hint": "Het evenement vindt nu plaats en deelname is mogelijk.",
+                        "label": "Start evenement nu"
                     }
                 }
             },
             "setup": {
-                "statusLabel": "Not visible to users",
+                "statusLabel": "Niet zichtbaar voor gebruikers",
                 "step1": {
-                    "description": "Set up your event now and decide later when to go live.",
-                    "next": "Create Event",
-                    "title": "Live Q&A ready to configure"
+                    "description": "Plan uw evenement nu en bepaal later wanneer het live gaat.",
+                    "next": "Creëer event",
+                    "title": "Live Q&A klaar om te configureren"
                 },
                 "step2": {
-                    "description": "Set up your live Q&A session in just a few steps",
-                    "next": "Next",
-                    "prev": "Cancel",
-                    "title": "Live Q&A Setup"
+                    "description": "Stel je live Q&A-sessie in slechts een paar stappen in",
+                    "next": "Volgende",
+                    "prev": "Annuleer",
+                    "title": "Live Q&A-configuratie"
                 },
                 "step3": {
-                    "description": "Schedule your event for the future, or go live now.",
-                    "next": "Start Event",
-                    "prev": "Previous",
-                    "title": "Live Q&A Setup"
+                    "description": "Plan je evenement voor de toekomst of ga direct live.",
+                    "next": "Start evenement",
+                    "prev": "Vorige",
+                    "title": "Live Q&A-configuratie"
                 }
             },
             "start": {
-                "action": "Start Event"
+                "action": "Start evenement"
             },
             "statuses": {
-                "concluded": "CONCLUDED",
-                "draft": "DRAFT",
-                "hidden": "HIDDEN",
+                "concluded": "AFGESLOTEN",
+                "draft": "CONCEPT",
+                "hidden": "VERBORGEN",
                 "live": "LIVE",
-                "upcoming": "UPCOMING"
+                "upcoming": "GEPLAND"
             }
         },
         "content": {
             "actions": {
-                "cancelDelete": "Cancel",
-                "confirmDelete": "Confirm Removal",
-                "reply": "Reply",
-                "showReplies": "{count} Replies"
+                "cancelDelete": "Annuleer",
+                "confirmDelete": "Bevestig verwijderen",
+                "reply": "Reactie",
+                "showReplies": "{count} Reacties"
             },
-            "answerLabel": "ANSWER",
+            "answerLabel": "ANTWOORD",
             "ariaTitle": {
-                "answer": "Answer by {username}",
-                "contentPinned": "Announcement by {username}",
-                "question": "Question by {username}"
+                "answer": "Antwoord van {username}",
+                "contentPinned": "Aankondiging door {username}",
+                "question": "Vraag van {username}"
             },
-            "contentPinnedLabel": "ANNOUNCEMENT",
-            "deletedLabel": "Comment removed",
+            "contentPinnedLabel": "AANKONDIGING",
+            "deletedLabel": "Reactie verwijderd",
             "inlineNotification": {
-                "showAnswer": "Show {count} new answer{count, plural, =1{} other{s}}"
+                "showAnswer": "Toon {count, plural, =1{nieuw antwoord} other{{count} nieuwe antwoorden}}"
             },
             "menu": {
-                "approved": "Approved",
+                "approved": "Goedgekeurd",
                 "copyConsoleUrl": {
-                    "action": "Copy Link to Console"
+                    "action": "Kopieer de link naar het systeem"
                 },
                 "delete": {
-                    "action": "Remove"
+                    "action": "Verwijder"
                 },
                 "disable": {
-                    "action": "Violation"
+                    "action": "Schending"
                 },
                 "edit": {
-                    "action": "Edit"
+                    "action": "Bewerk"
                 },
-                "notPublished": "Not Published",
-                "published": "Published",
+                "notPublished": "Niet gepubliceerd",
+                "published": "Gepubliceerd",
                 "report": {
-                    "action": "Report",
-                    "status": "Reported"
+                    "action": "Rapporteer",
+                    "status": "Gerapporteerd"
                 },
-                "reported": "Reported",
+                "reported": "Gerapporteerd",
                 "spam": {
                     "action": "Spam"
                 },
-                "trigger-aria-label": "Content menu"
+                "trigger-aria-label": "Menu inhoud"
             },
-            "mutedLabel": "Comment from muted user",
+            "mutedLabel": "Reactie van gedempte gebruiker",
             "replies": {
-                "noun": "{count, plural, =1{reply} other{replies}}"
+                "noun": "{count, plural, =1{reactie} other{reacties}}"
             },
-            "replyLabel": "Replying to @{username}",
-            "violationLabel": "VIOLATES COMMUNITY GUIDELINES"
+            "replyLabel": "Antwoorden aan @{username}",
+            "violationLabel": "SCHENDT DE RICHTLIJNEN VAN DE COMMUNITY"
         },
         "hosts": {
             "badge": "Host",
             "management": {
                 "actions": {
-                    "join": "Join as Host",
-                    "leave": "Leave Host Role",
-                    "remove": "Remove Host"
+                    "join": "Neem deel als host",
+                    "leave": "Verlaat rol als host",
+                    "remove": "Verwijder host",
+                    "edit": "Profiel bewerken"
                 },
-                "badgeFallback": "Displayed when hosting",
-                "trigger": "Manage Hosts"
+                "badgeFallback": "Weergegeven tijdens het hosten",
+                "trigger": "Beheer hosts"
+            },
+            "profile": {
+                "title": "Evenementprofiel",
+                "displayName": {
+                    "label": "Weergavenaam"
+                },
+                "badge": {
+                    "label": "Badge"
+                },
+                "badgeColor": {
+                    "label": "Badgekleur"
+                },
+                "photo": {
+                    "title": "Hostfoto",
+                    "change": "Foto wijzigen",
+                    "remove": "Verwijderen"
+                }
             },
             "removeConfirmation": {
-                "cancel": "Cancel",
-                "confirm": "Confirm Removal",
-                "description": "Once removed, they lose host privileges, but their posts remain. Only they can re-join as host.",
-                "title": "Remove host?"
+                "cancel": "Annuleer",
+                "confirm": "Bevestig verwijderen",
+                "description": "Als ze eenmaal verwijderd zijn, verliezen ze hun rechten als host, maar hun posts blijven staan. Alleen zij kunnen zich opnieuw aanmelden als host.",
+                "title": "Verwijder host?"
+            },
+            "resignConfirmation": {
+                "cancel": "Annuleer",
+                "confirm": "Rol als host neerleggen",
+                "description": "Je verschijnt niet langer als host en je posts verliezen de host-badge. Sluit je op elk moment weer aan om je rechten terug te krijgen.",
+                "title": "Rol als host neerleggen?"
             }
         },
         "moderation": {
             "actions": {
-                "approved": "Approved",
-                "keep-approved": "Keep Approved",
-                "pending": "Pending",
-                "reported": "Reported",
+                "approved": "Goedgekeurd",
+                "keep-approved": "Goedgekeurd houden",
+                "pending": "In afwachting",
+                "reported": "Gerapporteerd",
                 "spam": "Spam",
-                "violation": "Violation"
+                "violation": "Schending"
             },
             "empty": {
-                "text": "There are no questions or replies to review.",
-                "title": "No pending items"
+                "text": "Er zijn geen vragen of reacties om te beoordelen.",
+                "title": "Geen openstaande items"
             },
             "inlineNotification": {
-                "newPost": "{count} new post{count, plural, =1{} other{s}}"
+                "newPost": "{count, plural, =1{nieuwe post} other{{count} nieuwe posts}}"
             },
             "realtime": {
-                "load": "Load {count} new post{count, plural, =1{} other{s}}"
+                "load": "Laad {count, plural, =1{nieuwe post} other{{count} nieuwe posts}}"
             }
         },
         "pagination": {
-            "loadMoreQuestions": "Load more"
+            "loadMoreQuestions": "Laad meer"
         },
         "post": {
             "actions": {
-                "cancel": "Cancel",
-                "post": "Post"
+                "cancel": "Annuleer",
+                "post": "Plaatsen"
             },
             "characterLimit": {
                 "error": "Limiet aantal tekens overschreden met {count}",
                 "warning": "{count} resterende tekens"
             },
             "contentPinned": {
-                "placeholder": "Post an announcement",
-                "placeholderAuthenticated": "Post something, {username}"
+                "placeholder": "Post een aankondiging",
+                "placeholderAuthenticated": "Post iets, {username}"
             },
             "question": {
-                "placeholder": "Ask a question",
-                "postAsAnnouncement": "Post as an announcement"
+                "placeholder": "Stel een vraag",
+                "postAsAnnouncement": "Pin als aankondiging"
             },
             "reply": {
-                "markAnswer": "Mark as answer",
-                "placeholder": "Type reply"
+                "markAnswer": "Markeer als antwoord",
+                "placeholder": "Type reactie"
             }
         },
         "report": {
             "actions": {
-                "cancel": "Cancel",
-                "hideComment": "Hide Comment",
-                "report": "Report",
-                "showComment": "Show Comment",
-                "start": "Start Report"
+                "cancel": "Annuleer",
+                "hideComment": "Verberg reactie",
+                "report": "Rapporteer",
+                "showComment": "Toon opmerking",
+                "start": "Start rapportage"
             },
             "confirmation": {
-                "title": "YOU REPORTED THIS COMMENT"
+                "title": "JE HEBT DEZE REACTIE GERAPPORTEERD"
             },
             "introduction": {
-                "title": "Report this Comment"
+                "title": "Rapporteer deze reactie"
             },
             "moderation": {
-                "status": "Comment reported",
-                "users": "({count} user{count, plural, =1{} other{s}})"
+                "status": "Reactie gerapporteerd",
+                "users": "({count} gebruiker{count, plural, =1{} other{s}})"
             }
         },
-        "review": "PENDING REVIEW",
+        "review": "IN AFWACHTING VAN BEOORDELING",
         "tabs": {
-            "all": "Questions",
+            "all": "Vragen",
             "filter": {
-                "all": "All",
-                "answered": "Answered"
+                "all": "Alle",
+                "answered": "Beantwoord"
             },
-            "moderation": "Moderation"
+            "moderation": "Moderatie"
         },
         "threads": {
             "replies": {
-                "showMore": "Show more replies",
-                "showNew": "Show {count, plural, =1{new reply} other{{count} new replies}}",
-                "showPrevious": "Show {count, plural, =1{previous reply} other{{count} previous replies}}"
+                "showMore": "Toon meer reacties",
+                "showNew": "Toon {count, plural, =1{nieuwe reactie} other{{count} nieuwe reacties}}",
+                "showPrevious": "Toon {count, plural, =1{eerdere reactie} other{{count} eerdere reacties}}"
             }
         },
         "time": {
-            "edited": "Edited",
+            "edited": "Aangepast",
             "relative": {
                 "day": "{num} d",
-                "hour": "{num} h",
+                "hour": "{num} u",
                 "minute": "{num} m",
-                "now": "Now",
+                "now": "Nu",
                 "second": "{num} s",
                 "week": "{num} w",
-                "year": "{num} y"
+                "year": "{num} j"
             }
         },
         "title": "Live Q&A",
         "typing": {
-            "hostAnswering": "Host is answering"
+            "hostAnswering": "Host antwoordt"
         },
         "footer": {
-            "poweredBy": "Powered by viafoura"
+            "poweredBy": "Mogelijk gemaakt door viafoura"
         }
     }
 }
