@@ -1490,6 +1490,9 @@ extension ViafouraSDK.Constants {
   public struct AvatarColors {
     public static let colors: [UIKit.UIColor]
   }
+  public struct Ads {
+    public static let trendingAdPosition: Swift.Int
+  }
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
@@ -2155,6 +2158,7 @@ public enum VFCustomizableView {
   case userCellBadgeView(view: UIKit.UIView)
   case userCellSeparator(separator: ViafouraSDK.VFSeparatorView)
   case userCellFollowView(view: ViafouraSDK.VFFollowView)
+  case userCellMuteView(view: ViafouraSDK.VFMuteView)
   case previewEmptyCommentsView(emptyCommentsView: ViafouraSDK.VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: ViafouraSDK.VFButton)
   case previewCommentsBottomSeparator(separator: ViafouraSDK.VFSeparatorView)
@@ -2248,6 +2252,9 @@ public enum VFCustomizableView {
   case liveQuestionCellAnnouncementLabel(label: ViafouraSDK.VFLabel)
   case liveQuestionCellAnnouncementIcon(image: UIKit.UIImageView)
   case liveQuestionCellAnnouncementBackground(view: UIKit.UIView)
+  case liveQuestionCellAnswerLabel(label: ViafouraSDK.VFLabel)
+  case liveQuestionCellAnswerIcon(image: UIKit.UIImageView)
+  case liveQuestionCellAnswerBackground(view: UIKit.UIView)
   case liveQuestionComposerUserAvatar(view: UIKit.UIView)
   case liveQuestionComposerUserImage(image: UIKit.UIImageView)
   case liveQuestionComposerHintLabel(label: ViafouraSDK.VFLabel)

@@ -1490,6 +1490,9 @@ extension Constants {
   public struct AvatarColors {
     public static let colors: [UIKit.UIColor]
   }
+  public struct Ads {
+    public static let trendingAdPosition: Swift.Int
+  }
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
@@ -2155,6 +2158,7 @@ public enum VFCustomizableView {
   case userCellBadgeView(view: UIKit.UIView)
   case userCellSeparator(separator: VFSeparatorView)
   case userCellFollowView(view: VFFollowView)
+  case userCellMuteView(view: VFMuteView)
   case previewEmptyCommentsView(emptyCommentsView: VFEmptyCommentsView)
   case previewSeeMoreCommentsButton(button: VFButton)
   case previewCommentsBottomSeparator(separator: VFSeparatorView)
@@ -2248,6 +2252,9 @@ public enum VFCustomizableView {
   case liveQuestionCellAnnouncementLabel(label: VFLabel)
   case liveQuestionCellAnnouncementIcon(image: UIKit.UIImageView)
   case liveQuestionCellAnnouncementBackground(view: UIKit.UIView)
+  case liveQuestionCellAnswerLabel(label: VFLabel)
+  case liveQuestionCellAnswerIcon(image: UIKit.UIImageView)
+  case liveQuestionCellAnswerBackground(view: UIKit.UIView)
   case liveQuestionComposerUserAvatar(view: UIKit.UIView)
   case liveQuestionComposerUserImage(image: UIKit.UIImageView)
   case liveQuestionComposerHintLabel(label: VFLabel)
