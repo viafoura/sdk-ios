@@ -1045,8 +1045,8 @@
                         "label": "Stel jezelf in als host"
                     },
                     "isPremoderationEnabled": {
-                        "hint": "Vragen en antwoorden worden, zelfs tijdens een live-evenement, pas gepubliceerd nadat ze door het moderatieteam zijn goedgekeurd.",
-                        "label": "Screen alle vragen en antwoorden vooraf."
+                        "hint": "Vragen en antwoorden worden pas gepubliceerd nadat ze door het moderatieteam zijn goedgekeurd.",
+                        "label": "Beoordeel alle vragen en antwoorden vooraf."
                     },
                     "isReplyEnabled": {
                         "hint": "Sta reacties op vragen, antwoorden en opmerkingen toe tijdens het live-evenement.",
@@ -1071,7 +1071,7 @@
                 "action": "Einde evenement",
                 "cancel": "Annuleer",
                 "description": "Het beëindigen van het evenement betekent dat uw publiek niets meer kan posten, tenzij u opnieuw live gaat. Bestaande vragen, antwoorden en reacties blijven zichtbaar en kunnen nog steeds reacties ontvangen.",
-                "title": "Einde Live Q&A Event",
+                "title": "Einde Live Q&A",
                 "trigger": "Einde evenement"
             },
             "schedule": {
@@ -1173,16 +1173,16 @@
                     "remove": "Verwijder host",
                     "edit": "Profiel bewerken"
                 },
-                "badgeFallback": "Weergegeven tijdens het hosten",
+                "badgeFallback": "Profiel van host is aan te passen na deelname",
                 "trigger": "Beheer hosts"
             },
             "profile": {
                 "title": "Evenementprofiel",
                 "displayName": {
-                    "label": "Weergavenaam"
+                    "label": "Naam"
                 },
                 "badge": {
-                    "label": "Badge"
+                    "label": "Label"
                 },
                 "badgeColor": {
                     "label": "Badgekleur"
@@ -1190,7 +1190,7 @@
                 "photo": {
                     "title": "Hostfoto",
                     "change": "Foto wijzigen",
-                    "remove": "Verwijderen"
+                    "remove": "Verwijder"
                 }
             },
             "removeConfirmation": {
@@ -1202,7 +1202,7 @@
             "resignConfirmation": {
                 "cancel": "Annuleer",
                 "confirm": "Rol als host neerleggen",
-                "description": "Je verschijnt niet langer als host en je posts verliezen de host-badge. Sluit je op elk moment weer aan om je rechten terug te krijgen.",
+                "description": "Je bent niet langer de host en je posts krijgen ook niet meer het label 'host'. Je kunt op ieder moment weer host worden.",
                 "title": "Rol als host neerleggen?"
             }
         },
@@ -1232,14 +1232,14 @@
         "post": {
             "actions": {
                 "cancel": "Annuleer",
-                "post": "Plaatsen"
+                "post": "Plaats"
             },
             "characterLimit": {
                 "error": "Limiet aantal tekens overschreden met {count}",
                 "warning": "{count} resterende tekens"
             },
             "contentPinned": {
-                "placeholder": "Post een aankondiging",
+                "placeholder": "Plaats een aankondiging",
                 "placeholderAuthenticated": "Post iets, {username}"
             },
             "question": {
