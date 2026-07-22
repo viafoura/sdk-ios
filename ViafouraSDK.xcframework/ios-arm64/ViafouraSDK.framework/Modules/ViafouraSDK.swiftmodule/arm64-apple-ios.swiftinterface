@@ -2225,6 +2225,7 @@ public enum VFCustomizableView {
   case chatLoadingMore(loadingView: VFLoadingView)
   case chatEmptyView(emptyView: VFEmptyChatsView)
   case notificationContentImage(image: VFImageView)
+  case notificationAvatarView(view: VFUserAvatarView)
   case notificationRemoveImage(image: VFImageView)
   case notificationContentLabel(label: VFLabel)
   case notificationDateLabel(label: VFLabel)
