@@ -404,6 +404,7 @@ public enum VFActionCallbackType {
   case commentDisliked(contentUUID: Foundation.UUID)
   case authPressed(promptType: VFAuthPromptType)
   case profileTabPressed(tab: VFProfileTab)
+  case commentHistoryPressed(contentUUID: Foundation.UUID, containerUUID: Foundation.UUID, metadata: VFArticleMetadata)
 }
 public enum VFProfileTab {
   case feed
