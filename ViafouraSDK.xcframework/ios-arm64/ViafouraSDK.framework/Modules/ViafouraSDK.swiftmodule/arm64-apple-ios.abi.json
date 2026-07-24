@@ -12189,6 +12189,75 @@
             "usr": "s:11ViafouraSDK20VFActionCallbackTypeO17profileTabPressedyAcA09VFProfileG0O_tcACmF",
             "mangledName": "$s11ViafouraSDK20VFActionCallbackTypeO17profileTabPressedyAcA09VFProfileG0O_tcACmF",
             "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "commentHistoryPressed",
+            "printedName": "commentHistoryPressed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFActionCallbackType.Type) -> (Foundation.UUID, Foundation.UUID, ViafouraSDK.VFArticleMetadata) -> ViafouraSDK.VFActionCallbackType",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.UUID, Foundation.UUID, ViafouraSDK.VFArticleMetadata) -> ViafouraSDK.VFActionCallbackType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFActionCallbackType",
+                        "printedName": "ViafouraSDK.VFActionCallbackType",
+                        "usr": "s:11ViafouraSDK20VFActionCallbackTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(contentUUID: Foundation.UUID, containerUUID: Foundation.UUID, metadata: ViafouraSDK.VFArticleMetadata)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UUID",
+                            "printedName": "Foundation.UUID",
+                            "usr": "s:10Foundation4UUIDV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UUID",
+                            "printedName": "Foundation.UUID",
+                            "usr": "s:10Foundation4UUIDV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFArticleMetadata",
+                            "printedName": "ViafouraSDK.VFArticleMetadata",
+                            "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFActionCallbackType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFActionCallbackType",
+                        "printedName": "ViafouraSDK.VFActionCallbackType",
+                        "usr": "s:11ViafouraSDK20VFActionCallbackTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK20VFActionCallbackTypeO21commentHistoryPressedyAC10Foundation4UUIDV_AgA17VFArticleMetadataVtcACmF",
+            "mangledName": "$s11ViafouraSDK20VFActionCallbackTypeO21commentHistoryPressedyAC10Foundation4UUIDV_AgA17VFArticleMetadataVtcACmF",
+            "moduleName": "ViafouraSDK"
           }
         ],
         "declKind": "Enum",
@@ -104367,35 +104436,35 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 76436,
+      "offset": 76425,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 101411,
+      "offset": 101400,
       "length": 17,
       "value": "\"vf.liveDotPulse\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 108593,
+      "offset": 108582,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 130333,
+      "offset": 130322,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 133019,
+      "offset": 133008,
       "length": 2,
       "value": "[]"
     },
