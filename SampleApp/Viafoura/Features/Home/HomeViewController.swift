@@ -147,20 +147,25 @@ class HomeViewController: UIViewController, StoryboardCreateable {
             textField.placeholder = "ID"
         }
 
+        alert.addTextField { (textField) in
+            textField.placeholder = "focusedContentUUID (optional)"
+        }
+
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { [weak alert, self] (_) in
             let textField = alert?.textFields![0]
             guard let value = textField?.text, value.isEmpty == false else {
                 return
             }
-            
-            self.openArticle(story: Story.randomWithContainerId(containerId: value))
+
+            let focusedValue = alert?.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            self.openArticle(story: Story.randomWithContainerId(containerId: value), focusedContentUUID: UUID(uuidString: focusedValue))
         }))
         
         alert.addAction(.init(title: "Cancel", style: .cancel))
         self.present(alert, animated: true, completion: nil)
     }
 
-    func openArticle(story: Story) {
+    func openArticle(story: Story, focusedContentUUID: UUID? = nil) {
         if UserDefaults.standard.bool(forKey: SettingsKeys.useSwiftUI) {
             let isDark = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode)
             let viewModel = ArticleViewModel(story: story)
@@ -175,7 +180,8 @@ class HomeViewController: UIViewController, StoryboardCreateable {
                     guard let content = defaultContents.first(where: { $0.story?.containerId == containerId }),
                           let nextStory = content.story else { return }
                     self?.openArticle(story: nextStory)
-                }
+                },
+                focusedContentUUID: focusedContentUUID
             )
             let hosting = UIHostingController(rootView: articleView)
             hosting.title = story.title
@@ -188,7 +194,9 @@ class HomeViewController: UIViewController, StoryboardCreateable {
         }
 
         guard let articleVC = ArticleViewController.new() else { return }
-        articleVC.articleViewModel = ArticleViewModel(story: story)
+        let articleViewModel = ArticleViewModel(story: story)
+        articleViewModel.focusedContentUUID = focusedContentUUID
+        articleVC.articleViewModel = articleViewModel
         articleVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(articleVC, animated: true)
     }
@@ -340,7 +348,8 @@ private extension HomeViewController {
             containerId: liveQuestions.containerId,
             articleMetadata: articleMetadata(),
             loginDelegate: self,
-            settings: settings
+            settings: settings,
+            focusedContentUUID: liveQuestions.focusedContentUUID
         )
 
         liveQuestionsVC.setActionCallbacks(callbacks: callbacks)
@@ -357,12 +366,21 @@ private extension HomeViewController {
             textField.text = liveQuestions.containerId
         }
 
+        alert.addTextField { textField in
+            textField.placeholder = "focusedContentUUID (optional)"
+            textField.text = liveQuestions.focusedContentUUID?.uuidString
+        }
+
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { [weak self, weak alert] _ in
             guard let self else { return }
             let value = alert?.textFields?.first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             guard value.isEmpty == false else { return }
 
-            let updatedVC = self.makeLiveQuestionsContainer(LiveQuestions(title: liveQuestions.title, containerId: value))
+            let focusedValue = alert?.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let focusedContentUUID = UUID(uuidString: focusedValue)
+            let updatedLiveQuestions = LiveQuestions(title: liveQuestions.title, containerId: value, focusedContentUUID: focusedContentUUID)
+
+            let updatedVC = self.makeLiveQuestionsContainer(updatedLiveQuestions)
             if let navigationController = self.navigationController {
                 var viewControllers = navigationController.viewControllers
                 if viewControllers.last === presentingViewController {
@@ -371,7 +389,7 @@ private extension HomeViewController {
                 viewControllers.append(updatedVC)
                 navigationController.setViewControllers(viewControllers, animated: false)
             } else {
-                self.presentLiveQuestions(LiveQuestions(title: liveQuestions.title, containerId: value))
+                self.presentLiveQuestions(updatedLiveQuestions)
             }
         }))
 

@@ -121,7 +121,8 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             loginDelegate: self,
             settings: settings,
             paginationSize: 10,
-            defaultSort: articleViewModel.story.storyType == .reviews ? .mostLiked : .newest
+            defaultSort: articleViewModel.story.storyType == .reviews ? .mostLiked : .newest,
+            focusedContentUUID: articleViewModel.focusedContentUUID
         )
         
         preCommentsViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
@@ -173,6 +174,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             paginationSize: 10,
             defaultSort: articleViewModel.story.storyType == .reviews ? .mostLiked : .newest,
             authorsIds: [articleViewModel.story.authorId],
+            focusedContentUUID: articleViewModel.focusedContentUUID,
             theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light,
             autoSize: false,
             onLogin: { [weak self] in self?.startLogin() },

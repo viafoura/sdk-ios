@@ -8,6 +8,7 @@ struct ArticleView: View {
     let settings: VFSettings
     let isDark: Bool
     let onOpenArticle: (String) -> Void
+    var focusedContentUUID: UUID? = nil
 
     @State private var webHeight: CGFloat = 1
     @State private var newCommentItem: NewCommentItem?
@@ -31,6 +32,7 @@ struct ArticleView: View {
                     paginationSize: 10,
                     defaultSort: story.storyType == .reviews ? .mostLiked : .newest,
                     authorsIds: [story.authorId],
+                    focusedContentUUID: focusedContentUUID,
                     theme: theme,
                     autoSize: true,
                     onLogin: { showLogin = true },
