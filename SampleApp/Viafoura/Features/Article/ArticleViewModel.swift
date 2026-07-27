@@ -13,6 +13,7 @@ class ArticleViewModel {
     var articleMetadata: VFArticleMetadata!
     
     var selectedContentUUID: UUID?
+    var focusedContentUUID: UUID?
     
     init(story: Story){
         self.story = story
