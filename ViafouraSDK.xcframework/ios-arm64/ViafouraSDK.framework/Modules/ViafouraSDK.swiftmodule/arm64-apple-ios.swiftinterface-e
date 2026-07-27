@@ -115,6 +115,9 @@ extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   #if compiler(>=5.3) && $NonescapableTypes
   public func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, links: [ViafouraSDK.ContentLink]?, syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>
+  #endif
 }
 public enum VFCreateCommentReplyError : Foundation.LocalizedError {
   case unknown
@@ -275,6 +278,9 @@ public protocol VFLiveCommentsService : Swift.Sendable {
   func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, links: [ViafouraSDK.ContentLink]?, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func pinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFPinCommentError>
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
@@ -296,7 +302,13 @@ public protocol VFLiveCommentsService : Swift.Sendable {
   func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], links: [ViafouraSDK.ContentLink]?, syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func createCommentReply(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, links: [ViafouraSDK.ContentLink]?, syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   func trendingComments(sectionUUID: Foundation.UUID, limit: Swift.Int, contentContainerWindowDays: Swift.Int?, contentContainerWindowHours: Swift.Int, sortedBy: ViafouraSDK.VFTrendingSortType) async -> Swift.Result<[ViafouraSDK.TrendingResultResponse], ViafouraSDK.VFTrendingError>
@@ -516,7 +528,20 @@ public struct CommentResponse : Swift.Decodable, Swift.Sendable {
   public let actor_uuid: Foundation.UUID
   public var content: Swift.String
   public let date_created: Swift.Int64
+  public var links: [ViafouraSDK.ContentLink]? {
+    get
+  }
   public let metadata: ViafouraSDK.CommentMetadata
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ContentLink : Swift.Decodable, Swift.Encodable, Swift.Sendable {
+  public let url: Swift.String
+  public let show_preview: Swift.Bool?
+  public let position: Swift.Int?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(url: Swift.String, show_preview: Swift.Bool? = nil, position: Swift.Int? = nil)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct CommentMetadata : Swift.Decodable, Swift.Sendable {
@@ -1404,7 +1429,7 @@ public struct SubscriptionResponse : Swift.Decodable {
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFPreviewCommentsView : SwiftUICore.View {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], focusedContentUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
   #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
@@ -1415,7 +1440,7 @@ public struct SubscriptionResponse : Swift.Decodable {
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFLiveQuestionsView : SwiftUICore.View {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil, focusedContentUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
   #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
@@ -1471,6 +1496,9 @@ extension ViafouraSDK.VFDeleteChatError {
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   #if compiler(>=5.3) && $NonescapableTypes
   public func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func createComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, mediaUUIDS: [Swift.String], links: [ViafouraSDK.ContentLink]?, syndicationKey: Swift.String?) async -> Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>
   #endif
 }
 public enum VFCreateCommentError : Foundation.LocalizedError {
@@ -1687,6 +1715,9 @@ extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   #if compiler(>=5.3) && $NonescapableTypes
   public func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: ViafouraSDK.VFArticleMetadata, content: Swift.String, links: [ViafouraSDK.ContentLink]?, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>
+  #endif
 }
 public enum VFEditCommentError : Foundation.LocalizedError {
   case unknown
@@ -1828,13 +1859,14 @@ public enum VFCommentsContainerType : Swift.Sendable {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFPreviewCommentsViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFPreviewCommentsViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, featuredTabThreshold: Swift.Int = 3, replySize: Swift.Int = 2, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, focusedContentUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFPreviewCommentsViewController
   #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency public func setAdDelegate(adDelegate: any ViafouraSDK.VFAdDelegate)
   @_Concurrency.MainActor @preconcurrency public func getContentScrollPosition(contentUUID: Foundation.UUID, completion: @escaping (CoreFoundation.CGFloat) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public func setFocusedContent(contentUUID: Foundation.UUID)
   @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
   @_Concurrency.MainActor @preconcurrency public func setAuthorsIds(authors: [Swift.String])
   @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
@@ -2142,6 +2174,10 @@ public enum VFCustomizableView {
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
   case commentCellPinnedView(view: ViafouraSDK.VFPinnedView)
   case commentCellEditorPickView(view: ViafouraSDK.VFEditorPicksView)
+  case commentCellUrlPreviewContainer(view: UIKit.UIView)
+  case commentCellUrlPreviewTitleLabel(label: ViafouraSDK.VFLabel)
+  case commentCellUrlPreviewDescriptionLabel(label: ViafouraSDK.VFLabel)
+  case commentCellUrlPreviewSiteNameLabel(label: ViafouraSDK.VFLabel)
   case commentCellSeparator(separator: ViafouraSDK.VFSeparatorView)
   case writeReplyUserImage(image: ViafouraSDK.VFImageView)
   case writeReplyUserAvatar(view: ViafouraSDK.VFUserAvatarView)
@@ -3805,11 +3841,12 @@ extension ViafouraSDK.VFLiveQuestionsUploadHostAvatarError {
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsViewController : ViafouraSDK.VFUIViewController {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil, focusedContentUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, limit: Swift.Int = 10, replyLimit: Swift.Int = 2, title: Swift.String? = nil, focusedContentUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveQuestionsViewController
   #endif
+  @_Concurrency.MainActor @preconcurrency final public func setFocusedContent(contentUUID: Foundation.UUID)
   @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
   @objc deinit
@@ -3840,6 +3877,31 @@ extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UITableViewDataSourc
 extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
   @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+}
+public struct UrlPreviewMetadata : Swift.Sendable {
+  public let url: Swift.String
+  public let title: Swift.String?
+  public let description: Swift.String?
+  public let siteName: Swift.String?
+  public let thumbnailUrl: Swift.String?
+  public let faviconUrl: Swift.String?
+}
+public protocol VFUrlPreviewService : Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func getUrlPreview(url: Swift.String, completion: @escaping (ViafouraSDK.UrlPreviewMetadata?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func getUrlPreview(url: Swift.String) async -> ViafouraSDK.UrlPreviewMetadata?
+  #endif
+}
+@_hasMissingDesignatedInitializers public class VFUrlPreviewServiceImplementation : ViafouraSDK.VFUrlPreviewService, @unchecked Swift.Sendable {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getUrlPreview(url: Swift.String, completion: @escaping (ViafouraSDK.UrlPreviewMetadata?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getUrlPreview(url: Swift.String) async -> ViafouraSDK.UrlPreviewMetadata?
+  #endif
+  @objc deinit
 }
 extension ViafouraSDK.VFDislikeChatError : Swift.Equatable {}
 extension ViafouraSDK.VFDislikeChatError : Swift.Hashable {}
