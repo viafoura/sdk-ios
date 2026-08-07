@@ -441,6 +441,7 @@ public enum VFAuthPromptType {
   case followConversation
   case followUser
   case muteUser
+  case flag
   public static func == (a: ViafouraSDK.VFAuthPromptType, b: ViafouraSDK.VFAuthPromptType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -1432,7 +1433,7 @@ public struct SubscriptionResponse : Swift.Decodable {
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFPreviewCommentsView : SwiftUICore.View {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], focusedContentUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, focusedContentUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
   #endif
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
@@ -1469,7 +1470,7 @@ public struct SubscriptionResponse : Swift.Decodable {
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFNewCommentView : SwiftUI.UIViewControllerRepresentable {
   #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(actionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(actionType: ViafouraSDK.VFNewCommentActionType, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
   #endif
   @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> ViafouraSDK.VFViewCoordinator
   @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: ViafouraSDK.VFNewCommentView.Context) -> ViafouraSDK.VFNewCommentViewController
