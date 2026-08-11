@@ -555,6 +555,18 @@ SWIFT_CLASS("_TtC11ViafouraSDK24VFLiveChatViewController")
 - (void)textViewDidChange:(UITextView * _Nonnull)textView;
 @end
 
+SWIFT_CLASS("_TtC11ViafouraSDK37VFLiveQuestionsComposerViewController")
+@interface VFLiveQuestionsComposerViewController : VFUIViewController <UITextViewDelegate>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
+- (void)textViewDidEndEditing:(UITextView * _Nonnull)textView;
+- (void)textViewDidChange:(UITextView * _Nonnull)textView;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
 SWIFT_CLASS("_TtC11ViafouraSDK29VFLiveQuestionsViewController")
 @interface VFLiveQuestionsViewController : VFUIViewController
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

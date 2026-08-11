@@ -13192,6 +13192,63 @@
             "usr": "s:11ViafouraSDK20VFActionCallbackTypeO21commentHistoryPressedyAC10Foundation4UUIDV_AgA17VFArticleMetadataVtcACmF",
             "mangledName": "$s11ViafouraSDK20VFActionCallbackTypeO21commentHistoryPressedyAC10Foundation4UUIDV_AgA17VFArticleMetadataVtcACmF",
             "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "writeNewQuestionPressed",
+            "printedName": "writeNewQuestionPressed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFActionCallbackType.Type) -> (ViafouraSDK.VFNewQuestionActionType) -> ViafouraSDK.VFActionCallbackType",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(ViafouraSDK.VFNewQuestionActionType) -> ViafouraSDK.VFActionCallbackType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFActionCallbackType",
+                        "printedName": "ViafouraSDK.VFActionCallbackType",
+                        "usr": "s:11ViafouraSDK20VFActionCallbackTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(actionType: ViafouraSDK.VFNewQuestionActionType)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "VFNewQuestionActionType",
+                            "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                            "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFActionCallbackType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFActionCallbackType",
+                        "printedName": "ViafouraSDK.VFActionCallbackType",
+                        "usr": "s:11ViafouraSDK20VFActionCallbackTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK20VFActionCallbackTypeO23writeNewQuestionPressedyAcA05VFNewh6ActionE0O_tcACmF",
+            "mangledName": "$s11ViafouraSDK20VFActionCallbackTypeO23writeNewQuestionPressedyAcA05VFNewh6ActionE0O_tcACmF",
+            "moduleName": "ViafouraSDK"
           }
         ],
         "declKind": "Enum",
@@ -13208,6 +13265,226 @@
             "printedName": "Copyable",
             "usr": "s:s8CopyableP",
             "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "VFNewQuestionActionType",
+        "printedName": "VFNewQuestionActionType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "question",
+            "printedName": "question",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFNewQuestionActionType.Type) -> ViafouraSDK.VFNewQuestionActionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFNewQuestionActionType",
+                    "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                    "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFNewQuestionActionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFNewQuestionActionType",
+                        "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                        "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO8questionyA2CmF",
+            "mangledName": "$s11ViafouraSDK23VFNewQuestionActionTypeO8questionyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "reply",
+            "printedName": "reply",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFNewQuestionActionType.Type) -> (Foundation.UUID) -> ViafouraSDK.VFNewQuestionActionType",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.UUID) -> ViafouraSDK.VFNewQuestionActionType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFNewQuestionActionType",
+                        "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                        "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(content: Foundation.UUID)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UUID",
+                            "printedName": "Foundation.UUID",
+                            "usr": "s:10Foundation4UUIDV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFNewQuestionActionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFNewQuestionActionType",
+                        "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                        "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO5replyyAC10Foundation4UUIDV_tcACmF",
+            "mangledName": "$s11ViafouraSDK23VFNewQuestionActionTypeO5replyyAC10Foundation4UUIDV_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "answer",
+            "printedName": "answer",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFNewQuestionActionType.Type) -> (Foundation.UUID) -> ViafouraSDK.VFNewQuestionActionType",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.UUID) -> ViafouraSDK.VFNewQuestionActionType",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFNewQuestionActionType",
+                        "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                        "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(content: Foundation.UUID)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UUID",
+                            "printedName": "Foundation.UUID",
+                            "usr": "s:10Foundation4UUIDV"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.VFNewQuestionActionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "VFNewQuestionActionType",
+                        "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                        "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO6answeryAC10Foundation4UUIDV_tcACmF",
+            "mangledName": "$s11ViafouraSDK23VFNewQuestionActionTypeO6answeryAC10Foundation4UUIDV_tcACmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFNewQuestionActionType",
+                "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFNewQuestionActionType",
+                "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s11ViafouraSDK23VFNewQuestionActionTypeO2eeoiySbAC_ACtFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO",
+        "mangledName": "$s11ViafouraSDK23VFNewQuestionActionTypeO",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -97471,11 +97748,523 @@
         "moduleName": "ViafouraSDK"
       },
       {
+        "kind": "TypeDecl",
+        "name": "VFLiveQuestionsComposerViewController",
+        "printedName": "VFLiveQuestionsComposerViewController",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "new",
+            "printedName": "new(newQuestionActionType:containerId:articleMetadata:loginDelegate:settings:sectionUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFLiveQuestionsComposerViewController",
+                "printedName": "ViafouraSDK.VFLiveQuestionsComposerViewController",
+                "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFNewQuestionActionType",
+                "printedName": "ViafouraSDK.VFNewQuestionActionType",
+                "usr": "s:11ViafouraSDK23VFNewQuestionActionTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any ViafouraSDK.VFLoginDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFLoginDelegate",
+                    "printedName": "any ViafouraSDK.VFLoginDelegate",
+                    "usr": "s:11ViafouraSDK15VFLoginDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFSettings",
+                "printedName": "ViafouraSDK.VFSettings",
+                "usr": "s:11ViafouraSDK10VFSettingsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.UUID?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFLiveQuestionsComposerViewControllerC3new0H18QuestionActionType11containerId15articleMetadata13loginDelegate8settings11sectionUUIDAcA05VFNewijK0O_SSAA09VFArticleO0VAA07VFLoginQ0_pSgAA10VFSettingsV10Foundation0T0VSgtFZ",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC3new0H18QuestionActionType11containerId15articleMetadata13loginDelegate8settings11sectionUUIDAcA05VFNewijK0O_SSAA09VFArticleO0VAA07VFLoginQ0_pSgAA10VFSettingsV10Foundation0T0VSgtFZ",
+            "moduleName": "ViafouraSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setActionCallbacks",
+            "printedName": "setActionCallbacks(callbacks:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.VFActionCallbackType) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFActionCallbackType",
+                    "printedName": "ViafouraSDK.VFActionCallbackType",
+                    "usr": "s:11ViafouraSDK20VFActionCallbackTypeO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFLiveQuestionsComposerViewControllerC18setActionCallbacks9callbacksyyAA20VFActionCallbackTypeOc_tF",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC18setActionCallbacks9callbacksyyAA20VFActionCallbackTypeOc_tF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTheme",
+            "printedName": "setTheme(theme:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFTheme",
+                "printedName": "ViafouraSDK.VFTheme",
+                "usr": "s:11ViafouraSDK7VFThemeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK37VFLiveQuestionsComposerViewControllerC8setTheme5themeyAA7VFThemeO_tF",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC8setTheme5themeyAA7VFThemeO_tF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewWillAppear",
+            "printedName": "viewWillAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)viewWillAppear:",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC14viewWillAppearyySbF",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "objc_name": "viewWillAppear:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)viewDidLoad",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC11viewDidLoadyyF",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidAppear",
+            "printedName": "viewDidAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)viewDidAppear:",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC13viewDidAppearyySbF",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "objc_name": "viewDidAppear:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "textViewDidBeginEditing",
+            "printedName": "textViewDidBeginEditing(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UITextView",
+                "printedName": "UIKit.UITextView",
+                "usr": "c:objc(cs)UITextView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)textViewDidBeginEditing:",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC04textF15DidBeginEditingyySo06UITextF0CF",
+            "moduleName": "ViafouraSDK",
+            "objc_name": "textViewDidBeginEditing:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "textViewDidEndEditing",
+            "printedName": "textViewDidEndEditing(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UITextView",
+                "printedName": "UIKit.UITextView",
+                "usr": "c:objc(cs)UITextView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)textViewDidEndEditing:",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC04textF13DidEndEditingyySo06UITextF0CF",
+            "moduleName": "ViafouraSDK",
+            "objc_name": "textViewDidEndEditing:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "textViewDidChange",
+            "printedName": "textViewDidChange(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UITextView",
+                "printedName": "UIKit.UITextView",
+                "usr": "c:objc(cs)UITextView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)textViewDidChange:",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC04textF9DidChangeyySo06UITextF0CF",
+            "moduleName": "ViafouraSDK",
+            "objc_name": "textViewDidChange:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "VFLiveQuestionsComposerViewController",
+                "printedName": "ViafouraSDK.VFLiveQuestionsComposerViewController",
+                "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController(im)initWithNibName:bundle:",
+            "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "ViafouraSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@ViafouraSDK@objc(cs)VFLiveQuestionsComposerViewController",
+        "mangledName": "$s11ViafouraSDK37VFLiveQuestionsComposerViewControllerC",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@ViafouraSDK@objc(cs)VFUIViewController",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ViafouraSDK.VFUIViewController",
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -102006,7 +102795,14 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 19183,
+      "offset": 19182,
+      "length": 18,
+      "value": "\"GenericPostError\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 19237,
       "length": 19,
       "value": "\"UrlPreviewDismiss\""
     },
@@ -102387,6 +103183,27 @@
       "offset": 734,
       "length": 33,
       "value": "\"VF_REFRESH_CONTAINER_TIME_START\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Notification\/NotificationKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 832,
+      "length": 35,
+      "value": "\"VF_LIVE_QUESTIONS_CONTENT_CREATED\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Notification\/NotificationKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 951,
+      "length": 13,
+      "value": "\"contentUUID\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Notification\/NotificationKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 1003,
+      "length": 22,
+      "value": "\"contentContainerUUID\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/notifications\/topics\/TopicsEndpoint.swift",
@@ -108894,322 +109711,322 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 64384,
+      "offset": 64430,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 77304,
+      "offset": 77350,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 78850,
+      "offset": 78896,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 105936,
+      "offset": 103527,
       "length": 17,
       "value": "\"vf.liveDotPulse\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 116261,
+      "offset": 113852,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 139386,
+      "offset": 137100,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 142072,
+      "offset": 139786,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 176,
+      "offset": 185,
       "length": 3,
       "value": "400"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 218,
+      "offset": 227,
       "length": 2,
       "value": "50"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 259,
+      "offset": 268,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 298,
+      "offset": 307,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 391,
+      "offset": 400,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1732,
+      "offset": 1818,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsComposerViewController.swift",
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsComposerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1771,
+      "offset": 1857,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 724,
+      "offset": 784,
       "length": 17,
       "value": "4294967295000"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 1469,
+      "offset": 1665,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Dictionary",
-      "offset": 1534,
+      "offset": 1730,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 1588,
+      "offset": 1784,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 1640,
+      "offset": 1836,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Dictionary",
-      "offset": 1685,
+      "offset": 1881,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1731,
+      "offset": 1927,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1778,
+      "offset": 1974,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1830,
+      "offset": 2026,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1884,
+      "offset": 2080,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1937,
+      "offset": 2133,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1991,
+      "offset": 2187,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Dictionary",
-      "offset": 2119,
+      "offset": 2315,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Dictionary",
-      "offset": 2188,
+      "offset": 2384,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2245,
+      "offset": 2441,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2299,
+      "offset": 2495,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Dictionary",
-      "offset": 2360,
+      "offset": 2556,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2417,
+      "offset": 2613,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2476,
+      "offset": 2672,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2534,
+      "offset": 2730,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2592,
+      "offset": 2788,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2643,
+      "offset": 2839,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "Array",
-      "offset": 2692,
+      "offset": 2888,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2781,
+      "offset": 2977,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 2875,
+      "offset": 3071,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2926,
+      "offset": 3122,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2973,
+      "offset": 3169,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3013,
+      "offset": 3209,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 4937,
+      "offset": 5281,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 16915,
+      "offset": 17259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 16939,
+      "offset": 17283,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 21231,
+      "offset": 21575,
       "length": 4,
       "value": "true"
     },

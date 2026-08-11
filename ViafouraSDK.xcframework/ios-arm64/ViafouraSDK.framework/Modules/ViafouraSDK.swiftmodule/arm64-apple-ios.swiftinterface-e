@@ -299,6 +299,13 @@ public enum VFActionCallbackType {
   case authPressed(promptType: ViafouraSDK.VFAuthPromptType)
   case profileTabPressed(tab: ViafouraSDK.VFProfileTab)
   case commentHistoryPressed(contentUUID: Foundation.UUID, containerUUID: Foundation.UUID, metadata: ViafouraSDK.VFArticleMetadata)
+  case writeNewQuestionPressed(actionType: ViafouraSDK.VFNewQuestionActionType)
+}
+public enum VFNewQuestionActionType : Swift.Equatable {
+  case question
+  case reply(content: Foundation.UUID)
+  case answer(content: Foundation.UUID)
+  public static func == (a: ViafouraSDK.VFNewQuestionActionType, b: ViafouraSDK.VFNewQuestionActionType) -> Swift.Bool
 }
 public enum VFProfileTab {
   case feed
@@ -3208,6 +3215,18 @@ extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UITableViewDataSourc
 extension ViafouraSDK.VFLiveQuestionsViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
   @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class VFLiveQuestionsComposerViewController : ViafouraSDK.VFUIViewController, UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor @preconcurrency public static func new(newQuestionActionType: ViafouraSDK.VFNewQuestionActionType, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: (any ViafouraSDK.VFLoginDelegate)?, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil) -> ViafouraSDK.VFLiveQuestionsComposerViewController
+  @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency final public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor @preconcurrency @objc final public func textViewDidChange(_ textView: UIKit.UITextView)
+  @objc deinit
 }
 public struct UrlPreviewMetadata : Swift.Sendable {
   public let url: Swift.String
