@@ -38,7 +38,6 @@
 		47B0096728179DF800EF93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096628179DF800EF93FD /* AppDelegate.swift */; };
 		47B0096928179DF800EF93FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096828179DF800EF93FD /* SceneDelegate.swift */; };
 		47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0096A28179DF800EF93FD /* HomeViewController.swift */; };
-		BBBB00000000000000000002 /* LiveQuestionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB00000000000000000001 /* LiveQuestionsContainerViewController.swift */; };
 		47B0096E28179DF800EF93FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096C28179DF800EF93FD /* Main.storyboard */; };
 		47B0097028179DFB00EF93FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B0096F28179DFB00EF93FD /* Assets.xcassets */; };
 		47B0097328179DFB00EF93FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B0097128179DFB00EF93FD /* LaunchScreen.storyboard */; };
@@ -62,6 +61,7 @@
 		47F912E92A684650004D457C /* PollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F912E82A684650004D457C /* PollViewModel.swift */; };
 		47F912EB2A684694004D457C /* Poll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F912EA2A684694004D457C /* Poll.storyboard */; };
 		AAAA00000000000000000002 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA00000000000000000001 /* ArticleView.swift */; };
+		BBBB00000000000000000002 /* LiveQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB00000000000000000001 /* LiveQuestionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,7 +108,6 @@
 		47B0096628179DF800EF93FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47B0096828179DF800EF93FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		47B0096A28179DF800EF93FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BBBB00000000000000000001 /* LiveQuestionsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuestionsContainerViewController.swift; sourceTree = "<group>"; };
 		47B0096D28179DF800EF93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47B0096F28179DFB00EF93FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47B0097228179DFB00EF93FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		47F912E82A684650004D457C /* PollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewModel.swift; sourceTree = "<group>"; };
 		47F912EA2A684694004D457C /* Poll.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Poll.storyboard; sourceTree = "<group>"; };
 		AAAA00000000000000000001 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		BBBB00000000000000000001 /* LiveQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveQuestionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +195,6 @@
 			children = (
 				4779041F2818E86B0019B2F3 /* Cell */,
 				47B0096A28179DF800EF93FD /* HomeViewController.swift */,
-				BBBB00000000000000000001 /* LiveQuestionsContainerViewController.swift */,
 				477904172818E7FF0019B2F3 /* HomeViewModel.swift */,
 				47CB996529E586A00070FF2B /* Home.storyboard */,
 			);
@@ -230,6 +229,7 @@
 			children = (
 				47F912E52A684312004D457C /* Poll */,
 				47CB993C29E3866F0070FF2B /* LiveChat */,
+				BBBB00000000000000000003 /* LiveQuestions */,
 				4771BE2E2935544500389833 /* CommentsContainer */,
 				4771BE2429354C2F00389833 /* Settings */,
 				479502CF2818F03100ED9E56 /* Tab */,
@@ -358,6 +358,14 @@
 				47CB993F29E386820070FF2B /* LiveChatViewModel.swift */,
 			);
 			path = LiveChat;
+			sourceTree = "<group>";
+		};
+		BBBB00000000000000000003 /* LiveQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				BBBB00000000000000000001 /* LiveQuestionsViewController.swift */,
+			);
+			path = LiveQuestions;
 			sourceTree = "<group>";
 		};
 		47CB997129E589600070FF2B /* Protocol */ = {
@@ -511,7 +519,7 @@
 				4771BE2C2935506E00389833 /* Setting.swift in Sources */,
 				4710CE122A164F0A00A4115D /* UIViewController+HideKeyboard.swift in Sources */,
 				47B0096B28179DF800EF93FD /* HomeViewController.swift in Sources */,
-				BBBB00000000000000000002 /* LiveQuestionsContainerViewController.swift in Sources */,
+				BBBB00000000000000000002 /* LiveQuestionsViewController.swift in Sources */,
 				4771BE32293556A100389833 /* VCIdentifier.swift in Sources */,
 				4771BE342935571D00389833 /* CommentsContainerViewModel.swift in Sources */,
 				477904282818EC6C0019B2F3 /* ArticleViewModel.swift in Sources */,
@@ -782,7 +790,7 @@
 			repositoryURL = "https://github.com/viafoura/sdk-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.76;
+				minimumVersion = 1.3.0;
 			};
 		};
 		47B1DD37297EC13700FBD05C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
