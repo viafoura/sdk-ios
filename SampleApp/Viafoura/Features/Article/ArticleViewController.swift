@@ -24,6 +24,9 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var conversationStarterContainerView: UIView!
+    @IBOutlet weak var conversationStarterContainerViewHeight: NSLayoutConstraint!
+
     @IBOutlet weak var commentsContainerView: UIView!
     @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
 
@@ -38,6 +41,8 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func addComponents(){
+        addConversationStarterViewController()
+
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
             commentsContainerViewHeight.constant = 120
             
@@ -89,6 +94,110 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         settings = VFSettings(colors: colors)
     }
     
+    func addConversationStarterViewController(){
+        guard let settings = settings else {
+            return
+        }
+
+        if UserDefaults.standard.bool(forKey: SettingsKeys.useSwiftUI) == true {
+            addConversationStarterSwiftUIView(settings: settings)
+            return
+        }
+
+        let conversationStarterViewController = VFConversationStarterViewController.new(
+            containerId: articleViewModel.story.containerId,
+            articleMetadata: articleViewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings
+        )
+
+        conversationStarterViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+        conversationStarterViewController.setCustomUIDelegate(customUIDelegate: self)
+        conversationStarterViewController.setLayoutDelegate(layoutDelegate: self)
+        conversationStarterViewController.setActionCallbacks(callbacks: conversationStarterCallbacks())
+
+        addChild(conversationStarterViewController)
+        conversationStarterContainerView.addSubview(conversationStarterViewController.view)
+
+        // Pinned rather than manually framed so the widget resizes with the container
+        // as it reports its measured height back through the layout delegate.
+        conversationStarterViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            conversationStarterViewController.view.topAnchor.constraint(equalTo: conversationStarterContainerView.topAnchor),
+            conversationStarterViewController.view.bottomAnchor.constraint(equalTo: conversationStarterContainerView.bottomAnchor),
+            conversationStarterViewController.view.leadingAnchor.constraint(equalTo: conversationStarterContainerView.leadingAnchor),
+            conversationStarterViewController.view.trailingAnchor.constraint(equalTo: conversationStarterContainerView.trailingAnchor)
+        ])
+
+        conversationStarterViewController.willMove(toParent: self)
+        conversationStarterViewController.didMove(toParent: self)
+    }
+
+    func addConversationStarterSwiftUIView(settings: VFSettings){
+        let conversationStarterView = VFConversationStarterView(
+            containerId: articleViewModel.story.containerId,
+            articleMetadata: articleViewModel.articleMetadata,
+            settings: settings,
+            theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light,
+            autoSize: false,
+            onLogin: { [weak self] in self?.startLogin() },
+            onAction: conversationStarterCallbacks(),
+            onHeightChange: { [weak self] height in
+                self?.conversationStarterContainerViewHeight.constant = height
+            },
+            onCustomizeView: { [weak self] theme, view in self?.customizeView(theme: theme, view: view) }
+        )
+
+        let hostingController = UIHostingController(rootView: conversationStarterView)
+        hostingController.view.backgroundColor = .clear
+
+        if #available(iOS 16.4, *) {
+            hostingController.safeAreaRegions = []
+        }
+
+        addChild(hostingController)
+        conversationStarterContainerView.addSubview(hostingController.view)
+
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: conversationStarterContainerView.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: conversationStarterContainerView.bottomAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: conversationStarterContainerView.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: conversationStarterContainerView.trailingAnchor)
+        ])
+
+        hostingController.didMove(toParent: self)
+    }
+
+    private func conversationStarterCallbacks() -> VFActionsCallbacks {
+        return { [weak self] type in
+            switch type {
+            case .seeMoreCommentsPressed:
+                self?.conversationStarterActionPressed()
+            case .writeNewCommentPressed(let actionType):
+                self?.presentNewCommentViewController(actionType: actionType)
+            case .openProfilePressed(let userUUID, let presentationType):
+                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+            case .authPressed:
+                self?.startLogin()
+            default:
+                break
+            }
+        }
+    }
+
+    // The web widget scrolls the page to its target element. On mobile the host owns
+    // navigation, so scroll to the inline comments or open the fullscreen container.
+    private func conversationStarterActionPressed(){
+        if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
+            presentCommentsContainerViewController()
+            return
+        }
+
+        let originY = scrollView.convert(CGPoint.zero, from: commentsContainerView).y
+        scrollView.setContentOffset(CGPoint(x: 0, y: originY), animated: true)
+    }
+
     func addPreCommentViewController(){
         guard let settings = settings else {
             return
@@ -230,6 +339,8 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
                 case .content(let containerUUID, let contentUUID, let containerId, let metadata):
                     self?.presentArticle(containerId: containerId, contentUUID: contentUUID)
                     break
+                default:
+                    break
                 }
             default:
                 break
@@ -348,6 +459,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
 extension ArticleViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.isHidden = true
+        conversationStarterContainerView.isHidden = false
         commentsContainerView.isHidden = false
         webView.isHidden = false
         
@@ -405,6 +517,10 @@ extension ArticleViewController: VFLayoutDelegate {
     func containerHeightUpdated(viewController: VFUIViewController, height: CGFloat) {
         if viewController is VFPreviewCommentsViewController {
             self.commentsContainerViewHeight.constant = height
+        }
+
+        if viewController is VFConversationStarterViewController {
+            self.conversationStarterContainerViewHeight.constant = height
         }
     }
 }
