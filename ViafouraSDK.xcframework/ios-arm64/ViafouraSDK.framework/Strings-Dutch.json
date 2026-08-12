@@ -1103,7 +1103,13 @@
                 }
             },
             "start": {
-                "action": "Start evenement"
+                "action": "Start evenement",
+                "confirmation": {
+                    "action": "Start Event",
+                    "cancel": "Annuleer",
+                    "description": "Als het event is gestart, verandert de status naar Live. Je publiek ziet dat het live is, de status kan niet meer worden teruggezet naar Gepland.",
+                    "title": "Start Event"
+                }
             },
             "statuses": {
                 "concluded": "AFGESLOTEN",

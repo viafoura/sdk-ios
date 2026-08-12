@@ -791,18 +791,18 @@
         "twitter": "From Twitter"
     },
     "conversation_starter": {
-        "action_without_comment_count": "",
-        "title_comments_enabled": "",
-        "description_comments_enabled": "",
-        "action_first_comment": "",
-        "action_with_comment_count": "",
-        "title_comments_closed": "",
-        "description_comments_closed": "",
-        "header_without_comments": "",
-        "header_with_comments": "",
-        "header_comments_closed": "",
-        "read_more": "",
-        "editors_pick_header": ""
+        "action_without_comment_count": "Read the comments",
+        "title_comments_enabled": "Have your say.",
+        "description_comments_enabled": "Share your thoughts in the comments below.",
+        "action_first_comment": "Be the first to comment",
+        "action_with_comment_count": "Read all {count} comment{count, plural, =0{s} =1{} other{s}}",
+        "title_comments_closed": "Read the comments",
+        "description_comments_closed": " and see what others think.",
+        "header_without_comments": "Start the Conversation",
+        "header_with_comments": "Join the Conversation",
+        "header_comments_closed": "Read the Conversation",
+        "read_more": "Read More",
+        "editors_pick_header": "Featured Comment"
     },
     "report": {
         "starter": {
@@ -1123,7 +1123,13 @@
                 }
             },
             "start": {
-                "action": "Start Event"
+                "action": "Start Event",
+                "confirmation": {
+                    "action": "Start Event",
+                    "cancel": "Cancel",
+                    "description": "Starting the event will change its status from Upcoming to Live. The event will appear as live to your audience and can no longer be returned to Upcoming status.",
+                    "title": "Start Event"
+                }
             },
             "statuses": {
                 "concluded": "CONCLUDED",

@@ -19,6 +19,64 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFLiveQuestionsComposerView : SwiftUI.UIViewControllerRepresentable {
+  @_Concurrency.MainActor @preconcurrency public init(newQuestionActionType: ViafouraSDK.VFNewQuestionActionType, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onDismiss: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> ViafouraSDK.VFViewCoordinator
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: ViafouraSDK.VFLiveQuestionsComposerView.Context) -> UIKit.UINavigationController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ navigationController: UIKit.UINavigationController, context: ViafouraSDK.VFLiveQuestionsComposerView.Context)
+  @available(iOS 13.0, *)
+  public typealias Body = Swift.Never
+  @available(iOS 13.0, *)
+  public typealias Coordinator = ViafouraSDK.VFViewCoordinator
+  @available(iOS 13.0, *)
+  public typealias UIViewControllerType = UIKit.UINavigationController
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class VFConversationStarterViewController : ViafouraSDK.VFUIViewController {
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, title: Swift.String? = nil, description: Swift.String? = nil, minimumCommentCount: Swift.Int = VFConversationStarterDefaults.minimumCommentCount, syndicationKey: Swift.String? = nil) -> ViafouraSDK.VFConversationStarterViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID, title: Swift.String? = nil, description: Swift.String? = nil, minimumCommentCount: Swift.Int = VFConversationStarterDefaults.minimumCommentCount, syndicationKey: Swift.String? = nil) -> ViafouraSDK.VFConversationStarterViewController
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func didMove(toParent parent: UIKit.UIViewController?)
+  @objc override final public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @_Concurrency.MainActor @preconcurrency final public func setTheme(theme: ViafouraSDK.VFTheme)
+  @_Concurrency.MainActor @preconcurrency final public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
+  @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency final public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency final public func reload()
+  @_Concurrency.MainActor @preconcurrency final public func reloadPoll()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFConversationStarterView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, title: Swift.String? = nil, description: Swift.String? = nil, minimumCommentCount: Swift.Int = VFConversationStarterDefaults.minimumCommentCount, sectionUUID: Foundation.UUID? = nil, syndicationKey: Swift.String? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @available(iOS 13.0, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK25VFConversationStarterViewV4bodyQrvp", 0) __
+}
+public enum VFConversationStarterSubtype : Swift.String, Swift.Sendable {
+  case `default`
+  case editorPick
+  case poll
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct VFConversationStarterDefaults {
+  public static let minimumCommentCount: Swift.Int
+}
+extension ViafouraSDK.AnalyticsServiceImplementation {
+  public func logConversationStarterLoad(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, subtype: ViafouraSDK.VFConversationStarterSubtype)
+  public func logConversationStarterView(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, subtype: ViafouraSDK.VFConversationStarterSubtype)
+  public func logConversationStarterClick(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: ViafouraSDK.VFArticleMetadata, subtype: ViafouraSDK.VFConversationStarterSubtype)
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFModeratorView : UIKit.UIView {
   @objc deinit
 }
@@ -337,6 +395,8 @@ public enum VFAuthPromptType {
 public enum VFNotificationPresentationType {
   case profile(userUUID: Foundation.UUID)
   case content(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata)
+  case liveQuestions(containerUUID: Foundation.UUID, contentUUID: Foundation.UUID, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata)
+  case url(url: Foundation.URL)
 }
 public enum VFProfilePresentationType {
   case profile
@@ -1252,7 +1312,7 @@ public struct VFArticleMetadata : Swift.Sendable {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ViafouraSDK {
-  public static func initialize(siteDomain: Swift.String) async throws
+  public static func initialize(siteDomain: Swift.String)
   public static func initialize(siteDomain: Swift.String, completion: @escaping @Sendable ((any Swift.Error)?) -> Swift.Void)
   public static func initialize(siteUUID: Swift.String, siteDomain: Swift.String)
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
@@ -1337,6 +1397,7 @@ public enum VFSortType : Swift.Sendable {
   case oldest
   case mostLiked
   case mostReplies
+  case newestPick
   public var rawValue: Swift.String {
     get
   }
@@ -1920,6 +1981,12 @@ public enum VFCustomizableView {
   case liveQuestionTitleLabel(label: ViafouraSDK.VFLabel)
   case liveQuestionPoweredByView(view: ViafouraSDK.VFPoweredByViafouraView)
   case liveQuestionBackgroundView(view: UIKit.UIView)
+  case conversationStarterBackgroundView(view: UIKit.UIView)
+  case conversationStarterHeaderLabel(label: ViafouraSDK.VFLabel)
+  case conversationStarterTitleLabel(label: ViafouraSDK.VFLabel)
+  case conversationStarterDescriptionLabel(label: ViafouraSDK.VFLabel)
+  case conversationStarterFeaturedCommentLabel(label: ViafouraSDK.VFLabel)
+  case conversationStarterActionButton(button: ViafouraSDK.VFButton)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   final public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUnpinCommentError>
@@ -2549,6 +2616,10 @@ public struct VFAccessibilityIdentifiers {
   public static let pollQuestion: Swift.String
   public static let pollOption: Swift.String
   public static let pollOptionResult: Swift.String
+  public static let conversationStarter: Swift.String
+  public static let conversationStarterTitle: Swift.String
+  public static let conversationStarterAction: Swift.String
+  public static let conversationStarterFeaturedComment: Swift.String
   public static let trendingCell: Swift.String
   public static let trendingSeeMoreButton: Swift.String
   public static let profileUserName: Swift.String
@@ -3245,6 +3316,13 @@ public protocol VFUrlPreviewService : Swift.Sendable {
   public func getUrlPreview(url: Swift.String) async -> ViafouraSDK.UrlPreviewMetadata?
   @objc deinit
 }
+@available(iOS 13.0, *)
+extension ViafouraSDK.VFLiveQuestionsComposerView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension ViafouraSDK.VFConversationStarterView : Swift.Sendable {}
+extension ViafouraSDK.VFConversationStarterSubtype : Swift.Equatable {}
+extension ViafouraSDK.VFConversationStarterSubtype : Swift.Hashable {}
+extension ViafouraSDK.VFConversationStarterSubtype : Swift.RawRepresentable {}
 extension ViafouraSDK.VFDislikeChatError : Swift.Equatable {}
 extension ViafouraSDK.VFDislikeChatError : Swift.Hashable {}
 extension ViafouraSDK.VFTopCommentError : Swift.Equatable {}

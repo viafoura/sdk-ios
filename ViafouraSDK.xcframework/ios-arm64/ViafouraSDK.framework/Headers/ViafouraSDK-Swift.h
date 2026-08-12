@@ -468,6 +468,17 @@ SWIFT_CLASS("_TtC11ViafouraSDK20VFContentRemovedView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
+SWIFT_CLASS("_TtC11ViafouraSDK35VFConversationStarterViewController")
+@interface VFConversationStarterViewController : VFUIViewController
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidLayoutSubviews;
+- (void)didMoveToParentViewController:(UIViewController * _Nullable)parent;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 SWIFT_CLASS("_TtC11ViafouraSDK17VFCustomBadgeView")
 @interface VFCustomBadgeView : UIView
 - (void)sizeToFit;
