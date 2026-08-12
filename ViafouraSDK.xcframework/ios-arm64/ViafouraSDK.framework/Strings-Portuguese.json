@@ -1103,7 +1103,13 @@
                 }
             },
             "start": {
-                "action": "Start Event"
+                "action": "Start Event",
+                "confirmation": {
+                    "action": "Start Event",
+                    "cancel": "Cancel",
+                    "description": "Starting the event will change its status from Upcoming to Live. The event will appear as live to your audience and can no longer be returned to Upcoming status.",
+                    "title": "Start Event"
+                }
             },
             "statuses": {
                 "concluded": "CONCLUDED",
