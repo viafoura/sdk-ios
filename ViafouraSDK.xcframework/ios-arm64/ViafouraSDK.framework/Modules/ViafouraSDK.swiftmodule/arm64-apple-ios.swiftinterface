@@ -1204,15 +1204,18 @@ public struct SubscriptionResponse : Swift.Decodable {
 @_Concurrency.MainActor public protocol VFLayoutDelegate : ObjectiveC.NSObject {
   @_Concurrency.MainActor func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class VFViewCoordinator : ObjectiveC.NSObject, VFLoginDelegate, VFLayoutDelegate, VFCustomUIDelegate {
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class VFViewCoordinator : ObjectiveC.NSObject, VFLoginDelegate, VFLayoutDelegate, VFCustomUIDelegate, VFAdDelegate {
   nonisolated final public func startLogin()
   @_Concurrency.MainActor final public func containerHeightUpdated(viewController: VFUIViewController, height: CoreFoundation.CGFloat)
   @_Concurrency.MainActor final public func customizeView(theme: VFTheme, view: VFCustomizableView)
+  nonisolated final public func generateAd(viewController: VFUIViewController, adPosition: Swift.Int) -> VFAdView?
+  nonisolated final public func getAdInterval(viewController: VFUIViewController) -> Swift.Int
+  nonisolated final public func getFirstAdPosition(viewController: VFUIViewController) -> Swift.Int
   @objc deinit
 }
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFPreviewCommentsView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, authorsIds: [Swift.String] = [], syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, focusedContentUUID: Foundation.UUID? = nil, theme: VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: VFCommentsContainerType = .conversations, articleMetadata: VFArticleMetadata, settings: VFSettings, paginationSize: Swift.Int = 10, defaultSort: VFSortType = .newest, authorsIds: [Swift.String] = [], syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, focusedContentUUID: Foundation.UUID? = nil, theme: VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil, onGenerateAd: (@_Concurrency.MainActor @Sendable (Swift.Int) -> VFAdView?)? = nil, adInterval: Swift.Int = 5, firstAdPosition: Swift.Int = Constants.Ads.firstAdPosition)
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
@@ -1288,6 +1291,7 @@ extension Constants {
     public static let colors: [UIKit.UIColor]
   }
   public struct Ads {
+    public static let firstAdPosition: Swift.Int
     public static let trendingAdPosition: Swift.Int
   }
 }
@@ -1981,6 +1985,9 @@ public enum VFCustomizableView {
   case liveQuestionTitleLabel(label: VFLabel)
   case liveQuestionPoweredByView(view: VFPoweredByViafouraView)
   case liveQuestionBackgroundView(view: UIKit.UIView)
+  case liveQuestionStatusChipView(view: UIKit.UIView)
+  case liveQuestionStatusDotView(view: UIKit.UIView)
+  case liveQuestionStatusLabel(label: VFLabel)
   case conversationStarterBackgroundView(view: UIKit.UIView)
   case conversationStarterHeaderLabel(label: VFLabel)
   case conversationStarterTitleLabel(label: VFLabel)

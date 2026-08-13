@@ -1204,15 +1204,18 @@ public struct SubscriptionResponse : Swift.Decodable {
 @_Concurrency.MainActor public protocol VFLayoutDelegate : ObjectiveC.NSObject {
   @_Concurrency.MainActor func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class VFViewCoordinator : ObjectiveC.NSObject, ViafouraSDK.VFLoginDelegate, ViafouraSDK.VFLayoutDelegate, ViafouraSDK.VFCustomUIDelegate {
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class VFViewCoordinator : ObjectiveC.NSObject, ViafouraSDK.VFLoginDelegate, ViafouraSDK.VFLayoutDelegate, ViafouraSDK.VFCustomUIDelegate, ViafouraSDK.VFAdDelegate {
   nonisolated final public func startLogin()
   @_Concurrency.MainActor final public func containerHeightUpdated(viewController: ViafouraSDK.VFUIViewController, height: CoreFoundation.CGFloat)
   @_Concurrency.MainActor final public func customizeView(theme: ViafouraSDK.VFTheme, view: ViafouraSDK.VFCustomizableView)
+  nonisolated final public func generateAd(viewController: ViafouraSDK.VFUIViewController, adPosition: Swift.Int) -> ViafouraSDK.VFAdView?
+  nonisolated final public func getAdInterval(viewController: ViafouraSDK.VFUIViewController) -> Swift.Int
+  nonisolated final public func getFirstAdPosition(viewController: ViafouraSDK.VFUIViewController) -> Swift.Int
   @objc deinit
 }
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFPreviewCommentsView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, focusedContentUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, containerType: ViafouraSDK.VFCommentsContainerType = .conversations, articleMetadata: ViafouraSDK.VFArticleMetadata, settings: ViafouraSDK.VFSettings, paginationSize: Swift.Int = 10, defaultSort: ViafouraSDK.VFSortType = .newest, authorsIds: [Swift.String] = [], syndicationKey: Swift.String? = nil, sectionUUID: Foundation.UUID? = nil, focusedContentUUID: Foundation.UUID? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil, onGenerateAd: (@_Concurrency.MainActor @Sendable (Swift.Int) -> ViafouraSDK.VFAdView?)? = nil, adInterval: Swift.Int = 5, firstAdPosition: Swift.Int = Constants.Ads.firstAdPosition)
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
@@ -1288,6 +1291,7 @@ extension ViafouraSDK.Constants {
     public static let colors: [UIKit.UIColor]
   }
   public struct Ads {
+    public static let firstAdPosition: Swift.Int
     public static let trendingAdPosition: Swift.Int
   }
 }
@@ -1981,6 +1985,9 @@ public enum VFCustomizableView {
   case liveQuestionTitleLabel(label: ViafouraSDK.VFLabel)
   case liveQuestionPoweredByView(view: ViafouraSDK.VFPoweredByViafouraView)
   case liveQuestionBackgroundView(view: UIKit.UIView)
+  case liveQuestionStatusChipView(view: UIKit.UIView)
+  case liveQuestionStatusDotView(view: UIKit.UIView)
+  case liveQuestionStatusLabel(label: ViafouraSDK.VFLabel)
   case conversationStarterBackgroundView(view: UIKit.UIView)
   case conversationStarterHeaderLabel(label: ViafouraSDK.VFLabel)
   case conversationStarterTitleLabel(label: ViafouraSDK.VFLabel)
