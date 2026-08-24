@@ -1598,6 +1598,7 @@ public enum VFCommentsContainerType : Swift.Sendable {
   @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
   @objc deinit
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
   @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -2669,6 +2670,7 @@ public struct VFSettings : Swift.Equatable {
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
     @objc get
