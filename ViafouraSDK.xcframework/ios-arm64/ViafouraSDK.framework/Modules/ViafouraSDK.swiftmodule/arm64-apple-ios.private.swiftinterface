@@ -2365,7 +2365,7 @@ extension VFUnpinReviewError {
 public struct MuteUserResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct TrendingResultResponse : Swift.Decodable {
+public struct TrendingResultResponse : Swift.Decodable, Swift.Sendable {
   public let container_id: Swift.String
   public let content_container_uuid: Swift.String
   public let origin_title: Swift.String
@@ -2420,13 +2420,13 @@ public struct VFFonts : Swift.Equatable {
 public struct AllNotificationsResponse : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct BroadcastResponse : Swift.Decodable {
+public struct BroadcastResponse : Swift.Decodable, Swift.Sendable {
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct NotificationResponse : Swift.Decodable {
+public struct NotificationResponse : Swift.Decodable, Swift.Sendable {
   public init(from decoder: any Swift.Decoder) throws
 }
-public enum NotificationServiceType : Swift.String, Swift.Decodable {
+public enum NotificationServiceType : Swift.String, Swift.Decodable, Swift.Sendable {
   case livecomments
   case notifications
   case livechat
@@ -2439,7 +2439,7 @@ public enum NotificationServiceType : Swift.String, Swift.Decodable {
     get
   }
 }
-public enum NotificationType : Swift.String, Swift.Decodable {
+public enum NotificationType : Swift.String, Swift.Decodable, Swift.Sendable {
   case reply
   case follow
   case like
