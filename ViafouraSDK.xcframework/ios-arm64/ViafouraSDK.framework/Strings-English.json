@@ -253,6 +253,7 @@
         "close_profile": "close this user's profile",
         "community": "Community",
         "feed": "Feed",
+        "notifications": "Notifications",
         "profile": "Profile",
         "settings": "settings"
     },
@@ -450,6 +451,13 @@
             "aria": {
                 "header": "Your connections"
             }
+        },
+        "profile": {
+            "edit_avatar_header": "Profile Picture",
+            "edit_identity_header": "Name & Email",
+            "edit_notifications_header": "Notification Preferences",
+            "edit_title": "Edit Profile",
+            "recent_activity": "Recent activity"
         },
         "user_actions": {
             "author_follow_aria_label": "Follow page authors to receive notifications about their new articles.",
@@ -870,6 +878,7 @@
         "all_reviews": "All Reviews"
     },
     "sdk": {
+        "menu": "Menu",
         "sort_by": "Sort by",
         "privacy": "Privacy",
         "commenting_on": "Commenting on",
@@ -1336,6 +1345,22 @@
         },
         "footer": {
             "poweredBy": "Powered by viafoura"
+        }
+    },
+    "polls": {
+        "title": {
+            "active": "Poll Question",
+            "closed": "Poll Closed"
+        },
+        "closing_time": {
+            "days": "{count} {count, plural, =1{day} other{days}} left",
+            "hours": "{count} hours left",
+            "minutes": "Less than 1 hr left"
+        },
+        "actions": {
+            "close_poll": "Close Poll",
+            "delete_poll": "Delete Poll",
+            "create": "Create Poll"
         }
     }
 }

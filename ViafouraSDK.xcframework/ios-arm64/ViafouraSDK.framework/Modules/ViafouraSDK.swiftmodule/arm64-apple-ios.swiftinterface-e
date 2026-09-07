@@ -1232,8 +1232,18 @@ public struct SubscriptionResponse : Swift.Decodable {
   public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK19VFLiveQuestionsViewV4bodyQrvp", 0) __
 }
 @available(iOS 13.0, *)
+@_Concurrency.MainActor @preconcurrency public struct VFPollView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil, syndicationKey: Swift.String? = nil, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(contentContainerUUID: Foundation.UUID, settings: ViafouraSDK.VFSettings, theme: ViafouraSDK.VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @available(iOS 13.0, *)
+  public typealias Body = @_opaqueReturnTypeOf("$s11ViafouraSDK10VFPollViewV4bodyQrvp", 0) __
+}
+@available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFProfileView : SwiftUI.UIViewControllerRepresentable {
-  @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, settings: ViafouraSDK.VFSettings, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, settings: ViafouraSDK.VFSettings, style: ViafouraSDK.VFProfileStyle = .default, theme: ViafouraSDK.VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: ViafouraSDK.VFActionsCallbacks? = nil, onCustomizeView: ((ViafouraSDK.VFTheme, ViafouraSDK.VFCustomizableView) -> Swift.Void)? = nil)
   @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> ViafouraSDK.VFViewCoordinator
   @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: ViafouraSDK.VFProfileView.Context) -> ViafouraSDK.VFProfileViewController
   @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: ViafouraSDK.VFProfileViewController, context: ViafouraSDK.VFProfileView.Context)
@@ -1451,9 +1461,11 @@ public struct VFEventEngageContainerTime : Swift.Encodable, Swift.Sendable {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFPollViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFPollViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, sectionUUID: Foundation.UUID? = nil, syndicationKey: Swift.String? = nil) -> ViafouraSDK.VFPollViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
+  @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
   @_Concurrency.MainActor @preconcurrency public func setLayoutDelegate(layoutDelegate: any ViafouraSDK.VFLayoutDelegate)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -1995,6 +2007,20 @@ public enum VFCustomizableView {
   case conversationStarterDescriptionLabel(label: ViafouraSDK.VFLabel)
   case conversationStarterFeaturedCommentLabel(label: ViafouraSDK.VFLabel)
   case conversationStarterActionButton(button: ViafouraSDK.VFButton)
+  case pollQuestionLabel(label: ViafouraSDK.VFLabel)
+  case pollHeaderLabel(label: ViafouraSDK.VFLabel)
+  case pollHeaderImage(image: ViafouraSDK.VFImageView)
+  case pollDeleteLabel(label: ViafouraSDK.VFLabel)
+  case pollDeleteImage(image: ViafouraSDK.VFImageView)
+  case pollCloseLabel(label: ViafouraSDK.VFLabel)
+  case pollCloseImage(image: ViafouraSDK.VFImageView)
+  case pollBackgroundView(view: UIKit.UIView)
+  case pollOptionLabel(label: ViafouraSDK.VFLabel)
+  case pollOptionPercentageLabel(label: ViafouraSDK.VFLabel)
+  case pollOptionVotedImage(image: ViafouraSDK.VFImageView)
+  case pollOptionRadioImage(image: ViafouraSDK.VFImageView)
+  case pollOptionFillView(view: UIKit.UIView)
+  case pollOptionContainerView(view: UIKit.UIView)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   final public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUnpinCommentError>
@@ -2160,15 +2186,26 @@ extension ViafouraSDK.VFCreateCommentMediaError {
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFProfileViewController : ViafouraSDK.VFUIViewController {
+public enum VFProfileStyle {
+  case `default`
+  case drawer
+  public static func == (a: ViafouraSDK.VFProfileStyle, b: ViafouraSDK.VFProfileStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFProfileViewController : ViafouraSDK.VFUIViewController {
   @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var style: ViafouraSDK.VFProfileStyle {
+    get
+  }
   @_Concurrency.MainActor @preconcurrency public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFProfileViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, style: ViafouraSDK.VFProfileStyle) -> ViafouraSDK.VFProfileViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any ViafouraSDK.VFCustomUIDelegate)
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension ViafouraSDK.VFProfileViewController : UIKit.UIImagePickerControllerDelegate, UIKit.UINavigationControllerDelegate {
@@ -3432,6 +3469,8 @@ extension ViafouraSDK.VFPreviewCommentsView : Swift.Sendable {}
 @available(iOS 13.0, *)
 extension ViafouraSDK.VFLiveQuestionsView : Swift.Sendable {}
 @available(iOS 13.0, *)
+extension ViafouraSDK.VFPollView : Swift.Sendable {}
+@available(iOS 13.0, *)
 extension ViafouraSDK.VFProfileView : Swift.Sendable {}
 @available(iOS 13.0, *)
 extension ViafouraSDK.VFNewCommentView : Swift.Sendable {}
@@ -3497,6 +3536,8 @@ extension ViafouraSDK.VFTrendingError : Swift.Equatable {}
 extension ViafouraSDK.VFTrendingError : Swift.Hashable {}
 extension ViafouraSDK.VFCreateCommentMediaError : Swift.Equatable {}
 extension ViafouraSDK.VFCreateCommentMediaError : Swift.Hashable {}
+extension ViafouraSDK.VFProfileStyle : Swift.Equatable {}
+extension ViafouraSDK.VFProfileStyle : Swift.Hashable {}
 extension ViafouraSDK.VFChatContainerError : Swift.Equatable {}
 extension ViafouraSDK.VFChatContainerError : Swift.Hashable {}
 extension ViafouraSDK.VFReviewContainerError : Swift.Equatable {}
