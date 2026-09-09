@@ -1795,6 +1795,9 @@ extension VFTopicsSubscribedError {
     get
   }
 }
+extension VFNotificationsServiceImplementation {
+  final public func isSubscribedToTopic(topicId: Swift.String) async -> Swift.Result<Swift.Bool, VFTopicsSubscribedError>
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFTabView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency final public let option1View: UIKit.UIView
   @_Concurrency.MainActor @preconcurrency final public let option2View: UIKit.UIView
@@ -2068,6 +2071,7 @@ public protocol VFNotificationsService : Swift.Sendable {
   func isSubscribedToUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   func unsubscribeTopic(topicId: Swift.String) async -> Swift.Result<Swift.Void, VFUnsubscribeTopicError>
   func topicsSubscribed() async -> Swift.Result<[Topic], VFTopicsSubscribedError>
+  func isSubscribedToTopic(topicId: Swift.String) async -> Swift.Result<Swift.Bool, VFTopicsSubscribedError>
   func subscribeTopic(topicId: Swift.String, topicName: Swift.String, topicType: Swift.String) async -> Swift.Result<TopicSubscribeResponse, VFSubscribeTopicError>
   func getUserSubscribers(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscribersResponse, any Swift.Error>
   func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscriptionsResponse, any Swift.Error>

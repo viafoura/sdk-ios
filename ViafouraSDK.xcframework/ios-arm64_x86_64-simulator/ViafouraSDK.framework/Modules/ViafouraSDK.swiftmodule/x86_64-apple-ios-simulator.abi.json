@@ -55561,6 +55561,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -69386,6 +69396,48 @@
           },
           {
             "kind": "Function",
+            "name": "isSubscribedToTopic",
+            "printedName": "isSubscribedToTopic(topicId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFTopicsSubscribedError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFTopicsSubscribedError",
+                    "printedName": "ViafouraSDK.VFTopicsSubscribedError",
+                    "usr": "s:11ViafouraSDK23VFTopicsSubscribedErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP19isSubscribedToTopic7topicIds6ResultOySbAA08VFTopicsF5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP19isSubscribedToTopic7topicIds6ResultOySbAA08VFTopicsF5ErrorOGSS_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "subscribeTopic",
             "printedName": "subscribeTopic(topicId:topicName:topicType:)",
             "children": [
@@ -70431,6 +70483,49 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC16topicsSubscribeds6ResultOySayAA5TopicVGAA08VFTopicsG5ErrorOGyYaF",
             "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC16topicsSubscribeds6ResultOySayAA5TopicVGAA08VFTopicsG5ErrorOGyYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isSubscribedToTopic",
+            "printedName": "isSubscribedToTopic(topicId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFTopicsSubscribedError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFTopicsSubscribedError",
+                    "printedName": "ViafouraSDK.VFTopicsSubscribedError",
+                    "usr": "s:11ViafouraSDK23VFTopicsSubscribedErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC19isSubscribedToTopic7topicIds6ResultOySbAA08VFTopicsG5ErrorOGSS_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC19isSubscribedToTopic7topicIds6ResultOySbAA08VFTopicsG5ErrorOGSS_tYaF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "Final",
@@ -112928,7 +113023,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Notifications\/VFNotificationsService.swift",
       "kind": "Array",
-      "offset": 1859,
+      "offset": 1954,
       "length": 2,
       "value": "[]"
     },
