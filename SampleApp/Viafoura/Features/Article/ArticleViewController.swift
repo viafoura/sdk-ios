@@ -23,13 +23,13 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var conversationStarterContainerView: UIView!
+    @IBOutlet weak var conversationStarterContainerViewHeight: NSLayoutConstraint!
+
     @IBOutlet weak var commentsContainerView: UIView!
     @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
 
     var settings: VFSettings?
-
-    var engagementStarterContainerView: UIView?
-    var engagementStarterHeight: NSLayoutConstraint?
     
     let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
     
@@ -41,7 +41,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     
     func addComponents(){
         if UserDefaults.standard.bool(forKey: SettingsKeys.showEngagementStarter) == true {
-            addEngagementStarterViewController()
+            addConversationStarterViewController()
         }
 
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
@@ -95,79 +95,60 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         settings = VFSettings(colors: colors)
     }
     
-    func addEngagementStarterViewController(){
-        guard let settings = settings, engagementStarterContainerView == nil else {
+    func addConversationStarterViewController(){
+        guard let settings = settings else {
             return
         }
 
-        let containerView = UIView()
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.clipsToBounds = true
-        scrollView.addSubview(containerView)
-
-        // The storyboard pins the comments container straight under the web view, so that
-        // constraint has to give way for the starter to sit between them.
-        scrollView.constraints.first(where: {
-            ($0.firstItem as? UIView) === commentsContainerView
-                && $0.firstAttribute == .top
-                && ($0.secondItem as? UIView) === webView
-        })?.isActive = false
-
-        let heightConstraint = containerView.heightAnchor.constraint(equalToConstant: 0)
-        engagementStarterHeight = heightConstraint
-        engagementStarterContainerView = containerView
-
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: webView.bottomAnchor),
-            containerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            containerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            commentsContainerView.topAnchor.constraint(equalTo: containerView.bottomAnchor),
-            heightConstraint
-        ])
-
-        let theme: VFTheme = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
-
-        let callbacks: VFActionsCallbacks = { [weak self] type in
-            switch type {
-            case .seeMoreCommentsPressed:
-                self?.engagementStarterSeeMoreCommentsPressed()
-            case .writeNewCommentPressed(let actionType):
-                self?.presentNewCommentViewController(actionType: actionType)
-            case .openProfilePressed(let userUUID, let presentationType):
-                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
-            default:
-                break
-            }
-        }
-
-        let starterViewController = VFConversationStarterViewController.new(
+        let conversationStarterViewController = VFConversationStarterViewController.new(
             containerId: articleViewModel.story.containerId,
             articleMetadata: articleViewModel.articleMetadata,
             loginDelegate: self,
             settings: settings
         )
 
-        starterViewController.setTheme(theme: theme)
-        starterViewController.setLayoutDelegate(layoutDelegate: self)
-        starterViewController.setCustomUIDelegate(customUIDelegate: self)
-        starterViewController.setActionCallbacks(callbacks: callbacks)
+        conversationStarterViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
+        conversationStarterViewController.setCustomUIDelegate(customUIDelegate: self)
+        conversationStarterViewController.setLayoutDelegate(layoutDelegate: self)
+        conversationStarterViewController.setActionCallbacks(callbacks: conversationStarterCallbacks())
 
-        addChild(starterViewController)
-        containerView.addSubview(starterViewController.view)
+        addChild(conversationStarterViewController)
+        conversationStarterContainerView.addSubview(conversationStarterViewController.view)
 
-        starterViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        // Pinned rather than manually framed so the widget resizes with the container
+        // as it reports its measured height back through the layout delegate.
+        conversationStarterViewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            starterViewController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
-            starterViewController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            starterViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            starterViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            conversationStarterViewController.view.topAnchor.constraint(equalTo: conversationStarterContainerView.topAnchor),
+            conversationStarterViewController.view.bottomAnchor.constraint(equalTo: conversationStarterContainerView.bottomAnchor),
+            conversationStarterViewController.view.leadingAnchor.constraint(equalTo: conversationStarterContainerView.leadingAnchor),
+            conversationStarterViewController.view.trailingAnchor.constraint(equalTo: conversationStarterContainerView.trailingAnchor)
         ])
 
-        starterViewController.didMove(toParent: self)
+        conversationStarterViewController.willMove(toParent: self)
+        conversationStarterViewController.didMove(toParent: self)
     }
 
-    func engagementStarterSeeMoreCommentsPressed(){
+    private func conversationStarterCallbacks() -> VFActionsCallbacks {
+        return { [weak self] type in
+            switch type {
+            case .seeMoreCommentsPressed:
+                self?.conversationStarterActionPressed()
+            case .writeNewCommentPressed(let actionType):
+                self?.presentNewCommentViewController(actionType: actionType)
+            case .openProfilePressed(let userUUID, let presentationType):
+                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+            case .authPressed:
+                self?.startLogin()
+            default:
+                break
+            }
+        }
+    }
+
+    // The web widget scrolls the page to its target element. On mobile the host owns
+    // navigation, so scroll to the inline comments or open the fullscreen container.
+    private func conversationStarterActionPressed(){
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
             presentCommentsContainerViewController()
             return
@@ -270,8 +251,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             userUUID: userUUID,
             presentationType: presentationType,
             loginDelegate: self,
-            settings: settings,
-            style: .fromSettings
+            settings: settings
         )
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
@@ -349,6 +329,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
 extension ArticleViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.isHidden = true
+        conversationStarterContainerView.isHidden = false
         commentsContainerView.isHidden = false
         webView.isHidden = false
         
@@ -409,7 +390,7 @@ extension ArticleViewController: VFLayoutDelegate {
         }
 
         if viewController is VFConversationStarterViewController {
-            self.engagementStarterHeight?.constant = height
+            self.conversationStarterContainerViewHeight.constant = height
         }
     }
 }
