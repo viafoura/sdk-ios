@@ -7,7 +7,6 @@
 
 import UIKit
 import ViafouraSDK
-import FirebaseCore
 import GoogleMobileAds
 
 @main
@@ -28,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         }
 
         ViafouraSDK.initialize(siteUUID: parsedSiteUUID.uuidString.lowercased(), siteDomain: siteDomain)
-
-        FirebaseApp.configure()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         ViafouraSDK.setLoggingEnabled(true)
