@@ -19,6 +19,8 @@ public struct SettingsKeys {
     public static let siteUUID = "siteUUID"
     public static let siteDomain = "siteDomain"
     public static let useSwiftUI = "useSwiftUI"
+    public static let useDrawerProfile = "useDrawerProfile"
+    public static let showEngagementStarter = "showEngagementStarter"
 }
 
 public let defaultSettings: [Setting] = [
@@ -26,5 +28,7 @@ public let defaultSettings: [Setting] = [
     Setting(title: "Dark mode", key: SettingsKeys.darkMode),
     Setting(title: "Enable custom containers", key: SettingsKeys.customContainerIDs),
     Setting(title: "Show notification bell in top bar", key: SettingsKeys.showNotificationBellInTopBar),
-    Setting(title: "Use SwiftUI views", key: SettingsKeys.useSwiftUI)
+    Setting(title: "Use SwiftUI views", key: SettingsKeys.useSwiftUI),
+    Setting(title: "Use new profile design", key: SettingsKeys.useDrawerProfile),
+    Setting(title: "Show engagement starter", key: SettingsKeys.showEngagementStarter)
 ]

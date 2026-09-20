@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import SwiftUI
 import WebKit
 import ViafouraSDK
 import GoogleMobileAds
@@ -28,6 +27,9 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
 
     var settings: VFSettings?
+
+    var engagementStarterContainerView: UIView?
+    var engagementStarterHeight: NSLayoutConstraint?
     
     let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
     
@@ -38,6 +40,10 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func addComponents(){
+        if UserDefaults.standard.bool(forKey: SettingsKeys.showEngagementStarter) == true {
+            addEngagementStarterViewController()
+        }
+
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
             commentsContainerViewHeight.constant = 120
             
@@ -89,13 +95,90 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         settings = VFSettings(colors: colors)
     }
     
-    func addPreCommentViewController(){
-        guard let settings = settings else {
+    func addEngagementStarterViewController(){
+        guard let settings = settings, engagementStarterContainerView == nil else {
             return
         }
 
-        if UserDefaults.standard.bool(forKey: SettingsKeys.useSwiftUI) == true {
-            addPreCommentSwiftUIView(settings: settings)
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.clipsToBounds = true
+        scrollView.addSubview(containerView)
+
+        // The storyboard pins the comments container straight under the web view, so that
+        // constraint has to give way for the starter to sit between them.
+        scrollView.constraints.first(where: {
+            ($0.firstItem as? UIView) === commentsContainerView
+                && $0.firstAttribute == .top
+                && ($0.secondItem as? UIView) === webView
+        })?.isActive = false
+
+        let heightConstraint = containerView.heightAnchor.constraint(equalToConstant: 0)
+        engagementStarterHeight = heightConstraint
+        engagementStarterContainerView = containerView
+
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: webView.bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            containerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            commentsContainerView.topAnchor.constraint(equalTo: containerView.bottomAnchor),
+            heightConstraint
+        ])
+
+        let theme: VFTheme = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
+
+        let callbacks: VFActionsCallbacks = { [weak self] type in
+            switch type {
+            case .seeMoreCommentsPressed:
+                self?.engagementStarterSeeMoreCommentsPressed()
+            case .writeNewCommentPressed(let actionType):
+                self?.presentNewCommentViewController(actionType: actionType)
+            case .openProfilePressed(let userUUID, let presentationType):
+                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
+            default:
+                break
+            }
+        }
+
+        let starterViewController = VFConversationStarterViewController.new(
+            containerId: articleViewModel.story.containerId,
+            articleMetadata: articleViewModel.articleMetadata,
+            loginDelegate: self,
+            settings: settings
+        )
+
+        starterViewController.setTheme(theme: theme)
+        starterViewController.setLayoutDelegate(layoutDelegate: self)
+        starterViewController.setCustomUIDelegate(customUIDelegate: self)
+        starterViewController.setActionCallbacks(callbacks: callbacks)
+
+        addChild(starterViewController)
+        containerView.addSubview(starterViewController.view)
+
+        starterViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            starterViewController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            starterViewController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            starterViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            starterViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
+
+        starterViewController.didMove(toParent: self)
+    }
+
+    func engagementStarterSeeMoreCommentsPressed(){
+        if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
+            presentCommentsContainerViewController()
+            return
+        }
+
+        let originY = scrollView.convert(CGPoint.zero, from: commentsContainerView).y
+        scrollView.setContentOffset(CGPoint(x: 0, y: originY), animated: true)
+    }
+
+    func addPreCommentViewController(){
+        guard let settings = settings else {
             return
         }
 
@@ -152,61 +235,6 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         preCommentsViewController.didMove(toParent: self)
     }
 
-    func addPreCommentSwiftUIView(settings: VFSettings){
-        let callbacks: VFActionsCallbacks = { [weak self] type in
-            switch type {
-            case .writeNewCommentPressed(let actionType):
-                self?.presentNewCommentViewController(actionType: actionType)
-            case .openProfilePressed(let userUUID, let presentationType):
-                self?.presentProfileViewController(userUUID: userUUID, presentationType: presentationType)
-            case .trendingArticlePressed(_, let containerId):
-                self?.presentArticle(containerId: containerId, contentUUID: nil)
-            default:
-                break
-            }
-        }
-
-        let previewView = VFPreviewCommentsView(
-            containerId: articleViewModel.story.containerId,
-            containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations,
-            articleMetadata: articleViewModel.articleMetadata,
-            settings: settings,
-            paginationSize: 10,
-            defaultSort: articleViewModel.story.storyType == .reviews ? .mostLiked : .newest,
-            authorsIds: [articleViewModel.story.authorId],
-            focusedContentUUID: articleViewModel.focusedContentUUID,
-            theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light,
-            autoSize: false,
-            onLogin: { [weak self] in self?.startLogin() },
-            onAction: callbacks,
-            onHeightChange: { [weak self] height in
-                self?.commentsContainerViewHeight.constant = height
-            }
-        )
-
-        let hostingController = UIHostingController(rootView: previewView)
-        hostingController.view.backgroundColor = .clear
-
-        scrollView.delaysContentTouches = false
-
-        if #available(iOS 16.4, *) {
-            hostingController.safeAreaRegions = []
-        }
-
-        addChild(hostingController)
-        commentsContainerView.addSubview(hostingController.view)
-
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingController.view.topAnchor.constraint(equalTo: commentsContainerView.topAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: commentsContainerView.bottomAnchor),
-            hostingController.view.leadingAnchor.constraint(equalTo: commentsContainerView.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: commentsContainerView.trailingAnchor)
-        ])
-
-        hostingController.didMove(toParent: self)
-    }
-
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
         if navigationAction.request.url?.absoluteString == articleViewModel.story.link {
             return .allow
@@ -230,31 +258,20 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
                 case .content(let containerUUID, let contentUUID, let containerId, let metadata):
                     self?.presentArticle(containerId: containerId, contentUUID: contentUUID)
                     break
+                default:
+                    break
                 }
             default:
                 break
             }
         }
         
-        if UserDefaults.standard.bool(forKey: SettingsKeys.useSwiftUI) == true {
-            let profileView = VFProfileView(
-                userUUID: userUUID,
-                presentationType: presentationType,
-                settings: settings,
-                theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light,
-                onLogin: { [weak self] in self?.startLogin() },
-                onAction: callbacks,
-                onCustomizeView: { [weak self] theme, view in self?.customizeView(theme: theme, view: view) }
-            )
-            self.present(UIHostingController(rootView: profileView), animated: true)
-            return
-        }
-
         let profileViewController = VFProfileViewController.new(
             userUUID: userUUID,
             presentationType: presentationType,
             loginDelegate: self,
-            settings: settings
+            settings: settings,
+            style: .fromSettings
         )
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         profileViewController.setCustomUIDelegate(customUIDelegate: self)
@@ -289,22 +306,6 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             }
         }
         
-        if UserDefaults.standard.bool(forKey: SettingsKeys.useSwiftUI) == true {
-            let newCommentView = VFNewCommentView(
-                actionType: actionType,
-                containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations,
-                containerId: articleViewModel.story.containerId,
-                articleMetadata: articleViewModel.articleMetadata,
-                settings: settings,
-                theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light,
-                onLogin: { [weak self] in self?.startLogin() },
-                onAction: callbacks,
-                onCustomizeView: { [weak self] theme, view in self?.customizeView(theme: theme, view: view) }
-            )
-            self.present(UIHostingController(rootView: newCommentView), animated: true)
-            return
-        }
-
         let newCommentViewController = VFNewCommentViewController.new(
             newCommentActionType: actionType,
             containerType: articleViewModel.story.storyType == .reviews ? .reviews : .conversations,
@@ -405,6 +406,10 @@ extension ArticleViewController: VFLayoutDelegate {
     func containerHeightUpdated(viewController: VFUIViewController, height: CGFloat) {
         if viewController is VFPreviewCommentsViewController {
             self.commentsContainerViewHeight.constant = height
+        }
+
+        if viewController is VFConversationStarterViewController {
+            self.engagementStarterHeight?.constant = height
         }
     }
 }
