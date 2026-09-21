@@ -15,30 +15,54 @@ struct ArticleView: View {
     @State private var profileTarget: ProfileTarget?
     @State private var showLogin = false
 
+    private static let commentsAnchor = "comments"
+
     private var theme: VFTheme { isDark ? .dark : .light }
     private var containerType: VFCommentsContainerType { story.storyType == .reviews ? .reviews : .conversations }
+    private var showEngagementStarter: Bool { UserDefaults.standard.bool(forKey: SettingsKeys.showEngagementStarter) }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ArticleWebView(url: URL(string: story.link)!, isDark: isDark, height: $webHeight)
-                    .frame(height: webHeight)
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(spacing: 0) {
+                    ArticleWebView(url: URL(string: story.link)!, isDark: isDark, height: $webHeight)
+                        .frame(height: webHeight)
 
-                VFPreviewCommentsView(
-                    containerId: story.containerId,
-                    containerType: containerType,
-                    articleMetadata: articleMetadata,
-                    settings: settings,
-                    paginationSize: 10,
-                    defaultSort: story.storyType == .reviews ? .mostLiked : .newest,
-                    authorsIds: [story.authorId],
-                    focusedContentUUID: focusedContentUUID,
-                    theme: theme,
-                    autoSize: true,
-                    onLogin: { showLogin = true },
-                    onAction: handleAction,
-                    onCustomizeView: customizeView
-                )
+                    if showEngagementStarter {
+                        VFConversationStarterView(
+                            containerId: story.containerId,
+                            articleMetadata: articleMetadata,
+                            settings: settings,
+                            theme: theme,
+                            onLogin: { showLogin = true },
+                            onAction: { action in
+                                if case .seeMoreCommentsPressed = action {
+                                    withAnimation { proxy.scrollTo(Self.commentsAnchor, anchor: .top) }
+                                } else {
+                                    handleAction(action)
+                                }
+                            },
+                            onCustomizeView: customizeView
+                        )
+                    }
+
+                    VFPreviewCommentsView(
+                        containerId: story.containerId,
+                        containerType: containerType,
+                        articleMetadata: articleMetadata,
+                        settings: settings,
+                        paginationSize: 10,
+                        defaultSort: story.storyType == .reviews ? .mostLiked : .newest,
+                        authorsIds: [story.authorId],
+                        focusedContentUUID: focusedContentUUID,
+                        theme: theme,
+                        autoSize: true,
+                        onLogin: { showLogin = true },
+                        onAction: handleAction,
+                        onCustomizeView: customizeView
+                    )
+                    .id(Self.commentsAnchor)
+                }
             }
         }
         .sheet(item: $newCommentItem) { item in
@@ -83,6 +107,7 @@ struct ArticleView: View {
         guard theme == .dark else { return }
         switch view {
         case .previewBackgroundView(let view),
+             .conversationStarterBackgroundView(let view),
              .trendingCarouselBackgroundView(let view),
              .trendingVerticalBackgroundView(let view):
             view.backgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.0)

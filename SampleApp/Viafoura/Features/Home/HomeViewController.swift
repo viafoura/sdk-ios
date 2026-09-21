@@ -48,7 +48,8 @@ class HomeViewController: UIViewController, StoryboardCreateable {
                 userUUID: userUUID,
                 presentationType: .profile,
                 loginDelegate: self,
-                settings: settings
+                settings: settings,
+                style: .fromSettings
             )
             self.present(vc, animated: true)
         })
@@ -318,7 +319,7 @@ private extension HomeViewController {
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         let settings = VFSettings(colors: colors)
 
-        let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings)
+        let profileViewController = VFProfileViewController.new(userUUID: userUUID, presentationType: presentationType, loginDelegate: self, settings: settings, style: .fromSettings)
         profileViewController.setTheme(theme: UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light)
         present(profileViewController, animated: true)
     }
