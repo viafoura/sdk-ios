@@ -2191,6 +2191,57 @@
       },
       {
         "kind": "Import",
+        "name": "ImageIO",
+        "printedName": "ImageIO",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UniformTypeIdentifiers",
+        "printedName": "UniformTypeIdentifiers",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -7306,6 +7357,514 @@
           },
           {
             "kind": "Function",
+            "name": "createMedia",
+            "printedName": "createMedia(sectionUUID:contentContainerUUID:imageData:filename:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.CreateCommentMediaResponse, ViafouraSDK.VFCreateCommentMediaError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CreateCommentMediaResponse",
+                    "printedName": "ViafouraSDK.CreateCommentMediaResponse",
+                    "usr": "s:11ViafouraSDK26CreateCommentMediaResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentMediaError",
+                    "printedName": "ViafouraSDK.VFCreateCommentMediaError",
+                    "usr": "s:11ViafouraSDK25VFCreateCommentMediaErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP11createMedia11sectionUUID016contentContainerI09imageData8filenames6ResultOyAA013CreateCommentG8ResponseVAA08VFCreateqG5ErrorOG10Foundation0I0V_ArP0M0VSStYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP11createMedia11sectionUUID016contentContainerI09imageData8filenames6ResultOyAA013CreateCommentG8ResponseVAA08VFCreateqG5ErrorOG10Foundation0I0V_ArP0M0VSStYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchMedia",
+            "printedName": "fetchMedia(sectionUUID:contentContainerUUID:mediaUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.MediaObject, ViafouraSDK.VFCreateCommentMediaError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaObject",
+                    "printedName": "ViafouraSDK.MediaObject",
+                    "usr": "s:11ViafouraSDK11MediaObjectV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentMediaError",
+                    "printedName": "ViafouraSDK.VFCreateCommentMediaError",
+                    "usr": "s:11ViafouraSDK25VFCreateCommentMediaErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP10fetchMedia11sectionUUID016contentContainerI005mediaI0s6ResultOyAA0G6ObjectVAA015VFCreateCommentG5ErrorOG10Foundation0I0V_A2QtYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP10fetchMedia11sectionUUID016contentContainerI005mediaI0s6ResultOyAA0G6ObjectVAA015VFCreateCommentG5ErrorOG10Foundation0I0V_A2QtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createComment",
+            "printedName": "createComment(sectionUUID:contentContainerUUID:articleMetadata:content:mediaUUIDS:mediaAttachments:links:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentError",
+                    "printedName": "ViafouraSDK.VFCreateCommentError",
+                    "usr": "s:11ViafouraSDK20VFCreateCommentErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.MediaAttachment]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaAttachment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaAttachment",
+                        "printedName": "ViafouraSDK.MediaAttachment",
+                        "usr": "s:11ViafouraSDK15MediaAttachmentV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.ContentLink]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.ContentLink]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContentLink",
+                        "printedName": "ViafouraSDK.ContentLink",
+                        "usr": "s:11ViafouraSDK11ContentLinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP13createComment11sectionUUID016contentContainerI015articleMetadata0J010mediaUUIDS0N11Attachments5links14syndicationKeys6ResultOy10Foundation0I0VAA08VFCreateG5ErrorOGAQ_AqA09VFArticleM0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP13createComment11sectionUUID016contentContainerI015articleMetadata0J010mediaUUIDS0N11Attachments5links14syndicationKeys6ResultOy10Foundation0I0VAA08VFCreateG5ErrorOGAQ_AqA09VFArticleM0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createCommentReply",
+            "printedName": "createCommentReply(sectionUUID:contentContainerUUID:contentUUID:articleMetadata:content:mediaAttachments:links:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentReplyError",
+                    "printedName": "ViafouraSDK.VFCreateCommentReplyError",
+                    "usr": "s:11ViafouraSDK25VFCreateCommentReplyErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.MediaAttachment]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaAttachment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaAttachment",
+                        "printedName": "ViafouraSDK.MediaAttachment",
+                        "usr": "s:11ViafouraSDK15MediaAttachmentV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.ContentLink]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.ContentLink]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContentLink",
+                        "printedName": "ViafouraSDK.ContentLink",
+                        "usr": "s:11ViafouraSDK11ContentLinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP18createCommentReply11sectionUUID016contentContainerJ00kJ015articleMetadata0K016mediaAttachments5links14syndicationKeys6ResultOy10Foundation0J0VAA08VFCreategH5ErrorOGAQ_A2qA09VFArticleN0VSSSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP18createCommentReply11sectionUUID016contentContainerJ00kJ015articleMetadata0K016mediaAttachments5links14syndicationKeys6ResultOy10Foundation0J0VAA08VFCreategH5ErrorOGAQ_A2qA09VFArticleN0VSSSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "editComment",
+            "printedName": "editComment(sectionUUID:contentContainerUUID:contentUUID:articleMetadata:content:mediaUUIDS:mediaAttachments:links:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFEditCommentError",
+                    "printedName": "ViafouraSDK.VFEditCommentError",
+                    "usr": "s:11ViafouraSDK18VFEditCommentErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.MediaAttachment]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaAttachment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaAttachment",
+                        "printedName": "ViafouraSDK.MediaAttachment",
+                        "usr": "s:11ViafouraSDK15MediaAttachmentV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.ContentLink]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.ContentLink]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContentLink",
+                        "printedName": "ViafouraSDK.ContentLink",
+                        "usr": "s:11ViafouraSDK11ContentLinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK21VFLiveCommentsServiceP11editComment11sectionUUID016contentContainerI00jI015articleMetadata0J010mediaUUIDS0N11Attachments5links14syndicationKeys6ResultOySbAA06VFEditG5ErrorOG10Foundation0I0V_A2uA09VFArticleM0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK21VFLiveCommentsServiceP11editComment11sectionUUID016contentContainerI00jI015articleMetadata0J010mediaUUIDS0N11Attachments5links14syndicationKeys6ResultOySbAA06VFEditG5ErrorOG10Foundation0I0V_A2uA09VFArticleM0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFLiveCommentsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFLiveCommentsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "removeTopComment",
             "printedName": "removeTopComment(sectionUUID:contentContainerUUID:contentUUID:syndicationKey:)",
             "children": [
@@ -10312,6 +10871,131 @@
           },
           {
             "kind": "Function",
+            "name": "createCommentReply",
+            "printedName": "createCommentReply(sectionUUID:contentContainerUUID:contentUUID:articleMetadata:content:mediaAttachments:links:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentReplyError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentReplyError",
+                    "printedName": "ViafouraSDK.VFCreateCommentReplyError",
+                    "usr": "s:11ViafouraSDK25VFCreateCommentReplyErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.MediaAttachment]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaAttachment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaAttachment",
+                        "printedName": "ViafouraSDK.MediaAttachment",
+                        "usr": "s:11ViafouraSDK15MediaAttachmentV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.ContentLink]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.ContentLink]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContentLink",
+                        "printedName": "ViafouraSDK.ContentLink",
+                        "usr": "s:11ViafouraSDK11ContentLinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC18createCommentReply11sectionUUID016contentContainerK00lK015articleMetadata0L016mediaAttachments5links14syndicationKeys6ResultOy10Foundation0K0VAA08VFCreatehI5ErrorOGAQ_A2qA09VFArticleO0VSSSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC18createCommentReply11sectionUUID016contentContainerK00lK015articleMetadata0L016mediaAttachments5links14syndicationKeys6ResultOy10Foundation0K0VAA08VFCreatehI5ErrorOGAQ_A2qA09VFArticleO0VSSSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "unflagComment",
             "printedName": "unflagComment(sectionUUID:contentContainerUUID:contentUUID:syndicationKey:)",
             "children": [
@@ -11321,6 +12005,139 @@
           },
           {
             "kind": "Function",
+            "name": "createComment",
+            "printedName": "createComment(sectionUUID:contentContainerUUID:articleMetadata:content:mediaUUIDS:mediaAttachments:links:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Foundation.UUID, ViafouraSDK.VFCreateCommentError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentError",
+                    "printedName": "ViafouraSDK.VFCreateCommentError",
+                    "usr": "s:11ViafouraSDK20VFCreateCommentErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.MediaAttachment]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaAttachment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaAttachment",
+                        "printedName": "ViafouraSDK.MediaAttachment",
+                        "usr": "s:11ViafouraSDK15MediaAttachmentV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.ContentLink]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.ContentLink]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContentLink",
+                        "printedName": "ViafouraSDK.ContentLink",
+                        "usr": "s:11ViafouraSDK11ContentLinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC13createComment11sectionUUID016contentContainerJ015articleMetadata0K010mediaUUIDS0O11Attachments5links14syndicationKeys6ResultOy10Foundation0J0VAA08VFCreateH5ErrorOGAQ_AqA09VFArticleN0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC13createComment11sectionUUID016contentContainerJ015articleMetadata0K010mediaUUIDS0O11Attachments5links14syndicationKeys6ResultOy10Foundation0J0VAA08VFCreateH5ErrorOGAQ_AqA09VFArticleN0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getUserComments",
             "printedName": "getUserComments(sectionUUID:userUUID:limit:)",
             "children": [
@@ -12134,6 +12951,146 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC11editComment11sectionUUID016contentContainerJ00kJ015articleMetadata0K010mediaUUIDS5links14syndicationKeys6ResultOySbAA06VFEditH5ErrorOG10Foundation0J0V_A2tA09VFArticleN0VSSSaySSGSayAA11ContentLinkVGSgSSSgtYaF",
             "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC11editComment11sectionUUID016contentContainerJ00kJ015articleMetadata0K010mediaUUIDS5links14syndicationKeys6ResultOySbAA06VFEditH5ErrorOG10Foundation0J0V_A2tA09VFArticleN0VSSSaySSGSayAA11ContentLinkVGSgSSSgtYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "editComment",
+            "printedName": "editComment(sectionUUID:contentContainerUUID:contentUUID:articleMetadata:content:mediaUUIDS:mediaAttachments:links:syndicationKey:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, ViafouraSDK.VFEditCommentError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFEditCommentError",
+                    "printedName": "ViafouraSDK.VFEditCommentError",
+                    "usr": "s:11ViafouraSDK18VFEditCommentErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "VFArticleMetadata",
+                "printedName": "ViafouraSDK.VFArticleMetadata",
+                "usr": "s:11ViafouraSDK17VFArticleMetadataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.MediaAttachment]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaAttachment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaAttachment",
+                        "printedName": "ViafouraSDK.MediaAttachment",
+                        "usr": "s:11ViafouraSDK15MediaAttachmentV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[ViafouraSDK.ContentLink]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.ContentLink]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ContentLink",
+                        "printedName": "ViafouraSDK.ContentLink",
+                        "usr": "s:11ViafouraSDK11ContentLinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC11editComment11sectionUUID016contentContainerJ00kJ015articleMetadata0K010mediaUUIDS0O11Attachments5links14syndicationKeys6ResultOySbAA06VFEditH5ErrorOG10Foundation0J0V_A2uA09VFArticleN0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC11editComment11sectionUUID016contentContainerJ00kJ015articleMetadata0K010mediaUUIDS0O11Attachments5links14syndicationKeys6ResultOySbAA06VFEditH5ErrorOG10Foundation0J0V_A2uA09VFArticleN0VSSSaySSGSayAA15MediaAttachmentVGSgSayAA11ContentLinkVGSgSSSgtYaF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "Final",
@@ -13020,6 +13977,122 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC11createMedia11sectionUUID016contentContainerJ09imageDatas6ResultOyAA013CreateCommentH8ResponseVAA08VFCreateqH5ErrorOG10Foundation0J0V_AqO0N0VtYaF",
             "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC11createMedia11sectionUUID016contentContainerJ09imageDatas6ResultOyAA013CreateCommentH8ResponseVAA08VFCreateqH5ErrorOG10Foundation0J0V_AqO0N0VtYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createMedia",
+            "printedName": "createMedia(sectionUUID:contentContainerUUID:imageData:filename:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.CreateCommentMediaResponse, ViafouraSDK.VFCreateCommentMediaError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CreateCommentMediaResponse",
+                    "printedName": "ViafouraSDK.CreateCommentMediaResponse",
+                    "usr": "s:11ViafouraSDK26CreateCommentMediaResponseV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentMediaError",
+                    "printedName": "ViafouraSDK.VFCreateCommentMediaError",
+                    "usr": "s:11ViafouraSDK25VFCreateCommentMediaErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC11createMedia11sectionUUID016contentContainerJ09imageData8filenames6ResultOyAA013CreateCommentH8ResponseVAA08VFCreaterH5ErrorOG10Foundation0J0V_ArP0N0VSStYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC11createMedia11sectionUUID016contentContainerJ09imageData8filenames6ResultOyAA013CreateCommentH8ResponseVAA08VFCreaterH5ErrorOG10Foundation0J0V_ArP0N0VSStYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchMedia",
+            "printedName": "fetchMedia(sectionUUID:contentContainerUUID:mediaUUID:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<ViafouraSDK.MediaObject, ViafouraSDK.VFCreateCommentMediaError>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaObject",
+                    "printedName": "ViafouraSDK.MediaObject",
+                    "usr": "s:11ViafouraSDK11MediaObjectV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "VFCreateCommentMediaError",
+                    "printedName": "ViafouraSDK.VFCreateCommentMediaError",
+                    "usr": "s:11ViafouraSDK25VFCreateCommentMediaErrorO"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK35VFLiveCommentsServiceImplementationC10fetchMedia11sectionUUID016contentContainerJ005mediaJ0s6ResultOyAA0H6ObjectVAA015VFCreateCommentH5ErrorOG10Foundation0J0V_A2QtYaF",
+            "mangledName": "$s11ViafouraSDK35VFLiveCommentsServiceImplementationC10fetchMedia11sectionUUID016contentContainerJ005mediaJ0s6ResultOyAA0H6ObjectVAA015VFCreateCommentH5ErrorOG10Foundation0J0V_A2QtYaF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "Final",
@@ -19271,6 +20344,1192 @@
             "printedName": "SendableMetatype",
             "usr": "s:s16SendableMetatypeP",
             "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MediaObject",
+        "printedName": "MediaObject",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "uuid",
+            "printedName": "uuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK11MediaObjectV4uuid10Foundation4UUIDVvp",
+            "mangledName": "$s11ViafouraSDK11MediaObjectV4uuid10Foundation4UUIDVvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK11MediaObjectV4uuid10Foundation4UUIDVvg",
+                "mangledName": "$s11ViafouraSDK11MediaObjectV4uuid10Foundation4UUIDVvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "media_type",
+            "printedName": "media_type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MediaType",
+                "printedName": "ViafouraSDK.MediaType",
+                "usr": "s:11ViafouraSDK9MediaTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK11MediaObjectV10media_typeAA0C4TypeOvp",
+            "mangledName": "$s11ViafouraSDK11MediaObjectV10media_typeAA0C4TypeOvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaType",
+                    "printedName": "ViafouraSDK.MediaType",
+                    "usr": "s:11ViafouraSDK9MediaTypeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK11MediaObjectV10media_typeAA0C4TypeOvg",
+                "mangledName": "$s11ViafouraSDK11MediaObjectV10media_typeAA0C4TypeOvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "versions",
+            "printedName": "versions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ViafouraSDK.MediaVersion]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersion",
+                    "printedName": "ViafouraSDK.MediaVersion",
+                    "usr": "s:11ViafouraSDK12MediaVersionV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK11MediaObjectV8versionsSayAA0C7VersionVGvp",
+            "mangledName": "$s11ViafouraSDK11MediaObjectV8versionsSayAA0C7VersionVGvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ViafouraSDK.MediaVersion]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersion",
+                        "printedName": "ViafouraSDK.MediaVersion",
+                        "usr": "s:11ViafouraSDK12MediaVersionV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK11MediaObjectV8versionsSayAA0C7VersionVGvg",
+                "mangledName": "$s11ViafouraSDK11MediaObjectV8versionsSayAA0C7VersionVGvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alt_text",
+            "printedName": "alt_text",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK11MediaObjectV8alt_textSSSgvp",
+            "mangledName": "$s11ViafouraSDK11MediaObjectV8alt_textSSSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK11MediaObjectV8alt_textSSSgvg",
+                "mangledName": "$s11ViafouraSDK11MediaObjectV8alt_textSSSgvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MediaObject",
+                "printedName": "ViafouraSDK.MediaObject",
+                "usr": "s:11ViafouraSDK11MediaObjectV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK11MediaObjectV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK11MediaObjectV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK11MediaObjectV",
+        "mangledName": "$s11ViafouraSDK11MediaObjectV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MediaVersion",
+        "printedName": "MediaVersion",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "width",
+            "printedName": "width",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK12MediaVersionV5widthSiSgvp",
+            "mangledName": "$s11ViafouraSDK12MediaVersionV5widthSiSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12MediaVersionV5widthSiSgvg",
+                "mangledName": "$s11ViafouraSDK12MediaVersionV5widthSiSgvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "height",
+            "printedName": "height",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK12MediaVersionV6heightSiSgvp",
+            "mangledName": "$s11ViafouraSDK12MediaVersionV6heightSiSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12MediaVersionV6heightSiSgvg",
+                "mangledName": "$s11ViafouraSDK12MediaVersionV6heightSiSgvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "url",
+            "printedName": "url",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK12MediaVersionV3urlSSvp",
+            "mangledName": "$s11ViafouraSDK12MediaVersionV3urlSSvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12MediaVersionV3urlSSvg",
+                "mangledName": "$s11ViafouraSDK12MediaVersionV3urlSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "version_type",
+            "printedName": "version_type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MediaVersionType",
+                "printedName": "ViafouraSDK.MediaVersionType",
+                "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK12MediaVersionV12version_typeAA0cD4TypeOvp",
+            "mangledName": "$s11ViafouraSDK12MediaVersionV12version_typeAA0cD4TypeOvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK12MediaVersionV12version_typeAA0cD4TypeOvg",
+                "mangledName": "$s11ViafouraSDK12MediaVersionV12version_typeAA0cD4TypeOvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MediaVersion",
+                "printedName": "ViafouraSDK.MediaVersion",
+                "usr": "s:11ViafouraSDK12MediaVersionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK12MediaVersionV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s11ViafouraSDK12MediaVersionV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK12MediaVersionV",
+        "mangledName": "$s11ViafouraSDK12MediaVersionV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MediaVersionType",
+        "printedName": "MediaVersionType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "tiny",
+            "printedName": "tiny",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaVersionType.Type) -> ViafouraSDK.MediaVersionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaVersionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersionType",
+                        "printedName": "ViafouraSDK.MediaVersionType",
+                        "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO4tinyyA2CmF",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO4tinyyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "small",
+            "printedName": "small",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaVersionType.Type) -> ViafouraSDK.MediaVersionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaVersionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersionType",
+                        "printedName": "ViafouraSDK.MediaVersionType",
+                        "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO5smallyA2CmF",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO5smallyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "medium",
+            "printedName": "medium",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaVersionType.Type) -> ViafouraSDK.MediaVersionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaVersionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersionType",
+                        "printedName": "ViafouraSDK.MediaVersionType",
+                        "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO6mediumyA2CmF",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO6mediumyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "large",
+            "printedName": "large",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaVersionType.Type) -> ViafouraSDK.MediaVersionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaVersionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersionType",
+                        "printedName": "ViafouraSDK.MediaVersionType",
+                        "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO5largeyA2CmF",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO5largeyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "xlarge",
+            "printedName": "xlarge",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaVersionType.Type) -> ViafouraSDK.MediaVersionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaVersionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersionType",
+                        "printedName": "ViafouraSDK.MediaVersionType",
+                        "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO6xlargeyA2CmF",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO6xlargeyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "original",
+            "printedName": "original",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaVersionType.Type) -> ViafouraSDK.MediaVersionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaVersionType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaVersionType",
+                        "printedName": "ViafouraSDK.MediaVersionType",
+                        "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO8originalyA2CmF",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO8originalyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.MediaVersionType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaVersionType",
+                    "printedName": "ViafouraSDK.MediaVersionType",
+                    "usr": "s:11ViafouraSDK16MediaVersionTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK16MediaVersionTypeO8rawValueSSvp",
+            "mangledName": "$s11ViafouraSDK16MediaVersionTypeO8rawValueSSvp",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK16MediaVersionTypeO8rawValueSSvg",
+                "mangledName": "$s11ViafouraSDK16MediaVersionTypeO8rawValueSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ViafouraSDK16MediaVersionTypeO",
+        "mangledName": "$s11ViafouraSDK16MediaVersionTypeO",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MediaType",
+        "printedName": "MediaType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaType.Type) -> ViafouraSDK.MediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaType",
+                    "printedName": "ViafouraSDK.MediaType",
+                    "usr": "s:11ViafouraSDK9MediaTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaType",
+                        "printedName": "ViafouraSDK.MediaType",
+                        "usr": "s:11ViafouraSDK9MediaTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK9MediaTypeO5imageyA2CmF",
+            "mangledName": "$s11ViafouraSDK9MediaTypeO5imageyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "video",
+            "printedName": "video",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ViafouraSDK.MediaType.Type) -> ViafouraSDK.MediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaType",
+                    "printedName": "ViafouraSDK.MediaType",
+                    "usr": "s:11ViafouraSDK9MediaTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ViafouraSDK.MediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MediaType",
+                        "printedName": "ViafouraSDK.MediaType",
+                        "usr": "s:11ViafouraSDK9MediaTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11ViafouraSDK9MediaTypeO5videoyA2CmF",
+            "mangledName": "$s11ViafouraSDK9MediaTypeO5videoyA2CmF",
+            "moduleName": "ViafouraSDK"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ViafouraSDK.MediaType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MediaType",
+                    "printedName": "ViafouraSDK.MediaType",
+                    "usr": "s:11ViafouraSDK9MediaTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK9MediaTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s11ViafouraSDK9MediaTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK9MediaTypeO8rawValueSSvp",
+            "mangledName": "$s11ViafouraSDK9MediaTypeO8rawValueSSvp",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK9MediaTypeO8rawValueSSvg",
+                "mangledName": "$s11ViafouraSDK9MediaTypeO8rawValueSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:11ViafouraSDK9MediaTypeO",
+        "mangledName": "$s11ViafouraSDK9MediaTypeO",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -78951,6 +81210,227 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "MediaAttachment",
+        "printedName": "MediaAttachment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "media_uuid",
+            "printedName": "media_uuid",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK15MediaAttachmentV10media_uuidSSvp",
+            "mangledName": "$s11ViafouraSDK15MediaAttachmentV10media_uuidSSvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK15MediaAttachmentV10media_uuidSSvg",
+                "mangledName": "$s11ViafouraSDK15MediaAttachmentV10media_uuidSSvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alt_text",
+            "printedName": "alt_text",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11ViafouraSDK15MediaAttachmentV8alt_textSSSgvp",
+            "mangledName": "$s11ViafouraSDK15MediaAttachmentV8alt_textSSSgvp",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11ViafouraSDK15MediaAttachmentV8alt_textSSSgvg",
+                "mangledName": "$s11ViafouraSDK15MediaAttachmentV8alt_textSSSgvg",
+                "moduleName": "ViafouraSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(media_uuid:alt_text:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MediaAttachment",
+                "printedName": "ViafouraSDK.MediaAttachment",
+                "usr": "s:11ViafouraSDK15MediaAttachmentV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11ViafouraSDK15MediaAttachmentV10media_uuid8alt_textACSS_SSSgtcfc",
+            "mangledName": "$s11ViafouraSDK15MediaAttachmentV10media_uuid8alt_textACSS_SSSgtcfc",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK15MediaAttachmentV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s11ViafouraSDK15MediaAttachmentV6encode2toys7Encoder_p_tKF",
+            "moduleName": "ViafouraSDK",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:11ViafouraSDK15MediaAttachmentV",
+        "mangledName": "$s11ViafouraSDK15MediaAttachmentV",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -87845,6 +90325,13 @@
       },
       {
         "kind": "Import",
+        "name": "PhotosUI",
+        "printedName": "PhotosUI",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -88411,6 +90898,49 @@
             ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "picker",
+            "printedName": "picker(_:didFinishPicking:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PHPickerViewController",
+                "printedName": "PhotosUI.PHPickerViewController",
+                "usr": "c:objc(cs)PHPickerViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[PhotosUI.PHPickerResult]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PHPickerResult",
+                    "printedName": "PhotosUI.PHPickerResult",
+                    "usr": "s:8PhotosUI14PHPickerResultV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK26VFNewCommentViewControllerC6picker_16didFinishPickingySo08PHPickereF0C_Say8PhotosUI0K6ResultVGtF",
+            "mangledName": "$s11ViafouraSDK26VFNewCommentViewControllerC6picker_16didFinishPickingySo08PHPickereF0C_Say8PhotosUI0K6ResultVGtF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -88445,6 +90975,13 @@
             "printedName": "_KeyValueCodingAndObservingPublishing",
             "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
             "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PHPickerViewControllerDelegate",
+            "printedName": "PHPickerViewControllerDelegate",
+            "usr": "s:8PhotosUI30PHPickerViewControllerDelegateP",
+            "mangledName": "$s8PhotosUI30PHPickerViewControllerDelegateP"
           },
           {
             "kind": "Conformance",
@@ -104425,6 +106962,57 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "ViafouraSDK"
       },
       {
@@ -104985,6 +107573,83 @@
       "value": "\"containerIdPath\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageProcessing.swift",
+      "kind": "IntegerLiteral",
+      "offset": 297,
+      "length": 9,
+      "value": "2097152"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageProcessing.swift",
+      "kind": "IntegerLiteral",
+      "offset": 337,
+      "length": 4,
+      "value": "2520"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageProcessing.swift",
+      "kind": "FloatLiteral",
+      "offset": 388,
+      "length": 4,
+      "value": "0.92"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageProcessing.swift",
+      "kind": "FloatLiteral",
+      "offset": 438,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageProcessing.swift",
+      "kind": "IntegerLiteral",
+      "offset": 485,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageProcessing.swift",
+      "kind": "IntegerLiteral",
+      "offset": 528,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageUploadPolicy.swift",
+      "kind": "IntegerLiteral",
+      "offset": 141,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Utils\/CommentImageUploadPolicy.swift",
+      "kind": "IntegerLiteral",
+      "offset": 177,
+      "length": 3,
+      "value": "125"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livecomments\/FetchCommentMediaEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 227,
+      "length": 12,
+      "value": "\"siteIdPath\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livecomments\/FetchCommentMediaEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 281,
+      "length": 17,
+      "value": "\"containerIdPath\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livecomments\/FetchCommentMediaEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 336,
+      "length": 13,
+      "value": "\"mediaIdPath\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/notifications\/notifications\/NotificationReadEndpoint.swift",
       "kind": "StringLiteral",
       "offset": 228,
@@ -105043,7 +107708,7 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentsList\/CommentsTableViewModel.swift",
       "kind": "Dictionary",
-      "offset": 542,
+      "offset": 553,
       "length": 3,
       "value": "[]"
     },
@@ -105301,8 +107966,22 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1922,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2954,
+      "offset": 1986,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/NewCommentViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3700,
       "length": 5,
       "value": "false"
     },
@@ -105484,42 +108163,42 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Comments\/FetchComments\/CommentListResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2714,
+      "offset": 3663,
       "length": 9,
       "value": "\"deleted\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Comments\/FetchComments\/CommentListResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2743,
+      "offset": 3692,
       "length": 9,
       "value": "\"visible\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Comments\/FetchComments\/CommentListResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2769,
+      "offset": 3718,
       "length": 6,
       "value": "\"spam\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Comments\/FetchComments\/CommentListResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2796,
+      "offset": 3745,
       "length": 10,
       "value": "\"disabled\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Comments\/FetchComments\/CommentListResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2825,
+      "offset": 3774,
       "length": 8,
       "value": "\"hidden\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Comments\/FetchComments\/CommentListResponse.swift",
       "kind": "StringLiteral",
-      "offset": 2865,
+      "offset": 3814,
       "length": 21,
       "value": "\"awaiting_moderation\""
     },
@@ -108613,140 +111292,196 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 21731,
+      "offset": 21729,
+      "length": 14,
+      "value": "\"SubmitAction\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 21783,
+      "length": 22,
+      "value": "\"CommentMediaAddImage\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 21844,
+      "length": 22,
+      "value": "\"CommentMediaAltLabel\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 21919,
+      "length": 36,
+      "value": "\"CommentMediaAltPlaceholderOptional\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 22008,
+      "length": 36,
+      "value": "\"CommentMediaAltPlaceholderRequired\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 22086,
+      "length": 25,
+      "value": "\"CommentMediaHideAltText\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 22153,
+      "length": 25,
+      "value": "\"CommentMediaRemoveImage\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 22220,
+      "length": 25,
+      "value": "\"CommentMediaViewAltText\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
+      "kind": "StringLiteral",
+      "offset": 22279,
       "length": 16,
       "value": "\"RecentActivity\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 21782,
+      "offset": 22330,
       "length": 18,
       "value": "\"EditProfileTitle\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 21842,
+      "offset": 22390,
       "length": 25,
       "value": "\"EditProfileAvatarHeader\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 21911,
+      "offset": 22459,
       "length": 27,
       "value": "\"EditProfileIdentityHeader\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 21987,
+      "offset": 22535,
       "length": 32,
       "value": "\"EditProfileNotificationsHeader\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22054,
+      "offset": 22602,
       "length": 18,
       "value": "\"EditProfileEmpty\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22101,
+      "offset": 22649,
       "length": 12,
       "value": "\"ChooseFile\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22144,
+      "offset": 22692,
       "length": 14,
       "value": "\"NoFileChosen\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22188,
+      "offset": 22736,
       "length": 13,
       "value": "\"MaxFileSize\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22238,
+      "offset": 22786,
       "length": 20,
       "value": "\"SupportedFileTypes\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22299,
+      "offset": 22847,
       "length": 24,
       "value": "\"DisplayNamePlaceholder\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22358,
+      "offset": 22906,
       "length": 18,
       "value": "\"EmailPlaceholder\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22409,
+      "offset": 22957,
       "length": 16,
       "value": "\"ProfileUpdated\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22457,
+      "offset": 23005,
       "length": 15,
       "value": "\"AvatarUpdated\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22503,
+      "offset": 23051,
       "length": 14,
       "value": "\"UpdateFailed\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22549,
+      "offset": 23097,
       "length": 15,
       "value": "\"UserInfoTitle\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22597,
+      "offset": 23145,
       "length": 16,
       "value": "\"UserInfoFooter\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22646,
+      "offset": 23194,
       "length": 16,
       "value": "\"UserInfoToggle\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22691,
+      "offset": 23239,
       "length": 12,
       "value": "\"ViafouraId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Resources\/Strings\/StringKeys.swift",
       "kind": "StringLiteral",
-      "offset": 22734,
+      "offset": 23282,
       "length": 14,
       "value": "\"ThirdPartyId\""
     },
@@ -109652,6 +112387,13 @@
       "offset": 263,
       "length": 21,
       "value": "\"multipart\/form-data\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/ApiEndpoint.swift",
+      "kind": "StringLiteral",
+      "offset": 308,
+      "length": 26,
+      "value": "\"application\/octet-stream\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/notifications\/notifications\/AllNotificationsEndpoint.swift",
@@ -112078,23 +114820,9 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentsList\/Cell\/CommentCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 5402,
+      "offset": 5641,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentsList\/Cell\/CommentCell.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5754,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentsList\/Cell\/CommentCell.swift",
-      "kind": "BooleanLiteral",
-      "offset": 8549,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/VFCustomBadgeView.swift",
@@ -112242,6 +114970,13 @@
       "offset": 6567,
       "length": 1,
       "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/VFPreviewCommentsViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 58098,
+      "length": 3,
+      "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/interaction\/TypingEndpoint.swift",
@@ -112641,6 +115376,13 @@
       "offset": 7212,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/PreviewCommentsViewModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7367,
+      "length": 1,
+      "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livereviews\/ReviewContainerByUUIDEndpoint.swift",
@@ -115081,14 +117823,14 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Bootstrap\/BootstrapResponse.swift",
       "kind": "IntegerLiteral",
-      "offset": 11560,
+      "offset": 12747,
       "length": 4,
       "value": "1440"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Bootstrap\/BootstrapResponse.swift",
       "kind": "IntegerLiteral",
-      "offset": 11602,
+      "offset": 12789,
       "length": 8,
       "value": "86400000"
     },
@@ -115367,64 +118109,71 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 279,
+      "length": 2,
+      "value": "40"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "StringLiteral",
-      "offset": 275,
+      "offset": 356,
       "length": 12,
       "value": "\"NewComment\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2308,
+      "offset": 2646,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3037,
+      "offset": 3375,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3042,
+      "offset": 3380,
       "length": 3,
       "value": "-10"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3275,
+      "offset": 3613,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3280,
+      "offset": 3618,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3487,
+      "offset": 3825,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13766,
+      "offset": 14132,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/NewComment\/VFNewCommentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13850,
+      "offset": 14216,
       "length": 5,
       "value": "false"
     },
@@ -116474,28 +119223,35 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 104978,
+      "offset": 104999,
       "length": 17,
       "value": "\"vf.liveDotPulse\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 113609,
+      "length": 3,
+      "value": "0.5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 115303,
+      "offset": 115970,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 138731,
+      "offset": 139405,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 141417,
+      "offset": 142091,
       "length": 2,
       "value": "[]"
     },
@@ -116733,56 +119489,63 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 3565,
+      "offset": 3626,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3670,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3616,
+      "offset": 3721,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3663,
+      "offset": 3768,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3703,
+      "offset": 3808,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5775,
+      "offset": 5880,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 17753,
+      "offset": 17858,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 17777,
+      "offset": 17882,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 22069,
+      "offset": 22174,
       "length": 4,
       "value": "true"
     },
@@ -116809,22 +119572,8 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2020,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 32083,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
-      "kind": "BooleanLiteral",
-      "offset": 32118,
+      "offset": 32064,
       "length": 5,
       "value": "false"
     },
@@ -116890,6 +119639,76 @@
       "offset": 619,
       "length": 3,
       "value": "150"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 168,
+      "length": 3,
+      "value": "320"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaView.swift",
+      "kind": "FloatLiteral",
+      "offset": 226,
+      "length": 3,
+      "value": "4.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaView.swift",
+      "kind": "FloatLiteral",
+      "offset": 232,
+      "length": 3,
+      "value": "3.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 544,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3014,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/CommentMedia\/VFCommentMediaAltViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 343,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaEditorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 180,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaEditorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 238,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaEditorView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 291,
+      "length": 2,
+      "value": "88"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/View\/CommentMedia\/VFCommentMediaEditorView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 877,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsSetupViewController.swift",
