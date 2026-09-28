@@ -48,14 +48,21 @@ import _SwiftConcurrencyShims
   @_Concurrency.MainActor @preconcurrency final public func setLayoutDelegate(layoutDelegate: any VFLayoutDelegate)
   @_Concurrency.MainActor @preconcurrency final public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency final public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
+  @_Concurrency.MainActor @preconcurrency final public func setAdDelegate(adDelegate: any VFAdDelegate)
   @_Concurrency.MainActor @preconcurrency final public func reload()
+  @_Concurrency.MainActor @preconcurrency final public func reloadAd()
   @_Concurrency.MainActor @preconcurrency final public func reloadPoll()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
+extension VFConversationStarterViewController : VFLocalAdDelegate {
+  @_Concurrency.MainActor final public func generateAd(adPosition: Swift.Int) -> VFAdView?
+  @_Concurrency.MainActor final public func getAdInterval() -> Swift.Int
+  @_Concurrency.MainActor final public func getFirstAdPosition() -> Swift.Int
+}
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFConversationStarterView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, articleMetadata: VFArticleMetadata, settings: VFSettings, title: Swift.String? = nil, description: Swift.String? = nil, minimumCommentCount: Swift.Int = VFConversationStarterDefaults.minimumCommentCount, sectionUUID: Foundation.UUID? = nil, syndicationKey: Swift.String? = nil, theme: VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(containerId: Swift.String, articleMetadata: VFArticleMetadata, settings: VFSettings, title: Swift.String? = nil, description: Swift.String? = nil, minimumCommentCount: Swift.Int = VFConversationStarterDefaults.minimumCommentCount, sectionUUID: Foundation.UUID? = nil, syndicationKey: Swift.String? = nil, theme: VFTheme? = nil, autoSize: Swift.Bool = true, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onHeightChange: ((CoreFoundation.CGFloat) -> Swift.Void)? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil, onGenerateAd: (@_Concurrency.MainActor @Sendable (Swift.Int) -> VFAdView?)? = nil)
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
@@ -79,6 +86,18 @@ extension AnalyticsServiceImplementation {
   public func logConversationStarterLoad(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: VFArticleMetadata, subtype: VFConversationStarterSubtype)
   public func logConversationStarterView(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: VFArticleMetadata, subtype: VFConversationStarterSubtype)
   public func logConversationStarterClick(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: VFArticleMetadata, subtype: VFConversationStarterSubtype)
+}
+public enum VFConversationStarterContainerError : Swift.Error {
+  case notFound
+  case unknown
+  public static func == (a: VFConversationStarterContainerError, b: VFConversationStarterContainerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension VFLiveCommentsService {
+  public func getCommentContainerWithoutCreating(sectionUUID: Foundation.UUID, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<CommentContainerByIdResponse, VFConversationStarterContainerError>
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class VFModeratorView : UIKit.UIView {
   @objc deinit
@@ -311,6 +330,7 @@ public protocol VFLiveCommentsService : Swift.Sendable {
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?, completion: @escaping (Swift.Result<Swift.Int, VFCommentCountError>) -> Swift.Void)
   func commentCount(sectionUUID: Foundation.UUID?, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Int, VFCommentCountError>
   func bulkCommentCount(sectionUUID: Foundation.UUID?, containerIds: [Swift.String]) async -> Swift.Result<[CommentContainerCountStatusResponse], VFCommentCountError>
+  func getCommentContainerWithoutCreating(sectionUUID: Foundation.UUID, containerId: Swift.String, syndicationKey: Swift.String?) async -> Swift.Result<CommentContainerByIdResponse, VFConversationStarterContainerError>
 }
 @_hasMissingDesignatedInitializers final public class VFLiveCommentsServiceImplementation : VFLiveCommentsService {
   @objc deinit
@@ -1349,6 +1369,7 @@ extension Constants {
   public struct Ads {
     public static let firstAdPosition: Swift.Int
     public static let trendingAdPosition: Swift.Int
+    public static let conversationStarterAdPosition: Swift.Int
   }
 }
 extension UIKit.UIDevice {
@@ -1505,10 +1526,12 @@ public struct VFEventEngageContainerTime : Swift.Encodable, Swift.Sendable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFPollViewController : VFUIViewController {
+  @available(*, deprecated, message: "The poll widget is no longer built from a storyboard.")
   @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(contentContainerUUID: Foundation.UUID, loginDelegate: any VFLoginDelegate, settings: VFSettings) -> VFPollViewController
   @_Concurrency.MainActor @preconcurrency public static func new(containerId: Swift.String, loginDelegate: any VFLoginDelegate, settings: VFSettings, sectionUUID: Foundation.UUID? = nil, syndicationKey: Swift.String? = nil) -> VFPollViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLayoutSubviews()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping VFActionsCallbacks)
   @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
@@ -1516,9 +1539,6 @@ public struct VFEventEngageContainerTime : Swift.Encodable, Swift.Sendable {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
-}
-extension VFPollViewController : UIKit.UITextFieldDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
 }
 extension VFLiveCommentsServiceImplementation {
   final public func editComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, articleMetadata: VFArticleMetadata, content: Swift.String, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, VFEditCommentError>
@@ -2059,10 +2079,15 @@ public enum VFCustomizableView {
   case conversationStarterActionButton(button: VFButton)
   case pollQuestionLabel(label: VFLabel)
   case pollHeaderLabel(label: VFLabel)
+  @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
   case pollHeaderImage(image: VFImageView)
+  @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
   case pollDeleteLabel(label: VFLabel)
+  @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
   case pollDeleteImage(image: VFImageView)
+  @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
   case pollCloseLabel(label: VFLabel)
+  @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
   case pollCloseImage(image: VFImageView)
   case pollBackgroundView(view: UIKit.UIView)
   case pollOptionLabel(label: VFLabel)
@@ -2071,6 +2096,11 @@ public enum VFCustomizableView {
   case pollOptionRadioImage(image: VFImageView)
   case pollOptionFillView(view: UIKit.UIView)
   case pollOptionContainerView(view: UIKit.UIView)
+  case pollMenuButton(button: UIKit.UIButton)
+  case pollPrimaryButton(button: VFButton)
+  case pollSecondaryButton(button: VFButton)
+  case pollMessageTitleLabel(label: VFLabel)
+  case pollMessageTextLabel(label: VFLabel)
 }
 extension VFLiveCommentsServiceImplementation {
   final public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, VFUnpinCommentError>
@@ -2230,10 +2260,7 @@ extension VFCreateCommentMediaError {
     get
     set
   }
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var bounds: CoreFoundation.CGRect {
-    @objc get
-    @objc set
-  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency public init(settings: VFSettings, loginDelegate: any VFLoginDelegate, onBellClicked: @escaping (Foundation.UUID) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func setCustomUIDelegate(customUIDelegate: any VFCustomUIDelegate)
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: VFTheme)
@@ -2724,6 +2751,7 @@ public struct VFAccessibilityIdentifiers {
   public static let conversationStarterTitle: Swift.String
   public static let conversationStarterAction: Swift.String
   public static let conversationStarterFeaturedComment: Swift.String
+  public static let conversationStarterAdContainer: Swift.String
   public static let trendingCell: Swift.String
   public static let trendingSeeMoreButton: Swift.String
   public static let profileUserName: Swift.String
@@ -3431,6 +3459,8 @@ extension VFConversationStarterView : Swift.Sendable {}
 extension VFConversationStarterSubtype : Swift.Equatable {}
 extension VFConversationStarterSubtype : Swift.Hashable {}
 extension VFConversationStarterSubtype : Swift.RawRepresentable {}
+extension VFConversationStarterContainerError : Swift.Equatable {}
+extension VFConversationStarterContainerError : Swift.Hashable {}
 extension VFDislikeChatError : Swift.Equatable {}
 extension VFDislikeChatError : Swift.Hashable {}
 extension VFTopCommentError : Swift.Equatable {}

@@ -1320,7 +1320,49 @@
         "actions": {
             "close_poll": "Cerrar Encuesta",
             "delete_poll": "Eliminar Encuesta",
-            "create": "Crear una Encuesta"
+            "create": "Crear una Encuesta",
+            "show_all_options": "Mostrar todas las opciones"
+        },
+        "form": {
+            "title": "Crear una Encuesta",
+            "fields": {
+                "question": "Pregunta de la encuesta",
+                "question_placeholder": "Necesario",
+                "options_label": "Opciones",
+                "options_hint": " – máximo {max} ({min} necesario)",
+                "option_placeholder": "Opción",
+                "add_option": "Añadir opción",
+                "remove_option": "Eliminar opción",
+                "close_time": {
+                    "label": "Hora de cierre de la encuesta",
+                    "optional": " – opcional",
+                    "placeholder": "Sin hora establecida",
+                    "helper": "Una vez terminada la configuración, esta no se puede editar. Aun así, puedes cerrar o eliminar la encuesta manualmente."
+                }
+            },
+            "actions": {
+                "cancel": "Cancelar",
+                "publish": "Publicar"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Cancelar",
+            "close_poll": {
+                "confirmation_button": "Cerrar Encuesta"
+            },
+            "delete_poll": {
+                "confirmation_button": "Eliminar Encuesta"
+            }
+        },
+        "vote": {
+            "vote_recorded": "Su voto se ha registrado",
+            "register_see_vote": "Conéctese o regístrese para ver los resultados!"
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Disculpe, la encuesta ha sido cerrada.",
+                "link": "Ver Resultados de la Encuesta"
+            }
         }
     }
 }

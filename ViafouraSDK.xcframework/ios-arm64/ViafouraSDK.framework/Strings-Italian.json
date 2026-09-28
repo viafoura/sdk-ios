@@ -1320,7 +1320,49 @@
         "actions": {
             "close_poll": "Chiudi sondaggio",
             "delete_poll": "Elimina sondaggio",
-            "create": "Crea un sondaggio"
+            "create": "Crea un sondaggio",
+            "show_all_options": "Mostra tutte le opzioni"
+        },
+        "form": {
+            "title": "Crea sondaggio",
+            "fields": {
+                "question": "Domanda sondaggio",
+                "question_placeholder": "Obbligatorio",
+                "options_label": "Opzioni",
+                "options_hint": " – massimo {max} ({min} obbligatorio)",
+                "option_placeholder": "Opzione",
+                "add_option": "Aggiungi opzione",
+                "remove_option": "Rimuovi opzione",
+                "close_time": {
+                    "label": "Chiusura sondaggio",
+                    "optional": " – facoltativo",
+                    "placeholder": "Nessuna data impostata",
+                    "helper": "Una volta impostato, non è più possibile modificarlo. Puoi comunque chiudere o eliminare il sondaggio manualmente."
+                }
+            },
+            "actions": {
+                "cancel": "Annulla",
+                "publish": "Pubblica"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Cancella",
+            "close_poll": {
+                "confirmation_button": "Chiudi sondaggio"
+            },
+            "delete_poll": {
+                "confirmation_button": "Elimina sondaggio"
+            }
+        },
+        "vote": {
+            "vote_recorded": "Il tuo voto è stato registrato.",
+            "register_see_vote": "Accedi o Iscriviti per visualizzare i risultati!"
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Siamo spiacenti, il sondaggio è stato chiuso.",
+                "link": "Visualizza risultati sondaggio"
+            }
         }
     }
 }

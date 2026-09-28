@@ -1320,7 +1320,49 @@
         "actions": {
             "close_poll": "Fechar sondagem",
             "delete_poll": "Eliminar sondagem",
-            "create": "Criar uma sondagem"
+            "create": "Criar uma sondagem",
+            "show_all_options": "Mostrar todas as opções"
+        },
+        "form": {
+            "title": "Criar sondagem",
+            "fields": {
+                "question": "Pergunta da sondagem",
+                "question_placeholder": "Obrigatório",
+                "options_label": "Opções",
+                "options_hint": " – máximo {max} ({min} obrigatório)",
+                "option_placeholder": "Opção",
+                "add_option": "Adicionar opção",
+                "remove_option": "Opção de remoção",
+                "close_time": {
+                    "label": "Hora de encerramento da sondagem",
+                    "optional": " – opcional",
+                    "placeholder": "Ainda não há data marcada",
+                    "helper": "Depois de definido, isto não pode ser editado. Ainda pode encerrar ou eliminar a sondagem manualmente."
+                }
+            },
+            "actions": {
+                "cancel": "Cancelar",
+                "publish": "Publicar sondagem"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Cancelar",
+            "close_poll": {
+                "confirmation_button": "Fechar sondagem"
+            },
+            "delete_poll": {
+                "confirmation_button": "Eliminar sondagem"
+            }
+        },
+        "vote": {
+            "vote_recorded": "O seu voto foi registado.",
+            "register_see_vote": "Inicie sessão ou registe-se para ver os resultados!"
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Lamentamos, mas a sondagem já foi encerrada.",
+                "link": "Ver resultados da sondagem"
+            }
         }
     }
 }

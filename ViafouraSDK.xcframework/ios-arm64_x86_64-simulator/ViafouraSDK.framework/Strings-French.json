@@ -1320,7 +1320,47 @@
         "actions": {
             "close_poll": "Terminer le sondage",
             "delete_poll": "Supprimer le sondage",
-            "create": "Créer un sondage"
+            "create": "Créer un sondage",
+            "show_all_options": "Afficher toutes les options"
+        },
+        "form": {
+            "title": "Créer sondage",
+            "fields": {
+                "question": "Question sondage",
+                "question_placeholder": "Obligatoire",
+                "options_hint": " – maximum {max} ({min} obligatoire)",
+                "add_option": "Ajouter une option",
+                "remove_option": "Supprimer l'option",
+                "close_time": {
+                    "label": "Heure de fin du vote",
+                    "optional": " – optionnel",
+                    "placeholder": "Pas de date fixée",
+                    "helper": "Une fois défini, ce paramètre ne peut plus être modifié. Vous pouvez toujours fermer ou supprimer le message manuellement."
+                }
+            },
+            "actions": {
+                "cancel": "Annuler",
+                "publish": "Publier"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Annuler",
+            "close_poll": {
+                "confirmation_button": "Terminer le sondage"
+            },
+            "delete_poll": {
+                "confirmation_button": "Supprimer le sondage"
+            }
+        },
+        "vote": {
+            "vote_recorded": "Votre vote a été enregistré.",
+            "register_see_vote": "Connectez-vous ou inscrivez-vous pour voir les résultats !"
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Désolé, le sondage est terminé.",
+                "link": "Voir résultats"
+            }
         }
     }
 }

@@ -1314,7 +1314,48 @@
         "actions": {
             "close_poll": "Umfrage schließen",
             "delete_poll": "Umfrage löschen",
-            "create": "Umfrage erstellen"
+            "create": "Umfrage erstellen",
+            "show_all_options": "Alle Optionen zeigen"
+        },
+        "form": {
+            "title": "Umfrage erstellen",
+            "fields": {
+                "question": "Umfragefrage",
+                "question_placeholder": "Erforderlich",
+                "options_label": "Antwortoptionen",
+                "options_hint": " – maximal {max} ({min} erforderlich)",
+                "option_placeholder": "Antwortoption",
+                "add_option": "Option hinzufügen",
+                "remove_option": "Option entfernen",
+                "close_time": {
+                    "label": "Empfohlene Übersetzung",
+                    "placeholder": "Kein Datum festgelegt",
+                    "helper": "Nach dem Festlegen ist dies nicht mehr änderbar. Sie können die Umfrage jedoch manuell schließen oder löschen."
+                }
+            },
+            "actions": {
+                "cancel": "Abbrechen",
+                "publish": "Veröffentlichen"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Abbrechen",
+            "close_poll": {
+                "confirmation_button": "Umfrage schließen"
+            },
+            "delete_poll": {
+                "confirmation_button": "Umfrage löschen"
+            }
+        },
+        "vote": {
+            "vote_recorded": "Ihre Stimme wurde erfasst.",
+            "register_see_vote": "Anmelden oder registrieren, um Ergebnisse zu sehen!"
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Die Umfrage wurde geschlossen.",
+                "link": "Umfrageergebnisse anzeigen"
+            }
         }
     }
 }

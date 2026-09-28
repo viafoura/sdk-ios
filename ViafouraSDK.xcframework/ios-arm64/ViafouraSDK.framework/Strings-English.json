@@ -1369,7 +1369,58 @@
         "actions": {
             "close_poll": "Close Poll",
             "delete_poll": "Delete Poll",
-            "create": "Create Poll"
+            "create": "Create Poll",
+            "show_all_options": "Show all"
+        },
+        "standalone": {
+            "ready_title": "Ready to configure"
+        },
+        "form": {
+            "title": "Create Poll",
+            "fields": {
+                "question": "Question",
+                "question_placeholder": "Required",
+                "options_label": "Options",
+                "options_hint": " – maximum {max} ({min} required)",
+                "option_placeholder": "Option",
+                "add_option": "Add Option",
+                "remove_option": "Remove option",
+                "anonymous_voting": {
+                    "label": "Anonymous voting",
+                    "hint": "Responses are confidential and cannot be traced back to a user."
+                },
+                "close_time": {
+                    "label": "Poll close time",
+                    "optional": " – optional",
+                    "placeholder": "No date set",
+                    "helper": "Once set, this cannot be edited. You can still close or delete the poll manually."
+                }
+            },
+            "actions": {
+                "cancel": "Cancel",
+                "publish": "Publish"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Cancel",
+            "close_poll": {
+                "confirmation_button": "Close Poll",
+                "text": "Closing this poll will end voting and publish the results."
+            },
+            "delete_poll": {
+                "confirmation_button": "Delete Poll",
+                "text": "Deleting this poll removes it from view without notifying users. Any voting data remains available in analytics."
+            }
+        },
+        "vote": {
+            "vote_recorded": "Your response has been recorded.",
+            "register_see_vote": "Log in to view the results."
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Sorry, the poll has been closed.",
+                "link": "View Poll Results"
+            }
         }
     }
 }

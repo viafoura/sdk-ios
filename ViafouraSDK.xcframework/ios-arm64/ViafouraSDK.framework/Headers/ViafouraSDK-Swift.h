@@ -663,7 +663,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK29VFNewCommentsNotificationView")
 
 SWIFT_CLASS("_TtC11ViafouraSDK22VFNotificationBellView")
 @interface VFNotificationBellView : UIView
-@property (nonatomic) CGRect bounds;
+- (void)layoutSubviews;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -677,13 +677,9 @@ SWIFT_CLASS("_TtC11ViafouraSDK12VFPinnedView")
 SWIFT_CLASS("_TtC11ViafouraSDK20VFPollViewController")
 @interface VFPollViewController : VFUIViewController
 - (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class UITextField;
-@interface VFPollViewController (SWIFT_EXTENSION(ViafouraSDK)) <UITextFieldDelegate>
-- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 @end
 
 SWIFT_CLASS("_TtC11ViafouraSDK23VFPoweredByViafouraView")
