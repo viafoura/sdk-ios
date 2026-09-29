@@ -82,8 +82,8 @@ class SignUpViewController: UIViewController{
         view.addSubview(submitButton)
 
         loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.isHidden = true
         loadingView.startAnimating()
+        loadingView.isHidden = true
         view.addSubview(loadingView)
 
         closeImage.translatesAutoresizingMaskIntoConstraints = false
