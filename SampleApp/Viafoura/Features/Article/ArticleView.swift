@@ -174,7 +174,7 @@ private struct ArticleWebView: UIViewRepresentable {
 
 private struct LoginView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
-        LoginViewController.new() ?? UIViewController()
+        LoginViewController()
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}

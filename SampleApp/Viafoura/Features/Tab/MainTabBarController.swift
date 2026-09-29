@@ -20,5 +20,10 @@ class MainTabBarController: UITabBarController{
             self.tabBar.standardAppearance = appearance
             self.tabBar.scrollEdgeAppearance = self.tabBar.standardAppearance
         }
+
+        let homeNavigationController = CustomNavigationController(rootViewController: HomeViewController())
+        homeNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 0)
+        homeNavigationController.tabBarItem.selectedImage = UIImage(named: "home")
+        viewControllers = [homeNavigationController]
     }
 }

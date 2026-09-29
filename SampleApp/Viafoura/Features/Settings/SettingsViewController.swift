@@ -8,14 +8,23 @@
 import UIKit
 class SettingsViewController: UITableViewController {
     let viewModel = SettingsViewModel()
-    
-    @IBOutlet weak var doneBarItem: UIBarButtonItem!
+
+    init() {
+        super.init(style: .plain)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        doneBarItem.target = self
-        doneBarItem.action = #selector(donePressed)
+        title = "Settings"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePressed))
+
+        tableView.backgroundColor = .systemBackground
+        tableView.register(SettingCell.self, forCellReuseIdentifier: "settingCell")
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.darkModeChanged(notification:)), name: Notification.Name(SettingsKeys.darkMode), object: nil)
     }
@@ -35,7 +44,7 @@ class SettingsViewController: UITableViewController {
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
     }
     
-    @objc func donePressed(sender: UIButton) {
+    @objc func donePressed() {
         self.dismiss(animated: true)
     }
     

@@ -9,12 +9,84 @@ import UIKit
 import Kingfisher
 
 class StoryTableViewCell: UITableViewCell{
-    @IBOutlet weak var storyTitleLabel: UILabel!
-    @IBOutlet weak var storyDescLabel: UILabel!
-    @IBOutlet weak var storyCategoryLabel: UILabel!
-    @IBOutlet weak var storyAuthorLabel: UILabel!
-    @IBOutlet weak var storyPictureImage: UIImageView!
-    @IBOutlet weak var storyView: UIView!
+    let storyTitleLabel = UILabel()
+    let storyDescLabel = UILabel()
+    let storyCategoryLabel = UILabel()
+    let storyAuthorLabel = UILabel()
+    let storyPictureImage = UIImageView()
+    let storyView = UIView()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupLayout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupLayout(){
+        backgroundColor = .clear
+        contentView.backgroundColor = .systemBackground
+
+        storyView.translatesAutoresizingMaskIntoConstraints = false
+        storyView.backgroundColor = .systemBackground
+        contentView.addSubview(storyView)
+
+        storyPictureImage.translatesAutoresizingMaskIntoConstraints = false
+        storyPictureImage.contentMode = .scaleAspectFill
+        storyPictureImage.clipsToBounds = true
+        storyView.addSubview(storyPictureImage)
+
+        storyTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        storyTitleLabel.font = .systemFont(ofSize: 23, weight: .heavy)
+        storyTitleLabel.textColor = .black
+        storyView.addSubview(storyTitleLabel)
+
+        storyDescLabel.translatesAutoresizingMaskIntoConstraints = false
+        storyDescLabel.font = .systemFont(ofSize: 16, weight: .light)
+        storyDescLabel.textColor = .black
+        storyDescLabel.numberOfLines = 3
+        storyView.addSubview(storyDescLabel)
+
+        let metadataColor = UIColor(white: 0.667, alpha: 1)
+
+        storyCategoryLabel.translatesAutoresizingMaskIntoConstraints = false
+        storyCategoryLabel.font = .systemFont(ofSize: 13)
+        storyCategoryLabel.textColor = metadataColor
+        storyView.addSubview(storyCategoryLabel)
+
+        storyAuthorLabel.translatesAutoresizingMaskIntoConstraints = false
+        storyAuthorLabel.font = .systemFont(ofSize: 13)
+        storyAuthorLabel.textColor = metadataColor
+        storyView.addSubview(storyAuthorLabel)
+
+        NSLayoutConstraint.activate([
+            storyView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            storyView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            storyView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            storyView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+
+            storyPictureImage.topAnchor.constraint(equalTo: storyView.topAnchor),
+            storyPictureImage.leadingAnchor.constraint(equalTo: storyView.leadingAnchor),
+            storyPictureImage.trailingAnchor.constraint(equalTo: storyView.trailingAnchor),
+            storyPictureImage.heightAnchor.constraint(equalToConstant: 100),
+
+            storyTitleLabel.topAnchor.constraint(equalTo: storyPictureImage.bottomAnchor, constant: 10),
+            storyTitleLabel.leadingAnchor.constraint(equalTo: storyView.leadingAnchor, constant: 20),
+            storyTitleLabel.trailingAnchor.constraint(equalTo: storyView.trailingAnchor, constant: -20),
+
+            storyDescLabel.topAnchor.constraint(equalTo: storyTitleLabel.bottomAnchor),
+            storyDescLabel.leadingAnchor.constraint(equalTo: storyView.leadingAnchor, constant: 20),
+            storyDescLabel.trailingAnchor.constraint(equalTo: storyView.trailingAnchor, constant: -20),
+
+            storyCategoryLabel.topAnchor.constraint(equalTo: storyDescLabel.bottomAnchor, constant: 20),
+            storyCategoryLabel.leadingAnchor.constraint(equalTo: storyView.leadingAnchor, constant: 20),
+
+            storyAuthorLabel.topAnchor.constraint(equalTo: storyDescLabel.bottomAnchor, constant: 20),
+            storyAuthorLabel.leadingAnchor.constraint(equalTo: storyCategoryLabel.trailingAnchor, constant: 5)
+        ])
+    }
     
     func setup(forStory story: Story){
         storyTitleLabel.text = story.title

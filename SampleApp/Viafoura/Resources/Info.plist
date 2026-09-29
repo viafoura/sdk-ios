@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera to update your avatar</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to your photo library to update your avatar</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -17,8 +13,10 @@
 	</array>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera to update your avatar</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to update your avatar</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -183,8 +181,6 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 		</dict>
@@ -193,6 +189,11 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>LaunchLogo</string>
+	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>

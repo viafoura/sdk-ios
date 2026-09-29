@@ -9,11 +9,9 @@ import UIKit
 import SwiftUI
 import ViafouraSDK
 
-class HomeViewController: UIViewController, StoryboardCreateable {
-    static var storyboardName = "Home"
-
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var customAddView: UIView!
+class HomeViewController: UIViewController {
+    let tableView = UITableView(frame: .zero, style: .plain)
+    let customAddView = UIView()
     
     let viewModel = HomeViewModel()
         
@@ -27,6 +25,7 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupLayout()
         setupUI()
     }
 
@@ -35,6 +34,54 @@ class HomeViewController: UIViewController, StoryboardCreateable {
         
         updateStyling()
         setNotificationBell()
+    }
+
+    func setupLayout(){
+        title = "Home"
+        view.backgroundColor = .systemBackground
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(settingsTapped))
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .clear
+        tableView.register(StoryTableViewCell.self, forCellReuseIdentifier: CellIdentifier.storyCell)
+        tableView.register(PollTableViewCell.self, forCellReuseIdentifier: CellIdentifier.pollCell)
+        view.addSubview(tableView)
+
+        customAddView.translatesAutoresizingMaskIntoConstraints = false
+        customAddView.backgroundColor = AppStyle.tintColor
+        customAddView.layer.cornerRadius = 24
+        customAddView.clipsToBounds = true
+        view.addSubview(customAddView)
+
+        let plusImageView = UIImageView(image: UIImage(systemName: "plus"))
+        plusImageView.translatesAutoresizingMaskIntoConstraints = false
+        plusImageView.contentMode = .scaleAspectFit
+        plusImageView.tintColor = .white
+        customAddView.addSubview(plusImageView)
+
+        let safeArea = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+
+            customAddView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+            customAddView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -20),
+            customAddView.widthAnchor.constraint(equalToConstant: 48),
+            customAddView.heightAnchor.constraint(equalToConstant: 48),
+
+            plusImageView.topAnchor.constraint(equalTo: customAddView.topAnchor, constant: 4),
+            plusImageView.bottomAnchor.constraint(equalTo: customAddView.bottomAnchor, constant: -4),
+            plusImageView.leadingAnchor.constraint(equalTo: customAddView.leadingAnchor, constant: 4),
+            plusImageView.trailingAnchor.constraint(equalTo: customAddView.trailingAnchor, constant: -4)
+        ])
+    }
+
+    @objc
+    func settingsTapped(){
+        let settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
+        present(settingsNavigationController, animated: true)
     }
     
     func setNotificationBell(){
@@ -123,9 +170,7 @@ class HomeViewController: UIViewController, StoryboardCreateable {
     
     @objc
     func loginTapped(){
-        guard let loginVC = LoginViewController.new() else{
-            return
-        }
+        let loginVC = LoginViewController()
         
         loginVC.onDoneBlock = { [weak self] result in
             self?.getAuthState()
@@ -194,10 +239,9 @@ class HomeViewController: UIViewController, StoryboardCreateable {
             return
         }
 
-        guard let articleVC = ArticleViewController.new() else { return }
         let articleViewModel = ArticleViewModel(story: story)
         articleViewModel.focusedContentUUID = focusedContentUUID
-        articleVC.articleViewModel = articleViewModel
+        let articleVC = ArticleViewController(viewModel: articleViewModel)
         articleVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(articleVC, animated: true)
     }
@@ -219,10 +263,7 @@ extension HomeViewController: UITableViewDelegate{
         if let story = content.story {
             openArticle(story: story)
         } else if let poll = content.poll {
-            guard let pollVC = PollViewController.new() else{
-                return
-            }
-            pollVC.pollViewModel = PollViewModel(poll: poll)
+            let pollVC = PollViewController(viewModel: PollViewModel(poll: poll))
             pollVC.modalPresentationStyle = .overCurrentContext
 
             self.present(pollVC, animated: true)
@@ -241,11 +282,11 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let content = viewModel.contents[indexPath.row]
         if content.type == .story, let story = content.story {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.storyCell) as! StoryTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.storyCell, for: indexPath) as! StoryTableViewCell
             cell.setup(forStory: story)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.pollCell) as! PollTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.pollCell, for: indexPath) as! PollTableViewCell
             if let poll = content.poll {
                 cell.setup(forPoll: poll)
             } else if let liveChat = content.liveChat {
@@ -268,21 +309,15 @@ private extension HomeViewController {
 
     func presentLiveChat(_ liveChat: LiveChat) {
         if liveChat.type == .portraitOverlay {
-            guard let liveChatVC = LiveChatPortraitOverlayViewController.new() else{
-                return
-            }
+            let liveChatVC = LiveChatPortraitOverlayViewController(viewModel: LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata()))
 
             liveChatVC.modalPresentationStyle = .fullScreen
-            liveChatVC.viewModel = LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata())
             liveChatVC.hidesBottomBarWhenPushed = true
             present(liveChatVC, animated: true)
         } else if liveChat.type == .portrait {
-            guard let liveChatVC = LiveChatPortraitViewController.new() else{
-                return
-            }
+            let liveChatVC = LiveChatPortraitViewController(viewModel: LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata()))
 
             liveChatVC.modalPresentationStyle = .pageSheet
-            liveChatVC.viewModel = LiveChatViewModel(containerId: liveChat.containerId, articleMetadata: articleMetadata())
             liveChatVC.hidesBottomBarWhenPushed = true
             present(liveChatVC, animated: true)
         } else {

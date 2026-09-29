@@ -9,26 +9,120 @@ import AVKit
 import UIKit
 import ViafouraSDK
 
-class LiveChatPortraitViewController: UIViewController, StoryboardCreateable {
-    static var storyboardName = "LiveChatPortrait"
+class LiveChatPortraitViewController: UIViewController {
+    let viewModel: LiveChatViewModel
 
-    var viewModel: LiveChatViewModel!
-
-    @IBOutlet weak var videoContainerView: UIView!
-    @IBOutlet weak var videoContainerViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var containerView: UIView!
+    let videoContainerView = UIView()
+    let liveBadgeView = UIView()
+    let chatHeaderView = UIView()
+    let containerView = UIView()
 
     var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
+
+    init(viewModel: LiveChatViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
         setupVideo()
         setupUI()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        playerLayer?.frame = videoContainerView.bounds
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    func setupLayout(){
+        view.backgroundColor = .black
+
+        videoContainerView.translatesAutoresizingMaskIntoConstraints = false
+        videoContainerView.backgroundColor = .clear
+        view.addSubview(videoContainerView)
+
+        liveBadgeView.translatesAutoresizingMaskIntoConstraints = false
+        liveBadgeView.backgroundColor = .systemRed
+        liveBadgeView.layer.cornerRadius = 3
+        liveBadgeView.clipsToBounds = true
+        view.addSubview(liveBadgeView)
+
+        let liveLabel = UILabel()
+        liveLabel.translatesAutoresizingMaskIntoConstraints = false
+        liveLabel.text = "LIVE"
+        liveLabel.font = .systemFont(ofSize: 17)
+        liveLabel.textColor = .white
+        liveBadgeView.addSubview(liveLabel)
+
+        chatHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        chatHeaderView.backgroundColor = .white
+        view.addSubview(chatHeaderView)
+
+        let chatLabel = UILabel()
+        chatLabel.translatesAutoresizingMaskIntoConstraints = false
+        chatLabel.text = "CHAT"
+        chatLabel.font = .boldSystemFont(ofSize: 17)
+        chatLabel.textColor = .black
+        chatHeaderView.addSubview(chatLabel)
+
+        let liveDotView = UIView()
+        liveDotView.translatesAutoresizingMaskIntoConstraints = false
+        liveDotView.backgroundColor = .systemRed
+        liveDotView.layer.cornerRadius = 2.5
+        liveDotView.clipsToBounds = true
+        chatHeaderView.addSubview(liveDotView)
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = .clear
+        view.addSubview(containerView)
+
+        let safeArea = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            videoContainerView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            videoContainerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            videoContainerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            videoContainerView.heightAnchor.constraint(equalTo: videoContainerView.widthAnchor, multiplier: 9.0 / 16.0),
+
+            liveBadgeView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
+            liveBadgeView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+            liveBadgeView.heightAnchor.constraint(equalToConstant: 30),
+
+            liveLabel.topAnchor.constraint(equalTo: liveBadgeView.topAnchor, constant: 5),
+            liveLabel.bottomAnchor.constraint(equalTo: liveBadgeView.bottomAnchor, constant: -5),
+            liveLabel.leadingAnchor.constraint(equalTo: liveBadgeView.leadingAnchor, constant: 10),
+            liveLabel.trailingAnchor.constraint(equalTo: liveBadgeView.trailingAnchor, constant: -10),
+
+            chatHeaderView.topAnchor.constraint(equalTo: videoContainerView.bottomAnchor),
+            chatHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            chatHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            chatHeaderView.heightAnchor.constraint(equalToConstant: 50),
+
+            chatLabel.leadingAnchor.constraint(equalTo: chatHeaderView.leadingAnchor, constant: 20),
+            chatLabel.centerYAnchor.constraint(equalTo: chatHeaderView.centerYAnchor),
+
+            liveDotView.leadingAnchor.constraint(equalTo: chatLabel.trailingAnchor, constant: 10),
+            liveDotView.centerYAnchor.constraint(equalTo: chatHeaderView.centerYAnchor),
+            liveDotView.widthAnchor.constraint(equalToConstant: 5),
+            liveDotView.heightAnchor.constraint(equalToConstant: 5),
+
+            containerView.topAnchor.constraint(equalTo: chatHeaderView.bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     func setupUI(){
@@ -54,7 +148,13 @@ class LiveChatPortraitViewController: UIViewController, StoryboardCreateable {
         addChild(vc)
         containerView.addSubview(vc.view)
         
-        vc.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            vc.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            vc.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            vc.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
         
         vc.willMove(toParent: self)
         vc.didMove(toParent: self)
@@ -87,11 +187,10 @@ class LiveChatPortraitViewController: UIViewController, StoryboardCreateable {
             return
         }
         
-        self.videoContainerViewHeight.constant = view.frame.width / (16 / 9)
-        
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.videoContainerView.bounds
         self.videoContainerView.layer.addSublayer(playerLayer)
+        self.playerLayer = playerLayer
         player.isMuted = true
         player.play()
         
@@ -116,10 +215,6 @@ class LiveChatPortraitViewController: UIViewController, StoryboardCreateable {
 
 extension LiveChatPortraitViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = LoginViewController.new() else{
-            return
-        }
-        
-        self.present(loginVC, animated: true)
+        self.present(LoginViewController(), animated: true)
     }
 }

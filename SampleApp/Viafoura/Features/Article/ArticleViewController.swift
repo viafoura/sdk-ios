@@ -11,32 +11,108 @@ import WebKit
 import ViafouraSDK
 import GoogleMobileAds
 
-class ArticleViewController: UIViewController, StoryboardCreateable {
-    static var storyboardName = "Article"
+class ArticleViewController: UIViewController {
+    let articleViewModel: ArticleViewModel
+    
+    let scrollView = UIScrollView()
+    
+    let webView: WKWebView
+    var webViewHeight: NSLayoutConstraint!
+    
+    let activityIndicator = UIActivityIndicatorView(style: .medium)
+    
+    let conversationStarterContainerView = UIView()
+    var conversationStarterContainerViewHeight: NSLayoutConstraint!
 
-    var articleViewModel: ArticleViewModel!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var webViewHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var conversationStarterContainerView: UIView!
-    @IBOutlet weak var conversationStarterContainerViewHeight: NSLayoutConstraint!
-
-    @IBOutlet weak var commentsContainerView: UIView!
-    @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
+    let commentsContainerView = UIView()
+    var commentsContainerViewHeight: NSLayoutConstraint!
 
     var settings: VFSettings?
     
     let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
+
+    init(viewModel: ArticleViewModel) {
+        self.articleViewModel = viewModel
+
+        // WKWebView copies its configuration at init, so playback options must be set here.
+        let configuration = WKWebViewConfiguration()
+        configuration.mediaTypesRequiringUserActionForPlayback = .all
+        configuration.allowsInlineMediaPlayback = true
+        self.webView = WKWebView(frame: .zero, configuration: configuration)
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
         setupUI()
+    }
+
+    func setupLayout(){
+        view.backgroundColor = .systemBackground
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .clear
+        view.addSubview(scrollView)
+
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.isHidden = true
+        webView.backgroundColor = UIColor(red: 0.36, green: 0.39, blue: 0.40, alpha: 1.00)
+        scrollView.addSubview(webView)
+
+        conversationStarterContainerView.translatesAutoresizingMaskIntoConstraints = false
+        conversationStarterContainerView.isHidden = true
+        conversationStarterContainerView.backgroundColor = .clear
+        scrollView.addSubview(conversationStarterContainerView)
+
+        commentsContainerView.translatesAutoresizingMaskIntoConstraints = false
+        commentsContainerView.isHidden = true
+        commentsContainerView.backgroundColor = .clear
+        scrollView.addSubview(commentsContainerView)
+
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.color = AppStyle.tintColor
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+
+        webViewHeight = webView.heightAnchor.constraint(equalToConstant: 0)
+        conversationStarterContainerViewHeight = conversationStarterContainerView.heightAnchor.constraint(equalToConstant: 0)
+        commentsContainerViewHeight = commentsContainerView.heightAnchor.constraint(equalToConstant: 0)
+
+        let safeArea = view.safeAreaLayoutGuide
+        let content = scrollView.contentLayoutGuide
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+
+            webView.topAnchor.constraint(equalTo: content.topAnchor),
+            webView.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: content.trailingAnchor),
+            webView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+            webViewHeight,
+
+            conversationStarterContainerView.topAnchor.constraint(equalTo: webView.bottomAnchor),
+            conversationStarterContainerView.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            conversationStarterContainerView.trailingAnchor.constraint(equalTo: content.trailingAnchor),
+            conversationStarterContainerViewHeight,
+
+            commentsContainerView.topAnchor.constraint(equalTo: conversationStarterContainerView.bottomAnchor),
+            commentsContainerView.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            commentsContainerView.trailingAnchor.constraint(equalTo: content.trailingAnchor),
+            commentsContainerView.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -100),
+            commentsContainerViewHeight,
+
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     func addComponents(){
@@ -80,9 +156,6 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        
-        webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
-        webView.configuration.allowsInlineMediaPlayback = true
 
         let contentController = webView.configuration.userContentController
         contentController.add(MessageHandlerLeakAvoider(delegate: self), name: "messageHandler")
@@ -210,7 +283,13 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         addChild(preCommentsViewController)
         commentsContainerView.addSubview(preCommentsViewController.view)
         
-        preCommentsViewController.view.frame = CGRect(x: 0, y: 0, width: commentsContainerView.frame.width, height: preCommentsViewController.view.frame.height)
+        preCommentsViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            preCommentsViewController.view.topAnchor.constraint(equalTo: commentsContainerView.topAnchor),
+            preCommentsViewController.view.bottomAnchor.constraint(equalTo: commentsContainerView.bottomAnchor),
+            preCommentsViewController.view.leadingAnchor.constraint(equalTo: commentsContainerView.leadingAnchor),
+            preCommentsViewController.view.trailingAnchor.constraint(equalTo: commentsContainerView.trailingAnchor)
+        ])
         
         preCommentsViewController.willMove(toParent: self)
         preCommentsViewController.didMove(toParent: self)
@@ -260,13 +339,10 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func presentArticle(containerId: String, contentUUID: UUID?){
-        guard let articleVC = ArticleViewController.new() else{
-            return
-        }
-        
         if let content = defaultContents.filter({ $0.story?.containerId == containerId }).first, let story = content.story {
-            articleVC.articleViewModel = ArticleViewModel(story: story)
-            articleVC.articleViewModel.selectedContentUUID = contentUUID
+            let viewModel = ArticleViewModel(story: story)
+            viewModel.selectedContentUUID = contentUUID
+            let articleVC = ArticleViewController(viewModel: viewModel)
             articleVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(articleVC, animated: true)
         }
@@ -301,10 +377,7 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func presentCommentsContainerViewController(){
-        guard let commentsVC = CommentsContainerViewController.new() else{
-            return
-        }
-        commentsVC.viewModel = CommentsContainerViewModel(story: articleViewModel.story)
+        let commentsVC = CommentsContainerViewController(viewModel: CommentsContainerViewModel(story: articleViewModel.story))
         
         self.navigationController?.pushViewController(commentsVC, animated: true)
     }
@@ -354,11 +427,7 @@ extension ArticleViewController: WKUIDelegate{
 
 extension ArticleViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = LoginViewController.new() else{
-            return
-        }
-        
-        self.present(loginVC, animated: true)
+        self.present(LoginViewController(), animated: true)
     }
 }
 

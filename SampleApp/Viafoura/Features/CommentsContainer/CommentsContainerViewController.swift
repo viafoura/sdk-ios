@@ -8,19 +8,30 @@
 import UIKit
 import ViafouraSDK
 
-class CommentsContainerViewController: UIViewController, StoryboardCreateable {
-    static var storyboardName = "CommentsContainer"
+class CommentsContainerViewController: UIViewController {
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    let containerView = UIView()
+    var containerViewHeight: NSLayoutConstraint!
 
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
-
-    var viewModel: CommentsContainerViewModel!
+    let viewModel: CommentsContainerViewModel
     var settings: VFSettings!
 
     let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
 
+    init(viewModel: CommentsContainerViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupLayout()
 
         if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
             view.backgroundColor = darkBackgroundColor
@@ -32,6 +43,49 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
         addPreCommentViewController()
     }
     
+    func setupLayout(){
+        title = "Conversation"
+        view.backgroundColor = .white
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .clear
+        view.addSubview(scrollView)
+
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = .clear
+        scrollView.addSubview(contentView)
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = .clear
+        contentView.addSubview(containerView)
+
+        containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: 300)
+
+        let contentViewHeight = contentView.heightAnchor.constraint(equalTo: view.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+
+        let safeArea = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+
+            contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            contentViewHeight,
+
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            containerViewHeight
+        ])
+    }
+
     func addPreCommentViewController(){
         guard let settings = settings else {
             return
@@ -72,7 +126,13 @@ class CommentsContainerViewController: UIViewController, StoryboardCreateable {
         addChild(preCommentsViewController)
         containerView.addSubview(preCommentsViewController.view)
         
-        preCommentsViewController.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: preCommentsViewController.view.frame.height)
+        preCommentsViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            preCommentsViewController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            preCommentsViewController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            preCommentsViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            preCommentsViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
         
         preCommentsViewController.willMove(toParent: self)
         preCommentsViewController.didMove(toParent: self)
@@ -153,11 +213,7 @@ extension CommentsContainerViewController: VFAdDelegate {
 
 extension CommentsContainerViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = LoginViewController.new() else{
-            return
-        }
-        
-        self.present(loginVC, animated: true)
+        self.present(LoginViewController(), animated: true)
     }
 }
 

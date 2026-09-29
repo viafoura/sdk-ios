@@ -9,27 +9,86 @@ import AVKit
 import UIKit
 import ViafouraSDK
 
-class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreateable {
-    static var storyboardName = "LiveChatPortraitOverlay"
+class LiveChatPortraitOverlayViewController: UIViewController {
+    let viewModel: LiveChatViewModel
 
-    var viewModel: LiveChatViewModel!
-
-    @IBOutlet weak var videoContainerView: UIView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var closeImage: UIImageView!
+    let videoContainerView = UIView()
+    let containerView = UIView()
+    let closeImage = UIImageView(image: UIImage(systemName: "xmark.circle"))
 
     var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
+    private var gradientLayer: CAGradientLayer?
+
+    init(viewModel: LiveChatViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
         setupVideo()
         setupUI()
         setupClose()
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        playerLayer?.frame = videoContainerView.bounds
+
+        // The gradient and fade mask are sized from the container bounds, which are
+        // only known once Auto Layout has run.
+        if gradientLayer == nil, containerView.bounds.isEmpty == false {
+            createGradientBackground()
+        }
+        gradientLayer?.frame = containerView.bounds
+        containerView.layer.mask?.frame = containerView.bounds
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    func setupLayout(){
+        view.backgroundColor = .black
+
+        videoContainerView.translatesAutoresizingMaskIntoConstraints = false
+        videoContainerView.backgroundColor = .clear
+        view.addSubview(videoContainerView)
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = .clear
+        view.addSubview(containerView)
+
+        closeImage.translatesAutoresizingMaskIntoConstraints = false
+        closeImage.contentMode = .scaleAspectFit
+        closeImage.tintColor = .white
+        view.addSubview(closeImage)
+
+        let safeArea = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            videoContainerView.topAnchor.constraint(equalTo: view.topAnchor),
+            videoContainerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            videoContainerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            videoContainerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+
+            containerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 600),
+
+            closeImage.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
+            closeImage.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+            closeImage.widthAnchor.constraint(equalToConstant: 35),
+            closeImage.heightAnchor.constraint(equalToConstant: 35)
+        ])
     }
     
     func setupClose(){
@@ -52,6 +111,7 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
          gradientLayer.frame = self.containerView.bounds
                  
          self.containerView.layer.insertSublayer(gradientLayer, at: 0)
+        self.gradientLayer = gradientLayer
         containerView.fadeView(style: .top, percentage: 0.1)
     }
     
@@ -78,15 +138,19 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
         addChild(vc)
         containerView.addSubview(vc.view)
         
-        vc.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            vc.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            vc.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            vc.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            vc.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
         
         vc.willMove(toParent: self)
         vc.didMove(toParent: self)
         
         vc.setTheme(theme: .dark)
         vc.setActionCallbacks(callbacks: callbacks)
-        
-        createGradientBackground()
     }
     
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
@@ -117,6 +181,7 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.videoContainerView.bounds
         self.videoContainerView.layer.addSublayer(playerLayer)
+        self.playerLayer = playerLayer
         player.isMuted = true
         player.play()
         
@@ -139,10 +204,6 @@ class LiveChatPortraitOverlayViewController: UIViewController, StoryboardCreatea
 
 extension LiveChatPortraitOverlayViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = LoginViewController.new() else{
-            return
-        }
-        
-        self.present(loginVC, animated: true)
+        self.present(LoginViewController(), animated: true)
     }
 }
