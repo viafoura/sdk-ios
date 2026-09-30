@@ -206,7 +206,6 @@ extension LiveQuestionsViewController: VFLayoutDelegate {
 
 extension LiveQuestionsViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginViewController = LoginViewController.new() else { return }
-        topmostPresentedViewController().present(loginViewController, animated: true)
+        topmostPresentedViewController().present(LoginViewController(), animated: true)
     }
 }

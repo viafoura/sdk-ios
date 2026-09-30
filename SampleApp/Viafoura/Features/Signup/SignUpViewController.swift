@@ -7,23 +7,32 @@
 
 import Foundation
 import UIKit
-class SignUpViewController: UIViewController, StoryboardCreateable{
-    static var storyboardName = "SignUp"
-
+class SignUpViewController: UIViewController{
     let viewModel = SignUpViewModel()
+
+    let logoImageView = UIImageView(image: UIImage(named: "logo"))
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    let nameTextField = UITextField()
+    let emailTextField = UITextField()
+    let passwordTextField = UITextField()
     
-    @IBOutlet weak var loadingView: UIActivityIndicatorView!
-    @IBOutlet weak var submitButton: UIButton!
+    let loadingView = UIActivityIndicatorView(style: .medium)
+    let submitButton = UIButton(type: .system)
     
-    @IBOutlet weak var closeImage: UIImageView!
+    let closeImage = UIImageView(image: UIImage(systemName: "xmark"))
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
         hideKeyboardWhenTappedAround()
         setupUI()
     }
@@ -36,6 +45,82 @@ class SignUpViewController: UIViewController, StoryboardCreateable{
     
     func updateStyling(){
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true ? .dark : .light
+    }
+
+    private func configure(_ textField: UITextField, placeholder: String) {
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        textField.placeholder = placeholder
+        textField.font = .systemFont(ofSize: 14)
+        textField.backgroundColor = .clear
+        view.addSubview(textField)
+    }
+
+    func setupLayout(){
+        view.backgroundColor = .systemBackground
+
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.contentMode = .scaleAspectFill
+        logoImageView.clipsToBounds = true
+        view.addSubview(logoImageView)
+
+        configure(nameTextField, placeholder: "Name")
+        nameTextField.textContentType = .name
+
+        configure(emailTextField, placeholder: "E-mail")
+        emailTextField.textContentType = .emailAddress
+        emailTextField.keyboardType = .emailAddress
+
+        configure(passwordTextField, placeholder: "Password")
+        passwordTextField.textContentType = .password
+        passwordTextField.isSecureTextEntry = true
+
+        var submitConfiguration = UIButton.Configuration.plain()
+        submitConfiguration.title = "Sign-up"
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        submitButton.configuration = submitConfiguration
+        view.addSubview(submitButton)
+
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.startAnimating()
+        loadingView.isHidden = true
+        view.addSubview(loadingView)
+
+        closeImage.translatesAutoresizingMaskIntoConstraints = false
+        closeImage.contentMode = .scaleAspectFit
+        view.addSubview(closeImage)
+
+        let safeArea = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 30),
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: 300),
+            logoImageView.heightAnchor.constraint(equalToConstant: 150),
+
+            nameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 60),
+            nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 30),
+            nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -30),
+
+            emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 30),
+            emailTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 30),
+            emailTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -30),
+
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30),
+            passwordTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 30),
+            passwordTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -30),
+
+            submitButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+            submitButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 30),
+            submitButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -30),
+
+            loadingView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 55),
+            loadingView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            closeImage.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
+            closeImage.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+            closeImage.widthAnchor.constraint(equalToConstant: 30),
+            closeImage.heightAnchor.constraint(equalToConstant: 30)
+        ])
     }
     
     func setupUI(){

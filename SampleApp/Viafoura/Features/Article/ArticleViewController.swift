@@ -1,48 +1,151 @@
-//
-//  ArticleViewController.swift
-//  Viafoura
-//
-//  Created by Martin De Simone on 26/04/2022.
-//
-
 import Foundation
 import UIKit
-import WebKit
+import Kingfisher
 import ViafouraSDK
 import GoogleMobileAds
 
-class ArticleViewController: UIViewController, StoryboardCreateable {
-    static var storyboardName = "Article"
+class ArticleViewController: UIViewController {
+    let articleViewModel: ArticleViewModel
+    
+    let scrollView = UIScrollView()
+    let contentStackView = UIStackView()
 
-    var articleViewModel: ArticleViewModel!
+    let pictureImageView = UIImageView()
+    let categoryLabel = UILabel()
+    let titleLabel = UILabel()
+    let descriptionLabel = UILabel()
+    let authorLabel = UILabel()
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var webViewHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var conversationStarterContainerView: UIView!
-    @IBOutlet weak var conversationStarterContainerViewHeight: NSLayoutConstraint!
+    let conversationStarterContainerView = UIView()
+    var conversationStarterContainerViewHeight: NSLayoutConstraint!
 
-    @IBOutlet weak var commentsContainerView: UIView!
-    @IBOutlet weak var commentsContainerViewHeight: NSLayoutConstraint!
+    let commentsContainerView = UIView()
+    var commentsContainerViewHeight: NSLayoutConstraint!
 
     var settings: VFSettings?
     
     let darkBackgroundColor = UIColor(red: 0.16, green: 0.15, blue: 0.17, alpha: 1.00)
+
+    init(viewModel: ArticleViewModel) {
+        self.articleViewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupLayout()
         setupUI()
+        addComponents()
+    }
+
+    func setupLayout(){
+        view.backgroundColor = .systemBackground
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .clear
+        view.addSubview(scrollView)
+
+        contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        contentStackView.axis = .vertical
+        contentStackView.alignment = .fill
+        contentStackView.spacing = 0
+        scrollView.addSubview(contentStackView)
+
+        pictureImageView.translatesAutoresizingMaskIntoConstraints = false
+        pictureImageView.contentMode = .scaleAspectFill
+        pictureImageView.clipsToBounds = true
+        contentStackView.addArrangedSubview(pictureImageView)
+
+        categoryLabel.font = .systemFont(ofSize: 12, weight: .semibold)
+        categoryLabel.textColor = AppStyle.tintColor
+        titleLabel.font = .systemFont(ofSize: 28, weight: .bold)
+        titleLabel.textColor = .label
+        titleLabel.numberOfLines = 0
+        descriptionLabel.font = .systemFont(ofSize: 20)
+        descriptionLabel.textColor = .secondaryLabel
+        descriptionLabel.numberOfLines = 0
+        authorLabel.font = .systemFont(ofSize: 15, weight: .medium)
+        authorLabel.textColor = .secondaryLabel
+
+        let headerStackView = UIStackView(arrangedSubviews: [categoryLabel, titleLabel, descriptionLabel, authorLabel])
+        headerStackView.axis = .vertical
+        headerStackView.spacing = 8
+        headerStackView.setCustomSpacing(12, after: descriptionLabel)
+        headerStackView.isLayoutMarginsRelativeArrangement = true
+        headerStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20)
+        contentStackView.addArrangedSubview(headerStackView)
+
+        contentStackView.addArrangedSubview(makeBodyStackView(blocks: ArticleContent.blocks.prefix(ArticleContent.engagementStarterIndex)))
+
+        conversationStarterContainerView.translatesAutoresizingMaskIntoConstraints = false
+        conversationStarterContainerView.backgroundColor = .clear
+        contentStackView.addArrangedSubview(conversationStarterContainerView)
+
+        contentStackView.addArrangedSubview(makeBodyStackView(blocks: ArticleContent.blocks.dropFirst(ArticleContent.engagementStarterIndex)))
+
+        commentsContainerView.translatesAutoresizingMaskIntoConstraints = false
+        commentsContainerView.backgroundColor = .clear
+        contentStackView.addArrangedSubview(commentsContainerView)
+        contentStackView.setCustomSpacing(24, after: contentStackView.arrangedSubviews[contentStackView.arrangedSubviews.count - 2])
+
+        conversationStarterContainerViewHeight = conversationStarterContainerView.heightAnchor.constraint(equalToConstant: 0)
+        commentsContainerViewHeight = commentsContainerView.heightAnchor.constraint(equalToConstant: 0)
+
+        let safeArea = view.safeAreaLayoutGuide
+        let content = scrollView.contentLayoutGuide
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+
+            contentStackView.topAnchor.constraint(equalTo: content.topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: content.trailingAnchor),
+            contentStackView.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -100),
+            contentStackView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+
+            pictureImageView.heightAnchor.constraint(equalTo: pictureImageView.widthAnchor, multiplier: 0.5),
+
+            conversationStarterContainerViewHeight,
+            commentsContainerViewHeight
+        ])
+    }
+
+    private func makeBodyStackView(blocks: ArraySlice<ArticleContent.Block>) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20)
+
+        for block in blocks {
+            let label = UILabel()
+            label.numberOfLines = 0
+            label.textColor = .label
+            switch block {
+            case .heading(let text):
+                label.text = text
+                label.font = .systemFont(ofSize: 22, weight: .semibold)
+            case .paragraph(let text):
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 4
+                label.attributedText = NSAttributedString(string: text, attributes: [.paragraphStyle: paragraphStyle, .font: UIFont.systemFont(ofSize: 17), .foregroundColor: UIColor.label])
+            }
+            stackView.addArrangedSubview(label)
+        }
+
+        return stackView
     }
     
     func addComponents(){
-        if UserDefaults.standard.bool(forKey: SettingsKeys.showEngagementStarter) == true {
-            addConversationStarterViewController()
-        }
+        addConversationStarterViewController()
 
         if UserDefaults.standard.bool(forKey: SettingsKeys.commentsContainerFullscreen) == true {
             commentsContainerViewHeight.constant = 120
@@ -76,20 +179,13 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
             view.backgroundColor = darkBackgroundColor
         }
 
-        self.title = articleViewModel.story.title
-        
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
-        
-        webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
-        webView.configuration.allowsInlineMediaPlayback = true
-
-        let contentController = webView.configuration.userContentController
-        contentController.add(MessageHandlerLeakAvoider(delegate: self), name: "messageHandler")
-        
-        webView.scrollView.isScrollEnabled = false
-        webView.allowsLinkPreview = false
-        webView.load(URLRequest(url: URL(string: articleViewModel.story.link)!))
+        let story = articleViewModel.story
+        self.title = story.title
+        pictureImageView.kf.setImage(with: URL(string: story.pictureUrl))
+        categoryLabel.text = story.category
+        titleLabel.text = story.title
+        descriptionLabel.text = story.description
+        authorLabel.text = "By \(story.author)"
         
         let colors = VFColors(colorPrimary: UIColor(red: 0.00, green: 0.45, blue: 0.91, alpha: 1.00), colorPrimaryLight: UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00))
         settings = VFSettings(colors: colors)
@@ -210,20 +306,18 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
         addChild(preCommentsViewController)
         commentsContainerView.addSubview(preCommentsViewController.view)
         
-        preCommentsViewController.view.frame = CGRect(x: 0, y: 0, width: commentsContainerView.frame.width, height: preCommentsViewController.view.frame.height)
+        preCommentsViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            preCommentsViewController.view.topAnchor.constraint(equalTo: commentsContainerView.topAnchor),
+            preCommentsViewController.view.bottomAnchor.constraint(equalTo: commentsContainerView.bottomAnchor),
+            preCommentsViewController.view.leadingAnchor.constraint(equalTo: commentsContainerView.leadingAnchor),
+            preCommentsViewController.view.trailingAnchor.constraint(equalTo: commentsContainerView.trailingAnchor)
+        ])
         
         preCommentsViewController.willMove(toParent: self)
         preCommentsViewController.didMove(toParent: self)
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
-        if navigationAction.request.url?.absoluteString == articleViewModel.story.link {
-            return .allow
-        }
-        
-        return .cancel
-    }
-    
     func presentProfileViewController(userUUID: UUID, presentationType: VFProfilePresentationType){
         guard let settings = settings else {
             return
@@ -260,13 +354,10 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func presentArticle(containerId: String, contentUUID: UUID?){
-        guard let articleVC = ArticleViewController.new() else{
-            return
-        }
-        
         if let content = defaultContents.filter({ $0.story?.containerId == containerId }).first, let story = content.story {
-            articleVC.articleViewModel = ArticleViewModel(story: story)
-            articleVC.articleViewModel.selectedContentUUID = contentUUID
+            let viewModel = ArticleViewModel(story: story)
+            viewModel.selectedContentUUID = contentUUID
+            let articleVC = ArticleViewController(viewModel: viewModel)
             articleVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(articleVC, animated: true)
         }
@@ -301,64 +392,16 @@ class ArticleViewController: UIViewController, StoryboardCreateable {
     }
     
     func presentCommentsContainerViewController(){
-        guard let commentsVC = CommentsContainerViewController.new() else{
-            return
-        }
-        commentsVC.viewModel = CommentsContainerViewModel(story: articleViewModel.story)
+        let commentsVC = CommentsContainerViewController(viewModel: CommentsContainerViewModel(story: articleViewModel.story))
         
         self.navigationController?.pushViewController(commentsVC, animated: true)
     }
 
-    func addEngagementStarterListener(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.webView.evaluateJavaScript("""
-             setTimeout(function() {
-                                    document.querySelector('.vf-conversation-starter_link').onclick = function() {
-                                       if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.messageHandler) {
-                                            window.webkit.messageHandlers.messageHandler.postMessage({
-                                                "action": "ENGAGEMENT_STARTER_CLICKED"
-                                            });
-                                        }
-                                    };
-            }, 2000);
-            """)
-        }
-    }
-}
-
-extension ArticleViewController: WKNavigationDelegate{
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        activityIndicator.isHidden = true
-        conversationStarterContainerView.isHidden = false
-        commentsContainerView.isHidden = false
-        webView.isHidden = false
-        
-        if UserDefaults.standard.bool(forKey: SettingsKeys.darkMode) == true {
-            webView.evaluateJavaScript("document.documentElement.classList.add(\"dark\");")
-        }
-
-        addEngagementStarterListener()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.webViewHeight.constant = webView.scrollView.contentSize.height
-            self.view.layoutIfNeeded()
-            
-            self.addComponents()
-        }
-    }
-}
-
-extension ArticleViewController: WKUIDelegate{
-    
 }
 
 extension ArticleViewController: VFLoginDelegate {
     func startLogin() {
-        guard let loginVC = LoginViewController.new() else{
-            return
-        }
-        
-        self.present(loginVC, animated: true)
+        self.present(LoginViewController(), animated: true)
     }
 }
 
@@ -527,32 +570,5 @@ extension ArticleViewController: GADBannerViewDelegate {
 
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
       print("bannerViewDidDismissScreen")
-    }
-}
-
-extension ArticleViewController: WKScriptMessageHandler{
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let data = message.body as? [String : AnyObject] else {
-            return
-        }
-        
-        if data["action"] as? String == "ENGAGEMENT_STARTER_CLICKED" {
-            let originY = scrollView.convert(CGPoint.zero, from: commentsContainerView).y
-            scrollView.setContentOffset(CGPoint(x: 0, y: originY), animated: true)
-        }
-    }
-}
-
-class MessageHandlerLeakAvoider: NSObject, WKScriptMessageHandler {
-    weak var delegate: WKScriptMessageHandler?
-    
-    init(delegate: WKScriptMessageHandler) {
-        self.delegate = delegate
-        super.init()
-    }
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-            self.delegate?.userContentController(
-                userContentController, didReceive: message)
     }
 }
