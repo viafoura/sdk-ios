@@ -186,7 +186,7 @@
             },
             "common": {
                 "and": "e",
-                "others": "e {num} {num, plural, =1{outro} other{outros}}"
+                "others": "e {count} {count, plural, =1{outro} other{outros}}"
             },
             "follow": "começou a seguir você.",
             "like": "<em>{user}</em> {num, plural, =0{curtiu} =1{e <em> {secondUser}</em> curtiram} other{e <em> {num} outros </em> curtiram}} seu comentário",
@@ -254,7 +254,10 @@
         "community": "Comunidade",
         "feed": "Feed",
         "profile": "Perfil",
-        "settings": "configurações"
+        "settings": "configurações",
+        "notifications": "Notificações",
+        "expand": "Expandir",
+        "collapse": "Recolher"
     },
     "none": "vazio",
     "profile": {
@@ -279,6 +282,18 @@
                 "review": {
                     "other": "{name} revisado",
                     "self": "Você revisou"
+                },
+                "reply": {
+                    "self": "Você publicou em",
+                    "other": "{name} publicou em"
+                },
+                "question": {
+                    "self": "Você fez uma pergunta em",
+                    "other": "{name} fez uma pergunta em"
+                },
+                "answer": {
+                    "self": "Você respondeu em",
+                    "other": "{name} respondeu em"
                 }
             },
             "comment_history": "Histórico de comentários"
@@ -449,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Suas conexões"
+            },
+            "segments": {
+                "following": "seguindo",
+                "followers": "{count, plural, =1{seguidor} other{seguidores}}",
+                "muted": "{count, plural, =1{silenciado} other{silenciados}}"
+            },
+            "badge": {
+                "author": "Autor",
+                "topic": "Tópico"
             }
         },
         "user_actions": {
@@ -458,6 +482,66 @@
             "topic_unfollow_aria_label": "Deixe de seguir \"{topic}\" para parar de receber notificações sobre novas páginas sobre \"{topic}\".",
             "user_follow_aria_label": "Siga {username} para receber notificações sobre suas postagens.",
             "user_unfollow_aria_label": "Deixe de seguir {username} para parar de receber notificações sobre suas postagens."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} notificação} other{{count} notificações}} de hoje",
+                "yesterday": "{count, plural, =1{{count} notificação} other{{count} notificações}} de ontem",
+                "older": "{count, plural, =1{{count} notificação mais antiga} other{{count} notificações mais antigas}}"
+            },
+            "empty": "Não há notificações",
+            "load_error": "Não foi possível carregar suas notificações.",
+            "retry": "Tentar novamente",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} não lida} other{{count} não lidas}}",
+            "mentions": {
+                "many": "responderam ao seu comentário em {pageTitle}",
+                "livequestions": {
+                    "question_reply": "respondeu à sua pergunta em {pageTitle}",
+                    "reply_reply": "respondeu à sua publicação em {pageTitle}"
+                },
+                "livereviews": {
+                    "review_reply": "respondeu à sua avaliação em {pageTitle}",
+                    "reply_reply": "respondeu a você em {pageTitle}"
+                }
+            },
+            "likes": {
+                "generic": "Seu comentário recebeu {count, plural, =1{{count} curtida} other{{count} curtidas}} em {pageTitle}",
+                "livequestions": {
+                    "question": "curtiu sua pergunta em {pageTitle}",
+                    "reply": "curtiu sua publicação em {pageTitle}"
+                },
+                "livereviews": "{count, plural, =1{{count} pessoa achou} other{{count} pessoas acharam}} sua avaliação útil em {pageTitle}"
+            },
+            "comments": {
+                "many": "comentaram em {pageTitle}",
+                "livereviews": "escreveu uma nova avaliação em {pageTitle}"
+            },
+            "answer": {
+                "livequestions": "respondeu sua pergunta em {pageTitle}"
+            },
+            "event": {
+                "announcement": "Novo anúncio em {pageTitle}",
+                "answer": "Nova resposta em {pageTitle}",
+                "hostQuestion": "Nova pergunta enviada em {pageTitle}",
+                "hostAnswerReply": "Novo comentário na sua resposta em {pageTitle}"
+            }
+        },
+        "profile": {
+            "recent_activity": "Atividade recente",
+            "show_more": "Mostrar mais",
+            "activity_error": "Não foi possível carregar sua atividade.",
+            "activity_retry": "Tentar novamente",
+            "activity_awaiting_moderation": "As publicações mais recentes aqui aguardam moderação.",
+            "activity_tabs": {
+                "comments": "Comentários",
+                "live_qa": "Perguntas e respostas",
+                "ratings_reviews": "Avaliações"
+            },
+            "edit_title": "Editar perfil",
+            "edit_avatar_header": "Foto do perfil",
+            "edit_identity_header": "Nome e e-mail",
+            "edit_notifications_header": "Preferências de notificação",
+            "update": "Atualizar"
         }
     },
     "user_actions": {

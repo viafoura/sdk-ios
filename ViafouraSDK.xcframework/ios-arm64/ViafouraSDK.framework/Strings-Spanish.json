@@ -186,7 +186,7 @@
             },
             "common": {
                 "and": "y",
-                "others": "y {num} otros"
+                "others": "y {count} otros"
             },
             "follow": "ha comenzado a seguirte.",
             "like": "A <em>{user}</em> {num, plural, =0{le} =1{ y <em> {secondUser}</em> les} other{y <em> {num} más</em> les}} ha gustado tu comentario",
@@ -254,7 +254,10 @@
         "community": "Comunidad",
         "feed": "Notificaciones",
         "profile": "Perfil",
-        "settings": "ajustes"
+        "settings": "ajustes",
+        "notifications": "Notificaciones",
+        "expand": "Expandir",
+        "collapse": "Contraer"
     },
     "none": "ninguno",
     "profile": {
@@ -265,7 +268,7 @@
         "id_container_title": "Información del usuario",
         "like": "{num} me gusta",
         "login": "Inicie sesión o cree una cuenta para ver su perfil",
-        "third_party_id": "3rd Party ID",
+        "third_party_id": "ID de terceros",
         "user_actions": {
             "comment": {
                 "comment": {
@@ -279,6 +282,18 @@
                 "review": {
                     "other": "{name} ha revisado",
                     "self": "Usted revisó"
+                },
+                "reply": {
+                    "self": "Usted publicó sobre",
+                    "other": "{name} publicó sobre"
+                },
+                "question": {
+                    "self": "Ha hecho una pregunta sobre",
+                    "other": "{name} hizo una pregunta sobre"
+                },
+                "answer": {
+                    "self": "Usted respondió sobre",
+                    "other": "{name} respondió sobre"
                 }
             },
             "comment_history": "Historial de comentarios"
@@ -449,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Following and Following Users"
+            },
+            "segments": {
+                "following": "siguiendo",
+                "followers": "{count, plural, =1{seguidor} other{seguidores}}",
+                "muted": "{count, plural, =1{silenciado} other{silenciados}}"
+            },
+            "badge": {
+                "author": "Autor",
+                "topic": "Tema"
             }
         },
         "user_actions": {
@@ -458,6 +482,66 @@
             "topic_unfollow_aria_label": "Deje de seguir \"{topic}\" para dejar de recibir notificaciones cuando se publiquen nuevos artículos sobre \"{topic}\".",
             "user_follow_aria_label": "Siga a {username} para recibir notificaciones sobre sus publicaciones.",
             "user_unfollow_aria_label": "Deje de seguir a {username} para dejar de recibir notificaciones sobre sus publicaciones."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} notificación} other{{count} notificaciones}} de hoy",
+                "yesterday": "{count, plural, =1{{count} notificación} other{{count} notificaciones}} de ayer",
+                "older": "{count, plural, =1{{count} notificación más antigua} other{{count} notificaciones más antiguas}}"
+            },
+            "empty": "No hay notificaciones",
+            "load_error": "No se han podido cargar sus notificaciones.",
+            "retry": "Reintentar",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} sin leer} other{{count} sin leer}}",
+            "mentions": {
+                "many": "respondieron a su comentario en {pageTitle}",
+                "livequestions": {
+                    "question_reply": "respondió a su pregunta en {pageTitle}",
+                    "reply_reply": "respondió a su publicación en {pageTitle}"
+                },
+                "livereviews": {
+                    "review_reply": "respondió a su reseña en {pageTitle}",
+                    "reply_reply": "le respondió en {pageTitle}"
+                }
+            },
+            "likes": {
+                "generic": "Su comentario recibió {count, plural, =1{{count} me gusta} other{{count} me gusta}} en {pageTitle}",
+                "livequestions": {
+                    "question": "dio Me gusta a su pregunta en {pageTitle}",
+                    "reply": "dio Me gusta a su publicación en {pageTitle}"
+                },
+                "livereviews": "{count, plural, =1{{count} persona encontró} other{{count} personas encontraron}} útil su reseña en {pageTitle}"
+            },
+            "comments": {
+                "many": "comentaron en {pageTitle}",
+                "livereviews": "escribió una nueva reseña en {pageTitle}"
+            },
+            "answer": {
+                "livequestions": "respondió a su pregunta en {pageTitle}"
+            },
+            "event": {
+                "announcement": "Nuevo anuncio en {pageTitle}",
+                "answer": "Nueva respuesta en {pageTitle}",
+                "hostQuestion": "Nueva pregunta enviada en {pageTitle}",
+                "hostAnswerReply": "Nuevo comentario en tu respuesta en {pageTitle}"
+            }
+        },
+        "profile": {
+            "recent_activity": "Actividad reciente",
+            "show_more": "Mostrar más",
+            "activity_error": "No se ha podido cargar su actividad.",
+            "activity_retry": "Reintentar",
+            "activity_awaiting_moderation": "Las publicaciones más recientes aquí están pendientes de moderación.",
+            "activity_tabs": {
+                "comments": "Comentarios",
+                "live_qa": "Preguntas y respuestas",
+                "ratings_reviews": "Reseñas"
+            },
+            "edit_title": "Editar perfil",
+            "edit_avatar_header": "Foto de perfil",
+            "edit_identity_header": "Nombre y correo electrónico",
+            "edit_notifications_header": "Preferencias de notificaciones",
+            "update": "Actualizar"
         }
     },
     "user_actions": {

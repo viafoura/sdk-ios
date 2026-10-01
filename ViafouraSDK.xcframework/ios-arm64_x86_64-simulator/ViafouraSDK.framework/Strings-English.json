@@ -186,7 +186,7 @@
             },
             "common": {
                 "and": "and",
-                "others": "and {num} {num, plural, =1{other} other{others}}"
+                "others": "and {count} {count, plural, =1{other} other{others}}"
             },
             "follow": "started following you.",
             "like": "<em>{user}</em> {num, plural, =0{} =1{ and <em> {secondUser}</em>} other{and <em> {num} others </em>}} liked your comment",
@@ -255,7 +255,9 @@
         "feed": "Feed",
         "notifications": "Notifications",
         "profile": "Profile",
-        "settings": "settings"
+        "settings": "settings",
+        "expand": "Expand",
+        "collapse": "Collapse"
     },
     "none": "",
     "profile": {
@@ -278,8 +280,20 @@
                     "self": "You have not posted any comments."
                 },
                 "review": {
-                    "other": "{name} reviewed",
-                    "self": "You reviewed"
+                    "other": "{name} left a review on",
+                    "self": "You left a review on"
+                },
+                "reply": {
+                    "self": "You posted on",
+                    "other": "{name} posted on"
+                },
+                "question": {
+                    "self": "You asked a question on",
+                    "other": "{name} asked a question on"
+                },
+                "answer": {
+                    "self": "You answered on",
+                    "other": "{name} answered on"
                 }
             },
             "comment_history": "Comment history"
@@ -328,7 +342,7 @@
             "browser_notification_unsupported": "This browser does not support push notifications. You will continue to receive push notifications on supported browsers",
             "browser_notifications": "Browser push notifications",
             "email_notifications": "Email",
-            "logout": "sign out",
+            "logout": "Sign Out",
             "reset": "reset",
             "update_profile": "update profile"
         },
@@ -450,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Your connections"
+            },
+            "segments": {
+                "following": "following",
+                "followers": "{count, plural, =1{follower} other{followers}}",
+                "muted": "muted"
+            },
+            "badge": {
+                "author": "Author",
+                "topic": "Topic"
             }
         },
         "profile": {
@@ -457,7 +480,17 @@
             "edit_identity_header": "Name & Email",
             "edit_notifications_header": "Notification Preferences",
             "edit_title": "Edit Profile",
-            "recent_activity": "Recent activity"
+            "recent_activity": "Recent activity",
+            "show_more": "Show more",
+            "activity_error": "Your activity couldn't be loaded.",
+            "activity_retry": "Retry",
+            "activity_awaiting_moderation": "The most recent posts here are awaiting moderation.",
+            "activity_tabs": {
+                "comments": "Comments",
+                "live_qa": "Q&A",
+                "ratings_reviews": "Reviews"
+            },
+            "update": "Update"
         },
         "user_actions": {
             "author_follow_aria_label": "Follow page authors to receive notifications about their new articles.",
@@ -466,16 +499,59 @@
             "topic_unfollow_aria_label": "Unfollow \"{topic}\" to stop receiving notifications about new pages about \"{topic}\".",
             "user_follow_aria_label": "Follow {username} to receive notifications about their posts.",
             "user_unfollow_aria_label": "Unfollow {username} to stop receiving notifications about their posts."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} notification} other{{count} notifications}} from today",
+                "yesterday": "{count, plural, =1{{count} notification} other{{count} notifications}} from yesterday",
+                "older": "{count, plural, =1{{count} older notification} other{{count} older notifications}}"
+            },
+            "empty": "There are no notifications",
+            "load_error": "Your notifications couldn't be loaded.",
+            "retry": "Retry",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} unread} other{{count} unread}}",
+            "mentions": {
+                "many": "replied to your comment on {pageTitle}",
+                "livequestions": {
+                    "question_reply": "replied to your question on {pageTitle}",
+                    "reply_reply": "replied to your post on {pageTitle}"
+                },
+                "livereviews": {
+                    "review_reply": "replied to your Review on {pageTitle}",
+                    "reply_reply": "replied to you on {pageTitle}"
+                }
+            },
+            "likes": {
+                "generic": "Your comment received {count} {count, plural, =1{like} other{likes}} on {pageTitle}",
+                "livequestions": {
+                    "question": "liked your question on {pageTitle}",
+                    "reply": "liked your post in {pageTitle}"
+                },
+                "livereviews": "{count} person{count, plural, =1{} other{s}} found your review helpful on {pageTitle}"
+            },
+            "comments": {
+                "many": "commented on {pageTitle}",
+                "livereviews": "wrote a new Review on {pageTitle}"
+            },
+            "answer": {
+                "livequestions": "answered your question on {pageTitle}"
+            },
+            "event": {
+                "announcement": "New announcement in {pageTitle}",
+                "answer": "New answer in {pageTitle}",
+                "hostQuestion": "New question submitted in {pageTitle}",
+                "hostAnswerReply": "New reply to your answer in {pageTitle}"
+            }
         }
     },
     "user_actions": {
-        "follow": "follow",
-        "following": "following",
-        "mute": "mute",
+        "follow": "Follow",
+        "following": "Following",
+        "mute": "Mute",
         "mute_aria_label": "Mute {username} to hide their posts and notifications.",
-        "muted": "muted",
-        "unfollow": "unfollow",
-        "unmute": "unmute",
+        "muted": "Muted",
+        "unfollow": "Unfollow",
+        "unmute": "Unmute",
         "unmute_aria_label": "Unmute {username} to reveal their posts and start receiving notifications from them."
     },
     "comments": {

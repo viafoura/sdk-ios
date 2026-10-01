@@ -186,7 +186,7 @@
             },
             "common": {
                 "and": "en",
-                "others": "en {num} {num, plural, =1{andere} other{anderen}}"
+                "others": "en {count} {count, plural, =1{andere} other{anderen}}"
             },
             "follow": "volgen je nu",
             "like": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} anderen </em>}} vinden je reactie leuk",
@@ -254,7 +254,10 @@
         "community": "Netwerk",
         "feed": "Tijdlijn",
         "profile": "Profiel",
-        "settings": "instellingen"
+        "settings": "instellingen",
+        "notifications": "Notificaties",
+        "expand": "Uitklappen",
+        "collapse": "Inklappen"
     },
     "none": "",
     "profile": {
@@ -279,6 +282,18 @@
                 "review": {
                     "other": "{name} beoordeelde",
                     "self": "Je beoordeelde"
+                },
+                "reply": {
+                    "self": "Je hebt gepost op",
+                    "other": "waar {name} op heeft gepost"
+                },
+                "question": {
+                    "self": "Je hebt er een vraag over gesteld",
+                    "other": "{name} heeft een vraag gesteld op"
+                },
+                "answer": {
+                    "self": "Je hebt geantwoord op",
+                    "other": "{name} heeft geantwoord op"
                 }
             },
             "comment_history": "Reactiegeschiedenis"
@@ -449,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Volgend en volgende gebruikers"
+            },
+            "segments": {
+                "following": "volgend",
+                "followers": "{count, plural, =1{volger} other{volgers}}",
+                "muted": "gedempt"
+            },
+            "badge": {
+                "author": "Auteur",
+                "topic": "Onderwerp"
             }
         },
         "user_actions": {
@@ -458,11 +482,71 @@
             "topic_unfollow_aria_label": "'{Topic}' niet meer volgen om geen meldingen meer te ontvangen over nieuwe artikelen over '{topic}'.",
             "user_follow_aria_label": "Volg {username} om meldingen te ontvangen over hun berichten.",
             "user_unfollow_aria_label": "Volg {username} niet meer om geen meldingen meer over hun berichten te ontvangen."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} notificatie} other{{count} notificaties}} van vandaag",
+                "yesterday": "{count, plural, =1{{count} notificatie} other{{count} notificaties}} van gisteren",
+                "older": "{count, plural, =1{{count} oudere notificatie} other{{count} oudere notificaties}}"
+            },
+            "empty": "Er zijn geen notificaties",
+            "load_error": "Je meldingen konden niet worden geladen.",
+            "retry": "Opnieuw proberen",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} ongelezen} other{{count} ongelezen}}",
+            "mentions": {
+                "many": "hebben geantwoord op je reactie op {pageTitle}",
+                "livequestions": {
+                    "question_reply": "heeft je vraag beantwoord op {pageTitle}",
+                    "reply_reply": "heeft gereageerd op je bericht op {pageTitle}"
+                },
+                "livereviews": {
+                    "review_reply": "heeft gereageerd op je beoordeling op {pageTitle}",
+                    "reply_reply": "heeft je geantwoord op {pageTitle}"
+                }
+            },
+            "likes": {
+                "generic": "Je reactie heeft {count, plural, =1{{count} like} other{{count} likes}} gekregen op {pageTitle}",
+                "livequestions": {
+                    "question": "heeft je vraag over {pageTitle} geliket",
+                    "reply": "heeft je bericht in {pageTitle} geliket"
+                },
+                "livereviews": "{count, plural, =1{{count} persoon vond} other{{count} personen vonden}} je beoordeling nuttig op {pageTitle}"
+            },
+            "comments": {
+                "many": "hebben gereageerd op {pageTitle}",
+                "livereviews": "heeft een nieuwe beoordeling geschreven op {pageTitle}"
+            },
+            "answer": {
+                "livequestions": "heeft je vraag beantwoord op {pageTitle}"
+            },
+            "event": {
+                "announcement": "Nieuwe aankondiging in {pageTitle}",
+                "answer": "Nieuw antwoord in {pageTitle}",
+                "hostQuestion": "Nieuwe vraag gesteld in {pageTitle}",
+                "hostAnswerReply": "Nieuwe reactie op je antwoord in {pageTitle}"
+            }
+        },
+        "profile": {
+            "recent_activity": "Recente activiteit",
+            "show_more": "Meer weergeven",
+            "activity_error": "Je activiteit kon niet worden geladen.",
+            "activity_retry": "Opnieuw proberen",
+            "activity_awaiting_moderation": "De meest recente berichten hier wachten op moderatie.",
+            "activity_tabs": {
+                "comments": "Reacties",
+                "live_qa": "Q&A",
+                "ratings_reviews": "Beoordelingen"
+            },
+            "edit_title": "Profiel bewerken",
+            "edit_avatar_header": "Profielfoto",
+            "edit_identity_header": "Naam & e-mail",
+            "edit_notifications_header": "Notificatievoorkeuren",
+            "update": "Bijwerken"
         }
     },
     "user_actions": {
-        "follow": "volgen",
-        "following": "je volgt",
+        "follow": "volg",
+        "following": "Je volgt",
         "mute": "Demp",
         "mute_aria_label": "Demp {username} om hun berichten en meldingen te verbergen.",
         "muted": "gedempt",

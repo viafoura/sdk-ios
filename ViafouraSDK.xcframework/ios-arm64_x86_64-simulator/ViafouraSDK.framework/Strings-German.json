@@ -186,7 +186,7 @@
             },
             "common": {
                 "and": "und",
-                "others": "und {num} {num, plural, =1{other} other{others}}"
+                "others": "und {count} {count, plural, =1{other} other{others}}"
             },
             "follow": "hat angefangen, Ihnen zu folgen.",
             "like": "<em>{user}</em> {num, plural, =0{} =1{ und <em> {secondUser}</em>} other{and <em> {num} others </em>}} haben Ihren Kommentar gelikt",
@@ -254,7 +254,10 @@
         "community": "Gemeinschaft",
         "feed": "Feed",
         "profile": "Profil",
-        "settings": "Einstellungen"
+        "settings": "Einstellungen",
+        "notifications": "Benachrichtigungen",
+        "expand": "Ausklappen",
+        "collapse": "Einklappen"
     },
     "none": "none",
     "profile": {
@@ -279,6 +282,18 @@
                 "review": {
                     "other": "{name} geprüft",
                     "self": "Sie haben geprüft"
+                },
+                "reply": {
+                    "self": "Du hast gepostet auf",
+                    "other": "{name} hat geantwortet auf"
+                },
+                "question": {
+                    "self": "Du hast eine Frage gestellt zu",
+                    "other": "{name} hat eine Frage gestellt"
+                },
+                "answer": {
+                    "self": "Du hast geantwortet auf",
+                    "other": "{name} hat geantwortet auf"
                 }
             },
             "comment_history": "Kommentarverlauf"
@@ -449,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Ihre Verbindungen"
+            },
+            "segments": {
+                "following": "abonniert",
+                "followers": "{count, plural, =1{abonnent} other{abonnenten}}",
+                "muted": "stummgeschaltet"
+            },
+            "badge": {
+                "author": "Verfasser",
+                "topic": "Thema"
             }
         },
         "user_actions": {
@@ -458,6 +482,66 @@
             "topic_unfollow_aria_label": "„{topic}“ entfolgen, um keine Benachrichtigungen über neue Seiten über „{topic}“ mehr zu erhalten.",
             "user_follow_aria_label": "{username} abonnieren, um Benachrichtigungen zu dessen Beiträgen zu erhalten.",
             "user_unfollow_aria_label": "{username} entfolgen, um keine Benachrichtigungen zu dessen Beiträgen mehr zu erhalten."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} Benachrichtigung} other{{count} Benachrichtigungen}} von heute",
+                "yesterday": "{count, plural, =1{{count} Benachrichtigung} other{{count} Benachrichtigungen}} von gestern",
+                "older": "{count, plural, =1{{count} ältere Benachrichtigung} other{{count} ältere Benachrichtigungen}}"
+            },
+            "empty": "Es gibt keine Benachrichtigungen",
+            "load_error": "Ihre Benachrichtigungen konnten nicht geladen werden.",
+            "retry": "Erneut versuchen",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} ungelesen} other{{count} ungelesen}}",
+            "mentions": {
+                "many": "haben auf Ihren Kommentar zu {pageTitle} geantwortet",
+                "livequestions": {
+                    "question_reply": "hat auf Ihre Frage zu {pageTitle} geantwortet",
+                    "reply_reply": "hat auf Ihren Beitrag zu {pageTitle} geantwortet"
+                },
+                "livereviews": {
+                    "review_reply": "hat auf Ihre Rezension zu {pageTitle} geantwortet",
+                    "reply_reply": "hat Ihnen auf {pageTitle} geantwortet"
+                }
+            },
+            "likes": {
+                "generic": "Ihr Kommentar hat {count, plural, =1{{count} Like} other{{count} Likes}} auf {pageTitle} erhalten",
+                "livequestions": {
+                    "question": "hat Ihre Frage zu {pageTitle} mit „Gefällt mir“ markiert",
+                    "reply": "hat Ihren Beitrag in {pageTitle} mit „Gefällt mir“ markiert"
+                },
+                "livereviews": "{count, plural, =1{{count} Person fand} other{{count} Personen fanden}} Ihre Rezension zu {pageTitle} hilfreich"
+            },
+            "comments": {
+                "many": "haben {pageTitle} kommentiert",
+                "livereviews": "hat eine neue Rezension zu {pageTitle} geschrieben"
+            },
+            "answer": {
+                "livequestions": "hat Ihre Frage zu {pageTitle} beantwortet"
+            },
+            "event": {
+                "announcement": "Neue Ankündigung in {pageTitle}",
+                "answer": "Neue Antwort in {pageTitle}",
+                "hostQuestion": "Neue Frage gestellt in {pageTitle}",
+                "hostAnswerReply": "Neue Reaktion auf Ihre Antwort in {pageTitle}"
+            }
+        },
+        "profile": {
+            "recent_activity": "Letzte Aktivität",
+            "show_more": "Mehr anzeigen",
+            "activity_error": "Ihre Aktivität konnte nicht geladen werden.",
+            "activity_retry": "Erneut versuchen",
+            "activity_awaiting_moderation": "Die neuesten Beiträge hier warten auf die Moderation.",
+            "activity_tabs": {
+                "comments": "Kommentare",
+                "live_qa": "Fragen und Antworten",
+                "ratings_reviews": "Reviews"
+            },
+            "edit_title": "Profil bearbeiten",
+            "edit_avatar_header": "Profilbild",
+            "edit_identity_header": "Name & E-Mail",
+            "edit_notifications_header": "Benachrichtigungseinstellungen",
+            "update": "Aktualisieren"
         }
     },
     "user_actions": {

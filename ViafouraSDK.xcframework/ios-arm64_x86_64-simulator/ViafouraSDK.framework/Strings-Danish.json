@@ -186,7 +186,7 @@
             },
             "common": {
                 "and": "og",
-                "others": "og {num} andre"
+                "others": "og {count} andre"
             },
             "follow": "begyndte at følge dig.",
             "like": "<em>{user}</em> {num, plural, =0{} =1{ og <em> {secondUser}</em>} other{og <em> {num} andre </em>}} synes godt om din kommentar",
@@ -254,7 +254,10 @@
         "community": "Fællesskab",
         "feed": "Feed",
         "profile": "Profil",
-        "settings": "indstillinger"
+        "settings": "indstillinger",
+        "notifications": "Notifikationer",
+        "expand": "Udvid",
+        "collapse": "Fold sammen"
     },
     "none": "",
     "profile": {
@@ -279,6 +282,18 @@
                 "review": {
                     "other": "{name} anmeldte",
                     "self": "Du anmeldte"
+                },
+                "reply": {
+                    "self": "Du skrev et indlæg den",
+                    "other": "{name} skrev et indlæg om"
+                },
+                "question": {
+                    "self": "Du stillede et spørgsmål den",
+                    "other": "{name} stillede et spørgsmål om"
+                },
+                "answer": {
+                    "self": "Du svarede den",
+                    "other": "{name} svarede den"
                 }
             },
             "comment_history": "Kommentarhistorie"
@@ -449,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Dine forbindelser"
+            },
+            "segments": {
+                "following": "følger",
+                "followers": "{count, plural, =1{følger} other{følgere}}",
+                "muted": "slået fra"
+            },
+            "badge": {
+                "author": "Forfatter",
+                "topic": "Emne"
             }
         },
         "user_actions": {
@@ -458,6 +482,66 @@
             "topic_unfollow_aria_label": "Følg ikke længere \"{topic}\" for at holde op med at modtage notifikationer om nye sider om \"{topic}\".",
             "user_follow_aria_label": "Følg {username} for at modtage notifikationer om deres opslag.",
             "user_unfollow_aria_label": "Stop med at følge {username} for at holde op med at modtage notifikationer om deres opslag."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} notifikation} other{{count} notifikationer}} fra i dag",
+                "yesterday": "{count, plural, =1{{count} notifikation} other{{count} notifikationer}} fra i går",
+                "older": "{count, plural, =1{{count} ældre notifikation} other{{count} ældre notifikationer}}"
+            },
+            "empty": "Der er ingen notifikationer",
+            "load_error": "Dine notifikationer kunne ikke indlæses.",
+            "retry": "Prøv igen",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} ulæst} other{{count} ulæste}}",
+            "mentions": {
+                "many": "svarede på din kommentar på {pageTitle}",
+                "livequestions": {
+                    "question_reply": "svarede på dit spørgsmål på {pageTitle}",
+                    "reply_reply": "svarede på dit indlæg på {pageTitle}"
+                },
+                "livereviews": {
+                    "review_reply": "svarede på din anmeldelse på {pageTitle}",
+                    "reply_reply": "svarede dig på {pageTitle}"
+                }
+            },
+            "likes": {
+                "generic": "Din kommentar modtog {count, plural, =1{{count} like} other{{count} likes}} på {pageTitle}",
+                "livequestions": {
+                    "question": "synes godt om dit spørgsmål på {pageTitle}",
+                    "reply": "synes godt om dit indlæg i {pageTitle}"
+                },
+                "livereviews": "{count, plural, =1{{count} person fandt} other{{count} personer fandt}} din anmeldelse nyttig på {pageTitle}"
+            },
+            "comments": {
+                "many": "kommenterede på {pageTitle}",
+                "livereviews": "skrev en ny anmeldelse på {pageTitle}"
+            },
+            "answer": {
+                "livequestions": "besvarede dit spørgsmål på {pageTitle}"
+            },
+            "event": {
+                "announcement": "Ny annoncering i {pageTitle}",
+                "answer": "Nyt svar i {pageTitle}",
+                "hostQuestion": "Nyt spørgsmål stillet i {pageTitle}",
+                "hostAnswerReply": "Ny kommentar til dit svar i {pageTitle}"
+            }
+        },
+        "profile": {
+            "recent_activity": "Seneste aktivitet",
+            "show_more": "Vis mere",
+            "activity_error": "Din aktivitet kunne ikke indlæses.",
+            "activity_retry": "Prøv igen",
+            "activity_awaiting_moderation": "De seneste indlæg her afventer moderation.",
+            "activity_tabs": {
+                "comments": "Kommentarer",
+                "live_qa": "Q&A",
+                "ratings_reviews": "Anmeldelser"
+            },
+            "edit_title": "Rediger profil",
+            "edit_avatar_header": "Profilbillede",
+            "edit_identity_header": "Navn & e-mail",
+            "edit_notifications_header": "Notifikationsindstillinger",
+            "update": "Opdater"
         }
     },
     "user_actions": {

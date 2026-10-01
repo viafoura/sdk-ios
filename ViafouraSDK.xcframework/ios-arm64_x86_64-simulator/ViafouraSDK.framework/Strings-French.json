@@ -186,9 +186,9 @@
             },
             "common": {
                 "and": "et",
-                "others": "et {num} {num, plural, =1{autre} other{d'autres}}"
+                "others": "et {count} {count, plural, =1{autre} other{d'autres}}"
             },
-            "follow": "{num, plural, =1{est maintenant un de vos abonnés} other{sont maintenant vos abonnés}}.",
+            "follow": "{count, plural, =1{est maintenant un de vos abonnés} other{sont maintenant vos abonnés}}.",
             "like": "{num, plural, =0{<em>{user}</em> aime votre commentaire} =1{<em>{user}</em> et <em>{secondUser}</em> ont aimé votre commentaire} other{<em>{user}</em>, <em>{secondUser}</em> et <em>{num} autres</em> ont aimé votre commentaire}}",
             "likes": {
                 "generic": "{num, plural, =1{aime} other{ont aimé}} votre commentaire sur \"{pageTitle}\""
@@ -254,7 +254,10 @@
         "community": "Communauté",
         "feed": "Fil d'actualité",
         "profile": "Profil",
-        "settings": "paramètres"
+        "settings": "paramètres",
+        "notifications": "Notifications",
+        "expand": "Développer",
+        "collapse": "Réduire"
     },
     "none": "aucun",
     "profile": {
@@ -279,11 +282,23 @@
                 "review": {
                     "other": "{name} a révisé",
                     "self": "Vous avez révisé"
+                },
+                "reply": {
+                    "self": "Vous avez publié le",
+                    "other": "{name} a publié le"
+                },
+                "question": {
+                    "self": "Vous avez posé une question le",
+                    "other": "{name} a posé une question le"
+                },
+                "answer": {
+                    "self": "Vous avez répondu le",
+                    "other": "{name} a répondu le"
                 }
             },
             "comment_history": "Historique des commentaires"
         },
-        "user_details_button_description": "Cliquez pour montrer/cacher les détails de l'utilisateur",
+        "user_details_button_description": "Cliquez pour afficher/cacher les détails de l'utilisateur",
         "viafoura_id": "Viafoura ID"
     },
     "push-opt-in": {
@@ -449,6 +464,15 @@
         "community": {
             "aria": {
                 "header": "Suivre et suivre des utilisateurs."
+            },
+            "segments": {
+                "following": "{count, plural, =1{abonnement} other{abonnements}}",
+                "followers": "{count, plural, =1{abonné} other{abonnés}}",
+                "muted": "{count, plural, =1{masqué} other{masqués}}"
+            },
+            "badge": {
+                "author": "Auteur",
+                "topic": "Sujet"
             }
         },
         "user_actions": {
@@ -458,6 +482,66 @@
             "topic_unfollow_aria_label": "Se désabonner de \"{topic}\" pour ne plus recevoir des notifications à propos de nouvelles pages sur \"{topic}\".",
             "user_follow_aria_label": "S'abonner à {username} pour recevoir des notifications à propos de ses messages.",
             "user_unfollow_aria_label": "Se désabonner de {username} pour ne plus recevoir de notifications à propos de ses messages."
+        },
+        "notifications": {
+            "header": {
+                "today": "{count, plural, =1{{count} notification} other{{count} notifications}} d’aujourd’hui",
+                "yesterday": "{count, plural, =1{{count} notification} other{{count} notifications}} d’hier",
+                "older": "{count, plural, =1{{count} notification plus ancienne} other{{count} notifications plus anciennes}}"
+            },
+            "empty": "Aucune notification",
+            "load_error": "Vos notifications n'ont pas pu être chargées.",
+            "retry": "Réessayer",
+            "rail_label_unread": "{label}, {count, plural, =1{{count} non lue} other{{count} non lues}}",
+            "mentions": {
+                "many": "ont répondu à votre commentaire sur {pageTitle}",
+                "livequestions": {
+                    "question_reply": "a répondu à votre question sur {pageTitle}",
+                    "reply_reply": "a répondu à votre publication sur {pageTitle}"
+                },
+                "livereviews": {
+                    "review_reply": "a répondu à votre avis sur {pageTitle}",
+                    "reply_reply": "vous a répondu sur {pageTitle}"
+                }
+            },
+            "likes": {
+                "generic": "Votre commentaire a reçu {count, plural, =1{{count} mention J’aime} other{{count} mentions J’aime}} sur {pageTitle}",
+                "livequestions": {
+                    "question": "a aimé votre question sur {pageTitle}",
+                    "reply": "a aimé votre publication dans {pageTitle}"
+                },
+                "livereviews": "{count, plural, =1{{count} personne a trouvé} other{{count} personnes ont trouvé}} votre avis utile sur {pageTitle}"
+            },
+            "comments": {
+                "many": "ont commenté {pageTitle}",
+                "livereviews": "a rédigé un nouvel avis sur {pageTitle}"
+            },
+            "answer": {
+                "livequestions": "a répondu à votre question sur {pageTitle}"
+            },
+            "event": {
+                "announcement": "Nouvelle annonce dans {pageTitle}",
+                "answer": "Nouvelle réponse dans {pageTitle}",
+                "hostQuestion": "Nouvelle question posée dans {pageTitle}",
+                "hostAnswerReply": "Nouveau commentaire sur votre réponse dans {pageTitle}"
+            }
+        },
+        "profile": {
+            "recent_activity": "Activité récente",
+            "show_more": "Afficher plus",
+            "activity_error": "Votre activité n'a pas pu être chargée.",
+            "activity_retry": "Réessayer",
+            "activity_awaiting_moderation": "Les publications les plus récentes ici sont en attente de modération.",
+            "activity_tabs": {
+                "comments": "Commentaires",
+                "live_qa": "Questions-réponses",
+                "ratings_reviews": "Avis"
+            },
+            "edit_title": "Modifier le profil",
+            "edit_avatar_header": "Photo de profil",
+            "edit_identity_header": "Nom & E-mail",
+            "edit_notifications_header": "Préférences de notification",
+            "update": "Mettre à jour"
         }
     },
     "user_actions": {

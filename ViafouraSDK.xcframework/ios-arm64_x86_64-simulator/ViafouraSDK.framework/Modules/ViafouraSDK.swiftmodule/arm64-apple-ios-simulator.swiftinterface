@@ -290,6 +290,7 @@ public protocol VFLiveCommentsService : Swift.Sendable {
   func enableComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, VFEnableCommentError>
   func disableComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, VFDisableCommentError>
   func getUserComments(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID, limit: Swift.Int) async -> Swift.Result<[CommentResponse], VFUserCommentsError>
+  func getUserCommentsPage(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String?) async -> Swift.Result<CommentListResponse, VFUserCommentsError>
   func editorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, VFEditorPickCommentError>
   func createMedia(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, imageData: Foundation.Data) async -> Swift.Result<CreateCommentMediaResponse, VFCreateCommentMediaError>
   func createMedia(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, imageData: Foundation.Data, filename: Swift.String) async -> Swift.Result<CreateCommentMediaResponse, VFCreateCommentMediaError>
@@ -1407,6 +1408,7 @@ public struct VFArticleMetadata : Swift.Sendable {
 }
 extension VFLiveCommentsServiceImplementation {
   final public func getUserComments(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID, limit: Swift.Int) async -> Swift.Result<[CommentResponse], VFUserCommentsError>
+  final public func getUserCommentsPage(sectionUUID: Foundation.UUID, userUUID: Foundation.UUID, limit: Swift.Int, startingFrom: Swift.String?) async -> Swift.Result<CommentListResponse, VFUserCommentsError>
 }
 public enum VFUserCommentsError : Foundation.LocalizedError {
   case unknown
@@ -2077,6 +2079,7 @@ public enum VFCustomizableView {
   case conversationStarterDescriptionLabel(label: VFLabel)
   case conversationStarterFeaturedCommentLabel(label: VFLabel)
   case conversationStarterActionButton(button: VFButton)
+  case conversationStarterMenuButton(button: UIKit.UIButton)
   case pollQuestionLabel(label: VFLabel)
   case pollHeaderLabel(label: VFLabel)
   @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
@@ -2151,6 +2154,7 @@ public protocol VFNotificationsService : Swift.Sendable {
   func isSubscribedToTopic(topicId: Swift.String) async -> Swift.Result<Swift.Bool, VFTopicsSubscribedError>
   func subscribeTopic(topicId: Swift.String, topicName: Swift.String, topicType: Swift.String) async -> Swift.Result<TopicSubscribeResponse, VFSubscribeTopicError>
   func getUserSubscribers(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscribersResponse, any Swift.Error>
+  func getSubscribersCount(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Int, any Swift.Error>
   func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscriptionsResponse, any Swift.Error>
   func getUserNotifications() async -> Swift.Result<AllNotificationsResponse, any Swift.Error>
   func markNotificationRead(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
@@ -2167,6 +2171,7 @@ public protocol VFNotificationsService : Swift.Sendable {
   final public func unsubscribeFromUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   final public func isSubscribedToUser(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   final public func getUserSubscribers(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscribersResponse, any Swift.Error>
+  final public func getSubscribersCount(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Int, any Swift.Error>
   final public func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<UserSubscriptionsResponse, any Swift.Error>
   final public func getUserNotifications() async -> Swift.Result<AllNotificationsResponse, any Swift.Error>
   final public func markNotificationRead(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
@@ -2554,6 +2559,7 @@ public enum NotificationServiceType : Swift.String, Swift.Decodable, Swift.Senda
   case notifications
   case livechat
   case livequestions
+  case livereviews
   case unknown
   public init(from decoder: any Swift.Decoder) throws
   public init?(rawValue: Swift.String)
@@ -2572,6 +2578,12 @@ public enum NotificationType : Swift.String, Swift.Decodable, Swift.Sendable {
   case subscribed_user_content
   case broadcast_site
   case answer
+  case answer_removed
+  case reply_deleted
+  case subscribed_page_announcement
+  case subscribed_page_answer
+  case host_question
+  case host_answer_reply
   case unknown
   public init(from decoder: any Swift.Decoder) throws
   public init?(rawValue: Swift.String)
@@ -2750,11 +2762,18 @@ public struct VFAccessibilityIdentifiers {
   public static let conversationStarter: Swift.String
   public static let conversationStarterTitle: Swift.String
   public static let conversationStarterAction: Swift.String
+  public static let conversationStarterMenuButton: Swift.String
   public static let conversationStarterFeaturedComment: Swift.String
   public static let conversationStarterAdContainer: Swift.String
   public static let trendingCell: Swift.String
   public static let trendingSeeMoreButton: Swift.String
   public static let profileUserName: Swift.String
+  public static let profileDrawerMenu: Swift.String
+  public static let profileDrawerBack: Swift.String
+  public static let profileDrawerTitle: Swift.String
+  public static let profileDrawerClose: Swift.String
+  public static let profileDrawerShowMore: Swift.String
+  public static let profileDrawerRetry: Swift.String
 }
 @_Concurrency.MainActor public protocol VFCustomUIDelegate : AnyObject {
   @_Concurrency.MainActor func customizeView(theme: VFTheme, view: VFCustomizableView)
