@@ -29,7 +29,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ runner.temp }}/dd/SourcePackages
-          key: ${{ runner.os }}-spm-${{ hashFiles('SampleApp/Viafoura.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          key: ${{ runner.os }}-spm-${{ hashFiles('SampleApp/Viafoura.xcodeproj/project.pbxproj') }}
           restore-keys: ${{ runner.os }}-spm-
 
       - name: Resolve dependencies
