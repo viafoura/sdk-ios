@@ -884,18 +884,18 @@
         "twitter": "Van Twitter"
     },
     "conversation_starter": {
-        "action_without_comment_count": "",
-        "title_comments_enabled": "",
-        "description_comments_enabled": "",
-        "action_first_comment": "",
-        "action_with_comment_count": "",
-        "title_comments_closed": "",
-        "description_comments_closed": "",
-        "header_without_comments": "",
-        "header_with_comments": "",
-        "header_comments_closed": "",
-        "read_more": "",
-        "editors_pick_header": ""
+        "action_without_comment_count": "Lees de reacties",
+        "title_comments_enabled": "Praat mee",
+        "description_comments_enabled": "Praat onder dit artikel mee met anderen.",
+        "action_first_comment": "Laat als eerste een reactie achter",
+        "action_with_comment_count": "Lees alle {count} reactie{count, plural, =0{s} =1{} other{s}}",
+        "title_comments_closed": "Lees de reacties onder dit artikel",
+        "description_comments_closed": "Lees onder dit artikel hoe anderen erover denken.",
+        "header_without_comments": "Start het gesprek",
+        "header_with_comments": "Reageer onder dit artikel",
+        "header_comments_closed": "Lees de reacties onder dit artikel",
+        "read_more": "Lees meer",
+        "editors_pick_header": "Uitgelichte reactie"
     },
     "report": {
         "starter": {
@@ -1413,6 +1413,70 @@
         },
         "footer": {
             "poweredBy": "Mogelijk gemaakt door viafoura"
+        }
+    },
+    "polls": {
+        "title": {
+            "active": "Poll",
+            "closed": "Poll gesloten"
+        },
+        "closing_time": {
+            "days": "Nog {count} {count, plural, =1{dag} other{dagen}}",
+            "hours": "Nog {count} uur",
+            "minutes": "Nog minder dan 1 uur"
+        },
+        "actions": {
+            "close_poll": "Poll sluiten",
+            "delete_poll": "Poll verwijderen",
+            "create": "Poll maken",
+            "show_all_options": "Toon alle opties"
+        },
+        "form": {
+            "title": "Poll maken",
+            "fields": {
+                "question": "Vraag",
+                "question_placeholder": "Verplicht",
+                "options_label": "Opties",
+                "options_hint": " – maximaal {max} ({min} verplicht)",
+                "option_placeholder": "Optie",
+                "add_option": "Optie toevoegen",
+                "remove_option": "Optie verwijderen",
+                "anonymous_voting": {
+                    "label": "Anoniem stemmen",
+                    "hint": "Antwoorden zijn vertrouwelijk en kunnen niet naar een gebruiker worden herleid."
+                },
+                "close_time": {
+                    "label": "Sluitingstijd van de poll",
+                    "optional": " – optioneel",
+                    "placeholder": "Geen datum ingesteld",
+                    "helper": "Na het instellen kun je dit niet meer wijzigen. Je kunt de poll nog wel handmatig sluiten of verwijderen."
+                }
+            },
+            "actions": {
+                "cancel": "Annuleren",
+                "publish": "Publiceren"
+            }
+        },
+        "confirmation_prompt": {
+            "cancel_button": "Annuleren",
+            "close_poll": {
+                "confirmation_button": "Poll sluiten",
+                "text": "Als je deze poll sluit, kan er niet meer worden gestemd en worden de resultaten gepubliceerd."
+            },
+            "delete_poll": {
+                "confirmation_button": "Poll verwijderen",
+                "text": "Als je deze poll verwijdert, verdwijnt hij van de pagina zonder dat gebruikers een melding krijgen. Alle stemgegevens blijven beschikbaar in de statistieken."
+            }
+        },
+        "vote": {
+            "vote_recorded": "Je stem is opgeslagen.",
+            "register_see_vote": "Log in om de resultaten te bekijken."
+        },
+        "errors": {
+            "poll_closed": {
+                "message": "Sorry, deze poll is gesloten.",
+                "link": "Bekijk de resultaten"
+            }
         }
     }
 }
