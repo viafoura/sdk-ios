@@ -577,6 +577,7 @@ extension ViafouraSDK.VFDislikeCommentError {
 }
 @_hasMissingDesignatedInitializers public class AnalyticsServiceImplementation : @unchecked Swift.Sendable {
   public func addWidget(_ widgetType: ViafouraSDK.WidgetType, uniqueUUID: Foundation.UUID)
+  public func addWidget(_ widgetType: ViafouraSDK.WidgetType, uniqueUUID: Foundation.UUID, articleUrl: Foundation.URL?)
   public func removeWidget(_ widgetType: ViafouraSDK.WidgetType, uniqueUUID: Foundation.UUID)
   public func logLoadMoreClick(tab: Swift.String, eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata)
   public func logConversationsBellClick(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata)
@@ -1400,6 +1401,7 @@ public struct VFArticleMetadata : Swift.Sendable {
   public static func setLoggingEnabled(_ isLoggingEnabled: Swift.Bool)
   public static func isLoggingEnabled() -> Swift.Bool
   public static func setDataTrackingEnabled(_ isDataTrackingEnabled: Swift.Bool)
+  public static func setPageViewBeaconEnabled(_ isPageViewBeaconEnabled: Swift.Bool)
   public static func auth() -> any ViafouraSDK.VFAuthenticationService
   public static func notifications() -> any ViafouraSDK.VFNotificationsService
   public static func users() -> any ViafouraSDK.VFUsersService
