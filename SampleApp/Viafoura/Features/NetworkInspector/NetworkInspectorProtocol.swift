@@ -13,8 +13,16 @@ final class NetworkInspectorProtocol: URLProtocol {
     private var dataTask: URLSessionDataTask?
     private var isStopped = false
 
+    override class func canInit(with task: URLSessionTask) -> Bool {
+        guard !(task is URLSessionWebSocketTask), let request = task.currentRequest else {
+            return false
+        }
+        return canInit(with: request)
+    }
+
     override class func canInit(with request: URLRequest) -> Bool {
-        guard let scheme = request.url?.scheme?.lowercased(), scheme == "http" || scheme == "https" else {
+        guard let scheme = request.url?.scheme?.lowercased(), scheme == "http" || scheme == "https",
+              request.value(forHTTPHeaderField: "Upgrade")?.lowercased() != "websocket" else {
             return false
         }
         return property(forKey: handledKey, in: request) == nil
