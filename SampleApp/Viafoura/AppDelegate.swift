@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
 
+        NetworkInspector.enable()
         ViafouraSDK.initialize(siteUUID: parsedSiteUUID.uuidString.lowercased(), siteDomain: siteDomain)
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)

@@ -58,8 +58,17 @@ class SettingsViewController: UITableViewController {
             return cell
         }
 
+        if indexPath.row == 1 {
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+            cell.textLabel?.text = "Network inspector"
+            cell.detailTextLabel?.text = "\(NetworkInspector.shared.records.count)"
+            cell.accessoryType = .disclosureIndicator
+            cell.selectionStyle = .default
+            return cell
+        }
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingCell
-        cell.setup(setting: viewModel.settings[indexPath.row - 1])
+        cell.setup(setting: viewModel.settings[indexPath.row - 2])
         return cell
     }
 
@@ -68,14 +77,20 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.settings.count + 1
+        return viewModel.settings.count + 2
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard indexPath.row == 0 else { return }
-        presentSiteSwitcher(sourceIndexPath: indexPath)
+        switch indexPath.row {
+        case 0:
+            presentSiteSwitcher(sourceIndexPath: indexPath)
+        case 1:
+            navigationController?.pushViewController(NetworkInspectorViewController(), animated: true)
+        default:
+            break
+        }
     }
 
     private func currentSiteDomain() -> String {
