@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import Kingfisher
 import ViafouraSDK
 import GoogleMobileAds
 
@@ -181,7 +180,7 @@ class ArticleViewController: UIViewController {
 
         let story = articleViewModel.story
         self.title = story.title
-        pictureImageView.kf.setImage(with: URL(string: story.pictureUrl))
+        pictureImageView.setImage(from: URL(string: story.pictureUrl))
         categoryLabel.text = story.category
         titleLabel.text = story.title
         descriptionLabel.text = story.description
@@ -474,7 +473,7 @@ extension ArticleViewController: VFAdDelegate {
             adIndicatorLabel.font = UIFont.boldSystemFont(ofSize: 13)
             
             adImage.translatesAutoresizingMaskIntoConstraints = false
-            adImage.kf.setImage(with: URL(string: "https://images.outbrainimg.com/transform/v3/eyJpdSI6IjYwNjA2OWRiMjFiZTc0ODAyOWEzZDAwYTczM2E2YjkxNzM2ZWZmODczYWQ5NjcyMzQzN2YxOGU2YTJhYmQ3NGYiLCJ3IjozNzUsImgiOjEyNSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp"))
+            adImage.setImage(from: URL(string: "https://images.outbrainimg.com/transform/v3/eyJpdSI6IjYwNjA2OWRiMjFiZTc0ODAyOWEzZDAwYTczM2E2YjkxNzM2ZWZmODczYWQ5NjcyMzQzN2YxOGU2YTJhYmQ3NGYiLCJ3IjozNzUsImgiOjEyNSwiZCI6MS41LCJjcyI6MCwiZiI6NH0.webp"))
             adImage.layer.cornerRadius = 4
             adImage.clipsToBounds = true
             

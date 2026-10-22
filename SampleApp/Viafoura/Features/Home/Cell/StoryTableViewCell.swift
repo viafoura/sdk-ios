@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class StoryTableViewCell: UITableViewCell{
     let storyTitleLabel = UILabel()
@@ -95,7 +94,7 @@ class StoryTableViewCell: UITableViewCell{
         storyDescLabel.text = story.description.uppercased()
         
         storyPictureImage.image = nil
-        storyPictureImage.kf.setImage(with: URL(string: story.pictureUrl))
+        storyPictureImage.setImage(from: URL(string: story.pictureUrl))
         storyPictureImage.clipsToBounds = true
         storyPictureImage.layer.cornerRadius = 12
         storyPictureImage.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
