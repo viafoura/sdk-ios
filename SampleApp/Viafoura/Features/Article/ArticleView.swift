@@ -1,5 +1,4 @@
 import SwiftUI
-import Kingfisher
 import ViafouraSDK
 
 struct ArticleView: View {
@@ -96,11 +95,14 @@ struct ArticleView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 12) {
-            KFImage(URL(string: story.pictureUrl))
-                .resizable()
-                .aspectRatio(2, contentMode: .fill)
-                .frame(maxWidth: .infinity)
-                .clipped()
+            AsyncImage(url: URL(string: story.pictureUrl)) { image in
+                image.resizable()
+            } placeholder: {
+                Color(.secondarySystemBackground)
+            }
+            .aspectRatio(2, contentMode: .fill)
+            .frame(maxWidth: .infinity)
+            .clipped()
 
             VStack(alignment: .leading, spacing: 8) {
                 Text(story.category)
