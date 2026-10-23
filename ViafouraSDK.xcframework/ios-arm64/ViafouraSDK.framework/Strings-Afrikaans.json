@@ -3,16 +3,16 @@
         "content": {
             "alert": {
                 "disabled": {
-                    "other": "Inhoud versteek.",
-                    "self": "Inhoud versteek."
+                    "other": "Inhoud versteek",
+                    "self": "Inhoud versteek"
                 },
                 "missing": {
-                    "other": "Inhoud ontbreek.",
-                    "self": "Inhoud ontbreek."
+                    "other": "Inhoud ontbreek",
+                    "self": "Inhoud ontbreek"
                 },
                 "removed": {
-                    "other": "Inhoud verwyder deur {name}.",
-                    "self": "Inhoud verwyder."
+                    "other": "Inhoud verwyder deur {name}",
+                    "self": "Inhoud verwyder"
                 }
             }
         }
@@ -39,14 +39,14 @@
                 "new": "Nuwe kennisgewing",
                 "tray_feed_header": "Jou kennisgewings en aktiewe gesprekke",
                 "read": "Gelese kennisgewing.",
-                "seen": "Gesiene kennisgewing."
+                "seen": "Gesiende kennisgewing"
             }
         },
         "images": {
             "avatar_current_user": "Jou profielfoto",
             "avatar_login": "Gaan direk na aanmelding of registrasie",
             "avatar_user": "Die profielfoto van \"{username}\"",
-            "open_other_profile": "Bekyk die profiel van \"{username}\"",
+            "open_other_profile": "Bekyk die profiel van “{username}”",
             "open_profile": "Bekyk jou kennisgewings"
         },
         "more_actions": "Meer aksies",
@@ -80,9 +80,9 @@
         "powered_by": "Aangedryf deur"
     },
     "community": {
-        "empty": "Hierdie webwerf het geen gemeenskapsfunksies geaktiveer nie",
+        "empty": "Hierdie webtuiste het geen gemeenskapsfunksies geaktiveer nie",
         "followers": {
-            "empty": "Ander gebruikers volg jou nog nie",
+            "empty": "Ander gebruikers volg jou nog nie.",
             "getDate": "Het jou gevolg",
             "header": "{count, plural, =1{volger} other{volgers}}",
             "headerAriaLabel": "Lys van gebruikers wat jou volg. Jy het {num} volgers."
@@ -95,10 +95,10 @@
         },
         "following_description": "Jy volg nog niemand nie. Mense, onderwerpe en stories wat jy volg, sal hier verskyn.",
         "muted": {
-            "empty": "Jy het geen gebruikers gedemp nie.",
-            "getDate": "Gedemp op",
-            "header": "Gedemp",
-            "headerAriaLabel": "Lys van gebruikers wat jy gedemp het. Jy het {num} gebruikers gedemp."
+            "empty": "Jy het geen gebruikers gekies wie se kommentaar jy nie wil sien nie.",
+            "getDate": "Versteek op",
+            "header": "Wil nie sien nie",
+            "headerAriaLabel": "Lys van gebruikers wat jy nie wil sien nie. Jy het {num} gebruikers versteek."
         },
         "suggest_follow": "Begin deur iemand te volg!",
         "suggestion_header": "aanbeveel vir jou",
@@ -145,7 +145,7 @@
                 "signup": "Registreer"
             },
             "reset": {
-                "success": "'n E-pos is gestuur na {email} met instruksies om jou wagwoord terug te stel."
+                "success": "’n E-pos is gestuur na {email} met instruksies om jou wagwoord terug te stel."
             }
         },
         "additionalInfo": {
@@ -156,12 +156,12 @@
         },
         "alerts": {
             "follow": "Kon nie hierdie gebruiker op die oomblik volg nie.",
-            "max_mutes": "Jy het die maksimum aantal gebruikers wat jy kan demp, bereik.",
-            "mute": "Kon nie hierdie gebruiker op die oomblik demp nie.",
+            "max_mutes": "Jy het die maksimum aantal gebruikers wat jy nie wil sien nie, bereik.",
+            "mute": "Kon nie hierdie gebruiker op die oomblik versteek nie.",
             "no_reset": "Jou wagwoord kon nie teruggestel word nie. Probeer later weer.",
             "read": "Kon nie hierdie kennisgewing op die oomblik as gelees merk nie.",
-            "unfollow": "Kon nie hierdie gebruiker op die oomblik ontvolg nie.",
-            "unmute": "Kon nie die demping van hierdie gebruiker op die oomblik ophef nie."
+            "unfollow": "Kon nie hierdie gebruiker op die oomblik ontvolg nie",
+            "unmute": "Kon nie die gebruiker op die oomblik weer sigbaar maak nie."
         },
         "header": {
             "older": "ouer",
@@ -172,16 +172,16 @@
         "login": {
             "nav": {
                 "forgot": "Wagwoord vergeet?",
-                "header": "Meld aan of skep 'n nuwe rekening",
+                "header": "Meld aan of skep ’n nuwe rekening.",
                 "thirdparty": "Meld aan:"
             }
         },
         "notifications": {
-            "author": "het 'n artikel gepubliseer",
+            "author": "het ’n artikel gepubliseer",
             "clear": "Vee uit",
-            "comment": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} het op 'n gesprek kommentaar gelewer",
+            "comment": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} het op ’n gesprek kommentaar gelewer.",
             "comments": {
-                "many": "het kommentaar gelewer op \"{pageTitle}\"",
+                "many": "het kommentaar gelewer op “{pageTitle}”",
                 "single": "het kommentaar gelewer op"
             },
             "common": {
@@ -191,18 +191,18 @@
             "follow": "volg jou nou",
             "like": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} hou van jou kommentaar",
             "likes": {
-                "generic": "{num, plural, =1{hou} other{hou}} van jou kommentaar op \"{pageTitle}\""
+                "generic": "{num, plural, =1{hou} other{hou}} van jou kommentaar op “{pageTitle}”"
             },
             "mentions": {
-                "many": "het geantwoord op jou kommentaar op \"{pageTitle}\"",
+                "many": "het geantwoord op jou kommentaar op “{pageTitle}”",
                 "single": "geantwoord"
             },
             "new_comments": "{num} nuwe kommentare op",
             "other": "Nuwe opdatering van onderwerp: <strong>{description}</strong>",
             "reply": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} het geantwoord op jou kommentaar op",
-            "topic": "Opdatering:",
-            "author_deprecated": "<strong>{description}</strong> het 'n nuwe artikel gepubliseer",
-            "comment_deprecated": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} het op 'n gesprek kommentaar gelewer",
+            "topic": "Opdatering",
+            "author_deprecated": "<strong>{description}</strong> het ’n nuwe artikel gepubliseer",
+            "comment_deprecated": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} het op ’n gesprek kommentaar gelewer.",
             "follow_deprecated": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} volg jou nou",
             "like_deprecated": "<em>{user}</em> {num, plural, =0{} =1{ en <em> {secondUser}</em>} other{en <em> {num} ander </em>}} hou van jou kommentaar",
             "other_deprecated": "Nuwe opdatering van onderwerp: <strong>{description}</strong>",
@@ -212,22 +212,22 @@
             "close": "Ignoreer hierdie boodskap",
             "description_desktop": "Aktiveer onmiddellike stootkennisgewings op jou rekenaar!",
             "description_mobile": "Aktiveer onmiddellike stootkennisgewings op jou selfoon!",
-            "header": "Moet nooit 'n opdatering in jou voer mis nie",
-            "link_description_desktop": "Dit sal jou na 'n nuwe bladsy neem waar jy blaaierkennisgewings kan aktiveer",
-            "link_description_mobile": "Dit sal jou na 'n nuwe bladsy neem waar jy kennisgewings vir jou selfoon kan aktiveer",
+            "header": "Moet nooit ’n opdatering in jou voer misloop nie.",
+            "link_description_desktop": "Dit sal jou na ’n nuwe bladsy neem waar jy blaaierkennisgewings kan aktiveer.",
+            "link_description_mobile": "Dit sal jou na ’n nuwe bladsy neem waar jy kennisgewings vir jou selfoon kan aktiveer.",
             "link_error": "Probeer weer",
             "link_processing": "Besig om in te teken...",
             "link_subcription_status_unsubscribed": "Jy is nie ingeteken op stootkennisgewings vir hierdie blaaier nie.",
             "link_subscribe": "Aktiveer nou",
-            "link_subscription_status_error": "Iets het verkeerd geloop. Kon jou nie op stootkennisgewings vir hierdie blaaier inteken nie",
-            "link_subscription_status_processing": "Jy probeer inteken op stootkennisgewings vir hierdie blaaier",
-            "link_subscription_status_subscribed": "Jy het suksesvol ingeteken op stootkennisgewings vir hierdie blaaier"
+            "link_subscription_status_error": "Iets het verkeerd geloop. Kon jou nie op stootkennisgewings vir hierdie blaaier inteken nie.",
+            "link_subscription_status_processing": "Jy probeer inteken op stootkennisgewings vir hierdie blaaier.",
+            "link_subscription_status_subscribed": "Jy het suksesvol ingeteken op stootkennisgewings vir hierdie blaaier."
         },
         "signup": {
             "nav": {
                 "header": "Sluit aan by die gemeenskap",
                 "thirdparty": "Registreer:",
-                "verification_required": "E-posadres moet geverifieer wees om registrasie te voltooi"
+                "verification_required": "E-posadres moet geverifieer wees om registrasie te voltooi."
             }
         }
     },
@@ -239,13 +239,13 @@
     },
     "moderation": {
         "avatar_pending_new": "Jou avatar moet nog goedgekeur word",
-        "avatar_pending_update": "Jou nuwe profielfoto moet nog goedgekeur word. Dit sal eers in werking tree nadat 'n moderator dit goedgekeur het.",
-        "avatar_rejected": "Jou profielfoto is deur die webwerf se administrateurs afgekeur.",
-        "email_pending_new": "'n Verifikasieskakel is na jou e-posadres gestuur. Gaan jou inkassie na.",
+        "avatar_pending_update": "Jou nuwe profielfoto moet nog goedgekeur word. Dit sal eers in werking tree nadat ’n moderator dit goedgekeur het.",
+        "avatar_rejected": "Jou profielfoto is deur die webtuiste se administrateurs afgekeur.",
+        "email_pending_new": "’n Verifikasieskakel is na jou e-posadres gestuur. Gaan jou inkassie na.",
         "email_pending_update": "Klik asseblief op die verifikasieskakel in die e-pos om te verseker dat jou veranderinge in werking tree. Jy kan nie met jou nuwe e-posadres aanmeld voordat dit geverifieer is nie.",
         "username_pending_new": "Jou profielnaam moet nog goedgekeur word.",
-        "username_pending_update": "Jou nuwe profielnaam moet nog goedgekeur word. Dit sal eers in werking tree nadat 'n moderator dit goedgekeur het.",
-        "username_rejected": "Jou profielnaam is deur die webwerf se administrateurs afgekeur."
+        "username_pending_update": "Jou nuwe profielnaam moet nog goedgekeur word. Dit sal eers in werking tree nadat ’n moderator dit goedgekeur het.",
+        "username_rejected": "Jou profielnaam is deur die webtuiste se administrateurs afgekeur."
     },
     "navigation": {
         "close": "sluit kennisgewings",
@@ -276,20 +276,20 @@
                     "self": "Jy het kommentaar gelewer op"
                 },
                 "none": {
-                    "other": "{name} het nog geen kommentaar gelewer nie.",
+                    "other": "{name} het nog geen kommentaar gelewer nie",
                     "self": "Jy het nog geen kommentaar gelewer nie."
                 },
                 "review": {
-                    "other": "{name} het 'n resensie gelewer oor",
-                    "self": "Jy het 'n resensie gelewer oor"
+                    "other": "{name} het ’n resensie gelewer oor",
+                    "self": "Jy het ’n resensie gelewer oor"
                 },
                 "reply": {
                     "self": "Jy het geplaas op",
                     "other": "waarop {name} geplaas het"
                 },
                 "question": {
-                    "self": "Jy het 'n vraag gevra op",
-                    "other": "{name} het 'n vraag gevra op"
+                    "self": "Jy het ’n vraag gevra op",
+                    "other": "{name} het ’n vraag gevra op"
                 },
                 "answer": {
                     "self": "Jy het geantwoord op",
@@ -304,10 +304,10 @@
     "push-opt-in": {
         "approved": {
             "redirect-text": "Voltooi",
-            "subtext": "Jy word binne 2 sekondes outomaties na die webwerf herlei."
+            "subtext": "Jy word binne 2 sekondes outomaties na die webtuiste herlei."
         },
         "failed": {
-            "link-text": "Terug na webwerf",
+            "link-text": "Terug na webtuiste",
             "redirect-text": "probeer weer",
             "text": "Kennisgewings kon nie geaktiveer word nie."
         },
@@ -319,9 +319,9 @@
                 "heading": "Volg hierdie stappe om kennisgewings te aktiveer:",
                 "one": "Klik op die ikoon langs die URL.",
                 "three": "Herlaai hierdie bladsy.",
-                "two": "Soek na 'Kennisgewings' en kies 'Laat altyd toe op hierdie webwerf'"
+                "two": "Soek na “Kennisgewings” en kies “Laat altyd toe op hierdie webtuiste”"
             },
-            "redirect-text": "terug na webwerf",
+            "redirect-text": "terug na webtuiste",
             "text": "Jy het kennisgewings geblokkeer."
         },
         "subscribed": {
@@ -334,12 +334,12 @@
     "settings": {
         "avatar_success": "Avatar opgedateer.",
         "controls": {
-            "browser_notification_blocked": "Jy het kennisgewings in hierdie blaaier geblokkeer",
+            "browser_notification_blocked": "Jy het kennisgewings in hierdie blaaier geblokkeer.",
             "browser_notification_blocked_link": "Hoe om dit te aktiveer",
             "browser_notification_enable": "Aktiveer kennisgewings in hierdie blaaier",
             "browser_notification_enable_link": "Aktiveer nou",
-            "browser_notification_error": "Iets het verkeerd geloop. Probeer asseblief later weer",
-            "browser_notification_unsupported": "Hierdie blaaier ondersteun nie stootkennisgewings nie. Jy sal steeds stootkennisgewings via ondersteunde blaaiers ontvang",
+            "browser_notification_error": "Iets het verkeerd geloop. Probeer asseblief later weer.",
+            "browser_notification_unsupported": "Hierdie blaaier ondersteun nie stootkennisgewings nie. Jy sal steeds stootkennisgewings via ondersteunde blaaiers ontvang.",
             "browser_notifications": "Blaaier-stootkennisgewings",
             "email_notifications": "E-pos",
             "logout": "meld af",
@@ -349,17 +349,17 @@
         "email_success": "E-posadres opgedateer.",
         "error": {
             "email_in_use": "E-posadres word reeds deur iemand anders gebruik",
-            "empty_current_password": "Geen huidige wagwoord is verskaf nie",
+            "empty_current_password": "Geen huidige wagwoord is verskaf nie.",
             "empty_form": "Vorm is leeg",
-            "error_fetching": "Iets het verkeerd geloop terwyl die data gehaal is",
+            "error_fetching": "Iets het verkeerd geloop terwyl die data gehaal is.",
             "file_too_big": "Die lêer is te groot om op te laai.",
-            "file_wrong_type": "Die lêer moet 'n prent wees.",
+            "file_wrong_type": "Die lêer moet ’n prent wees.",
             "generic_error": "Iets het verkeerd geloop",
             "invalid_email_address": "Ongeldige e-posadres",
             "invalid_image_type": "Ongeldige prenttipe",
             "invalid_password": "Ongeldige wagwoord",
             "mismatching_new_passwords": "Nuwe wagwoorde stem nie ooreen nie",
-            "service_unavailable": "Die bedieners is besig, probeer asseblief later weer",
+            "service_unavailable": "Die bedieners is besig, probeer asseblief later weer.",
             "unable_to_logout": "Kon nie afmeld nie",
             "unauthorized": "Jy is nie gemagtig om hierdie aksie uit te voer nie",
             "unknown": "Fout met die verwerking van die opdatering, probeer asseblief later weer"
@@ -371,7 +371,7 @@
             "supported_types": "Ondersteunde prenttipes: JPG, PNG, GIF",
             "use_default": "Gebruik verstek-avatar"
         },
-        "password_success": "Wagwoord opgedateer.",
+        "password_success": "Wagwoord opgedateer",
         "placeholders": {
             "current_password": "Voer huidige wagwoord in",
             "display_name": "Profielnaam",
@@ -391,32 +391,32 @@
     },
     "svod": {
         "email_verification": {
-            "already_used": "Hierdie e-posverifikasieskakel is reeds gebruik",
-            "expired": "Hierdie e-posverifikasieskakel het verval, probeer asseblief weer",
-            "invalid": "Hierdie e-posverifikasieskakel is ongeldig, versoek asseblief 'n nuwe skakel",
+            "already_used": "Hierdie e-posverifikasieskakel is reeds gebruik.",
+            "expired": "Hierdie e-posverifikasieskakel het verval, probeer asseblief weer.",
+            "invalid": "Hierdie e-posverifikasieskakel is ongeldig, versoek asseblief ’n nuwe skakel.",
             "pending": "Besig om e-posadres te verifieer...",
             "success": "Jou e-posadres is suksesvol geverifieer!",
             "unknown": "Iets het verkeerd geloop met die verifiëring van jou e-posadres"
         },
         "reset_password": {
-            "already_used": "Die herstelskakel vir jou wagwoord is reeds gebruik",
+            "already_used": "Die herstelskakel vir jou wagwoord is reeds gebruik.",
             "confirm": "Bevestig wagwoord",
-            "expired": "Die herstelskakel vir jou wagwoord het verval, versoek asseblief 'n nuwe skakel",
-            "invalid": "Die herstelskakel vir jou wagwoord is ongeldig, versoek asseblief 'n nuwe skakel",
+            "expired": "Die herstelskakel vir jou wagwoord het verval, versoek asseblief ’n nuwe skakel.",
+            "invalid": "Die herstelskakel vir jou wagwoord is ongeldig, versoek asseblief ’n nuwe skakel.",
             "none": "Stel wagwoord terug",
             "not_filled": "Jy moet al die velde invul",
             "password": "Nuwe wagwoord",
             "password_mismatch": "Jou wagwoorde stem nie ooreen nie",
             "pending": "Besig om wagwoord terug te stel...",
             "success": "Jou wagwoord is suksesvol teruggestel!",
-            "too_similar": "Jou nuwe wagwoord lyk te veel soos jou ou wagwoord. Herlaai die bladsy en probeer asseblief weer",
+            "too_similar": "Jou nuwe wagwoord lyk te veel soos jou ou wagwoord. Herlaai die bladsy en probeer asseblief weer.",
             "unknown": "Iets het verkeerd geloop met die terugstel van jou wagwoord"
         },
         "settings": {
             "email_taken": "Die e-posadres wat jy gekies het, word reeds deur iemand anders gebruik.",
-            "expired": "Die LoginRadius-toegangstoken het verval. Om jou profiel op te dateer moet jy afmeld en weer aanmeld om 'n nuwe token te kry",
-            "incorrect_format": "Een van die parameters in die versoek is nie in die regte formaat nie",
-            "invalid": "Die LoginRadius-toegangstoken is ongeldig",
+            "expired": "Die LoginRadius-toegangstoken het verval. Om jou profiel op te dateer moet jy afmeld en weer aanmeld om ’n nuwe token te kry.",
+            "incorrect_format": "Een van die parameters in die versoek is nie in die regte formaat nie.",
+            "invalid": "Die LoginRadius-toegangstoken is ongeldig.",
             "invalid_credentials": "Ongeldige wagwoord"
         }
     },
@@ -432,32 +432,32 @@
     },
     "timers": {
         "countdown": {
-            "less_than_a_minute": "Minder as 'n minuut oor.",
+            "less_than_a_minute": "Minder as ’n minuut oor",
             "minutes_remaining": "{minutes} {minutes, plural, =1{minuut} other{minute}} oor."
         }
     },
     "tooltip": {
         "push": {
-            "body": "Klik asseblief op 'Laat toe' wanneer jy gevra word, om kennisgewings in jou blaaier te ontvang.",
-            "heading": "Klik op 'Laat toe'"
+            "body": "Klik asseblief op “Laat toe” wanneer jy gevra word, om kennisgewings in jou blaaier te ontvang.",
+            "heading": "Klik op “Laat toe”"
         }
     },
     "tray": {
         "authentication": {
             "aria": {
-                "description": "Meld aan of registreer via 'n sosiale netwerk of met 'n gebruikersnaam en wagwoord",
+                "description": "Meld aan of registreer via ’n sosiale netwerk of met ’n gebruikersnaam en wagwoord",
                 "header": "Meld aan of registreer"
             },
             "login": {
                 "aria": {
-                    "email": "Meld aan met 'n e-posadres en wagwoord",
-                    "social": "Meld aan via 'n sosiale netwerk"
+                    "email": "Meld aan met ’n e-posadres en wagwoord",
+                    "social": "Meld aan via ’n sosiale netwerk"
                 }
             },
             "signup": {
                 "aria": {
-                    "email": "Registreer met 'n e-posadres en wagwoord",
-                    "social": "Registreer via 'n sosiale netwerk"
+                    "email": "Registreer met ’n e-posadres en wagwoord",
+                    "social": "Registreer via ’n sosiale netwerk"
                 }
             }
         },
@@ -468,10 +468,10 @@
             "segments": {
                 "following": "volg",
                 "followers": "{count, plural, =1{volgeling} other{volgelinge}}",
-                "muted": "gedemp"
+                "muted": "versteek"
             },
             "badge": {
-                "author": "Outeur",
+                "author": "Skrywer",
                 "topic": "Onderwerp"
             }
         },
@@ -493,7 +493,7 @@
             "update": "Dateer op"
         },
         "user_actions": {
-            "author_follow_aria_label": "Volg bladsy-outeurs om kennisgewings oor hul nuwe artikels te ontvang.",
+            "author_follow_aria_label": "Volg bladsyskrywers om kennisgewings oor hul nuwe artikels te ontvang.",
             "author_unfollow_aria_label": "Ontvolg bladsy-outeurs om nie meer kennisgewings oor hul nuwe artikels te ontvang nie.",
             "topic_follow_aria_label": "Volg \"{topic}\" om kennisgewings oor nuwe bladsye oor \"{topic}\" te ontvang.",
             "topic_unfollow_aria_label": "Ontvolg \"{topic}\" om nie meer kennisgewings oor nuwe artikels oor \"{topic}\" te ontvang nie.",
@@ -506,7 +506,7 @@
                 "yesterday": "{count, plural, =1{{count} kennisgewing} other{{count} kennisgewings}} van gister",
                 "older": "{count, plural, =1{{count} ouer kennisgewing} other{{count} ouer kennisgewings}}"
             },
-            "empty": "Daar is geen kennisgewings nie",
+            "empty": "Daar is geen kennisgewings nie.",
             "load_error": "Jou kennisgewings kon nie gelaai word nie.",
             "retry": "Probeer weer",
             "rail_label_unread": "{label}, {count, plural, =1{{count} ongelees} other{{count} ongelees}}",
@@ -531,7 +531,7 @@
             },
             "comments": {
                 "many": "het kommentaar gelewer op {pageTitle}",
-                "livereviews": "het 'n nuwe resensie op {pageTitle} geskryf"
+                "livereviews": "het ’n nuwe resensie op {pageTitle} geskryf"
             },
             "answer": {
                 "livequestions": "het jou vraag op {pageTitle} beantwoord"
@@ -547,12 +547,12 @@
     "user_actions": {
         "follow": "volg",
         "following": "Jy volg",
-        "mute": "Demp",
-        "mute_aria_label": "Demp {username} om hul plasings en kennisgewings te versteek.",
-        "muted": "gedemp",
+        "mute": "Wil nie sien nie",
+        "mute_aria_label": "Versteek {username} as jy nie hul plasings en kennisgewings wil sien nie.",
+        "muted": "versteek",
         "unfollow": "ontvolg",
-        "unmute": "hef demping op",
-        "unmute_aria_label": "Hef die demping van {username} op sodat hul plasings weer gewys word en jy kennisgewings van hulle ontvang."
+        "unmute": "moenie meer versteek nie",
+        "unmute_aria_label": "Maak {username} se plasings en kennisgewings weer sigbaar."
     },
     "comments": {
         "heading": "Gesprek",
@@ -569,10 +569,10 @@
             "all_comments": "Alle kommentaar",
             "all_comments_tab_label": "Alle kommentaar, {count} {count, plural, =1{item} other{items}}",
             "featured": "Uitgeligte kommentaar",
-            "featured_tab_content_description": "Uitgeligte kommentaar is bydraes wat die uitgewer vir spesiale aandag wil uitlig.",
+            "featured_tab_content_description": "Uitgeligte kommentaar is bydraes wat die webtuiste vir spesiale aandag wil uitlig.",
             "featured_tab_heading": "Uitgeligte kommentaar",
             "featured_tab_label": "Uitgeligte kommentaar, {count} {count, plural, =1{item} other{items}}",
-            "filter_label": "Kies 'n kommentaarfilter",
+            "filter_label": "Kies ’n kommentaarfilter",
             "top_comments": "Topkommentaar"
         },
         "new_comment": {
@@ -616,12 +616,12 @@
             "return": "wys alle plasings",
             "twitter": "twitter",
             "unflag": "maak skoon",
-            "unpin": "speld los",
+            "unpin": "verwyder die vasspeld van dié inhoud",
             "unpin_post": "speld plasing los",
-            "unspam": "ontmerk strooipos",
+            "unspam": "moenie meer merk as strooipos nie",
             "copy_console_url": "Kopieer skakel na Console",
-            "top_comment_exclude": "Sluit uit topkommentaar uit",
-            "top_comment_add": "Ontdoen uitsluiting"
+            "top_comment_exclude": "Sluit topkommentaar uit",
+            "top_comment_add": "Keer uitsluiting om"
         },
         "announce": {
             "empty": {
@@ -638,24 +638,24 @@
         },
         "content_container": {
             "expiry_notice": {
-                "comments": "Die gesprek is nou gesluit",
+                "comments": "Die gesprek is nou gesluit.",
                 "posts": "Die regstreekse blog het geëindig"
             },
             "user_actions": {
                 "follow_aria_label": {
-                    "comments": "Volg hierdie gesprek om in kennis gestel te word wanneer nuwe kommentaar geplaas word",
-                    "posts": "Volg hierdie regstreekse blog om in kennis gestel te word wanneer daar nuwe opdaterings is"
+                    "comments": "Volg hierdie gesprek om in kennis gestel te word wanneer nuwe kommentaar geplaas word.",
+                    "posts": "Volg hierdie regstreekse blog om in kennis gestel te word wanneer daar nuwe opdaterings is."
                 },
                 "unfollow_aria_label": {
-                    "comments": "Hou op om die gesprek op hierdie bladsy te volg om nie meer kennisgewings te ontvang wanneer nuwe kommentaar geplaas word nie",
-                    "posts": "Hou op om hierdie regstreekse blog te volg sodat jy nie meer van nuwe opdaterings in kennis gestel word nie"
+                    "comments": "Hou op om die gesprek op hierdie bladsy te volg om nie meer kennisgewings te ontvang wanneer nuwe kommentaar geplaas word nie.",
+                    "posts": "Hou op om hierdie regstreekse blog te volg sodat jy nie meer van nuwe opdaterings in kennis gestel word nie."
                 }
             }
         },
         "load_more": {
             "error_aria": {
-                "comments": "Daar was 'n probleem met die laai van die volgende stel kommentaar. Probeer asseblief weer.",
-                "posts": "Daar was 'n probleem met die laai van die volgende stel plasings. Probeer asseblief weer."
+                "comments": "Daar was ’n probleem met die laai van die volgende stel kommentaar. Probeer asseblief weer.",
+                "posts": "Daar was ’n probleem met die laai van die volgende stel plasings. Probeer asseblief weer."
             },
             "label": {
                 "comments": "Laai meer kommentaar",
@@ -664,7 +664,7 @@
         },
         "moderation": {
             "awaiting_moderation": "Wag op goedkeuring",
-            "awaiting_moderation_aria_label": "Hierdie inhoud wag op goedkeuring van 'n moderator.",
+            "awaiting_moderation_aria_label": "Hierdie inhoud wag op goedkeuring van ’n moderator.",
             "comment_status_banned": "Hierdie gebruiker is verbied",
             "disabled": "gedeaktiveer",
             "disabled_aria_label": "Hierdie inhoud is gedeaktiveer.",
@@ -674,21 +674,21 @@
             "flagged": "{count} {count, plural, =1{rapport} other{rapporte}}",
             "flagged_aria_label": "Hierdie inhoud het {count} {count, plural, =1{rapport} other{rapporte}}.",
             "pending": "wag op goedkeuring",
-            "pending_aria_label": "Hierdie inhoud wag op goedkeuring van 'n moderator.",
+            "pending_aria_label": "Hierdie inhoud wag op goedkeuring van ’n moderator.",
             "spam": "strooipos",
             "spam_aria_label": "Hierdie inhoud is as strooipos gemerk.",
             "unavailable": "inhoud nie beskikbaar nie",
             "unavailable_aria_label": "Hierdie inhoud is tans nie beskikbaar nie"
         },
         "navigation": {
-            "settings_a11y_jump": "Spring na instellings",
+            "settings_a11y_jump": "Gaan na instellings",
             "settings_aria": "Wissel instellings-oortjie"
         },
         "post": "{count, plural, =1{plasing} other{plasings}}",
         "posts": {
             "ban": "Jou rekening is verbied om te plaas.  {reason, plural, =0{} other{Rede: {reason}}}",
             "deleted": "inhoud verwyder",
-            "deleted_aria_label": "Hierdie inhoud is versteek omdat die outeur dit geskrap het.",
+            "deleted_aria_label": "Hierdie inhoud is versteek omdat die skrywer dit geskrap het.",
             "dislike": {
                 "noun": "{count, plural, =1{afkeur} other{afkeure}}",
                 "past": "afgekeur",
@@ -700,25 +700,25 @@
             "edited_aria_label": "Hierdie inhoud is geredigeer",
             "flag": {
                 "past": "gerapporteer",
-                "verb": "rapporteer"
+                "verb": "meld aan"
             },
             "like": {
-                "noun": "{count, plural, =1{like} other{likes}}",
+                "noun": "{count, plural, =1{hou van} other{hou van}}",
                 "past": "van gehou",
                 "verb": "hou van"
             },
             "like_aria_label": "{count} {count, plural, =1{like} other{likes}}, hou van.",
             "unlike_aria_label": "{count} {count, plural, =1{like} other{likes}}. Verwyder jou like.",
             "load": "wys meer plasings",
-            "muted": "Gebruiker gedemp",
-            "muted_aria_label": "Hierdie inhoud is versteek omdat jy die plaser gedemp het.",
+            "muted": "Wil nie gebruiker sien nie",
+            "muted_aria_label": "Hierdie inhoud word nie gesien nie omdat jy het die gebruiker versteek het.",
             "offline": "Ons sukkel om aan die internet te koppel; plasing is tans gedeaktiveer.",
-            "replies_aria_label": "Laai {count} {count, plural, =1{reaksie} other{reaksies}} op hierdie plasing in 'n modale aansig.",
+            "replies_aria_label": "Laai {count} {count, plural, =1{reaksie} other{reaksies}} op hierdie plasing in ’n modale aansig.",
             "reply": {
                 "noun": "{count, plural, =1{reaksie} other{reaksies}}",
                 "verb": "reageer"
             },
-            "reply_aria_label": "Reageer op hierdie plasing.",
+            "reply_aria_label": "Reageer op hierdie plasing",
             "share": "deel",
             "aria_title": {
                 "enabled": {
@@ -739,13 +739,13 @@
                 "mentions": "Wys {count} nuwe {count, plural, =1{vermelding} other{vermeldings}}",
                 "posts": "Wys {count} nuwe {count, plural, =1{plasing} other{plasings}}"
             },
-            "skip_to_top": "Spring na bo"
+            "skip_to_top": "Gaan na bo"
         },
         "reload": "Laai nuwe inhoud",
         "reply_to": {
             "reply_to": "Reageer op",
-            "reply_to_aria_label": "Dit is 'n reaksie op {user}.",
-            "reply_to_button_aria_label": "Dit is 'n reaksie op {user}. Bekyk die boodskap deur {user} in sy reaksiedraad.",
+            "reply_to_aria_label": "Dit is ’n reaksie op {user}.",
+            "reply_to_button_aria_label": "Dit is ’n reaksie op {user}. Bekyk die boodskap deur {user} in sy gesprek.",
             "twitter_post": "Twitter-plasing",
             "view_message": "bekyk boodskap"
         },
@@ -765,7 +765,7 @@
         "sorts": {
             "most_liked": "meeste likes",
             "most_replies": "meeste reaksies",
-            "newest": "nuutste",
+            "newest": "jongste",
             "oldest": "oudste",
             "aria_label": "sorteer volgens {sorted_by}-knoppie"
         },
@@ -794,17 +794,17 @@
                     "label": "wys ouer reaksies"
                 },
                 "thread": {
-                    "count": "wys {count} inhoud in draad",
-                    "label": "wys draad"
+                    "count": "wys {count} inhoud in gesprek",
+                    "label": "wys gesprek"
                 }
             },
             "reply_thread": {
-                "aria_close_label": "Sluit reaksiedraad.",
+                "aria_close_label": "Sluit gesprek",
                 "aria_label": "Reaksies op {name}.",
                 "back": "terug"
             },
-            "title": "Reaksiedraad",
-            "title_loading": "Reaksiedraad laai..."
+            "title": "Gesprek",
+            "title_loading": "Gesprek laai..."
         },
         "typing": {
             "top_level": "Iemand tik"
@@ -824,7 +824,7 @@
             "label_part2": "Terugvoer"
         },
         "top_comments": {
-            "info": "Topkommentaar word gekies deur 'n algoritme wat ontwerp is om kommentaar uit te lig wat boeiende gesprekke aanmoedig en uiteenlopende perspektiewe verbind, terwyl uitgeligte of vasgespelde kommentaar deur personeel gekies word."
+            "info": "Topkommentaar word gekies deur ’n algoritme wat ontwerp is om kommentaar uit te lig wat boeiende gesprekke aanmoedig en uiteenlopende perspektiewe verbind, terwyl uitgeligte of vasgespelde kommentaar deur personeel gekies word."
         }
     },
     "liveblog": {
@@ -846,8 +846,8 @@
             },
             "end_now": "Eindig nou",
             "errors": {
-                "end_after_start": "Die eindtyd van die regstreekse storie moet ná die begintyd wees",
-                "error_fetching": "Iets het verkeerd geloop met die haal van die data",
+                "end_after_start": "Die eindtyd van die regstreekse storie moet ná die begintyd wees.",
+                "error_fetching": "Iets het verkeerd geloop met die haal van die data.",
                 "generic_error": "Iets het verkeerd geloop",
                 "max_rules": "Maksimum aantal reëls bereik",
                 "query_invalid": "Jou reël bevat foute",
@@ -907,10 +907,10 @@
                     "part3": "of",
                     "part4": "diensbepalings"
                 },
-                "third_line": "moedig ons jou aan om dit te rapporteer.",
-                "fourth_line": "Rapportering help ons om 'n veilige en inklusiewe omgewing vir alle gebruikers te handhaaf."
+                "third_line": "moedig ons jou aan om dit aan te meld.",
+                "fourth_line": "Rapportering help ons om ’n veilige en inklusiewe omgewing vir alle gebruikers te handhaaf."
             },
-            "start_button": "Begin rapport"
+            "start_button": "Begin rapportering"
         },
         "reasons": {
             "disagree": {
@@ -923,7 +923,7 @@
             },
             "spam": {
                 "title": "Strooipos",
-                "description": "Werf geld, moedig interaksie met inhoud onder valse voorwendsels aan, lei gebruikers met misleidende skakels van die werf af"
+                "description": "Werf geld, moedig interaksie met inhoud onder valse voorwendsels aan, lei gebruikers met misleidende skakels van die webtuiste af"
             },
             "inappropriate": {
                 "title": "Onvanpaste gebruikersnaam of avatar",
@@ -935,7 +935,7 @@
             },
             "impersonation": {
                 "title": "Nabootsing",
-                "description": "Gee voor om 'n ander persoon te wees onder valse voorwendsels"
+                "description": "Gee voor om ’n ander persoon te wees onder valse voorwendsels"
             },
             "private": {
                 "title": "Private inligting",
@@ -946,7 +946,7 @@
             "title": "Wat is jou rede vir die rapportering?"
         },
         "confirmation": {
-            "text": "Dankie dat jy hierdie inhoud gerapporteer het. Jou terugvoer help ons om 'n veiliger en aangenamer ervaring vir alle gebruikers te verseker.",
+            "text": "Dankie dat jy hierdie inhoud aangemeld het. Jou terugvoer help ons om ’n veiliger en aangenamer ervaring vir alle gebruikers te verseker.",
             "return_button": "Keer terug na kommentaar"
         },
         "cancel_button": "Kanselleer",
@@ -973,17 +973,17 @@
         "activity": "Aktiwiteit",
         "expand_replies": "Vou reaksies oop",
         "flag": "rapporteer",
-        "flags": "rapporte",
+        "flags": "wat aangemeld is",
         "like": "hou van",
-        "likes": "likes",
+        "likes": "hou van",
         "gallery": "Galery",
-        "view_more": "Bekyk meer",
+        "view_more": "Sien meer",
         "camera": "Kamera",
         "follower": "Volgeling",
         "followers": "Volgelinge",
         "commented_on": "het kommentaar gelewer op ",
         "remove_editor_pick": "Verwyder as uitgelig",
-        "select_picture": "Kies 'n prent",
+        "select_picture": "Kies ’n prent",
         "comment_single": "kommentaar",
         "comments_plural": "kommentare",
         "post_single": "plasing",
@@ -995,14 +995,14 @@
         "empty_moderation": "Niks om te modereer nie",
         "new_comment_single": "Wys 1 nuwe kommentaar",
         "new_comments_plural": "Wys X nuwe kommentare",
-        "post_report_message": "Dankie dat jy hierdie kommentaar gerapporteer het. Ons neem alle rapporte ernstig op en sal die saak so gou moontlik ondersoek.",
+        "post_report_message": "Dankie dat jy hierdie kommentaar aangemeld het. Ons neem alle kommentare wat aangemeld word, ernstig op en sal die saak so gou moontlik ondersoek.",
         "add_reply": "Voeg jou reaksie by",
         "commenting_not_available": "Kommentaar is nie beskikbaar nie",
-        "show_reported_content": "Wys gerapporteerde inhoud",
-        "hide_reported_content": "Versteek gerapporteerde inhoud",
+        "show_reported_content": "Wys inhoud wat aangemeld is",
+        "hide_reported_content": "Versteekte aangemelde inhoud",
         "or": "of",
-        "banned_posting_until": "Jou rekening is verbied om te plaas tot ",
-        "banned_posting_permanent": "Jou rekening is permanent verbied om te plaas",
+        "banned_posting_until": "Jou profiel is verbied om te plaas tot ",
+        "banned_posting_permanent": "Jou profiel is permanent verbied om te plaas",
         "ban_message_moderator": "Boodskap van die moderator: ",
         "reviewing": "Resenseer",
         "url_preview_dismiss": "Verwyder voorskou"
@@ -1059,7 +1059,7 @@
         "realtime_bar": {
             "label": "{new_post_number} {new_post_number, plural, =1{opdatering} other{opdaterings}}",
             "mod_label": "Laai {new_post_number} nuwe {new_post_number, plural, =1{boodskap} other{boodskappe}}",
-            "newest": "nuutste",
+            "newest": "jongste",
             "replies_label": "{new_replies_number} nuwe {new_replies_number, plural, =1{reaksie} other{reaksies}}"
         },
         "reply": {
@@ -1463,7 +1463,7 @@
                 "remove_option": "Verwyder opsie",
                 "anonymous_voting": {
                     "label": "Anonieme stemming",
-                    "hint": "Antwoorde is vertroulik en kan nie na 'n gebruiker teruggevoer word nie."
+                    "hint": "Antwoorde is vertroulik en kan nie na ’n gebruiker teruggevoer word nie."
                 },
                 "close_time": {
                     "label": "Peiling se sluitingstyd",

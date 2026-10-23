@@ -768,6 +768,7 @@ SWIFT_CLASS("_TtC11ViafouraSDK14VFSkeletonView")
 @interface VFSkeletonView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
 @end
 
 SWIFT_CLASS("_TtC11ViafouraSDK10VFSpamView")

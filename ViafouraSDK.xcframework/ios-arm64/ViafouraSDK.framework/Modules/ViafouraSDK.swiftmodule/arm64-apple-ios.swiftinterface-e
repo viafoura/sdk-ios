@@ -388,6 +388,25 @@ public enum VFActionCallbackType {
   case profileTabPressed(tab: ViafouraSDK.VFProfileTab)
   case commentHistoryPressed(contentUUID: Foundation.UUID, containerUUID: Foundation.UUID, metadata: ViafouraSDK.VFArticleMetadata)
   case writeNewQuestionPressed(actionType: ViafouraSDK.VFNewQuestionActionType)
+  case liveQuestionsContentPosted(content: ViafouraSDK.VFLiveQuestionsPostedContent)
+}
+public enum VFLiveQuestionsContentType : Swift.Equatable {
+  case question
+  case announcement
+  case answer
+  case reply
+  public static func == (a: ViafouraSDK.VFLiveQuestionsContentType, b: ViafouraSDK.VFLiveQuestionsContentType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct VFLiveQuestionsPostedContent : Swift.Equatable {
+  public let contentUUID: Foundation.UUID
+  public let containerUUID: Foundation.UUID
+  public let type: ViafouraSDK.VFLiveQuestionsContentType
+  public let isPostedByHost: Swift.Bool
+  public static func == (a: ViafouraSDK.VFLiveQuestionsPostedContent, b: ViafouraSDK.VFLiveQuestionsPostedContent) -> Swift.Bool
 }
 public enum VFNewQuestionActionType : Swift.Equatable {
   case question
@@ -996,6 +1015,7 @@ extension ViafouraSDK.VFPollContainerError {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFSkeletonView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class ImageService : Swift.Sendable {
@@ -2342,7 +2362,6 @@ extension ViafouraSDK.VFReviewContainerError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class ViewChatReplyViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(originalChatContent: ViafouraSDK.ChatContent, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ViewChatReplyViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
@@ -2381,7 +2400,6 @@ extension ViafouraSDK.VFDeleteReviewError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class ChatReplyViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(originalChatContent: ViafouraSDK.ChatContent, containerSettings: ViafouraSDK.ChatContainerSettings?, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ChatReplyViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
@@ -2394,7 +2412,6 @@ extension ViafouraSDK.ChatReplyViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class TopCommentsDisclaimerViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(settings: ViafouraSDK.VFSettings) -> ViafouraSDK.TopCommentsDisclaimerViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
@@ -3499,6 +3516,7 @@ extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Equatable {}
 extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Hashable {}
 extension ViafouraSDK.VFTheme : Swift.Equatable {}
 extension ViafouraSDK.VFTheme : Swift.Hashable {}
+extension ViafouraSDK.VFLiveQuestionsContentType : Swift.Hashable {}
 extension ViafouraSDK.VFProfileTab : Swift.Equatable {}
 extension ViafouraSDK.VFProfileTab : Swift.Hashable {}
 extension ViafouraSDK.VFAuthPromptType : Swift.Equatable {}
