@@ -388,6 +388,25 @@ public enum VFActionCallbackType {
   case profileTabPressed(tab: ViafouraSDK.VFProfileTab)
   case commentHistoryPressed(contentUUID: Foundation.UUID, containerUUID: Foundation.UUID, metadata: ViafouraSDK.VFArticleMetadata)
   case writeNewQuestionPressed(actionType: ViafouraSDK.VFNewQuestionActionType)
+  case liveQuestionsContentPosted(content: ViafouraSDK.VFLiveQuestionsPostedContent)
+}
+public enum VFLiveQuestionsContentType : Swift.Equatable {
+  case question
+  case announcement
+  case answer
+  case reply
+  public static func == (a: ViafouraSDK.VFLiveQuestionsContentType, b: ViafouraSDK.VFLiveQuestionsContentType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct VFLiveQuestionsPostedContent : Swift.Equatable {
+  public let contentUUID: Foundation.UUID
+  public let containerUUID: Foundation.UUID
+  public let type: ViafouraSDK.VFLiveQuestionsContentType
+  public let isPostedByHost: Swift.Bool
+  public static func == (a: ViafouraSDK.VFLiveQuestionsPostedContent, b: ViafouraSDK.VFLiveQuestionsPostedContent) -> Swift.Bool
 }
 public enum VFNewQuestionActionType : Swift.Equatable {
   case question
@@ -431,7 +450,19 @@ public enum VFNotificationPresentationType {
 public enum VFProfilePresentationType {
   case profile
   case feed
+  case community
+  case settings
   public static func == (a: ViafouraSDK.VFProfilePresentationType, b: ViafouraSDK.VFProfilePresentationType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum VFCommunityTab {
+  case following
+  case followers
+  case muted
+  public static func == (a: ViafouraSDK.VFCommunityTab, b: ViafouraSDK.VFCommunityTab) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -996,6 +1027,7 @@ extension ViafouraSDK.VFPollContainerError {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class VFSkeletonView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class ImageService : Swift.Sendable {
@@ -2289,6 +2321,7 @@ public enum VFProfileStyle {
   }
   @_Concurrency.MainActor @preconcurrency public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.VFProfileViewController
   @_Concurrency.MainActor @preconcurrency public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, style: ViafouraSDK.VFProfileStyle) -> ViafouraSDK.VFProfileViewController
+  @_Concurrency.MainActor @preconcurrency public static func new(userUUID: Foundation.UUID, presentationType: ViafouraSDK.VFProfilePresentationType, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings, style: ViafouraSDK.VFProfileStyle, communityTab: ViafouraSDK.VFCommunityTab?) -> ViafouraSDK.VFProfileViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
   @_Concurrency.MainActor @preconcurrency public func setActionCallbacks(callbacks: @escaping ViafouraSDK.VFActionsCallbacks)
@@ -2342,7 +2375,6 @@ extension ViafouraSDK.VFReviewContainerError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class ViewChatReplyViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(originalChatContent: ViafouraSDK.ChatContent, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ViewChatReplyViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
@@ -2381,7 +2413,6 @@ extension ViafouraSDK.VFDeleteReviewError {
   }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class ChatReplyViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(originalChatContent: ViafouraSDK.ChatContent, containerSettings: ViafouraSDK.ChatContainerSettings?, containerId: Swift.String, articleMetadata: ViafouraSDK.VFArticleMetadata, loginDelegate: any ViafouraSDK.VFLoginDelegate, settings: ViafouraSDK.VFSettings) -> ViafouraSDK.ChatReplyViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
@@ -2394,7 +2425,6 @@ extension ViafouraSDK.ChatReplyViewController : UIKit.UITextViewDelegate {
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class TopCommentsDisclaimerViewController : ViafouraSDK.VFUIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var storyboardName: Swift.String
   @_Concurrency.MainActor @preconcurrency public static func new(settings: ViafouraSDK.VFSettings) -> ViafouraSDK.TopCommentsDisclaimerViewController
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency public func setTheme(theme: ViafouraSDK.VFTheme)
@@ -2776,6 +2806,7 @@ public struct VFAccessibilityIdentifiers {
   public static let profileDrawerClose: Swift.String
   public static let profileDrawerShowMore: Swift.String
   public static let profileDrawerRetry: Swift.String
+  public static let profileDrawerUseDefaultAvatar: Swift.String
 }
 @_Concurrency.MainActor public protocol VFCustomUIDelegate : AnyObject {
   @_Concurrency.MainActor func customizeView(theme: ViafouraSDK.VFTheme, view: ViafouraSDK.VFCustomizableView)
@@ -2887,7 +2918,13 @@ public protocol VFUsersService : Swift.Sendable {
   func getUserInfo(userUUID: Foundation.UUID, completion: @escaping (Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>) -> Swift.Void)
   func getUserInfo(userUUID: Foundation.UUID) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
   func updateUserAvatar(imageData: Foundation.Data) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
+  func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
+  func resetUserAvatar() async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func updateUser(email: Swift.String?, name: Swift.String?, password: Swift.String?, newPassword: Swift.String?, emailNoticeFrequency: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserError>
+}
+extension ViafouraSDK.VFUsersService {
+  public func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
+  public func resetUserAvatar() async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
 }
 public enum VFUserInfoError : Foundation.LocalizedError {
   case unknown
@@ -2958,6 +2995,8 @@ public enum VFSocialLoginProvider : Swift.String, Swift.Encodable, Swift.Decodab
   case yahoo
   case windowslive
   case aol
+  case janrain
+  case loginradius
   case none
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -3499,12 +3538,15 @@ extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Equatable {}
 extension ViafouraSDK.VFUpdateUserAvatarError : Swift.Hashable {}
 extension ViafouraSDK.VFTheme : Swift.Equatable {}
 extension ViafouraSDK.VFTheme : Swift.Hashable {}
+extension ViafouraSDK.VFLiveQuestionsContentType : Swift.Hashable {}
 extension ViafouraSDK.VFProfileTab : Swift.Equatable {}
 extension ViafouraSDK.VFProfileTab : Swift.Hashable {}
 extension ViafouraSDK.VFAuthPromptType : Swift.Equatable {}
 extension ViafouraSDK.VFAuthPromptType : Swift.Hashable {}
 extension ViafouraSDK.VFProfilePresentationType : Swift.Equatable {}
 extension ViafouraSDK.VFProfilePresentationType : Swift.Hashable {}
+extension ViafouraSDK.VFCommunityTab : Swift.Equatable {}
+extension ViafouraSDK.VFCommunityTab : Swift.Hashable {}
 extension ViafouraSDK.VFSingleChatError : Swift.Equatable {}
 extension ViafouraSDK.VFSingleChatError : Swift.Hashable {}
 extension ViafouraSDK.VFClosePollError : Swift.Equatable {}
