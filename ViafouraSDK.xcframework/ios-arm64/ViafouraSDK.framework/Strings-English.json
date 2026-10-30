@@ -1436,7 +1436,9 @@
     "polls": {
         "title": {
             "active": "Poll Question",
-            "closed": "Poll Closed"
+            "closed": "Poll Closed",
+            "active_quiz": "Quiz",
+            "closed_quiz": "Quiz Closed"
         },
         "closing_time": {
             "days": "{count} {count, plural, =1{day} other{days}} left",
@@ -1447,7 +1449,10 @@
             "close_poll": "Close Poll",
             "delete_poll": "Delete Poll",
             "create": "Create Poll",
-            "show_all_options": "Show all"
+            "show_all_options": "Show all",
+            "close_quiz": "Close Quiz",
+            "create_quiz": "Create Quiz",
+            "delete_quiz": "Delete Quiz"
         },
         "standalone": {
             "ready_title": "Ready to configure"
@@ -1470,13 +1475,23 @@
                     "label": "Poll close time",
                     "optional": " – optional",
                     "placeholder": "No date set",
-                    "helper": "Once set, this cannot be edited. You can still close or delete the poll manually."
-                }
+                    "helper": "Once set, this cannot be edited. You can still close or delete the poll manually.",
+                    "helper_quiz": "Once set, this cannot be edited. You can still close or delete it manually.",
+                    "label_quiz": "Close time"
+                },
+                "correct_answer_badge": "Mark one option as the correct answer",
+                "explanation": {
+                    "hint": "Provide context or reasoning for the correct answer",
+                    "label": "Answer explanation",
+                    "optional": " – optional"
+                },
+                "mark_correct": "Mark option {number} as the correct answer"
             },
             "actions": {
                 "cancel": "Cancel",
                 "publish": "Publish"
-            }
+            },
+            "title_quiz": "Create Quiz"
         },
         "confirmation_prompt": {
             "cancel_button": "Cancel",
@@ -1487,6 +1502,14 @@
             "delete_poll": {
                 "confirmation_button": "Delete Poll",
                 "text": "Deleting this poll removes it from view without notifying users. Any voting data remains available in analytics."
+            },
+            "close_quiz": {
+                "confirmation_button": "Close Quiz",
+                "text": "Closing this quiz will end responses and publish the results."
+            },
+            "delete_quiz": {
+                "confirmation_button": "Delete Quiz",
+                "text": "Deleting this quiz removes it from view without notifying users. Any response data remains available in analytics."
             }
         },
         "vote": {
@@ -1497,6 +1520,13 @@
             "poll_closed": {
                 "message": "Sorry, the poll has been closed.",
                 "link": "View Poll Results"
+            }
+        },
+        "result": {
+            "explanation": {
+                "correct": "Correct",
+                "incorrect": "Not quite",
+                "neutral": "Here’s why"
             }
         }
     }

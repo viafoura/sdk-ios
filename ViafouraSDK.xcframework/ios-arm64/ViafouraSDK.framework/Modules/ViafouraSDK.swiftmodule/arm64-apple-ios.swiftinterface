@@ -149,6 +149,9 @@ public struct VFDefaultColors {
   public static func skeletonGradientBackgroundColor(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func skeletonGradientHightlightColor(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorErrorDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorErrorLightDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorSuccessDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorSuccessLightDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorWarningDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorStarDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorEditorPicksDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
@@ -629,6 +632,7 @@ extension VFDislikeCommentError {
   public func logLiveQuestionsCreateEventClicked(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: VFArticleMetadata)
   public func logLiveQuestionsEventViewed(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata)
   public func logEventAttemptedAction(eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
+  public func logEventAttemptedAction(eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?, isQuiz: Swift.Bool)
   public func logABTestEvent(eventTestInfo: EventTestInfo, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
   @objc deinit
 }
@@ -2138,6 +2142,9 @@ public enum VFCustomizableView {
   case pollSecondaryButton(button: VFButton)
   case pollMessageTitleLabel(label: VFLabel)
   case pollMessageTextLabel(label: VFLabel)
+  case pollQuizVerdictLabel(label: VFLabel)
+  case pollQuizVerdictImage(image: VFImageView)
+  case pollQuizExplanationLabel(label: VFLabel)
 }
 extension VFLiveCommentsServiceImplementation {
   final public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, VFUnpinCommentError>

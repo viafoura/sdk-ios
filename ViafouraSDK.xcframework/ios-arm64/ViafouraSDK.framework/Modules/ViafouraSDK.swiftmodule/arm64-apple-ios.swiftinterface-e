@@ -149,6 +149,9 @@ public struct VFDefaultColors {
   public static func skeletonGradientBackgroundColor(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
   public static func skeletonGradientHightlightColor(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
   public static func colorErrorDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
+  public static func colorErrorLightDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
+  public static func colorSuccessDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
+  public static func colorSuccessLightDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
   public static func colorWarningDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
   public static func colorStarDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
   public static func colorEditorPicksDefault(_ forTheme: ViafouraSDK.VFTheme = .light) -> UIKit.UIColor
@@ -629,6 +632,7 @@ extension ViafouraSDK.VFDislikeCommentError {
   public func logLiveQuestionsCreateEventClicked(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: ViafouraSDK.VFArticleMetadata)
   public func logLiveQuestionsEventViewed(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata)
   public func logEventAttemptedAction(eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?)
+  public func logEventAttemptedAction(eventAttemptedAction: ViafouraSDK.EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?, isQuiz: Swift.Bool)
   public func logABTestEvent(eventTestInfo: ViafouraSDK.EventTestInfo, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: ViafouraSDK.VFArticleMetadata?)
   @objc deinit
 }
@@ -2138,6 +2142,9 @@ public enum VFCustomizableView {
   case pollSecondaryButton(button: ViafouraSDK.VFButton)
   case pollMessageTitleLabel(label: ViafouraSDK.VFLabel)
   case pollMessageTextLabel(label: ViafouraSDK.VFLabel)
+  case pollQuizVerdictLabel(label: ViafouraSDK.VFLabel)
+  case pollQuizVerdictImage(image: ViafouraSDK.VFImageView)
+  case pollQuizExplanationLabel(label: ViafouraSDK.VFLabel)
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   final public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUnpinCommentError>

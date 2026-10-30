@@ -1423,6 +1423,11 @@
                     "optional": " – opcional",
                     "placeholder": "Sin hora establecida",
                     "helper": "Una vez terminada la configuración, esta no se puede editar. Aun así, puedes cerrar o eliminar la encuesta manualmente."
+                },
+                "explanation": {
+                    "hint": "Añadir contexto o el razonamiento de la respuesta correcta",
+                    "label": "Explicación de la respuesta",
+                    "optional": " – opcional"
                 }
             },
             "actions": {
@@ -1447,6 +1452,13 @@
             "poll_closed": {
                 "message": "Disculpe, la encuesta ha sido cerrada.",
                 "link": "Ver Resultados de la Encuesta"
+            }
+        },
+        "result": {
+            "explanation": {
+                "correct": "Correcto",
+                "incorrect": "No exactamente",
+                "neutral": "Este es el motivo"
             }
         }
     }
