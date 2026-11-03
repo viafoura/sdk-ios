@@ -149,6 +149,9 @@ public struct VFDefaultColors {
   public static func skeletonGradientBackgroundColor(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func skeletonGradientHightlightColor(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorErrorDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorErrorLightDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorSuccessDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
+  public static func colorSuccessLightDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorWarningDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorStarDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
   public static func colorEditorPicksDefault(_ forTheme: VFTheme = .light) -> UIKit.UIColor
@@ -629,6 +632,7 @@ extension VFDislikeCommentError {
   public func logLiveQuestionsCreateEventClicked(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID?, eventArticleMetadata: VFArticleMetadata)
   public func logLiveQuestionsEventViewed(eventContainerId: Swift.String, eventSectionUUID: Foundation.UUID, eventContainerUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata)
   public func logEventAttemptedAction(eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
+  public func logEventAttemptedAction(eventAttemptedAction: EventAttemptedAction, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?, isQuiz: Swift.Bool)
   public func logABTestEvent(eventTestInfo: EventTestInfo, eventContainerId: Swift.String?, eventSectionUUID: Foundation.UUID, eventArticleMetadata: VFArticleMetadata?)
   @objc deinit
 }
@@ -1342,7 +1346,7 @@ public struct SubscriptionResponse : Swift.Decodable {
 }
 @available(iOS 13.0, *)
 @_Concurrency.MainActor @preconcurrency public struct VFProfileView : SwiftUI.UIViewControllerRepresentable {
-  @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, settings: VFSettings, style: VFProfileStyle = .default, theme: VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(userUUID: Foundation.UUID, presentationType: VFProfilePresentationType, settings: VFSettings, style: VFProfileStyle = .legacy, theme: VFTheme? = nil, onLogin: (() -> Swift.Void)? = nil, onAction: VFActionsCallbacks? = nil, onCustomizeView: ((VFTheme, VFCustomizableView) -> Swift.Void)? = nil)
   @_Concurrency.MainActor @preconcurrency public func makeCoordinator() -> VFViewCoordinator
   @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: VFProfileView.Context) -> VFProfileViewController
   @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: VFProfileViewController, context: VFProfileView.Context)
@@ -2114,6 +2118,9 @@ public enum VFCustomizableView {
   case conversationStarterFeaturedCommentLabel(label: VFLabel)
   case conversationStarterActionButton(button: VFButton)
   case conversationStarterMenuButton(button: UIKit.UIButton)
+  case conversationStarterLikeButton(button: UIKit.UIButton)
+  case conversationStarterDislikeButton(button: UIKit.UIButton)
+  case conversationStarterReplyButton(button: UIKit.UIButton)
   case pollQuestionLabel(label: VFLabel)
   case pollHeaderLabel(label: VFLabel)
   @available(*, deprecated, message: "The poll widget no longer shows this view; moderator actions live in the header menu (pollMenuButton).")
@@ -2138,6 +2145,9 @@ public enum VFCustomizableView {
   case pollSecondaryButton(button: VFButton)
   case pollMessageTitleLabel(label: VFLabel)
   case pollMessageTextLabel(label: VFLabel)
+  case pollQuizVerdictLabel(label: VFLabel)
+  case pollQuizVerdictImage(image: VFImageView)
+  case pollQuizExplanationLabel(label: VFLabel)
 }
 extension VFLiveCommentsServiceImplementation {
   final public func unpinComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String? = nil) async -> Swift.Result<Swift.Bool, VFUnpinCommentError>
@@ -2306,8 +2316,8 @@ extension VFCreateCommentMediaError {
   @objc deinit
 }
 public enum VFProfileStyle {
-  case `default`
-  case drawer
+  case legacy
+  case unity
   public static func == (a: VFProfileStyle, b: VFProfileStyle) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {

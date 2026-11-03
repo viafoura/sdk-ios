@@ -1436,7 +1436,9 @@
     "polls": {
         "title": {
             "active": "Peilingvraag",
-            "closed": "Peiling gesluit"
+            "closed": "Peiling gesluit",
+            "active_quiz": "Vasvra",
+            "closed_quiz": "Vasvra gesluit"
         },
         "closing_time": {
             "days": "{count} {count, plural, =1{dag} other{dae}} oor",
@@ -1447,7 +1449,10 @@
             "close_poll": "Sluit peiling",
             "delete_poll": "Skrap peiling",
             "create": "Skep peiling",
-            "show_all_options": "Wys almal"
+            "show_all_options": "Wys almal",
+            "close_quiz": "Sluit vasvra",
+            "create_quiz": "Skep vasvra",
+            "delete_quiz": "Skrap vasvra"
         },
         "standalone": {
             "ready_title": "Gereed om op te stel"
@@ -1470,13 +1475,23 @@
                     "label": "Peiling se sluitingstyd",
                     "optional": " – opsioneel",
                     "placeholder": "Geen datum gestel nie",
-                    "helper": "Sodra dit gestel is, kan dit nie geredigeer word nie. Jy kan die peiling steeds met die hand sluit of skrap."
-                }
+                    "helper": "Sodra dit gestel is, kan dit nie geredigeer word nie. Jy kan die peiling steeds met die hand sluit of skrap.",
+                    "helper_quiz": "Sodra dit gestel is, kan dit nie geredigeer word nie. Jy kan dit steeds met die hand sluit of skrap.",
+                    "label_quiz": "Sluitingstyd"
+                },
+                "correct_answer_badge": "Merk een opsie as die korrekte antwoord",
+                "explanation": {
+                    "hint": "Gee konteks of 'n verduideliking vir die korrekte antwoord",
+                    "label": "Antwoordverduideliking",
+                    "optional": " – opsioneel"
+                },
+                "mark_correct": "Merk opsie {number} as die korrekte antwoord"
             },
             "actions": {
                 "cancel": "Kanselleer",
                 "publish": "Publiseer"
-            }
+            },
+            "title_quiz": "Skep vasvra"
         },
         "confirmation_prompt": {
             "cancel_button": "Kanselleer",
@@ -1487,6 +1502,14 @@
             "delete_poll": {
                 "confirmation_button": "Skrap peiling",
                 "text": "As jy hierdie peiling skrap, word dit uit sig verwyder sonder om gebruikers in kennis te stel. Enige stemdata bly in ontledings beskikbaar."
+            },
+            "close_quiz": {
+                "confirmation_button": "Sluit vasvra",
+                "text": "As jy hierdie vasvra sluit, eindig die antwoorde en word die uitslae gepubliseer."
+            },
+            "delete_quiz": {
+                "confirmation_button": "Skrap vasvra",
+                "text": "As jy hierdie vasvra skrap, word dit uit sig verwyder sonder om gebruikers in kennis te stel. Enige antwoorddata bly in ontledings beskikbaar."
             }
         },
         "vote": {
@@ -1497,6 +1520,13 @@
             "poll_closed": {
                 "message": "Jammer, die peiling is gesluit.",
                 "link": "Bekyk peilinguitslae"
+            }
+        },
+        "result": {
+            "explanation": {
+                "correct": "Korrek",
+                "incorrect": "Nie heeltemal nie",
+                "neutral": "Hier is hoekom"
             }
         }
     }

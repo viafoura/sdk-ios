@@ -1421,6 +1421,11 @@
                     "optional": " – optionnel",
                     "placeholder": "Pas de date fixée",
                     "helper": "Une fois défini, ce paramètre ne peut plus être modifié. Vous pouvez toujours fermer ou supprimer le message manuellement."
+                },
+                "explanation": {
+                    "hint": "Ajouter du contexte ou la justification de la bonne réponse",
+                    "label": "Explication de la réponse",
+                    "optional": " – optionnel"
                 }
             },
             "actions": {
@@ -1445,6 +1450,13 @@
             "poll_closed": {
                 "message": "Désolé, le sondage est terminé.",
                 "link": "Voir résultats"
+            }
+        },
+        "result": {
+            "explanation": {
+                "correct": "Bonne réponse",
+                "incorrect": "Pas tout à fait",
+                "neutral": "Voici pourquoi"
             }
         }
     }
