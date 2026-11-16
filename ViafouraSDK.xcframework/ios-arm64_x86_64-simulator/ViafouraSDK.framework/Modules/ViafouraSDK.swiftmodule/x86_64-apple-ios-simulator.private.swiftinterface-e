@@ -2201,8 +2201,12 @@ public protocol VFNotificationsService : Swift.Sendable {
   func getSubscribersCount(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Int, any Swift.Error>
   func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<ViafouraSDK.UserSubscriptionsResponse, any Swift.Error>
   func getUserNotifications() async -> Swift.Result<ViafouraSDK.AllNotificationsResponse, any Swift.Error>
+  func getNewNotificationCount() async -> Swift.Result<Swift.Int, any Swift.Error>
+  func markGuestNotificationsSeen()
   func markNotificationRead(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   func markNotificationSeen(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func markNotificationsSeen(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  func markNotificationsRead(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
   func removeNotification(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   func removeNotifications(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
 }
@@ -2218,8 +2222,12 @@ public protocol VFNotificationsService : Swift.Sendable {
   final public func getSubscribersCount(userUUID: Foundation.UUID) async -> Swift.Result<Swift.Int, any Swift.Error>
   final public func getUserSubscriptions(pageNumber: Swift.Int?) async -> Swift.Result<ViafouraSDK.UserSubscriptionsResponse, any Swift.Error>
   final public func getUserNotifications() async -> Swift.Result<ViafouraSDK.AllNotificationsResponse, any Swift.Error>
+  final public func getNewNotificationCount() async -> Swift.Result<Swift.Int, any Swift.Error>
+  final public func markGuestNotificationsSeen()
   final public func markNotificationRead(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   final public func markNotificationSeen(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  final public func markNotificationsSeen(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
+  final public func markNotificationsRead(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
   final public func removeNotification(notificationUUID: Foundation.UUID) async -> Swift.Result<Swift.Bool, any Swift.Error>
   final public func removeNotifications(notifications: [Foundation.UUID]) async -> Swift.Result<Swift.Bool, any Swift.Error>
   @objc deinit

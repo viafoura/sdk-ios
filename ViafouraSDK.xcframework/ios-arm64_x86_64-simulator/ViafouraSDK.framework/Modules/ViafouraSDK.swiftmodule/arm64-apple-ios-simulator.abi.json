@@ -74645,6 +74645,63 @@
           },
           {
             "kind": "Function",
+            "name": "getNewNotificationCount",
+            "printedName": "getNewNotificationCount()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Int, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP23getNewNotificationCounts6ResultOySis5Error_pGyYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP23getNewNotificationCounts6ResultOySis5Error_pGyYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markGuestNotificationsSeen",
+            "printedName": "markGuestNotificationsSeen()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP26markGuestNotificationsSeenyyF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP26markGuestNotificationsSeenyyF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "markNotificationRead",
             "printedName": "markNotificationRead(notificationUUID:)",
             "children": [
@@ -74720,6 +74777,106 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDK22VFNotificationsServiceP20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
             "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0I0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationsSeen",
+            "printedName": "markNotificationsSeen(notifications:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.UUID]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP21markNotificationsSeen13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP21markNotificationsSeen13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "moduleName": "ViafouraSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
+            "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationsRead",
+            "printedName": "markNotificationsRead(notifications:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.UUID]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK22VFNotificationsServiceP21markNotificationsRead13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "mangledName": "$s11ViafouraSDK22VFNotificationsServiceP21markNotificationsRead13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
             "moduleName": "ViafouraSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : ViafouraSDK.VFNotificationsService>",
             "sugared_genericSig": "<Self where Self : ViafouraSDK.VFNotificationsService>",
@@ -75331,6 +75488,63 @@
           },
           {
             "kind": "Function",
+            "name": "getNewNotificationCount",
+            "printedName": "getNewNotificationCount()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Int, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC23getNewNotificationCounts6ResultOySis5Error_pGyYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC23getNewNotificationCounts6ResultOySis5Error_pGyYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markGuestNotificationsSeen",
+            "printedName": "markGuestNotificationsSeen()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC26markGuestNotificationsSeenyyF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC26markGuestNotificationsSeenyyF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "markNotificationRead",
             "printedName": "markNotificationRead(notificationUUID:)",
             "children": [
@@ -75406,6 +75620,106 @@
             "declKind": "Func",
             "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
             "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC20markNotificationSeen16notificationUUIDs6ResultOySbs5Error_pG10Foundation0J0V_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationsSeen",
+            "printedName": "markNotificationsSeen(notifications:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.UUID]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC21markNotificationsSeen13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC21markNotificationsSeen13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "moduleName": "ViafouraSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "markNotificationsRead",
+            "printedName": "markNotificationsRead(notifications:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Result",
+                "printedName": "Swift.Result<Swift.Bool, any Swift.Error>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:s6ResultO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.UUID]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11ViafouraSDK36VFNotificationsServiceImplementationC21markNotificationsRead13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
+            "mangledName": "$s11ViafouraSDK36VFNotificationsServiceImplementationC21markNotificationsRead13notificationss6ResultOySbs5Error_pGSay10Foundation4UUIDVG_tYaF",
             "moduleName": "ViafouraSDK",
             "declAttributes": [
               "Final",
@@ -108095,6 +108409,13 @@
         "moduleName": "ViafouraSDK"
       },
       {
+        "kind": "Import",
+        "name": "SafariServices",
+        "printedName": "SafariServices",
+        "declKind": "Import",
+        "moduleName": "ViafouraSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "VFLiveQuestionsViewController",
         "printedName": "VFLiveQuestionsViewController",
@@ -119942,8 +120263,15 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/VFPreviewCommentsViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 23579,
+      "length": 20,
+      "value": "\"vf.userTypingPulse\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/PreviewComments\/VFPreviewCommentsViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 58238,
+      "offset": 58751,
       "length": 3,
       "value": "0.5"
     },
@@ -120692,9 +121020,16 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Notifications\/VFNotificationsService.swift",
       "kind": "Array",
-      "offset": 2027,
+      "offset": 2294,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Notifications\/VFNotificationsService.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10923,
+      "length": 1,
+      "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livecomments\/UnspamCommentEndpoint.swift",
@@ -120734,14 +121069,14 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel+Notifications.swift",
       "kind": "Array",
-      "offset": 11035,
+      "offset": 9471,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/Profile\/ProfileViewModel+Notifications.swift",
       "kind": "IntegerLiteral",
-      "offset": 15852,
+      "offset": 14288,
       "length": 1,
       "value": "2"
     },
@@ -122533,72 +122868,79 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1099,
+      "offset": 1187,
       "length": 15,
       "value": "\"visitsLogging\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1186,
+      "offset": 1274,
       "length": 16,
       "value": "\"pendingActions\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1346,
+      "offset": 1434,
       "length": 12,
       "value": "\"-lastVisit\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1394,
+      "offset": 1482,
       "length": 12,
       "value": "\"firstVisit\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1452,
+      "offset": 1540,
       "length": 15,
       "value": "\"-numberVisits\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1502,
+      "offset": 1590,
       "length": 14,
       "value": "\"-abTestGroup\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1560,
+      "offset": 1648,
       "length": 20,
       "value": "\"-unfinishedContent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1629,
+      "offset": 1717,
       "length": 20,
       "value": "\"-unfinishedContent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1700,
+      "offset": 1788,
       "length": 28,
       "value": "\"-unfinishedContentLiveChat\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
       "kind": "StringLiteral",
-      "offset": 1766,
+      "offset": 1854,
       "length": 17,
       "value": "\"-flaggedComment\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Persistence\/PersistenceService.swift",
+      "kind": "StringLiteral",
+      "offset": 1921,
+      "length": 28,
+      "value": "\"guestNotificationsSeenTime\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/notifications\/contentContainer\/UnsuscribeContentContainerEndpoint.swift",
@@ -122781,6 +123123,13 @@
       "offset": 323,
       "length": 15,
       "value": "\"contentIdPath\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Model\/Network\/Notifications\/Notifications\/AllNotificationsResponse.swift",
+      "kind": "Array",
+      "offset": 324,
+      "length": 2,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/Services\/Network\/ApiEndpoint\/Endpoints\/livecomments\/PinCommentEndpoint.swift",
@@ -124682,196 +125031,196 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 851,
+      "offset": 873,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1827,
+      "offset": 1849,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1879,
+      "offset": 1901,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2990,
+      "offset": 3012,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4062,
+      "offset": 4084,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4438,
+      "offset": 4460,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4479,
+      "offset": 4501,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4526,
+      "offset": 4548,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 4879,
+      "offset": 4901,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 4931,
+      "offset": 4953,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 4989,
+      "offset": 5011,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5041,
+      "offset": 5063,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5099,
+      "offset": 5121,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 5147,
+      "offset": 5169,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5385,
+      "offset": 5407,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5435,
+      "offset": 5457,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5590,
+      "offset": 5612,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5612,
+      "offset": 5634,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6131,
+      "offset": 6153,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6153,
+      "offset": 6175,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 65788,
+      "offset": 65810,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 78708,
+      "offset": 78730,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 80254,
+      "offset": 80276,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 105224,
+      "offset": 105246,
       "length": 17,
       "value": "\"vf.liveDotPulse\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 113834,
+      "offset": 113856,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 116195,
+      "offset": 116217,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "StringLiteral",
-      "offset": 139630,
+      "offset": 139993,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/VFLiveQuestionsViewController.swift",
       "kind": "Array",
-      "offset": 142316,
+      "offset": 142679,
       "length": 2,
       "value": "[]"
     },
@@ -125172,28 +125521,28 @@
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
       "kind": "StringLiteral",
-      "offset": 767,
+      "offset": 821,
       "length": 26,
       "value": "\"LiveQuestionsContentCell\""
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
       "kind": "Array",
-      "offset": 1372,
+      "offset": 1426,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
       "kind": "IntegerLiteral",
-      "offset": 1806,
+      "offset": 1860,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/runner\/work\/sdk-ios-core\/sdk-ios-core\/Viafoura SDK\/ViafouraSDK\/ViewControllers\/LiveQuestions\/LiveQuestionsContentCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 32064,
+      "offset": 32276,
       "length": 5,
       "value": "false"
     },
