@@ -110,9 +110,9 @@
         "removed": "내용이 삭제되었습니다."
     },
     "error": {
-        "banned_from_posting": "귀하의 계정은 {permanent, select, 1 {permanently} other {until {endDate, date, longDateTime}}}{reason, select, undefined {.} other {. 이유: {이유}.}}",
+        "banned_from_posting": "귀하의 계정은 {permanent, select, 1 {영구적으로} other {{endDate, date, longDateTime}까지}} 게시가 금지되었습니다{reason, select, undefined {.} other {. 이유: {reason}.}}",
         "error": "오류",
-        "login_banned": "귀하의 계정은 {isPermanent, select, 1 {permanently} other {until {endDate, date, long}}}{reason, select, undefined {.} other {. 이유: {이유}.}}",
+        "login_banned": "귀하의 계정은 {isPermanent, select, 1 {영구적으로} other {{endDate, date, long}까지}} 차단되었습니다{reason, select, undefined {.} other {. 이유: {reason}.}}",
         "why_banned": "내가 금지된 이유는 무엇입니까?"
     },
     "feed": {

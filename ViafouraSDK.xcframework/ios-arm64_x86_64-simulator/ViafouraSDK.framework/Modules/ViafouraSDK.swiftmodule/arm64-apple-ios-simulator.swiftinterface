@@ -6,6 +6,7 @@ import AVFoundation
 import AdSupport
 import AppTrackingTransparency
 import CoreLocation
+import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import ImageIO
@@ -2933,14 +2934,18 @@ public protocol VFUsersService : Swift.Sendable {
   func unmuteUser(userId: Swift.String) async -> Swift.Result<UnmuteUserResponse, VFUnmuteUserError>
   func muteUser(userId: Swift.String) async -> Swift.Result<MuteUserResponse, VFMuteUserError>
   func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)]) async -> Swift.Result<[UserResponse?], VFUserInfoError>
+  func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)], ownerMatch: Swift.String?) async -> Swift.Result<[UserResponse?], VFUserInfoError>
   func getUserInfo(userUUID: Foundation.UUID, completion: @escaping (Swift.Result<UserResponse, VFUserInfoError>) -> Swift.Void)
   func getUserInfo(userUUID: Foundation.UUID) async -> Swift.Result<UserResponse, VFUserInfoError>
+  func getUserInfo(userUUID: Foundation.UUID, ownerMatch: Swift.String?) async -> Swift.Result<UserResponse, VFUserInfoError>
   func updateUserAvatar(imageData: Foundation.Data) async -> Swift.Result<Swift.Bool, VFUpdateUserAvatarError>
   func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, VFUpdateUserAvatarError>
   func resetUserAvatar() async -> Swift.Result<Swift.Bool, VFUpdateUserAvatarError>
   func updateUser(email: Swift.String?, name: Swift.String?, password: Swift.String?, newPassword: Swift.String?, emailNoticeFrequency: Swift.String?) async -> Swift.Result<Swift.Bool, VFUpdateUserError>
 }
 extension VFUsersService {
+  public func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)], ownerMatch: Swift.String?) async -> Swift.Result<[UserResponse?], VFUserInfoError>
+  public func getUserInfo(userUUID: Foundation.UUID, ownerMatch: Swift.String?) async -> Swift.Result<UserResponse, VFUserInfoError>
   public func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, VFUpdateUserAvatarError>
   public func resetUserAvatar() async -> Swift.Result<Swift.Bool, VFUpdateUserAvatarError>
 }

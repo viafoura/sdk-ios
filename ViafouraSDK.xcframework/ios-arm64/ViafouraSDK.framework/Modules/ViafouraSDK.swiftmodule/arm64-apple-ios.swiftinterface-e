@@ -6,6 +6,7 @@ import AVFoundation
 import AdSupport
 import AppTrackingTransparency
 import CoreLocation
+import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import ImageIO
@@ -2933,14 +2934,18 @@ public protocol VFUsersService : Swift.Sendable {
   func unmuteUser(userId: Swift.String) async -> Swift.Result<ViafouraSDK.UnmuteUserResponse, ViafouraSDK.VFUnmuteUserError>
   func muteUser(userId: Swift.String) async -> Swift.Result<ViafouraSDK.MuteUserResponse, ViafouraSDK.VFMuteUserError>
   func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)]) async -> Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>
+  func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)], ownerMatch: Swift.String?) async -> Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>
   func getUserInfo(userUUID: Foundation.UUID, completion: @escaping (Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>) -> Swift.Void)
   func getUserInfo(userUUID: Foundation.UUID) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
+  func getUserInfo(userUUID: Foundation.UUID, ownerMatch: Swift.String?) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
   func updateUserAvatar(imageData: Foundation.Data) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func resetUserAvatar() async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func updateUser(email: Swift.String?, name: Swift.String?, password: Swift.String?, newPassword: Swift.String?, emailNoticeFrequency: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserError>
 }
 extension ViafouraSDK.VFUsersService {
+  public func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)], ownerMatch: Swift.String?) async -> Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>
+  public func getUserInfo(userUUID: Foundation.UUID, ownerMatch: Swift.String?) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
   public func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   public func resetUserAvatar() async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
 }
