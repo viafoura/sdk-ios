@@ -8,6 +8,6 @@ import ViafouraSDK
 
 extension VFProfileStyle {
     static var fromSettings: VFProfileStyle {
-        UserDefaults.standard.bool(forKey: SettingsKeys.useDrawerProfile) ? .drawer : .default
+        UserDefaults.standard.bool(forKey: SettingsKeys.useDrawerProfile) ? .unity : .legacy
     }
 }
