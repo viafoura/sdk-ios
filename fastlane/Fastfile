@@ -6,13 +6,13 @@ SCHEME = "Viafoura"
 OUTPUT_DIR = "fastlane/build"
 
 platform :ios do
-  desc "Bump the sample app version, build it and upload it to TestFlight"
+  desc "Build the sample app with the next version and upload it to TestFlight"
+  desc "The version bump is only applied for the build, never committed: TestFlight holds the latest build number"
   desc "Options:"
   desc "  build_number:<n>  use this build number instead of latest TestFlight build + 1"
   desc "  version:<x.y.z>   use this marketing version instead of 1.0.<build_number>"
-  desc "  changelog:<text>  'What to Test' notes (defaults to commits since the last bump)"
+  desc "  changelog:<text>  'What to Test' notes (defaults to the last 10 commit subjects)"
   desc "  skip_waiting:true don't wait for App Store Connect processing (no 'What to Test' notes)"
-  desc "  push:false        commit the bump without pushing it"
   lane :beta do |options|
     ensure_git_status_clean
 
@@ -32,23 +32,18 @@ platform :ios do
         export_method: "app-store",
         output_directory: OUTPUT_DIR,
         clean: true,
-        xcargs: provisioning_xcargs,
-        export_xcargs: provisioning_xcargs
+        xcargs: provisioning_xcargs
       )
 
       skip_waiting = options[:skip_waiting].to_s == "true"
       upload_to_testflight(
         api_key: api_key,
-        changelog: skip_waiting ? nil : (options[:changelog] || changelog_since_last_bump),
+        changelog: skip_waiting ? nil : (options[:changelog] || recent_changes),
         skip_waiting_for_build_processing: skip_waiting
       )
-    rescue => e
+    ensure
       reset_git_repo(force: true, files: [PROJECT])
-      raise e
     end
-
-    git_commit(path: [PROJECT], message: "Bump sample app to #{version} (#{build_number})")
-    push_to_git_remote unless options[:push].to_s == "false"
   end
 end
 
@@ -101,9 +96,7 @@ def provisioning_xcargs
   args.join(" ")
 end
 
-def changelog_since_last_bump
-  last_bump = sh("git log -1 --format=%H --grep='^Bump sample app to' || true", log: false).strip
-  range = last_bump.empty? ? "-20" : "#{last_bump}..HEAD"
-  notes = sh("git log #{range} --no-merges --format='- %s'", log: false).strip
+def recent_changes
+  notes = sh("git log -10 --no-merges --format='- %s'", log: false).strip
   notes.empty? ? "Sample app build" : notes
 end
