@@ -44,10 +44,14 @@ jobs:
 
       - name: Write App Store Connect API key
         env:
-          API_KEY_P8: ${{ secrets.APP_STORE_CONNECT_API_KEY_P8 }}
+          API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_CONTENT }}
         run: |
           key_path="$RUNNER_TEMP/AuthKey.p8"
-          printf '%s' "$API_KEY_P8" > "$key_path"
+          if printf '%s' "$API_KEY_CONTENT" | grep -q -- '-----BEGIN'; then
+            printf '%s\n' "$API_KEY_CONTENT" > "$key_path"
+          else
+            printf '%s' "$API_KEY_CONTENT" | base64 --decode > "$key_path"
+          fi
           echo "APP_STORE_CONNECT_API_KEY_PATH=$key_path" >> "$GITHUB_ENV"
 
       - name: Configure git
@@ -57,8 +61,8 @@ jobs:
 
       - name: Run fastlane beta
         env:
-          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
-          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           INPUT_VERSION: ${{ inputs.version }}
           INPUT_BUILD_NUMBER: ${{ inputs.build_number }}
           INPUT_CHANGELOG: ${{ inputs.changelog }}
