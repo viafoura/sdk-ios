@@ -32,8 +32,7 @@ platform :ios do
         export_method: "app-store",
         output_directory: OUTPUT_DIR,
         clean: true,
-        xcargs: provisioning_xcargs,
-        export_xcargs: provisioning_xcargs
+        xcargs: provisioning_xcargs
       )
 
       skip_waiting = options[:skip_waiting].to_s == "true"
