@@ -46,23 +46,3 @@ func application(_ application: UIApplication,
 }
 ```
 
-
-## Publishing the sample app to TestFlight
-
-`fastlane beta` bumps the sample app's version, builds it in Release, uploads it to
-TestFlight, then commits the bump (`Bump sample app to 1.0.N (N)`) and pushes it.
-The build number is the latest TestFlight build + 1, and the version is `1.0.<build>`.
-The working tree must be clean; if the build or upload fails, the bump is reverted.
-
-```
-bundle install
-bundle exec fastlane beta
-```
-
-Options: `build_number:<n>`, `version:<x.y.z>`, `changelog:"<text>"`, `skip_waiting:true`,
-`push:false`.
-
-To authenticate with an App Store Connect API key instead of an Apple ID (required on CI),
-set `APP_STORE_CONNECT_API_KEY_ID`, `APP_STORE_CONNECT_API_ISSUER_ID` and
-`APP_STORE_CONNECT_API_KEY_PATH` (path to the `.p8`). The key path is also used to let
-Xcode's automatic signing fetch profiles on a machine with no signed-in Apple account.
