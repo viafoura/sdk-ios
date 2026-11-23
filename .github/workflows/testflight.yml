@@ -1,0 +1,78 @@
+name: Publish sample app to TestFlight
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Marketing version (default: 1.0.<build number>)"
+        required: false
+      build_number:
+        description: "Build number (default: latest TestFlight build + 1)"
+        required: false
+      changelog:
+        description: "What to Test notes (default: commits since the last bump)"
+        required: false
+
+concurrency:
+  group: testflight
+  cancel-in-progress: false
+
+jobs:
+  beta:
+    name: fastlane beta
+    runs-on: macos-26
+    timeout-minutes: 60
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Write App Store Connect API key
+        env:
+          API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_CONTENT }}
+        run: |
+          key_path="$RUNNER_TEMP/AuthKey.p8"
+          if printf '%s' "$API_KEY_CONTENT" | grep -q -- '-----BEGIN'; then
+            printf '%s\n' "$API_KEY_CONTENT" > "$key_path"
+          else
+            printf '%s' "$API_KEY_CONTENT" | base64 --decode > "$key_path"
+          fi
+          echo "APP_STORE_CONNECT_API_KEY_PATH=$key_path" >> "$GITHUB_ENV"
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run fastlane beta
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          INPUT_VERSION: ${{ inputs.version }}
+          INPUT_BUILD_NUMBER: ${{ inputs.build_number }}
+          INPUT_CHANGELOG: ${{ inputs.changelog }}
+        run: |
+          args=()
+          [ -n "$INPUT_VERSION" ] && args+=("version:$INPUT_VERSION")
+          [ -n "$INPUT_BUILD_NUMBER" ] && args+=("build_number:$INPUT_BUILD_NUMBER")
+          [ -n "$INPUT_CHANGELOG" ] && args+=("changelog:$INPUT_CHANGELOG")
+          bundle exec fastlane beta "${args[@]}"
+
+      - name: Remove API key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/AuthKey.p8"

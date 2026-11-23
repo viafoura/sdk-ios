@@ -1,0 +1,109 @@
+default_platform(:ios)
+skip_docs
+
+PROJECT = "SampleApp/Viafoura.xcodeproj"
+SCHEME = "Viafoura"
+OUTPUT_DIR = "fastlane/build"
+
+platform :ios do
+  desc "Bump the sample app version, build it and upload it to TestFlight"
+  desc "Options:"
+  desc "  build_number:<n>  use this build number instead of latest TestFlight build + 1"
+  desc "  version:<x.y.z>   use this marketing version instead of 1.0.<build_number>"
+  desc "  changelog:<text>  'What to Test' notes (defaults to commits since the last bump)"
+  desc "  skip_waiting:true don't wait for App Store Connect processing (no 'What to Test' notes)"
+  desc "  push:false        commit the bump without pushing it"
+  lane :beta do |options|
+    ensure_git_status_clean
+
+    api_key = asc_api_key
+
+    build_number = (options[:build_number] || next_build_number(api_key)).to_i
+    version = options[:version] || "1.0.#{build_number}"
+    UI.message("Releasing #{version} (#{build_number})")
+
+    set_sample_app_version(version, build_number)
+
+    begin
+      build_app(
+        project: PROJECT,
+        scheme: SCHEME,
+        configuration: "Release",
+        export_method: "app-store",
+        output_directory: OUTPUT_DIR,
+        clean: true,
+        xcargs: provisioning_xcargs,
+        export_xcargs: provisioning_xcargs
+      )
+
+      skip_waiting = options[:skip_waiting].to_s == "true"
+      upload_to_testflight(
+        api_key: api_key,
+        changelog: skip_waiting ? nil : (options[:changelog] || changelog_since_last_bump),
+        skip_waiting_for_build_processing: skip_waiting
+      )
+    rescue => e
+      reset_git_repo(force: true, files: [PROJECT])
+      raise e
+    end
+
+    git_commit(path: [PROJECT], message: "Bump sample app to #{version} (#{build_number})")
+    push_to_git_remote unless options[:push].to_s == "false"
+  end
+end
+
+def asc_api_key
+  key_id = ENV["APP_STORE_CONNECT_API_KEY_ID"]
+  return nil if key_id.to_s.empty?
+
+  app_store_connect_api_key(
+    key_id: key_id,
+    issuer_id: ENV.fetch("APP_STORE_CONNECT_API_ISSUER_ID"),
+    key_filepath: ENV["APP_STORE_CONNECT_API_KEY_PATH"],
+    key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
+    is_key_content_base64: ENV["APP_STORE_CONNECT_API_KEY_BASE64"] == "true"
+  )
+end
+
+def next_build_number(api_key)
+  latest = latest_testflight_build_number(api_key: api_key, initial_build_number: 0)
+  [latest.to_i, current_build_number].max + 1
+end
+
+def current_build_number
+  File.read(project_path).scan(/CURRENT_PROJECT_VERSION = (\d+);/).flatten.map(&:to_i).max || 0
+end
+
+# Only the app target's Debug/Release configurations set these keys.
+def set_sample_app_version(version, build_number)
+  pbxproj = File.read(project_path)
+  pbxproj.gsub!(/MARKETING_VERSION = [^;]+;/, "MARKETING_VERSION = #{version};")
+  pbxproj.gsub!(/CURRENT_PROJECT_VERSION = [^;]+;/, "CURRENT_PROJECT_VERSION = #{build_number};")
+  File.write(project_path, pbxproj)
+end
+
+def project_path
+  File.join(FastlaneCore::FastlaneFolder.path, "..", PROJECT, "project.pbxproj")
+end
+
+# Automatic signing: on a machine without an Xcode account signed in (e.g. CI),
+# xcodebuild needs the API key to create/download profiles.
+def provisioning_xcargs
+  args = ["-allowProvisioningUpdates"]
+  key_path = ENV["APP_STORE_CONNECT_API_KEY_PATH"]
+  if key_path && ENV["APP_STORE_CONNECT_API_KEY_ID"]
+    args += [
+      "-authenticationKeyPath #{File.expand_path(key_path).shellescape}",
+      "-authenticationKeyID #{ENV['APP_STORE_CONNECT_API_KEY_ID']}",
+      "-authenticationKeyIssuerID #{ENV['APP_STORE_CONNECT_API_ISSUER_ID']}"
+    ]
+  end
+  args.join(" ")
+end
+
+def changelog_since_last_bump
+  last_bump = sh("git log -1 --format=%H --grep='^Bump sample app to' || true", log: false).strip
+  range = last_bump.empty? ? "-20" : "#{last_bump}..HEAD"
+  notes = sh("git log #{range} --no-merges --format='- %s'", log: false).strip
+  notes.empty? ? "Sample app build" : notes
+end
