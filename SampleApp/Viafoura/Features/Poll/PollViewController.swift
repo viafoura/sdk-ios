@@ -15,7 +15,7 @@ class PollViewController: UIViewController {
     let containerView = UIView()
     let scrollView = UIScrollView()
     var containerViewHeight: NSLayoutConstraint!
-    var pollViewHeight: NSLayoutConstraint!
+    var pollViewHeight: NSLayoutConstraint?
 
     init(viewModel: PollViewModel) {
         self.pollViewModel = viewModel
@@ -106,7 +106,8 @@ class PollViewController: UIViewController {
         containerView.layer.shouldRasterize = true
         
         pollVC.view.translatesAutoresizingMaskIntoConstraints = false
-        pollViewHeight = pollVC.view.heightAnchor.constraint(equalToConstant: 150)
+        let pollViewHeight = pollVC.view.heightAnchor.constraint(equalToConstant: containerViewHeight.constant)
+        self.pollViewHeight = pollViewHeight
         let content = scrollView.contentLayoutGuide
         NSLayoutConstraint.activate([
             pollVC.view.topAnchor.constraint(equalTo: content.topAnchor),
@@ -125,7 +126,7 @@ class PollViewController: UIViewController {
 extension PollViewController: VFLayoutDelegate {
     func containerHeightUpdated(viewController: VFUIViewController, height: CGFloat) {
         containerViewHeight.constant = height
-        pollViewHeight.constant = height
+        pollViewHeight?.constant = height
         
         UIView.animate(withDuration: 0.5, animations: {
              self.view.layoutIfNeeded()
