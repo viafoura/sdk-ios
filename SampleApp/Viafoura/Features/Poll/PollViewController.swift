@@ -13,7 +13,9 @@ class PollViewController: UIViewController {
 
     let backgroundView = UIView()
     let containerView = UIView()
+    let scrollView = UIScrollView()
     var containerViewHeight: NSLayoutConstraint!
+    var pollViewHeight: NSLayoutConstraint!
 
     init(viewModel: PollViewModel) {
         self.pollViewModel = viewModel
@@ -46,7 +48,15 @@ class PollViewController: UIViewController {
         containerView.backgroundColor = .systemBackground
         view.addSubview(containerView)
 
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.keyboardDismissMode = .interactive
+        containerView.addSubview(scrollView)
+
         containerViewHeight = containerView.heightAnchor.constraint(equalToConstant: 150)
+        containerViewHeight.priority = .defaultHigh
+
+        let centerY = containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        centerY.priority = .defaultLow
 
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
@@ -57,8 +67,16 @@ class PollViewController: UIViewController {
 
             containerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 40),
             containerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -40),
-            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            containerViewHeight
+            containerView.topAnchor.constraint(greaterThanOrEqualTo: safeArea.topAnchor, constant: 16),
+            containerView.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor, constant: -16),
+            containerView.bottomAnchor.constraint(lessThanOrEqualTo: safeArea.bottomAnchor, constant: -16),
+            centerY,
+            containerViewHeight,
+
+            scrollView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         ])
     }
     
@@ -76,7 +94,7 @@ class PollViewController: UIViewController {
         
         addChild(pollVC)
         
-        containerView.addSubview(pollVC.view)
+        scrollView.addSubview(pollVC.view)
         containerView.clipsToBounds = true
         containerView.layer.cornerCurve = .continuous
         containerView.layer.cornerRadius = 12
@@ -88,11 +106,15 @@ class PollViewController: UIViewController {
         containerView.layer.shouldRasterize = true
         
         pollVC.view.translatesAutoresizingMaskIntoConstraints = false
+        pollViewHeight = pollVC.view.heightAnchor.constraint(equalToConstant: 150)
+        let content = scrollView.contentLayoutGuide
         NSLayoutConstraint.activate([
-            pollVC.view.topAnchor.constraint(equalTo: containerView.topAnchor),
-            pollVC.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            pollVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            pollVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            pollVC.view.topAnchor.constraint(equalTo: content.topAnchor),
+            pollVC.view.bottomAnchor.constraint(equalTo: content.bottomAnchor),
+            pollVC.view.leadingAnchor.constraint(equalTo: content.leadingAnchor),
+            pollVC.view.trailingAnchor.constraint(equalTo: content.trailingAnchor),
+            pollVC.view.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
+            pollViewHeight
         ])
         
         pollVC.willMove(toParent: self)
@@ -103,6 +125,7 @@ class PollViewController: UIViewController {
 extension PollViewController: VFLayoutDelegate {
     func containerHeightUpdated(viewController: VFUIViewController, height: CGFloat) {
         containerViewHeight.constant = height
+        pollViewHeight.constant = height
         
         UIView.animate(withDuration: 0.5, animations: {
              self.view.layoutIfNeeded()
