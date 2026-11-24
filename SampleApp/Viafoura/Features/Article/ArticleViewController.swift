@@ -289,7 +289,7 @@ class ArticleViewController: UIViewController {
         preCommentsViewController.setActionCallbacks(callbacks: callbacks)
         preCommentsViewController.setAdDelegate(adDelegate: self)
         preCommentsViewController.setLayoutDelegate(layoutDelegate: self)
-        preCommentsViewController.setAuthorsIds(authors: [articleViewModel.story.authorId] )
+        preCommentsViewController.setAuthorsIds(authors: articleViewModel.story.authorIds)
 
         if let contentUUID = articleViewModel.selectedContentUUID {
             preCommentsViewController.getContentScrollPosition(contentUUID: contentUUID, completion: { [weak self] yPosition in

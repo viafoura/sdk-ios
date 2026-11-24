@@ -55,7 +55,7 @@ struct ArticleView: View {
                         settings: settings,
                         paginationSize: 10,
                         defaultSort: story.storyType == .reviews ? .mostLiked : .newest,
-                        authorsIds: [story.authorId],
+                        authorsIds: story.authorIds,
                         focusedContentUUID: focusedContentUUID,
                         theme: theme,
                         autoSize: true,
