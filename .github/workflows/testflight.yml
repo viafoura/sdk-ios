@@ -26,6 +26,7 @@ jobs:
     name: fastlane beta
     runs-on: macos-26
     timeout-minutes: 60
+    environment: testflight
     permissions:
       contents: read
 
@@ -57,17 +58,21 @@ jobs:
           echo "/sdk-ios-core/" >> .git/info/exclude
           build="$RUNNER_TEMP/core"
           cd "sdk-ios-core/Viafoura SDK"
+          log="$RUNNER_TEMP/core-build.log"
           for sdk in iphonesimulator iphoneos; do
-            xcodebuild archive \
+            if ! xcodebuild archive \
               -scheme ViafouraSDK \
               -archivePath "$build/ViafouraSDK-$sdk.xcarchive" \
               -sdk "$sdk" \
-              SKIP_INSTALL=NO
+              SKIP_INSTALL=NO > "$log" 2>&1; then
+              grep -E "error:|BUILD FAILED|ARCHIVE FAILED" "$log" | sort -u || true
+              exit 1
+            fi
           done
           xcodebuild -create-xcframework \
             -framework "$build/ViafouraSDK-iphonesimulator.xcarchive/Products/Library/Frameworks/ViafouraSDK.framework" \
             -framework "$build/ViafouraSDK-iphoneos.xcarchive/Products/Library/Frameworks/ViafouraSDK.framework" \
-            -output "$build/ViafouraSDK.xcframework"
+            -output "$build/ViafouraSDK.xcframework" > /dev/null
           find "$build/ViafouraSDK.xcframework" -name "*.swiftinterface" -exec sed -i '' -e 's/ViafouraSDK\.//g' {} \;
           echo "xcframework=$build/ViafouraSDK.xcframework" >> "$GITHUB_OUTPUT"
           echo "label=Built against sdk-ios-core develop @ $(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
