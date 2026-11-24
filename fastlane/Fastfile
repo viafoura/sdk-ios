@@ -4,6 +4,7 @@ skip_docs
 PROJECT = "SampleApp/Viafoura.xcodeproj"
 SCHEME = "Viafoura"
 OUTPUT_DIR = "fastlane/build"
+XCFRAMEWORK = "ViafouraSDK.xcframework"
 
 platform :ios do
   desc "Build the sample app with the next version and upload it to TestFlight"
@@ -13,6 +14,9 @@ platform :ios do
   desc "  version:<x.y.z>   use this marketing version instead of 1.0.<build_number>"
   desc "  changelog:<text>  'What to Test' notes (defaults to the last 10 commit subjects)"
   desc "  skip_waiting:true don't wait for App Store Connect processing (no 'What to Test' notes)"
+  desc "  core_xcframework:<path>  link this ViafouraSDK.xcframework (e.g. built from sdk-ios-core develop)"
+  desc "                           instead of the released sdk-ios package"
+  desc "  core_label:<text>        describes that framework at the top of the 'What to Test' notes"
   lane :beta do |options|
     ensure_git_status_clean
 
@@ -25,6 +29,8 @@ platform :ios do
     set_sample_app_version(version, build_number)
 
     begin
+      use_core_xcframework(options[:core_xcframework]) if options[:core_xcframework]
+
       build_app(
         project: PROJECT,
         scheme: SCHEME,
@@ -38,11 +44,12 @@ platform :ios do
       skip_waiting = options[:skip_waiting].to_s == "true"
       upload_to_testflight(
         api_key: api_key,
-        changelog: skip_waiting ? nil : (options[:changelog] || recent_changes),
+        changelog: skip_waiting ? nil : what_to_test(options),
         skip_waiting_for_build_processing: skip_waiting
       )
     ensure
       reset_git_repo(force: true, files: [PROJECT])
+      restore_core_xcframework if options[:core_xcframework]
     end
   end
 end
@@ -94,6 +101,52 @@ def provisioning_xcargs
     ]
   end
   args.join(" ")
+end
+
+# The sample app normally takes ViafouraCore from the released sdk-ios package. For a
+# build against another framework, put it in this checkout and point the app at the
+# checkout as a local package for the duration of the build.
+def use_core_xcframework(path)
+  source = File.expand_path(path)
+  UI.user_error!("No xcframework at #{source}") unless File.directory?(source)
+
+  destination = File.join(repo_root, XCFRAMEWORK)
+  FileUtils.rm_rf(destination)
+  FileUtils.cp_r(source, destination)
+
+  project = Xcodeproj::Project.open(File.dirname(project_path))
+  remote = project.root_object.package_references.find do |ref|
+    ref.isa == "XCRemoteSwiftPackageReference" && ref.repositoryURL.to_s.match?(%r{viafoura/sdk-ios(\.git)?/?$})
+  end
+  UI.user_error!("The sample app has no sdk-ios package reference to replace") unless remote
+
+  local = project.new(Xcodeproj::Project::Object::XCLocalSwiftPackageReference)
+  local.relative_path = ".."
+  project.root_object.package_references << local
+  project.objects.select { |o| o.isa == "XCSwiftPackageProductDependency" && o.package == remote }
+         .each { |dependency| dependency.package = local }
+  project.root_object.package_references.delete(remote)
+  remote.remove_from_project
+  project.save
+
+  UI.message("Linking #{source} through a local ViafouraCore package")
+end
+
+def restore_core_xcframework
+  Dir.chdir(repo_root) do
+    sh("git", "checkout", "--", XCFRAMEWORK, log: false)
+    sh("git", "clean", "-fdq", "--", XCFRAMEWORK, log: false)
+  end
+end
+
+def repo_root
+  File.expand_path("..", FastlaneCore::FastlaneFolder.path)
+end
+
+def what_to_test(options)
+  notes = options[:changelog] || recent_changes
+  label = options[:core_label].to_s
+  label.empty? ? notes : "#{label}\n\n#{notes}"
 end
 
 def recent_changes

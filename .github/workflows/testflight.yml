@@ -12,6 +12,10 @@ on:
       changelog:
         description: "What to Test notes (default: commits since the last bump)"
         required: false
+      latest_core:
+        description: "Build against the latest sdk-ios-core (develop) instead of the released framework"
+        type: boolean
+        default: false
 
 concurrency:
   group: testflight
@@ -35,6 +39,38 @@ jobs:
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
+
+      - name: Checkout sdk-ios-core
+        if: inputs.latest_core
+        uses: actions/checkout@v4
+        with:
+          repository: viafoura/sdk-ios-core
+          ref: develop
+          ssh-key: ${{ secrets.SDK_IOS_CORE_DEPLOY_KEY }}
+          path: sdk-ios-core
+
+      - name: Build ViafouraSDK.xcframework from sdk-ios-core
+        if: inputs.latest_core
+        id: core
+        run: |
+          set -o pipefail
+          echo "/sdk-ios-core/" >> .git/info/exclude
+          build="$RUNNER_TEMP/core"
+          cd "sdk-ios-core/Viafoura SDK"
+          for sdk in iphonesimulator iphoneos; do
+            xcodebuild archive \
+              -scheme ViafouraSDK \
+              -archivePath "$build/ViafouraSDK-$sdk.xcarchive" \
+              -sdk "$sdk" \
+              SKIP_INSTALL=NO
+          done
+          xcodebuild -create-xcframework \
+            -framework "$build/ViafouraSDK-iphonesimulator.xcarchive/Products/Library/Frameworks/ViafouraSDK.framework" \
+            -framework "$build/ViafouraSDK-iphoneos.xcarchive/Products/Library/Frameworks/ViafouraSDK.framework" \
+            -output "$build/ViafouraSDK.xcframework"
+          find "$build/ViafouraSDK.xcframework" -name "*.swiftinterface" -exec sed -i '' -e 's/ViafouraSDK\.//g' {} \;
+          echo "xcframework=$build/ViafouraSDK.xcframework" >> "$GITHUB_OUTPUT"
+          echo "label=Built against sdk-ios-core develop @ $(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -61,11 +97,14 @@ jobs:
           INPUT_VERSION: ${{ inputs.version }}
           INPUT_BUILD_NUMBER: ${{ inputs.build_number }}
           INPUT_CHANGELOG: ${{ inputs.changelog }}
+          CORE_XCFRAMEWORK: ${{ steps.core.outputs.xcframework }}
+          CORE_LABEL: ${{ steps.core.outputs.label }}
         run: |
           args=()
           [ -n "$INPUT_VERSION" ] && args+=("version:$INPUT_VERSION")
           [ -n "$INPUT_BUILD_NUMBER" ] && args+=("build_number:$INPUT_BUILD_NUMBER")
           [ -n "$INPUT_CHANGELOG" ] && args+=("changelog:$INPUT_CHANGELOG")
+          [ -n "$CORE_XCFRAMEWORK" ] && args+=("core_xcframework:$CORE_XCFRAMEWORK" "core_label:$CORE_LABEL")
           bundle exec fastlane beta "${args[@]}"
 
       - name: Remove API key
