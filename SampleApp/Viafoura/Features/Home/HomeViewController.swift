@@ -197,6 +197,12 @@ class HomeViewController: UIViewController {
             textField.placeholder = "focusedContentUUID (optional)"
         }
 
+        alert.addTextField { (textField) in
+            textField.placeholder = "Author IDs, comma-separated (optional)"
+            textField.autocapitalizationType = .none
+            textField.autocorrectionType = .no
+        }
+
         alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { [weak alert, self] (_) in
             let textField = alert?.textFields![0]
             guard let value = textField?.text, value.isEmpty == false else {
@@ -204,7 +210,11 @@ class HomeViewController: UIViewController {
             }
 
             let focusedValue = alert?.textFields?[1].text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            self.openArticle(story: Story.randomWithContainerId(containerId: value), focusedContentUUID: UUID(uuidString: focusedValue))
+            let authorIds = (alert?.textFields?[2].text ?? "")
+                .split(separator: ",")
+                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .filter { !$0.isEmpty }
+            self.openArticle(story: Story.randomWithContainerId(containerId: value, authorIds: authorIds.isEmpty ? nil : authorIds), focusedContentUUID: UUID(uuidString: focusedValue))
         }))
         
         alert.addAction(.init(title: "Cancel", style: .cancel))
