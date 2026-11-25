@@ -6,6 +6,7 @@ import AVFoundation
 import AdSupport
 import AppTrackingTransparency
 import CoreLocation
+import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import ImageIO
@@ -1296,12 +1297,19 @@ public struct UserResponse : Swift.Decodable, Swift.Sendable {
   public let pic_small: Swift.String?
   public let pic_large: Swift.String?
   public let name: Swift.String
+  public let email_notice_frequency: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct UserSubscriptionsResponse : Swift.Decodable {
+  public let total: Swift.Int
+  public let hasMore: Swift.Bool
+  public let subscriptions: [ViafouraSDK.SubscriptionResponse]
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct SubscriptionResponse : Swift.Decodable {
+  public let subscription_uuid: Foundation.UUID
+  public let user_uuid: Foundation.UUID
+  public let date_created: Swift.Int64
   public init(from decoder: any Swift.Decoder) throws
 }
 @_Concurrency.MainActor public protocol VFLayoutDelegate : ObjectiveC.NSObject {
@@ -1631,6 +1639,11 @@ extension ViafouraSDK.VFCreatePollError {
   }
 }
 public struct CommentsProfileResponse : Swift.Decodable {
+  public let content_created: Swift.Int
+  public let dislikes_created: Swift.Int
+  public let likes_created: Swift.Int
+  public let dislikes_received: Swift.Int
+  public let likes_received: Swift.Int
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum VFCreateReviewMediaError : Foundation.LocalizedError {
@@ -1966,6 +1979,8 @@ public enum VFCustomizableView {
   case commentCellTrustedView(view: ViafouraSDK.VFTrustedView)
   case commentCellModeratorView(view: ViafouraSDK.VFModeratorView)
   case commentCellAuthorView(view: ViafouraSDK.VFAuthorView)
+  case commentCellAuthorLabel(label: ViafouraSDK.VFLabel)
+  case commentCellAuthorImage(image: ViafouraSDK.VFImageView)
   case commentCellFollowView(view: UIKit.UIView)
   case commentCellDislikeLabel(label: ViafouraSDK.VFLabel)
   case commentCellReplyLabel(label: ViafouraSDK.VFLabel)
@@ -1975,6 +1990,7 @@ public enum VFCustomizableView {
   case commentCellUserIndicator(image: ViafouraSDK.VFImageView)
   case commentCellAwaitingModerationView(view: ViafouraSDK.VFAwaitingModerationView)
   case commentCellCustomBadge(badge: ViafouraSDK.VFCustomBadgeView)
+  case commentCellCustomBadgeLabel(label: ViafouraSDK.VFLabel)
   case commentCellPinnedView(view: ViafouraSDK.VFPinnedView)
   case commentCellEditorPickView(view: ViafouraSDK.VFEditorPicksView)
   case commentCellUrlPreviewContainer(view: UIKit.UIView)
@@ -2183,6 +2199,9 @@ extension ViafouraSDK.VFCommentRepliesError {
   }
 }
 public struct UserSubscribersResponse : Swift.Decodable {
+  public let total: Swift.Int
+  public let hasMore: Swift.Bool
+  public let subscriptions: [ViafouraSDK.SubscriptionResponse]
   public init(from decoder: any Swift.Decoder) throws
 }
 public protocol VFNotificationsService : Swift.Sendable {
@@ -2596,12 +2615,33 @@ public struct VFFonts : Swift.Equatable {
   public static func == (a: ViafouraSDK.VFFonts, b: ViafouraSDK.VFFonts) -> Swift.Bool
 }
 public struct AllNotificationsResponse : Swift.Decodable {
+  public let broadcasts: [ViafouraSDK.BroadcastResponse]
+  public let notifications: [ViafouraSDK.NotificationResponse]
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct BroadcastResponse : Swift.Decodable, Swift.Sendable {
+  public let notification_uuid: Foundation.UUID
+  public let section_uuid: Foundation.UUID
+  public let actor_uuid: Foundation.UUID
+  public let time: Swift.Int64
+  public let status: ViafouraSDK.NotificationStatus
+  public let notification_type: ViafouraSDK.NotificationType
+  public let target_url: Swift.String
+  public let target_image_url: Swift.String?
+  public let target_title: Swift.String
+  public let target_description: Swift.String
+  public let target_topic_id: Swift.String
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct NotificationResponse : Swift.Decodable, Swift.Sendable {
+  public let grouping_key: Swift.Int64
+  public let service_type: ViafouraSDK.NotificationServiceType
+  public let notification_type: ViafouraSDK.NotificationType
+  public let target_uuid: Foundation.UUID
+  public let thread_uuid: Foundation.UUID
+  public let content_container_uuid: Foundation.UUID
+  public let section_uuid: Foundation.UUID
+  public let notifications: [ViafouraSDK.NotificationPayload]
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum NotificationServiceType : Swift.String, Swift.Decodable, Swift.Sendable {
@@ -2641,6 +2681,25 @@ public enum NotificationType : Swift.String, Swift.Decodable, Swift.Sendable {
   public var rawValue: Swift.String {
     get
   }
+}
+public enum NotificationStatus : Swift.String, Swift.Decodable, Swift.Sendable {
+  case new
+  case read
+  case seen
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct NotificationPayload : Swift.Decodable, Swift.Sendable {
+  public let actor_type: Swift.String
+  public let time: Swift.Int64
+  public let notification_uuid: Foundation.UUID
+  public let status: ViafouraSDK.NotificationStatus
+  public let content_uuid: Foundation.UUID
+  public let actor_uuid: Foundation.UUID
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension ViafouraSDK.VFLiveCommentsServiceImplementation {
   final public func removeEditorPickComment(sectionUUID: Foundation.UUID, contentContainerUUID: Foundation.UUID, contentUUID: Foundation.UUID, syndicationKey: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFRemoveEditorPickCommentError>
@@ -2933,14 +2992,18 @@ public protocol VFUsersService : Swift.Sendable {
   func unmuteUser(userId: Swift.String) async -> Swift.Result<ViafouraSDK.UnmuteUserResponse, ViafouraSDK.VFUnmuteUserError>
   func muteUser(userId: Swift.String) async -> Swift.Result<ViafouraSDK.MuteUserResponse, ViafouraSDK.VFMuteUserError>
   func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)]) async -> Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>
+  func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)], ownerMatch: Swift.String?) async -> Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>
   func getUserInfo(userUUID: Foundation.UUID, completion: @escaping (Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>) -> Swift.Void)
   func getUserInfo(userUUID: Foundation.UUID) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
+  func getUserInfo(userUUID: Foundation.UUID, ownerMatch: Swift.String?) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
   func updateUserAvatar(imageData: Foundation.Data) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func resetUserAvatar() async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   func updateUser(email: Swift.String?, name: Swift.String?, password: Swift.String?, newPassword: Swift.String?, emailNoticeFrequency: Swift.String?) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserError>
 }
 extension ViafouraSDK.VFUsersService {
+  public func getUsersInfo(usersUUID: [(Foundation.UUID, Swift.String?)], ownerMatch: Swift.String?) async -> Swift.Result<[ViafouraSDK.UserResponse?], ViafouraSDK.VFUserInfoError>
+  public func getUserInfo(userUUID: Foundation.UUID, ownerMatch: Swift.String?) async -> Swift.Result<ViafouraSDK.UserResponse, ViafouraSDK.VFUserInfoError>
   public func updateUserAvatar(imageData: Foundation.Data, mimeType: Swift.String) async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
   public func resetUserAvatar() async -> Swift.Result<Swift.Bool, ViafouraSDK.VFUpdateUserAvatarError>
 }
@@ -3745,6 +3808,9 @@ extension ViafouraSDK.NotificationServiceType : Swift.RawRepresentable {}
 extension ViafouraSDK.NotificationType : Swift.Equatable {}
 extension ViafouraSDK.NotificationType : Swift.Hashable {}
 extension ViafouraSDK.NotificationType : Swift.RawRepresentable {}
+extension ViafouraSDK.NotificationStatus : Swift.Equatable {}
+extension ViafouraSDK.NotificationStatus : Swift.Hashable {}
+extension ViafouraSDK.NotificationStatus : Swift.RawRepresentable {}
 extension ViafouraSDK.VFRemoveEditorPickCommentError : Swift.Equatable {}
 extension ViafouraSDK.VFRemoveEditorPickCommentError : Swift.Hashable {}
 extension ViafouraSDK.VFReviewsProfileError : Swift.Equatable {}
